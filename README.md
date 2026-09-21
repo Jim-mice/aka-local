@@ -1,30 +1,86 @@
 # aka-local
 
-`aka-local` is a research workbench for examining candidate CUDA/operator implementations against real Megatron-LM execution boundaries. It is an evidence-preserving experiment repository, not a production Megatron-LM replacement and not a drop-in fused-kernel library.
+`aka-local` 是一个用于研究 CUDA 算子优化的实验框架。
 
-## Scope and maturity
+它会把候选 CUDA / 算子实现放到真实的 Megatron-LM 执行边界中进行验证，并保存完整的实验依据。
 
-The repository preserves contracts, candidate source, validation policies, campaign manifests, compact evidence, and phase reports for five real targets:
+这个项目主要用于研究和实验，不是 Megatron-LM 的生产替代品，也不是可以直接拿来替换所有算子的 fused-kernel 库。
 
-1. Megatron MLP SwiGLU activation boundary;
-2. Vocab-Parallel Cross Entropy (forward and rank-local backward);
-3. non-TE `torch.nn.RMSNorm` / WrappedTorchNorm;
-4. native `DotProductAttention` dense/no-mask/p=0 forward core; and
-5. native `SequentialMLP` expert compute.
+## 范围与当前状态
 
-The canonical current state is in [FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md](FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md), [REAL_TARGET_CAMPAIGN_INDEX.md](REAL_TARGET_CAMPAIGN_INDEX.md), and [PHASE19A_FIVE_TARGET_CAMPAIGN_CLOSURE.md](PHASE19A_FIVE_TARGET_CAMPAIGN_CLOSURE.md). Those reports distinguish raw ratios, stability-qualified scores, and promoted scores; raw results are not promotion claims.
+仓库保存了实验所需的契约、候选代码、验证规则、campaign 记录、关键结果和阶段报告。
 
-Historical labels such as “Residual Add RMSNorm”, “Dense Fused Attention”, and “MoE Grouped GEMM” do not imply that one corresponding real fused operator executed. Read the target mapping before comparing results.
+目前主要研究了 5 个真实的 Megatron-LM 目标：
 
-## Architecture
+1. Megatron MLP 中的 SwiGLU 激活计算；
+2. Vocab-Parallel Cross Entropy，包括前向和 rank-local backward；
+3. 非 Transformer Engine 路径下的 `torch.nn.RMSNorm` / `WrappedTorchNorm`；
+4. 原生 `DotProductAttention` 的 dense / no-mask / p=0 前向核心；
+5. 原生 `SequentialMLP` 的 expert compute。
 
-`lab/` contains campaign orchestration, runtime checks, evaluator interfaces, and integrity policy. `targets/megatron_5be9626/` contains the target-specific contracts, candidates, diagnostics, and compact result artifacts. `operators/`, `ops/`, and `benchmarks/` contain supporting implementations and metadata. Root `PHASE*.md` reports and the canonical JSON registries provide the scientific narrative and machine-readable state.
+项目当前的汇总状态见：
 
-An Agent/evaluator/promotion flow is intentionally gated: source identity and ABI contract are checked before delivery, correctness and benchmark scope are checked before environment/stability qualification, and only then can a score be promoted. Do not start campaigns casually: they may invoke CUDA builds or configured remote evaluators.
+- [五个真实 Megatron target 的实验汇总](FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md)
+- [真实 target campaign 索引](REAL_TARGET_CAMPAIGN_INDEX.md)
+- [Phase 19-A 五目标收尾报告](docs/reports/phase-19/PHASE19A_FIVE_TARGET_CAMPAIGN_CLOSURE.md)
 
-## Install and inspect
+这些报告会明确区分：
 
-See [docs/SETUP.md](docs/SETUP.md). The safe starting commands are:
+- 原始测量结果；
+- 通过稳定性验证的结果；
+- 正式晋升的性能结果。
+
+因此，仓库中出现的 raw speedup 并不自动代表最终性能结论。
+
+早期使用过的一些名称，例如：
+
+- “Residual Add RMSNorm”
+- “Dense Fused Attention”
+- “MoE Grouped GEMM”
+
+只是最初的研究目标名称，并不代表实际运行时一定存在一个同名的 fused operator。
+
+后续阶段已经根据真实 Megatron 源码和运行路径重新确定了对应的研究边界。
+
+## 架构
+
+`lab/` 包含实验调度、运行时检查、evaluator 接口以及实验完整性规则。
+
+`targets/megatron_5be9626/` 保存与真实 Megatron target 相关的契约、候选实现、诊断信息和精简后的实验结果。
+
+`operators/`、`ops/` 和 `benchmarks/` 保存可复用的算子实现、辅助代码和 benchmark 组件。
+
+历史阶段报告统一保存在 `docs/reports/`；审计和维护记录保存在 `docs/audits/`、`docs/maintenance/` 以及 `docs/archive/`。
+
+整个实验流程大致为：
+
+```text
+确定真实执行边界
+        ↓
+冻结接口和实验契约
+        ↓
+Agent 生成候选实现
+        ↓
+接口 / ABI / 工具链检查
+        ↓
+编译
+        ↓
+正确性验证
+        ↓
+统计性能测试
+        ↓
+NSYS 性能分析
+        ↓
+接受 / 拒绝
+        ↓
+将经验反馈给下一轮 Agent
+```
+
+Agent/evaluator/promotion 流程有明确门槛：交付前检查源身份和 ABI 契约，随后检查正确性和基准范围，再进行环境和稳定性资格确认，最后才可能晋升分数。不要随意启动 campaign：它们可能触发 CUDA 构建或已配置的远程 evaluator。
+
+## 安装与查看
+
+请先阅读 [docs/SETUP.md](docs/SETUP.md)。以下命令只查看已有状态：
 
 ```powershell
 py -3 -m json.tool .\five_target_campaign_state.json
@@ -33,22 +89,23 @@ py -3 -m json.tool .\real_target_campaign_index.json
 .\lab.ps1 list-ops
 ```
 
-`run`, `evaluate`, and Agent commands are deliberately not examples here: they can use CUDA or remote infrastructure.
+这里刻意不把 `run`、`evaluate` 和 Agent 命令作为示例，因为它们可能使用 CUDA 或远程基础设施。
 
-## Remote execution
+## 远程执行
 
-Remote V100 evaluation is optional. Copy `config/environments/v100.example.yaml` to the ignored `v100.yaml`, replace `<REMOTE_HOST>`, `<REMOTE_USER>`, and path placeholders, then authenticate with SSH keys or an interactive local mechanism. Never commit passwords, tokens, private endpoint details, or local configuration.
+远程 V100 评估是可选项。将 `config/environments/v100.example.yaml` 复制为被 Git 忽略的 `v100.yaml`，再替换 `<REMOTE_HOST>`、`<REMOTE_USER>` 和路径占位符。请使用 SSH key 或本地交互式认证；不要提交密码、token、私有端点或本地配置。
 
-## Repository layout
+## 仓库结构
 
 ```text
-config/                    public example and target evaluation configuration
-lab/                       workbench runtime, policies, and CLI
-targets/megatron_5be9626/  real-target contracts, source, and compact evidence
-operators/, ops/           reusable operator/supporting source
-campaigns/                 preserved campaign provenance where non-generated
-PHASE*.md                  authoritative phase reports
-docs/                      setup and publication guidance
+config/                    公开示例和 target 评估配置
+lab/                       实验框架运行时、规则与 CLI
+targets/megatron_5be9626/  真实 target 的契约、源码与精简证据
+operators/, ops/           可复用算子与辅助源码
+campaigns/                 保留的 campaign 溯源信息（不含生成物）
+docs/reports/              历史阶段报告
+docs/audits/               审计与完整性记录
+docs/archive/              长时间运行和发布维护归档
 ```
 
-Large raw profiler reports, virtual environments, runtime bundles, external source checkouts, machine-local configuration, and compiler products are intentionally excluded from Git. External source references are recorded in `lab/knowledge_sources/import_manifest.json` where applicable.
+大型原始 profiler 报告、虚拟环境、runtime bundle、外部源码 checkout、机器本地配置和编译产物均被有意排除在 Git 外。外部源码引用记录在 `lab/knowledge_sources/import_manifest.json`（如适用）。
