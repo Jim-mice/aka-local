@@ -1,5 +1,5 @@
-# Security policy
+# 安全说明
 
-Never commit passwords, API keys, bearer tokens, SSH private keys, `.env` files, or real remote configuration. Local V100 configuration belongs in ignored `config/environments/v100.yaml`; `.venv/`, profiler binaries, and local artifacts are also ignored.
+不要提交密码、API key、bearer token、SSH 私钥、`.env` 文件或真实远程配置。本地 V100 配置应放在被 Git 忽略的 `config/environments/v100.yaml`；`.venv/`、profiler 二进制文件和本地 artifact 也均被忽略。
 
-Use SSH keys or interactive authentication for remote access. If a secret is committed or published, revoke/rotate it immediately and report the incident privately to the repository maintainers. Removing it in a later commit is not sufficient because Git history may retain it.
+远程访问请使用 SSH key 或交互式认证。如果 secret 已被提交或公开，立即撤销或轮换 credential，并私下通知仓库维护者。仅在后续 commit 中删除不足以消除风险，因为 Git 历史可能仍保留该 secret。

@@ -1,190 +1,80 @@
-# AKA-Local Reproduction Guide
+# aka-local 复现说明
 
-## Requirements
+## 前置条件
 
-### Hardware
-- **V100 GPU**: NVIDIA Tesla V100-PCIE-16GB (or compatible) accessible via SSH
-- CUDA 11.8+ on the V100 server
-- nvcc compiler on V100 server
+### 硬件
 
-### Local Machine
-- **OS**: Windows 10+ or Linux (tested on Windows PowerShell)
-- **Python**: 3.11+
-- **SSH client**: OpenSSH (built into Windows 10+/Linux)
-- **Network**: SSH access to V100 server (default: port 22)
+- 可通过 SSH 访问的 NVIDIA Tesla V100-PCIE-16GB（或兼容 GPU）。
+- V100 服务器上的 CUDA 11.8+ 与 `nvcc`。
 
-### Python Packages
-```
+### 本地环境
+
+- Windows 10+ 或 Linux；历史验证使用 Windows PowerShell。
+- Python 3.11+ 与 OpenSSH client。
+- 能访问 V100 SSH 服务的网络。
+
+### Python 包
+
+```text
 paramiko>=3.0
 scp>=0.14
 pyyaml>=6.0
 ```
 
-Install: `pip install paramiko scp pyyaml`
+安装：`pip install paramiko scp pyyaml`。
 
-### Optional: Codex Agent (for autonomous optimization)
-- Codex CLI (for agent-based candidate generation)
-- OpenAI API access
+可选的 Codex Agent 用于自主 candidate 生成，需要 Codex CLI 和 OpenAI API access。
 
----
-
-## Installation
+## 安装
 
 ```bash
-# 1. Clone the repository
 git clone <repo-url> aka-local
 cd aka-local
-
-# 2. Create virtual environment
 python -m venv .venv
-.venv\\Scripts\\activate   # Windows
-# source .venv/bin/activate  # Linux
-
-# 3. Install dependencies
+.venv\Scripts\activate
 pip install paramiko scp pyyaml
-
-# 4. Configure V100 access
-# Edit config/environments/v100.yaml:
-#   remote:
-#     host: "YOUR_V100_IP"
-#     user: "YOUR_SSH_USER"
-#
-# Set SSH password:
-echo "YOUR_PASSWORD" > config/environments/.v100_secret
-# OR set environment variable:
-# set AKA_V100_PASSWORD=YOUR_PASSWORD   # Windows
-# export AKA_V100_PASSWORD="YOUR_PASSWORD"     # Linux
 ```
 
----
+## 配置
 
-## Configuration
+将 `config/environments/v100.example.yaml` 复制为被 Git 忽略的 `config/environments/v100.yaml`，填写自己的 host、user 和远程路径。请使用 SSH key、交互式认证或本地被忽略的 secret 机制；不要把密码写入命令、文档、`.env` 或 Git。
 
-All configuration is in `config/environments/v100.yaml`:
+评估 shape 配置位于 `config/environments/v100_sm70/evaluation.json`。其中的 `score`、`correctness_tolerance`、`warmup` 和 `iterations` 是机器可读字段，不应随中文化修改。
 
-```yaml
-environment: v100
-gpu: Tesla V100-PCIE-16GB
-architecture: sm_70
-cuda_version: "11.8"
+## 首次运行前的查看
 
-remote:
-  host: "YOUR_V100_IP"      # REQUIRED: change this
-  user: "YOUR_SSH_USER"     # REQUIRED: change this
-
-paths:
-  evaluator_dir: "~/cuda_kernel_experiments/evaluator"
-  eval_script: "~/cuda_kernel_experiments/evaluator/eval.sh"
-  work_dir: "~/aka_remote_jobs"
-
-build:
-  compiler: "nvcc"
-  arch_flag: "-gencode arch=compute_70,code=sm_70"
-  optimization: "-O2"
-
-contract:
-  function: "launch_kernel"
-  signature: "void launch_kernel(float* x, float* weight, float* y, int batch, int hidden, float eps)"
-  source_file: "candidate.cu"
-
-evaluation:
-  timeout_compile_s: 30
-  timeout_total_s: 300
-```
-
-Evaluation shapes are configured in `config/environments/v100_sm70/evaluation.json`:
-
-```json
-{
-  "shapes": [[1, 4096], [4, 4096], [8, 4096], [32, 4096]],
-  "score": "geometric_mean_speedup",
-  "correctness_tolerance": 0.001,
-  "warmup": 50,
-  "iterations": 200
-}
-```
-
----
-
-## First Successful Run
-
-### Step 1: Verify connectivity
+以下命令会检查已配置的环境；只有在你明确计划进行远程评估时才执行：
 
 ```bash
 python -m lab.cli doctor --env v100
 ```
 
-Expected output:
-```
-[doctor] Checking environment: v100
-[1/5] SSH connectivity ... [PASS]
-[2/5] GPU check ... [PASS]
-[3/5] CUDA compiler ... [PASS]
-[4/5] Evaluator availability ... [PASS]
-[5/5] Local knowledge integrity ... [PASS]
-[doctor] Environment v100 (v100_sm70): READY
-```
-
-### Step 2: List available operators
+列出可用 operator：
 
 ```bash
 python -m lab.cli operators
 ```
 
-### Step 3: Run one optimization episode
+`run`、`evaluate` 和 `replay` 可能编译或使用远程 evaluator。执行前先核对 target、candidate、环境和成本边界。
 
-```bash
-python -m lab.cli run --env v100 --op rms_norm_v100_cuda --episodes 1
-```
+## 目录结构
 
-Expected output:
-```
-Phase 9: Unattended Campaign
-  Operator:  rms_norm_v100_cuda
-  Environment: v100
-  Episodes:  1
-  --- Ep N/1 ---
-  Phase 1: AGENT
-  Agent complete
-  Phase 2: EVALUATION
-  Result: ACCEPT score=X.XXX
-  === Done: 1 ok, 0 failed ===
-```
-
-### Step 4: View report
-
-```bash
-python -m lab.cli report --env v100 --op rms_norm_v100_cuda
-```
-
-### Step 5: Replay verification
-
-```bash
-python -m lab.cli replay --env v100 --op rms_norm_v100_cuda --ep N
-```
-
----
-
-## Directory Structure
-
-```
+```text
 aka-local/
-  config/environments/     # Environment configs
-  operators/               # Operator definitions and references
-  campaigns/               # Experiment campaigns (episodes, lineage)
-  knowledge/environments/  # Per-environment knowledge (V100/RTX5060 isolated)
-  lab/                     # CLI, evaluators, runtime, tools
-  docs/                    # Documentation
+  config/environments/     # 环境配置
+  operators/               # 算子定义与 reference
+  campaigns/               # 实验 campaign（episode、lineage）
+  knowledge/environments/  # 按环境隔离的知识（V100/RTX5060）
+  lab/                     # CLI、evaluator、runtime、工具
+  docs/                    # 文档
 ```
 
----
+## 常见问题
 
-## Troubleshooting
-
-| Symptom | Check |
-|---------|-------|
-| SSH connection fails | Verify V100 IP, user, password in config |
-| nvcc not found | Ensure CUDA 11.8 installed at /usr/local/cuda-11.8 |
-| eval.sh missing | Clone evaluator to ~/cuda_kernel_experiments/evaluator |
-| Compile fails | Verify nvcc supports sm_70 |
-| Correctness fails | Check candidate.cu matches contract signature |
+| 现象 | 检查方向 |
+|---|---|
+| SSH 连接失败 | 检查本地 `v100.yaml` 的 host/user 与认证方式。 |
+| 找不到 `nvcc` | 确认 V100 上安装 CUDA 11.8。 |
+| 找不到 `eval.sh` | 确认 evaluator 位于配置的远程路径。 |
+| Compile 失败 | 确认 `nvcc` 支持 `sm_70`。 |
+| Correctness 失败 | 检查 `candidate.cu` 是否符合 contract signature。 |

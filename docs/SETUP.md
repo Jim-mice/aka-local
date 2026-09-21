@@ -1,8 +1,8 @@
-# Setup and safe reproduction
+# 安装与安全复现
 
-## Local Windows environment
+## 本地 Windows 环境
 
-Use a Python virtual environment outside version control. The exact historical package lock was not captured, so this repository does not claim reproducible pinned versions. Inspect imports for the workflow you intend to use; common optional dependencies include PyTorch, PyYAML, and Paramiko. CUDA workflows additionally need an NVCC toolchain compatible with the target configuration.
+请在版本控制之外创建 Python virtual environment。历史上没有保存完整的 package lock，因此仓库不声称提供精确的 pinned version 复现。先检查你准备使用的工作流所需 import；常见可选依赖包括 PyTorch、PyYAML 和 Paramiko。CUDA 工作流还需要与 target 配置兼容的 NVCC toolchain。
 
 ```powershell
 py -3 -m venv .venv
@@ -10,11 +10,11 @@ py -3 -m venv .venv
 python -m pip install --upgrade pip
 ```
 
-Install only the dependencies required by the selected command. Do not treat this setup document as authorization to run a GPU campaign.
+只安装所选命令实际需要的依赖。本说明不构成启动 GPU campaign 的授权。
 
-## Non-destructive inspection
+## 非破坏性查看
 
-These commands inspect existing state and do not launch an Agent campaign or GPU benchmark:
+以下命令只读取已有状态，不会启动 Agent campaign 或 GPU benchmark：
 
 ```powershell
 py -3 -m json.tool .\five_target_campaign_state.json
@@ -23,10 +23,10 @@ py -3 -m json.tool .\real_target_campaign_index.json
 .\lab.ps1 list-ops
 ```
 
-Review `lab.ps1` and `lab/cli.py --help` before using `run`, `evaluate`, or replay commands. Some historical target scripts are target-specific; the closure report records this reproducibility limitation.
+使用 `run`、`evaluate` 或 replay 命令前，请先阅读 `lab.ps1` 和 `lab/cli.py --help`。部分历史 target 使用专用脚本；收尾报告已经记录这一复现基础设施限制。
 
-## Optional remote V100 configuration
+## 可选的远程 V100 配置
 
-Copy `config/environments/v100.example.yaml` to `config/environments/v100.yaml`, then set only your own host, user, and remote paths. `v100.yaml` is ignored by Git. Use SSH keys, an interactive prompt, or a local ignored secret mechanism; do not put passwords on command lines or in environment files that may be captured in logs.
+将 `config/environments/v100.example.yaml` 复制为 `config/environments/v100.yaml`，再仅填写你自己的 host、user 和远程路径。`v100.yaml` 被 Git 忽略。请使用 SSH key、交互式提示或本地被忽略的 secret 机制；不要在命令行或可能被日志记录的环境文件中放置密码。
 
-The example retains public scientific constraints (Tesla V100, CUDA 11.8, and `sm_70`) but contains no usable endpoint. A local Megatron checkout is an external dependency and is never modified by this workbench.
+示例保留公开的科学约束（Tesla V100、CUDA 11.8 与 `sm_70`），但不含可用 endpoint。本地 Megatron checkout 是外部依赖，本 workbench 不会修改它。
