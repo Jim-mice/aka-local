@@ -42,6 +42,28 @@
 
 后续阶段已经根据真实 Megatron 源码和运行路径重新确定了对应的研究边界。
 
+## 性能结果概览
+
+以下 Megatron 性能结果主要来自 V100 `sm_70` / CUDA 11.8 环境。结果具有不同证据等级，raw ratio 不能直接理解为正式 speedup。
+
+| 目标 | 当前最可靠结果 | 状态 |
+|---|---|---|
+| SwiGLU | activation-only forward / backward 有明显局部加速；完整 training rerun 为 `0.90710x` | `COMPLETED_INTEGRATION_LIMITED` |
+| Vocab-Parallel CE forward | Episode 7：`2.477191x`，CI95 `[2.465431x, 2.484392x]` | `PROMOTED_SCORE` |
+| CE backward | B1 raw `2.557171x` | `ENVIRONMENT_STABILITY_BLOCKED` |
+| Torch RMSNorm | R1/R2 raw `1.64629x` / `1.64134x` | `STABILITY_BLOCKED_R1_R2` |
+| DotProductAttention | A2：`5.928x` / `1.167x` / `0.347x` | `AGGREGATE_WIN_PER_CONFIG_MIXED` |
+| SequentialMLP MoE | M4 raw `1.2793x` / `1.4816x` / `0.9573x` | `STABILITY_BLOCKED` |
+
+[查看完整性能报告](docs/PERFORMANCE_OVERVIEW.md)，其中逐项标出证据等级、benchmark scope 和机器可读 evidence 链接。
+
+### 数据在哪里
+
+- `campaigns/`：每个 Agent episode 的 candidate、result、decision 和 benchmark evidence；
+- `targets/megatron_5be9626/`：真实 target 的 contract、baseline、replay 和 qualification evidence；
+- `docs/reports/`：各 Phase 的完整实验报告；
+- `knowledge/`：面向后续 Agent 的结构化经验总结。
+
 ## 架构
 
 `lab/` 包含实验调度、运行时检查、evaluator 接口以及实验完整性规则。
