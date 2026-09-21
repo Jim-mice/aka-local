@@ -1,0 +1,8 @@
+{
+  "episode": 2,
+  "target": "swiglu_backward",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "contract_hash": "a7437b0c42289669",
+  "candidate_hash": "95f66fb9cbf5f4ef",
+  "decision": "ACCEPT"
+}

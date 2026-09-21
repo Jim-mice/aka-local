@@ -1,0 +1,32 @@
+{
+  "episode": 0,
+  "operator": "layer_norm_v100_cuda",
+  "environment": {
+    "id": "v100_sm70",
+    "gpu": "Tesla V100-PCIE-16GB",
+    "cuda": "11.8",
+    "driver": "535.183.06",
+    "nvcc": "Cuda compilation tools, release 11.8, V11.8.89"
+  },
+  "operator_contract": {
+    "name": "layer_norm_v100_cuda",
+    "interface": "standalone_cuda",
+    "entry": "launch_kernel"
+  },
+  "contract_hash": "a69b1c9ffaa393a1",
+  "candidate_hash": "13bcc201cf4aa6ee",
+  "baseline_hash": "13bcc201cf4aa6ee",
+  "agent": {
+    "model": "gpt-5.6-luna"
+  },
+  "evaluation": {
+    "shapes": [
+      "1,4096",
+      "4,4096",
+      "8,4096",
+      "32,4096"
+    ],
+    "score_type": "geometric_mean_speedup"
+  },
+  "created_time": "2026-09-19T15:46:55.157852+00:00"
+}

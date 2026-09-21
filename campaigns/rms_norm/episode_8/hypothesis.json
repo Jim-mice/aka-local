@@ -1,0 +1,8 @@
+{
+  "episode": 8,
+  "target": "CUDA RMSNorm forward on Windows RTX 5060 Laptop (sm_120)",
+  "hypothesis": "Register accumulation plus warp shuffle reduction, with one shared-memory value per warp, will reduce reduction overhead and synchronization.",
+  "prior_knowledge": {"successful_direction": "warp_reduce_register_accumulation", "reported_result": "1.0131x speedup, 1.0117x geometric mean", "avoid": ["Linux-only flags", "benchmark execution", "CUDA execution during generation"]},
+  "implementation": ["one block per flattened row", "256 threads with strided loads", "warp shuffle reduction", "shared memory only for warp totals", "fused normalization and affine scaling", "CUDA 13.4 sm_120 code generation"],
+  "scope": "Forward-only RMSNorm with matching CUDA floating dtypes and weight length equal to the last dimension."
+}

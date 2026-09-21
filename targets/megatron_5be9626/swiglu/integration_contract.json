@@ -1,0 +1,46 @@
+{
+  "integration_contract_version": 1,
+  "target": "swiglu",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "optimization_contract_hash": "2b05cc321bed0956",
+  "episode": 2,
+  "original_candidate_hash": "21e7995911f9af2d",
+  "integration_adapter_hash": "281fa3160db58a73",
+  "replacement_scope": "activation_subgraph_only",
+  "source_call_site": "megatron.core.transformer.mlp.MLP.forward -> bias_swiglu_impl sidecar hook",
+  "inputs": {
+    "intermediate": "[rows,width] FP16 contiguous",
+    "bias": "[width] FP16 contiguous or null",
+    "glu_linear_offset": "float"
+  },
+  "outputs": {
+    "activated": "[rows,width/2] FP16 contiguous"
+  },
+  "gate_up_order": "first half gate, second half up",
+  "semantics": "optional bias add; SiLU(gate) * (up + offset)",
+  "official_shapes": [
+    [
+      16,
+      1,
+      1024
+    ],
+    [
+      64,
+      2,
+      1024
+    ],
+    [
+      128,
+      2,
+      1024
+    ]
+  ],
+  "dtype": "FP16 only on V100",
+  "contiguity": "required",
+  "alignment": "standard PyTorch CUDA allocation; no additional alignment contract",
+  "stream_semantics": "Python passes torch.cuda.current_stream(device).cuda_stream; adapter launches on that stream and never synchronizes",
+  "autograd": "custom forward uses Episode 2 adapter; backward uses trusted analytical PyTorch derivative",
+  "workspace": "none",
+  "fallback": "controlled error for wrong device, dtype, noncontiguous tensor, odd width, or unsupported shape",
+  "contract_hash": "00b8d9b26b2dc005"
+}

@@ -1,0 +1,8 @@
+{
+  "hypothesis": "Fuse local target extraction, global-max shift, exponentiation, exp storage, target mask, predicted contribution, and local denominator into one row-per-block prepare kernel.",
+  "scope": "Optimize one local stage only; preserve caller collectives and ABI.",
+  "expected_effect": "Reduce PyTorch-style local kernel launch and temporary overhead while retaining FP32 arithmetic and exact global-max shift semantics.",
+  "risks": ["Different FP32 summation order may cause small numerical drift", "One block per row may underutilize the GPU for very large row counts"],
+  "collectives_preserved": ["one REAL MAX", "two REAL SUM"],
+  "backward": "out of scope"
+}

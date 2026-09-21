@@ -1,0 +1,6 @@
+backend_id: triton
+language: Python/Triton
+compiler_runtime: Triton runtime
+supported_platforms: [rtx5060_laptop_sm120, biv150_corex]
+profiling_tools: [torch.profiler, Nsight Compute if available]
+notes: BI-V150/CoreX behavior is backend-specific.

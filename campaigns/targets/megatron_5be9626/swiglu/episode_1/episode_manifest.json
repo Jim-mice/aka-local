@@ -1,0 +1,31 @@
+{
+  "episode": 1,
+  "target": "swiglu",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "target_contract_hash": "2b05cc321bed0956",
+  "baseline_hash": "38c5aab3df4aed85",
+  "candidate_hash": "2a0f0c2aa6210214",
+  "official_shapes": [
+    [
+      16,
+      1,
+      1024
+    ],
+    [
+      64,
+      2,
+      1024
+    ],
+    [
+      128,
+      2,
+      1024
+    ]
+  ],
+  "dtype": "FP16",
+  "replacement_scope": "activation_subgraph_only",
+  "contract_pass": true,
+  "compile_pass": true,
+  "correctness_pass": true,
+  "profile_available": true
+}

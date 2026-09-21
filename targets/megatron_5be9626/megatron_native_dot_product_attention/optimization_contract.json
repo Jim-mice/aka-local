@@ -1,0 +1,26 @@
+{
+  "optimization_contract_version": "native_dot_product_attention_forward_opt_v1",
+  "contract_hash": "90839e70b4edbfdc9cdfd903fe9c51230311a8fc7c13fb1b2a0673acd261916c",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "replay_contract_hash": "65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+  "performance_contract_hash": "5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+  "target": "Megatron Native DotProductAttention unfused local core forward",
+  "implementation": "megatron.core.transformer.dot_product_attention.DotProductAttention.forward",
+  "scope": "forward only: scaled QK^T, dense no-mask FP32 softmax behavior, p=0 dropout identity, PV, output materialization",
+  "abi": {
+    "symbol": "dot_product_attention_forward_fp16_stream",
+    "prototype": "extern \"C\" void dot_product_attention_forward_fp16_stream(const __half* q, const __half* k, const __half* v, __half* output, int64_t seq_len, int64_t batch, int64_t num_heads, int64_t head_dim, float scale, cudaStream_t stream);",
+    "qkv": "read-only contiguous FP16 [S,B,heads,head_dim]",
+    "output": "separate preallocated contiguous FP16 [S,B,heads*head_dim]",
+    "dimensions": "S, B, heads, head_dim; official head_dim=64",
+    "stream": "all candidate work must be enqueued on passed stream",
+    "workspace_argument": "none; candidate must not require a semantic workspace pointer"
+  },
+  "semantics": {"scale": 0.125, "softmax": "attention_softmax_in_fp32=true equivalent", "mask": "None/dense", "dropout": 0.0, "output_layout": "contiguous [S,B,H]"},
+  "allocation_policy": {"inputs": "preallocated", "output": "preallocated", "reference_score_workspace": "Megatron global memory buffer prepared outside timing", "candidate": "no allocation inside timed ABI call; internal workspace only if pre-established and identical in orchestration"},
+  "alias_policy": "Q/K/V/output non-overlapping; Q/K/V read-only",
+  "official_configurations": [[16,1,16,64],[64,2,16,64],[128,2,16,64]],
+  "correctness_tolerances": {"forward_max_abs": 0.005, "forward_max_rel": 0.005, "finite_required": true},
+  "collectives": 0,
+  "excluded": ["QKV projection GEMM", "output projection GEMM", "rotary embedding", "causal masks", "padding/arbitrary masks", "nonzero dropout/RNG", "Transformer Engine", "flash-attn", "backward optimization"]
+}

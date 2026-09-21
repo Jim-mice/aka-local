@@ -1,0 +1,50 @@
+{
+  "environment": "v100_sm70",
+  "operator": "layer_norm_v100_cuda",
+  "best_patterns": [],
+  "avoid_patterns": [
+    "Avoid compilation errors: ensure candidate.cu is valid standalone CUDA C++",
+    "Avoid correctness failures: verify RMSNorm formula y=(x/rms(x))*weight"
+  ],
+  "successful_strategies": [],
+  "failed_strategies": [
+    {
+      "name": "no result.json from V100; stdout=Traceback (most recent call last):\n  File \"/hom",
+      "episodes": [
+        1
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "correctness failed; max_error=9.75206470489502",
+      "episodes": [
+        2
+      ],
+      "reason": "correctness"
+    }
+  ],
+  "recommendations": [
+    "Use float4 vectorized loads for coalesced memory access on V100",
+    "Use warp-shuffle reduction for sum-of-squares on V100 sm_70",
+    "Use one 256-thread block per row for RMSNorm",
+    "Use shared-memory warp-total reduction for final normalization",
+    "Guard all thread accesses with batch/row bounds checking",
+    "Test ALL evaluation shapes before claiming correctness"
+  ],
+  "confidence": "low",
+  "apply_when": [
+    "Optimizing RMSNorm on V100 (sm_70)",
+    "Batch sizes 1-32 with hidden dim 4096",
+    "Standalone CUDA kernel with no PyTorch dependency"
+  ],
+  "avoid_when": [
+    "Single-shape-only testing (must validate all shapes)",
+    "Missing batch/row bounds checking in kernel",
+    "Compile failures from syntax errors",
+    "Regressions vs current incumbent on ANY shape"
+  ],
+  "best_score": 1.0,
+  "total_accepted": 0,
+  "total_rejected": 2,
+  "last_updated": "2026-09-19T09:48:43.041006+00:00"
+}

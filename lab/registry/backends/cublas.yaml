@@ -1,0 +1,6 @@
+backend_id: cublas
+language: CUDA library
+compiler_runtime: NVIDIA CUDA
+supported_platforms: [v100_sm70, rtx5060_laptop_sm120]
+profiling_tools: [Nsight Compute]
+notes: Registry placeholder; no imported experiment yet.

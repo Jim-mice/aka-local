@@ -1,0 +1,105 @@
+{
+  "compile_pass": true,
+  "correctness_pass": true,
+  "shapes": [
+    {
+      "shape": "1,4096",
+      "runs": [
+        {
+          "latency_us": 31.38
+        },
+        {
+          "latency_us": 31.32
+        },
+        {
+          "latency_us": 31.3
+        }
+      ],
+      "mean_latency_us": 31.33,
+      "std_latency_us": 0.04,
+      "cv_percent": 0.1,
+      "mean_speedup": 2.569
+    },
+    {
+      "shape": "4,4096",
+      "runs": [
+        {
+          "latency_us": 31.41
+        },
+        {
+          "latency_us": 31.4
+        },
+        {
+          "latency_us": 31.34
+        }
+      ],
+      "mean_latency_us": 31.38,
+      "std_latency_us": 0.04,
+      "cv_percent": 0.1,
+      "mean_speedup": 2.246
+    },
+    {
+      "shape": "8,4096",
+      "runs": [
+        {
+          "latency_us": 31.31
+        },
+        {
+          "latency_us": 31.3
+        },
+        {
+          "latency_us": 31.32
+        }
+      ],
+      "mean_latency_us": 31.31,
+      "std_latency_us": 0.01,
+      "cv_percent": 0.0,
+      "mean_speedup": 2.249
+    },
+    {
+      "shape": "32,4096",
+      "runs": [
+        {
+          "latency_us": 31.54
+        },
+        {
+          "latency_us": 31.48
+        },
+        {
+          "latency_us": 31.47
+        }
+      ],
+      "mean_latency_us": 31.5,
+      "std_latency_us": 0.04,
+      "cv_percent": 0.1,
+      "mean_speedup": 2.908
+    }
+  ],
+  "aggregate_score": 2.479,
+  "geometric_mean_speedup": 2.479,
+  "speedup": 2.569,
+  "latency_us": 31.33,
+  "evidence": {
+    "compile": true,
+    "compile_error": "",
+    "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /home/<REMOTE_USER>/aka_remote_jobs/4842b0dd533b/candidate.so /home/<REMOTE_USER>/aka_remote_jobs/4842b0dd533b/candidate.cu",
+    "correctness": true,
+    "max_error": 4.76837158203125e-07,
+    "latency_us": 31.33,
+    "torch_naive_latency_us": 87.21,
+    "torch_optimized_latency_us": 68.36,
+    "speedup_vs_naive": 2.784,
+    "speedup_vs_torch": 2.182,
+    "source": "remote-v100-ssh",
+    "gpu": "Tesla V100-PCIE-16GB",
+    "arch": "sm_70",
+    "timestamp": "2026-09-19T07:24:28.789116+00:00"
+  },
+  "error": "",
+  "profile_available": false,
+  "profile_summary": null,
+  "statistical": true,
+  "runs_per_shape": 3,
+  "frozen_baselines_used": true,
+  "frozen_score": 2.899
+}

@@ -1,0 +1,38 @@
+{
+  "episode": 6,
+  "operator": "dense_attention_backward_v100_cuda",
+  "environment": {
+    "id": "v100_sm70",
+    "gpu": "Tesla V100-PCIE-16GB",
+    "cuda": "11.8",
+    "driver": "535.183.06",
+    "nvcc": "Cuda compilation tools, release 11.8, V11.8.89"
+  },
+  "operator_contract": {
+    "name": "dense_attention_backward_v100_cuda",
+    "interface": "standalone_cuda",
+    "entry": "launch_kernel"
+  },
+  "contract_hash": "631277cb8b980a59",
+  "candidate_hash": "f8c7b4fda13f8cca",
+  "baseline_hash": "2760c45d1ef91232",
+  "agent": {
+    "model": "gpt-5.6-luna"
+  },
+  "evaluation": {
+    "shapes": [
+      "1,2,32,32",
+      "1,4,64,64",
+      "1,8,128,64",
+      "2,4,128,64"
+    ],
+    "score_type": "geometric_mean_speedup"
+  },
+  "created_time": "2026-09-19T17:05:59.617749+00:00",
+  "legacy_benchmark": true,
+  "legacy_benchmark_reason": "baseline included forward recomputation",
+  "benchmark_contract": {
+    "version": 1,
+    "mode": "forward_recompute_autograd"
+  }
+}

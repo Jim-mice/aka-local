@@ -1,0 +1,6 @@
+{
+  "status": "TurnStatus.completed",
+  "id": "01a0b579-f64e-7ee1-9775-42015b97d2e5",
+  "provider": "openai",
+  "model": "gpt-5.6-luna"
+}

@@ -1,0 +1,17 @@
+# MoE Grouped MLP Triton attempt（中文归档）
+
+- 实验 ID：`remote-moe-v1`
+- 算子：`moe_grouped_mlp_train`
+- GPU/平台：`biv150_corex`
+- Backend：`corex_triton`
+- 决策：`REJECT`
+
+## 证据
+
+以下内容是对原始结构化证据的中文说明；数字、ID、路径和技术符号保持不变。
+
+correctness FAIL; campaign blocked
+
+## 来源
+
+`/private/atrex-megatron/campaigns/kernel_opt_moe_grouped_mlp_train_triton_bi_v150_production/memory/v1.json`

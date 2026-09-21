@@ -1,0 +1,1516 @@
+{
+  "kernel": {
+    "name": "rms_norm",
+    "id": "atrex_027",
+    "dtype": "bf16"
+  },
+  "dsl": "unknown",
+  "eval_mode": "torch_compile_reference",
+  "eval_id": "20260910T094248Z-6f91da99",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_arch": "sm_120",
+    "accelerator_backend": "cuda",
+    "driver_version": "610.88",
+    "runtime_version": "13.0",
+    "clock_locked": false,
+    "clock_lock_detected": false,
+    "clock_lock_source": null,
+    "PTL_STATE": null,
+    "torch_version": "2.14.0+cu130",
+    "python_version": "3.11.15"
+  },
+  "runner_config": {
+    "config_version": "v1",
+    "mode": "torch_compile_reference",
+    "validation_mode": "performance_only",
+    "atol": 0.0,
+    "rtol": 0.0,
+    "correctness_max_rel_l2": null,
+    "num_correctness_cases": 0,
+    "warmup_iters": 20,
+    "bench_iters": 100,
+    "candidate_timeout_s": null,
+    "benchmark_mode": "eager",
+    "cuda_graph_cache_flush_mb": 1024,
+    "graph_atol": 0.01,
+    "graph_rtol": 0.05,
+    "graph_min_cosine": null,
+    "graph_max_rel_l2": null,
+    "trust_mode": "trusted",
+    "require_clock_locked": false
+  },
+  "passed": {
+    "compile": {
+      "0": {
+        "status": "passed",
+        "reason": null
+      },
+      "1": {
+        "status": "passed",
+        "reason": null
+      },
+      "10": {
+        "status": "passed",
+        "reason": null
+      },
+      "11": {
+        "status": "passed",
+        "reason": null
+      },
+      "12": {
+        "status": "passed",
+        "reason": null
+      },
+      "13": {
+        "status": "passed",
+        "reason": null
+      },
+      "14": {
+        "status": "passed",
+        "reason": null
+      },
+      "15": {
+        "status": "passed",
+        "reason": null
+      },
+      "16": {
+        "status": "passed",
+        "reason": null
+      },
+      "17": {
+        "status": "passed",
+        "reason": null
+      },
+      "18": {
+        "status": "passed",
+        "reason": null
+      },
+      "19": {
+        "status": "passed",
+        "reason": null
+      },
+      "2": {
+        "status": "passed",
+        "reason": null
+      },
+      "20": {
+        "status": "passed",
+        "reason": null
+      },
+      "21": {
+        "status": "passed",
+        "reason": null
+      },
+      "22": {
+        "status": "passed",
+        "reason": null
+      },
+      "23": {
+        "status": "passed",
+        "reason": null
+      },
+      "24": {
+        "status": "passed",
+        "reason": null
+      },
+      "25": {
+        "status": "passed",
+        "reason": null
+      },
+      "26": {
+        "status": "passed",
+        "reason": null
+      },
+      "27": {
+        "status": "passed",
+        "reason": null
+      },
+      "28": {
+        "status": "passed",
+        "reason": null
+      },
+      "29": {
+        "status": "passed",
+        "reason": null
+      },
+      "3": {
+        "status": "passed",
+        "reason": null
+      },
+      "30": {
+        "status": "passed",
+        "reason": null
+      },
+      "31": {
+        "status": "passed",
+        "reason": null
+      },
+      "32": {
+        "status": "passed",
+        "reason": null
+      },
+      "33": {
+        "status": "passed",
+        "reason": null
+      },
+      "34": {
+        "status": "passed",
+        "reason": null
+      },
+      "35": {
+        "status": "passed",
+        "reason": null
+      },
+      "36": {
+        "status": "passed",
+        "reason": null
+      },
+      "37": {
+        "status": "passed",
+        "reason": null
+      },
+      "38": {
+        "status": "passed",
+        "reason": null
+      },
+      "39": {
+        "status": "passed",
+        "reason": null
+      },
+      "4": {
+        "status": "passed",
+        "reason": null
+      },
+      "40": {
+        "status": "passed",
+        "reason": null
+      },
+      "41": {
+        "status": "passed",
+        "reason": null
+      },
+      "42": {
+        "status": "passed",
+        "reason": null
+      },
+      "43": {
+        "status": "passed",
+        "reason": null
+      },
+      "44": {
+        "status": "passed",
+        "reason": null
+      },
+      "45": {
+        "status": "passed",
+        "reason": null
+      },
+      "46": {
+        "status": "passed",
+        "reason": null
+      },
+      "47": {
+        "status": "passed",
+        "reason": null
+      },
+      "48": {
+        "status": "passed",
+        "reason": null
+      },
+      "49": {
+        "status": "passed",
+        "reason": null
+      },
+      "5": {
+        "status": "passed",
+        "reason": null
+      },
+      "50": {
+        "status": "passed",
+        "reason": null
+      },
+      "51": {
+        "status": "passed",
+        "reason": null
+      },
+      "52": {
+        "status": "passed",
+        "reason": null
+      },
+      "53": {
+        "status": "passed",
+        "reason": null
+      },
+      "54": {
+        "status": "passed",
+        "reason": null
+      },
+      "55": {
+        "status": "passed",
+        "reason": null
+      },
+      "6": {
+        "status": "passed",
+        "reason": null
+      },
+      "7": {
+        "status": "passed",
+        "reason": null
+      },
+      "8": {
+        "status": "passed",
+        "reason": null
+      },
+      "9": {
+        "status": "passed",
+        "reason": null
+      }
+    },
+    "correctness": {
+      "0": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "1": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "10": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "11": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "12": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "13": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "14": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "15": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "16": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "17": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "18": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "19": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "2": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "20": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "21": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "22": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "23": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "24": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "25": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "26": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "27": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "28": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "29": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "3": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "30": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "31": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "32": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "33": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "34": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "35": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "36": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "37": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "38": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "39": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "4": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "40": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "41": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "42": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "43": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "44": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "45": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "46": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "47": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "48": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "49": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "5": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "50": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "51": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "52": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "53": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "54": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "55": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "6": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "7": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "8": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      },
+      "9": {
+        "status": "skipped",
+        "reason": "Skipped in torch_compile_reference mode."
+      }
+    },
+    "performance": {
+      "0": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "1": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "10": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "11": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "12": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "13": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "14": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "15": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "16": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "17": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "18": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "19": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "2": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "20": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "21": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "22": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "23": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "24": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "25": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "26": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "27": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "28": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "29": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "3": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "30": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "31": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "32": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "33": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "34": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "35": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "36": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "37": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "38": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "39": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "4": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "40": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "41": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "42": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "43": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "44": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "45": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "46": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "47": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "48": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "49": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "5": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "50": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "51": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "52": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "53": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "54": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "55": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "6": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "7": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "8": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      },
+      "9": {
+        "status": "skipped",
+        "reason": "Stage did not run before worker exited."
+      }
+    }
+  },
+  "correctness": {
+    "shapes": {
+      "0": {
+        "cases": []
+      },
+      "1": {
+        "cases": []
+      },
+      "10": {
+        "cases": []
+      },
+      "11": {
+        "cases": []
+      },
+      "12": {
+        "cases": []
+      },
+      "13": {
+        "cases": []
+      },
+      "14": {
+        "cases": []
+      },
+      "15": {
+        "cases": []
+      },
+      "16": {
+        "cases": []
+      },
+      "17": {
+        "cases": []
+      },
+      "18": {
+        "cases": []
+      },
+      "19": {
+        "cases": []
+      },
+      "2": {
+        "cases": []
+      },
+      "20": {
+        "cases": []
+      },
+      "21": {
+        "cases": []
+      },
+      "22": {
+        "cases": []
+      },
+      "23": {
+        "cases": []
+      },
+      "24": {
+        "cases": []
+      },
+      "25": {
+        "cases": []
+      },
+      "26": {
+        "cases": []
+      },
+      "27": {
+        "cases": []
+      },
+      "28": {
+        "cases": []
+      },
+      "29": {
+        "cases": []
+      },
+      "3": {
+        "cases": []
+      },
+      "30": {
+        "cases": []
+      },
+      "31": {
+        "cases": []
+      },
+      "32": {
+        "cases": []
+      },
+      "33": {
+        "cases": []
+      },
+      "34": {
+        "cases": []
+      },
+      "35": {
+        "cases": []
+      },
+      "36": {
+        "cases": []
+      },
+      "37": {
+        "cases": []
+      },
+      "38": {
+        "cases": []
+      },
+      "39": {
+        "cases": []
+      },
+      "4": {
+        "cases": []
+      },
+      "40": {
+        "cases": []
+      },
+      "41": {
+        "cases": []
+      },
+      "42": {
+        "cases": []
+      },
+      "43": {
+        "cases": []
+      },
+      "44": {
+        "cases": []
+      },
+      "45": {
+        "cases": []
+      },
+      "46": {
+        "cases": []
+      },
+      "47": {
+        "cases": []
+      },
+      "48": {
+        "cases": []
+      },
+      "49": {
+        "cases": []
+      },
+      "5": {
+        "cases": []
+      },
+      "50": {
+        "cases": []
+      },
+      "51": {
+        "cases": []
+      },
+      "52": {
+        "cases": []
+      },
+      "53": {
+        "cases": []
+      },
+      "54": {
+        "cases": []
+      },
+      "55": {
+        "cases": []
+      },
+      "6": {
+        "cases": []
+      },
+      "7": {
+        "cases": []
+      },
+      "8": {
+        "cases": []
+      },
+      "9": {
+        "cases": []
+      }
+    }
+  },
+  "performance": {
+    "shapes": {
+      "0": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "1": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "10": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "11": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "12": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\performance.py\", line 884, in benchmark_reference_torch_compile\n    compiled_model(*compile_inputs.args, **compile_inputs.kwargs)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 563, in __call__\n    return super().__call__(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1783, in _wrapped_call_impl\n    return self._call_impl(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\nn\\modules\\module.py\", line 1794, in _call_impl\n    return forward_call(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_dynamo\\eval_frame.py\", line 1278, in compile_wrapper\n    raise e.remove_dynamo_frames() from None  # see TORCHDYNAMO_VERBOSE=1\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\_inductor\\scheduler.py\", line 9312, in create_backend\n    raise TritonMissing(inspect.currentframe())\ntorch._inductor.exc.TritonMissing: Cannot find a working triton installation. Either the package is not installed or it is too old. More information on installing Triton can be found at: https://github.com/triton-lang/triton\n\nSet TORCHDYNAMO_VERBOSE=1 for the internal stack trace (please do this especially if you're reporting a bug to PyTorch). For even more developer context, set TORCH_LOGS=\"+dynamo\"\n\n"
+      },
+      "13": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "14": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "15": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "16": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "17": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "18": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "19": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "2": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "20": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "21": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "22": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "23": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "24": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "25": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "26": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "27": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "28": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "29": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "3": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "30": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "31": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "32": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "33": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "34": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "35": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "36": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "37": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "38": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "39": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "4": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "40": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "41": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "42": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "43": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "44": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "45": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "46": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "47": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "48": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "49": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "5": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "50": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "51": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "52": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "53": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "54": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "55": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "6": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "7": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "8": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "9": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      }
+    }
+  },
+  "error": null
+}

@@ -1,0 +1,92 @@
+{
+  "environment": "v100_sm70",
+  "operator": "dense_attention_v100_cuda",
+  "best_patterns": [],
+  "avoid_patterns": [
+    "Avoid regressions: ensure kernel is faster than incumbent across ALL shapes",
+    "Avoid undefined symbols: ensure all device functions are defined in candidate.cu"
+  ],
+  "successful_strategies": [],
+  "failed_strategies": [
+    {
+      "name": "aggregate_score=0.015 <= incumbent=1.0",
+      "episodes": [
+        0
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/a95d480e69df/candidate.cu(28): error: identifier ",
+      "episodes": [
+        1
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(61): error: identifier ",
+      "episodes": [
+        2
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/98aeb9347b12/candidate.cu(35): error: identifier ",
+      "episodes": [
+        3
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/07899bf814b8/candidate.cu(26): error: identifier ",
+      "episodes": [
+        4
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "aggregate_score=0.028 <= incumbent=1.0",
+      "episodes": [
+        5
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=0.049 <= incumbent=1.0",
+      "episodes": [
+        7
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=0.014 <= incumbent=1.0",
+      "episodes": [
+        8
+      ],
+      "reason": "performance"
+    }
+  ],
+  "recommendations": [
+    "Use float4 vectorized loads for coalesced memory access on V100",
+    "Use warp-shuffle or shared-memory reduction for normalization statistics",
+    "Use one 256-thread block per row for row-wise normalization",
+    "Use shared-memory reduction for mean/variance or mean-of-squares",
+    "Guard all thread accesses with batch/row bounds checking",
+    "Test ALL evaluation shapes before claiming correctness"
+  ],
+  "confidence": "medium",
+  "apply_when": [
+    "Optimizing normalization kernels on V100 (sm_70)",
+    "Batch sizes 1-32 with hidden dim 4096",
+    "Standalone CUDA kernel with no PyTorch dependency"
+  ],
+  "avoid_when": [
+    "Single-shape-only testing (must validate all shapes)",
+    "Missing batch/row bounds checking in kernel",
+    "Compile failures from syntax errors",
+    "Regressions vs current incumbent on ANY shape"
+  ],
+  "best_score": 1.0,
+  "total_accepted": 0,
+  "total_rejected": 8,
+  "last_updated": "2026-09-19T16:41:33.168689+00:00"
+}

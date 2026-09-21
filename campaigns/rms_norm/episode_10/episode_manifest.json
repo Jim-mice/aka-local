@@ -1,0 +1,8 @@
+{
+  "episode": 10,
+  "operator": "rms_norm",
+  "candidate_sha256": "4c6ae440db620c19f7ce84738314b9accac58659e561e280f0ac38a93da302d2",
+  "baseline_sha256": "eafb69b881921a3c24684e45474e2238394dfaaa74ef62a40be1a14e38dd8a85",
+  "reference_sha256": "bd9f5b2e68471fccd542a93bf263963f685126ea0ed4ce1646d5bc65e1209a76",
+  "created_time": "2026-09-19T03:32:11.691244+00:00"
+}

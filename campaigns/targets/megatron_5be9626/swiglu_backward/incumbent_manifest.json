@@ -1,0 +1,28 @@
+{
+  "target": "swiglu_backward",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "backward_contract_hash": "a7437b0c42289669",
+  "baseline_hash": "b0554f3fc5ada9fb",
+  "episode": 2,
+  "candidate_hash": "95f66fb9cbf5f4ef",
+  "score": 3.4578303034730578,
+  "score_type": "saved_pytorch_backward_geometric_mean_speedup",
+  "dtype": "FP16",
+  "shapes": [
+    [
+      16,
+      1,
+      1024
+    ],
+    [
+      64,
+      2,
+      1024
+    ],
+    [
+      128,
+      2,
+      1024
+    ]
+  ]
+}

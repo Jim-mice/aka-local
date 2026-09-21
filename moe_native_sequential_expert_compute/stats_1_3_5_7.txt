@@ -1,0 +1,117 @@
+__FILE__/tmp/aka_phase18a/manual_1_3_5_7_cudaapisum.json
+[
+  {
+    "Time(%)": 67.0,
+    "Total Time (ns)": 209067,
+    "Num Calls": 9,
+    "Average": 23229.7,
+    "Minimum": 17021,
+    "Maximum": 43667,
+    "Name": "cudaLaunchKernel"
+  },
+  {
+    "Time(%)": 19.8,
+    "Total Time (ns)": 61712,
+    "Num Calls": 4,
+    "Average": 15428.0,
+    "Minimum": 14641,
+    "Maximum": 17350,
+    "Name": "cuLaunchKernel"
+  },
+  {
+    "Time(%)": 9.3,
+    "Total Time (ns)": 29123,
+    "Num Calls": 1,
+    "Average": 29123.0,
+    "Minimum": 29123,
+    "Maximum": 29123,
+    "Name": "cudaMemcpyAsync"
+  },
+  {
+    "Time(%)": 2.4,
+    "Total Time (ns)": 7560,
+    "Num Calls": 1,
+    "Average": 7560.0,
+    "Minimum": 7560,
+    "Maximum": 7560,
+    "Name": "cudaDeviceSynchronize"
+  },
+  {
+    "Time(%)": 1.4,
+    "Total Time (ns)": 4467,
+    "Num Calls": 1,
+    "Average": 4467.0,
+    "Minimum": 4467,
+    "Maximum": 4467,
+    "Name": "cudaStreamSynchronize"
+  }
+]
+__FILE__/tmp/aka_phase18a/manual_1_3_5_7_gpukernsum.json
+[
+  {
+    "Time(%)": 23.1,
+    "Total Time (ns)": 35136,
+    "Instances": 2,
+    "Average": 17568.0,
+    "Minimum": 17088,
+    "Maximum": 18048,
+    "Name": "void cutlass::Kernel<cutlass_70_wmma_tensorop_f16_s161616gemm_f16_32x32_64x2_tn_align8>(cutlass_70_wmma_tensorop_f16_s161616gemm_f16_32x32_64x2_tn_align8::Params)"
+  },
+  {
+    "Time(%)": 19.3,
+    "Total Time (ns)": 29440,
+    "Instances": 4,
+    "Average": 7360.0,
+    "Minimum": 7200,
+    "Maximum": 7488,
+    "Name": "triton_poi_fused_mul_silu_0"
+  },
+  {
+    "Time(%)": 19.2,
+    "Total Time (ns)": 29185,
+    "Instances": 2,
+    "Average": 14592.5,
+    "Minimum": 14305,
+    "Maximum": 14880,
+    "Name": "void gemmSN_TN_kernel<float, 128, 16, 2, 4, 6, 7, false, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half> >(cublasGemmSmallNParams<cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>)"
+  },
+  {
+    "Time(%)": 16.5,
+    "Total Time (ns)": 25184,
+    "Instances": 2,
+    "Average": 12592.0,
+    "Minimum": 12224,
+    "Maximum": 12960,
+    "Name": "void gemmSN_TN_kernel<float, 128, 16, 2, 4, 4, 4, false, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half> >(cublasGemmSmallNParams<cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>)"
+  },
+  {
+    "Time(%)": 14.4,
+    "Total Time (ns)": 21888,
+    "Instances": 2,
+    "Average": 10944.0,
+    "Minimum": 10528,
+    "Maximum": 11360,
+    "Name": "void gemv2T_kernel_val<int, int, __half, __half, __half, float, 128, 16, 2, 4, false, false, cublasGemvParams<cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float> >(cublasGemvParams<cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>, float, float)"
+  },
+  {
+    "Time(%)": 7.5,
+    "Total Time (ns)": 11392,
+    "Instances": 1,
+    "Average": 11392.0,
+    "Minimum": 11392,
+    "Maximum": 11392,
+    "Name": "void at::native::(anonymous namespace)::CatArrayBatchedCopy_contig<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 2, 128, 1>(at::native::(anonymous namespace)::OpaqueType<2u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 128, 1>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)"
+  }
+]
+__FILE__/tmp/aka_phase18a/manual_1_3_5_7_nvtxppsum.json
+[
+  {
+    "Time(%)": 100.0,
+    "Total Time (ns)": 5385427,
+    "Instances": 1,
+    "Average": 5385427.0,
+    "Minimum": 5385427,
+    "Maximum": 5385427,
+    "Range": "AKA_MOE_SEQUENTIAL_1,3,5,7"
+  }
+]

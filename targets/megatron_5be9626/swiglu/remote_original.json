@@ -1,0 +1,48 @@
+{
+  "mode": "original",
+  "commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "shapes": [
+    {
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "forward_max_abs": 6.103515625e-05,
+      "forward_max_rel": 0.0265045166015625,
+      "forward_pass": true
+    },
+    {
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "forward_max_abs": 0.0001220703125,
+      "forward_max_rel": 0.052093505859375,
+      "forward_pass": true
+    },
+    {
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "forward_max_abs": 0.0001220703125,
+      "forward_max_rel": 0.04632568359375,
+      "forward_pass": true,
+      "forward_samples_us": [
+        625.797119140625,
+        618.6598587036133,
+        612.8639984130859,
+        615.9564971923828,
+        616.6630554199219
+      ],
+      "forward_mean_us": 617.9881057739258,
+      "forward_std_us": 4.836620976324504,
+      "forward_cv": 0.007826398163873158
+    }
+  ],
+  "kernel": "launch_swiglu_stream",
+  "current_stream": true
+}

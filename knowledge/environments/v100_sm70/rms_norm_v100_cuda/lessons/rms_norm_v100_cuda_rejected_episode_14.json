@@ -1,0 +1,11 @@
+{
+  "operator": "rms_norm_v100_cuda",
+  "episode": 14,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "correctness",
+  "reason": "Multi-shape correctness failure: shapes 4,8,32 failed (max_error ~10). Kernel missing batch/row indexing - only processes row 0.",
+  "reusable_rule": "Verify the kernel function signature includes ALL required parameters (batch, hidden). Check that every row/block is processed, not just row 0.",
+  "timestamp": "2026-09-19T07:30:52.563607+00:00",
+  "audit_note": "Phase 9.5 revocation"
+}

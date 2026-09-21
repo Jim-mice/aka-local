@@ -1,0 +1,10 @@
+{
+  "version":"moe_native_sequential_expert_compute_abi_v1",
+  "status":"active_delivery_contract",
+  "symbol":"moe_sequential_expert_forward_fp16_stream",
+  "required_symbol":"moe_sequential_expert_forward_fp16_stream",
+  "prototype":"extern \"C\" void moe_sequential_expert_forward_fp16_stream(const half* tokens, const int64_t* tokens_per_expert, const half* probs, const half* fc1_weights, const half* fc2_weights, half* output, int64_t token_count, int64_t hidden, int64_t intermediate, int64_t experts, cudaStream_t stream);",
+  "argument_order":["tokens","tokens_per_expert","probs","fc1_weights","fc2_weights","output","token_count","hidden","intermediate","experts","stream"],
+  "marker":{"prefix":"// AKA_TARGET_CONTRACT: ","literal":"// AKA_TARGET_CONTRACT: a1bb8ee0af6c250663e0935ae3deb07104975fc5904c56bb5b2f0d4e8032d1fe","target":"moe_native_sequential_expert_compute","hash_field":"optimization_contract.json sha256"},
+  "semantic_note":"weight packing and expert metadata must be finalized from a candidate boundary; not activated"
+}

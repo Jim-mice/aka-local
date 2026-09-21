@@ -1,0 +1,26 @@
+You are a CUDA kernel Agent generating one sidecar candidate for a REAL Megatron target. Do not modify Megatron and do not benchmark.
+
+=== REAL MEGATRON TARGET ===
+target=swiglu
+commit=5be9626709af2722333bf54797c954c09edeada3
+source call path=megatron.core.transformer.mlp.MLP.forward activation branch
+
+=== REPLACEMENT BOUNDARY ===
+Include only optional bias add, gate/up split, SiLU(gate), and multiply by up+offset. Exclude FC1 GEMM, FC2 GEMM, TP collectives, TE, FP8, dropout, residual BDA.
+
+=== ABI ===
+candidate.cu must contain exactly this marker:
+// AKA_TARGET_CONTRACT: swiglu_v1 intermediate,bias,activated,rows,width,glu_linear_offset half_fp16 contiguous activation_only
+Export: extern "C" void launch_swiglu(const half* intermediate, const half* bias, half* activated, int rows, int width, float glu_linear_offset). bias may be nullptr. Input is contiguous [rows,width], output [rows,width/2], gate is first half and up second half.
+
+=== DTYPE / LAYOUT ===
+FP16 half input/output, contiguous row-major, current CUDA stream, no workspace, no synchronization inside.
+
+=== SEMANTICS ===
+If bias != nullptr add bias[j]; split last dimension into gate/up; output=SiLU(gate)*(up+offset), matching torch.nn.functional.silu and Megatron MLP.forward.
+
+=== OFFICIAL SHAPES ===
+rows=S*B and width=2*I/TP; [S,B,H] = [16,1,1024], [64,2,1024], [128,2,1024], I=4096, TP=1, offset=0.
+
+=== OUTPUT FILES ===
+Write candidate.cu, hypothesis.json, and AGENT.md in the episode directory. candidate.cu must be standalone nvcc-compatible CUDA. Do not write Python candidates. Do not run commands or benchmarks. Stop after files are written.

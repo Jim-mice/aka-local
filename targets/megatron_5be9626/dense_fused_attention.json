@@ -1,0 +1,18 @@
+{
+  "target_name": "Dense Fused Attention",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_files": ["megatron/core/transformer/attention.py", "megatron/core/transformer/dot_product_attention.py", "megatron/core/fusions/fused_softmax.py", "megatron/core/transformer/transformer_layer.py"],
+  "call_sites": ["TransformerLayer.forward -> SelfAttention/Attention.forward -> Attention._run_core_attention -> DotProductAttention.forward"],
+  "implementation_backend": "composition; Megatron QKV/output projection modules plus selected core-attention backend; TE/local/PyTorch attention depending on layer spec and config",
+  "forward": {"path": "linear_qkv -> QKV reshape/rotary -> core_attention -> linear_proj", "softmax": "FusedScaleMaskSoftmax in DotProductAttention for local path; external backend possible"},
+  "backward": {"path": "PyTorch autograd or backend-specific autograd Function; exact kernel depends on selected implementation", "explicit_megatron_backward": "not a single Megatron CUDA backward"},
+  "inputs": ["hidden_states [S,B,H] by TransformerLayer convention", "attention mask", "optional packed sequence metadata"],
+  "outputs": ["attention output [S,B,H]", "projection bias where applicable"],
+  "symbolic_shapes": {"qkv": "[S,B,hidden] -> [S,B,heads_per_tp,head_dim]", "scores": "[B*heads_per_tp,S,S]", "output": "[S,B,hidden]"},
+  "dtypes": ["FP32", "FP16", "BF16", "FP8 only on supported TE/backend paths"],
+  "distributed_semantics": {"tensor_parallel": "QKV/projection are TP-aware; collective behavior depends on linear spec", "context_parallel": "possible", "attention_collective": "configuration dependent"},
+  "external_dependencies": ["PyTorch", "Transformer Engine optional", "FlashAttention optional and hardware/version constrained", "Apex not established as the exact current core path"],
+  "v100_feasibility": "SUPPORTED_WITH_FALLBACK: local fused-softmax attention and FP16/BF16/FP32 paths are plausible; modern FA3/FA4 and FP8 paths are not assumed supported on V100",
+  "candidate_optimization_boundary": "B: selected core-attention implementation only, with QKV/projection excluded unless a full module contract is defined",
+  "open_questions": ["Exact layer spec and attention backend for the eventual training configuration", "Whether TE version available on V100 exposes the required training path"]
+}

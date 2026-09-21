@@ -1,0 +1,11 @@
+{
+  "marker": true,
+  "symbol": true,
+  "extern_c": true,
+  "cudart_inf_forbidden": true,
+  "source_sha256": "f1fbeed69c0bf01feea818eaaba3cb63c4fc7d14bedb81362a940a545c616a9f",
+  "compile_command": "/usr/local/cuda-11.8/bin/nvcc -arch=sm_70 -O3 -c /tmp/aka_phase17b_a3/candidate.cu -o /tmp/aka_phase17b_a3/candidate.o",
+  "compile_stdout": "",
+  "compile_stderr": "",
+  "compile_pass": true
+}

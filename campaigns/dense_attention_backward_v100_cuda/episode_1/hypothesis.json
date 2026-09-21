@@ -1,0 +1,43 @@
+{
+  "claim": "Use one row-oriented block per output row/key with warp-shuffle plus shared-memory reductions for softmax backward row statistics, while keeping dV as a direct reduction over query rows.",
+  "strategy_tags": [
+    "warp_shuffle_reduction",
+    "shared_memory_optimization",
+    "coalesced_memory_access",
+    "parallel_reduction",
+    "fused_multiply_add",
+    "register_optimization"
+  ],
+  "expected_effects": [
+    "reduce synchronization",
+    "reduce shared memory traffic",
+    "coalesce tensor accesses",
+    "compute all three gradients without host-side work"
+  ],
+  "risk": [
+    "register pressure",
+    "repeated dot-product work in dQ and dK",
+    "256-thread blocks may underutilize very small head dimensions"
+  ],
+  "operator": "dense_attention_backward_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "52a2863f6af6c627",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "q",
+      "k",
+      "v",
+      "p",
+      "grad_o",
+      "grad_q",
+      "grad_k",
+      "grad_v",
+      "batch",
+      "heads",
+      "seq",
+      "head_dim",
+      "scale"
+    ]
+  }
+}

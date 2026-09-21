@@ -1,0 +1,18 @@
+You are a CUDA kernel Agent. Generate one standalone backward candidate only. Do not modify Megatron.
+=== REAL MEGATRON TARGET ===
+SwiGLU backward at commit 5be9626709af2722333bf54797c954c09edeada3
+=== BACKWARD REPLACEMENT BOUNDARY ===
+Only backward of optional-bias-free activation boundary. FC1, FC2, forward, collectives, and bias gradient are excluded.
+=== SAVED TENSORS AVAILABLE ===
+intermediate [rows,width], grad_output [rows,width/2]. Both contiguous FP16.
+=== ABI ===
+extern C void launch_swiglu_backward(const half* intermediate, const half* grad_output, half* grad_intermediate, int rows, int width, float glu_linear_offset, cudaStream_t stream)
+Required marker exactly: // AKA_TARGET_CONTRACT: swiglu_backward_v1 intermediate,grad_output,grad_intermediate,rows,width,glu_linear_offset half_fp16 contiguous current_stream
+=== SEMANTICS ===
+grad_up=grad_output*SiLU(gate); grad_gate=grad_output*(up+offset)*sigmoid(gate)*(1+gate*(1-sigmoid(gate))); pack [grad_gate,grad_up]
+=== SHAPES ===
+[16,1,1024], [64,2,1024], [128,2,1024], rows=S*B,width=8192,offset=0.
+=== FORBIDDEN ===
+Do not change forward, do not include GEMMs, do not add bias semantics, do not synchronize, launch on passed stream.
+
+Write candidate.cu, hypothesis.json, AGENT.md in this episode directory and stop.

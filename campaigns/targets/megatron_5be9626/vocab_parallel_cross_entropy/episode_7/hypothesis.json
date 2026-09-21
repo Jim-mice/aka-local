@@ -1,0 +1,7 @@
+{
+  "hypothesis": "Fuse local shifted exponential, target extraction, and denominator reduction into one row-per-block kernel to reduce local kernel launches while preserving the caller's one MAX and two SUM collectives.",
+  "scope": "local prepare stage only",
+  "preserves": ["global-max shift", "target mask/extraction", "FP32 arithmetic", "one MAX collective", "two SUM collectives", "backward outside scope"],
+  "compatibility": "CUDA 11.8, V100 sm_70",
+  "expected_risk": "The fused row-per-block reduction assumes local_vocab fits the grid-stride loop and uses 256 threads per row."
+}

@@ -1,0 +1,84 @@
+Capture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-<REMOTE_USER>/nsys-report-6a98.qdstrm'
+[1/1] [0%                          ] aka_ce_backward_rank0.nsys-repCapture range started in the application.
+Capture range ended in the application.
+Generating '/tmp/nsys-<REMOTE_USER>/nsys-report-8bef.qdstrm'
+[1/1] [0%                          ] aka_ce_backward_rank1.nsys-repProcessing events...
+[1/1] [0%                          ] aka_ce_backward_rank1.nsys-repProcessing events...
+[1/1] [0%                          ] aka_ce_backward_rank0.nsys-rep[1/1] [5%                          ] aka_ce_backward_rank0.nsys-rep[1/1] [=========46%                ] aka_ce_backward_rank0.nsys-rep[1/1] [5%                          ] aka_ce_backward_rank1.nsys-rep[1/1] [=========46%                ] aka_ce_backward_rank1.nsys-rep[1/1] [=====================87%    ] aka_ce_backward_rank0.nsys-rep[1/1] [========================100%] aka_ce_backward_rank0.nsys-rep[1/1] [=====================87%    ] aka_ce_backward_rank1.nsys-rep[1/1] [========================100%] aka_ce_backward_rank1.nsys-rep[1/1] [========================100%] aka_ce_backward_rank1.nsys-rep
+Generated:
+	/home/<REMOTE_USER>/aka_ce_backward_rank1.nsys-rep
+[1/1] [========================100%] aka_ce_backward_rank0.nsys-rep
+Generated:
+	/home/<REMOTE_USER>/aka_ce_backward_rank0.nsys-rep
+
+STDERR
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+E0920 18:35:48.400000 2028654 torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 143) local_rank: 0 (pid: 2028716) of binary: /tmp/aka_ce_backward_profile.sh
+Traceback (most recent call last):
+  File "<REMOTE_HOME>/local/python3.10/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "<REMOTE_HOME>/local/python3.10/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/run.py", line 896, in <module>
+    main()
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 270, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/tmp/aka_ce_backward_profile.sh FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-09-20_18:35:48
+  host      : v100-srv
+  rank      : 1 (local_rank: 1)
+  exitcode  : 143 (pid: 2028717)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-09-20_18:35:48
+  host      : v100-srv
+  rank      : 0 (local_rank: 0)
+  exitcode  : 143 (pid: 2028716)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

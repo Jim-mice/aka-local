@@ -1,0 +1,17 @@
+{
+  "episode": 9,
+  "evaluator_revision": "rank-independent-fixture-and-safe-gradient-index",
+  "preflight": "PASS_PREFLIGHT",
+  "compile": "PASS",
+  "tp1": "NOT_RUN",
+  "tp2": "REJECT_CORRECTNESS",
+  "first_divergence_stage": "TARGET_LOGIT_WRONG",
+  "loss_max_abs": 4.2613182,
+  "saved_softmax": "PASS",
+  "collective_structure": [
+    "MAX",
+    "SUM predicted",
+    "SUM denominator"
+  ],
+  "performance": "NOT_RUN"
+}

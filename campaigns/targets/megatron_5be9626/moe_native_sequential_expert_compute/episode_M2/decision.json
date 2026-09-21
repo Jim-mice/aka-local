@@ -1,0 +1,7 @@
+{
+  "episode":"M2",
+  "candidate_sha256":"113a30309375ec776356434c103dc816daf3a36416e509540077a83f124af82",
+  "preflight":"REJECT_CONTRACT",
+  "reason":"required semantic target marker is absent; source is preserved and was not compiled or benchmarked",
+  "manual_repair":false
+}

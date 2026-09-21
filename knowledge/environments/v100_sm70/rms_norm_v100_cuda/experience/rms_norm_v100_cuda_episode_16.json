@@ -1,0 +1,12 @@
+{
+  "operator": "rms_norm_v100_cuda",
+  "episode": 16,
+  "result": {
+    "decision": "ACCEPT",
+    "speedup": 3.789,
+    "aggregate_score": 3.65,
+    "geometric_mean_speedup": 3.65
+  },
+  "lesson": "Episode 16: geo_mean=3.65x across 4 shapes, score=3.65",
+  "timestamp": "2026-09-19T07:40:52.446572+00:00"
+}

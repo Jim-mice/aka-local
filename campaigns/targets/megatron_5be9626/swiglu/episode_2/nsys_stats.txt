@@ -1,0 +1,218 @@
+{
+  "compile_pass": true,
+  "compile_error": "",
+  "contract_hash": "2b05cc321bed0956",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "shapes": [
+    {
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "dtype": "torch.float16",
+      "input_stride": [
+        8192,
+        8192,
+        1
+      ],
+      "output_stride": [
+        4096,
+        4096,
+        1
+      ],
+      "max_abs_error": 0.00048828125,
+      "max_rel_error": 0.0009717941284179688,
+      "correctness": true,
+      "baseline": {
+        "mean_us": 102.6675853729248,
+        "std_us": 2.9934766505447303,
+        "cv": 0.0291569791933001,
+        "samples_us": [
+          103.99200439453125,
+          101.67424201965332,
+          102.1622371673584,
+          106.8064022064209,
+          98.70304107666016
+        ]
+      },
+      "candidate": {
+        "mean_us": 16.519808053970337,
+        "std_us": 0.7403728745686184,
+        "cv": 0.04481728069417119,
+        "samples_us": [
+          17.563199996948242,
+          15.932799577713013,
+          16.078720092773438,
+          15.98080039024353,
+          17.043520212173462
+        ]
+      },
+      "baseline_latency_us": 102.6675853729248,
+      "candidate_latency_us": 16.519808053970337,
+      "speedup": 6.214817087311731
+    },
+    {
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "dtype": "torch.float16",
+      "input_stride": [
+        16384,
+        8192,
+        1
+      ],
+      "output_stride": [
+        8192,
+        4096,
+        1
+      ],
+      "max_abs_error": 0.00048828125,
+      "max_rel_error": 0.0009708404541015625,
+      "correctness": true,
+      "baseline": {
+        "mean_us": 102.16921615600586,
+        "std_us": 1.8254028179441784,
+        "cv": 0.01786646591432105,
+        "samples_us": [
+          101.5670394897461,
+          100.57951927185059,
+          100.82752227783203,
+          105.03040313720703,
+          102.84159660339355
+        ]
+      },
+      "candidate": {
+        "mean_us": 33.92121601104736,
+        "std_us": 0.10692372728926232,
+        "cv": 0.003152119524678588,
+        "samples_us": [
+          34.0831995010376,
+          33.973119258880615,
+          33.827199935913086,
+          33.8809609413147,
+          33.84160041809082
+        ]
+      },
+      "baseline_latency_us": 102.16921615600586,
+      "candidate_latency_us": 33.92121601104736,
+      "speedup": 3.0119561787741245
+    },
+    {
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "dtype": "torch.float16",
+      "input_stride": [
+        16384,
+        8192,
+        1
+      ],
+      "output_stride": [
+        8192,
+        4096,
+        1
+      ],
+      "max_abs_error": 0.00048828125,
+      "max_rel_error": 0.000972747802734375,
+      "correctness": true,
+      "baseline": {
+        "mean_us": 102.56518363952637,
+        "std_us": 1.6619150112644248,
+        "cv": 0.016203500567067274,
+        "samples_us": [
+          101.78336143493652,
+          102.51487731933594,
+          102.13151931762695,
+          101.02496147155762,
+          105.3711986541748
+        ]
+      },
+      "candidate": {
+        "mean_us": 54.887807846069336,
+        "std_us": 0.11357677946806591,
+        "cv": 0.002069253335578412,
+        "samples_us": [
+          54.836158752441406,
+          54.844160079956055,
+          55.09056091308594,
+          54.84255790710449,
+          54.82560157775879
+        ]
+      },
+      "baseline_latency_us": 102.56518363952637,
+      "candidate_latency_us": 54.887807846069336,
+      "speedup": 1.8686332660099365
+    }
+  ],
+  "correctness_pass": true,
+  "geometric_mean_speedup": 3.2703961188373896
+}
+Collecting data...
+Generating '/tmp/nsys-<REMOTE_USER>/nsys-report-31f4.qdstrm'
+[1/1] [0%                          ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [0%                          ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [==19%                       ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [==21%                       ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [===23%                      ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [===24%                      ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [====25%                     ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [====26%                     ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [====27%                     ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [====28%                     ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=====29%                    ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=====30%                    ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=====31%                    ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=====32%                    ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [======33%                   ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [======34%                   ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [======35%                   ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=======36%                  ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=======37%                  ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=======38%                  ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=======39%                  ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [========40%                 ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [========41%                 ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [========42%                 ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=========43%                ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=========44%                ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=========45%                ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [=========46%                ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [==========47%               ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [==========48%               ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [==========49%               ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [===========50%              ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [===========51%              ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [==============61%           ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [===============67%          ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [==================78%       ] aka_swiglu_ep2_nsys.nsys-rep[1/1] [========================100%] aka_swiglu_ep2_nsys.nsys-rep[1/1] [========================100%] aka_swiglu_ep2_nsys.nsys-rep
+Generated:
+	/tmp/aka_swiglu_ep2_nsys.nsys-rep
+Generating SQLite file /tmp/aka_swiglu_ep2_nsys.sqlite from /tmp/aka_swiglu_ep2_nsys.nsys-rep
+Processing [/tmp/aka_swiglu_ep2_nsys.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+33.3,48564033,1533,31679.1,32192.0,9408,59232,17879.7,"<unnamed>::swiglu_kernel(const __half *, const __half *, __half *, int, int, float)"
+29.2,42507917,1533,27728.6,25888.0,14048,48033,11883.2,"void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::<unnamed>::silu_kernel(at::TensorIteratorBase &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 5)]::operator ()() const::[lambda(c10::Half) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+23.2,33878265,1533,22099.3,20352.0,12320,36576,8653.4,"void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctorOnSelf_add<c10::Half>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+12.6,18424798,1533,12018.8,12352.0,6816,21536,4076.2,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.4,602018,5,120403.6,41600.0,11296,334241,136009.9,"void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::native::templates::cuda::normal_and_transform<c10::Half, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::<unnamed>::distribution_nullary_kernel<c10::Half, float, float4, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_and_transform<c10::Half, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T4, const T5 &, T6)::[lambda(int, float) (instance 1)]>(long, at::PhiloxCudaState, T3, T4)"
+0.2,327393,1,327393.0,327393.0,327393,327393,0.0,volta_fp16_s884gemm_fp16_128x256_ldg8_f2f_tn
+0.2,254177,6,42362.8,39120.0,32001,56896,10080.6,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::Half, at::native::func_wrapper_t<c10::Half, at::native::MaxNanFunctor<c10::Half>>, unsigned int, c10::Half, (int)4, (int)4>>(T3)"
+0.1,208480,1,208480.0,208480.0,208480,208480,0.0,volta_fp16_s884gemm_fp16_128x64_ldg8_f2f_tn
+0.1,172193,5,34438.6,15905.0,7008,91712,35665.5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.1,163104,15,10873.6,10368.0,6400,16224,3797.3,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AbsFunctor<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.1,107520,3,35840.0,33536.0,30592,43392,6703.8,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<bool, at::native::func_wrapper_t<bool, at::native::and_kernel_cuda(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(bool, bool) (instance 1)]>, unsigned int, bool, (int)4, (int)4>>(T3)"
+0.1,103808,1,103808.0,103808.0,103808,103808,0.0,void cutlass::Kernel<cutlass_70_wmma_tensorop_f16_s161616gemm_f16_16x16_64x2_tn_align8>(T1::Params)
+0.1,88320,3,29440.0,28768.0,16416,43136,13372.7,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::DivFunctor<c10::Half>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.1,75904,6,12650.7,12848.0,7072,17920,4807.3,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<c10::Half>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,66752,6,11125.3,10624.0,6944,16000,3948.6,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnSelf_add<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.0,66400,6,11066.7,11152.0,7200,16768,3623.1,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, bool, at::native::<unnamed>::CompareEqFunctor<c10::Half>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,41248,3,13749.3,14720.0,7936,18592,5393.9,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::<unnamed>::CompareFunctor<c10::Half>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,33216,3,11072.0,11072.0,6816,15328,4256.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::BitwiseAndFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,32992,3,10997.3,11296.0,6912,14784,3944.5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::binary_internal::MulFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,32384,3,10794.7,11456.0,6720,14208,3787.6,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::BitwiseOrFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,29952,3,9984.0,10336.0,6848,12768,2975.7,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<c10::Half, c10::Half, bool, at::native::<unnamed>::CompareEqFunctor<c10::Half>>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+
+Processing [/tmp/aka_swiglu_ep2_nsys.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_api_sum.py]... 
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+81.1,227921170,6205,36731.9,7426.0,4824,73494938,1051367.4,cudaLaunchKernel
+<REMOTE_HOST>,28337683,63,449804.5,6108.0,3102,3800368,1077894.4,cudaDeviceSynchronize
+6.9,19420173,2,9710086.5,9710086.5,2142483,17277690,10702207.5,cudaFree
+0.6,1787185,11,162471.4,139061.0,4774,347626,92252.0,cudaMalloc
+0.4,1237414,2,618707.0,618707.0,19850,1217564,846911.7,cudaHostAlloc
+0.3,844081,4,211020.3,206194.0,165324,266369,51100.8,cudaGetDeviceProperties
+0.1,308868,60,5147.8,4852.5,3992,12819,1514.7,cudaEventRecord
+0.1,261243,1152,226.8,180.0,90,6279,216.8,cuGetProcAddress
+0.1,195236,78,2503.0,2551.0,393,12220,1728.5,cudaEventCreateWithFlags
+0.1,140848,60,2347.5,1799.5,605,21423,2932.8,cudaEventDestroy
+0.0,132953,9,14772.6,12437.0,5561,30064,7953.1,cudaMemcpyAsync
+0.0,130816,9,14535.1,8950.0,7148,28092,9108.9,cudaStreamSynchronize
+0.0,51811,6,8635.2,6260.0,5139,15951,4616.7,cudaMemsetAsync
+0.0,48224,1,48224.0,48224.0,48224,48224,0.0,cuModuleUnload
+0.0,37277,18,2070.9,1446.5,381,14436,3181.9,cudaStreamIsCapturing
+0.0,7096,3,2365.3,2538.0,1819,2739,483.7,cuInit
+0.0,2749,5,549.8,291.0,143,1110,446.9,cuModuleGetLoadingMode
+
+
+STDERR
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(

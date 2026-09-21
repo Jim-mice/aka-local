@@ -1,0 +1,9 @@
+{
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "model_calls": 1,
+  "reviewers": 0,
+  "fallback": "none",
+  "status": "TurnStatus.completed",
+  "turn_id": "01a0a359-09ad-78a2-8c8e-f5e399452aca"
+}

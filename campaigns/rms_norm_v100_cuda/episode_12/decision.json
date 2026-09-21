@@ -1,0 +1,20 @@
+{
+  "episode": 12,
+  "operator": "rms_norm_v100_cuda",
+  "decision": "ACCEPT",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 3.245,
+  "aggregate_score": 2.892,
+  "geometric_mean_speedup": 2.892,
+  "incumbent_score": 2.652,
+  "reason": "",
+  "evaluated_at": "2026-09-19T06:18:53.844302+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "operator": "rms_norm_v100_cuda",
+  "episode": 22,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "performance",
+  "reason": "aggregate_score=0.038 <= incumbent=3.871",
+  "compiler_error": "",
+  "reusable_rule": "Avoid regressions: ensure kernel is faster than incumbent across ALL shapes",
+  "timestamp": "2026-09-19T10:14:12.290603+00:00"
+}

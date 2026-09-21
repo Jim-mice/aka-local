@@ -1,0 +1,1 @@
+{"type":"object","required":["campaign_id","episode_id","status"],"properties":{"campaign_id":{"type":"string"},"episode_id":{"type":"string"},"status":{"enum":["candidate_ready","pivot","blocked"]},"selected_experiment":{},"base_commit":{},"candidate_commit":{},"journal":{},"summary":{},"next_directions":{"type":"array"}}}

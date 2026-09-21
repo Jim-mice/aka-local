@@ -1,0 +1,40 @@
+{
+  "claim": "Implemented a standalone FP32 dense-attention backward path with separate coalesced elementwise kernels for dQ, dK, and dV, using fused multiply-add accumulation and no softmax recomputation.",
+  "strategy_tags": [
+    "coalesced_memory_access",
+    "parallel_reduction",
+    "fused_multiply_add",
+    "register_optimization"
+  ],
+  "expected_effects": [
+    "coalesced global-memory access for gradient outputs",
+    "fused multiply-add accumulation",
+    "independent parallel work across batch, head, sequence, and feature elements"
+  ],
+  "risk": [
+    "repeated dot-product work increases arithmetic intensity",
+    "register pressure",
+    "performance may be limited for long sequences"
+  ],
+  "operator": "dense_attention_backward_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "52a2863f6af6c627",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "q",
+      "k",
+      "v",
+      "p",
+      "grad_o",
+      "grad_q",
+      "grad_k",
+      "grad_v",
+      "batch",
+      "heads",
+      "seq",
+      "head_dim",
+      "scale"
+    ]
+  }
+}

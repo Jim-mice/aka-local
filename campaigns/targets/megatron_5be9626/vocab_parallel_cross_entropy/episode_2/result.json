@@ -1,0 +1,8 @@
+{
+  "episode": 2,
+  "compile_pass": false,
+  "tp1_sanity": "NOT_RUN",
+  "tp2_correctness": "NOT_RUN",
+  "benchmark": "NOT_RUN",
+  "error": "remote nvcc: CUDART_INF_F undefined"
+}

@@ -1,0 +1,18 @@
+{
+  "target_name": "Vocab-parallel Cross Entropy",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_files": ["megatron/core/tensor_parallel/cross_entropy.py", "megatron/core/fusions/fused_cross_entropy.py", "megatron/core/models/common/language_module/language_module.py"],
+  "call_sites": ["LanguageModule.compute_language_model_loss -> tensor_parallel.vocab_parallel_cross_entropy or fused_vocab_parallel_cross_entropy/TE path"],
+  "implementation_backend": "Megatron custom autograd Function with PyTorch tensor operations and torch.distributed TP all-reduces; optional native fused or TE implementation",
+  "forward": {"steps": ["local max over vocab partition", "MAX all-reduce", "local target-logit extraction and masking", "SUM all-reduce target logit", "exp and local sum", "SUM all-reduce exp sum", "log loss and normalized probabilities"], "saved_state": ["softmax/normalized exp", "target mask", "masked target"]},
+  "backward": {"path": "_VocabParallelCrossEntropy.backward", "steps": ["prepare gradient operands", "subtract target probability on owning rank", "scale by upstream gradient and smoothing", "write local vocab-partition gradient"]},
+  "inputs": ["vocab_parallel_logits [S,B,V/TP] or flattened equivalent", "target [S,B]", "TP process group"],
+  "outputs": ["loss [S,B] or fused reduction result", "local logits gradient [S,B,V/TP]"],
+  "symbolic_shapes": {"logits": "[S*B,V/TP]", "target": "[S*B]", "gradient": "[S*B,V/TP]"},
+  "dtypes": ["FP32", "FP16", "BF16; logits may be upcast for stability depending path"],
+  "distributed_semantics": {"required": true, "collectives": ["MAX logits_max", "SUM predicted target logits", "SUM sum_exp_logits"], "partition": "each TP rank owns contiguous vocabulary interval"},
+  "external_dependencies": ["PyTorch distributed/NCCL at runtime", "Transformer Engine optional", "native fused CUDA path optional"],
+  "v100_feasibility": "SUPPORTED_WITH_FALLBACK: PyTorch/Megatron path is viable on V100; fused TE/native availability and multi-GPU NCCL must be verified",
+  "candidate_optimization_boundary": "E: communication + compute graph; a standalone kernel cannot replace the TP semantic contract",
+  "open_questions": ["Exact fused implementation selected by final config", "Whether benchmark permits multi-rank V100 evaluation"]
+}

@@ -1,0 +1,8 @@
+{
+  "version":"moe_agent_delivery_marker_v1",
+  "literal":"// AKA_TARGET_CONTRACT: a1bb8ee0af6c250663e0935ae3deb07104975fc5904c56bb5b2f0d4e8032d1fe",
+  "required_once":true,
+  "parser_rule":"exact literal substring, including prefix and spacing",
+  "binds_to":"optimization_contract.json version and target identity",
+  "failure_classes":["MISSING_CONTRACT_MARKER","CONTRACT_HASH_MISMATCH"]
+}

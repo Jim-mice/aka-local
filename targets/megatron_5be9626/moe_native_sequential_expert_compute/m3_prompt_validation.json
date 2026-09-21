@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "checks": {
+    "marker": true,
+    "prototype": true,
+    "replay_hash": true,
+    "performance_hash": true,
+    "statistics_hash": true,
+    "distributions": true,
+    "toolchain": true,
+    "zero_token": true,
+    "excluded_routing": true,
+    "excluded_communication": true
+  }
+}

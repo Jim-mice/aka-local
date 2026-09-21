@@ -1,0 +1,89 @@
+{
+  "environment": "v100_sm70",
+  "operator": "dense_attention_backward_v100_cuda",
+  "score_era_policy": "Numerical scores from episodes 1-7 are legacy benchmark_contract_version 1; v2 scores use saved_p_backward_only and are not directly comparable.",
+  "legacy_scores": [0.606, 0.009],
+  "legacy_benchmark": true,
+  "best_patterns": [],
+  "avoid_patterns": [
+    "Avoid correctness failures: verify RMSNorm formula y=(x/rms(x))*weight",
+    "Avoid regressions: ensure kernel is faster than incumbent across ALL shapes",
+    "Avoid compilation errors: ensure candidate.cu is valid standalone CUDA C++"
+  ],
+  "successful_strategies": [],
+  "failed_strategies": [
+    {
+      "name": "correctness failed; max_error=39.759124755859375",
+      "episodes": [
+        1
+      ],
+      "reason": "correctness"
+    },
+    {
+      "name": "aggregate_score=0.606 <= incumbent=1.0",
+      "episodes": [
+        2
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/54da9858dcaa/candidate.cu(80): error: expression ",
+      "episodes": [
+        3
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "aggregate_score=0.007 <= incumbent=1.0",
+      "episodes": [
+        4
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "correctness failed; max_error=101.18525695800781",
+      "episodes": [
+        5
+      ],
+      "reason": "correctness"
+    },
+    {
+      "name": "correctness failed; max_error=11.9888277053833",
+      "episodes": [
+        6
+      ],
+      "reason": "correctness"
+    },
+    {
+      "name": "aggregate_score=0.009 <= incumbent=1.0",
+      "episodes": [
+        7
+      ],
+      "reason": "performance"
+    }
+  ],
+  "recommendations": [
+    "Use float4 vectorized loads for coalesced memory access on V100",
+    "Use warp-shuffle or shared-memory reduction for normalization statistics",
+    "Use one 256-thread block per row for row-wise normalization",
+    "Use shared-memory reduction for mean/variance or mean-of-squares",
+    "Guard all thread accesses with batch/row bounds checking",
+    "Test ALL evaluation shapes before claiming correctness"
+  ],
+  "confidence": "medium",
+  "apply_when": [
+    "Optimizing normalization kernels on V100 (sm_70)",
+    "Batch sizes 1-32 with hidden dim 4096",
+    "Standalone CUDA kernel with no PyTorch dependency"
+  ],
+  "avoid_when": [
+    "Single-shape-only testing (must validate all shapes)",
+    "Missing batch/row bounds checking in kernel",
+    "Compile failures from syntax errors",
+    "Regressions vs current incumbent on ANY shape"
+  ],
+  "best_score": 1.0,
+  "total_accepted": 0,
+  "total_rejected": 7,
+  "last_updated": "2026-09-19T17:17:17.059247+00:00"
+}

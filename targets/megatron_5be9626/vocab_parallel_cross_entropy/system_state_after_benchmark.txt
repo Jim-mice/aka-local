@@ -1,0 +1,21 @@
+--- nvidia-smi --query-gpu=index,pci.bus_id,name,temperature.gpu,power.draw,power.limit,clocks.sm,clocks.mem,pstate,utilization.gpu,utilization.memory --format=csv,noheader ---
+0, 00000000:08:00.0, Tesla V100-PCIE-16GB, 77, 106.01 W, 250.00 W, 315 MHz, 877 MHz, P0, 0 %, 0 %
+1, 00000000:84:00.0, Tesla V100-PCIE-16GB, 47, 45.60 W, 250.00 W, 363 MHz, 877 MHz, P0, 100 %, 0 %
+
+--- env | sort | grep -E '^(NCCL|CUDA|CUDA_VISIBLE|MASTER|OMP)_' ---
+
+--- nvidia-smi topo -m ---
+	[4mGPU0	GPU1	CPU Affinity	NUMA Affinity	GPU NUMA ID[0m
+GPU0	 X 	SYS	0-7,16-23	0		N/A
+GPU1	SYS	 X 	8-15,24-31	1		N/A
+
+Legend:
+
+  X    = Self
+  SYS  = Connection traversing PCIe as well as the SMP interconnect between NUMA nodes (e.g., QPI/UPI)
+  NODE = Connection traversing PCIe as well as the interconnect between PCIe Host Bridges within a NUMA node
+  PHB  = Connection traversing PCIe as well as a PCIe Host Bridge (typically the CPU)
+  PXB  = Connection traversing multiple PCIe bridges (without traversing the PCIe Host Bridge)
+  PIX  = Connection traversing at most a single PCIe bridge
+  NV#  = Connection traversing a bonded set of # NVLinks
+

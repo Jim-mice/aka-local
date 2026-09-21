@@ -1,0 +1,18 @@
+{
+  "candidate": "B2",
+  "operation": "vocab_parallel_cross_entropy_backward",
+  "strategy": "single direct FP32 grid-stride kernel",
+  "hypothesis": "Fuse the row-wise grad_output multiply and owner-only target subtraction into one kernel, eliminating arange, temporary update, indexed writes, and separate multiply/update launches.",
+  "correctness": {
+    "owner_row": "softmax[row,col] * grad_output[row] - grad_output[row] when col equals masked_target_1d[row]",
+    "non_owner_row": "softmax[row,col] * grad_output[row]",
+    "arithmetic": "FP32 multiply followed by conditional FP32 subtraction",
+    "softmax_policy": "read-only; no in-place requirement"
+  },
+  "launch": {
+    "threads": 256,
+    "stream": "caller-supplied stream",
+    "synchronization": "none"
+  },
+  "scope": "backward local only; no collective, label smoothing, allocation, or cast-back"
+}

@@ -1,0 +1,37 @@
+{
+  "claim": "Use one warp per query row with warp-shuffle dot-product reductions, fused multiply-add accumulation, and a two-pass numerically stable softmax.",
+  "strategy_tags": [
+    "warp_shuffle_reduction",
+    "coalesced_memory_access",
+    "parallel_reduction",
+    "fused_multiply_add",
+    "register_optimization"
+  ],
+  "expected_effects": [
+    "reduce synchronization",
+    "reduce shared memory traffic",
+    "coalesce Q, K, V, and O accesses",
+    "avoid materializing the attention matrix"
+  ],
+  "risk": [
+    "recomputes QK scores during the softmax normalization and value accumulation passes",
+    "register pressure for larger head dimensions"
+  ],
+  "operator": "dense_attention_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "8e7bfd5ec5c4a17f",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "q",
+      "k",
+      "v",
+      "o",
+      "batch",
+      "heads",
+      "seq",
+      "head_dim",
+      "scale"
+    ]
+  }
+}

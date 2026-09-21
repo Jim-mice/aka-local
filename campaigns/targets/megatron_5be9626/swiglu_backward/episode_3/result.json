@@ -1,0 +1,6 @@
+{
+  "compile_pass": false,
+  "compile_error": "/tmp/aka_swiglu_backward_3.cu(42): error: type name is not allowed\n\n/tmp/aka_swiglu_backward_3.cu(42): warning #174-D: expression has no effect\n\n1 error detected in the compilation of \"/tmp/aka_swiglu_backward_3.cu\".\n",
+  "contract_hash": "a7437b0c42289669",
+  "shapes": []
+}

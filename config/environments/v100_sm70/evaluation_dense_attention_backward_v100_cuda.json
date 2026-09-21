@@ -1,0 +1,45 @@
+{
+  "shapes": [
+    [
+      1,
+      2,
+      32,
+      32
+    ],
+    [
+      1,
+      4,
+      64,
+      64
+    ],
+    [
+      1,
+      8,
+      128,
+      64
+    ],
+    [
+      2,
+      4,
+      128,
+      64
+    ]
+  ],
+  "score": "geometric_mean_speedup",
+  "correctness_tolerance": 0.002,
+  "correctness_relative_tolerance": 0.002,
+  "warmup": 5,
+  "iterations": 30,
+  "benchmark_contract": {
+    "version": 2,
+    "mode": "saved_p_backward_only",
+    "correctness_oracle": "pytorch_autograd",
+    "performance_baseline": "pytorch_saved_p_analytical"
+  },
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract": {
+    "function": "launch_kernel",
+    "signature": "void launch_kernel(float* q, float* k, float* v, float* p, float* grad_o, float* grad_q, float* grad_k, float* grad_v, int batch, int heads, int seq, int head_dim, float scale)"
+  }
+}

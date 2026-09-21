@@ -1,0 +1,31 @@
+{
+  "operator": "dense_attention_v100_cuda",
+  "phase": "13-A reference baseline",
+  "timestamp": "2026-09-19T14:24:21Z",
+  "shapes": {
+    "1,4,64,64": {
+      "correctness": true,
+      "latency_us": 3906.65,
+      "torch_naive_us": 124.66,
+      "torch_opt_us": 124.98
+    },
+    "1,8,128,64": {
+      "correctness": true,
+      "latency_us": 12132.46,
+      "torch_naive_us": 168.86,
+      "torch_opt_us": 237.98
+    },
+    "2,8,256,64": {
+      "correctness": true,
+      "latency_us": 45531.8,
+      "torch_naive_us": 528.52,
+      "torch_opt_us": 462.52
+    },
+    "1,16,512,64": {
+      "correctness": true,
+      "latency_us": 196966.86,
+      "torch_naive_us": 1820.36,
+      "torch_opt_us": 1342.58
+    }
+  }
+}

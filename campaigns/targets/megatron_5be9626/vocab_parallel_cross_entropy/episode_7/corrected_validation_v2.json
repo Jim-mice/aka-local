@@ -1,0 +1,33 @@
+{
+  "episode": 7,
+  "evaluator_revision": "rank-independent-fixture-and-safe-gradient-index",
+  "preflight": "PASS_PREFLIGHT",
+  "compile": "PASS",
+  "tp1": "PASS",
+  "tp2": "PASS_CORRECTNESS",
+  "first_divergence_stage": "NONE",
+  "loss_max_abs": 0.00190449,
+  "saved_softmax": "PASS",
+  "collective_structure": [
+    "MAX",
+    "SUM predicted",
+    "SUM denominator"
+  ],
+  "performance": "NOT_RUN",
+  "original_evaluator_result": "superseded_by_evaluator_defect",
+  "candidate_hash": "947e17aa55f8cbb6d6ab85e8e671e0a1f1be26c7ef54a5bec727d5839549d5c6",
+  "evaluator_version": "tp2_semantic_v2",
+  "evaluator_hash": "7cc0fac8d80b2d27",
+  "fixture_generation_version": "coherent_global_fixture_v2",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "baseline_hash": "f11fd1fc6846d6f2",
+  "collective_invariant": [
+    "1 MAX all-reduce",
+    "2 SUM all-reduce"
+  ],
+  "saved_softmax_correct": true,
+  "rank0_gradient_correct": true,
+  "rank1_gradient_correct": true,
+  "performance_eligible": true,
+  "performance_status": "pending"
+}

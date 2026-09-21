@@ -1,0 +1,8 @@
+{
+  "target": "swiglu",
+  "hypothesis": "A single current-stream kernel can replace the separate bias/add, SiLU, and multiply elementwise launches while preserving the activation-only ABI and FP16 output semantics.",
+  "scope": "optional bias add, gate/up split, SiLU(gate), multiply by up plus offset",
+  "excluded": ["FC1 GEMM", "FC2 GEMM", "TP collectives", "TE", "FP8", "dropout", "residual BDA"],
+  "optimization": "one FP16 activation kernel with one output write per element",
+  "validation_required": ["nvcc compilation", "FP16 replay against torch.nn.functional.silu", "official-shape correctness", "benchmark outside this task"]
+}

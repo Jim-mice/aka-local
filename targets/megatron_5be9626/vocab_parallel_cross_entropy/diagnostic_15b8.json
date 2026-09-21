@@ -1,0 +1,22 @@
+{
+  "phase": "15-B.8",
+  "status": "FORWARD_CAMPAIGN_CLOSED",
+  "diagnosis": [
+    "COLLECTIVE_DOMINATED",
+    "SYNCHRONIZATION_OVERHEAD",
+    "RANK_SKEW"
+  ],
+  "evidence": {
+    "stable_boundary_reference_ms": 13.4,
+    "stable_boundary_episode_7_ms": 5.4,
+    "episode_7_speedup": 2.4771907400291515,
+    "stage_probe": "normal local_max 78-96 us, prepare 12-15 us, SUM stages 24-34 us; one SUM delay about 2.6 ms with complementary rank wait",
+    "promotion_nsys": "candidate rank-0 NCCL SUM family 330125573 ns across 121 instances; candidate custom local kernels 624209 ns across 60 instances; reference rank-0 NCCL SUM family 529254488 ns across 121 instances",
+    "rank_skew": "preserved raw samples include rank-1 stalls around 8.3-11.1 ms while rank 0 remained around 2.8-3.0 ms"
+  },
+  "limitations": [
+    "NSYS aggregate kernel summaries do not isolate exact event-range fractions for the complete boundary",
+    "no NCU hardware bottleneck claim is made",
+    "the three collectives remain mathematically mandatory under the frozen contract"
+  ]
+}

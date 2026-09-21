@@ -1,0 +1,7 @@
+{
+  "episode": 8,
+  "operator": "rms_norm_v100_cuda",
+  "created_time": "2026-09-19T05:52:27.353692+00:00",
+  "phase": "8-B",
+  "multi_shape": true
+}

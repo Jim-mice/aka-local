@@ -1,0 +1,2354 @@
+{
+  "action": "correctness",
+  "records": [
+    {
+      "world": 1,
+      "config": {
+        "S": 8,
+        "B": 1,
+        "V": 32
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"config\": {\n    \"S\": 8,\n    \"B\": 1,\n    \"V\": 32,\n    \"N\": 8,\n    \"local_vocab\": 32\n  },\n  \"seed\": 1515,\n  \"rank\": 0,\n  \"world\": 1,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.0004087686538696289,\n      \"max_rel\": 0.00045767833944410086,\n      \"mean_abs\": 8.921225344238337e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.0004087686538696289,\n      \"max_rel\": 0.0004578879161272198,\n      \"mean_abs\": 8.921225344238337e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        8,\n        1,\n        32\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        32,\n        32,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 256,\n      \"min\": 0.0014439260121434927,\n      \"max\": 0.19234943389892578,\n      \"mean\": 0.03125,\n      \"sum\": 8.0,\n      \"selected\": [\n        0.07510475814342499,\n        0.00977970939129591,\n        0.006429367233067751,\n        0.07628749310970306,\n        0.03533867001533508,\n        0.008757918141782284,\n        0.004484040662646294,\n        0.009455705992877483\n      ],\n      \"sha256\": \"41150c38f3f272d35d271a81c57b65104b655a3f1a2ab12511ce46f39ef869e2\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        8,\n        1\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 8,\n      \"min\": 0.0,\n      \"max\": 0.0,\n      \"mean\": 0.0,\n      \"sum\": 0.0,\n      \"selected\": [\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0\n      ],\n      \"sha256\": \"af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        8\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 8,\n      \"min\": 7.0,\n      \"max\": 28.0,\n      \"mean\": 16.0,\n      \"sum\": 128.0,\n      \"selected\": [\n        22.0,\n        7.0,\n        13.0,\n        8.0,\n        15.0,\n        21.0,\n        14.0,\n        28.0\n      ],\n      \"sha256\": \"0df251cb674d36d3f66a1d4d54d3f5c651802f201e26345958edd9af68965a74\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"SKIPPED\",\n    \"reason\": \"edge ownership fixtures require TP=2\"\n  }\n}\n",
+      "stderr": "/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n",
+      "rank0": {
+        "config": {
+          "S": 8,
+          "B": 1,
+          "V": 32,
+          "N": 8,
+          "local_vocab": 32
+        },
+        "seed": 1515,
+        "rank": 0,
+        "world": 1,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.0004087686538696289,
+            "max_rel": 0.00045767833944410086,
+            "mean_abs": 8.921225344238337e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.0004087686538696289,
+            "max_rel": 0.0004578879161272198,
+            "mean_abs": 8.921225344238337e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              8,
+              1,
+              32
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "stride": [
+              32,
+              32,
+              1
+            ],
+            "contiguous": true,
+            "numel": 256,
+            "min": 0.0014439260121434927,
+            "max": 0.19234943389892578,
+            "mean": 0.03125,
+            "sum": 8.0,
+            "selected": [
+              0.07510475814342499,
+              0.00977970939129591,
+              0.006429367233067751,
+              0.07628749310970306,
+              0.03533867001533508,
+              0.008757918141782284,
+              0.004484040662646294,
+              0.009455705992877483
+            ],
+            "sha256": "41150c38f3f272d35d271a81c57b65104b655a3f1a2ab12511ce46f39ef869e2"
+          },
+          "target_mask": {
+            "shape": [
+              8,
+              1
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:0",
+            "stride": [
+              1,
+              1
+            ],
+            "contiguous": true,
+            "numel": 8,
+            "min": 0.0,
+            "max": 0.0,
+            "mean": 0.0,
+            "sum": 0.0,
+            "selected": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sha256": "af5570f5a1810b7af78caf4bc70a660f0df51e42baf91d4de5b2328de0e83dfc"
+          },
+          "masked_target_1d": {
+            "shape": [
+              8
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 8,
+            "min": 7.0,
+            "max": 28.0,
+            "mean": 16.0,
+            "sum": 128.0,
+            "selected": [
+              22.0,
+              7.0,
+              13.0,
+              8.0,
+              15.0,
+              21.0,
+              14.0,
+              28.0
+            ],
+            "sha256": "0df251cb674d36d3f66a1d4d54d3f5c651802f201e26345958edd9af68965a74"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "SKIPPED",
+          "reason": "edge ownership fixtures require TP=2"
+        }
+      }
+    },
+    {
+      "world": 1,
+      "config": {
+        "S": 32,
+        "B": 2,
+        "V": 64
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"config\": {\n    \"S\": 32,\n    \"B\": 2,\n    \"V\": 64,\n    \"N\": 64,\n    \"local_vocab\": 64\n  },\n  \"seed\": 1515,\n  \"rank\": 0,\n  \"world\": 1,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.0004564523696899414,\n      \"max_rel\": 0.0004745601618196815,\n      \"mean_abs\": 4.223515134071931e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.0004564523696899414,\n      \"max_rel\": 0.00047478548367507756,\n      \"mean_abs\": 4.223515134071931e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        32,\n        2,\n        64\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        128,\n        64,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 4096,\n      \"min\": 0.0002925125590991229,\n      \"max\": 0.3396856188774109,\n      \"mean\": 0.015625,\n      \"sum\": 64.0,\n      \"selected\": [\n        0.03589756414294243,\n        0.004674374125897884,\n        0.003073022235184908,\n        0.03646286949515343,\n        0.01689070090651512,\n        0.004185991827398539,\n        0.002143221441656351,\n        0.004519511014223099\n      ],\n      \"sha256\": \"162bb5b66db62f38d3c5380f813ff9bdf305225951af9a4a0400a3dd4d35f5dd\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        32,\n        2\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        2,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 64,\n      \"min\": 0.0,\n      \"max\": 0.0,\n      \"mean\": 0.0,\n      \"sum\": 0.0,\n      \"selected\": [\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0\n      ],\n      \"sha256\": \"f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        64\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 64,\n      \"min\": 1.0,\n      \"max\": 63.0,\n      \"mean\": 34.125,\n      \"sum\": 2184.0,\n      \"selected\": [\n        54.0,\n        7.0,\n        13.0,\n        8.0,\n        47.0,\n        53.0,\n        46.0,\n        60.0\n      ],\n      \"sha256\": \"33afba46fc529d67f9fba2a169fe7e379928f36e7b5c90d6da82f939884a3d76\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"SKIPPED\",\n    \"reason\": \"edge ownership fixtures require TP=2\"\n  }\n}\n",
+      "stderr": "/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n",
+      "rank0": {
+        "config": {
+          "S": 32,
+          "B": 2,
+          "V": 64,
+          "N": 64,
+          "local_vocab": 64
+        },
+        "seed": 1515,
+        "rank": 0,
+        "world": 1,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.0004564523696899414,
+            "max_rel": 0.0004745601618196815,
+            "mean_abs": 4.223515134071931e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.0004564523696899414,
+            "max_rel": 0.00047478548367507756,
+            "mean_abs": 4.223515134071931e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              32,
+              2,
+              64
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "stride": [
+              128,
+              64,
+              1
+            ],
+            "contiguous": true,
+            "numel": 4096,
+            "min": 0.0002925125590991229,
+            "max": 0.3396856188774109,
+            "mean": 0.015625,
+            "sum": 64.0,
+            "selected": [
+              0.03589756414294243,
+              0.004674374125897884,
+              0.003073022235184908,
+              0.03646286949515343,
+              0.01689070090651512,
+              0.004185991827398539,
+              0.002143221441656351,
+              0.004519511014223099
+            ],
+            "sha256": "162bb5b66db62f38d3c5380f813ff9bdf305225951af9a4a0400a3dd4d35f5dd"
+          },
+          "target_mask": {
+            "shape": [
+              32,
+              2
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:0",
+            "stride": [
+              2,
+              1
+            ],
+            "contiguous": true,
+            "numel": 64,
+            "min": 0.0,
+            "max": 0.0,
+            "mean": 0.0,
+            "sum": 0.0,
+            "selected": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sha256": "f5a5fd42d16a20302798ef6ed309979b43003d2320d9f0e8ea9831a92759fb4b"
+          },
+          "masked_target_1d": {
+            "shape": [
+              64
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 64,
+            "min": 1.0,
+            "max": 63.0,
+            "mean": 34.125,
+            "sum": 2184.0,
+            "selected": [
+              54.0,
+              7.0,
+              13.0,
+              8.0,
+              47.0,
+              53.0,
+              46.0,
+              60.0
+            ],
+            "sha256": "33afba46fc529d67f9fba2a169fe7e379928f36e7b5c90d6da82f939884a3d76"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "SKIPPED",
+          "reason": "edge ownership fixtures require TP=2"
+        }
+      }
+    },
+    {
+      "world": 1,
+      "config": {
+        "S": 128,
+        "B": 2,
+        "V": 128
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"config\": {\n    \"S\": 128,\n    \"B\": 2,\n    \"V\": 128,\n    \"N\": 256,\n    \"local_vocab\": 128\n  },\n  \"seed\": 1515,\n  \"rank\": 0,\n  \"world\": 1,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.00048029422760009766,\n      \"max_rel\": 0.0004830615362152457,\n      \"mean_abs\": 2.0711331671918742e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.00048029422760009766,\n      \"max_rel\": 0.000482922449009493,\n      \"mean_abs\": 2.0711331671918742e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        128,\n        2,\n        128\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        256,\n        128,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 32768,\n      \"min\": 0.00012344490096438676,\n      \"max\": 0.2381904125213623,\n      \"mean\": 0.0078125,\n      \"sum\": 256.0,\n      \"selected\": [\n        0.019413214176893234,\n        0.0025278767570853233,\n        0.0016618743538856506,\n        0.019718928262591362,\n        0.009134402498602867,\n        0.002263762289658189,\n        0.0011590429348871112,\n        0.00244412780739367\n      ],\n      \"sha256\": \"8587383b0c159c4349d9c0a6bb25339969efa642f18c236adb746c8c6e6b7955\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        128,\n        2\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        2,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 256,\n      \"min\": 0.0,\n      \"max\": 0.0,\n      \"mean\": 0.0,\n      \"sum\": 0.0,\n      \"selected\": [\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0\n      ],\n      \"sha256\": \"5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        256\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 256,\n      \"min\": 0.0,\n      \"max\": 127.0,\n      \"mean\": 67.35546875,\n      \"sum\": 17243.0,\n      \"selected\": [\n        54.0,\n        7.0,\n        13.0,\n        72.0,\n        111.0,\n        117.0,\n        46.0,\n        60.0\n      ],\n      \"sha256\": \"74ba596812532536f74d54120261bc6e79f8c5af0230c21c33af2016fe1b65bd\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"SKIPPED\",\n    \"reason\": \"edge ownership fixtures require TP=2\"\n  }\n}\n",
+      "stderr": "/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n",
+      "rank0": {
+        "config": {
+          "S": 128,
+          "B": 2,
+          "V": 128,
+          "N": 256,
+          "local_vocab": 128
+        },
+        "seed": 1515,
+        "rank": 0,
+        "world": 1,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.00048029422760009766,
+            "max_rel": 0.0004830615362152457,
+            "mean_abs": 2.0711331671918742e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.00048029422760009766,
+            "max_rel": 0.000482922449009493,
+            "mean_abs": 2.0711331671918742e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              128,
+              2,
+              128
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "stride": [
+              256,
+              128,
+              1
+            ],
+            "contiguous": true,
+            "numel": 32768,
+            "min": 0.00012344490096438676,
+            "max": 0.2381904125213623,
+            "mean": 0.0078125,
+            "sum": 256.0,
+            "selected": [
+              0.019413214176893234,
+              0.0025278767570853233,
+              0.0016618743538856506,
+              0.019718928262591362,
+              0.009134402498602867,
+              0.002263762289658189,
+              0.0011590429348871112,
+              0.00244412780739367
+            ],
+            "sha256": "8587383b0c159c4349d9c0a6bb25339969efa642f18c236adb746c8c6e6b7955"
+          },
+          "target_mask": {
+            "shape": [
+              128,
+              2
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:0",
+            "stride": [
+              2,
+              1
+            ],
+            "contiguous": true,
+            "numel": 256,
+            "min": 0.0,
+            "max": 0.0,
+            "mean": 0.0,
+            "sum": 0.0,
+            "selected": [
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sha256": "5341e6b2646979a70e57653007a1f310169421ec9bdd9f1a5648f75ade005af1"
+          },
+          "masked_target_1d": {
+            "shape": [
+              256
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 256,
+            "min": 0.0,
+            "max": 127.0,
+            "mean": 67.35546875,
+            "sum": 17243.0,
+            "selected": [
+              54.0,
+              7.0,
+              13.0,
+              72.0,
+              111.0,
+              117.0,
+              46.0,
+              60.0
+            ],
+            "sha256": "74ba596812532536f74d54120261bc6e79f8c5af0230c21c33af2016fe1b65bd"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "SKIPPED",
+          "reason": "edge ownership fixtures require TP=2"
+        }
+      }
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 8,
+        "B": 1,
+        "V": 32
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"config\": {\n    \"S\": 8,\n    \"B\": 1,\n    \"V\": 32,\n    \"N\": 8,\n    \"local_vocab\": 16\n  },\n  \"seed\": 1515,\n  \"rank\": 0,\n  \"world\": 2,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.0002416372299194336,\n      \"max_rel\": 0.00045767833944410086,\n      \"mean_abs\": 1.0141557140741497e-05\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.0002416372299194336,\n      \"max_rel\": 0.0004578879161272198,\n      \"mean_abs\": 1.0141557140741497e-05\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        8,\n        1,\n        16\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        16,\n        16,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 128,\n      \"min\": 0.0020697820000350475,\n      \"max\": 0.14341242611408234,\n      \"mean\": 0.02947484888136387,\n      \"sum\": 3.772780656814575,\n      \"selected\": [\n        0.07510475814342499,\n        0.00977970939129591,\n        0.006429367233067751,\n        0.07628749310970306,\n        0.03533867001533508,\n        0.008757918141782284,\n        0.004484040662646294,\n        0.009455705992877483\n      ],\n      \"sha256\": \"e8d055843dc565a5a047e1a8e31c6dfc3075c4e4e5b74dc775d54cc2cca7bdb3\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        8,\n        1\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 8,\n      \"min\": 0.0,\n      \"max\": 1.0,\n      \"mean\": 0.375,\n      \"sum\": 3.0,\n      \"selected\": [\n        1.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        1.0,\n        0.0,\n        1.0\n      ],\n      \"sha256\": \"6b8dd691ec2ebf428bae82ef84e9a59473266dedab91ab9be9d0998a88476f17\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        8\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 8,\n      \"min\": 0.0,\n      \"max\": 15.0,\n      \"mean\": 7.125,\n      \"sum\": 57.0,\n      \"selected\": [\n        0.0,\n        7.0,\n        13.0,\n        8.0,\n        15.0,\n        0.0,\n        14.0,\n        0.0\n      ],\n      \"sha256\": \"7cfd5fadadd12b39c8f1c6b43337529e4bf2ce45cf28c841489d1932a00412db\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"PASS\",\n    \"cases\": [\n      {\n        \"name\": \"target_rank0_first_global_max_rank0\",\n        \"rank\": 0,\n        \"target\": [\n          0,\n          5\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          0,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          0,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"target_rank1_last_global_max_rank1\",\n        \"rank\": 0,\n        \"target\": [\n          7,\n          2\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          2\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          2\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"equal_logits\",\n        \"rank\": 0,\n        \"target\": [\n          1,\n          6\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          1,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          1,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"large_positive_negative\",\n        \"rank\": 0,\n        \"target\": [\n          3,\n          4\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          3,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          3,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      }\n    ]\n  }\n}\n{\n  \"config\": {\n    \"S\": 8,\n    \"B\": 1,\n    \"V\": 32,\n    \"N\": 8,\n    \"local_vocab\": 16\n  },\n  \"seed\": 1515,\n  \"rank\": 1,\n  \"world\": 2,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.0004087686538696289,\n      \"max_rel\": 0.0004194036009721458,\n      \"mean_abs\": 7.700894457229879e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.0004087686538696289,\n      \"max_rel\": 0.0004195795627310872,\n      \"mean_abs\": 7.700894457229879e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        8,\n        1,\n        16\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        16,\n        16,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 128,\n      \"min\": 0.0014439260121434927,\n      \"max\": 0.19234943389892578,\n      \"mean\": 0.03302515298128128,\n      \"sum\": 4.227219581604004,\n      \"selected\": [\n        0.05052153393626213,\n        0.0028363466262817383,\n        0.0368182398378849,\n        0.01229348685592413,\n        0.019686944782733917,\n        0.01565084047615528,\n        0.015160058625042439,\n        0.012708520516753197\n      ],\n      \"sha256\": \"ea8b751c709414ddbd8246a1d61d5d1756e418bd7e7d7614349bbd0bd2af4729\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        8,\n        1\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        1,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 8,\n      \"min\": 0.0,\n      \"max\": 1.0,\n      \"mean\": 0.625,\n      \"sum\": 5.0,\n      \"selected\": [\n        0.0,\n        1.0,\n        1.0,\n        1.0,\n        1.0,\n        0.0,\n        1.0,\n        0.0\n      ],\n      \"sha256\": \"f2246a28fb3df90b2b7acdb2bb8494552e3c4c8408ab62f826ed5d337e00d6c2\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        8\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 8,\n      \"min\": 0.0,\n      \"max\": 12.0,\n      \"mean\": 2.875,\n      \"sum\": 23.0,\n      \"selected\": [\n        6.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0,\n        5.0,\n        0.0,\n        12.0\n      ],\n      \"sha256\": \"4f10f029c8be1780b1b31999b947c4df9650c72e929aa06955c2af6baed86f97\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"PASS\",\n    \"cases\": [\n      {\n        \"name\": \"target_rank0_first_global_max_rank0\",\n        \"rank\": 1,\n        \"target\": [\n          0,\n          5\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          1\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          1\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"target_rank1_last_global_max_rank1\",\n        \"rank\": 1,\n        \"target\": [\n          7,\n          2\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          3,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          3,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"equal_logits\",\n        \"rank\": 1,\n        \"target\": [\n          1,\n          6\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          2\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          2\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"large_positive_negative\",\n        \"rank\": 1,\n        \"target\": [\n          3,\n          4\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          0\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      }\n    ]\n  }\n}\n",
+      "stderr": "\n*****************************************\nSetting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n*****************************************\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n",
+      "rank0": {
+        "config": {
+          "S": 8,
+          "B": 1,
+          "V": 32,
+          "N": 8,
+          "local_vocab": 16
+        },
+        "seed": 1515,
+        "rank": 0,
+        "world": 2,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.0002416372299194336,
+            "max_rel": 0.00045767833944410086,
+            "mean_abs": 1.0141557140741497e-05
+          },
+          "direct_vs_oracle": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.0002416372299194336,
+            "max_rel": 0.0004578879161272198,
+            "mean_abs": 1.0141557140741497e-05
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              8,
+              1,
+              16
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "stride": [
+              16,
+              16,
+              1
+            ],
+            "contiguous": true,
+            "numel": 128,
+            "min": 0.0020697820000350475,
+            "max": 0.14341242611408234,
+            "mean": 0.02947484888136387,
+            "sum": 3.772780656814575,
+            "selected": [
+              0.07510475814342499,
+              0.00977970939129591,
+              0.006429367233067751,
+              0.07628749310970306,
+              0.03533867001533508,
+              0.008757918141782284,
+              0.004484040662646294,
+              0.009455705992877483
+            ],
+            "sha256": "e8d055843dc565a5a047e1a8e31c6dfc3075c4e4e5b74dc775d54cc2cca7bdb3"
+          },
+          "target_mask": {
+            "shape": [
+              8,
+              1
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:0",
+            "stride": [
+              1,
+              1
+            ],
+            "contiguous": true,
+            "numel": 8,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.375,
+            "sum": 3.0,
+            "selected": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              0.0,
+              1.0
+            ],
+            "sha256": "6b8dd691ec2ebf428bae82ef84e9a59473266dedab91ab9be9d0998a88476f17"
+          },
+          "masked_target_1d": {
+            "shape": [
+              8
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 8,
+            "min": 0.0,
+            "max": 15.0,
+            "mean": 7.125,
+            "sum": 57.0,
+            "selected": [
+              0.0,
+              7.0,
+              13.0,
+              8.0,
+              15.0,
+              0.0,
+              14.0,
+              0.0
+            ],
+            "sha256": "7cfd5fadadd12b39c8f1c6b43337529e4bf2ce45cf28c841489d1932a00412db"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "PASS",
+          "cases": [
+            {
+              "name": "target_rank0_first_global_max_rank0",
+              "rank": 0,
+              "target": [
+                0,
+                5
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                0,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                0,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "target_rank1_last_global_max_rank1",
+              "rank": 0,
+              "target": [
+                7,
+                2
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                2
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                2
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "equal_logits",
+              "rank": 0,
+              "target": [
+                1,
+                6
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                1,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                1,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "large_positive_negative",
+              "rank": 0,
+              "target": [
+                3,
+                4
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                3,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                3,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            }
+          ]
+        }
+      },
+      "rank1": {
+        "config": {
+          "S": 8,
+          "B": 1,
+          "V": 32,
+          "N": 8,
+          "local_vocab": 16
+        },
+        "seed": 1515,
+        "rank": 1,
+        "world": 2,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.0004087686538696289,
+            "max_rel": 0.0004194036009721458,
+            "mean_abs": 7.700894457229879e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.0004087686538696289,
+            "max_rel": 0.0004195795627310872,
+            "mean_abs": 7.700894457229879e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              8,
+              1,
+              16
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:1",
+            "stride": [
+              16,
+              16,
+              1
+            ],
+            "contiguous": true,
+            "numel": 128,
+            "min": 0.0014439260121434927,
+            "max": 0.19234943389892578,
+            "mean": 0.03302515298128128,
+            "sum": 4.227219581604004,
+            "selected": [
+              0.05052153393626213,
+              0.0028363466262817383,
+              0.0368182398378849,
+              0.01229348685592413,
+              0.019686944782733917,
+              0.01565084047615528,
+              0.015160058625042439,
+              0.012708520516753197
+            ],
+            "sha256": "ea8b751c709414ddbd8246a1d61d5d1756e418bd7e7d7614349bbd0bd2af4729"
+          },
+          "target_mask": {
+            "shape": [
+              8,
+              1
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:1",
+            "stride": [
+              1,
+              1
+            ],
+            "contiguous": true,
+            "numel": 8,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.625,
+            "sum": 5.0,
+            "selected": [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              1.0,
+              0.0
+            ],
+            "sha256": "f2246a28fb3df90b2b7acdb2bb8494552e3c4c8408ab62f826ed5d337e00d6c2"
+          },
+          "masked_target_1d": {
+            "shape": [
+              8
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:1",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 8,
+            "min": 0.0,
+            "max": 12.0,
+            "mean": 2.875,
+            "sum": 23.0,
+            "selected": [
+              6.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0,
+              5.0,
+              0.0,
+              12.0
+            ],
+            "sha256": "4f10f029c8be1780b1b31999b947c4df9650c72e929aa06955c2af6baed86f97"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "PASS",
+          "cases": [
+            {
+              "name": "target_rank0_first_global_max_rank0",
+              "rank": 1,
+              "target": [
+                0,
+                5
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                1
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                1
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "target_rank1_last_global_max_rank1",
+              "rank": 1,
+              "target": [
+                7,
+                2
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                3,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                3,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "equal_logits",
+              "rank": 1,
+              "target": [
+                1,
+                6
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                2
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                2
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "large_positive_negative",
+              "rank": 1,
+              "target": [
+                3,
+                4
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                0
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 32,
+        "B": 2,
+        "V": 64
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"config\": {\n    \"S\": 32,\n    \"B\": 2,\n    \"V\": 64,\n    \"N\": 64,\n    \"local_vocab\": 32\n  },\n  \"seed\": 1515,\n  \"rank\": 0,\n  \"world\": 2,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 2.9802322387695312e-08,\n      \"max_rel\": 2.370457252709457e-07,\n      \"mean_abs\": 5.867946129001211e-10\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.0004564523696899414,\n      \"max_rel\": 0.00046922636101953685,\n      \"mean_abs\": 4.132865342398873e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 1.4901161193847656e-08,\n      \"max_rel\": 2.839219916950242e-07,\n      \"mean_abs\": 4.596358849084936e-10\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.0004564523696899414,\n      \"max_rel\": 0.00046956585720181465,\n      \"mean_abs\": 4.132920821575681e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        32,\n        2,\n        32\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        64,\n        32,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 2048,\n      \"min\": 0.0003009446954820305,\n      \"max\": 0.3396856188774109,\n      \"mean\": 0.01587419956922531,\n      \"sum\": 32.51036071777344,\n      \"selected\": [\n        0.03589756414294243,\n        0.004674374125897884,\n        0.003073022235184908,\n        0.03646286949515343,\n        0.01689070090651512,\n        0.004185991827398539,\n        0.002143221441656351,\n        0.004519511014223099\n      ],\n      \"sha256\": \"6b464b058a274d02355c2675250ace5889f8de988c862b79f7d96aca3d0c27e2\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        32,\n        2\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        2,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 64,\n      \"min\": 0.0,\n      \"max\": 1.0,\n      \"mean\": 0.59375,\n      \"sum\": 38.0,\n      \"selected\": [\n        1.0,\n        0.0,\n        0.0,\n        0.0,\n        1.0,\n        1.0,\n        1.0,\n        1.0\n      ],\n      \"sha256\": \"771ee09c9dff033c8258fcb95ee36a664384fe05ffa154080c74d7b5f1df5727\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        64\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 64,\n      \"min\": 0.0,\n      \"max\": 31.0,\n      \"mean\": 6.578125,\n      \"sum\": 421.0,\n      \"selected\": [\n        0.0,\n        7.0,\n        13.0,\n        8.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0\n      ],\n      \"sha256\": \"5ed0a34e712390014f828ca1d10b5640609e4ef1474e37ce06b4dd94df422596\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"PASS\",\n    \"cases\": [\n      {\n        \"name\": \"target_rank0_first_global_max_rank0\",\n        \"rank\": 0,\n        \"target\": [\n          0,\n          5\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          0,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          0,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"target_rank1_last_global_max_rank1\",\n        \"rank\": 0,\n        \"target\": [\n          7,\n          2\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          2\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          2\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"equal_logits\",\n        \"rank\": 0,\n        \"target\": [\n          1,\n          6\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          1,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          1,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"large_positive_negative\",\n        \"rank\": 0,\n        \"target\": [\n          3,\n          4\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          3,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          3,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      }\n    ]\n  }\n}\n{\n  \"config\": {\n    \"S\": 32,\n    \"B\": 2,\n    \"V\": 64,\n    \"N\": 64,\n    \"local_vocab\": 32\n  },\n  \"seed\": 1515,\n  \"rank\": 1,\n  \"world\": 2,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 1.4901161193847656e-08,\n      \"max_rel\": 2.32495310115155e-07,\n      \"mean_abs\": 5.381082246458391e-10\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.00045359134674072266,\n      \"max_rel\": 0.0004745601618196815,\n      \"mean_abs\": 4.314130819693673e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 2.9802322387695312e-08,\n      \"max_rel\": 3.120380256405042e-07,\n      \"mean_abs\": 4.1185188592862687e-10\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.00045359134674072266,\n      \"max_rel\": 0.00047478548367507756,\n      \"mean_abs\": 4.314109901315533e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        32,\n        2,\n        32\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        64,\n        32,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 2048,\n      \"min\": 0.0002925125590991229,\n      \"max\": 0.2786373794078827,\n      \"mean\": 0.015375800430774689,\n      \"sum\": 31.489639282226562,\n      \"selected\": [\n        0.00337670324370265,\n        0.002741222269833088,\n        0.028816349804401398,\n        0.01540170144289732,\n        0.012399809435009956,\n        0.0045929248444736,\n        0.06017584353685379,\n        0.03773070126771927\n      ],\n      \"sha256\": \"1ae7d7f4215bbc8a3b7b7a6883ba19573708c85489c6b7da26820a2f77764489\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        32,\n        2\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        2,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 64,\n      \"min\": 0.0,\n      \"max\": 1.0,\n      \"mean\": 0.40625,\n      \"sum\": 26.0,\n      \"selected\": [\n        0.0,\n        1.0,\n        1.0,\n        1.0,\n        0.0,\n        0.0,\n        0.0,\n        0.0\n      ],\n      \"sha256\": \"2f090373f4c559ca2146ab54b4a62257e7cbebac22e0f78e6531c0b9fd33ea9c\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        64\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 64,\n      \"min\": 0.0,\n      \"max\": 31.0,\n      \"mean\": 8.546875,\n      \"sum\": 547.0,\n      \"selected\": [\n        22.0,\n        0.0,\n        0.0,\n        0.0,\n        15.0,\n        21.0,\n        14.0,\n        28.0\n      ],\n      \"sha256\": \"500171848c2d820e09cb829248ea63ace2ede5ae4e34a3635411799372c540b3\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"PASS\",\n    \"cases\": [\n      {\n        \"name\": \"target_rank0_first_global_max_rank0\",\n        \"rank\": 1,\n        \"target\": [\n          0,\n          5\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          1\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          1\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"target_rank1_last_global_max_rank1\",\n        \"rank\": 1,\n        \"target\": [\n          7,\n          2\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          3,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          3,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"equal_logits\",\n        \"rank\": 1,\n        \"target\": [\n          1,\n          6\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          2\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          2\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"large_positive_negative\",\n        \"rank\": 1,\n        \"target\": [\n          3,\n          4\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          0\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      }\n    ]\n  }\n}\n",
+      "stderr": "\n*****************************************\nSetting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n*****************************************\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n",
+      "rank0": {
+        "config": {
+          "S": 32,
+          "B": 2,
+          "V": 64,
+          "N": 64,
+          "local_vocab": 32
+        },
+        "seed": 1515,
+        "rank": 0,
+        "world": 2,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 2.9802322387695312e-08,
+            "max_rel": 2.370457252709457e-07,
+            "mean_abs": 5.867946129001211e-10
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.0004564523696899414,
+            "max_rel": 0.00046922636101953685,
+            "mean_abs": 4.132865342398873e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 1.4901161193847656e-08,
+            "max_rel": 2.839219916950242e-07,
+            "mean_abs": 4.596358849084936e-10
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.0004564523696899414,
+            "max_rel": 0.00046956585720181465,
+            "mean_abs": 4.132920821575681e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              32,
+              2,
+              32
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "stride": [
+              64,
+              32,
+              1
+            ],
+            "contiguous": true,
+            "numel": 2048,
+            "min": 0.0003009446954820305,
+            "max": 0.3396856188774109,
+            "mean": 0.01587419956922531,
+            "sum": 32.51036071777344,
+            "selected": [
+              0.03589756414294243,
+              0.004674374125897884,
+              0.003073022235184908,
+              0.03646286949515343,
+              0.01689070090651512,
+              0.004185991827398539,
+              0.002143221441656351,
+              0.004519511014223099
+            ],
+            "sha256": "6b464b058a274d02355c2675250ace5889f8de988c862b79f7d96aca3d0c27e2"
+          },
+          "target_mask": {
+            "shape": [
+              32,
+              2
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:0",
+            "stride": [
+              2,
+              1
+            ],
+            "contiguous": true,
+            "numel": 64,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.59375,
+            "sum": 38.0,
+            "selected": [
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              1.0
+            ],
+            "sha256": "771ee09c9dff033c8258fcb95ee36a664384fe05ffa154080c74d7b5f1df5727"
+          },
+          "masked_target_1d": {
+            "shape": [
+              64
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 64,
+            "min": 0.0,
+            "max": 31.0,
+            "mean": 6.578125,
+            "sum": 421.0,
+            "selected": [
+              0.0,
+              7.0,
+              13.0,
+              8.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sha256": "5ed0a34e712390014f828ca1d10b5640609e4ef1474e37ce06b4dd94df422596"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "PASS",
+          "cases": [
+            {
+              "name": "target_rank0_first_global_max_rank0",
+              "rank": 0,
+              "target": [
+                0,
+                5
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                0,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                0,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "target_rank1_last_global_max_rank1",
+              "rank": 0,
+              "target": [
+                7,
+                2
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                2
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                2
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "equal_logits",
+              "rank": 0,
+              "target": [
+                1,
+                6
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                1,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                1,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "large_positive_negative",
+              "rank": 0,
+              "target": [
+                3,
+                4
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                3,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                3,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            }
+          ]
+        }
+      },
+      "rank1": {
+        "config": {
+          "S": 32,
+          "B": 2,
+          "V": 64,
+          "N": 64,
+          "local_vocab": 32
+        },
+        "seed": 1515,
+        "rank": 1,
+        "world": 2,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 1.4901161193847656e-08,
+            "max_rel": 2.32495310115155e-07,
+            "mean_abs": 5.381082246458391e-10
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.00045359134674072266,
+            "max_rel": 0.0004745601618196815,
+            "mean_abs": 4.314130819693673e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 2.9802322387695312e-08,
+            "max_rel": 3.120380256405042e-07,
+            "mean_abs": 4.1185188592862687e-10
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.00045359134674072266,
+            "max_rel": 0.00047478548367507756,
+            "mean_abs": 4.314109901315533e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              32,
+              2,
+              32
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:1",
+            "stride": [
+              64,
+              32,
+              1
+            ],
+            "contiguous": true,
+            "numel": 2048,
+            "min": 0.0002925125590991229,
+            "max": 0.2786373794078827,
+            "mean": 0.015375800430774689,
+            "sum": 31.489639282226562,
+            "selected": [
+              0.00337670324370265,
+              0.002741222269833088,
+              0.028816349804401398,
+              0.01540170144289732,
+              0.012399809435009956,
+              0.0045929248444736,
+              0.06017584353685379,
+              0.03773070126771927
+            ],
+            "sha256": "1ae7d7f4215bbc8a3b7b7a6883ba19573708c85489c6b7da26820a2f77764489"
+          },
+          "target_mask": {
+            "shape": [
+              32,
+              2
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:1",
+            "stride": [
+              2,
+              1
+            ],
+            "contiguous": true,
+            "numel": 64,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.40625,
+            "sum": 26.0,
+            "selected": [
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              0.0
+            ],
+            "sha256": "2f090373f4c559ca2146ab54b4a62257e7cbebac22e0f78e6531c0b9fd33ea9c"
+          },
+          "masked_target_1d": {
+            "shape": [
+              64
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:1",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 64,
+            "min": 0.0,
+            "max": 31.0,
+            "mean": 8.546875,
+            "sum": 547.0,
+            "selected": [
+              22.0,
+              0.0,
+              0.0,
+              0.0,
+              15.0,
+              21.0,
+              14.0,
+              28.0
+            ],
+            "sha256": "500171848c2d820e09cb829248ea63ace2ede5ae4e34a3635411799372c540b3"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "PASS",
+          "cases": [
+            {
+              "name": "target_rank0_first_global_max_rank0",
+              "rank": 1,
+              "target": [
+                0,
+                5
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                1
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                1
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "target_rank1_last_global_max_rank1",
+              "rank": 1,
+              "target": [
+                7,
+                2
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                3,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                3,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "equal_logits",
+              "rank": 1,
+              "target": [
+                1,
+                6
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                2
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                2
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "large_positive_negative",
+              "rank": 1,
+              "target": [
+                3,
+                4
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                0
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 128,
+        "B": 2,
+        "V": 128
+      },
+      "exit_code": 0,
+      "stdout": "{\n  \"config\": {\n    \"S\": 128,\n    \"B\": 2,\n    \"V\": 128,\n    \"N\": 256,\n    \"local_vocab\": 64\n  },\n  \"seed\": 1515,\n  \"rank\": 0,\n  \"world\": 2,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 1.4901161193847656e-08,\n      \"max_rel\": 3.439668319060729e-07,\n      \"mean_abs\": 2.128421883185183e-10\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.00048029422760009766,\n      \"max_rel\": 0.0004830360412597656,\n      \"mean_abs\": 2.0619625047402224e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 1.4901161193847656e-08,\n      \"max_rel\": 4.0663670120011375e-07,\n      \"mean_abs\": 1.6863221929952488e-10\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.00048029422760009766,\n      \"max_rel\": 0.000482922449009493,\n      \"mean_abs\": 2.061962732113898e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        128,\n        2,\n        64\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        128,\n        64,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 16384,\n      \"min\": 0.00012723467079922557,\n      \"max\": 0.2381904125213623,\n      \"mean\": 0.007833126932382584,\n      \"sum\": 128.33795166015625,\n      \"selected\": [\n        0.019413214176893234,\n        0.0025278767570853233,\n        0.0016618743538856506,\n        0.019718928262591362,\n        0.009134402498602867,\n        0.002263762289658189,\n        0.0011590429348871112,\n        0.00244412780739367\n      ],\n      \"sha256\": \"5dc89f861ef049886bce5301382011bbc35ce4a2d9917d8e1619332219af6d1f\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        128,\n        2\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        2,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 256,\n      \"min\": 0.0,\n      \"max\": 1.0,\n      \"mean\": 0.54296875,\n      \"sum\": 139.0,\n      \"selected\": [\n        0.0,\n        0.0,\n        0.0,\n        1.0,\n        1.0,\n        1.0,\n        0.0,\n        0.0\n      ],\n      \"sha256\": \"80e916dd97ac24fb4457a5eba4bac87bf7480c9ff46fae8dca1d1f781327c84b\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        256\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:0\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 256,\n      \"min\": 0.0,\n      \"max\": 63.0,\n      \"mean\": 14.98828125,\n      \"sum\": 3837.0,\n      \"selected\": [\n        54.0,\n        7.0,\n        13.0,\n        0.0,\n        0.0,\n        0.0,\n        46.0,\n        60.0\n      ],\n      \"sha256\": \"8a9041212cbf4e2e9fede9af88b1ad1d7bbfa41ede4b22ccdc6f64b51cc9401c\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"PASS\",\n    \"cases\": [\n      {\n        \"name\": \"target_rank0_first_global_max_rank0\",\n        \"rank\": 0,\n        \"target\": [\n          0,\n          5\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          0,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          0,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"target_rank1_last_global_max_rank1\",\n        \"rank\": 0,\n        \"target\": [\n          7,\n          2\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          2\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          2\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"equal_logits\",\n        \"rank\": 0,\n        \"target\": [\n          1,\n          6\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          1,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          1,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"large_positive_negative\",\n        \"rank\": 0,\n        \"target\": [\n          3,\n          4\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          3,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          3,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      }\n    ]\n  }\n}\n{\n  \"config\": {\n    \"S\": 128,\n    \"B\": 2,\n    \"V\": 128,\n    \"N\": 256,\n    \"local_vocab\": 64\n  },\n  \"seed\": 1515,\n  \"rank\": 1,\n  \"world\": 2,\n  \"source\": {\n    \"loss_dtype\": \"torch.float32\",\n    \"saved_softmax_dtype\": \"torch.float32\",\n    \"saved_target_mask_dtype\": \"torch.bool\",\n    \"saved_masked_target_dtype\": \"torch.int64\",\n    \"direct_gradient_dtype\": \"torch.float32\",\n    \"public_input_gradient_dtype\": \"torch.float16\",\n    \"grad_output_dtype\": \"torch.float32\"\n  },\n  \"saved_state_errors\": {\n    \"softmax\": {\n      \"max_abs\": 1.4901161193847656e-08,\n      \"max_rel\": 2.9894422937104537e-07,\n      \"mean_abs\": 2.1300738950458253e-10\n    },\n    \"target_mask\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    },\n    \"masked_target\": {\n      \"max_abs\": 0.0,\n      \"max_rel\": 0.0,\n      \"mean_abs\": 0.0\n    }\n  },\n  \"gradient_errors\": {\n    \"direct_vs_public\": {\n      \"max_abs\": 0.00045692920684814453,\n      \"max_rel\": 0.0004830615362152457,\n      \"mean_abs\": 2.08030064641207e-06\n    },\n    \"direct_vs_oracle\": {\n      \"max_abs\": 1.4901161193847656e-08,\n      \"max_rel\": 3.5758992567025416e-07,\n      \"mean_abs\": 1.6700441030081947e-10\n    },\n    \"public_vs_oracle\": {\n      \"max_abs\": 0.00045692920684814453,\n      \"max_rel\": 0.00048282829811796546,\n      \"mean_abs\": 2.0803040570172016e-06\n    }\n  },\n  \"state_summary\": {\n    \"softmax\": {\n      \"shape\": [\n        128,\n        2,\n        64\n      ],\n      \"dtype\": \"torch.float32\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        128,\n        64,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 16384,\n      \"min\": 0.000123444915516302,\n      \"max\": 0.20239050686359406,\n      \"mean\": 0.007791873067617416,\n      \"sum\": 127.66204833984375,\n      \"selected\": [\n        0.0017829310381785035,\n        0.006986511405557394,\n        0.000997207942418754,\n        0.009766343981027603,\n        0.005581703502684832,\n        0.0034721100237220526,\n        0.01838006265461445,\n        0.005967132281512022\n      ],\n      \"sha256\": \"9f82b5db97d56420f309eeb05df5561c35fd7e6808a7fffd1a875bf267c693b3\"\n    },\n    \"target_mask\": {\n      \"shape\": [\n        128,\n        2\n      ],\n      \"dtype\": \"torch.uint8\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        2,\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 256,\n      \"min\": 0.0,\n      \"max\": 1.0,\n      \"mean\": 0.45703125,\n      \"sum\": 117.0,\n      \"selected\": [\n        1.0,\n        1.0,\n        1.0,\n        0.0,\n        0.0,\n        0.0,\n        1.0,\n        1.0\n      ],\n      \"sha256\": \"17495cd6182d4a38046f04d1293a227a8b7519b94e9bca6ea4a691c2b603a0d4\"\n    },\n    \"masked_target_1d\": {\n      \"shape\": [\n        256\n      ],\n      \"dtype\": \"torch.int64\",\n      \"device\": \"cuda:1\",\n      \"stride\": [\n        1\n      ],\n      \"contiguous\": true,\n      \"numel\": 256,\n      \"min\": 0.0,\n      \"max\": 63.0,\n      \"mean\": 17.6171875,\n      \"sum\": 4510.0,\n      \"selected\": [\n        0.0,\n        0.0,\n        0.0,\n        8.0,\n        47.0,\n        53.0,\n        0.0,\n        0.0\n      ],\n      \"sha256\": \"9478d51276dd04dabdd7847f233536ff5dd5ffbda320b8a30d762fa7cffc240f\"\n    }\n  },\n  \"collectives_in_backward\": 0,\n  \"edge_fixtures\": {\n    \"status\": \"PASS\",\n    \"cases\": [\n      {\n        \"name\": \"target_rank0_first_global_max_rank0\",\n        \"rank\": 1,\n        \"target\": [\n          0,\n          5\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          1\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          1\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"target_rank1_last_global_max_rank1\",\n        \"rank\": 1,\n        \"target\": [\n          7,\n          2\n        ],\n        \"target_mask\": [\n          false,\n          true\n        ],\n        \"masked_target\": [\n          3,\n          0\n        ],\n        \"expected_mask\": [\n          false,\n          true\n        ],\n        \"expected_masked_target\": [\n          3,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"equal_logits\",\n        \"rank\": 1,\n        \"target\": [\n          1,\n          6\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          2\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          2\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      },\n      {\n        \"name\": \"large_positive_negative\",\n        \"rank\": 1,\n        \"target\": [\n          3,\n          4\n        ],\n        \"target_mask\": [\n          true,\n          false\n        ],\n        \"masked_target\": [\n          0,\n          0\n        ],\n        \"expected_mask\": [\n          true,\n          false\n        ],\n        \"expected_masked_target\": [\n          0,\n          0\n        ],\n        \"softmax_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"target_mask_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        },\n        \"masked_target_error\": {\n          \"max_abs\": 0.0,\n          \"max_rel\": 0.0,\n          \"mean_abs\": 0.0\n        }\n      }\n    ]\n  }\n}\n",
+      "stderr": "\n*****************************************\nSetting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. \n*****************************************\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. \n  warnings.warn(  # warn only once\n",
+      "rank0": {
+        "config": {
+          "S": 128,
+          "B": 2,
+          "V": 128,
+          "N": 256,
+          "local_vocab": 64
+        },
+        "seed": 1515,
+        "rank": 0,
+        "world": 2,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 1.4901161193847656e-08,
+            "max_rel": 3.439668319060729e-07,
+            "mean_abs": 2.128421883185183e-10
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.00048029422760009766,
+            "max_rel": 0.0004830360412597656,
+            "mean_abs": 2.0619625047402224e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 1.4901161193847656e-08,
+            "max_rel": 4.0663670120011375e-07,
+            "mean_abs": 1.6863221929952488e-10
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.00048029422760009766,
+            "max_rel": 0.000482922449009493,
+            "mean_abs": 2.061962732113898e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              128,
+              2,
+              64
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:0",
+            "stride": [
+              128,
+              64,
+              1
+            ],
+            "contiguous": true,
+            "numel": 16384,
+            "min": 0.00012723467079922557,
+            "max": 0.2381904125213623,
+            "mean": 0.007833126932382584,
+            "sum": 128.33795166015625,
+            "selected": [
+              0.019413214176893234,
+              0.0025278767570853233,
+              0.0016618743538856506,
+              0.019718928262591362,
+              0.009134402498602867,
+              0.002263762289658189,
+              0.0011590429348871112,
+              0.00244412780739367
+            ],
+            "sha256": "5dc89f861ef049886bce5301382011bbc35ce4a2d9917d8e1619332219af6d1f"
+          },
+          "target_mask": {
+            "shape": [
+              128,
+              2
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:0",
+            "stride": [
+              2,
+              1
+            ],
+            "contiguous": true,
+            "numel": 256,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.54296875,
+            "sum": 139.0,
+            "selected": [
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0
+            ],
+            "sha256": "80e916dd97ac24fb4457a5eba4bac87bf7480c9ff46fae8dca1d1f781327c84b"
+          },
+          "masked_target_1d": {
+            "shape": [
+              256
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:0",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 256,
+            "min": 0.0,
+            "max": 63.0,
+            "mean": 14.98828125,
+            "sum": 3837.0,
+            "selected": [
+              54.0,
+              7.0,
+              13.0,
+              0.0,
+              0.0,
+              0.0,
+              46.0,
+              60.0
+            ],
+            "sha256": "8a9041212cbf4e2e9fede9af88b1ad1d7bbfa41ede4b22ccdc6f64b51cc9401c"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "PASS",
+          "cases": [
+            {
+              "name": "target_rank0_first_global_max_rank0",
+              "rank": 0,
+              "target": [
+                0,
+                5
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                0,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                0,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "target_rank1_last_global_max_rank1",
+              "rank": 0,
+              "target": [
+                7,
+                2
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                2
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                2
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "equal_logits",
+              "rank": 0,
+              "target": [
+                1,
+                6
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                1,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                1,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "large_positive_negative",
+              "rank": 0,
+              "target": [
+                3,
+                4
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                3,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                3,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            }
+          ]
+        }
+      },
+      "rank1": {
+        "config": {
+          "S": 128,
+          "B": 2,
+          "V": 128,
+          "N": 256,
+          "local_vocab": 64
+        },
+        "seed": 1515,
+        "rank": 1,
+        "world": 2,
+        "source": {
+          "loss_dtype": "torch.float32",
+          "saved_softmax_dtype": "torch.float32",
+          "saved_target_mask_dtype": "torch.bool",
+          "saved_masked_target_dtype": "torch.int64",
+          "direct_gradient_dtype": "torch.float32",
+          "public_input_gradient_dtype": "torch.float16",
+          "grad_output_dtype": "torch.float32"
+        },
+        "saved_state_errors": {
+          "softmax": {
+            "max_abs": 1.4901161193847656e-08,
+            "max_rel": 2.9894422937104537e-07,
+            "mean_abs": 2.1300738950458253e-10
+          },
+          "target_mask": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          },
+          "masked_target": {
+            "max_abs": 0.0,
+            "max_rel": 0.0,
+            "mean_abs": 0.0
+          }
+        },
+        "gradient_errors": {
+          "direct_vs_public": {
+            "max_abs": 0.00045692920684814453,
+            "max_rel": 0.0004830615362152457,
+            "mean_abs": 2.08030064641207e-06
+          },
+          "direct_vs_oracle": {
+            "max_abs": 1.4901161193847656e-08,
+            "max_rel": 3.5758992567025416e-07,
+            "mean_abs": 1.6700441030081947e-10
+          },
+          "public_vs_oracle": {
+            "max_abs": 0.00045692920684814453,
+            "max_rel": 0.00048282829811796546,
+            "mean_abs": 2.0803040570172016e-06
+          }
+        },
+        "state_summary": {
+          "softmax": {
+            "shape": [
+              128,
+              2,
+              64
+            ],
+            "dtype": "torch.float32",
+            "device": "cuda:1",
+            "stride": [
+              128,
+              64,
+              1
+            ],
+            "contiguous": true,
+            "numel": 16384,
+            "min": 0.000123444915516302,
+            "max": 0.20239050686359406,
+            "mean": 0.007791873067617416,
+            "sum": 127.66204833984375,
+            "selected": [
+              0.0017829310381785035,
+              0.006986511405557394,
+              0.000997207942418754,
+              0.009766343981027603,
+              0.005581703502684832,
+              0.0034721100237220526,
+              0.01838006265461445,
+              0.005967132281512022
+            ],
+            "sha256": "9f82b5db97d56420f309eeb05df5561c35fd7e6808a7fffd1a875bf267c693b3"
+          },
+          "target_mask": {
+            "shape": [
+              128,
+              2
+            ],
+            "dtype": "torch.uint8",
+            "device": "cuda:1",
+            "stride": [
+              2,
+              1
+            ],
+            "contiguous": true,
+            "numel": 256,
+            "min": 0.0,
+            "max": 1.0,
+            "mean": 0.45703125,
+            "sum": 117.0,
+            "selected": [
+              1.0,
+              1.0,
+              1.0,
+              0.0,
+              0.0,
+              0.0,
+              1.0,
+              1.0
+            ],
+            "sha256": "17495cd6182d4a38046f04d1293a227a8b7519b94e9bca6ea4a691c2b603a0d4"
+          },
+          "masked_target_1d": {
+            "shape": [
+              256
+            ],
+            "dtype": "torch.int64",
+            "device": "cuda:1",
+            "stride": [
+              1
+            ],
+            "contiguous": true,
+            "numel": 256,
+            "min": 0.0,
+            "max": 63.0,
+            "mean": 17.6171875,
+            "sum": 4510.0,
+            "selected": [
+              0.0,
+              0.0,
+              0.0,
+              8.0,
+              47.0,
+              53.0,
+              0.0,
+              0.0
+            ],
+            "sha256": "9478d51276dd04dabdd7847f233536ff5dd5ffbda320b8a30d762fa7cffc240f"
+          }
+        },
+        "collectives_in_backward": 0,
+        "edge_fixtures": {
+          "status": "PASS",
+          "cases": [
+            {
+              "name": "target_rank0_first_global_max_rank0",
+              "rank": 1,
+              "target": [
+                0,
+                5
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                1
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                1
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "target_rank1_last_global_max_rank1",
+              "rank": 1,
+              "target": [
+                7,
+                2
+              ],
+              "target_mask": [
+                false,
+                true
+              ],
+              "masked_target": [
+                3,
+                0
+              ],
+              "expected_mask": [
+                false,
+                true
+              ],
+              "expected_masked_target": [
+                3,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "equal_logits",
+              "rank": 1,
+              "target": [
+                1,
+                6
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                2
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                2
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            },
+            {
+              "name": "large_positive_negative",
+              "rank": 1,
+              "target": [
+                3,
+                4
+              ],
+              "target_mask": [
+                true,
+                false
+              ],
+              "masked_target": [
+                0,
+                0
+              ],
+              "expected_mask": [
+                true,
+                false
+              ],
+              "expected_masked_target": [
+                0,
+                0
+              ],
+              "softmax_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "target_mask_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              },
+              "masked_target_error": {
+                "max_abs": 0.0,
+                "max_rel": 0.0,
+                "mean_abs": 0.0
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

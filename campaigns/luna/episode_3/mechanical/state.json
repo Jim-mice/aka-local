@@ -1,0 +1,5 @@
+{
+  "state": "COMPILE_FAILED",
+  "updated_at": "2026-09-10T08:45:52.121526+00:00",
+  "failure_reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\cli\\run_eval.py\", line 3071, in _run_eval_process\n    _resolve_reference_bundle(reference_dir)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\cli\\run_eval.py\", line 933, in _resolve_reference_bundle\n    raise FileNotFoundError(f\"Required reference file not found: {path}\")\nFileNotFoundError: Required reference file not found: C:\\Users\\38154\\projects\\aka-local\\ops\\swiglu_forward_v2b\\metadata.json\n"
+}

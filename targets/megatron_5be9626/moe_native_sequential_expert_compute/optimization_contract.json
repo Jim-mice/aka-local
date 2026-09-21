@@ -1,0 +1,13 @@
+{
+  "version":"moe_native_sequential_expert_compute_opt_v1",
+  "megatron_commit":"5be9626709af2722333bf54797c954c09edeada3",
+  "replay_contract_hash":"e73232a4e11649d6519785c79ab4a823eddbd5588e2e318edbdae3abb99ecaec",
+  "performance_contract_hash":"3086f89790979dac0e1a1918b9fb51953ac292820db6f14bbf414312858bdaef",
+  "scope":"local fixed-routing SequentialMLP expert compute forward only",
+  "inputs":"permuted FP16 tokens, int64 tokens_per_expert, FP16 probs, real expert FC1/FC2 weights",
+  "outputs":"permuted local FP16 expert output",
+  "excluded":["router","permutation","EP/TP communication","combine","TE grouped GEMM","backward"],
+  "collectives":0,
+  "stream":"current stream",
+  "status":"active only after separate stable reference baseline"
+}

@@ -1,0 +1,11 @@
+{
+  "target": "vocab_parallel_cross_entropy",
+  "variant": "fused_rank_local_prepare",
+  "hypothesis": "Fusing local shift, target extraction, exponentiation, and partial denominator accumulation into one rank-local kernel reduces PyTorch elementwise/indexing kernel-launch overhead while preserving the required collective ordering.",
+  "scope": "rank-local forward stages only",
+  "collectives_preserved": {"max": 1, "sum": 2},
+  "collective_policy": "Caller performs the real MAX all-reduce after local_max_fp16 and the two real SUM all-reduces after local_prepare_fp16.",
+  "inputs": "local FP16 logits [N,V/2], global int64 targets [N], global FP32 max [N]",
+  "outputs": "per-row partial predicted exp, partial denominator, target exp, local-target mask, local target index",
+  "constraints": ["no process-group initialization", "no synchronization", "no backward", "no full-vocabulary reconstruction", "current caller stream"]
+}

@@ -1,0 +1,11 @@
+{
+  "episode": 12,
+  "target": "vocab_parallel_cross_entropy",
+  "hypothesis": "Keep the frozen two-kernel local path and reduce rank-local launch/temporary overhead by using one block per row, warp-shuffle reductions, and a single shared reduction buffer per block.",
+  "profile_basis": "Episode 7 shows local stages are small but measurable, while the dominant residual cost is collective delay and rank skew.",
+  "bounded_change": "Only candidate.cu local max and local prepare implementations; no collective, caller, evaluator, benchmark era, or backward changes.",
+  "expected_effect": "Modest reduction in local reduction and synchronization overhead; no claim of improvement without the frozen evaluator.",
+  "semantic_requirements": ["shifted owning-rank target logit", "zero non-owning predicted contribution", "row-shaped target_mask", "safe non-owning target_local", "FP32 local arithmetic"],
+  "collective_contract": "Caller-visible structure remains one MAX all-reduce followed by two SUM all-reduces.",
+  "validation_status": "unbenchmarked; no correctness or performance result claimed"
+}

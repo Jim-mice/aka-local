@@ -1,0 +1,23 @@
+{
+  "episode": 14,
+  "operator": "rms_norm_v100_cuda",
+  "decision": "REJECT_CORRECTNESS",
+  "compile_pass": true,
+  "correctness_pass": false,
+  "speedup": 3.507,
+  "aggregate_score": 1,
+  "geometric_mean_speedup": 1,
+  "incumbent_score": 2.892,
+  "reason": "Phase 9.5 audit: correctness failed on shapes 4,8,32 (max_error ~10). Kernel missing batch indexing.",
+  "evaluated_at": "2026-09-19T07:30:52.563607+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ],
+  "audit_note": "Phase 9.5: original promotion was invalid due to single-shape-only correctness check",
+  "legacy": true,
+  "legacy_reason": "single_shape_evaluation_invalid_promotion"
+}

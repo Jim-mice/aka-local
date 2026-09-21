@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "episode": 6,
+  "candidate": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_6\\candidate.py",
+  "baseline": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm_v3\\candidate.py",
+  "state": "COMPILE_FAILED",
+  "candidate_status": "present",
+  "compile": {
+    "0": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "1": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "10": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "11": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "12": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "13": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "14": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "15": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "16": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "17": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "18": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "19": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "2": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "20": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "21": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "22": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "23": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "24": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "25": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "26": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "27": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "28": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "29": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "3": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "30": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "31": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "32": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "33": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "34": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "35": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "36": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "37": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "38": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "39": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "4": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "40": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "41": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "42": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "43": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "44": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "45": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "46": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "47": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "48": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "49": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "5": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "50": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "51": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "52": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "53": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "54": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "55": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "6": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "7": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "8": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    },
+    "9": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 29, in check_compilation\n    validate_candidate_module(module)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 464, in validate_candidate_module\n    raise AttributeError(\"Candidate module does not define 'Model'\")\nAttributeError: Candidate module does not define 'Model'\n"
+    }
+  },
+  "correctness": null,
+  "benchmark": null,
+  "abba": null,
+  "decision": "REJECT_COMPILE",
+  "failure_reason": null,
+  "evaluator_result": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_6\\mechanical\\atrex_eval\\20260919-110709\\rms_norm\\eval_result.json",
+  "evaluator_returncode": 1
+}

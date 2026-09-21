@@ -1,0 +1,16 @@
+{
+  "phase": "14-G",
+  "status": "BLOCKED_BEFORE_CAMPAIGN",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "runtime": {"gpu":"Tesla V100","arch":"sm_70","cuda":"11.8","dtype":"FP16","tp":1},
+  "approaches": {
+    "cuBLAS": {"status":"AVAILABLE_BUT_INSUFFICIENT","reason":"GEMM API has no gated SiLU two-half epilogue"},
+    "cuBLASLt": {"status":"AVAILABLE_BUT_INSUFFICIENT","reason":"CUDA 11.8 header exposes DEFAULT, RELU, BIAS, GELU and related auxiliary epilogues; no SiLU or gated two-output-half epilogue"},
+    "CUTLASS": {"status":"BLOCKED_IN_RUNTIME","reason":"no CUTLASS checkout or installed package found in audited remote paths"},
+    "WMMA": {"status":"AVAILABLE_BUT_NOT_READY","reason":"CUDA WMMA headers/toolchain are available, but no validated fused GEMM implementation exists in aka-local; implementing one would be a new kernel engineering campaign"},
+    "custom_tiled_gemm": {"status":"IMPLEMENTABLE_IN_PRINCIPLE_BUT_BLOCKED_FOR_THIS_PHASE","reason":"would require new GEMM tiling, accumulation, epilogue, numerical validation, resource tuning and backward-state design"},
+    "Megatron_TE_Apex": {"status":"UNAVAILABLE","reason":"Transformer Engine and Apex are not installed on the V100 runtime"}
+  },
+  "decision": "STOP_WITH_BLOCKER",
+  "reason": "No existing practical backend can express the required fused FP16 FC1 plus gated SiLU epilogue without starting a new custom GEMM implementation. A two-launch GEMM plus activation would not be fusion."
+}

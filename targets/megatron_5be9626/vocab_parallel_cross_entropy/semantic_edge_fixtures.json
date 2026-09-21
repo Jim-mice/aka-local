@@ -1,0 +1,9 @@
+{
+  "purpose": "correctness diagnostics only",
+  "tp": 2,
+  "cases": [
+    "target at first local vocab index", "target at last local vocab index", "target owned by other rank", "large positive logits", "large negative logits", "equal logits", "global max on rank 0", "global max on rank 1"
+  ],
+  "expected_checks": ["global max after MAX", "row target mask", "masked local target", "shifted predicted contribution", "exp denominator", "saved softmax", "rank-local gradient"],
+  "scoring": false
+}

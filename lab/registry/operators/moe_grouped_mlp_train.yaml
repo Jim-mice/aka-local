@@ -1,0 +1,14 @@
+operator_id: moe_grouped_mlp_train
+name: MoE Grouped MLP training
+domain: MoE/GEMM
+training_scope: forward+VJP
+mathematical_contract: grouped FC1 -> bias/activation -> probability weighting -> grouped FC2
+inputs: [dispatched_tokens, expert_weights]
+outputs: [expert_output]
+gradients: [dA, dB, token_gradients]
+dtype_domain: [bf16, fp16]
+layout_domain: [expert-grouped tokens]
+shape_parameters: [tokens, hidden_size, experts, ffn_hidden_size]
+parallel_semantics: EP, expert TP, token dispatch
+correctness_contract: campaign all-gradient contract
+source_refs: [remote Atrex campaign, Megatron transformer/moe/experts.py]

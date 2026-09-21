@@ -1,0 +1,29 @@
+{
+  "claim": "128 threads per block, __launch_bounds__(128,4), __expf + __fdividef intrinsics, reduced shared memory (8 floats), aggressive #pragma unroll 4 on all element loops",
+  "strategy_tags": [
+    "register_optimization",
+    "shared_memory_optimization",
+    "fused_multiply_add"
+  ],
+  "expected_effects": [
+    "better occupancy with 128 threads",
+    "reduced shared memory pressure",
+    "improved instruction throughput via intrinsics and unrolling"
+  ],
+  "risk": [
+    "higher per-thread work may increase register pressure",
+    "128 threads may underutilize SMs for small row counts"
+  ],
+  "operator": "softmax_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "a92f1cf9b49882c1",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "x",
+      "y",
+      "rows",
+      "cols"
+    ]
+  }
+}

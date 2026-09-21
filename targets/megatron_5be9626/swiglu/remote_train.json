@@ -1,0 +1,55 @@
+{
+  "mode": "train",
+  "commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "shapes": [
+    {
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "forward_max_abs": 6.103515625e-05,
+      "forward_max_rel": 0.0265045166015625,
+      "forward_pass": true
+    },
+    {
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "forward_max_abs": 0.0001220703125,
+      "forward_max_rel": 0.052093505859375,
+      "forward_pass": true
+    },
+    {
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "forward_max_abs": 0.0001220703125,
+      "forward_max_rel": 0.04632568359375,
+      "forward_pass": true,
+      "train_original_samples_us": [
+        2118.6559200286865,
+        2131.9680213928223,
+        2116.607904434204,
+        2163.7120246887207,
+        2137.0880603790283
+      ],
+      "train_integrated_samples_us": [
+        2332.672119140625,
+        2394.1121101379395,
+        2362.368106842041,
+        2329.6000957489014,
+        2341.887950897217
+      ],
+      "train_original_mean_us": 2133.6063861846924,
+      "train_integrated_mean_us": 2352.1280765533447,
+      "train_speedup": 0.9070961770547546
+    }
+  ],
+  "kernel": "launch_swiglu_stream",
+  "current_stream": true
+}

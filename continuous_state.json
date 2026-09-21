@@ -1,0 +1,10 @@
+{
+  "operator": "rms_norm",
+  "current_incumbent": "rms_norm_v4",
+  "next_episode": 13,
+  "model_turns_used": 19,
+  "current_state": "PROMOTED",
+  "active_episode_dir": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_12",
+  "agent_backend": "codex-appserver",
+  "runtime_version": "0.154.0"
+}

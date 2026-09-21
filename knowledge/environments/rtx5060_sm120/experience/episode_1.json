@@ -1,0 +1,22 @@
+{
+  "operator": "rms_norm",
+  "episode": 1,
+  "architecture": "sm_120",
+  "incumbent": "official_eager_reference",
+  "promoted_candidate": "rms_norm_v1",
+  "hypothesis_id": "FUSED_ROW_REDUCTION_DESIGN",
+  "hypothesis": "One block per row with shared-memory float32 reduction and fused output can improve the eager reference.",
+  "mechanism": "one 256-thread block per row; register accumulation; shared tree; second row pass; fused normalization",
+  "evidence_before": {"workloads": 56, "baseline": "official eager reference"},
+  "candidate": {"source": "campaigns/rms_norm/backward/episode_1/candidate.py", "block_threads": 256},
+  "compile": {"passed": true, "shapes": 56},
+  "correctness": {"passed": true, "shapes": 56, "max_abs": 0.015625, "max_rel": 0.0078125},
+  "performance": {"protocol": "same-process A/B/B/A", "arithmetic_mean_speedup": 7.202740485699887, "geometric_mean_speedup": 6.145711036581204, "total_time_ratio": 4.652902651856077},
+  "static_resources": {"registers_per_thread": 30, "shared_bytes": 2048, "stack_bytes": 0, "local_bytes": 0},
+  "profile": {"ncu": "NOT_NEEDED"},
+  "decision": "PROMOTE",
+  "supported_observations": ["V1 compiled and passed correctness on all 56 workloads", "V1 had 30 registers/thread and no stack/local memory", "V1 was much faster than the eager reference in this measurement"],
+  "failed_assumptions": [],
+  "unresolved_questions": ["causal contribution of fusion versus reduction versus launch structure", "warp-level reduction alternative"],
+  "next_possible_directions": ["warp_reduce_shared_finalize", "bf16_vector_load", "block_geometry", "row_strategy_by_hidden"]
+}

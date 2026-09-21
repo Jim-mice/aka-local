@@ -1,0 +1,40 @@
+{
+  "claim": "Fused row-wise dQ and dV computation with 256-thread blocks, FP32 fused multiply-add arithmetic, and atomic dK accumulation after a dedicated zero-initialization kernel.",
+  "strategy_tags": [
+    "coalesced_memory_access",
+    "parallel_reduction",
+    "fused_multiply_add",
+    "register_optimization"
+  ],
+  "expected_effects": [
+    "fuse dQ and dV row work",
+    "coalesce gradient writes",
+    "avoid intermediate dS storage"
+  ],
+  "risk": [
+    "register pressure",
+    "atomic dK contention",
+    "high arithmetic cost for the row softmax statistic"
+  ],
+  "operator": "dense_attention_backward_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "52a2863f6af6c627",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "q",
+      "k",
+      "v",
+      "p",
+      "grad_o",
+      "grad_q",
+      "grad_k",
+      "grad_v",
+      "batch",
+      "heads",
+      "seq",
+      "head_dim",
+      "scale"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "abi_version": "dot_product_attention_forward_fp16_stream_v1",
+  "contract_hash": "90839e70b4edbfdc9cdfd903fe9c51230311a8fc7c13fb1b2a0673acd261916c",
+  "required_marker": "// AKA_TARGET_CONTRACT: megatron_native_dot_product_attention_forward:",
+  "required_symbols": [{
+    "symbol": "dot_product_attention_forward_fp16_stream",
+    "extern_c": true,
+    "return_type": "void",
+    "prototype": "extern \"C\" void dot_product_attention_forward_fp16_stream(const __half* q, const __half* k, const __half* v, __half* output, int64_t seq_len, int64_t batch, int64_t num_heads, int64_t head_dim, float scale, cudaStream_t stream);",
+    "arguments": ["const __half* q", "const __half* k", "const __half* v", "__half* output", "int64_t seq_len", "int64_t batch", "int64_t num_heads", "int64_t head_dim", "float scale", "cudaStream_t stream"]
+  }],
+  "alias_policy": "out_of_place_preallocated_nonoverlap_v1",
+  "workspace_policy": "no workspace argument; no timed allocation"
+}

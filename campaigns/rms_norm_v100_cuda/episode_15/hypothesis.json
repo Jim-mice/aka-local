@@ -1,0 +1,6 @@
+{
+  "claim": "Use one 256-thread block per row with guarded float4 loads, warp-shuffle reduction, a small shared warp-total reduction, and one fused normalization/output pass.",
+  "strategy_tags": ["warp_shuffle_reduction", "shared_memory_optimization", "coalesced_memory_access", "parallel_reduction", "fused_multiply_add", "reciprocal_sqrt", "vectorized_loads"],
+  "expected_effects": ["reduce synchronization", "reduce shared memory traffic", "improve coalesced bandwidth utilization", "avoid redundant RMS passes"],
+  "risk": ["register pressure", "float4 alignment assumptions for nonstandard input pointers"]
+}

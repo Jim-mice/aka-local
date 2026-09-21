@@ -1,0 +1,7 @@
+{
+  "status": "NO_INCUMBENT",
+  "reason": "B1 has valid paired benchmark evidence but the frozen maximum rank CV=0.20 stability gate was not met by the reference in configurations 8x1x32 and 32x2x64. No promotion is permitted.",
+  "backward_optimization_contract_hash": "6121f49401f3ef4601549c8732a62870ff17a7a7d7047e9c55d55b79c9ff6e92",
+  "backward_performance_contract_hash": "afbfcff56ee6891b888ca7c6fbf632b74ccfab71f849d7934c56dc1d4bd9e205",
+  "statistical_policy_hash": "7a750bc7f4f3c7b768bd5b35d695dab6762131d4c6681d6925100bf5557cf18f"
+}

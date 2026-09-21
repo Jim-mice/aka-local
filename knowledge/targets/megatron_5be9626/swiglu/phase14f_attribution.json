@@ -1,0 +1,10 @@
+{
+  "phase": "14-F",
+  "activation_forward_speedup": 2.8306,
+  "activation_backward_speedup": 3.4578,
+  "mlp_forward_speedup": 1.023,
+  "mlp_forward_backward_speedup": 0.9071,
+  "finding": "activation-only gains are real but integration and surrounding backward work dominate the TP=1 training path",
+  "next_boundary": "research FC1 GEMM plus SwiGLU epilogue; not active",
+  "analytical_traffic_only": true
+}

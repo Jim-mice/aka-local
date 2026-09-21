@@ -1,0 +1,20 @@
+{
+  "operator": "causal_attention_v100_cuda",
+  "episode": 2,
+  "category": "KERNEL_LATENCY",
+  "confidence": 0.6,
+  "message": "NSYS-derived diagnosis for causal_attention_v100_cuda_episode_2",
+  "evidence": {
+    "items": [
+      "geo_mean_speedup=0.038",
+      "dominant_kernel_pct=99.9",
+      "single_kernel=true"
+    ]
+  },
+  "suggested_actions": [
+    "Kernel latency is the bottleneck \u2014 single kernel is slower than reference",
+    "Focus on instruction-level optimization within the kernel",
+    "Investigate reduction efficiency and memory access patterns"
+  ],
+  "timestamp": "2026-09-19T16:45:00+00:00"
+}

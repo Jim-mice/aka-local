@@ -1,0 +1,12 @@
+{
+  "status": "research_only_not_active",
+  "target": "vocab_parallel_cross_entropy",
+  "rank_local_inputs": ["logits_local [N,V/TP]", "target [N]", "NCCL TP process group"],
+  "rank_local_outputs": ["loss [N]", "local logits gradient [N,V/TP]"],
+  "mandatory_collectives_outside_candidate": ["MAX all-reduce of local max", "SUM all-reduce of predicted target logit", "SUM all-reduce of exp denominator"],
+  "possible_future_scope": ["fuse local subtract/exp/reduction between collectives", "reduce temporary materialization", "overlap eligible local work with communication"],
+  "stream_requirements": "current PyTorch CUDA stream and ordered NCCL collectives",
+  "saved_tensors": ["local softmax/exp representation", "target mask", "masked target"],
+  "backward_relationship": "backward local-only in current source; any fused forward must preserve saved representation semantics",
+  "open_questions": ["whether custom fusion can preserve collective ordering without introducing a new distributed extension", "whether communication/computation overlap is beneficial for real larger shapes", "whether fused local kernels can reduce PyTorch temporary allocations"]
+}

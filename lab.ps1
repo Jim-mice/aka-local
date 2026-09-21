@@ -1,0 +1,110 @@
+# AKA-Local Lab CLI (Phase 11)
+# Multi-operator CUDA optimization framework
+param(
+    [Parameter(Position=0)]
+    [string]$Command = "status",
+
+    [string]$Environment = "v100",
+    [string]$Operator = "rms_norm_v100_cuda",
+    [string]$OpAlias = "",
+    [int]$Episodes = 1,
+    [string]$Candidate = "",
+    [string]$EnvAlias = "",
+    [int]$EpisodeNum = 0,
+    [switch]$NoAgent = $false
+)
+
+$ROOT = "$PSScriptRoot"
+$PYTHON = "$ROOT\.venv\Scripts\python.exe"
+$ENV:PATH = "$ROOT\.venv\Scripts;$ENV:PATH"
+
+# Resolve parameter aliases
+if ($OpAlias) { $Operator = $OpAlias }
+if ($EnvAlias) { $Environment = $EnvAlias }
+
+# Map short names
+if ($Operator -eq "rms_norm") { $Operator = "rms_norm_v100_cuda" }
+if ($Operator -eq "layer_norm") { $Operator = "layer_norm_v100_cuda" }
+
+function header { Write-Host "`n=== AKA-Lab: $args ===" -ForegroundColor Cyan }
+
+switch ($Command) {
+    "status" {
+        & $PYTHON lab/cli.py status
+    }
+
+    "campaigns" {
+        & $PYTHON lab/cli.py campaigns
+    }
+
+    "run" {
+        $noAgentFlag = if ($NoAgent) { "--no-agent" } else { "" }
+        header "Run Campaign: env=$Environment op=$Operator episodes=$Episodes no_agent=$NoAgent"
+        & $PYTHON lab/cli.py run --env $Environment --op $Operator --episodes $Episodes $noAgentFlag
+    }
+
+    "evaluate" {
+        if (-not $Candidate) {
+            Write-Host "Usage: lab evaluate --candidate path/to/candidate.cu [--env v100] [--op NAME]" -ForegroundColor Yellow
+            return
+        }
+        header "Evaluate: candidate=$Candidate op=$Operator"
+        & $PYTHON lab/cli.py evaluate --candidate $Candidate --env $Environment --op $Operator
+    }
+
+    "knowledge" {
+        & $PYTHON lab/cli.py knowledge
+    }
+
+    "recover" {
+        & $PYTHON lab/cli.py recover
+    }
+
+    "doctor" {
+        & $PYTHON lab/cli.py doctor --env $Environment
+    }
+
+    "replay" {
+        $epNum = if ($EpisodeNum) { $EpisodeNum } else { $Episodes }
+        if ($epNum -eq 0) {
+            Write-Host "Usage: lab replay --ep N [--op NAME]" -ForegroundColor Yellow
+            return
+        }
+        header "Replay Episode $epNum"
+        & $PYTHON lab/cli.py replay --env $Environment --op $Operator --ep $epNum
+    }
+
+    "list-ops" {
+        & $PYTHON lab/cli.py list-ops
+    }
+
+    "validate" {
+        & $PYTHON lab/cli.py validate
+    }
+
+    default {
+        Write-Host @"
+
+AKA-Lab CLI (Phase 11) - Multi-operator CUDA Optimization Framework
+
+Commands:
+  lab status                     Show project status
+  lab campaigns                  List all campaigns
+  lab run [--env v100] [--op NAME] [--episodes N] [--NoAgent]
+  lab evaluate --candidate PATH [--env v100] [--op NAME]
+  lab knowledge                  Show knowledge
+  lab recover                    Validate and repair state
+  lab doctor [--env v100]        Run self-test
+  lab replay --ep N [--op NAME]  Replay episode
+  lab list-ops                   List available operators
+  lab validate                   Run validation suite
+
+Examples:
+  lab run --env v100 --op rms_norm_v100_cuda --episodes 3
+  lab run --env v100 --op layer_norm_v100_cuda --episodes 1 --NoAgent
+  lab evaluate --candidate operators/layer_norm_v100_cuda/reference.cu --op layer_norm_v100_cuda
+  lab list-ops
+  lab doctor --env v100
+"@
+    }
+}

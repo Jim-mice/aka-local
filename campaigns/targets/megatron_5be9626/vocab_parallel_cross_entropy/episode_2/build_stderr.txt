@@ -1,0 +1,3 @@
+/tmp/vocab_ep2.cu(13): error: identifier "CUDART_INF_F" is undefined
+
+1 error detected in the compilation of "/tmp/vocab_ep2.cu".

@@ -1,0 +1,37 @@
+{
+  "claim": "Use one 256-thread block per row with warp-shuffle reductions for mean and variance, shared-memory warp aggregation, coalesced vectorized output computation, and fused normalization math.",
+  "strategy_tags": [
+    "warp_shuffle_reduction",
+    "shared_memory_optimization",
+    "coalesced_memory_access",
+    "parallel_reduction",
+    "fused_multiply_add",
+    "reciprocal_sqrt",
+    "vectorized_loads"
+  ],
+  "expected_effects": [
+    "reduce synchronization",
+    "reduce shared memory traffic",
+    "coalesce row-wise memory accesses",
+    "reuse row statistics across the fused output pass"
+  ],
+  "risk": [
+    "register pressure",
+    "vectorized accesses require naturally aligned tensor pointers"
+  ],
+  "operator": "layer_norm_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "135fb486548236a3",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "x",
+      "gamma",
+      "beta",
+      "y",
+      "batch",
+      "hidden",
+      "eps"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "research_only":true,
+  "canonical_target":"Megatron Native SequentialMLP Expert Compute",
+  "inputs":["permuted_local_hidden_states [T,H] FP16 contiguous","tokens_per_expert [E] int64","permuted_probs [T] FP16","expert FC1/FC2 weights"],
+  "output":"local expert output [T,H] FP16 contiguous",
+  "allowed":"reduce per-expert launch/materialization overhead while preserving expert order and zero-token behavior",
+  "excluded":["routing","permutation","communication","combine","TE grouped GEMM dependency"],
+  "stream":"passed current CUDA stream",
+  "backward":"must remain reference-compatible",
+  "status":"not activated"
+}

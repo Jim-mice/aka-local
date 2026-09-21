@@ -1,0 +1,20 @@
+{
+  "episode": 1,
+  "operator": "softmax_v100_cuda",
+  "decision": "REJECT_COMPILE",
+  "compile_pass": false,
+  "correctness_pass": false,
+  "speedup": null,
+  "aggregate_score": 1.0,
+  "geometric_mean_speedup": 1.0,
+  "incumbent_score": 1.0,
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/9858fbedc3e4/candidate.cu(37): error: identifier \"CUDART_INF_F\" is undefined\n\n1 error detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/9858fbedc3e4/candidate.cu\".\n",
+  "evaluated_at": "2026-09-19T12:52:29.109814+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,1024",
+    "4,4096",
+    "32,1024",
+    "128,4096"
+  ]
+}

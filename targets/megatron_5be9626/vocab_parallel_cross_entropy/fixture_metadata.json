@@ -1,0 +1,12 @@
+{
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "dtype": "float16",
+  "seed_formula": "1500 + (S*B) + V",
+  "target_generation": "torch.randint(0,V,[S*B], dtype=torch.long), reshaped to [S,B]",
+  "configurations": [
+    {"S": 8, "B": 1, "global_vocab": 32, "tp_sizes": [1,2], "ranges": {"tp1": [[0,32]], "tp2": [[0,16],[16,32]]}},
+    {"S": 32, "B": 2, "global_vocab": 64, "tp_sizes": [1,2], "ranges": {"tp1": [[0,64]], "tp2": [[0,32],[32,64]]}},
+    {"S": 128, "B": 2, "global_vocab": 128, "tp_sizes": [1,2], "ranges": {"tp1": [[0,128]], "tp2": [[0,64],[64,128] ]}}
+  ],
+  "generation": "full FP16 logits are generated deterministically, then rank-local contiguous shards are materialized; no tensor blobs are required"
+}

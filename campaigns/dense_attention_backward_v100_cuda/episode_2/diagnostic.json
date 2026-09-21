@@ -1,0 +1,37 @@
+﻿{
+  "operator": "dense_attention_backward_v100_cuda",
+  "episode": 2,
+  "category": "KERNEL_LATENCY",
+  "confidence": 0.85,
+  "message": "NSYS-derived diagnosis for dense_attention_backward_v100_cuda episode 2 (shape 1,2,32,32)",
+  "evidence": {
+    "items": [
+      "geo_mean_speedup=0.606",
+      "dominant_kernel_pct=97.5",
+      "dominant_kernel_name=backward_rows",
+      "dominant_kernel_avg_ns=149311",
+      "kernel_count=2 (backward_rows + clear_kernel)",
+      "sync_overhead_pct=31.4 (cudaDeviceSynchronize)",
+      "launch_count=435",
+      "launch_overhead_pct=51.5"
+    ],
+    "nsys_raw": {
+      "kernels": [
+        {"name": "backward_rows", "time_pct": 97.5, "avg_ns": 149311.3, "instances": 210},
+        {"name": "clear_kernel", "time_pct": 2.2, "avg_ns": 3368.6, "instances": 210}
+      ],
+      "api_top": [
+        {"name": "cudaLaunchKernel", "time_pct": 51.5, "calls": 435},
+        {"name": "cudaDeviceSynchronize", "time_pct": 31.4, "calls": 2}
+      ]
+    }
+  },
+  "suggested_actions": [
+    "Kernel latency is the bottleneck — backward_rows kernel at 149us dominates GPU time",
+    "Consider fusing clear_kernel into backward_rows (eliminate separate zero-init kernel)",
+    "Reduce cudaDeviceSynchronize frequency — 31.4% API time spent on synchronization",
+    "Consider warp-shuffle reductions instead of atomicAdd for dK accumulation to reduce contention",
+    "Try shared-memory staging to reduce repeated global memory accesses in dP computation"
+  ],
+  "timestamp": "2026-09-20T01:00:00+00:00"
+}

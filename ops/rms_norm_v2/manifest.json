@@ -1,0 +1,10 @@
+{
+  "operator": "rms_norm",
+  "lineage": "rms_norm_v1_to_v2",
+  "source_episode": "campaigns/rms_norm/episode_2",
+  "candidate": "candidate.py",
+  "architecture": "sm_120",
+  "promotion": "ACCEPT",
+  "hypothesis_id": "warp_reduce_shared_finalize",
+  "static": {"registers_per_thread": 30, "shared_bytes_per_block": 1056, "stack_bytes": 0, "local_bytes": 0}
+}

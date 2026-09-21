@@ -1,0 +1,11 @@
+{
+  "name": "A3_FUSED_ROW_SHARED_SOFTMAX",
+  "strategy": "One 128-thread block per (query position, batch, head), fused QK, FP32 row softmax, and PV with dynamic shared-memory scores.",
+  "semantic_scope": {"layout":"contiguous FP16 [S,B,16,64]","scale":"caller-provided, normally 0.125, applied once","mask":"none","dropout":"p=0 identity; no RNG","softmax":"FP32 max-subtracted exp/sum; FP16 rounded output","output":"contiguous FP16 [S,B,1024]"},
+  "official_shapes": [[16,1,16,64],[64,2,16,64],[128,2,16,64]],
+  "workspace": "none; only per-block dynamic shared memory, no timed-call allocation",
+  "stream": "all work enqueued on supplied stream",
+  "hypothesis": "Fusing the complete boundary removes intermediate launches/layout work; parallel D lanes reduce the A2 row serial-work growth.",
+  "risks": ["O(S^2*D) arithmetic remains", "FP32 reduction order differs from Megatron warp reduction", "shared memory is (S+128) floats"],
+  "forbidden_features_absent": ["causal/arbitrary mask","dropout RNG","NCCL","projection GEMMs","backward","CUDART_INF_F"]
+}

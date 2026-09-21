@@ -1,0 +1,12 @@
+{
+  "status":"FUTURE_ABI_FROZEN_NOT_CANDIDATE_ACTIVE",
+  "architecture":"FRAMEWORK_OWNED_VENDOR_QK_THEN_LOCAL_ABI_THEN_VENDOR_PV",
+  "symbol":"attention_dense_softmax_fp16_stream",
+  "prototype":"extern \"C\" void attention_dense_softmax_fp16_stream(const __half* scores, __half* probabilities, int64_t batch_heads, int64_t sequence_length, cudaStream_t stream);",
+  "scores":"contiguous FP16 flattened [batch_heads,S,S]; QK alpha=0.125 already applied",
+  "probabilities":"contiguous FP16 flattened [batch_heads,S,S]",
+  "semantics":"row-wise FP32 softmax then FP16 output; dense/no-mask/dropout p=0",
+  "forbidden_inputs":["Q","K","V","scale","mask","dropout state","cuBLAS handle"],
+  "aliasing":"scores read-only; probabilities separate preallocated non-overlapping output",
+  "stream":"current stream passed explicitly"
+}

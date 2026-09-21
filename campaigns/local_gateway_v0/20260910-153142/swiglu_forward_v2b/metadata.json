@@ -1,0 +1,12 @@
+{
+  "id": "swiglu_forward_local",
+  "dtype": "fp16",
+  "input_dtypes": {"gate": "fp16", "up": "fp16"},
+  "output_dtypes": {"out": "fp16"},
+  "origin": {"framework": "synthetic_training_operator", "symbol": "silu_mul"},
+  "shapes": {
+    "m256_d4096": {"production_performance": {"performance_us": 18.56}},
+    "m1024_d4096": {"production_performance": {"performance_us": 60.896}},
+    "m4096_d4096": {"production_performance": {"performance_us": 211.488}}
+  }
+}

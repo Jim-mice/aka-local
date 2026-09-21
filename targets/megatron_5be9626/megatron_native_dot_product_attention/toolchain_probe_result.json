@@ -1,0 +1,6 @@
+{
+  "remote": "fallback existing project adapter",
+  "command": "/usr/local/cuda-11.8/bin/nvcc -arch=sm_70 -O2 /tmp/aka_cuda118_sentinel_probe.cu -o /tmp/aka_cuda118_sentinel_probe && /tmp/aka_cuda118_sentinel_probe; echo EXIT:$?",
+  "stdout": "EXIT:0\n",
+  "stderr": ""
+}

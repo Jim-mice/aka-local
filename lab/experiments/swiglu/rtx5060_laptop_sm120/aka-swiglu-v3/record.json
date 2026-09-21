@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "aka-swiglu-v3",
+  "title": "Standalone SwiGLU V3 robustness",
+  "timestamp": "UNKNOWN",
+  "operator": "swiglu",
+  "hardware": "rtx5060_laptop_sm120",
+  "architecture": "sm_120",
+  "backend": "cuda_cpp",
+  "framework": "cuda_cpp",
+  "dtype": [],
+  "mode": "training",
+  "scope": {},
+  "shape_regime": {},
+  "baseline": {},
+  "candidate": {},
+  "hypothesis": "",
+  "mechanisms": [
+    "candidate comparison"
+  ],
+  "changes": [],
+  "evidence": {
+    "summary": "robustness arithmetic aggregate 0.986540x; KEEP_V2B"
+  },
+  "performance": {
+    "summary": "robustness arithmetic aggregate 0.986540x; KEEP_V2B"
+  },
+  "decision": "REJECT",
+  "failure_class": null,
+  "observations": [
+    "robustness arithmetic aggregate 0.986540x; KEEP_V2B"
+  ],
+  "failed_assumptions": [],
+  "unresolved_questions": [],
+  "next_directions": [],
+  "provenance": {
+    "source_type": "LEGACY_AKA_LOCAL",
+    "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\robustness_abba.json",
+    "source_commit": null,
+    "canonical": true,
+    "evidence_level": 3,
+    "location": "local",
+    "read_only": false
+  },
+  "tags": [
+    "imported"
+  ]
+}

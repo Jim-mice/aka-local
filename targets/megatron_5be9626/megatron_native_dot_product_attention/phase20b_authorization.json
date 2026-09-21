@@ -1,0 +1,15 @@
+{
+  "status":"AUTHORIZED_METADATA_ONLY_NO_AGENT_EPISODE",
+  "verdict":"QUALIFIED_FOR_VENDOR_GEMM_AGENT_CAMPAIGN",
+  "megatron_commit":"5be9626709af2722333bf54797c954c09edeada3",
+  "replay_contract":"65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+  "performance_contract":"5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+  "optimization_era":"attention_vendor_gemm_hybrid_v1",
+  "candidate_class":"VENDOR_GEMM_PLUS_FUSED_SCALE_SOFTMAX_OR_LOCAL_GRAPH",
+  "vendor_gemm_preservation_required":true,
+  "workspace_policy":"phase20a_vendor_gemm_hybrid_research_contract.json",
+  "statistical_policy":"reuse native_dot_product_attention_stability_v1 only if the Phase 17 performance scope is proven identical; otherwise create a new frozen policy before scoring",
+  "environment_readiness":"phase20a_environment_readiness.json recorded NOISY hardware/process context; capture a fresh read-only window before any Phase 20-B scoring",
+  "official_configurations":[[16,1,1024],[64,2,1024],[128,2,1024]],
+  "not_authorized_here":"candidate generation, scoring, promotion, integration"
+}

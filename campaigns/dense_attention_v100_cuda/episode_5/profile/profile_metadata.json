@@ -1,0 +1,43 @@
+{
+  "operator": "dense_attention_v100_cuda",
+  "episode": 5,
+  "environment": "v100_sm70",
+  "profiler": "nsys",
+  "profiler_version": "2026.2.1",
+  "profiler_bin": "<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/nsys",
+  "profiler_command": "nsys profile --stats=true -o nsys_attn python harness.py",
+  "contract_hash": "8e7bfd5ec5c4a17f",
+  "candidate_hash": "01e6df25db520b44",
+  "shape": "1,4,64,64",
+  "timestamp": "2026-09-19T15:19:00+00:00",
+  "gpu_kern_sum": {
+    "kernel_count": 2,
+    "total_kernel_time_us": 43224.47,
+    "kernels": [
+      {
+        "name": "dense_attention_kernel",
+        "time_pct": 99.9,
+        "total_ns": 43199734.0,
+        "instances": 50,
+        "avg_ns": 863994.7,
+        "med_ns": 357335.0,
+        "min_ns": 354102.0,
+        "max_ns": 3282739.0
+      },
+      {
+        "name": "void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::nat\u2026",
+        "time_pct": 0.1,
+        "total_ns": 24738.0,
+        "instances": 3,
+        "avg_ns": 8246.0,
+        "med_ns": 7904.0,
+        "min_ns": 7777.0,
+        "max_ns": 9057.0
+      }
+    ]
+  },
+  "api_sum": {
+    "api_count": 0,
+    "apis": []
+  }
+}

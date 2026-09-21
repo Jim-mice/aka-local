@@ -1,0 +1,8 @@
+{
+  "episode": "M4",
+  "source_sha256": "1fb2921a0e0706d2e71bc42073036ca3b048661edaa7c1e76ae22f2e61e9e549",
+  "compile_pass": true,
+  "compile_stderr": "",
+  "stdout": "{\"results\": [{\"distribution\": [4, 4, 4, 4], \"max_abs\": 1.8803402781486511e-06, \"max_rel\": 0.0004754401452373713, \"finite\": true}, {\"distribution\": [1, 3, 5, 7], \"max_abs\": 2.839602530002594e-06, \"max_rel\": 0.0004478497139643878, \"finite\": true}, {\"distribution\": [0, 0, 8, 8], \"max_abs\": 2.7297064661979675e-06, \"max_rel\": 0.00045251677511259913, \"finite\": true}]}\n",
+  "stderr": ""
+}

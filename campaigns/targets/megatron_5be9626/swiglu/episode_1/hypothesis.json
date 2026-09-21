@@ -1,0 +1,32 @@
+{
+  "target": "swiglu",
+  "contract": "swiglu_v1",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "candidate": "candidate.cu",
+  "boundary": [
+    "optional bias add",
+    "gate/up split",
+    "SiLU(gate)",
+    "multiply by up+offset"
+  ],
+  "excluded": [
+    "FC1 GEMM",
+    "FC2 GEMM",
+    "TP collectives",
+    "TE",
+    "FP8",
+    "dropout",
+    "residual BDA"
+  ],
+  "dtype": "FP16",
+  "layout": "contiguous row-major",
+  "stream": "current CUDA stream",
+  "workspace": false,
+  "synchronization": false,
+  "official_shapes": [
+    {"S": 16, "B": 1, "H": 1024, "I": 4096, "TP": 1, "offset": 0},
+    {"S": 64, "B": 2, "H": 1024, "I": 4096, "TP": 1, "offset": 0},
+    {"S": 128, "B": 2, "H": 1024, "I": 4096, "TP": 1, "offset": 0}
+  ],
+  "notes": "Standalone nvcc-compatible CUDA sidecar; no benchmark run."
+}

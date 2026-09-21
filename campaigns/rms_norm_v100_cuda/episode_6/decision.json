@@ -1,0 +1,22 @@
+{
+  "episode": 6,
+  "operator": "rms_norm_v100_cuda",
+  "decision": "REJECT_PERFORMANCE",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 1.357,
+  "aggregate_score": 1.202,
+  "geometric_mean_speedup": 1.202,
+  "incumbent_score": 2.892,
+  "reason": "aggregate_score=1.202 <= incumbent=2.892",
+  "evaluated_at": "2026-09-19T07:07:17.008210+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ],
+  "legacy": true,
+  "legacy_reason": "single_shape_evaluation"
+}

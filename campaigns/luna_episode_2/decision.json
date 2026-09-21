@@ -1,0 +1,14 @@
+{
+  "agent": "codex",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "primary_invocations": 1,
+  "reviewer_invocations": 0,
+  "fallback": "none",
+  "incumbent": "swiglu_forward_v2b",
+  "candidate_produced": false,
+  "compile_passed": null,
+  "correctness_passed": null,
+  "decision": "not_applicable",
+  "stop_reason": "CODEX_REQUEST_TIMEOUT"
+}

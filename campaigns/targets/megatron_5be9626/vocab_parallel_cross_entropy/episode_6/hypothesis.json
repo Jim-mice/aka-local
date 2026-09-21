@@ -1,0 +1,10 @@
+{
+  "target": "vocab_parallel_cross_entropy._VocabParallelCrossEntropy",
+  "hypothesis": "Fuse local preparation into one kernel while retaining the caller's one MAX and two SUM collectives.",
+  "optimization_scope": "local prepare stage only",
+  "expected_benefit": "reduce local elementwise/reduction kernel launches and temporary overhead",
+  "preserved_collectives": ["MAX", "SUM", "SUM"],
+  "backward": "out of scope",
+  "cuda": "11.8, sm_70",
+  "risk": "custom kernels must be integrated without changing caller collective ordering"
+}

@@ -1,0 +1,16 @@
+{
+  "candidate": "episode_10",
+  "hypothesis": "Fuse local target extraction, shifted predicted contribution, exponent generation, and denominator accumulation into one row-wise kernel to reduce local launch and temporary coordination overhead while preserving caller collectives.",
+  "scope": "local_prepare_fp16_stream only; local max remains a separate stage",
+  "correctness": {
+    "shift": "logit - global_max",
+    "predicted_local": "shifted target logit only when the target belongs to this rank, otherwise zero",
+    "exp_values": "expf(logit - global_max)",
+    "target_mask": "one byte per row",
+    "target_local": "target minus rank * local_vocab when owned",
+    "arithmetic": "FP32"
+  },
+  "collectives": "caller preserves exactly one MAX all-reduce and two SUM all-reduces",
+  "compatibility": "CUDA 11.8, V100 sm_70; finite initializer avoids CUDART_INF_F",
+  "measurement": "not run per instruction"
+}

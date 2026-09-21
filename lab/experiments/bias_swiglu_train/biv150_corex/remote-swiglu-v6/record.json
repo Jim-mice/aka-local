@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "remote-swiglu-v6",
+  "title": "Bias SwiGLU direct2 regime",
+  "timestamp": "UNKNOWN",
+  "operator": "bias_swiglu_train",
+  "hardware": "biv150_corex",
+  "architecture": "BI-V150",
+  "backend": "corex_triton",
+  "framework": "corex_triton",
+  "dtype": [],
+  "mode": "training",
+  "scope": {},
+  "shape_regime": {},
+  "baseline": {},
+  "candidate": {},
+  "hypothesis": "",
+  "mechanisms": [
+    "shape_dispatch",
+    "launch_reduction"
+  ],
+  "changes": [],
+  "evidence": {
+    "summary": "5-seed all-pass; score 2.940293; authoritative improvement 4.016 percent"
+  },
+  "performance": {
+    "summary": "5-seed all-pass; score 2.940293; authoritative improvement 4.016 percent"
+  },
+  "decision": "ACCEPT",
+  "failure_class": null,
+  "observations": [
+    "5-seed all-pass; score 2.940293; authoritative improvement 4.016 percent"
+  ],
+  "failed_assumptions": [],
+  "unresolved_questions": [],
+  "next_directions": [],
+  "provenance": {
+    "source_type": "REMOTE_ATREX_CANONICAL",
+    "source_path": "/private/atrex-megatron/campaigns/kernel_opt_bias_swiglu_train_triton_bi_v150_production/memory/v6.json",
+    "source_commit": null,
+    "canonical": true,
+    "evidence_level": 3,
+    "location": "remote_biv150",
+    "read_only": true
+  },
+  "tags": [
+    "imported"
+  ]
+}

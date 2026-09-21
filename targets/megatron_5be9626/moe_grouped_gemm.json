@@ -1,0 +1,18 @@
+{
+  "target_name": "MoE Grouped GEMM",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_files": ["megatron/core/transformer/moe/moe_layer.py", "megatron/core/transformer/moe/router.py", "megatron/core/transformer/moe/token_dispatcher.py", "megatron/core/transformer/moe/experts.py", "megatron/core/extensions/transformer_engine.py"],
+  "call_sites": ["TransformerLayer._forward_mlp -> MoELayer.forward -> router/preprocess -> token_dispatch -> experts.forward -> token_combine"],
+  "implementation_backend": "TEGroupedMLP/TE grouped linear when enabled; SequentialMLP fallback otherwise; dispatchers add permutation and optional NCCL collectives",
+  "forward": {"path": "router logits/top-k -> routing map/probs -> token dispatch/permutation -> expert fc1 grouped GEMM -> activation/SwiGLU -> expert fc2 grouped GEMM -> combine/unpermute", "grouped_gemm": "expert compute only; routing and communication are separate stages"},
+  "backward": {"path": "autograd through dispatcher and expert module; TE grouped linear backward or per-expert linear backward", "communication": "dispatcher backward reverses combine/dispatch and may involve collectives"},
+  "inputs": ["hidden states [tokens,H]", "expert weights", "routing map/probs", "tokens-per-expert metadata"],
+  "outputs": ["combined hidden states [tokens,H]", "router auxiliary outputs where enabled"],
+  "symbolic_shapes": {"tokens": "S*B (or local tokens)", "expert_input": "[tokens_per_expert_e,H]", "fc1": "[tokens_per_expert_e, I_moe/TP]", "experts": "E experts, top-k assignments", "grouped_metadata": "tokens_per_expert and expert offsets"},
+  "dtypes": ["FP32", "FP16", "BF16", "FP8/MXFP8 only on specific TE/CuTe paths"],
+  "distributed_semantics": {"required_for_some_dispatchers": true, "boundaries": ["expert parallel all-to-all/all-gather depending dispatcher", "tensor parallel expert linear collectives"], "routing": "top-k and capacity/drop policy determine grouping"},
+  "external_dependencies": ["Transformer Engine grouped linear/grouped GEMM", "NCCL/PyTorch distributed", "optional fused router/dispatcher backends"],
+  "v100_feasibility": "SUPPORTED_WITH_FALLBACK: SequentialMLP and compatible FP16/BF16 paths; TE grouped GEMM/FP8/MXFP8 features require explicit V100 validation and may be unsupported",
+  "candidate_optimization_boundary": "D/E: expert grouped GEMM may be isolated only with routing metadata fixed; full target includes multi-stage dispatch/compute/communication",
+  "open_questions": ["Exact dispatcher and experts implementation selected by final config", "Whether grouped-GEMM dependency is installed on V100 backend", "Representative tokens-per-expert distribution"]
+}

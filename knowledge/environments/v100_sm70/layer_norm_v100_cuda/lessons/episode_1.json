@@ -1,0 +1,11 @@
+{
+  "operator": "layer_norm_v100_cuda",
+  "episode": 1,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "compile",
+  "reason": "no result.json from V100; stdout=Traceback (most recent call last):\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 329, in <module>\n    main()\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 307, in main\n    result[\"latency_us\"] = round(time_it(candidate_fn, *inputs), 2)\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 183, in time_it\n    torch.cuda.synchronize()\n  File \"<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/cu",
+  "compiler_error": "",
+  "reusable_rule": "Avoid compilation errors: ensure candidate.cu is valid standalone CUDA C++",
+  "timestamp": "2026-09-19T09:36:32.053466+00:00"
+}

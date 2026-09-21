@@ -1,0 +1,32 @@
+{
+  "episode": 2,
+  "operator": "dense_attention_backward_v100_cuda",
+  "decision": "REJECT_PERFORMANCE",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 6.547,
+  "aggregate_score": 0.606,
+  "geometric_mean_speedup": 0.606,
+  "incumbent_score": 1.0,
+  "reason": "aggregate_score=0.606 <= incumbent=1.0",
+  "evaluated_at": "2026-09-19T16:23:26.129322+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,2,32,32",
+    "1,4,64,64",
+    "1,8,128,64",
+    "2,4,128,64"
+  ],
+  "legacy_benchmark": true,
+  "legacy_benchmark_reason": "baseline included forward recomputation",
+  "benchmark_contract": {
+    "version": 1,
+    "mode": "forward_recompute_autograd"
+  },
+  "v2_evaluation": {
+    "benchmark_contract_version": 2,
+    "benchmark_contract_hash": "6ac27010f01f3d2f",
+    "score": 0.152107,
+    "decision_basis": "comparable v2 candidates only"
+  }
+}

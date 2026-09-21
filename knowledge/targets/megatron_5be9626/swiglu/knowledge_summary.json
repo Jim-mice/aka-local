@@ -1,0 +1,19 @@
+{
+  "target": "swiglu",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "target_contract_hash": "2b05cc321bed0956",
+  "optimization_started": true,
+  "episodes": 3,
+  "valid_correctness_episodes": [
+    1,
+    2
+  ],
+  "failed_correctness_episodes": [
+    3
+  ],
+  "best_episode": 2,
+  "best_score": 2.7994219276258265,
+  "score_type": "activation_only_geometric_mean_speedup",
+  "standalone_scores_imported": false,
+  "profile_feedback_used": true
+}

@@ -1,0 +1,6 @@
+{
+  "operator": "dense_attention_backward_v100_cuda",
+  "episode": 7,
+  "profiler": "nsys",
+  "shape": "1,2,32,32"
+}

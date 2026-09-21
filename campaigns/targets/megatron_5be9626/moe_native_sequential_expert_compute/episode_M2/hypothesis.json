@@ -1,0 +1,15 @@
+{
+  "name": "m2_sequential_expert_fp16_stream",
+  "marker": "MEGATRON_NATIVE_SEQUENTIALMLP_EXPERT_COMPUTE_V1",
+  "entry_point": "moe_sequential_expert_forward_fp16_stream",
+  "hypothesis": "A single current-stream launch maps one block to each contiguous permuted token row and recomputes the real FC1 gated-SiLU vector per FC2 output, avoiding allocations and preserving expert order including empty experts.",
+  "constraints": {
+    "cuda": "11.8",
+    "architecture": "sm70",
+    "input_dtype": "fp16",
+    "no_allocations": true,
+    "no_cudart_inf_f": true,
+    "no_nccl": true
+  },
+  "known_tradeoff": "This correctness-first candidate intentionally favors simple indexing and independent accumulation over GEMM-class throughput."
+}

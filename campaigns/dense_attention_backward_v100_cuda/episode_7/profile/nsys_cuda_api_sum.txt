@@ -1,0 +1,18 @@
+Generating SQLite file /home/<REMOTE_USER>/aka_remote_jobs/nsys_ep7/nsys_candidate.sqlite from /home/<REMOTE_USER>/aka_remote_jobs/nsys_ep7/nsys_candidate.nsys-rep
+Processing [/home/<REMOTE_USER>/aka_remote_jobs/nsys_ep7/nsys_candidate.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_api_sum.py]... 
+
+ ** CUDA API Summary (cuda_api_sum):
+
+ Time (%)  Total Time (ns)  Num Calls    Avg (ns)       Med (ns)      Min (ns)     Max (ns)      StdDev (ns)             Name          
+ --------  ---------------  ---------  -------------  -------------  ----------  -------------  -------------  ------------------------
+     93.4    1,103,409,778          2  551,704,889.0  551,704,889.0  54,379,867  1,049,029,911  703,323,791.0  cudaDeviceSynchronize   
+      4.8       56,626,505        435      130,175.9        6,200.0       4,038     17,059,882    1,340,687.1  cudaLaunchKernel        
+      1.7       19,921,280          2    9,960,640.0    9,960,640.0   2,126,859     17,794,421   11,078,639.3  cudaFree                
+      0.1          886,650          5      177,330.0      103,478.0       4,351        362,223      153,397.4  cudaMalloc              
+      0.0          315,507          1      315,507.0      315,507.0     315,507        315,507            0.0  cudaGetDeviceProperties 
+      0.0          240,055      1,152          208.4          157.0          88          2,137          145.8  cuGetProcAddress        
+      0.0           38,832         10        3,883.2        1,335.0         386         26,473        8,007.3  cudaStreamIsCapturing   
+      0.0           26,202         18        1,455.7          396.0         367         17,805        4,090.4  cudaEventCreateWithFlags
+      0.0            7,597          3        2,532.3        2,910.0       1,700          2,987          721.8  cuInit                  
+      0.0            1,651          4          412.8          239.5         139          1,033          416.2  cuModuleGetLoadingMode  
+

@@ -1,0 +1,13 @@
+{
+  "operator": "rms_norm",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "model_turns": 1,
+  "reviewers": 0,
+  "fallback": "none",
+  "episodes_requested": 3,
+  "episodes_started": [2],
+  "episodes_completed": [],
+  "stop_reason": "CODEX_REQUEST_TIMEOUT",
+  "status": "STOPPED_BY_CODEX_TIMEOUT"
+}

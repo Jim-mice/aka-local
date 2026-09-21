@@ -1,0 +1,1453 @@
+{
+  "records": [
+    {
+      "world": 1,
+      "config": {
+        "S": 8,
+        "B": 1,
+        "V": 32
+      },
+      "rank": 0,
+      "means_us": {
+        "prepare_us": 168.4496007859707,
+        "calculate_us": 160.81919819116592,
+        "total_us": 329.26880568265915
+      },
+      "std_us": {
+        "prepare_us": 5.432648600463782,
+        "calculate_us": 3.6616910371811278,
+        "total_us": 6.376149572788651
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 173.0560064315796,
+          "calculate_us": 163.83999586105347,
+          "total_us": 336.89600229263306,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 173.0560064315796,
+          "calculate_us": 160.76800227165222,
+          "total_us": 333.8240087032318,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 167.93599724769592,
+          "calculate_us": 156.67200088500977,
+          "total_us": 324.6079981327057,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 165.8879965543747,
+          "calculate_us": 160.76800227165222,
+          "total_us": 326.6560137271881,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 167.93599724769592,
+          "calculate_us": 168.96000504493713,
+          "total_us": 336.89600229263306,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 158.720001578331,
+          "total_us": 325.6320059299469,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 165.8879965543747,
+          "calculate_us": 159.743994474411,
+          "total_us": 325.6320059299469,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 158.720001578331,
+          "total_us": 325.6320059299469,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 165.8879965543747,
+          "calculate_us": 159.743994474411,
+          "total_us": 325.6320059299469,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 169.98399794101715,
+          "calculate_us": 161.79199516773224,
+          "total_us": 331.7759931087494,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 164.89599645137787,
+          "calculate_us": 159.743994474411,
+          "total_us": 324.6400058269501,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 165.8879965543747,
+          "calculate_us": 172.03199863433838,
+          "total_us": 337.92001008987427,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 164.86400365829468,
+          "calculate_us": 157.69599378108978,
+          "total_us": 322.56001234054565,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 158.720001578331,
+          "total_us": 325.6320059299469,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 159.743994474411,
+          "total_us": 326.6560137271881,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 159.743994474411,
+          "total_us": 326.6560137271881,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 160.76800227165222,
+          "total_us": 327.67999172210693,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 159.743994474411,
+          "total_us": 326.6560137271881,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 189.43999707698822,
+          "calculate_us": 158.720001578331,
+          "total_us": 348.1599986553192,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 165.8879965543747,
+          "calculate_us": 159.743994474411,
+          "total_us": 325.6320059299469,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 1,
+      "config": {
+        "S": 32,
+        "B": 2,
+        "V": 64
+      },
+      "rank": 0,
+      "means_us": {
+        "prepare_us": 202.90720015764236,
+        "calculate_us": 183.34720060229301,
+        "total_us": 386.2544000148773
+      },
+      "std_us": {
+        "prepare_us": 26.4771118473027,
+        "calculate_us": 25.197970640619758,
+        "total_us": 45.33205906888344
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 231.4240038394928,
+          "calculate_us": 186.36800348758698,
+          "total_us": 417.7919924259186,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 172.03199863433838,
+          "calculate_us": 182.27200210094452,
+          "total_us": 354.3039858341217,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 157.69599378108978,
+          "total_us": 324.6079981327057,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 209.9200040102005,
+          "calculate_us": 191.48799777030945,
+          "total_us": 401.40798687934875,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 167.93599724769592,
+          "calculate_us": 157.69599378108978,
+          "total_us": 325.6320059299469,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 165.8879965543747,
+          "calculate_us": 158.720001578331,
+          "total_us": 324.6079981327057,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 166.9120043516159,
+          "calculate_us": 156.67200088500977,
+          "total_us": 323.5839903354645,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 233.47200453281403,
+          "calculate_us": 271.36000990867615,
+          "total_us": 504.83202934265137,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 224.2559939622879,
+          "calculate_us": 195.5839991569519,
+          "total_us": 419.840008020401,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 204.83200252056122,
+          "calculate_us": 196.60800695419312,
+          "total_us": 401.43999457359314,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 209.9200040102005,
+          "calculate_us": 193.53599846363068,
+          "total_us": 403.4560024738312,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 223.23200106620789,
+          "calculate_us": 191.48799777030945,
+          "total_us": 414.71999883651733,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 199.68000054359436,
+          "calculate_us": 189.43999707698822,
+          "total_us": 389.1200125217438,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 226.30399465560913,
+          "calculate_us": 184.32000279426575,
+          "total_us": 410.6239974498749,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 224.2559939622879,
+          "calculate_us": 178.17600071430206,
+          "total_us": 402.43199467658997,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 185.34399569034576,
+          "calculate_us": 175.10400712490082,
+          "total_us": 360.4480028152466,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 238.5919988155365,
+          "calculate_us": 192.51200556755066,
+          "total_us": 431.10400438308716,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 182.27200210094452,
+          "calculate_us": 169.98399794101715,
+          "total_us": 352.25600004196167,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 187.391996383667,
+          "calculate_us": 181.2479943037033,
+          "total_us": 368.6400055885315,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 237.56800591945648,
+          "calculate_us": 156.67200088500977,
+          "total_us": 394.23999190330505,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 1,
+      "config": {
+        "S": 128,
+        "B": 2,
+        "V": 128
+      },
+      "rank": 0,
+      "means_us": {
+        "prepare_us": 208.33439752459526,
+        "calculate_us": 195.84000036120415,
+        "total_us": 404.1744038462639
+      },
+      "std_us": {
+        "prepare_us": 15.89130387773686,
+        "calculate_us": 12.138315357972305,
+        "total_us": 24.07471486753534
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 203.77600193023682,
+          "calculate_us": 194.5600062608719,
+          "total_us": 398.3359932899475,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 207.87200331687927,
+          "calculate_us": 191.48799777030945,
+          "total_us": 399.3600010871887,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 247.80799448490143,
+          "calculate_us": 230.3999960422516,
+          "total_us": 478.2080054283142,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 199.68000054359436,
+          "calculate_us": 191.48799777030945,
+          "total_us": 391.1679983139038,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 199.68000054359436,
+          "calculate_us": 189.43999707698822,
+          "total_us": 389.1200125217438,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 201.7280012369156,
+          "calculate_us": 191.48799777030945,
+          "total_us": 393.21601390838623,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 253.9519965648651,
+          "calculate_us": 192.51200556755066,
+          "total_us": 446.46400213241577,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 192.51200556755066,
+          "total_us": 395.26399970054626,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 189.43999707698822,
+          "total_us": 392.192006111145,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 191.48799777030945,
+          "total_us": 392.192006111145,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 218.1120067834854,
+          "calculate_us": 190.46400487422943,
+          "total_us": 408.57601165771484,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 191.48799777030945,
+          "total_us": 390.1439905166626,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 201.7280012369156,
+          "calculate_us": 226.30399465560913,
+          "total_us": 428.0320107936859,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 189.43999707698822,
+          "total_us": 390.1439905166626,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 223.26399385929108,
+          "calculate_us": 211.96800470352173,
+          "total_us": 435.232013463974,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 203.77600193023682,
+          "calculate_us": 189.43999707698822,
+          "total_us": 393.21601390838623,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 201.7280012369156,
+          "calculate_us": 190.46400487422943,
+          "total_us": 392.192006111145,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 191.48799777030945,
+          "total_us": 390.1439905166626,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 190.46400487422943,
+          "total_us": 391.1679983139038,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 190.46400487422943,
+          "total_us": 389.1200125217438,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 8,
+        "B": 1,
+        "V": 32
+      },
+      "rank": 1,
+      "means_us": {
+        "prepare_us": 17.715200409293175,
+        "calculate_us": 31.948799639940262,
+        "total_us": 49.66400004923344
+      },
+      "std_us": {
+        "prepare_us": 0.48144640527195387,
+        "calculate_us": 0.4202408752805933,
+        "total_us": 0.525299183067141
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 18.432000651955605,
+          "calculate_us": 31.74399957060814,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 18.432000651955605,
+          "calculate_us": 31.74399957060814,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 18.432000651955605,
+          "calculate_us": 31.74399957060814,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 18.432000651955605,
+          "calculate_us": 31.74399957060814,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 18.432000651955605,
+          "calculate_us": 31.74399957060814,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 31.74399957060814,
+          "total_us": 49.15200173854828,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 18.432000651955605,
+          "calculate_us": 31.74399957060814,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 8,
+        "B": 1,
+        "V": 32
+      },
+      "rank": 0,
+      "means_us": {
+        "prepare_us": 203.46719622612,
+        "calculate_us": 190.4656007885933,
+        "total_us": 393.9327999949455
+      },
+      "std_us": {
+        "prepare_us": 8.847835046646452,
+        "calculate_us": 8.318811249887169,
+        "total_us": 14.794846939399198
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 220.15999257564545,
+          "calculate_us": 225.2800017595291,
+          "total_us": 445.43999433517456,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 205.82400262355804,
+          "calculate_us": 189.43999707698822,
+          "total_us": 395.26399970054626,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 201.7280012369156,
+          "calculate_us": 188.4160041809082,
+          "total_us": 390.1439905166626,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 199.68000054359436,
+          "calculate_us": 189.43999707698822,
+          "total_us": 389.1200125217438,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 199.68000054359436,
+          "calculate_us": 190.46400487422943,
+          "total_us": 390.1439905166626,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 189.43999707698822,
+          "total_us": 388.09600472450256,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 186.36800348758698,
+          "total_us": 385.0240111351013,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 191.48799777030945,
+          "total_us": 394.23999190330505,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 221.18400037288666,
+          "calculate_us": 187.391996383667,
+          "total_us": 408.57601165771484,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 197.63199985027313,
+          "calculate_us": 188.4160041809082,
+          "total_us": 386.04798913002014,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 187.391996383667,
+          "total_us": 386.04798913002014,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 187.391996383667,
+          "total_us": 388.09600472450256,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 186.36800348758698,
+          "total_us": 387.07199692726135,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 228.35199534893036,
+          "calculate_us": 191.48799777030945,
+          "total_us": 419.840008020401,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 188.4160041809082,
+          "total_us": 389.1200125217438,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 188.4160041809082,
+          "total_us": 387.07199692726135,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 197.63199985027313,
+          "calculate_us": 188.4160041809082,
+          "total_us": 386.04798913002014,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 198.65599274635315,
+          "calculate_us": 188.4160041809082,
+          "total_us": 387.07199692726135,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 187.391996383667,
+          "total_us": 388.09600472450256,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 198.62399995326996,
+          "calculate_us": 189.4720047712326,
+          "total_us": 388.09600472450256,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 32,
+        "B": 2,
+        "V": 64
+      },
+      "rank": 1,
+      "means_us": {
+        "prepare_us": 17.152000218629837,
+        "calculate_us": 33.48480015993118,
+        "total_us": 50.63679851591587
+      },
+      "std_us": {
+        "prepare_us": 0.4549240921270022,
+        "calculate_us": 0.48144640527195387,
+        "total_us": 0.5226679893286003
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 16.383999958634377,
+          "calculate_us": 33.79200026392937,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 16.383999958634377,
+          "calculate_us": 33.79200026392937,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 16.383999958634377,
+          "calculate_us": 33.79200026392937,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 32.76799991726875,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 16.383999958634377,
+          "calculate_us": 33.79200026392937,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 16.383999958634377,
+          "calculate_us": 33.79200026392937,
+          "total_us": 50.175998359918594,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 17.40800030529499,
+          "calculate_us": 33.79200026392937,
+          "total_us": 51.19999870657921,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 32,
+        "B": 2,
+        "V": 64
+      },
+      "rank": 0,
+      "means_us": {
+        "prepare_us": 195.84319964051247,
+        "calculate_us": 177.86720022559166,
+        "total_us": 373.71040135622025
+      },
+      "std_us": {
+        "prepare_us": 26.36051293929763,
+        "calculate_us": 16.641752161498665,
+        "total_us": 40.571644554868875
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 192.51200556755066,
+          "total_us": 393.21601390838623,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 191.48799777030945,
+          "calculate_us": 172.03199863433838,
+          "total_us": 363.5199964046478,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 196.6399997472763,
+          "calculate_us": 198.65599274635315,
+          "total_us": 395.29600739479065,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 184.32000279426575,
+          "calculate_us": 172.03199863433838,
+          "total_us": 356.3520014286041,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 185.34399569034576,
+          "calculate_us": 169.98399794101715,
+          "total_us": 355.3279936313629,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 187.391996383667,
+          "calculate_us": 169.98399794101715,
+          "total_us": 357.37600922584534,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 187.391996383667,
+          "calculate_us": 174.0799993276596,
+          "total_us": 361.4720106124878,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 186.36800348758698,
+          "calculate_us": 168.96000504493713,
+          "total_us": 355.3279936313629,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 187.391996383667,
+          "calculate_us": 173.0560064315796,
+          "total_us": 360.4480028152466,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 183.32800269126892,
+          "calculate_us": 168.96000504493713,
+          "total_us": 352.28800773620605,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 184.32000279426575,
+          "calculate_us": 168.96000504493713,
+          "total_us": 353.2800078392029,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 182.27200210094452,
+          "calculate_us": 199.68000054359436,
+          "total_us": 381.9519877433777,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 227.32800245285034,
+          "calculate_us": 169.98399794101715,
+          "total_us": 397.3119854927063,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 185.34399569034576,
+          "calculate_us": 169.98399794101715,
+          "total_us": 355.3279936313629,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 207.87200331687927,
+          "calculate_us": 177.12000012397766,
+          "total_us": 384.99200344085693,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 183.29599499702454,
+          "calculate_us": 165.8879965543747,
+          "total_us": 349.1840064525604,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 183.29599499702454,
+          "calculate_us": 166.9120043516159,
+          "total_us": 350.20801424980164,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 188.4160041809082,
+          "calculate_us": 174.0799993276596,
+          "total_us": 362.4959886074066,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 186.36800348758698,
+          "calculate_us": 169.98399794101715,
+          "total_us": 356.3520014286041,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 297.9840040206909,
+          "calculate_us": 234.49599742889404,
+          "total_us": 532.480001449585,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 128,
+        "B": 2,
+        "V": 128
+      },
+      "rank": 1,
+      "means_us": {
+        "prepare_us": 19.967999309301376,
+        "calculate_us": 42.59839951992035,
+        "total_us": 62.566398829221725
+      },
+      "std_us": {
+        "prepare_us": 0.5253010941007417,
+        "calculate_us": 0.5146878567490191,
+        "total_us": 0.31518065646044496
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 43.007999658584595,
+          "total_us": 63.48799914121628,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 43.007999658584595,
+          "total_us": 63.48799914121628,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 19.45599913597107,
+          "calculate_us": 43.007999658584595,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 20.479999482631683,
+          "calculate_us": 41.98399931192398,
+          "total_us": 62.463998794555664,
+          "collectives": 0
+        }
+      ]
+    },
+    {
+      "world": 2,
+      "config": {
+        "S": 128,
+        "B": 2,
+        "V": 128
+      },
+      "rank": 0,
+      "means_us": {
+        "prepare_us": 213.19679915905,
+        "calculate_us": 196.1936004459858,
+        "total_us": 409.3904048204422
+      },
+      "std_us": {
+        "prepare_us": 17.836096444058047,
+        "calculate_us": 7.977761123179295,
+        "total_us": 24.901743026389166
+      },
+      "rows": [
+        {
+          "iteration": 0,
+          "prepare_us": 253.9519965648651,
+          "calculate_us": 217.0879989862442,
+          "total_us": 471.0400104522705,
+          "collectives": 0
+        },
+        {
+          "iteration": 1,
+          "prepare_us": 207.87200331687927,
+          "calculate_us": 191.48799777030945,
+          "total_us": 399.3600010871887,
+          "collectives": 0
+        },
+        {
+          "iteration": 2,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 192.51200556755066,
+          "total_us": 395.26399970054626,
+          "collectives": 0
+        },
+        {
+          "iteration": 3,
+          "prepare_us": 238.5919988155365,
+          "calculate_us": 194.5600062608719,
+          "total_us": 433.1519901752472,
+          "collectives": 0
+        },
+        {
+          "iteration": 4,
+          "prepare_us": 200.70399343967438,
+          "calculate_us": 192.51200556755066,
+          "total_us": 393.21601390838623,
+          "collectives": 0
+        },
+        {
+          "iteration": 5,
+          "prepare_us": 246.7840015888214,
+          "calculate_us": 200.70399343967438,
+          "total_us": 447.488009929657,
+          "collectives": 0
+        },
+        {
+          "iteration": 6,
+          "prepare_us": 211.96800470352173,
+          "calculate_us": 198.65599274635315,
+          "total_us": 410.6239974498749,
+          "collectives": 0
+        },
+        {
+          "iteration": 7,
+          "prepare_us": 211.96800470352173,
+          "calculate_us": 199.68000054359436,
+          "total_us": 411.6480052471161,
+          "collectives": 0
+        },
+        {
+          "iteration": 8,
+          "prepare_us": 203.77600193023682,
+          "calculate_us": 190.43199717998505,
+          "total_us": 394.20801401138306,
+          "collectives": 0
+        },
+        {
+          "iteration": 9,
+          "prepare_us": 201.7280012369156,
+          "calculate_us": 190.46400487422943,
+          "total_us": 392.192006111145,
+          "collectives": 0
+        },
+        {
+          "iteration": 10,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 193.53599846363068,
+          "total_us": 396.2880074977875,
+          "collectives": 0
+        },
+        {
+          "iteration": 11,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 189.43999707698822,
+          "total_us": 392.192006111145,
+          "collectives": 0
+        },
+        {
+          "iteration": 12,
+          "prepare_us": 203.77600193023682,
+          "calculate_us": 191.48799777030945,
+          "total_us": 395.26399970054626,
+          "collectives": 0
+        },
+        {
+          "iteration": 13,
+          "prepare_us": 246.75199389457703,
+          "calculate_us": 217.1200066804886,
+          "total_us": 463.8719856739044,
+          "collectives": 0
+        },
+        {
+          "iteration": 14,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 193.53599846363068,
+          "total_us": 396.2880074977875,
+          "collectives": 0
+        },
+        {
+          "iteration": 15,
+          "prepare_us": 202.7519941329956,
+          "calculate_us": 191.45600497722626,
+          "total_us": 394.20801401138306,
+          "collectives": 0
+        },
+        {
+          "iteration": 16,
+          "prepare_us": 200.73600113391876,
+          "calculate_us": 192.47999787330627,
+          "total_us": 393.21601390838623,
+          "collectives": 0
+        },
+        {
+          "iteration": 17,
+          "prepare_us": 201.7280012369156,
+          "calculate_us": 193.53599846363068,
+          "total_us": 395.26399970054626,
+          "collectives": 0
+        },
+        {
+          "iteration": 18,
+          "prepare_us": 218.1120067834854,
+          "calculate_us": 201.7280012369156,
+          "total_us": 419.840008020401,
+          "collectives": 0
+        },
+        {
+          "iteration": 19,
+          "prepare_us": 201.7280012369156,
+          "calculate_us": 191.45600497722626,
+          "total_us": 393.18400621414185,
+          "collectives": 0
+        }
+      ]
+    }
+  ]
+}

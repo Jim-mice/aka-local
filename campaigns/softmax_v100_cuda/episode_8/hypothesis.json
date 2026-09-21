@@ -1,0 +1,28 @@
+{
+  "claim": "256 threads, __launch_bounds__(256,2), __expf + __fdividef intrinsics, #pragma unroll 4, reduced shared memory to 16 floats",
+  "strategy_tags": [
+    "register_optimization",
+    "shared_memory_optimization",
+    "fused_multiply_add"
+  ],
+  "expected_effects": [
+    "improved instruction throughput via intrinsics",
+    "better ILP via unrolling",
+    "faster reciprocal via __fdividef"
+  ],
+  "risk": [
+    "256 threads may limit occupancy for very small row counts"
+  ],
+  "operator": "softmax_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "a92f1cf9b49882c1",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "x",
+      "y",
+      "rows",
+      "cols"
+    ]
+  }
+}

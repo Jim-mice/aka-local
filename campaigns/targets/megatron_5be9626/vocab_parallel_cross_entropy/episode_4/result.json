@@ -1,0 +1,8 @@
+{
+  "episode": 4,
+  "compile_pass": true,
+  "tp1_sanity": "NOT_RUN",
+  "tp2_correctness": "NOT_RUN",
+  "benchmark": "NOT_RUN",
+  "error": "required stream-aware ABI symbol missing at runtime"
+}

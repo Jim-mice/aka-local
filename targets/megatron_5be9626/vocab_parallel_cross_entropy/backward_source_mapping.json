@@ -1,0 +1,30 @@
+{
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_file": "megatron/core/tensor_parallel/cross_entropy.py",
+  "line_map": {
+    "calculate_logits_max": "20-29",
+    "calculate_predicted_logits_and_saved_state": "32-65",
+    "calculate_cross_entropy_loss_and_softmax": "68-79",
+    "prepare_gradient_calculation_operands": "81-98",
+    "calculate_gradients": "100-116",
+    "autograd_forward_and_save_for_backward": "119-183",
+    "autograd_backward": "185-210",
+    "public_entry": "213-235"
+  },
+  "call_chain": [
+    "LanguageModule.compute_language_model_loss",
+    "tensor_parallel.vocab_parallel_cross_entropy",
+    "_VocabParallelCrossEntropy.forward",
+    "ctx.save_for_backward(exp_logits, target_mask, masked_target_1d)",
+    "loss.backward",
+    "_VocabParallelCrossEntropy.backward",
+    "prepare_gradient_calculation_operands",
+    "calculate_gradients"
+  ],
+  "collective_audit": {
+    "forward": ["MAX all_reduce logits_max", "SUM all_reduce predicted_logits", "SUM all_reduce sum_exp_logits"],
+    "backward": [],
+    "source_proof": "backward lines 185-210 contain no torch.distributed call"
+  },
+  "official_path": "cross_entropy_loss_fusion disabled; native unfused tensor_parallel vocab_parallel_cross_entropy path"
+}

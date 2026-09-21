@@ -1,0 +1,14 @@
+operator_id: vocab_parallel_cross_entropy
+name: Vocab-parallel Cross Entropy
+domain: loss
+training_scope: forward+backward
+mathematical_contract: distributed vocabulary-sharded cross entropy
+inputs: [logits, target]
+outputs: [loss]
+gradients: [dlogits]
+dtype_domain: [fp16, bf16, fp32]
+layout_domain: [tensor-parallel vocabulary shard]
+shape_parameters: [tokens, vocab_size]
+parallel_semantics: tensor-parallel max/sum all-reduce
+correctness_contract: UNKNOWN
+source_refs: [Megatron fused_cross_entropy.py, Megatron tensor_parallel/cross_entropy.py]

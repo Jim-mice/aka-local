@@ -1,0 +1,48 @@
+{
+  "target": "vocab_parallel_cross_entropy",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "tp": 2,
+  "dtype": "float16",
+  "shape_set": [
+    [
+      8,
+      1,
+      32
+    ],
+    [
+      32,
+      2,
+      64
+    ],
+    [
+      128,
+      2,
+      128
+    ]
+  ],
+  "timing_mode": "end_to_end_forward_plus_backward_including_real_NCCL",
+  "rank0_mean_us": [
+    2774.016046524048,
+    3138.5600090026855,
+    2812.928009033203
+  ],
+  "rank0_std_us": [
+    41.418238252033795,
+    388.0128518165421,
+    20.325878319105392
+  ],
+  "rank0_cv": [
+    0.01493078538746468,
+    0.12362766705226635,
+    0.007225879316439154
+  ],
+  "collective_structure": [
+    "MAX all-reduce",
+    "SUM all-reduce predicted target",
+    "SUM all-reduce denominator"
+  ],
+  "rank_synchronization_definition": "CUDA event interval with barriers before samples; report rank-0 and retain rank-1 audit; candidate promotion requires both ranks",
+  "source": "tp2_bench.txt",
+  "baseline_hash": "f11fd1fc6846d6f2"
+}

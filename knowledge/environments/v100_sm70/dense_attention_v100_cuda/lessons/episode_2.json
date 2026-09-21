@@ -1,0 +1,11 @@
+{
+  "operator": "dense_attention_v100_cuda",
+  "episode": 2,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "compile",
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(61): error: identifier \"CUDART_INF_F\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(66): error: identifier \"CUDART_INF_F\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(74): error: identifier \"CUDART_INF_F\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(141): error: linkage specification is not allowed\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(150): error: expected a \";\"\n\nAt end of source: error: expected a \"}\"\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(42): note #3196-D: to match this \"{\"\n\n6 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu\".\n",
+  "compiler_error": "/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(61): error: identifier \"CUDART_INF_F\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(66): error: identifier \"CUDART_INF_F\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(74): error: identifier \"CUDART_INF_F\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(141): error: linkage specification is not allowed\n\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(150): error: expected a \";\"\n\nAt end of source: error: expected a \"}\"\n/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(42): note #3196-D: to match this \"{\"\n\n6 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu\".\n",
+  "reusable_rule": "Avoid undefined symbols: ensure all device functions are defined in candidate.cu",
+  "timestamp": "2026-09-19T14:31:11.178456+00:00"
+}

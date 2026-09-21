@@ -1,0 +1,8 @@
+{
+  "source_sha256": "8f0552530bb831b28809912562452e2e86b9a235c3572c78acd993bd938e7080",
+  "semantic_abi_marker": true,
+  "required_symbol": false,
+  "extern_c": true,
+  "cudart_inf_forbidden": true,
+  "hard_gate": "REJECT_CONTRACT"
+}

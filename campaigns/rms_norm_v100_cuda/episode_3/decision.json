@@ -1,0 +1,12 @@
+{
+  "episode": 3,
+  "operator": "rms_norm_v100_cuda",
+  "decision": "ACCEPT",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 1.419,
+  "reason": "",
+  "evaluated_at": "2026-09-19T05:35:43.150735+00:00",
+  "legacy": true,
+  "legacy_reason": "single_shape_evaluation"
+}

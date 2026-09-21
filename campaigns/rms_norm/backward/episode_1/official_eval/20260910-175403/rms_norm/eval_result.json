@@ -1,0 +1,1516 @@
+{
+  "kernel": {
+    "name": "rms_norm",
+    "id": "atrex_027",
+    "dtype": "bf16"
+  },
+  "dsl": "unknown",
+  "eval_mode": "candidate",
+  "eval_id": "20260910T095405Z-86d9c15d",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_arch": "sm_120",
+    "accelerator_backend": "cuda",
+    "driver_version": "610.88",
+    "runtime_version": "13.0",
+    "clock_locked": false,
+    "clock_lock_detected": false,
+    "clock_lock_source": null,
+    "PTL_STATE": null,
+    "torch_version": "2.14.0+cu130",
+    "python_version": "3.11.15"
+  },
+  "runner_config": {
+    "config_version": "v1",
+    "mode": "candidate",
+    "validation_mode": "full",
+    "atol": 0.01,
+    "rtol": 0.05,
+    "correctness_max_rel_l2": null,
+    "num_correctness_cases": 1,
+    "warmup_iters": 20,
+    "bench_iters": 100,
+    "candidate_timeout_s": 0.0,
+    "benchmark_mode": "eager",
+    "cuda_graph_cache_flush_mb": 1024,
+    "graph_atol": 0.01,
+    "graph_rtol": 0.05,
+    "graph_min_cosine": null,
+    "graph_max_rel_l2": null,
+    "trust_mode": "trusted",
+    "require_clock_locked": false
+  },
+  "passed": {
+    "compile": {
+      "0": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "1": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "10": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "11": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "12": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "13": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "14": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "15": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "16": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "17": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "18": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "19": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "2": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "20": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "21": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "22": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "23": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "24": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "25": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "26": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "27": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "28": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "29": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "3": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "30": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "31": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "32": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "33": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "34": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "35": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "36": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "37": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "38": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "39": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "4": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "40": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "41": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "42": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "43": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "44": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "45": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "46": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "47": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "48": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "49": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "5": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "50": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "51": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "52": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "53": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "54": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "55": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "6": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "7": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "8": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      },
+      "9": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py\", line 55, in <module>\n    _rmsnorm_ext = load_inline(\n                   ^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2295, in load_inline\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2512, in _write_ninja_file_and_build_library\n    get_compiler_abi_compatibility_and_version(compiler)\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 608, in get_compiler_abi_compatibility_and_version\n    match = re.search(r'(\\d+)\\.(\\d+)\\.(\\d+)', compiler_info.decode(*SUBPROCESS_DECODE_ARGS).strip())\n                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\encodings\\oem.py\", line 15, in decode\n    return oem_decode(input, errors, True)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nUnicodeDecodeError: 'cp1' codec can't decode bytes in position 0--1: No mapping for the Unicode character exists in the target code page.\n"
+      }
+    },
+    "correctness": {
+      "0": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "1": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "10": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "11": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "12": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "13": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "14": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "15": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "16": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "17": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "18": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "19": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "2": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "20": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "21": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "22": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "23": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "24": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "25": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "26": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "27": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "28": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "29": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "3": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "30": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "31": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "32": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "33": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "34": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "35": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "36": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "37": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "38": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "39": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "4": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "40": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "41": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "42": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "43": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "44": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "45": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "46": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "47": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "48": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "49": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "5": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "50": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "51": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "52": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "53": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "54": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "55": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "6": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "7": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "8": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "9": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      }
+    },
+    "performance": {
+      "0": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "1": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "10": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "11": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "12": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "13": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "14": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "15": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "16": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "17": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "18": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "19": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "2": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "20": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "21": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "22": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "23": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "24": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "25": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "26": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "27": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "28": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "29": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "3": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "30": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "31": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "32": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "33": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "34": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "35": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "36": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "37": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "38": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "39": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "4": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "40": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "41": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "42": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "43": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "44": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "45": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "46": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "47": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "48": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "49": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "5": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "50": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "51": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "52": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "53": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "54": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "55": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "6": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "7": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "8": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      },
+      "9": {
+        "status": "skipped",
+        "reason": "Skipped because compile stage failed."
+      }
+    }
+  },
+  "correctness": {
+    "shapes": {
+      "0": {
+        "cases": []
+      },
+      "1": {
+        "cases": []
+      },
+      "10": {
+        "cases": []
+      },
+      "11": {
+        "cases": []
+      },
+      "12": {
+        "cases": []
+      },
+      "13": {
+        "cases": []
+      },
+      "14": {
+        "cases": []
+      },
+      "15": {
+        "cases": []
+      },
+      "16": {
+        "cases": []
+      },
+      "17": {
+        "cases": []
+      },
+      "18": {
+        "cases": []
+      },
+      "19": {
+        "cases": []
+      },
+      "2": {
+        "cases": []
+      },
+      "20": {
+        "cases": []
+      },
+      "21": {
+        "cases": []
+      },
+      "22": {
+        "cases": []
+      },
+      "23": {
+        "cases": []
+      },
+      "24": {
+        "cases": []
+      },
+      "25": {
+        "cases": []
+      },
+      "26": {
+        "cases": []
+      },
+      "27": {
+        "cases": []
+      },
+      "28": {
+        "cases": []
+      },
+      "29": {
+        "cases": []
+      },
+      "3": {
+        "cases": []
+      },
+      "30": {
+        "cases": []
+      },
+      "31": {
+        "cases": []
+      },
+      "32": {
+        "cases": []
+      },
+      "33": {
+        "cases": []
+      },
+      "34": {
+        "cases": []
+      },
+      "35": {
+        "cases": []
+      },
+      "36": {
+        "cases": []
+      },
+      "37": {
+        "cases": []
+      },
+      "38": {
+        "cases": []
+      },
+      "39": {
+        "cases": []
+      },
+      "4": {
+        "cases": []
+      },
+      "40": {
+        "cases": []
+      },
+      "41": {
+        "cases": []
+      },
+      "42": {
+        "cases": []
+      },
+      "43": {
+        "cases": []
+      },
+      "44": {
+        "cases": []
+      },
+      "45": {
+        "cases": []
+      },
+      "46": {
+        "cases": []
+      },
+      "47": {
+        "cases": []
+      },
+      "48": {
+        "cases": []
+      },
+      "49": {
+        "cases": []
+      },
+      "5": {
+        "cases": []
+      },
+      "50": {
+        "cases": []
+      },
+      "51": {
+        "cases": []
+      },
+      "52": {
+        "cases": []
+      },
+      "53": {
+        "cases": []
+      },
+      "54": {
+        "cases": []
+      },
+      "55": {
+        "cases": []
+      },
+      "6": {
+        "cases": []
+      },
+      "7": {
+        "cases": []
+      },
+      "8": {
+        "cases": []
+      },
+      "9": {
+        "cases": []
+      }
+    }
+  },
+  "performance": {
+    "shapes": {
+      "0": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "1": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "10": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "11": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "12": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "13": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "14": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "15": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "16": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "17": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "18": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "19": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "2": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "20": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "21": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "22": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "23": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "24": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "25": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "26": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "27": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "28": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "29": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "3": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "30": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "31": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "32": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "33": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "34": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "35": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "36": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "37": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "38": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "39": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "4": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "40": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "41": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "42": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "43": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "44": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "45": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "46": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "47": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "48": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "49": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "5": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "50": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "51": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "52": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "53": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "54": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "55": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "6": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "7": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "8": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "9": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      }
+    }
+  },
+  "error": null
+}

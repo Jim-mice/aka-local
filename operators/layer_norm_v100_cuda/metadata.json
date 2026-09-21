@@ -1,0 +1,25 @@
+{
+  "operator": "layer_norm_v100_cuda",
+  "gpu": "Tesla V100-PCIE-16GB",
+  "arch": "sm_70",
+  "interface": "standalone_cuda",
+  "source_file": "candidate.cu",
+  "contract": "extern C void launch_kernel(float* x, float* gamma, float* beta, float* y, int batch, int hidden, float eps)",
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract_schema": {
+    "operator": "layer_norm_v100_cuda",
+    "entry": "launch_kernel",
+    "version": 1,
+    "arguments": [
+      {"name": "x",     "type": "float*", "role": "input",        "description": "input tensor [batch, hidden]"},
+      {"name": "gamma", "type": "float*", "role": "input_scale",  "description": "per-hidden-element multiplicative scale [hidden]"},
+      {"name": "beta",  "type": "float*", "role": "input_bias",   "description": "per-hidden-element additive bias [hidden]"},
+      {"name": "y",     "type": "float*", "role": "output",       "description": "output tensor [batch, hidden]"},
+      {"name": "batch", "type": "int",    "role": "dimension",    "description": "number of rows in input"},
+      {"name": "hidden","type": "int",    "role": "dimension",    "description": "features per row"},
+      {"name": "eps",   "type": "float",  "role": "epsilon",      "description": "numerical stability epsilon"}
+    ],
+    "semantics": "LayerNorm: For each row i in [0, batch):\n  mean = (1/hidden) * sum(x[i][j] for j in [0, hidden))\n  variance = (1/hidden) * sum((x[i][j] - mean)^2 for j in [0, hidden))\n  y[i][j] = ((x[i][j] - mean) / sqrt(variance + eps)) * gamma[j] + beta[j]"
+  }
+}

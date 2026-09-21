@@ -1,0 +1,53 @@
+{
+  "mode": "grad",
+  "commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "shapes": [
+    {
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "forward_max_abs": 6.103515625e-05,
+      "forward_max_rel": 0.0265045166015625,
+      "forward_pass": true
+    },
+    {
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "forward_max_abs": 0.0001220703125,
+      "forward_max_rel": 0.052093505859375,
+      "forward_pass": true
+    },
+    {
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "forward_max_abs": 0.0001220703125,
+      "forward_max_rel": 0.04632568359375,
+      "forward_pass": true,
+      "input_grad_max_abs": 0.0001373291015625,
+      "input_grad_max_rel": 0.08831787109375,
+      "grad_pass": true,
+      "parameter_grads": [
+        {
+          "name": "linear_fc1.weight",
+          "max_abs": 0.00390625,
+          "pass": true
+        },
+        {
+          "name": "linear_fc2.weight",
+          "max_abs": 0.00390625,
+          "pass": true
+        }
+      ]
+    }
+  ],
+  "kernel": "launch_swiglu_stream",
+  "current_stream": true
+}

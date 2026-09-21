@@ -1,0 +1,7 @@
+{
+  "target": "vocab_parallel_cross_entropy",
+  "hypothesis": "Fuse local shift, target ownership/extraction, exponentiation, and local denominator accumulation into one row kernel to reduce local kernel launches while preserving caller collectives.",
+  "scope": "local_prepare_fp16_stream only; local max and all caller collectives remain unchanged",
+  "expected_effect": "Lower MULTI_KERNEL_OVERHEAD for the local prepare stage; numerical results remain based on logit-global_max.",
+  "constraints": ["CUDA 11.8", "sm_70", "exact exported ABI", "no backward", "no collective changes"]
+}

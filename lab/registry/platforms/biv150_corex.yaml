@@ -1,0 +1,17 @@
+platform_id: biv150_corex
+vendor: Iluvatar
+device_name: Iluvatar BI-V150
+architecture: BI-V150
+compute_capability: UNKNOWN
+memory_bytes: null
+host_type: Linux campus GPU job
+os: Ubuntu 24.04.2 LTS
+driver: UNKNOWN
+compiler: /usr/local/corex/bin/nvcc <REMOTE_HOST>
+runtime: PyTorch 2.7.1+cu102
+frameworks: [CoreX/Triton, PyTorch]
+profiler: [UNKNOWN]
+availability: historical
+execution_mode: ssh_linux
+notes: [2 devices observed; nvidia-smi unavailable]
+evidence_source: [remote read-only survey 2026-09-15]

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "episode": 3,
+  "candidate": "V3",
+  "baseline": "V2b",
+  "model_calls": 0,
+  "state": "COMPILE_FAILED",
+  "candidate_status": "present",
+  "compile": {
+    "m1024_d4096": {
+      "status": "failed",
+      "reason": "Evaluation did not complete."
+    },
+    "m256_d4096": {
+      "status": "failed",
+      "reason": "Evaluation did not complete."
+    },
+    "m4096_d4096": {
+      "status": "failed",
+      "reason": "Evaluation did not complete."
+    }
+  },
+  "correctness": null,
+  "benchmark": null,
+  "abba": null,
+  "decision": "REJECT_COMPILE",
+  "failure_reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\cli\\run_eval.py\", line 3071, in _run_eval_process\n    _resolve_reference_bundle(reference_dir)\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\cli\\run_eval.py\", line 933, in _resolve_reference_bundle\n    raise FileNotFoundError(f\"Required reference file not found: {path}\")\nFileNotFoundError: Required reference file not found: C:\\Users\\38154\\projects\\aka-local\\ops\\swiglu_forward_v2b\\metadata.json\n",
+  "evaluator_result": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\mechanical\\atrex_eval\\20260910-164551\\swiglu_forward_v2b\\eval_result.json"
+}

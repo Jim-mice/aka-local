@@ -1,0 +1,12 @@
+{
+  "operator": "rms_norm",
+  "lineage": "V0_eager_to_V1",
+  "candidate": "candidate.py",
+  "architecture": "sm_120",
+  "promotion": "PROMOTE",
+  "source_episode": "campaigns/rms_norm/backward/episode_1",
+  "hypothesis_class": "FUSED_ROW_REDUCTION_DESIGN",
+  "attribution": "MULTI_MECHANISM",
+  "evidence": "56/56 correctness; same-process A/B/B/A arithmetic mean speedup 7.202740x",
+  "static": {"registers_per_thread": 30, "shared_bytes_per_block": 2048, "stack_bytes": 0, "local_bytes": 0}
+}

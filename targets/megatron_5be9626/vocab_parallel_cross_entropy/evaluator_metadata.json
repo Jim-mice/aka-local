@@ -1,0 +1,13 @@
+{
+  "evaluator_version": "tp2_semantic_v2",
+  "evaluator_hash": "7cc0fac8d80b2d27",
+  "fixture_generation_version": "coherent_global_fixture_v2",
+  "semantic_stage_spec_hash": "81982bc4aa2021cc",
+  "abi_semantic_mapping_hash": "06fcc34413149d1a",
+  "fixed_defects": [
+    "rank-dependent TP fixture seed",
+    "unsafe non-owning target gradient index",
+    "explicit diagnostic stream handoff"
+  ],
+  "baseline_provenance": "Phase15-A replay.py and tp2_bench.txt; independent real Megatron path, not candidate evaluator"
+}

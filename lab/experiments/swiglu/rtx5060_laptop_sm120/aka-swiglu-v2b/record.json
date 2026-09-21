@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "aka-swiglu-v2b",
+  "title": "Standalone SwiGLU V2b",
+  "timestamp": "UNKNOWN",
+  "operator": "swiglu",
+  "hardware": "rtx5060_laptop_sm120",
+  "architecture": "sm_120",
+  "backend": "cuda_cpp",
+  "framework": "cuda_cpp",
+  "dtype": [],
+  "mode": "training",
+  "scope": {},
+  "shape_regime": {},
+  "baseline": {},
+  "candidate": {},
+  "hypothesis": "",
+  "mechanisms": [
+    "fusion",
+    "half2"
+  ],
+  "changes": [],
+  "evidence": {
+    "summary": "RTX5060 ABBA: M256 1.582x, M1024 1.506x, M4096 1.673x"
+  },
+  "performance": {
+    "summary": "RTX5060 ABBA: M256 1.582x, M1024 1.506x, M4096 1.673x"
+  },
+  "decision": "ACCEPT",
+  "failure_class": null,
+  "observations": [
+    "RTX5060 ABBA: M256 1.582x, M1024 1.506x, M4096 1.673x"
+  ],
+  "failed_assumptions": [],
+  "unresolved_questions": [],
+  "next_directions": [],
+  "provenance": {
+    "source_type": "LEGACY_AKA_LOCAL",
+    "source_path": "C:\\Users\\38154\\projects\\aka-local\\STATUS.md",
+    "source_commit": null,
+    "canonical": true,
+    "evidence_level": 3,
+    "location": "local",
+    "read_only": false
+  },
+  "tags": [
+    "imported"
+  ]
+}

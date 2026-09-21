@@ -1,0 +1,6 @@
+command=/usr/local/cuda-11.8/bin/nvcc -std=c++14 -arch=sm_70 --shared -Xcompiler -fPIC /tmp/cuda118_probe.cu -o /tmp/cuda118_probe.so
+stdout
+
+stderr
+
+status=0

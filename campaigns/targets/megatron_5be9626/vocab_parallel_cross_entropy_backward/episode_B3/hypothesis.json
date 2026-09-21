@@ -1,0 +1,7 @@
+{
+  "strategy": "single fused grid-stride FP32 backward kernel",
+  "mechanism": "Each thread computes softmax[row,col] * grad_output[row] and conditionally subtracts grad_output[row] at the owning target column.",
+  "correctness": "Preserves the required owner/non-owner equation, reads softmax without modification, uses no collective, and launches only on the supplied stream.",
+  "performance_hypothesis": "Fusion removes the reference temporary, arange, indexed update, and separate multiply/add kernel families; row-wise grad_output and target metadata are reused by threads in the row.",
+  "coverage": "General positive rows and local_vocab, including the listed official configurations."
+}

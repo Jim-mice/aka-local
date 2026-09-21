@@ -1,0 +1,8 @@
+{
+  "status":"NOISY",
+  "source":"phase20a_environment_readiness.json",
+  "probe_kind":"REFERENCE_ONLY_ENVIRONMENT_READINESS_NOT_SCORING",
+  "probe_cv":0.15452888146907118,
+  "observations":["GPU0 temperature 76 C with SM clock 258 MHz","GPU1 had visible unrelated CUDA Python process and utilization 100 percent"],
+  "rule":"does not replace future reference/candidate stability policy and does not alter Phase 20-A qualification verdict"
+}

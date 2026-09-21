@@ -1,0 +1,73 @@
+{
+  "episode": 12,
+  "operator": "rms_norm_v100_cuda",
+  "environment": {
+    "id": "v100_sm70",
+    "gpu": "Tesla V100-PCIE-16GB",
+    "cuda": "11.8",
+    "driver": "535.183.06",
+    "nvcc": "Cuda compilation tools, release 11.8, V11.8.89"
+  },
+  "operator_contract": {
+    "name": "rms_norm_v100_cuda",
+    "interface": "standalone_cuda",
+    "entry": "launch_kernel"
+  },
+  "contract_hash": "a69b1c9ffaa393a1",
+  "candidate_hash": "a1a80ff4ee4cfbc3",
+  "baseline_hash": "2b833ca3fa493d69",
+  "agent": {
+    "model": "gpt-5.6-luna"
+  },
+  "evaluation": {
+    "shapes": [
+      "1,4096",
+      "4,4096",
+      "8,4096",
+      "32,4096"
+    ],
+    "score_type": "geometric_mean_speedup"
+  },
+  "created_time": "2026-09-19T06:17:50.833210+00:00",
+  "frozen_baselines": {
+    "torch_naive_latency_us": 91.68,
+    "torch_optimized_latency_us": 73.24
+  },
+  "frozen_kernel_latency_us": 31.43,
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ],
+  "benchmark_config": {
+    "warmup": 50,
+    "iterations": 200,
+    "compiler": "nvcc",
+    "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+    "repeat": 3
+  },
+  "nvcc_command": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /home/<REMOTE_USER>/aka_remote_jobs/a99ad8d96fe3/candidate.so /home/<REMOTE_USER>/aka_remote_jobs/a99ad8d96fe3/candidate.cu",
+  "frozen_per_shape_baselines": {
+    "1,4096": {
+      "kernel_latency_us": 31.46,
+      "torch_optimized_latency_us": 102.09,
+      "speedup_vs_torch": 3.245
+    },
+    "4,4096": {
+      "kernel_latency_us": 31.41,
+      "torch_optimized_latency_us": 71.87,
+      "speedup_vs_torch": 2.288
+    },
+    "8,4096": {
+      "kernel_latency_us": 31.41,
+      "torch_optimized_latency_us": 101.96,
+      "speedup_vs_torch": 3.246
+    },
+    "32,4096": {
+      "kernel_latency_us": 31.54,
+      "torch_optimized_latency_us": 91.59,
+      "speedup_vs_torch": 2.904
+    }
+  }
+}

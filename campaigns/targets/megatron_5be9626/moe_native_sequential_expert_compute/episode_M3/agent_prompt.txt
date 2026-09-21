@@ -1,0 +1,26 @@
+=== MANDATORY SOURCE DELIVERY CONTRACT ===
+Reject before compilation unless every item is present.
+Exact marker: // AKA_TARGET_CONTRACT: a1bb8ee0af6c250663e0935ae3deb07104975fc5904c56bb5b2f0d4e8032d1fe
+Exact exported prototype:
+extern "C" void moe_sequential_expert_forward_fp16_stream(const half* tokens, const int64_t* tokens_per_expert, const half* probs, const half* fc1_weights, const half* fc2_weights, half* output, int64_t token_count, int64_t hidden, int64_t intermediate, int64_t experts, cudaStream_t stream);
+Do not rename the entry point. Do not omit the marker. Do not return pseudocode or a wrapper named candidate. Use the passed CUDA stream.
+
+=== REAL MEGATRON TARGET ===
+Megatron Native SequentialMLP Expert Compute, commit 5be9626709af2722333bf54797c954c09edeada3.
+=== CONTRACT HASHES ===
+Replay e73232a4e11649d6519785c79ab4a823eddbd5588e2e318edbdae3abb99ecaec; performance 3086f89790979dac0e1a1918b9fb51953ac292820db6f14bbf414312858bdaef; statistics 046d79bdd115a94346898fe3a146d7676b6f8c9edb23871120f170637e666479.
+=== EXACT SOURCE SEMANTICS ===
+Expert-order FC1 -> gated SiLU -> FC2 on contiguous permuted local tokens; concatenate; empty experts produce no rows.
+=== OFFICIAL DISTRIBUTIONS ===
+[4,4,4,4], [1,3,5,7], [0,0,8,8].
+=== LAYOUT / STREAM / EXCLUSIONS ===
+FP16 tokens/weights/probs, int64 metadata, FP16 output; H=64, I=128, E=4, T=16; no routing, permutation, communication, TE, or backward optimization.
+=== TOOLCHAIN ===
+CUDA 11.8 / SM70; do not use CUDART_INF_F.
+
+=== M1 FAILURE ===
+M1 exported the wrong symbol `candidate`; no runtime conclusion exists.
+=== M2 FAILURE ===
+M2 exported the required symbol but omitted the exact marker; no runtime conclusion exists.
+=== MANDATORY OUTPUT RULE ===
+Generate a fresh real candidate. Include the literal marker and literal prototype above. Export only the required entry point, use the passed stream, and write candidate.cu, hypothesis.json, and AGENT.md. Do not copy-edit M1/M2, benchmark, or edit framework files.

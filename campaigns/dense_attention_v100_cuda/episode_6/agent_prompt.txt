@@ -1,0 +1,202 @@
+You are optimizing a CUDA Dense Attention kernel for NVIDIA Tesla V100 (sm_70).
+
+## Operator
+- Name: dense_attention_v100_cuda
+- Type: Dense Attention (standalone CUDA, no torch)
+- Contract Version: 1
+- Contract Hash: 8e7bfd5ec5c4a17f
+
+## Environment
+- GPU: Tesla V100-PCIE-16GB (Volta, compute capability 7.0)
+- Architecture: sm_70
+- CUDA: 11.8 with nvcc
+- Remote Linux server (NOT Windows)
+- Standalone CUDA kernel only
+
+## FORBIDDEN - DO NOT CREATE OR USE:
+- candidate.py (NO Python files of any kind)
+- torch, torch.extension, torch.utils.cpp_extension (NO PyTorch)
+- sm_120, sm_100, Blackwell, or any architecture newer than sm_70
+- Python imports of any kind
+- Any file other than candidate.cu, hypothesis.json, AGENT.md
+- CUDART_INF_F (does NOT exist in CUDA 11.8; use -INFINITY or -FLT_MAX or -1.0f/0.0f instead)
+- Anonymous namespace around extern C kernel (use file-scope functions only)
+- Missing closing braces
+
+## CONTRACT
+
+extern "C" void launch_kernel(
+    float* q,
+    float* k,
+    float* v,
+    float* o,
+    int batch,
+    int heads,
+    int seq,
+    int head_dim,
+    float scale
+);
+
+## CONTRACT MARKER (MUST be in candidate.cu)
+
+// AKA_CONTRACT: q, k, v, o, batch, heads, seq, head_dim, scale
+
+## Argument Semantics
+
+q: query tensor [batch, heads, seq, head_dim]
+k: key tensor [batch, heads, seq, head_dim]
+v: value tensor [batch, heads, seq, head_dim]
+o: output tensor [batch, heads, seq, head_dim]
+batch: batch size
+heads: number of attention heads
+seq: sequence length
+head_dim: dimension per head
+scale: scaling factor applied to QK^T before softmax
+
+## Mathematical Semantics
+
+Scaled dot-product attention forward pass.
+
+Tensor layout: Q, K, V, O are [batch, heads, seq, head_dim] contiguous row-major.
+
+For each b in [0,batch), h in [0,heads), i in [0,seq):
+  For each j in [0,seq): score(i,j) = sum_d(Q[b,h,i,d] * K[b,h,j,d]) * scale
+  m_i = max_j score(i,j)
+  For each j: p(i,j) = exp(score(i,j) - m_i) / sum_t exp(score(i,t) - m_i)
+  For each d: O[b,h,i,d] = sum_j p(i,j) * V[b,h,j,d]
+
+Numerical stability: always subtract row maximum before exponentiation in softmax.
+
+## Compilation
+
+Compiled with: nvcc -O2 -gencode arch=compute_70,code=sm_70 -shared
+
+## Evaluation
+Your kernel will be evaluated across MULTIPLE shapes: 1x4096, 4x4096, 8x4096, 32x4096.
+The score is the GEOMETRIC MEAN speedup across all shapes.
+A kernel that is fast only at 4x4096 but slow at 1x4096 will score poorly.
+
+## Task
+Create exactly THREE files:
+1. candidate.cu -- standalone CUDA kernel as described above. MUST contain the CONTRACT MARKER line exactly as shown.
+2. hypothesis.json -- MUST follow this EXACT format:
+
+{
+  "claim": "what you changed",
+  "strategy_tags": [
+    "warp_shuffle_reduction",
+    "shared_memory_reduction"
+  ],
+  "expected_effects": [
+    "reduce synchronization",
+    "reduce shared memory traffic"
+  ],
+  "risk": [
+    "register pressure"
+  ],
+  "operator": "dense_attention_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "8e7bfd5ec5c4a17f",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "q",
+      "k",
+      "v",
+      "o",
+      "batch",
+      "heads",
+      "seq",
+      "head_dim",
+      "scale"
+    ]
+  }
+}
+
+strategy_tags MUST use these exact names where applicable:
+  warp_shuffle_reduction, shared_memory_optimization, coalesced_memory_access,
+  parallel_reduction, fused_multiply_add, reciprocal_sqrt, register_optimization,
+  vectorized_loads
+
+3. AGENT.md -- summary of what you changed and why
+
+## Volta (sm_70) Tuning Guide
+- 256 threads per block is typical; test 128 and 512
+- Use __shfl_down_sync for warp-level reductions
+- Avoid bank conflicts in shared memory
+- Volta has 64 KB L1/shared memory per SM, 80 SMs, 7.0 TFLOPS FP32
+- Performance must be ROBUST across all shapes, not just one
+
+## Rules
+- Do NOT run benchmarks or compile CUDA code
+- Stop after writing the three files
+- Use the EXACT extern "C" void launch_kernel signature shown in CONTRACT above
+- Do NOT create any Python files
+- hypothesis.json MUST include ALL fields shown: claim, strategy_tags, expected_effects, risk, operator, contract_version, contract_hash, interface
+- candidate.cu MUST contain the CONTRACT MARKER line exactly as shown above
+
+Reply only when finished.
+
+=== CURRENT TARGET ===
+Incumbent: None
+Score: 1.0 (geometric_mean_speedup)
+Shapes: ['1,4096', '4,4096', '8,4096', '32,4096']
+
+=== KNOWLEDGE SUMMARY ===
+--- KEY RECOMMENDATIONS ---
+  - Use float4 vectorized loads for coalesced memory access on V100
+  - Use warp-shuffle or shared-memory reduction for normalization statistics
+  - Use one 256-thread block per row for row-wise normalization
+  - Use shared-memory reduction for mean/variance or mean-of-squares
+  - Guard all thread accesses with batch/row bounds checking
+  - Test ALL evaluation shapes before claiming correctness
+
+--- WHAT WORKED ---
+
+=== WHAT FAILED ===
+- /home/<REMOTE_USER>/aka_remote_jobs/a95d480e69df/candidate.cu(28): error: identifier : episodes=[1], reason=compile
+- /home/<REMOTE_USER>/aka_remote_jobs/73f255792c91/candidate.cu(61): error: identifier : episodes=[2], reason=compile
+- /home/<REMOTE_USER>/aka_remote_jobs/98aeb9347b12/candidate.cu(35): error: identifier : episodes=[3], reason=compile
+- /home/<REMOTE_USER>/aka_remote_jobs/07899bf814b8/candidate.cu(26): error: identifier : episodes=[4], reason=compile
+- aggregate_score=0.028 <= incumbent=1.0: episodes=[5], reason=performance
+
+=== AVOID PATTERNS (from knowledge) ===
+- Avoid undefined symbols: ensure all device functions are defined in candidate.cu
+- Avoid regressions: ensure kernel is faster than incumbent across ALL shapes
+
+=== DO NOT REPEAT ===
+- Episode 5: REJECT_PERFORMANCE score=0.028
+- Episode 4: REJECT_COMPILE score=1.0
+- Episode 3: REJECT_COMPILE score=1.0
+
+=== RECENT EXPERIMENTS (last 10) ===
+- Ep 5: REJECT_PERFORMANCE score=0.028 [none]
+- Ep 4: REJECT_COMPILE score=1.0 [none]
+- Ep 3: REJECT_COMPILE score=1.0 [none]
+- Ep 2: REJECT_COMPILE score=1.0 [none]
+- Ep 1: REJECT_COMPILE score=1.0 [none]
+
+=== PROFILE EVIDENCE ===
+  kernel_count=2
+  total_kernel_time_us=43224.47
+  geo_mean_speedup=0.028
+  dominant_kernel_pct=99.9
+  single_kernel=true
+
+=== CURRENT DIAGNOSIS ===
+  category: KERNEL_LATENCY
+  confidence: 0.6
+  message: NSYS-derived diagnosis for dense_attention_v100_cuda_episode_5
+  recommendations:
+    - Kernel latency is the bottleneck — single kernel is slower than reference
+    - Focus on instruction-level optimization within the kernel
+    - Investigate reduction efficiency and memory access patterns
+
+=== CURRENT PERFORMANCE ===
+  geo_mean_speedup: 0.028
+  episode: episode_5
+
+=== PROFILE-GUIDED RECOMMENDATIONS ===
+  - Kernel latency is the bottleneck — single kernel is slower than reference
+  - Focus on instruction-level optimization within the kernel
+  - Investigate reduction efficiency and memory access patterns

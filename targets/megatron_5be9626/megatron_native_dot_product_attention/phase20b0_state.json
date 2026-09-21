@@ -1,0 +1,13 @@
+{
+  "phase":"20-B.0",
+  "era":"attention_vendor_gemm_hybrid_v1",
+  "terminal_state":"ENVIRONMENT_NOT_READY_FOR_SCORING",
+  "v1_authorized":false,
+  "reason":"read-only readiness capture observed GPU0 76-77 C/258 MHz and unrelated CUDA Python process with GPU1 utilization 100 percent",
+  "timing_scope":"PERFORMANCE_SCOPE_REUSED",
+  "optimization_contract":"optimization_contract_vendor_gemm_v1.json",
+  "local_abi":"vendor_gemm_local_softmax_abi.json",
+  "correctness_harness":"phase20b0_correctness_harness.json",
+  "policy":"phase20b0_policy_decision.json",
+  "next_legal_action":"wait for explicit authorization of a new clean/READY-window Phase 20-B.0 readiness assessment; do not generate V1 in this era until all gates pass"
+}

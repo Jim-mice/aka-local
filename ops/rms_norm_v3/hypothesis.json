@@ -1,0 +1,17 @@
+﻿{
+  "episode": 3,
+  "operator": "rms_norm",
+  "architecture": "sm_120",
+  "direction_id": "warp_reduce_register_accumulation",
+  "hypothesis": "A one-block-per-row kernel with register-resident FP32 accumulation, warp-shuffle reduction, and one shared partial per warp can reduce synchronization and shared-memory traffic while retaining the incumbent numerical path.",
+  "controlled_change": "Change only the candidate kernel implementation and extension identity relative to episode 2. Retain the 256-thread one-block-per-row mapping, FP32 accumulation, epsilon handling, BF16 weight/output conversion, and two row traversals.",
+  "prediction": "The implementation should satisfy the RMSNorm tolerance without a fallback. If it improves performance, the gain should come from compact warp partials and reduced block-reduction overhead.",
+  "baseline": "C:/Users/38154/projects/aka-local/campaigns/rms_norm/episode_2/candidate.py",
+  "constraints": [
+    "no fallback",
+    "no external dependencies",
+    "do not modify incumbent/reference/evaluator",
+    "do not run CUDA, evaluator, benchmark, or profiler in this episode"
+  ],
+  "status": "CANDIDATE_PENDING_EVALUATION"
+}

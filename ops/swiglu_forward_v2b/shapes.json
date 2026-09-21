@@ -1,0 +1,5 @@
+{
+  "m256_d4096": {"init_kwargs": {"rows": 256, "cols": 4096, "dtype": "float16"}, "input_kwargs": {"rows": 256, "cols": 4096, "dtype": "float16"}},
+  "m1024_d4096": {"init_kwargs": {"rows": 1024, "cols": 4096, "dtype": "float16"}, "input_kwargs": {"rows": 1024, "cols": 4096, "dtype": "float16"}},
+  "m4096_d4096": {"init_kwargs": {"rows": 4096, "cols": 4096, "dtype": "float16"}, "input_kwargs": {"rows": 4096, "cols": 4096, "dtype": "float16"}}
+}

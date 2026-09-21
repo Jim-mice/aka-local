@@ -1,0 +1,12 @@
+{
+  "target": "Megatron Native DotProductAttention (unfused local core)",
+  "phase": "17-A",
+  "status": "QUALIFIED_NATIVE_TARGET_NO_AGENT_STARTED",
+  "lessons": [
+    "Historical Dense Fused Attention is not a universal callable operator.",
+    "The selected V100 path is Megatron DotProductAttention, not TE and not flash-attn.",
+    "Standalone attention scores are not real Megatron evidence.",
+    "QKV and output projection GEMMs must remain outside the isolated core boundary."
+  ],
+  "excluded": {"transformer_engine": "DEPENDENCY_BLOCKED", "dropout_nonzero": "SEPARATE_RNG_CONTRACT_REQUIRED", "causal_or_masked": "SEPARATE_CONTRACT_REQUIRED"}
+}

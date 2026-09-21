@@ -1,0 +1,17 @@
+﻿{
+  "hypothesis": "For contiguous 2-D RMSNorm on sm_120, keeping each row in one 256-thread block and accumulating the sum of squares in registers followed by warp-shuffle reduction should reduce synchronization and shared-memory traffic versus a block-wide reduction.",
+  "techniques": [
+    "one-block-per-row mapping",
+    "register accumulation",
+    "warp shuffle reduction",
+    "coalesced grid-stride loads",
+    "single shared-memory staging step for warp totals"
+  ],
+  "constraints": [
+    "Windows-native nvcc flags only",
+    "explicit sm_120 gencode",
+    "no benchmark execution",
+    "no Linux-only compiler flags"
+  ],
+  "expected_effect": "modest latency improvement for medium and large hidden sizes while preserving fp16, bf16, and fp32 output dtype"
+}

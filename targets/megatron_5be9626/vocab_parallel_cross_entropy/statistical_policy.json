@@ -1,0 +1,28 @@
+{
+  "version": "tp2_stability_v1",
+  "benchmark_era": "tp2_comparable_v1",
+  "performance_contract_version": "tp2_scope_v1",
+  "performance_contract_hash": "6632730d9957fbb1a0da4268f2b3c168b2836862db167935d8908758a00b5bea",
+  "sampling_design": "three independent ABBA blocks; A=reference and B=immutable candidate Episode 7; deterministic A-B-B-A order",
+  "blocks": 3,
+  "samples_per_run_and_configuration": 5,
+  "warmup_per_run_and_configuration": 5,
+  "rank_aggregation": "max rank completion latency per iteration",
+  "primary_estimator": "arithmetic mean latency; paired block speedup from candidate/reference means",
+  "diagnostic_statistics": ["N", "mean", "std", "CV", "median", "min", "max", "MAD", "rank skew"],
+  "outlier_policy": "classify but do not delete slow valid samples",
+  "invalid_sample_policy": ["rank failure", "missing row", "CUDA/NCCL error", "fixture/config mismatch", "explicit independent hardware fault"],
+  "slow_valid_sample_is_invalid": false,
+  "uncertainty_method": "paired block bootstrap with deterministic seed 1515 and 10000 resamples",
+  "promotion_requirements": {
+    "all_blocks_complete": true,
+    "all_ranks_complete": true,
+    "minimum_blocks": 3,
+    "minimum_samples_per_config": 15,
+    "max_config_cv": 0.10,
+    "paired_speedup_ci_lower_bound": 1.0,
+    "no_unclassified_invalid_samples": true
+  },
+  "hash": "a74bf021f535c6de48b3b37b9568bdf06df5ff77075b3e6afd652cf96fa0dc05",
+  "hash_definition": "SHA256 of this serialization with hash value PENDING_STATISTICAL_POLICY_HASH"
+}

@@ -1,0 +1,12 @@
+{
+  "phase": "15-B.4",
+  "lessons": [
+    "Distributed timing must retain explicit raw completion rows from every rank.",
+    "A partial rank result must fail closed as INCOMPLETE_DISTRIBUTED_TIMING.",
+    "Candidate ABI buffer extents must be audited before timing; Episode 7 required rows*local_vocab mask storage.",
+    "CUDA event elapsed time requires completion synchronization after end-event recording.",
+    "Per-stage synchronization inside the measured interval changes the scientific timing boundary."
+  ],
+  "performance_claims": [],
+  "incumbent_eligible": false
+}

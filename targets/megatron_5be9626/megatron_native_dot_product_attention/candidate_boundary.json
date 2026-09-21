@@ -1,0 +1,12 @@
+{
+  "status": "research_only",
+  "replaceable": ["scaled QK^T", "dense no-mask softmax", "p=0 dropout identity", "PV"],
+  "excluded": ["QKV GEMM", "output projection GEMM", "rotary embedding", "nonzero-dropout RNG", "causal/padding/arbitrary masks", "TE backend"],
+  "inputs": ["Q", "K", "V", "scale", "attention_mask=None"],
+  "output": "contiguous FP16 context [S,B,H]",
+  "saved_state": "must preserve training backward semantics if integrated",
+  "workspace": "candidate-owned only if reference/candidate allocation policy is made identical",
+  "stream": "current CUDA stream",
+  "collectives": 0,
+  "open_questions": ["whether a future candidate should expose native autograd-compatible backward", "whether causal/masked modes deserve separate contracts"]
+}

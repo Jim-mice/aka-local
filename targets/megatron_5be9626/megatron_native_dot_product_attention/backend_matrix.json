@@ -1,0 +1,10 @@
+{
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "backends": [
+    {"name": "DotProductAttention", "activation": "native/local module spec", "dependency": "PyTorch + Megatron fused-softmax wrapper", "status": "AVAILABLE", "selected": true},
+    {"name": "TEDotProductAttention", "activation": "Transformer Engine layer spec", "dependency": "transformer_engine", "status": "DEPENDENCY_BLOCKED", "selected": false},
+    {"name": "flash_attn", "activation": "optional external/import or backend-specific path", "dependency": "flash_attn", "status": "DEPENDENCY_BLOCKED", "selected": false},
+    {"name": "torch.nn.functional.scaled_dot_product_attention", "activation": "PyTorch API", "dependency": "PyTorch", "status": "AVAILABLE_BUT_NOT_SELECTED_BY_MEGATRON_PROBE", "selected": false}
+  ],
+  "environment": {"torch": "2.7.1+cu118", "cuda": "11.8", "gpu": "V100 sm70", "transformer_engine": false, "flash_attn": false}
+}

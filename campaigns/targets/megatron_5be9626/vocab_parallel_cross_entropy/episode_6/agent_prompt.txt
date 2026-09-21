@@ -1,0 +1,47 @@
+You are a CUDA Agent generating one candidate for a REAL Megatron distributed target. Do not modify Megatron or run benchmarks.
+
+=== REAL MEGATRON TARGET ===
+target=vocab_parallel_cross_entropy commit=5be9626709af2722333bf54797c954c09edeada3 source=megatron.core.tensor_parallel.cross_entropy._VocabParallelCrossEntropy
+
+=== TP=2 SEMANTICS ===
+Each rank owns contiguous [rank*V/2,(rank+1)*V/2) local FP16 logits [N,V/2] and global int64 targets [N]. Local arithmetic is FP32.
+
+=== STAGE GRAPH AND COLLECTIVES ===
+local max -> REAL MAX all-reduce -> local shift/mask/extraction/exp/denominator -> REAL SUM predicted and REAL SUM denominator -> loss/softmax. Backward is outside scope and has no collective. Preserve exactly one MAX and two SUM collectives in caller.
+
+=== MANDATORY ABI — DO NOT CHANGE ===
+Use marker // AKA_TARGET_CONTRACT: vocab_parallel_cross_entropy:112959ca63020e9b and preserve these prototypes VERBATIM:
+extern "C" cudaError_t local_max_fp16_stream(const half* logits, float* row_max, int rows, int local_vocab, cudaStream_t stream);
+extern "C" cudaError_t local_prepare_fp16_stream(const half* logits, const int64_t* targets, const float* global_max, float* predicted_local, float* denominator_local, float* exp_values, unsigned char* target_mask, int64_t* target_local, int rows, int local_vocab, int rank, cudaStream_t stream);
+Every symbol must be exported with extern "C".
+
+=== CUDA 11.8 COMPATIBILITY ===
+Target V100 sm_70 with CUDA 11.8. DO NOT use CUDART_INF_F; it failed the verified remote compiler. The finite initializer -3.402823466e+38F was verified.
+
+=== FORBIDDEN SEMANTIC CHANGES ===
+No local-only denominator or target logit, no full-vocabulary production reconstruction, no collective removal, no changed partitioning, no backward implementation.
+
+=== CURRENT TP=2 PERFORMANCE ===
+Phase 15-A rank-0 means: 2774, 3139, 2813 us.
+=== LOCAL COMPUTE PROFILE ===
+PyTorch reduction/index/elementwise kernels.
+=== NCCL PROFILE EVIDENCE ===
+REAL ncclDevKernel_AllReduce_Sum_f32_RING_LL; preserve three source collectives.
+=== CURRENT DIAGNOSIS ===
+MULTI_KERNEL_OVERHEAD only; no unsupported network claim.
+=== PROFILE-GUIDED RECOMMENDATIONS ===
+Reduce local temporary/kernel count while preserving barriers.
+=== WHAT WORKED ===
+Real TP=2 replay and rank-local gradients.
+=== WHAT FAILED ===
+No prior candidate performance evidence.
+=== NEXT RECOMMENDED SEARCH ===
+Optimize one local stage only.
+
+=== CUDA DIAGNOSTIC FEEDBACK ===
+Episodes 1-3: REJECT_TOOLCHAIN, CUDART_INF_F failed CUDA 11.8. Use -3.402823466e+38F or another verified construct.
+
+=== ABI DIAGNOSTIC FEEDBACK ===
+Episodes 4-5: REJECT_CONTRACT, missing exported local_max_fp16_stream and local_prepare_fp16_stream. Preserve every prototype verbatim.
+
+Write candidate.cu, hypothesis.json, and AGENT.md only in this episode directory. Stop after files are written.

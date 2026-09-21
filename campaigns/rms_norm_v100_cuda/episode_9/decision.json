@@ -1,0 +1,15 @@
+{
+  "episode": 9,
+  "operator": "rms_norm_v100_cuda",
+  "decision": "REJECT_COMPILE",
+  "compile_pass": false,
+  "correctness_pass": false,
+  "speedup": null,
+  "aggregate_score": 0.0,
+  "geometric_mean_speedup": 1.0,
+  "incumbent_score": 3.285,
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identifier \"this_will_fail_to_compile\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(7): error: expected a \";\"\n\n2 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu\".\n",
+  "evaluated_at": "2026-09-19T05:54:15.797412+00:00",
+  "legacy": true,
+  "legacy_reason": "single_shape_evaluation"
+}

@@ -1,0 +1,11 @@
+{
+  "operator": "dense_attention_backward_v100_cuda",
+  "episode": 5,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "correctness",
+  "reason": "correctness failed; max_error=101.18525695800781",
+  "compiler_error": "",
+  "reusable_rule": "Avoid correctness failures: verify RMSNorm formula y=(x/rms(x))*weight",
+  "timestamp": "2026-09-19T16:38:01.934987+00:00"
+}

@@ -1,0 +1,17 @@
+platform_id: rtx5060_laptop_sm120
+vendor: NVIDIA
+device_name: NVIDIA GeForce RTX 5060 Laptop GPU
+architecture: Blackwell
+compute_capability: '12.0'
+memory_bytes: 8546947072
+host_type: Windows laptop
+os: Windows
+driver: '610.88'
+compiler: CUDA Toolkit 13.4.59 / MSVC 19.50.35728
+runtime: PyTorch 2.14.0+cu130
+frameworks: [CUDA C++, PyTorch, Triton]
+profiler: [Nsight Compute 2026.3.0]
+availability: confirmed
+execution_mode: local_windows
+notes: [NCU counters available; local evaluator operational]
+evidence_source: [C:/Users/38154/projects/aka-local/STATUS.md]

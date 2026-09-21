@@ -1,0 +1,10 @@
+{
+  "operator": "causal_attention_v100_cuda",
+  "episode": 3,
+  "category": "UNKNOWN",
+  "confidence": 0.3,
+  "message": "NSYS-derived diagnosis for causal_attention_v100_cuda_episode_3",
+  "suggested_actions": [],
+  "strategy_evolution": "Ep2: 0.038x (950us) -> Ep3: 0.238x (116.5us)",
+  "timestamp": "2026-09-19T16:50:00+00:00"
+}

@@ -1,0 +1,10 @@
+{
+  "episode": 3,
+  "target": "swiglu",
+  "decision": "REJECT_CORRECTNESS",
+  "reason": "Candidate failed correctness; no performance/profile conclusion is accepted.",
+  "score": 3.7082813067472284,
+  "contract_hash": "2b05cc321bed0956",
+  "candidate_hash": "13715d566d428213",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3"
+}

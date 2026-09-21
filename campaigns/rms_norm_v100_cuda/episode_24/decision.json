@@ -1,0 +1,20 @@
+{
+  "episode": 24,
+  "operator": "rms_norm_v100_cuda",
+  "decision": "REJECT_COMPILE",
+  "compile_pass": false,
+  "correctness_pass": false,
+  "speedup": null,
+  "aggregate_score": 1.0,
+  "geometric_mean_speedup": 1.0,
+  "incumbent_score": 4.077,
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/be5112ac74ec/candidate.cu(32): error: identifier \"uintptr_t\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/be5112ac74ec/candidate.cu(32): error: expected a \")\"\n\n2 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/be5112ac74ec/candidate.cu\".\n",
+  "evaluated_at": "2026-09-19T12:34:37.057339+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ]
+}

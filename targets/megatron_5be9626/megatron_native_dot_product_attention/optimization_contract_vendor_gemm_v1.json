@@ -1,0 +1,14 @@
+{
+  "version":"attention_vendor_gemm_hybrid_v1",
+  "status":"FROZEN_FOR_FUTURE_SCORING_NOT_ACTIVE",
+  "megatron_commit":"5be9626709af2722333bf54797c954c09edeada3",
+  "replay_contract_hash":"65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+  "performance_scope":"PERFORMANCE_SCOPE_REUSED: native_dot_product_attention_scope_v1",
+  "vendor_gemm_invariant":{"qk":"framework-owned torch.baddbmm alpha=0.125","pv":"framework-owned torch.bmm","prohibited":["FULL_CORE_CUSTOM_QK","FULL_CORE_CUSTOM_PV","FULL_CORE_ROW_SERIAL"]},
+  "local_replacement":"contiguous FP16 scores [B,heads,S,S] -> contiguous FP16 probabilities [B,heads,S,S], FP32 softmax semantics; scale already applied and must not be reapplied",
+  "workspace":"preallocated score/output outside events; reference FP32 transient/probability materialization and candidate workspace must be fairly accounted",
+  "stream":"exact current PyTorch CUDA stream; no default-stream work or device-wide synchronization inside candidate call",
+  "official_configurations":[[16,1,1024],[64,2,1024],[128,2,1024]],
+  "collectives":0,
+  "excluded":["QKV","rotary","output projection","mask","dropout RNG","TE","flash-attn","backward","NCCL"]
+}

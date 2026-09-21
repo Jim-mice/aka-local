@@ -1,0 +1,1 @@
+{"type":"object","required":["campaign_id","directions"],"properties":{"campaign_id":{"type":"string"},"directions":{"type":"array"}}}

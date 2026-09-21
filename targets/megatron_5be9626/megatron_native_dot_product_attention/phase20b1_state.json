@@ -1,0 +1,52 @@
+{
+  "phase": "20-B.1R-direct-endpoint",
+  "era": "attention_vendor_gemm_hybrid_v1",
+  "status": "ENVIRONMENT_NOT_READY",
+  "terminal_state_for_invocation": "REMOTE_REACHABILITY_BLOCKED",
+  "timestamp_utc": "2026-09-21T03:40:52.7631890Z",
+  "transport_status": "AUTHENTICATION_INTERACTION_REQUIRED",
+  "readiness": "UNKNOWN",
+  "v1_exists": false,
+  "v1_authorized": false,
+  "active_reference_baseline": null,
+  "reason": "The user-provided direct endpoint passed TCP port 22 connectivity, and normal OpenSSH reached its interactive authentication prompt. Authentication was not automated or persisted, so no remote command completed. Fresh remote GPU telemetry and scientific readiness remain unavailable.",
+  "historical_transport_evidence": {
+    "endpoint": "v100-srv",
+    "status": "SSH_ALIAS_MISSING",
+    "supersession": "SUPERSEDED_BY_DIRECT_REMOTE_ENDPOINT"
+  },
+  "ssh_audit": {
+    "ssh_executable": "C:\\Windows\\System32\\OpenSSH\\ssh.exe",
+    "ssh_version": "OpenSSH_for_Windows_9.5p2, LibreSSL 3.8.2",
+    "endpoint": "<REMOTE_USER>@<REMOTE_HOST>",
+    "tcp_port_22": "reachable",
+    "tcp_source_interface": "WLAN",
+    "tcp_source_address": "<REMOTE_HOST>.70",
+    "effective_user": "<REMOTE_USER>",
+    "effective_port": 22,
+    "direct_endpoint": true,
+    "interactive_ssh_attempts_this_invocation": 1,
+    "interactive_ssh_result": "reached password prompt; no credential was automated or recorded"
+  },
+  "preserved_phase20b0_state": "ENVIRONMENT_NOT_READY_FOR_SCORING",
+  "contracts": {
+    "replay": "65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+    "performance": "5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+    "optimization_era_file": "optimization_contract_vendor_gemm_v1.json",
+    "local_abi_file": "vendor_gemm_local_softmax_abi.json",
+    "statistical_policy": "692f9718d1e12d922561e6d8c69cef835a37cd9c0f6e087c2ab0b342e231ae41"
+  },
+  "next_legal_action": "Use a future normal interactive SSH session with securely supplied runtime authentication. Only after a remote command completes may one fresh environment capture and one reference-only readiness probe occur.",
+  "prohibited_actions_taken": {
+    "modified_ssh_configuration": false,
+    "modified_network_or_vpn_configuration": false,
+    "guessed_alternate_host": false,
+    "persisted_or_automated_credential": false,
+    "owned_interactive_ssh_process_cleaned_up": true,
+    "generated_v1": false,
+    "ran_reference_baseline": false,
+    "ran_candidate_or_paired_benchmark": false,
+    "modified_gpu_state_or_processes": false,
+    "modified_megatron": false
+  }
+}

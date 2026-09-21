@@ -1,0 +1,12 @@
+{
+  "decision": "REJECT_COMPILE",
+  "reason": "remote nvcc: CUDART_INF_F undefined",
+  "candidate_hash": "fd2b30416ac4b2a18c5e4e18d625673c83430d215fc67a020731a3d179ed3bd3",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "tp": 2,
+  "collective_structure": [
+    "MAX",
+    "SUM predicted",
+    "SUM denominator"
+  ]
+}

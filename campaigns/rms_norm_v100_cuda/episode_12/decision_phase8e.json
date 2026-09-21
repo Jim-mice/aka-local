@@ -1,0 +1,7 @@
+{
+  "accepted": false,
+  "threshold": 2.95,
+  "margin": 0.02,
+  "improvement_percent": -18.02,
+  "reason": "need >2.94984 (incumbent=2.892 + 2.0% margin)"
+}

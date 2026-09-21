@@ -1,0 +1,5 @@
+{
+  "decision": "BUILD_BLOCKED",
+  "reason": "A1 did not compile under the verified CUDA 11.8/sm_70 toolchain; no correctness or performance evidence is admissible.",
+  "next_episode": "DEFERRED_UNTIL_NEW_EXPLICIT_PHASE_OR_TOOLCHAIN-COMPATIBLE_AGENT_OUTPUT"
+}

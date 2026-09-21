@@ -1,0 +1,16 @@
+{
+  "performance_contract_version": "torch_rmsnorm_scope_v1",
+  "performance_contract_hash": "86a7faf7a7cb02c0e4a2fbf8599e0f60d353079e607cb8c2900668e3d79d95b6",
+  "status": "QUALIFICATION_BASELINE",
+  "canonical_target": "Megatron non-TE Torch RMSNorm",
+  "boundary": "preallocated float16 contiguous x and weight available -> real WrappedTorchNorm forward produces float16 y on the current CUDA stream",
+  "inside_timing": ["WrappedTorchNorm forward", "all CUDA work submitted by torch.nn.RMSNorm"],
+  "outside_timing": ["module construction", "allocation", "fixture generation", "backward", "process startup", "post-event synchronization accounting"],
+  "allocation_policy": "all primary input/module allocations predate timing",
+  "synchronization_policy": "CUDA start/end events on current stream; end event synchronized before elapsed-time query",
+  "stream_policy": "PyTorch current CUDA stream",
+  "distributed_policy": "single rank local boundary; no NCCL",
+  "official_configs": [[16,1,1024],[64,2,1024],[128,2,1024]],
+  "dtype": "float16",
+  "future_ab_rule": "reference and candidate must use the same preallocated tensors, fixture identity, timing events, current stream, and output policy"
+}

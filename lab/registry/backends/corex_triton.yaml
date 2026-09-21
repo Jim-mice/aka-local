@@ -1,0 +1,6 @@
+backend_id: corex_triton
+language: Python/Triton
+compiler_runtime: CoreX/Triton
+supported_platforms: [biv150_corex]
+profiling_tools: [torch.profiler]
+notes: BI-V150-specific backend; do not generalize quirks to NVIDIA Triton.

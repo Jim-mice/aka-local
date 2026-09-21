@@ -1,0 +1,16 @@
+{
+  "target": "swiglu",
+  "contract": "swiglu_v1",
+  "hypothesis": "One FP16 activation-only kernel removes the separate bias/add, SiLU, and multiply launch overhead while preserving the FC1/FC2 boundary.",
+  "scope": ["optional bias add", "gate/up split", "SiLU(gate)", "multiply by up+offset"],
+  "excluded": ["FC1 GEMM", "FC2 GEMM", "TP collectives", "TE", "FP8", "dropout", "residual BDA"],
+  "dtype": "FP16 input/output",
+  "layout": "contiguous row-major [rows,width] to [rows,width/2]",
+  "official_shapes": [
+    {"S": 16, "B": 1, "H": 1024, "I": 4096, "TP": 1, "offset": 0},
+    {"S": 64, "B": 2, "H": 1024, "I": 4096, "TP": 1, "offset": 0},
+    {"S": 128, "B": 2, "H": 1024, "I": 4096, "TP": 1, "offset": 0}
+  ],
+  "expected_effect": "Reduce activation-path launch count; no performance claim is made without measurement.",
+  "stream": "Kernel launch uses the CUDA runtime default stream because the required ABI has no stream parameter."
+}

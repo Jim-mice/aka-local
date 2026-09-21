@@ -1,0 +1,20 @@
+{
+  "episode": 7,
+  "operator": "dense_attention_v100_cuda",
+  "decision": "REJECT_PERFORMANCE",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 0.245,
+  "aggregate_score": 0.049,
+  "geometric_mean_speedup": 0.049,
+  "incumbent_score": 1.0,
+  "reason": "aggregate_score=0.049 <= incumbent=1.0",
+  "evaluated_at": "2026-09-19T15:23:10.387316+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4,64,64",
+    "1,8,128,64",
+    "2,8,256,64",
+    "1,16,512,64"
+  ]
+}

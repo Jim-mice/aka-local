@@ -1,0 +1,16 @@
+{
+  "operator": "rms_norm",
+  "operator_selection": "official RMSNorm forward reduction fallback; no official RMSNorm backward or SwiGLU backward contract was present",
+  "agent": {"model": "gpt-5.6-luna", "reasoning_effort": "low", "model_turns": 1, "reviewers": 0, "fallback": "none"},
+  "candidate": "candidate.py",
+  "baseline": "official eager reference",
+  "compile": {"passed": true, "shapes": 56},
+  "correctness": {"passed": true, "shapes": 56, "max_abs_observed": 0.015625, "max_rel_observed": 0.0078125},
+  "benchmark": {"protocol": "same-process A/B/B/A", "warmup": 20, "repetitions": 100, "shapes": 56, "arithmetic_mean_speedup": 7.202740485699887, "geometric_mean_speedup": 6.145711036581204, "total_time_ratio": 4.652902651856077, "minimum_shape_speedup": 0.972903321759391, "maximum_shape_speedup": 17.9976310078957},
+  "robustness": {"required": false, "reason": "initial aggregate improvement was far above the <2% robustness trigger"},
+  "decision": "PROMOTE",
+  "promotion_action": "not performed automatically; candidate remains isolated",
+  "static_evidence": {"architecture": "sm_120", "registers_per_thread": 30, "shared_bytes_per_block": 2048, "stack_bytes": 0, "local_bytes": 0, "block_threads": 256, "grid": "one block per token row"},
+  "ncu": "NOT_NEEDED",
+  "failure_reason": null
+}

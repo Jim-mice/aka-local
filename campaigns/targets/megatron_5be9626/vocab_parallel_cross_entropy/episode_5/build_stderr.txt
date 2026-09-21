@@ -1,0 +1,81 @@
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+[rank1]: Traceback (most recent call last):
+[rank1]:   File "/tmp/vocab_eval.py", line 13, in <module>
+[rank1]:     if __name__=='__main__': main()
+[rank1]:   File "/tmp/vocab_eval.py", line 8, in main
+[rank1]:     lib=ctypes.CDLL(a.so); lib.local_max_fp16_stream.restype=ctypes.c_int; lib.local_prepare_fp16_stream.restype=ctypes.c_int
+[rank1]:   File "<REMOTE_HOME>/local/python3.10/lib/python3.10/ctypes/__init__.py", line 387, in __getattr__
+[rank1]:     func = self.__getitem__(name)
+[rank1]:   File "<REMOTE_HOME>/local/python3.10/lib/python3.10/ctypes/__init__.py", line 392, in __getitem__
+[rank1]:     func = self._FuncPtr((name_or_ordinal, self))
+[rank1]: AttributeError: /tmp/vocab_ep5.so: undefined symbol: local_max_fp16_stream
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/tmp/vocab_eval.py", line 13, in <module>
+[rank0]:     if __name__=='__main__': main()
+[rank0]:   File "/tmp/vocab_eval.py", line 8, in main
+[rank0]:     lib=ctypes.CDLL(a.so); lib.local_max_fp16_stream.restype=ctypes.c_int; lib.local_prepare_fp16_stream.restype=ctypes.c_int
+[rank0]:   File "<REMOTE_HOME>/local/python3.10/lib/python3.10/ctypes/__init__.py", line 387, in __getattr__
+[rank0]:     func = self.__getitem__(name)
+[rank0]:   File "<REMOTE_HOME>/local/python3.10/lib/python3.10/ctypes/__init__.py", line 392, in __getitem__
+[rank0]:     func = self._FuncPtr((name_or_ordinal, self))
+[rank0]: AttributeError: /tmp/vocab_ep5.so: undefined symbol: local_max_fp16_stream
+[rank1]:[W920 12:20:25.393978524 ProcessGroupNCCL.cpp:1479] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+[rank0]:[W920 12:20:25.628338354 ProcessGroupNCCL.cpp:1479] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0920 12:20:26.386000 1732897 torch/distributed/elastic/multiprocessing/api.py:900] Sending process 1733216 closing signal SIGTERM
+E0920 12:20:26.452000 1732897 torch/distributed/elastic/multiprocessing/api.py:874] failed (exitcode: 1) local_rank: 1 (pid: 1733217) of binary: <REMOTE_HOME>/venvs/lerobot-act/bin/python
+Traceback (most recent call last):
+  File "<REMOTE_HOME>/local/python3.10/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "<REMOTE_HOME>/local/python3.10/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/run.py", line 896, in <module>
+    main()
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/run.py", line 892, in main
+    run(args)
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/run.py", line 883, in run
+    elastic_launch(
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 139, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 270, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+/tmp/vocab_eval.py FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-09-20_12:20:26
+  host      : v100-srv
+  rank      : 1 (local_rank: 1)
+  exitcode  : 1 (pid: 1733217)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

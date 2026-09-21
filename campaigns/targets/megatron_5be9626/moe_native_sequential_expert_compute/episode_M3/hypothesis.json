@@ -1,0 +1,9 @@
+{
+  "target_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "entry_point": "moe_sequential_expert_forward_fp16_stream",
+  "marker": "a1bb8ee0af6c250663e0935ae3deb07104975fc5904c56bb5b2f0d4e8032d1fe",
+  "hypothesis": "A single CUDA kernel reconstructs expert-local row ownership from contiguous counts, applies gated SiLU FC1 then FC2 in expert order, and scales each result by its corresponding probability on the supplied stream.",
+  "assumptions": ["fc1_weights are laid out as [expert, 2*intermediate, hidden]", "fc2_weights are laid out as [expert, hidden, intermediate]", "probs is one FP16 scale per contiguous local token"],
+  "distributions": [[4,4,4,4],[1,3,5,7],[0,0,8,8]],
+  "configuration": {"hidden": 64, "intermediate": 128, "experts": 4, "tokens": 16, "cuda": "11.8", "sm": 70}
+}

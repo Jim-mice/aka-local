@@ -1,0 +1,13 @@
+{
+  "name": "swiglu_forward",
+  "description": "FP16 SwiGLU activation: out = SiLU(gate) * up on 2-D CUDA tensors.",
+  "framework": "Cuda",
+  "dtype": "float16",
+  "shape_domain": {
+    "rows": [256, 1024, 4096],
+    "cols": [4096]
+  },
+  "inputs": {"gate": "float16[M,4096]", "up": "float16[M,4096]"},
+  "outputs": {"out": "float16[M,4096]"},
+  "correctness": {"reference": "torch.nn.functional.silu(gate) * up", "atol": 0.002, "rtol": 0.002}
+}

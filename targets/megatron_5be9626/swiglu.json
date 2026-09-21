@@ -1,0 +1,18 @@
+{
+  "target_name": "SwiGLU",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_files": ["megatron/core/transformer/mlp.py", "megatron/core/fusions/fused_bias_swiglu.py", "megatron/core/extensions/transformer_engine.py"],
+  "call_sites": ["TransformerLayer._forward_mlp -> MLP.forward -> fc1 -> activation/gated path -> fc2"],
+  "implementation_backend": "composition of TP linear/GEMM and activation; optional Megatron fused bias-SwiGLU or TE SwiGLU op",
+  "forward": {"semantics": "SiLU(gate + optional bias) * (up + optional bias)", "path": "fc1 produces interleaved gate/up channels -> split/chunk -> activation and multiply -> fc2"},
+  "backward": {"path": "autograd for linear modules plus explicit custom autograd in fused_bias_swiglu.py or TE backward", "semantics": "derivatives through SiLU, gate multiply, and both GEMMs"},
+  "inputs": ["hidden states [S,B,H]", "fc1 weights/bias", "fc2 weights/bias"],
+  "outputs": ["MLP output [S,B,H]", "optional bias returned by linear module"],
+  "symbolic_shapes": {"fc1": "[S*B,H] x [H,2*I/TP]", "local_intermediate": "[S*B,2*I/TP]", "post_swiglu": "[S*B,I/TP]", "fc2": "[S*B,I/TP] x [I/TP,H]"},
+  "dtypes": ["FP32", "FP16", "BF16", "FP8 on TE-specific paths"],
+  "distributed_semantics": {"tensor_parallel": "intermediate dimension is partitioned; linear modules may overlap collectives"},
+  "external_dependencies": ["PyTorch", "Megatron fused_bias_swiglu", "Transformer Engine optional"],
+  "v100_feasibility": "SUPPORTED_WITH_FALLBACK: FP16/BF16/FP32 and Megatron fused path are plausible; TE FP8 path is not assumed",
+  "candidate_optimization_boundary": "C or B: fused bias+SwiGLU activation boundary, or a defined GEMM epilogue only if linear contract is preserved",
+  "open_questions": ["Bias and fusion flags in final model config", "Whether TE activation op or Megatron fused function is selected"]
+}

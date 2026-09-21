@@ -1,0 +1,12 @@
+{
+  "fixture_version": "coherent_global_fixture_v2",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "forward_replay_contract_hash": "d8ea9db11871996c",
+  "semantic_evaluator_hash": "7cc0fac8d80b2d27",
+  "seed": 1515,
+  "generation": "same full global FP16 logits and global targets on every TP rank; each rank takes one contiguous vocabulary shard",
+  "official_configurations": [[8,1,32], [32,2,64], [128,2,128]],
+  "tp2_ranges": {"32": [[0,16], [16,32]], "64": [[0,32], [32,64]], "128": [[0,64], [64,128]]},
+  "saved_state_source": "real Megatron ctx.saved_tensors from vocab_parallel_cross_entropy forward",
+  "edge_fixture_source": "explicit rank-ownership, first/last local-index, equal-logit, and extreme-logit cases in remote_backward_replay.py"
+}

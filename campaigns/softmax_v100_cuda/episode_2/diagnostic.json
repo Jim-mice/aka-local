@@ -1,0 +1,32 @@
+{
+  "id": "diag-460723a20c6c",
+  "category": "KERNEL_LATENCY",
+  "severity": "INFO",
+  "confidence": 0.6,
+  "message": "NSYS-derived diagnosis for softmax_v100_cuda_episode_2",
+  "evidence": {
+    "items": [
+      "kernel_count=4",
+      "total_kernel_time_us=5356.35",
+      "geo_mean_speedup=0.982",
+      "sync_calls=2",
+      "dominant_kernel_pct=99.6",
+      "single_kernel=true"
+    ]
+  },
+  "possible_causes": [
+    "Launch overhead from multiple kernel invocations",
+    "Suboptimal kernel implementation",
+    "Synchronization overhead",
+    "Memory transfer overhead"
+  ],
+  "suggested_actions": [
+    "Kernel latency is the bottleneck — single kernel is slower than reference",
+    "Focus on instruction-level optimization within the kernel",
+    "Investigate reduction efficiency and memory access patterns"
+  ],
+  "source": "nsys_profile",
+  "experiment_id": "softmax_v100_cuda_episode_2",
+  "timestamp": "2026-09-19T13:30:00.540891+00:00",
+  "generated_at": "2026-09-19T13:30:00.540891+00:00"
+}

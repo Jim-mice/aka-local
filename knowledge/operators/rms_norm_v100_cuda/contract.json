@@ -1,0 +1,10 @@
+﻿{
+  "operator": "rms_norm_v100_cuda",
+  "environment": "v100_sm70",
+  "contract": "extern C void launch_kernel(float*,float*,float*,int,int,float)",
+  "compiler": "nvcc",
+  "arch": "sm_70",
+  "source": "operators/rms_norm_v100_cuda/reference.cu",
+  "notes": "Standalone CUDA kernel. No Python/torch dependency. Candidate must be self-contained .cu file.",
+  "timestamp": "2026-09-19T00:00:00Z"
+}

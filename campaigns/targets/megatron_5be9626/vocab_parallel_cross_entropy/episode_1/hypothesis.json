@@ -1,0 +1,15 @@
+{
+  "target": "megatron.core.tensor_parallel.cross_entropy._VocabParallelCrossEntropy",
+  "commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "contract": "vocab_parallel_cross_entropy:112959ca63020e9b",
+  "variant": "baseline_rank_local_stages",
+  "tp": 2,
+  "assumptions": [
+    "local_vocab is V/2 and rank selects the contiguous partition",
+    "global_max is produced by the required MAX all-reduce",
+    "predicted_local and denominator_local are each SUM all-reduced by the caller",
+    "the caller forms loss and softmax after those two SUM all-reduces"
+  ],
+  "collectives": {"implemented": 0, "required_by_caller": {"MAX": 1, "SUM": 2}},
+  "stream_behavior": "*_stream entries launch on the caller-provided stream without synchronization; preferred ABI wrappers use stream 0"
+}

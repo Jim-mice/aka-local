@@ -1,0 +1,89 @@
+You are optimizing a CUDA LayerNorm kernel for NVIDIA Tesla V100 (sm_70).
+
+## Operator
+- Name: layer_norm_v100_cuda
+- Type: LayerNorm (standalone CUDA, no torch)
+
+## Environment
+- GPU: Tesla V100-PCIE-16GB (Volta, compute capability 7.0)
+- Architecture: sm_70
+- CUDA: 11.8 with nvcc
+- Remote Linux server (NOT Windows)
+- Standalone CUDA kernel only
+
+## FORBIDDEN - DO NOT CREATE OR USE:
+- candidate.py (NO Python files of any kind)
+- torch, torch.extension, torch.utils.cpp_extension (NO PyTorch)
+- sm_120, sm_100, Blackwell, or any architecture newer than sm_70
+- Python imports of any kind
+- Any file other than candidate.cu, hypothesis.json, AGENT.md
+
+## REQUIRED FILE STRUCTURE (MUST FOLLOW EXACTLY)
+
+candidate.cu MUST be a self-contained standalone CUDA file that defines:
+
+extern "C" void launch_kernel(
+    float*,float*,float*,float*,int,int,float
+);
+
+The kernel computes LayerNorm.
+
+Compiled with: nvcc -O2 -gencode arch=compute_70,code=sm_70 -shared
+
+## Evaluation
+Your kernel will be evaluated across MULTIPLE shapes: 1x4096, 4x4096, 8x4096, 32x4096.
+The score is the GEOMETRIC MEAN speedup across all shapes.
+A kernel that is fast only at 4x4096 but slow at 1x4096 will score poorly.
+
+## Task
+Create exactly THREE files:
+1. candidate.cu -- standalone CUDA kernel as described above
+2. hypothesis.json -- MUST follow this EXACT format:
+{
+  "claim": "what you changed",
+  "strategy_tags": ["warp_shuffle_reduction", "shared_memory_reduction"],
+  "expected_effects": ["reduce synchronization", "reduce shared memory traffic"],
+  "risk": ["register pressure"]
+}
+strategy_tags MUST use these exact names where applicable:
+  warp_shuffle_reduction, shared_memory_optimization, coalesced_memory_access,
+  parallel_reduction, fused_multiply_add, reciprocal_sqrt, register_optimization,
+  vectorized_loads
+3. AGENT.md -- summary of what you changed and why
+
+## Contract
+extern C void launch_kernel(float*,float*,float*,float*,int,int,float)
+
+## Volta (sm_70) Tuning Guide
+- 256 threads per block is typical; test 128 and 512
+- Use __shfl_down_sync for warp-level reductions
+- Avoid bank conflicts in shared memory
+- Volta has 64 KB L1/shared memory per SM, 80 SMs, 7.0 TFLOPS FP32
+- Performance must be ROBUST across all shapes, not just one
+
+## Rules
+- Do NOT run benchmarks or compile CUDA code
+- Stop after writing the three files
+- Use the exact extern "C" void launch_kernel signature
+- Do NOT create any Python files
+- hypothesis.json MUST include strategy_tags, expected_effects, and risk fields
+
+Reply only when finished.
+
+=== CURRENT TARGET ===
+Incumbent: None
+Score: 1.0 (geometric_mean_speedup)
+Shapes: ['1,4096', '4,4096', '8,4096', '32,4096']
+
+=== WHAT WORKED ===
+
+=== WHAT FAILED ===
+- no result.json from V100; stdout=Traceback (most recent call last):
+  File "/hom: episodes=[1], reason=compile
+- correctness failed; max_error=9.75206470489502: episodes=[2], reason=correctness
+- correctness failed; max_error=8.749374389648438: episodes=[3], reason=correctness
+- aggregate_score=0.021 <= incumbent=1.0: episodes=[4], reason=performance
+
+=== DO NOT REPEAT ===
+
+=== RECENT EXPERIMENTS (last 10) ===

@@ -1,0 +1,21 @@
+{
+  "operator": "rms_norm",
+  "episode": 2,
+  "architecture": "sm_120",
+  "incumbent": "rms_norm_v1",
+  "candidate": "rms_norm_v2",
+  "hypothesis_id": "warp_reduce_shared_finalize",
+  "hypothesis": "Warp shuffle reduction with eight warp partials can reduce the full shared-memory tree overhead while preserving V1's row mapping and fused output.",
+  "candidate_mechanism": "__shfl_down_sync within each warp; warp 0 finalizes eight partials; all other V1 mechanisms unchanged",
+  "compile": {"passed": true, "official_shapes": 56},
+  "correctness": {"passed": true, "official_shapes": 56},
+  "performance": {"protocol": "five independent same-process A/B/B/A batches", "arithmetic_mean_speedup": 1.074214540359538, "geometric_mean_speedup": 1.071903817291241, "total_time_ratio": 1.0965217456010878, "shape_count": 56, "shape_17": {"token_count": 2048, "hidden_size": 128, "mean_speedup": 1.0754158717794282, "median_speedup": 1.078575669093861, "std_speedup": 0.014928084326193766, "wins": 5, "batches": 5}},
+  "static_resources": {"v1_registers_per_thread": 30, "v2_registers_per_thread": 30, "v1_shared_bytes": 2048, "v2_shared_bytes": 1056, "v2_stack_bytes": 0, "v2_local_bytes": 0, "block_threads": 256},
+  "profile": {"ncu": "NOT_NEEDED"},
+  "decision": "ACCEPT",
+  "supported_observations": ["V2 passed 56/56 correctness", "V2 beat V1 in 50/56 shapes in the initial comparison", "Repeated ABBA aggregate remained above 1.0", "shape 17 won all 5 repeated batches"],
+  "rejected_hypothesis": false,
+  "failed_assumptions": [],
+  "unresolved_questions": ["whether the gain transfers to other architectures", "whether vectorized BF16 access can improve remaining weak shapes"],
+  "next_possible_directions": ["bf16_vector_load", "block_geometry", "row_strategy_by_hidden", "row_reuse"]
+}

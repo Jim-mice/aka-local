@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "aka-rmsnorm-v1",
+  "title": "Standalone RMSNorm V1 fused row reduction",
+  "timestamp": "UNKNOWN",
+  "operator": "rms_norm_train",
+  "hardware": "rtx5060_laptop_sm120",
+  "architecture": "sm_120",
+  "backend": "cuda_cpp",
+  "framework": "cuda_cpp",
+  "dtype": [],
+  "mode": "training",
+  "scope": {},
+  "shape_regime": {},
+  "baseline": {},
+  "candidate": {},
+  "hypothesis": "",
+  "mechanisms": [
+    "fused_row_reduction",
+    "shared_memory_reduction"
+  ],
+  "changes": [],
+  "evidence": {
+    "summary": "56/56 correctness PASS; arithmetic mean speedup 7.202740x vs eager; one block per row, shared-memory tree reduction"
+  },
+  "performance": {
+    "summary": "56/56 correctness PASS; arithmetic mean speedup 7.202740x vs eager; one block per row, shared-memory tree reduction"
+  },
+  "decision": "PROMOTE",
+  "failure_class": null,
+  "observations": [
+    "56/56 correctness PASS; arithmetic mean speedup 7.202740x vs eager; one block per row, shared-memory tree reduction"
+  ],
+  "failed_assumptions": [],
+  "unresolved_questions": [],
+  "next_directions": [],
+  "provenance": {
+    "source_type": "LEGACY_AKA_LOCAL",
+    "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\decision.json",
+    "source_commit": null,
+    "canonical": true,
+    "evidence_level": 3,
+    "location": "local",
+    "read_only": false
+  },
+  "tags": [
+    "imported"
+  ]
+}

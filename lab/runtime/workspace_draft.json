@@ -1,0 +1,28 @@
+{
+  "operator_id": "rms_norm_train",
+  "platform_id": "rtx5060_laptop_sm120",
+  "backend_id": "cuda_cpp",
+  "execution_target": "ssh",
+  "remote_host": "<REMOTE_HOST>.39",
+  "remote_port": "32109",
+  "remote_user": "root",
+  "credential_ref": "ssh_session_1e237f61cd",
+  "remote_probe": {
+    "hostname": "ai-exp-sy2506311-biv150-pod-wtko-597bbcdc87-bsl2z",
+    "os": "PRETTY_NAME=\"Ubuntu 24.04.2 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.2 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo",
+    "gpu": "",
+    "python": "Python 3.12.3",
+    "torch": "",
+    "compiler": "",
+    "disk": "Filesystem                                                  Size  Used Avail Use% Mounted on\noverlay                                                      11T  241G   11T   3% /\ntmpfs                                                        64M     0   64M   0% /dev\ntmpfs                                                       504G     0  504G   0% /sys/fs/cgroup\ninspurnas.com:/ic_storage/6789216a24f848efacd72a57cd0901e7  100G   90G   11G  90% /private\ninspurnas.com:/ic_storage/965a179a9967482cae4d3642a928ad66   20T   14T  6.7T  67% /share\n/dev/mapper/ubuntu--vg-ubuntu--lv                           437G   78G  340G  19% /iluvatar\ntmpfs                                                        32G     0   32G   0% /dev/shm"
+  },
+  "remote_state": "WAITING_APPROVAL",
+  "project_id": "rms_norm_v2",
+  "project_path": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm_v2",
+  "source_commit": "2b50ce2c646789571408dda0ff467a8258fc7a36",
+  "source_dirty": false,
+  "workbench_id": "wb-20260916T065527Z",
+  "working_directory": "C:\\Users\\38154\\projects\\aka-local\\lab\\campaigns\\rms_norm_train__rtx5060_sm120__cuda_cpp\\episodes\\e0006\\candidate",
+  "workbench_state": "PREPARED",
+  "campaign_id": "rms_norm_train__rtx5060_sm120__cuda_cpp"
+}

@@ -1,0 +1,209 @@
+{
+  "generated_at": "2026-09-17T12:44:19.592680+00:00",
+  "sources": [
+    {
+      "source_id": "modal_gpu_glossary",
+      "status": "PASS",
+      "repo": "https://github.com/modal-labs/gpu-glossary.git",
+      "commit": "9597497a3d8102c9cd17fc35ff06af5d97928275",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)\n\nThis folder (`gpu-glossary/`) contains Markdown files licensed under the \nCreative Commons Attribution 4.0 International (CC BY 4.0) license. \nYou are free to share and adapt them as long as you provide attribution.\n\nFull license: https://c",
+      "documents": 85,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 93,
+      "scope": {
+        "vendor": [],
+        "architecture": [
+          "generic"
+        ],
+        "compute_capability": [],
+        "backend": [],
+        "language": [
+          "en"
+        ]
+      },
+      "index_only": false
+    },
+    {
+      "source_id": "gpu_mode_resource_stream",
+      "status": "PASS",
+      "repo": "https://github.com/gpu-mode/resource-stream.git",
+      "commit": "5c0efa14c48f4f53c6c204380dc4bb5a386dae3e",
+      "license": "MIT License\n\nCopyright (c) 2023 Mark Saroufim and Andreas Köpf (gpu-mode)\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the ",
+      "documents": 1,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 28,
+      "scope": {
+        "vendor": [],
+        "architecture": [
+          "generic"
+        ],
+        "compute_capability": [],
+        "backend": [],
+        "language": [
+          "en"
+        ]
+      },
+      "index_only": true
+    },
+    {
+      "source_id": "gpu_mode_lectures",
+      "status": "PARTIAL",
+      "repo": "https://github.com/gpu-mode/lectures.git",
+      "commit": "77a8df418834e5789c12da23e7d2719e0efabef1",
+      "license": "UNKNOWN",
+      "documents": 0,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 0,
+      "scope": {
+        "vendor": [],
+        "architecture": [
+          "generic"
+        ],
+        "compute_capability": [],
+        "backend": [],
+        "language": [
+          "en"
+        ]
+      },
+      "index_only": false,
+      "error": "CONTENT_NOT_INDEXED: no eligible text files in checked-out snapshot",
+      "retryable": true
+    },
+    {
+      "source_id": "nvidia_cuda_programming_guide",
+      "status": "PASS",
+      "url": "https://docs.nvidia.com/cuda/cuda-programming-guide/",
+      "version": null,
+      "license": "Official vendor documentation; see source terms.",
+      "documents": 1,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 30,
+      "scope": {
+        "vendor": [
+          "NVIDIA"
+        ],
+        "architecture": [
+          "generic"
+        ],
+        "compute_capability": [],
+        "backend": [
+          "CUDA"
+        ],
+        "language": [
+          "en"
+        ]
+      }
+    },
+    {
+      "source_id": "nvidia_cuda_best_practices",
+      "status": "PASS",
+      "url": "https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/",
+      "version": null,
+      "license": "Official vendor documentation; see source terms.",
+      "documents": 1,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 250,
+      "scope": {
+        "vendor": [
+          "NVIDIA"
+        ],
+        "architecture": [
+          "generic"
+        ],
+        "compute_capability": [],
+        "backend": [
+          "CUDA"
+        ],
+        "language": [
+          "en"
+        ]
+      }
+    },
+    {
+      "source_id": "nvidia_blackwell_tuning",
+      "status": "PASS",
+      "url": "https://docs.nvidia.com/cuda/blackwell-tuning-guide/",
+      "version": null,
+      "license": "Official vendor documentation; see source terms.",
+      "documents": 1,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 25,
+      "scope": {
+        "vendor": [
+          "NVIDIA"
+        ],
+        "architecture": [
+          "Blackwell"
+        ],
+        "compute_capability": [],
+        "backend": [
+          "CUDA"
+        ],
+        "language": [
+          "en"
+        ]
+      }
+    },
+    {
+      "source_id": "nvidia_volta_tuning",
+      "status": "PASS",
+      "url": "https://docs.nvidia.com/cuda/volta-tuning-guide/",
+      "version": null,
+      "license": "Official vendor documentation; see source terms.",
+      "documents": 1,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 41,
+      "scope": {
+        "vendor": [
+          "NVIDIA"
+        ],
+        "architecture": [
+          "Volta"
+        ],
+        "compute_capability": [],
+        "backend": [
+          "CUDA"
+        ],
+        "language": [
+          "en"
+        ]
+      }
+    },
+    {
+      "source_id": "cutlass_docs",
+      "status": "PASS",
+      "url": "https://docs.nvidia.com/cutlass/latest/",
+      "version": "latest",
+      "license": "Official vendor documentation; see source terms.",
+      "documents": 1,
+      "chunks_created": 0,
+      "chunks_updated": 0,
+      "skipped": 55,
+      "scope": {
+        "vendor": [
+          "NVIDIA"
+        ],
+        "architecture": [
+          "generic"
+        ],
+        "compute_capability": [],
+        "backend": [
+          "CUDA",
+          "CUTLASS"
+        ],
+        "language": [
+          "en"
+        ]
+      }
+    }
+  ],
+  "external_reference_count": 522,
+  "knowledge_index_records": 527
+}

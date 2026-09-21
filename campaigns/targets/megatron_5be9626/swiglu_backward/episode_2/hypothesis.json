@@ -1,0 +1,15 @@
+{
+  "name": "single_kernel_fused_swiglu_backward",
+  "target_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "boundary": "saved intermediate and grad_output to grad_intermediate only",
+  "hypothesis": "One CUDA kernel removes multi-kernel elementwise overhead while preserving FP16 intermediate operations and exact inverse packing.",
+  "optimization": "Fuse sigmoid, SiLU, derivative, offset addition, products, and [grad_gate, grad_up] stores into one current-stream launch.",
+  "assumptions": [
+    "width is even",
+    "intermediate, grad_output, and grad_intermediate are contiguous FP16 tensors",
+    "intermediate packs gate in the first width/2 values and up in the second width/2 values per row"
+  ],
+  "launches": 1,
+  "synchronization": "none",
+  "excluded": ["FC1", "FC2", "forward", "collectives", "bias gradient", "GEMM"]
+}

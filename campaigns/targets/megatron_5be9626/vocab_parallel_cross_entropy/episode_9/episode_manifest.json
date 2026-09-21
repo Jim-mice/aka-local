@@ -1,0 +1,10 @@
+{
+  "episode": 9,
+  "candidate_hash": "9a22e37fc791e45b921005b37703991a7ac950ff1230ac7a93396e9c3df0d514",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "baseline_hash": "f11fd1fc6846d6f2",
+  "preflight": "PASS_PREFLIGHT",
+  "compile": "PASS",
+  "tp2_correctness": "FAIL"
+}

@@ -1,0 +1,24 @@
+{
+  "operator": "dense_attention_v100_cuda",
+  "episode": 5,
+  "primary_kernel": "dense_attention_kernel",
+  "kernel_time_pct": 99.9,
+  "avg_kernel_us": 863.99,
+  "min_kernel_us": 354.1,
+  "max_kernel_us": 3282.7,
+  "kernel_instances": 50,
+  "total_kernel_time_us": 43199.73,
+  "total_sync_us": 44637.03,
+  "launch_overhead_us": 5774.03,
+  "launch_count": 53,
+  "avg_launch_us": 108.94,
+  "other_kernel_time_us": 24.74,
+  "observations": [
+    "dense_attention_kernel dominates GPU time (99.9%)",
+    "avg kernel duration 864us per (B=1,H=4,S=64,D=64) attention call",
+    "50 kernel launches; total GPU time 43.2ms for 50 iterations = 0.86ms/iter",
+    "cudaDeviceSynchronize is 44.6ms (single call after all iterations)",
+    "53 total kernel launches (50 attention + 3 PyTorch distribution)",
+    "Single-kernel launch overhead ~109us per launch"
+  ]
+}

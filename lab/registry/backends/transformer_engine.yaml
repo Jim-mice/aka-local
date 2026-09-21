@@ -1,0 +1,6 @@
+backend_id: transformer_engine
+language: Python/CUDA extension
+compiler_runtime: Transformer Engine
+supported_platforms: [UNKNOWN]
+profiling_tools: [UNKNOWN]
+notes: Megatron path exists; active runtime unverified.

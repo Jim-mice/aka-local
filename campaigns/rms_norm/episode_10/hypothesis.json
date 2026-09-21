@@ -1,0 +1,14 @@
+﻿{
+  "name": "warp_register_row_reduction_sm120a",
+  "hypothesis": "For RTX 5060 Laptop sm_120, assigning one block per RMSNorm row and keeping the partial sum in registers should reduce synchronization and shared-memory traffic versus a more general reduction. A two-level warp-shuffle reduction with only one shared value per warp, followed by a fused normalization/write pass, should improve geometric throughput while preserving the established warp-reduction direction from Episode 3.",
+  "changes": [
+    "Use register-resident strided accumulation for each thread.",
+    "Reduce partial sums with warp shuffle instructions and a small shared warp-sum array.",
+    "Fuse inverse-RMS computation and weighted output in one CUDA launch.",
+    "Compile for CUDA sm_120a with Windows-compatible flags only."
+  ],
+  "constraints": [
+    "No benchmark or CUDA execution performed.",
+    "No Linux-only compiler flags used."
+  ]
+}

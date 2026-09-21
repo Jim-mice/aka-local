@@ -1,0 +1,72 @@
+{
+  "operator": "causal_attention_v100_cuda",
+  "gpu": "Tesla V100-PCIE-16GB",
+  "arch": "sm_70",
+  "interface": "standalone_cuda",
+  "source_file": "candidate.cu",
+  "contract": "extern C void launch_kernel(float* q, float* k, float* v, float* o, int batch, int heads, int seq, int head_dim, float scale)",
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract_schema": {
+    "operator": "causal_attention_v100_cuda",
+    "entry": "launch_kernel",
+    "version": 1,
+    "arguments": [
+      {
+        "name": "q",
+        "type": "float*",
+        "role": "input_query",
+        "description": "query tensor [batch, heads, seq, head_dim]"
+      },
+      {
+        "name": "k",
+        "type": "float*",
+        "role": "input_key",
+        "description": "key tensor [batch, heads, seq, head_dim]"
+      },
+      {
+        "name": "v",
+        "type": "float*",
+        "role": "input_value",
+        "description": "value tensor [batch, heads, seq, head_dim]"
+      },
+      {
+        "name": "o",
+        "type": "float*",
+        "role": "output",
+        "description": "output tensor [batch, heads, seq, head_dim]"
+      },
+      {
+        "name": "batch",
+        "type": "int",
+        "role": "dimension",
+        "description": "batch size"
+      },
+      {
+        "name": "heads",
+        "type": "int",
+        "role": "dimension",
+        "description": "number of attention heads"
+      },
+      {
+        "name": "seq",
+        "type": "int",
+        "role": "dimension",
+        "description": "sequence length"
+      },
+      {
+        "name": "head_dim",
+        "type": "int",
+        "role": "dimension",
+        "description": "dimension per head"
+      },
+      {
+        "name": "scale",
+        "type": "float",
+        "role": "scaling_factor",
+        "description": "scaling factor applied to QK^T before softmax"
+      }
+    ],
+    "semantics": "Causal scaled dot-product attention forward pass.\n\nTensor layout: Q, K, V, O are [batch, heads, seq, head_dim] contiguous row-major.\n\nFor each b in [0,batch), h in [0,heads), i in [0,seq):\n  For each j in [0,i] (j <= i ONLY): score(i,j) = sum_d(Q[b,h,i,d] * K[b,h,j,d]) * scale\n  For j > i: score(i,j) = -infinity (masked, zero contribution)\n  m_i = max_{j <= i} score(i,j)\n  For j <= i: p(i,j) = exp(score(i,j) - m_i) / sum_{t <= i} exp(score(i,t) - m_i)\n  For j > i: p(i,j) = 0\n  For each d: O[b,h,i,d] = sum_{j <= i} p(i,j) * V[b,h,j,d]\n\nSpecial cases:\n  i = 0: only key 0 is visible, output depends only on V[...,0,:]\n  i = seq-1: all keys are visible (upper triangular mask)\n\nNumerical stability: always subtract row maximum before exponentiation in softmax.\nMASKING: j > i positions MUST NOT contribute to output. Use -infinity or equivalent."
+  }
+}

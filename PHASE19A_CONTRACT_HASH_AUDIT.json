@@ -1,0 +1,8 @@
+{
+  "status": "PASS_WITH_HISTORICAL_HASH_NAMING_CAVEAT",
+  "checked_targets": ["swiglu", "vocab_parallel_cross_entropy", "residual_rmsnorm", "megatron_native_dot_product_attention", "moe_native_sequential_expert_compute"],
+  "existing_contracts": "all registry-referenced contract paths exist",
+  "orphan_incumbent": "none found for blocked targets",
+  "caveat": "some reports use frozen semantic contract IDs while on-disk SHA256 identifies the exact current JSON bytes; both are preserved and registry labels distinguish them",
+  "stale_summary": "STALE_SUMMARY_SUPERSEDED recorded in Phase18B1 and overnight report"
+}

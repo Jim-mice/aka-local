@@ -1,0 +1,18 @@
+{
+  "target": "vocab_parallel_cross_entropy",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "phase": "15-A-replay",
+  "optimization_campaign_started": true,
+  "contract_hash": "d8ea9db11871996c",
+  "observations": {
+    "tp1_correctness": "PASS",
+    "tp2_nccl_correctness": "PASS",
+    "forward_collectives": 3,
+    "backward_collectives": 0,
+    "tp2_runtime": "NCCL AllReduce SUM kernels observed; local PyTorch reduction/index kernels also observed"
+  },
+  "performance_evidence": "No candidate optimization score; correctness-only semantic audit completed",
+  "semantic_evidence": {"abi_sufficient": true, "golden_tp1": true, "golden_tp2": true, "evaluator_defects": ["rank-dependent TP fixture seed", "unsafe masked gradient index"], "corrected_agent_episodes": [7,8,10]},
+  "reliability_evidence": {"episodes_1_5": "ABI/toolchain failures", "episodes_6_10": "compile PASS after preflight, correctness FAIL", "cuda118_forbidden": "CUDART_INF_F", "required_abi": ["local_max_fp16_stream", "local_prepare_fp16_stream"]},
+  "open_questions": ["larger Megatron-derived token/vocabulary shapes", "local temporary allocation cost", "safe compute/communication overlap opportunities"]
+}

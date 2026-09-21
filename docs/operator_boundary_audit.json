@@ -1,0 +1,60 @@
+{
+  "ACTUAL_MEGATRON_GRAPH": {
+    "attention_sublayer_forward": {
+      "step_1": "hidden_states [s,b,h] enters = prev bias_dropout_add output",
+      "step_2": "self.input_layernorm(hidden_states) returns (RMSNorm(x,w,eps), x) via MakeExtraOutput",
+      "step_3": "self.self_attention(norm_output) returns attn_output_with_bias",
+      "step_4": "self.self_attn_bda(attn_output_with_bias, residual, dropout) = bias_dropout_add = attn_output + bias + dropout(residual)",
+      "step_5": "hidden_states [s,b,h] = result with residual added"
+    },
+    "residual_add_where": "Step 4 (bias_dropout_add). NOT in step 2 (norm).",
+    "norm_file": "megatron/core/extensions/transformer_engine.py L626-L790",
+    "layer_file": "megatron/core/transformer/transformer_layer.py L617-L690"
+  },
+  "TE_FUSED_RESIDUAL_RMSNORM_EXACT_SEMANTICS": {
+    "forward": "RMSNorm(x, weight[h], eps) -> (y, x) where y=normalized and x=identity fork",
+    "MakeExtraOutput": "TE op that forks input as extra output of ops.Sequential. Treated as identity.",
+    "NOT_doing": "Residual addition (x+residual). Name is misleading.",
+    "weight_shape": "[hidden_size] = [self.config.hidden_size] = FULL dim"
+  },
+  "TP_WEIGHT_LAYOUT": {
+    "weight_shape": "[hidden_size] - FULL global dim, NOT h/TP",
+    "evidence": "hidden_size=self.config.hidden_size at transformer_layer.py L352-L355",
+    "is_tp_split": false
+  },
+  "TP_INPUT_LAYOUT": {
+    "input_shape": "[s, b, h] - full hidden on each TP rank",
+    "norm_is_local": true
+  },
+  "SEQUENCE_PARALLEL_LAYOUT": {
+    "shape": "[s/SP, b, h] - sequence sharded, hidden full",
+    "norm_behavior": "local to each SP rank, no communication"
+  },
+  "NO_NATIVE_RESIDUAL_ADD_RMSNORM": true,
+  "TARGET_A_CONTRACT": {
+    "name": "TEFusedResidualRMSNorm boundary (RMSNorm + identity fork only)",
+    "forward": "RMSNorm(x, w, eps) -> (y, x)",
+    "backward": "dL/dx via RMSNorm, dL/dw",
+    "integration": "LOW risk - direct replacement",
+    "performance": "MODERATE - only optimizes norm, not residual-add"
+  },
+  "TARGET_B_CONTRACT": {
+    "name": "Cross-boundary bias_dropout_add + RMSNorm fusion",
+    "forward": "RMSNorm(attn_output + bias + dropout(residual, p), w, eps)",
+    "backward": "dL/dx, dL/dw, dL/dbias, dL/dresidual, dropout backward",
+    "complexity": "HIGH - crosses sublayer boundary, training/eval modes, RNG, dropout mask",
+    "performance": "HIGH - eliminates intermediate tensor read/write"
+  },
+  "PROJECT_TARGET_SEMANTICS_AMBIGUOUS": "YES",
+  "RECOMMENDED_IMPLEMENTATION_BOUNDARY": "NEED_PROJECT_OWNER_CONFIRMATION",
+  "TE_LOCAL_ENV_COMPATIBILITY": {
+    "status": "PARTIAL",
+    "torch": "2.14.0+cu130",
+    "cuda_toolkit": "v13.4",
+    "gpu": "RTX 5060 / sm_120",
+    "te_installed": false,
+    "risk": "MEDIUM - TE wheel may need source build for CUDA 13.0+sm_120"
+  },
+  "REALISTIC_SHAPE_CORRECTION": "RMSNorm weight is ALWAYS [hidden_size] full dim. TP does not split it. Previous audit incorrectly assumed h_local = h/TP.",
+  "CAMPAIGN_READY": "NO - BLOCKED on PROJECT_OWNER_CONFIRMATION"
+}

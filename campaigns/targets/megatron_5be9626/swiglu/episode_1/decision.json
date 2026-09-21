@@ -1,0 +1,10 @@
+{
+  "episode": 1,
+  "target": "swiglu",
+  "decision": "VALID_PERFORMANCE",
+  "reason": "Baseline has separate SiLU/add/multiply kernels; candidate has one swiglu_kernel. This diagnosis is based on named kernels and launch counts.",
+  "score": 2.6080091733785866,
+  "contract_hash": "2b05cc321bed0956",
+  "candidate_hash": "2a0f0c2aa6210214",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3"
+}

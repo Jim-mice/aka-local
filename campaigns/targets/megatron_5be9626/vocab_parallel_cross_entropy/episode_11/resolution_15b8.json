@@ -1,0 +1,15 @@
+{
+  "episode": 11,
+  "candidate_hash": "3792b0200c828d70a1e45ef00c8a7cebe0a6222aeb7b76ecac14182f96ab4f68",
+  "evaluator_hash": "7cc0fac8d80b2d27",
+  "tp1": "PASS",
+  "tp2": "PASS",
+  "loss_max_abs": 0.0019044876098632812,
+  "saved_softmax_max_abs": 1.4901161193847656e-08,
+  "grad_max_abs": 1.4901161193847656e-08,
+  "collective_structure": ["1 MAX", "2 SUM"],
+  "stability_artifact": "stability_analysis_15b8_ep11.json",
+  "stable_geomean_speedup": 2.473246856646392,
+  "bootstrap_ci95": [2.4691712380220494, 2.4809308996501547],
+  "decision": "VALID_BUT_NOT_PROMOTED_EPISODE_7_REMAINS_INCUMBENT"
+}

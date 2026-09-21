@@ -1,0 +1,201 @@
+{
+  "compile_pass": true,
+  "correctness_pass": true,
+  "shapes": [
+    {
+      "shape": "1,2,32,32",
+      "latency_us": 5262.96,
+      "speedup_vs_torch": 0.208,
+      "speedup_vs_naive": 0.227,
+      "correctness": true
+    },
+    {
+      "shape": "1,4,64,64",
+      "latency_us": 49693.81,
+      "speedup_vs_torch": 0.032,
+      "speedup_vs_naive": 0.022,
+      "correctness": true
+    },
+    {
+      "shape": "1,8,128,64",
+      "latency_us": 823560.86,
+      "speedup_vs_torch": 0.001,
+      "speedup_vs_naive": 0.001,
+      "correctness": true
+    },
+    {
+      "shape": "2,4,128,64",
+      "latency_us": 823870.94,
+      "speedup_vs_torch": 0.001,
+      "speedup_vs_naive": 0.001,
+      "correctness": true
+    }
+  ],
+  "aggregate_score": 0.009,
+  "geometric_mean_speedup": 0.009,
+  "speedup": 0.208,
+  "latency_us": 5262.96,
+  "evidence": {
+    "compile": true,
+    "compile_error": "",
+    "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /home/<REMOTE_USER>/aka_remote_jobs/abea9a4d5bff/candidate.so /home/<REMOTE_USER>/aka_remote_jobs/abea9a4d5bff/candidate.cu",
+    "correctness": true,
+    "max_error": 1.33514404296875e-05,
+    "latency_us": 5268.06,
+    "torch_naive_latency_us": 977.34,
+    "torch_optimized_latency_us": 834.64,
+    "speedup_vs_naive": 0.186,
+    "speedup_vs_torch": 0.158,
+    "source": "remote-v100-ssh",
+    "gpu": "Tesla V100-PCIE-16GB",
+    "arch": "sm_70",
+    "timestamp": "2026-09-19T17:17:16.471159+00:00"
+  },
+  "error": "",
+  "profile_available": false,
+  "profile_summary": null,
+  "legacy_benchmark": true,
+  "legacy_benchmark_reason": "baseline included forward recomputation",
+  "benchmark_contract": {
+    "version": 1,
+    "mode": "forward_recompute_autograd"
+  },
+  "v2_evaluation": {
+    "benchmark_contract": {
+      "version": 2,
+      "mode": "saved_p_backward_only",
+      "correctness_oracle": "pytorch_autograd",
+      "performance_baseline": "pytorch_saved_p_analytical"
+    },
+    "benchmark_contract_hash": "6ac27010f01f3d2f",
+    "shapes": [
+      {
+        "compile": true,
+        "compile_error": "",
+        "correctness": true,
+        "max_error": 1.049041748046875e-05,
+        "latency_us": 7967.85,
+        "torch_naive_latency_us": null,
+        "torch_optimized_latency_us": 273.92,
+        "speedup_vs_naive": 0.034,
+        "speedup_vs_torch": 0.034,
+        "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /tmp/phase13c1_ep7.so /tmp/phase13c1_ep7.cu",
+        "nsys_report": "",
+        "max_error_dq": 4.76837158203125e-06,
+        "max_error_dk": 1.049041748046875e-05,
+        "max_error_dv": 0.0,
+        "timestamp": "2026-09-20T01:01:13.849380+00:00",
+        "benchmark_contract": {
+          "version": 2,
+          "mode": "saved_p_backward_only",
+          "correctness_oracle": "pytorch_autograd",
+          "performance_baseline": "pytorch_saved_p_analytical"
+        },
+        "benchmark_contract_hash": "6ac27010f01f3d2f",
+        "rel_error": 0.0012011926155537367,
+        "analytical_max_error_dq": 7.62939453125e-06,
+        "analytical_max_error_dk": 7.62939453125e-06,
+        "analytical_max_error_dv": 0.0,
+        "analytical_matches_autograd": true,
+        "shape": "1,2,32,32",
+        "remote_stderr": "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/autograd/graph.py:824: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:181.)\n  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"
+      },
+      {
+        "compile": true,
+        "compile_error": "",
+        "correctness": true,
+        "max_error": 4.6253204345703125e-05,
+        "latency_us": 75449.89,
+        "torch_naive_latency_us": null,
+        "torch_optimized_latency_us": 297.23,
+        "speedup_vs_naive": 0.004,
+        "speedup_vs_torch": 0.004,
+        "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /tmp/phase13c1_ep7.so /tmp/phase13c1_ep7.cu",
+        "nsys_report": "",
+        "max_error_dq": 1.436471939086914e-05,
+        "max_error_dk": 4.6253204345703125e-05,
+        "max_error_dv": 0.0,
+        "timestamp": "2026-09-20T01:01:21.157559+00:00",
+        "benchmark_contract": {
+          "version": 2,
+          "mode": "saved_p_backward_only",
+          "correctness_oracle": "pytorch_autograd",
+          "performance_baseline": "pytorch_saved_p_analytical"
+        },
+        "benchmark_contract_hash": "6ac27010f01f3d2f",
+        "rel_error": 0.38938724994659424,
+        "analytical_max_error_dq": 1.239776611328125e-05,
+        "analytical_max_error_dk": 1.33514404296875e-05,
+        "analytical_max_error_dv": 0.0,
+        "analytical_matches_autograd": true,
+        "shape": "1,4,64,64",
+        "remote_stderr": "<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/autograd/graph.py:824: UserWarning: Attempting to run cuBLAS, but there was no current CUDA context! Attempting to set the primary context... (Triggered internally at /pytorch/aten/src/ATen/cuda/CublasHandlePool.cpp:181.)\n  return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass\n"
+      },
+      {
+        "compile": true,
+        "compile_error": "",
+        "correctness": true,
+        "max_error": 6.556510925292969e-05,
+        "latency_us": 1244526.43,
+        "torch_naive_latency_us": null,
+        "torch_optimized_latency_us": 512.55,
+        "speedup_vs_naive": 0.0,
+        "speedup_vs_torch": 0.0,
+        "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /tmp/phase13c1_ep7.so /tmp/phase13c1_ep7.cu",
+        "nsys_report": "",
+        "max_error_dq": 2.5272369384765625e-05,
+        "max_error_dk": 6.556510925292969e-05,
+        "max_error_dv": 0.0,
+        "timestamp": "2026-09-20T01:01:30.744999+00:00",
+        "benchmark_contract": {
+          "version": 2,
+          "mode": "saved_p_backward_only",
+          "correctness_oracle": "pytorch_autograd",
+          "performance_baseline": "pytorch_saved_p_analytical"
+        },
+        "benchmark_contract_hash": "6ac27010f01f3d2f",
+        "rel_error": 0.18725498020648956,
+        "analytical_max_error_dq": 2.104043960571289e-05,
+        "analytical_max_error_dk": 2.3603439331054688e-05,
+        "analytical_max_error_dv": 0.0,
+        "analytical_matches_autograd": true,
+        "shape": "1,8,128,64",
+        "remote_stderr": ""
+      },
+      {
+        "compile": true,
+        "compile_error": "",
+        "correctness": true,
+        "max_error": 7.62939453125e-05,
+        "latency_us": 1069565.43,
+        "torch_naive_latency_us": null,
+        "torch_optimized_latency_us": 350.48,
+        "speedup_vs_naive": 0.0,
+        "speedup_vs_torch": 0.0,
+        "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /tmp/phase13c1_ep7.so /tmp/phase13c1_ep7.cu",
+        "nsys_report": "",
+        "max_error_dq": 2.2530555725097656e-05,
+        "max_error_dk": 7.62939453125e-05,
+        "max_error_dv": 0.0,
+        "timestamp": "2026-09-20T01:02:22.666070+00:00",
+        "benchmark_contract": {
+          "version": 2,
+          "mode": "saved_p_backward_only",
+          "correctness_oracle": "pytorch_autograd",
+          "performance_baseline": "pytorch_saved_p_analytical"
+        },
+        "benchmark_contract_hash": "6ac27010f01f3d2f",
+        "rel_error": 0.18190427124500275,
+        "analytical_max_error_dq": 1.8417835235595703e-05,
+        "analytical_max_error_dk": 1.5735626220703125e-05,
+        "analytical_max_error_dv": 0.0,
+        "analytical_matches_autograd": true,
+        "shape": "2,4,128,64",
+        "remote_stderr": ""
+      }
+    ],
+    "geometric_mean_speedup": 0.0,
+    "correctness_pass": true,
+    "legacy_score_preserved": 0.009
+  }
+}

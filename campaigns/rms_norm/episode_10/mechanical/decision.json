@@ -1,0 +1,241 @@
+{
+  "schema_version": 1,
+  "episode": 10,
+  "candidate": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_10\\candidate.py",
+  "baseline": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm_v3\\candidate.py",
+  "state": "COMPILE_FAILED",
+  "candidate_status": "present",
+  "compile": {
+    "0": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "1": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "10": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "11": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "12": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "13": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "14": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "15": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "16": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "17": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "18": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "19": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "2": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "20": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "21": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "22": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "23": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "24": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "25": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "26": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "27": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "28": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "29": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "3": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "30": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "31": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "32": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "33": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "34": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "35": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "36": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "37": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "38": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "39": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "4": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "40": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "41": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "42": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "43": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "44": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "45": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "46": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "47": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "48": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "49": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "5": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "50": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "51": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "52": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "53": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "54": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "55": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "6": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "7": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "8": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    },
+    "9": {
+      "status": "failed",
+      "reason": "1/1 correctness cases failed: candidate raised exception"
+    }
+  },
+  "correctness": null,
+  "benchmark": null,
+  "abba": null,
+  "decision": "REJECT_COMPILE",
+  "failure_reason": null,
+  "evaluator_result": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_10\\mechanical\\atrex_eval\\20260919-113213\\rms_norm\\eval_result.json",
+  "evaluator_returncode": 1
+}

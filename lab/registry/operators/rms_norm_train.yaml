@@ -1,0 +1,14 @@
+operator_id: rms_norm_train
+name: RMSNorm training
+domain: normalization
+training_scope: forward+VJP
+mathematical_contract: y = x * rsqrt(mean(x^2)+eps) * weight
+inputs: [x, weight, eps]
+outputs: [y, gradients]
+gradients: [dx, dweight]
+dtype_domain: [fp16, bf16]
+layout_domain: [row-major]
+shape_parameters: [tokens, hidden_size]
+parallel_semantics: single-device standalone pilot
+correctness_contract: official Atrex-Bench RMSNorm contract
+source_refs: [C:/Users/38154/projects/aka-local/campaigns/rms_norm]

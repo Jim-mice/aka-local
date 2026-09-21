@@ -1,0 +1,18 @@
+{
+  "policy_version": "native_dot_product_attention_stability_v1",
+  "policy_hash": "692f9718d1e12d922561e6d8c69cef835a37cd9c0f6e087c2ab0b342e231ae41",
+  "benchmark_era": "megatron_native_dot_product_attention_v1",
+  "independent_invocations": 3,
+  "blocks_per_invocation": 3,
+  "measurements_per_block_per_impl_config": 10,
+  "warmup_per_invocation_config": 5,
+  "ordering": "deterministic ABBA per block: reference, candidate, candidate, reference; same fixture and stream",
+  "primary_estimator": "arithmetic mean latency per implementation/config; geometric mean of per-config speedups only after both stability gates",
+  "diagnostics": ["std", "CV", "median", "MAD", "min", "max"],
+  "cv_gate": {"metric": "maximum per-rank/local implementation CV", "threshold": 0.20, "comparison": "<="},
+  "raw_data": "retain every valid sample; no silent outlier deletion",
+  "invalid_sample_policy": ["missing row", "CUDA error", "NCCL/collective launch", "fixture/layout mismatch", "wrong candidate hash", "nonfinite output"],
+  "uncertainty": {"method": "paired bootstrap CI95 over ABBA block speedups", "seed": 1717, "resamples": 10000},
+  "promotion": {"requires": ["reference stable", "candidate stable", "correctness pass", "scope equivalence", "zero collectives"], "minimum_speedup": 1.05, "ci_lower_bound_gt": 1.0},
+  "environment": "read-only GPU/process provenance captured per invocation; no clock/process changes"
+}

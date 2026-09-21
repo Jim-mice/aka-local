@@ -1,0 +1,18 @@
+{
+  "replay_pass": true,
+  "episode": 2,
+  "candidate_hash": "26deaa148e8c2b3b",
+  "operator_contract_hash": "631277cb8b980a59",
+  "benchmark_contract": {
+    "version": 2,
+    "mode": "saved_p_backward_only",
+    "correctness_oracle": "pytorch_autograd",
+    "performance_baseline": "pytorch_saved_p_analytical"
+  },
+  "benchmark_contract_hash": "6ac27010f01f3d2f",
+  "shape_set": ["1,2,32,32", "1,4,64,64", "1,8,128,64", "2,4,128,64"],
+  "compile_pass": true,
+  "correctness_pass": true,
+  "analytical_matches_autograd": true,
+  "legacy_fallback_used": false
+}

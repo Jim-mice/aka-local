@@ -1,0 +1,297 @@
+{
+  "kernel": {
+    "name": "swiglu_forward_v2b",
+    "id": "swiglu_forward_local",
+    "dtype": "fp16"
+  },
+  "dsl": "unknown",
+  "eval_mode": "candidate",
+  "eval_id": "20260910T073304Z-b322f8f6",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_arch": "sm_120",
+    "accelerator_backend": "cuda",
+    "driver_version": "610.88",
+    "runtime_version": "13.0",
+    "clock_locked": false,
+    "clock_lock_detected": false,
+    "clock_lock_source": null,
+    "PTL_STATE": null,
+    "torch_version": "2.14.0+cu130",
+    "python_version": "3.11.15"
+  },
+  "runner_config": {
+    "config_version": "v1",
+    "mode": "candidate",
+    "validation_mode": "correctness_only",
+    "atol": 0.01,
+    "rtol": 0.05,
+    "correctness_max_rel_l2": null,
+    "num_correctness_cases": 1,
+    "warmup_iters": 10,
+    "bench_iters": 100,
+    "candidate_timeout_s": 0.0,
+    "benchmark_mode": "eager",
+    "cuda_graph_cache_flush_mb": 1024,
+    "graph_atol": 0.01,
+    "graph_rtol": 0.05,
+    "graph_min_cosine": null,
+    "graph_max_rel_l2": null,
+    "trust_mode": "trusted",
+    "require_clock_locked": false
+  },
+  "passed": {
+    "compile": {
+      "m1024_d4096": {
+        "status": "passed",
+        "reason": null
+      },
+      "m256_d4096": {
+        "status": "passed",
+        "reason": null
+      },
+      "m4096_d4096": {
+        "status": "passed",
+        "reason": null
+      }
+    },
+    "correctness": {
+      "m1024_d4096": {
+        "status": "passed",
+        "reason": null
+      },
+      "m256_d4096": {
+        "status": "passed",
+        "reason": null
+      },
+      "m4096_d4096": {
+        "status": "passed",
+        "reason": null
+      }
+    },
+    "performance": {
+      "m1024_d4096": {
+        "status": "skipped",
+        "reason": "Skipped in correctness_only mode."
+      },
+      "m256_d4096": {
+        "status": "skipped",
+        "reason": "Skipped in correctness_only mode."
+      },
+      "m4096_d4096": {
+        "status": "skipped",
+        "reason": "Skipped in correctness_only mode."
+      }
+    }
+  },
+  "correctness": {
+    "shapes": {
+      "m1024_d4096": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 409270981,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0078125,
+                "max_elementwise_rel_diff": 0.0009765625,
+                "relative_l2": 0.0003493758475248072,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "m256_d4096": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1966755487,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0078125,
+                "max_elementwise_rel_diff": 0.0009765625,
+                "relative_l2": 0.00035100311501560746,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "m4096_d4096": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1386558781,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0078125,
+                "max_elementwise_rel_diff": 0.0009765625,
+                "relative_l2": 0.0003493929699915856,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      }
+    }
+  },
+  "performance": {
+    "shapes": {
+      "m1024_d4096": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "m256_d4096": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "m4096_d4096": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      }
+    }
+  },
+  "error": null
+}

@@ -1,0 +1,17 @@
+{
+  "episode": 1,
+  "target": "swiglu",
+  "contract_hash": "2b05cc321bed0956",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "decision": "VALID_PERFORMANCE",
+  "evidence": {
+    "contract_marker": true,
+    "scope_marker": true,
+    "compile_pass": true,
+    "correctness_pass": true
+  },
+  "category": "MULTI_KERNEL_OVERHEAD",
+  "message": "Baseline has separate SiLU/add/multiply kernels; candidate has one swiglu_kernel. This diagnosis is based on named kernels and launch counts.",
+  "profile_available": true,
+  "profile_file": "nsys_stats.txt"
+}

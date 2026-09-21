@@ -1,0 +1,74 @@
+{
+  "commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_call": "megatron.core.transformer.mlp.MLP.forward",
+  "config": {
+    "hidden_size": 1024,
+    "ffn_hidden_size": 4096,
+    "tensor_parallel": 1,
+    "bias_activation_fusion": false,
+    "use_te_activation_func": false
+  },
+  "cases": [
+    {
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "dtype": "torch.float16",
+      "x_stride": [
+        1024,
+        1024,
+        1
+      ],
+      "output_stride": [
+        1024,
+        1024,
+        1
+      ],
+      "max_abs_error": 0.0,
+      "replay_pass": true
+    },
+    {
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "dtype": "torch.float16",
+      "x_stride": [
+        2048,
+        1024,
+        1
+      ],
+      "output_stride": [
+        2048,
+        1024,
+        1
+      ],
+      "max_abs_error": 0.0,
+      "replay_pass": true
+    },
+    {
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "dtype": "torch.float16",
+      "x_stride": [
+        2048,
+        1024,
+        1
+      ],
+      "output_stride": [
+        2048,
+        1024,
+        1
+      ],
+      "max_abs_error": 0.0,
+      "replay_pass": true,
+      "reference_latency_us": 625.8483123779297
+    }
+  ]
+}

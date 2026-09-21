@@ -1,0 +1,5 @@
+{
+  "state": "CANDIDATE_MISSING",
+  "updated_at": "2026-09-18T16:15:57.660496+00:00",
+  "failure_reason": "missing files: C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_2\\kernel.py; C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_2\\swiglu_kernel_v3.cu"
+}

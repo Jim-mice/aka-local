@@ -1,0 +1,103 @@
+{
+  "candidate": {
+    "path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py",
+    "sha256": "df8cca2350822af07b09eeda11bad99f8d98c3f4a79ea7b9671d7879ba39c33c",
+    "bytes": 2804
+  },
+  "reference_dir": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm",
+  "reference_files": {
+    "reference.py": {
+      "path": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm\\reference.py",
+      "sha256": "bd9f5b2e68471fccd542a93bf263963f685126ea0ed4ce1646d5bc65e1209a76",
+      "bytes": 445
+    },
+    "input.py": {
+      "path": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm\\input.py",
+      "sha256": "0cf4f1bc624232008162f97450c9ae322d3ae6cb100959c1bb0ce116791f770d",
+      "bytes": 317
+    },
+    "shapes.json": {
+      "path": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm\\shapes.json",
+      "sha256": "8b89bb8e0d5fdd4224f919a7bc84edd7365dd673a67facfa87fd22753f4fa0b2",
+      "bytes": 8482
+    },
+    "metadata.json": {
+      "path": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm\\metadata.json",
+      "sha256": "22b58839b8b4d566752efe8772a36054c3760fced38ea3579352beea8593a6b1",
+      "bytes": 17381
+    }
+  },
+  "runner_config": {
+    "config_version": "v1",
+    "mode": "candidate",
+    "validation_mode": "full",
+    "atol": 0.01,
+    "rtol": 0.05,
+    "correctness_max_rel_l2": null,
+    "num_correctness_cases": 1,
+    "warmup_iters": 20,
+    "bench_iters": 100,
+    "candidate_timeout_s": 0.0,
+    "benchmark_mode": "eager",
+    "cuda_graph_cache_flush_mb": 1024,
+    "graph_atol": 0.01,
+    "graph_rtol": 0.05,
+    "graph_min_cosine": null,
+    "graph_max_rel_l2": null,
+    "trust_mode": "trusted",
+    "require_clock_locked": false
+  },
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_arch": "sm_120",
+    "accelerator_backend": "cuda",
+    "driver_version": "610.88",
+    "runtime_version": "13.0",
+    "clock_locked": false,
+    "clock_lock_detected": false,
+    "clock_lock_source": null,
+    "PTL_STATE": null,
+    "torch_version": "2.14.0+cu130",
+    "python_version": "3.11.15"
+  },
+  "worker_command": [
+    "C:\\Users\\38154\\projects\\aka-local\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\cli\\run_eval.py",
+    "--input",
+    "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\candidate.py",
+    "--reference-dir",
+    "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm",
+    "--output",
+    "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\official_eval_retry2",
+    "--atol",
+    "0.01",
+    "--rtol",
+    "0.05",
+    "--num-correctness-cases",
+    "1",
+    "--warmup-iters",
+    "20",
+    "--bench-iters",
+    "100",
+    "--candidate-timeout-s",
+    "0.0",
+    "--perf-timeout-s",
+    "0.0",
+    "--benchmark-mode",
+    "eager",
+    "--cuda-graph-cache-flush-mb",
+    "1024",
+    "--graph-atol",
+    "0.01",
+    "--graph-rtol",
+    "0.05",
+    "--config-version",
+    "v1",
+    "--trust-mode",
+    "trusted",
+    "--worker",
+    "--artifact-dir",
+    "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\official_eval_retry2\\20260910-175551\\rms_norm",
+    "--skip-kernel-attribution"
+  ]
+}

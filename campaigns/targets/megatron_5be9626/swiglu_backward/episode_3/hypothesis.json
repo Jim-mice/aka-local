@@ -1,0 +1,13 @@
+{
+  "candidate": "episode_3",
+  "target": "swiglu_backward",
+  "hypothesis": "One fused grid-stride kernel removes saved-P backward elementwise launch overhead.",
+  "scope": "saved intermediate and grad_output to grad_intermediate only",
+  "numerical_policy": "FP16 loads, FP32 fused evaluation, independent FP16 output rounding",
+  "stream_policy": "caller-provided stream; no synchronization",
+  "excluded": ["FC1", "FC2", "forward", "collectives", "bias gradient", "GEMM"],
+  "validation_shapes": [[16, 1, 1024], [64, 2, 1024], [128, 2, 1024]],
+  "rows": "S*B",
+  "width": 8192,
+  "offset": 0.0
+}

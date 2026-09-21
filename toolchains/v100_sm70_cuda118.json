@@ -1,0 +1,12 @@
+{
+  "gpu": "Tesla V100",
+  "compute_capability": "sm_70",
+  "cuda": "11.8",
+  "verified_facts": [
+    "nvcc accepts CUDA C++ shared-library candidates with -arch=sm_70",
+    "cudaStream_t and cudaError_t entry-point types are available",
+    "CUDART_INF_F was rejected by the audited CUDA 11.8 nvcc and must be treated as forbidden",
+    "-3.402823466e+38F compiled successfully as a portable finite negative initializer in the probe"
+  ],
+  "forbidden_tokens": ["CUDART_INF_F"]
+}

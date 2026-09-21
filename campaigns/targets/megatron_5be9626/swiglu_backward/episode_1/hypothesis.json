@@ -1,0 +1,22 @@
+{
+  "name": "swiglu_backward_v1",
+  "target_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "boundary": "optional-bias-free activation backward only",
+  "inputs": {
+    "intermediate": "[rows,width] contiguous FP16; gate then up",
+    "grad_output": "[rows,width/2] contiguous FP16",
+    "offset": "glu_linear_offset"
+  },
+  "output": "grad_intermediate packed [grad_gate,grad_up]",
+  "shapes": [
+    [16, 1, 1024],
+    [64, 2, 1024],
+    [128, 2, 1024]
+  ],
+  "formula": {
+    "grad_up": "grad_output * SiLU(gate)",
+    "grad_gate": "grad_output * (up + offset) * sigmoid(gate) * (1 + gate * (1 - sigmoid(gate)))"
+  },
+  "stream_behavior": "launches on passed stream; no synchronization",
+  "assumptions": ["width is even", "rows and width are positive"]
+}

@@ -1,0 +1,1 @@
+{"type":"object","required":["campaign_id","episode_id","supervisor_decision","provenance"],"properties":{"campaign_id":{"type":"string"},"episode_id":{"type":"string"},"supervisor_decision":{"type":"string"},"promotion":{},"incumbent_before":{},"incumbent_after":{},"provenance":{"type":"object"}}}

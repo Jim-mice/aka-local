@@ -1,0 +1,8 @@
+{
+  "gpu_model": "Tesla V100-PCIE-16GB",
+  "driver_version": "535.183.06",
+  "memory": "16384 MiB\nTesla V100-PCIE-16GB",
+  "nvcc_version": "Cuda compilation tools, release 11.8, V11.8.89",
+  "pytorch_version": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nModuleNotFoundError: No module named 'torch'\n2.7.1+cu118",
+  "kernel": "5.15.0-139-generic"
+}

@@ -1,0 +1,57 @@
+{
+  "kernel_count": 4,
+  "total_kernel_time_us": 5356.35,
+  "kernels": [
+    {
+      "name": "softmax_rows(const float *, float *, int, int)",
+      "time_pct": 99.6,
+      "total_ns": 5334848.0,
+      "instances": 250,
+      "avg_ns": 21339.4,
+      "min_ns": 10560.0,
+      "max_ns": 2690401.0
+    },
+    {
+      "name": "distribution_elementwise_grid_stride_kernel",
+      "time_pct": 0.2,
+      "total_ns": 10848.0,
+      "instances": 1,
+      "avg_ns": 10848.0,
+      "min_ns": 10848.0,
+      "max_ns": 10848.0
+    },
+    {
+      "name": "vectorized_elementwise_kernel_AUnaryFunctor",
+      "time_pct": 0.1,
+      "total_ns": 5600.0,
+      "instances": 1,
+      "avg_ns": 5600.0,
+      "min_ns": 5600.0,
+      "max_ns": 5600.0
+    },
+    {
+      "name": "vectorized_elementwise_kernel_CUDAFunctorOnSelf_add",
+      "time_pct": 0.1,
+      "total_ns": 5056.0,
+      "instances": 1,
+      "avg_ns": 5056.0,
+      "min_ns": 5056.0,
+      "max_ns": 5056.0
+    }
+  ],
+  "api_count": 2,
+  "apis": [
+    {
+      "name": "1,411,566.1 cudaLaunchKernel",
+      "time_pct": 85.0,
+      "total_ns": 39325235.0,
+      "calls": 253
+    },
+    {
+      "name": "1,592,487.2 cudaDeviceSynchronize",
+      "time_pct": 13.6,
+      "total_ns": 6279977.0,
+      "calls": 2
+    }
+  ]
+}

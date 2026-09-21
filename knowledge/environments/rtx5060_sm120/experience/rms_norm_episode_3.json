@@ -1,0 +1,20 @@
+{
+  "operator": "rms_norm",
+  "episode": 3,
+  "hypothesis": {
+    "direction_id": "warp_reduce_register_accumulation",
+    "summary": "A one-block-per-row kernel with register-resident FP32 accumulation, warp-shuffle reduction, and one shared partial per warp can reduce synchronization and shared-memory traffic while retaining the incumbent numerical path."
+  },
+  "result": {
+    "decision": "PROMOTE",
+    "speedup": 1.0131,
+    "geometric_speedup": 1.0117
+  },
+  "lesson": "Episode 3: 1.0131x speedup (geo 1.0117x) on sm_120 via warp_reduce_register_accumulation.",
+  "reusable_pattern": [
+    "warp",
+    "shared memory",
+    "reduction",
+    "register"
+  ]
+}

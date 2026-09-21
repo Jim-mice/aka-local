@@ -1,0 +1,5 @@
+{
+  "command": "<REMOTE_HOME>/venvs/lerobot-act/bin/python -c \"import torch, importlib.util; print({'torch':torch.__version__,'cuda':torch.version.cuda,'flash_attn':importlib.util.find_spec('flash_attn') is not None,'te':importlib.util.find_spec('transformer_engine') is not None,'sdpa':hasattr(torch.nn.functional,'scaled_dot_product_attention'),'flash_enabled':torch.backends.cuda.flash_sdp_enabled(),'mem_efficient_enabled':torch.backends.cuda.mem_efficient_sdp_enabled(),'math_enabled':torch.backends.cuda.math_sdp_enabled()})\"",
+  "stdout": "{'torch': '2.7.1+cu118', 'cuda': '11.8', 'flash_attn': False, 'te': False, 'sdpa': True, 'flash_enabled': True, 'mem_efficient_enabled': True, 'math_enabled': True}\n",
+  "stderr": ""
+}

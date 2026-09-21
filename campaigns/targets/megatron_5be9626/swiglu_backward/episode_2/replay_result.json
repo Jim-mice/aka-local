@@ -1,0 +1,12 @@
+{
+  "episode": 2,
+  "checks": {
+    "megatron_commit": true,
+    "contract_hash": true,
+    "candidate_hash": true,
+    "shape_set": true,
+    "dtype": true,
+    "baseline_mode": true
+  },
+  "replay_pass": true
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "episode": 3,
+  "candidate": "V3",
+  "baseline": "V2b",
+  "model_calls": 0,
+  "state": "COMPILE_FAILED",
+  "candidate_status": "present",
+  "compile": {
+    "m1024_d4096": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\kernel.py\", line 10, in <module>\n    _ext = load(\n           ^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 1937, in load\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2508, in _write_ninja_file_and_build_library\n    verify_ninja_availability()\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2574, in verify_ninja_availability\n    raise RuntimeError(\"Ninja is required to load C++ extensions (pip install ninja to get it)\")\nRuntimeError: Ninja is required to load C++ extensions (pip install ninja to get it)\n"
+    },
+    "m256_d4096": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\kernel.py\", line 10, in <module>\n    _ext = load(\n           ^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 1937, in load\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2508, in _write_ninja_file_and_build_library\n    verify_ninja_availability()\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2574, in verify_ninja_availability\n    raise RuntimeError(\"Ninja is required to load C++ extensions (pip install ninja to get it)\")\nRuntimeError: Ninja is required to load C++ extensions (pip install ninja to get it)\n"
+    },
+    "m4096_d4096": {
+      "status": "failed",
+      "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\compile.py\", line 28, in check_compilation\n    module = import_module_from_path(candidate_path, \"atrex_candidate_compile\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 293, in import_module_from_path\n    spec.loader.exec_module(module)\n  File \"<frozen importlib._bootstrap_external>\", line 940, in exec_module\n  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed\n  File \"C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\kernel.py\", line 10, in <module>\n    _ext = load(\n           ^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 1937, in load\n    return _jit_compile(\n           ^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2398, in _jit_compile\n    _write_ninja_file_and_build_library(\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2508, in _write_ninja_file_and_build_library\n    verify_ninja_availability()\n  File \"C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\torch\\utils\\cpp_extension.py\", line 2574, in verify_ninja_availability\n    raise RuntimeError(\"Ninja is required to load C++ extensions (pip install ninja to get it)\")\nRuntimeError: Ninja is required to load C++ extensions (pip install ninja to get it)\n"
+    }
+  },
+  "correctness": null,
+  "benchmark": null,
+  "abba": null,
+  "decision": "REJECT_COMPILE",
+  "failure_reason": "compile stage failed",
+  "evaluator_result": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\mechanical_retry1\\atrex_eval\\20260910-164640\\swiglu_forward_v2b\\eval_result.json"
+}

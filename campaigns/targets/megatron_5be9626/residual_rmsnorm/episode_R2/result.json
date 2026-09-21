@@ -1,0 +1,42 @@
+{
+  "episode": "R2",
+  "candidate_hash": "b8d3accbf198752c6793f18f6de89fdf77414b5a816b9e4ae5361f824e8891eb",
+  "preflight": "PASS_PREFLIGHT",
+  "preflight_failures": [],
+  "compile": "PASS",
+  "compile_stderr": "",
+  "correctness_records": [
+    {
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "max_abs": 0.0,
+      "max_rel": 0.0,
+      "finite": true
+    },
+    {
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "max_abs": 0.00048828125,
+      "max_rel": 0.0009624639060348272,
+      "finite": true
+    },
+    {
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "max_abs": 0.001953125,
+      "max_rel": 0.0009624639060348272,
+      "finite": true
+    }
+  ],
+  "correctness": "PASS",
+  "backward_compatibility": "PASS_REFERENCE_BACKWARD_SIDECAR"
+}

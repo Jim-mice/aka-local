@@ -1,0 +1,11 @@
+﻿{
+  "hypothesis": "A one-block-per-row RMSNorm kernel with register accumulation and two-stage warp-shuffle reduction will reduce synchronization and shared-memory traffic while preserving numerical behavior. Each thread accumulates its strided row elements in registers, warp shuffles reduce within warps, and only one float per warp is stored in shared memory before the final reduction. The same inverse RMS is then reused for the output pass.",
+  "basis": "Episode 3 showed a 1.0131x speedup from warp reduction, shared memory, reduction, and register accumulation. This candidate extends that successful direction without fast-math, architecture flags, or Linux-only compiler options.",
+  "expected_effect": "Lower reduction overhead and improved occupancy/throughput for common 2D RMSNorm inputs, with float accumulation for float16, bfloat16, and float32.",
+  "constraints": [
+    "No benchmark or CUDA execution performed",
+    "No --use_fast_math",
+    "No explicit -arch or -gencode flags",
+    "Windows-compatible compiler flags only"
+  ]
+}

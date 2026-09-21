@@ -1,0 +1,10 @@
+{
+  "gpu0": {"pci_bus_id": "00000000:08:00.0", "name": "Tesla V100-PCIE-16GB", "numa": 0},
+  "gpu1": {"pci_bus_id": "00000000:84:00.0", "name": "Tesla V100-PCIE-16GB", "numa": 1},
+  "normal_mapping": "CUDA_VISIBLE_DEVICES=0,1; rank0->physical GPU0; rank1->physical GPU1",
+  "swap_mapping": "CUDA_VISIBLE_DEVICES=1,0; rank0->physical GPU1; rank1->physical GPU0",
+  "observation": "stage latency asymmetry followed physical GPU. No rank-dependent semantic error was observed.",
+  "topology": "GPU0-GPU1 SYS path; no NVLink path reported",
+  "external_state": "GPU1 had an unrelated long-running CUDA Python process during measurements; GPU0 showed elevated temperature/clock variability",
+  "no_system_changes": true
+}

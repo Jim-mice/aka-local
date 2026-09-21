@@ -1,0 +1,20 @@
+{
+  "schema_version": "tp2_timing_row_v1",
+  "required_fields": [
+    "candidate_hash",
+    "episode",
+    "config_id",
+    "rank",
+    "iteration",
+    "warmup_or_measurement",
+    "latency_us",
+    "success",
+    "error",
+    "tp",
+    "evaluator_hash",
+    "contract_hash"
+  ],
+  "aggregation": "max rank completion latency for each iteration",
+  "fail_closed": true,
+  "incomplete_result": "INCOMPLETE_DISTRIBUTED_TIMING"
+}

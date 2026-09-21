@@ -1,0 +1,18 @@
+{
+  "episode": 12,
+  "candidate_hash": "a62f35782ec13afd19fc0bf973c535e1d92bf606cd3c2f33bcddf9ac9cdf762",
+  "evaluator_hash": "7cc0fac8d80b2d27",
+  "fixture_version": "coherent_global_fixture_v2",
+  "preflight": "PASS_PREFLIGHT",
+  "compile": "PASS",
+  "tp1": "PASS",
+  "tp2": "PASS",
+  "loss_max_abs": 0.0019044876098632812,
+  "saved_softmax_max_abs": 1.4901161193847656e-08,
+  "grad_max_abs": 1.4901161193847656e-08,
+  "collective_structure": ["1 MAX", "2 SUM"],
+  "stability_artifact": "stability_analysis_15b8_ep12.json",
+  "stable_geomean_speedup": 2.4636943020737423,
+  "bootstrap_ci95": [2.428665425370318, 2.4966954984984393],
+  "decision": "VALID_BUT_NOT_PROMOTED_EPISODE_7_REMAINS_INCUMBENT"
+}

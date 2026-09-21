@@ -1,0 +1,19 @@
+{
+  "target": "Megatron non-TE WrappedTorchNorm -> torch.nn.RMSNorm forward",
+  "commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "gpu": "Tesla V100 sm_70",
+  "cuda": "11.8",
+  "hypothesis": "One 256-thread block processes each row, using warp shuffle reduction and eight shared warp totals; the final normalization and FP16 store are performed in float32-compatible arithmetic.",
+  "semantics": "For each row, accumulate float(__half x)^2, divide by hidden_size, add epsilon, apply rsqrtf, multiply float x and float weight, then round to FP16.",
+  "official_shapes": [[16, 1, 1024], [64, 2, 1024], [128, 2, 1024]],
+  "specialization": "The implementation supports arbitrary positive hidden_size; official H=1024 uses four warps per row.",
+  "constraints": [
+    "Uses only the supplied CUDA stream.",
+    "Does not allocate memory or change the ABI.",
+    "Does not implement residual, dropout, TE, collective, or backward logic."
+  ],
+  "unverified": [
+    "Compilation and numerical equivalence were not run per request.",
+    "Performance was not benchmarked per request."
+  ]
+}

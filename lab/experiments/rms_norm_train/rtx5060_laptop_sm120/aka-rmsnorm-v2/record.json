@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "id": "aka-rmsnorm-v2",
+  "title": "Standalone RMSNorm V2 warp reduction",
+  "timestamp": "UNKNOWN",
+  "operator": "rms_norm_train",
+  "hardware": "rtx5060_laptop_sm120",
+  "architecture": "sm_120",
+  "backend": "cuda_cpp",
+  "framework": "cuda_cpp",
+  "dtype": [],
+  "mode": "training",
+  "scope": {},
+  "shape_regime": {},
+  "baseline": {},
+  "candidate": {},
+  "hypothesis": "",
+  "mechanisms": [
+    "warp_reduction"
+  ],
+  "changes": [],
+  "evidence": {
+    "summary": "56/56 correctness PASS; repeated ABBA arithmetic mean ~1.074x; 50/56 winning shape means; shared memory 2048B to 1056B"
+  },
+  "performance": {
+    "summary": "56/56 correctness PASS; repeated ABBA arithmetic mean ~1.074x; 50/56 winning shape means; shared memory 2048B to 1056B"
+  },
+  "decision": "ACCEPT",
+  "failure_class": null,
+  "observations": [
+    "56/56 correctness PASS; repeated ABBA arithmetic mean ~1.074x; 50/56 winning shape means; shared memory 2048B to 1056B"
+  ],
+  "failed_assumptions": [],
+  "unresolved_questions": [],
+  "next_directions": [],
+  "provenance": {
+    "source_type": "LEGACY_AKA_LOCAL",
+    "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_2\\decision.json",
+    "source_commit": null,
+    "canonical": true,
+    "evidence_level": 3,
+    "location": "local",
+    "read_only": false
+  },
+  "tags": [
+    "imported"
+  ]
+}

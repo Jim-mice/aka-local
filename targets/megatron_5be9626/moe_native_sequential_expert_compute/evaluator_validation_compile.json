@@ -1,0 +1,7 @@
+{
+  "source_sha256": "83000f12a456f52433d078081dec946c613fa6bf23c2e3e5daf70830ac3e6326",
+  "command": "/usr/local/cuda-11.8/bin/nvcc -arch=sm_70 -O3 -c /tmp/aka_phase18b_delivery/validation.cu -o /tmp/aka_phase18b_delivery/validation.o",
+  "stdout": "",
+  "stderr": "",
+  "compile_pass": true
+}

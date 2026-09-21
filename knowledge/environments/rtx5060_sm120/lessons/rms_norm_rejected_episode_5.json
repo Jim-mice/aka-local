@@ -1,0 +1,11 @@
+{
+  "operator": "rms_norm",
+  "episode": 5,
+  "decision": "REJECT",
+  "reason": null,
+  "compile_pass": false,
+  "correctness_pass": false,
+  "speedup": null,
+  "failure_stage": "COMPILE_FAILED",
+  "timestamp": "2026-09-19T03:08:00.927392+00:00"
+}

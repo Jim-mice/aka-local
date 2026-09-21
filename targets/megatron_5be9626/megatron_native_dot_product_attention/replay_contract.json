@@ -1,0 +1,55 @@
+{
+  "contract_version": "megatron_native_dot_product_attention_replay_v1",
+  "contract_hash": "65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "canonical_target": "Megatron Native DotProductAttention (unfused local core)",
+  "source": {
+    "attention_call": "megatron.core.transformer.attention.Attention._run_core_attention",
+    "implementation": "megatron.core.transformer.dot_product_attention.DotProductAttention.forward",
+    "softmax": "megatron.core.fusions.fused_softmax.FusedScaleMaskSoftmax",
+    "external_alternatives": ["TEDotProductAttention", "flash/decode backends"]
+  },
+  "backend": {
+    "selected": "native_local_dot_product_attention",
+    "transformer_engine": "not importable",
+    "flash_attn": "not importable",
+    "torch_sdpa": "available but not called by selected Megatron module",
+    "masked_softmax_fusion": false,
+    "context_parallel_size": 1
+  },
+  "boundary": {
+    "included": ["QK^T scaled score", "dense no-mask softmax", "attention dropout with p=0", "P V context"],
+    "excluded": ["QKV projection GEMM", "rotary embedding", "output projection GEMM", "module construction", "allocation outside operator"],
+    "training_mode": true,
+    "mask_mode": "dense/no_mask",
+    "dropout_probability": 0.0,
+    "rng": "no dropout mask consumed in primary contract"
+  },
+  "equations": {
+    "scale": "1/sqrt(head_dim) = 0.125",
+    "scores": "Q K^T * scale",
+    "probabilities": "softmax(scores) with attention_softmax_in_fp32=true",
+    "context": "probabilities V",
+    "output": "[S,B,np,head_dim] -> contiguous [S,B,H]"
+  },
+  "tensors": {
+    "q": {"shape": "[S,B,np,head_dim]", "dtype": "float16", "layout": "contiguous"},
+    "k": {"shape": "[S,B,np,head_dim]", "dtype": "float16", "layout": "contiguous"},
+    "v": {"shape": "[S,B,np,head_dim]", "dtype": "float16", "layout": "contiguous"},
+    "attention_mask": "None in primary dense contract",
+    "output": {"shape": "[S,B,H]", "dtype": "float16", "layout": "contiguous"}
+  },
+  "official_configurations": [
+    {"S": 16, "B": 1, "hidden_size": 1024, "heads": 16, "head_dim": 64},
+    {"S": 64, "B": 2, "hidden_size": 1024, "heads": 16, "head_dim": 64},
+    {"S": 128, "B": 2, "hidden_size": 1024, "heads": 16, "head_dim": 64}
+  ],
+  "backward": {
+    "included_for_qualification": true,
+    "gradients": ["dQ", "dK", "dV"],
+    "collectives": 0,
+    "saved_state": "PyTorch autograd graph of native operations; no standalone fused saved-state ABI activated"
+  },
+  "tolerances": {"forward_atol": 0.005, "forward_rtol": 0.005, "backward_atol": 0.005, "backward_rtol": 0.005},
+  "collectives": 0
+}

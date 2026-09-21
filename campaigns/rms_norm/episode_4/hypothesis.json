@@ -1,0 +1,22 @@
+﻿{
+  "task": "cuda_rmsnorm",
+  "candidate": "candidate.py",
+  "hypothesis": "Use PyTorch's fused RMSNorm CUDA path to perform the reduction and affine scaling in one optimized kernel, while retaining fp32 accumulation for low-precision inputs.",
+  "optimization": {
+    "kernel_strategy": "fused_backend",
+    "avoid_intermediate_tensors": true,
+    "accumulation_dtype": "float32_for_fp16_bf16",
+    "normalized_axes": "trailing_dimensions"
+  },
+  "correctness": {
+    "epsilon_default": 1e-6,
+    "weight_shape_must_match_normalized_shape": true,
+    "input_shape_validation": true
+  },
+  "validation_status": {
+    "benchmark_run": false,
+    "cuda_run": false,
+    "files_only": true
+  },
+  "created_date": "2026-09-19"
+}

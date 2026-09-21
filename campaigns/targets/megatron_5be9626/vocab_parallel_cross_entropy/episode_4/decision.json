@@ -1,0 +1,12 @@
+{
+  "decision": "REJECT_CONTRACT",
+  "reason": "required stream-aware ABI symbol missing at runtime",
+  "candidate_hash": "9490dc3f4f7acfb5a47152f5770d6d6ed3df6b8eee9fe99156482d347ec63f75",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "tp": 2,
+  "collective_structure": [
+    "MAX",
+    "SUM predicted",
+    "SUM denominator"
+  ]
+}

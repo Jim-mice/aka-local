@@ -1,0 +1,6 @@
+{
+  "episode": 3,
+  "decision": "REJECT_CORRECTNESS",
+  "lesson": "Preserve row addressing: output row index maps to input row*width, not output row*output_width.",
+  "score_era": "megatron_swiglu_contract_v1"
+}

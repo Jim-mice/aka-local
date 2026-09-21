@@ -1,0 +1,11 @@
+{
+  "status":"DIAGNOSTIC_ONLY",
+  "source":"episode_A2/a2_profile_analysis.json reference records",
+  "units":"GPU kernel microseconds",
+  "shapes":{
+    "16x1x1024":{"total":76.577,"vendor_qk_pv":31.041,"softmax":8.896,"conversion_copy_local":36.640,"non_gemm":45.536,"upper_bound_eliminate_non_gemm":2.467,"upper_bound_eliminate_copy_conversion_only":1.112},
+    "64x2x1024":{"total":100.705,"vendor_qk_pv":45.728,"softmax":13.984,"conversion_copy_local":40.993,"non_gemm":54.977,"upper_bound_eliminate_non_gemm":2.203,"upper_bound_eliminate_copy_conversion_only":1.097},
+    "128x2x1024":{"total":139.168,"vendor_qk_pv":58.240,"softmax":25.024,"conversion_copy_local":55.904,"non_gemm":80.928,"upper_bound_eliminate_non_gemm":2.389,"upper_bound_eliminate_copy_conversion_only":1.104}
+  },
+  "caveat":"upper bounds, not predictions; event-scope latency and end-to-end speedup are not inferred by summing independent microbenchmarks"
+}

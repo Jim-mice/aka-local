@@ -1,0 +1,17 @@
+{
+  "contract_version": "moe_native_sequential_expert_compute_replay_v1",
+  "status": "QUALIFIED_NATIVE_FALLBACK",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "canonical_target": "Megatron Native SequentialMLP Expert Compute",
+  "backend": "SequentialMLP",
+  "source_files": ["megatron/core/transformer/moe/experts.py", "megatron/core/transformer/mlp.py"],
+  "excluded": ["router", "token permutation", "expert parallel communication", "token combine", "Transformer Engine grouped GEMM"],
+  "inputs": {"permuted_local_hidden_states":"[T,H] contiguous FP16", "tokens_per_expert":"[E] int64", "permuted_probs":"[T] FP16", "expert_weights":"SequentialMLP local expert FC1/FC2"},
+  "outputs": "[T,H] contiguous FP16",
+  "semantics": "for each expert e in order, split T_e tokens, run FC1 -> gated SiLU -> FC2, concatenate; empty experts produce no rows",
+  "distributions": [[4,4,4,4],[1,3,5,7],[0,0,8,8]],
+  "backward": "REAL SequentialMLP autograd replay; finite input gradients observed",
+  "tolerance": {"max_abs_fp16_oracle": 0.00001, "finite_required": true},
+  "runtime_evidence": "moe_native_sequential_expert_compute/qualification_raw.json",
+  "status_reason": "Real SequentialMLP forward/backward replay passed on V100 fallback path; TE remains unavailable."
+}

@@ -1,0 +1,12 @@
+{
+  "episode": "M4",
+  "kind": "real_agent_failure_guided",
+  "source_file": "moe_sequential_expert_forward.cu",
+  "source_sha256": "1fb2921a0e0706d2e71bc42073036ca3b048661edaa7c1e76ae22f2e61e9e549",
+  "optimization_contract_sha256": "a1bb8ee0af6c250663e0935ae3deb07104975fc5904c56bb5b2f0d4e8032d1fe",
+  "delivery": "PASS",
+  "build": "PASS",
+  "correctness": "PASS",
+  "stability": "BLOCKED_REFERENCE",
+  "incumbent_eligible": false
+}

@@ -1,0 +1,32 @@
+{
+  "replay_pass": true,
+  "episode": 2,
+  "target": "swiglu",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "target_contract_hash": "2b05cc321bed0956",
+  "candidate_hash": "21e7995911f9af2d",
+  "baseline_hash": "38c5aab3df4aed85",
+  "dtype": "FP16",
+  "shape_set": [
+    [
+      16,
+      1,
+      1024
+    ],
+    [
+      64,
+      2,
+      1024
+    ],
+    [
+      128,
+      2,
+      1024
+    ]
+  ],
+  "baseline_mode": "activation_only_pytorch",
+  "contract_verified": true,
+  "compile_pass": true,
+  "correctness_pass": true,
+  "legacy_full_mlp_baseline_used": false
+}

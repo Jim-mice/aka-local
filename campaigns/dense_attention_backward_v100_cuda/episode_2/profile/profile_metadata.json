@@ -1,0 +1,10 @@
+{
+  "operator": "dense_attention_backward_v100_cuda",
+  "episode": 2,
+  "profiler": "nsys",
+  "profiler_version": "2026.2.1",
+  "candidate_hash": "5054d707d479",
+  "shape": "1,2,32,32",
+  "nsys_command": "cd /home/<REMOTE_USER>/aka_remote_jobs/nsys_ep2_v3 && <REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/nsys profile --trace=cuda,osrt -o nsys_candidate <REMOTE_HOME>/venvs/lerobot-act/bin/python runner.py 2>&1",
+  "reports_ok": true
+}

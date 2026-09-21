@@ -1,0 +1,10 @@
+{
+  "purpose": "EVALUATOR_VALIDATION_ONLY",
+  "eligible_for_scoring": false,
+  "eligible_for_incumbent": false,
+  "candidate": "golden_reference_candidate.cu",
+  "tp1": {"loss_max_abs": 0.0019044876098632812, "saved_softmax_max_abs": 5.960464477539063e-08, "grad_max_abs": 5.960464477539063e-08, "pass": true},
+  "tp2": {"loss_max_abs": 0.0019044876098632812, "saved_softmax_max_abs": 1.4901161193847656e-08, "grad_max_abs": 2.9802322387695312e-08, "rank0_pass": true, "rank1_pass": true, "pass": true},
+  "collective_structure": ["MAX", "SUM predicted", "SUM denominator"],
+  "diagnostic_fixes": ["rank-independent fixture seed", "safe masked gradient index", "explicit candidate-stream synchronization for correctness diagnostic"]
+}

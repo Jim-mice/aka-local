@@ -1,0 +1,6 @@
+{
+  "claim": "Implemented a standalone sm_70 LayerNorm kernel using one block per row, warp-shuffle reductions, small shared-memory warp aggregation, FMA normalization, and reciprocal square root.",
+  "strategy_tags": ["warp_shuffle_reduction", "shared_memory_optimization", "coalesced_memory_access", "parallel_reduction", "fused_multiply_add", "reciprocal_sqrt", "register_optimization"],
+  "expected_effects": ["reduce synchronization", "reduce shared memory traffic", "coalesce row-wise loads and stores", "avoid repeated global reduction passes"],
+  "risk": ["register pressure", "single-block-per-row occupancy sensitivity for very small row counts"]
+}

@@ -1,0 +1,16 @@
+{
+  "operator": "dense_attention_v100_cuda",
+  "episode": 7,
+  "primary_kernel": "dense_attention_kernel",
+  "avg_kernel_us": 501.9447,
+  "kernel_time_pct": 99.9,
+  "comparison_ep5_avg_us": 864.0,
+  "kernel_speedup_vs_ep5": 1.72,
+  "benchmark_geo_mean": 0.049,
+  "benchmark_vs_ep5": 1.75,
+  "observations": [
+    "Kernel avg 501.9us vs Ep5 864.0us = 1.72x faster",
+    "Profile-guided Agent fused passes into online-softmax single-pass kernel",
+    "Agent responded to KERNEL_LATENCY diagnostic by reducing kernel duration"
+  ]
+}

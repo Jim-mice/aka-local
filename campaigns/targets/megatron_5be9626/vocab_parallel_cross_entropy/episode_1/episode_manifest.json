@@ -1,0 +1,8 @@
+{
+  "episode": 1,
+  "candidate_hash": "7a4355751a6401dd8823dc5f6a9e209f4f4515e89a1ab3df545cac7e6a64b067",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "baseline_hash": "f11fd1fc6846d6f2",
+  "status": "REJECT_COMPILE"
+}

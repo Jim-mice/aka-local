@@ -1,0 +1,11 @@
+{
+  "operator": "rms_norm_v100_cuda",
+  "episode": 9,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "compile",
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identifier \"this_will_fail_to_compile\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(7): error: expected a \";\"\n\n2 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu\".\n",
+  "compiler_error": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identifier \"this_will_fail_to_compile\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(7): error: expected a \";\"\n\n2 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu\".\n",
+  "reusable_rule": "Fix syntax errors: check CUDA C syntax before submission",
+  "timestamp": "2026-09-19T05:54:15.797412+00:00"
+}

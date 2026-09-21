@@ -1,0 +1,38 @@
+You are a CUDA kernel Agent. Generate one standalone candidate only. Do not modify Megatron upstream.
+=== REAL MEGATRON TARGET ===
+Megatron commit 5be9626709af2722333bf54797c954c09edeada3; selected backend is DotProductAttention.forward, native unfused local core.
+=== EXACT FORWARD EQUATIONS ===
+scores = Q K^T * 0.125; P = dense no-mask softmax with attention_softmax_in_fp32=true; dropout p=0 identity; O = P V.
+=== REAL Q/K/V LAYOUT ===
+Contiguous FP16 Q/K/V [S,B,16,64], output contiguous FP16 [S,B,1024]. Official shapes are S/B = 16/1, 64/2, 128/2.
+=== EXACT ABI ===
+extern "C" void dot_product_attention_forward_fp16_stream(const __half* q, const __half* k, const __half* v, __half* output, int64_t seq_len, int64_t batch, int64_t num_heads, int64_t head_dim, float scale, cudaStream_t stream);
+Required marker exactly: // AKA_TARGET_CONTRACT: megatron_native_dot_product_attention_forward:90839e70b4edbfdc9cdfd903fe9c51230311a8fc7c13fb1b2a0673acd261916c
+=== FP32 SOFTMAX SEMANTICS ===
+Match Megatron attention_softmax_in_fp32=true and FP16 output tolerance max_abs <= 0.005. Do not change scale or numerical order without justification.
+=== DENSE / NO-MASK / P=0 CONTRACT ===
+Only dense attention_mask=None and dropout=0. No causal/padding/arbitrary mask and no RNG.
+=== OFFICIAL CONFIGS ===
+[{"S": 16, "B": 1, "hidden_size": 1024, "heads": 16, "head_dim": 64}, {"S": 64, "B": 2, "hidden_size": 1024, "heads": 16, "head_dim": 64}, {"S": 128, "B": 2, "hidden_size": 1024, "heads": 16, "head_dim": 64}]
+=== ACTIVE REFERENCE BASELINE ===
+Hash 764cc0e3145635091024b80ae07ce48f5e618f0fe8335d1cfc93645032e335db; means: {"16x1x1024": {"n": 90, "mean_us": 747.2014202011956, "std_us": 59.09381851200894, "cv": 0.07908686588965129, "median_us": 713.2160067558289, "min_us": 688.1279945373535, "max_us": 876.5439987182617}, "64x2x1024": {"n": 90, "mean_us": 778.969242837694, "std_us": 80.29749549811345, "cv": 0.10308172785564557, "median_us": 813.0559921264648, "min_us": 688.1279945373535, "max_us": 1234.9439859390259}, "128x2x1024": {"n": 90, "mean_us": 753.2437331146664, "std_us": 76.79625436100171, "cv": 0.10195405681431804, "median_us": 709.6319794654846, "min_us": 689.1520023345947, "max_us": 1125.3759860992432}}; reference stability PASS under policy 5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24 and statistical policy 692f9718d1e12d922561e6d8c69cef835a37cd9c0f6e087c2ab0b342e231ae41.
+=== REFERENCE KERNEL GRAPH ===
+Native path uses Volta FP16 GEMM for QK and PV, Megatron softmax warp kernel, copies/conversions, and layout work; no NCCL.
+=== WORKSPACE POLICY ===
+Reference global score workspace is prepared outside timing. Candidate must not require a workspace argument or allocate during the timed call; it may stream/tile or use vendor GEMM only if the full boundary remains included.
+=== CURRENT STREAM RULE ===
+Enqueue all work on the passed cudaStream_t. Output is separate preallocated storage; Q/K/V are read-only and non-overlapping with output.
+=== CUDA 11.8 / SM70 TOOLCHAIN ===
+Use V100 sm_70 and CUDA 11.8-compatible code. Avoid unsupported modern CUDA constructs.
+=== ZERO-COLLECTIVE INVARIANT ===
+No NCCL, torch.distributed, or process-group operation in the local core.
+=== FORBIDDEN TARGET EXPANSION ===
+Do not implement causal attention. Do not implement arbitrary mask support. Do not implement dropout RNG. Do not implement TE or flash-attn. Do not include QKV/output projection GEMMs. Do not optimize backward. Do not modify Megatron.
+Write candidate.cu, hypothesis.json, and AGENT.md in this episode directory and stop. Include the exact contract marker and complete semantic hypothesis. Do not benchmark or edit framework files.
+
+=== A1 TOOLCHAIN FAILURE ===
+A1 was a real Agent candidate and remains immutable. It never reached runtime. CUDA 11.8/sm_70 rejected CUDART_INF_F with: identifier "CUDART_INF_F" is undefined. Generic preflight now rejects this construct before nvcc. Do NOT use CUDART_INF_F. A CUDA 11.8 probe passed with a finite -FLT_MAX-equivalent literal and -INFINITY. This is toolchain feedback, not runtime profile evidence.
+=== A1 RESULT ===
+A1 proposed FULL_CORE_CUSTOM, but no performance or correctness conclusion is admissible because it did not compile.
+=== NEXT SEARCH ===
+Choose a fresh implementation strategy or repair the conceptual strategy in this new source. Preserve the exact ABI and semantics. Do not copy-edit A1 manually.

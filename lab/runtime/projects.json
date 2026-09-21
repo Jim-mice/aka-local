@@ -1,0 +1,13 @@
+[
+  {
+    "source_id": "rms_norm_v2",
+    "kind": "local",
+    "registered_at": "2026-09-15T16:55:16.828181+00:00",
+    "path": "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm_v2",
+    "git_root": "C:/Users/38154",
+    "remote": null,
+    "head": "2b50ce2c646789571408dda0ff467a8258fc7a36",
+    "branch": "master",
+    "dirty": false
+  }
+]

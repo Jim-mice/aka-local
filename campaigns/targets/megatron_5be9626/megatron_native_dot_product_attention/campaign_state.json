@@ -1,0 +1,15 @@
+{
+  "phase": "17-B",
+  "state": "BUILD_BLOCKED",
+  "canonical_target": "Megatron Native DotProductAttention (unfused local core)",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "optimization_contract_hash": "90839e70b4edbfdc9cdfd903fe9c51230311a8fc7c13fb1b2a0673acd261916c",
+  "replay_contract_hash": "65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+  "performance_contract_hash": "5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+  "statistical_policy_hash": "692f9718d1e12d922561e6d8c69cef835a37cd9c0f6e087c2ab0b342e231ae41",
+  "baseline_hash": "764cc0e3145635091024b80ae07ce48f5e618f0fe8335d1cfc93645032e335db",
+  "reference_stability": "PASS",
+  "episodes": {"A1": "REJECT_TOOLCHAIN_CUDART_INF_F_UNDEFINED", "A2": "NOT_RUN_NO_VALID_A1_PROFILE", "A3": "NOT_RUN"},
+  "incumbent": "NO_INCUMBENT",
+  "collectives": 0
+}

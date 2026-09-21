@@ -1,0 +1,10 @@
+{
+  "decision": "RETAIN_EPISODE_7_INCUMBENT",
+  "episode": 12,
+  "correctness": "PASS",
+  "stability": "STABLE",
+  "score_geomean_speedup": 2.4636943020737423,
+  "incumbent_score_geomean_speedup": 2.4771907400291515,
+  "promotion": "REJECT_NO_IMPROVEMENT",
+  "reason": "Stable point estimate is below the frozen Episode 7 incumbent; no statistically justified promotion."
+}

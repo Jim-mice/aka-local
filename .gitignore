@@ -1,0 +1,99 @@
+# Python environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+
+# Reproducible builds and native artifacts
+build/
+dist/
+*.egg-info/
+*.o
+*.obj
+*.so
+*.dll
+*.pyd
+*.exe
+core
+core.*
+
+# Editor and operating-system state
+.vscode/
+.idea/
+.DS_Store
+*.tmp
+*.temp
+*~
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+config/environments/.v100_secret
+config/environments/v100.yaml
+!config/environments/v100.example.yaml
+*.pem
+*.key
+*.pfx
+
+# Raw profiler artifacts and local execution output
+*.nsys-rep
+*.qdrep
+*.ncu-rep
+*.ncu-repz
+*.sqlite
+local-artifacts/
+gateway-state/
+runtimes/
+profiles/
+doctor-*.json
+continuous_run.log
+
+# External source checkouts: obtain from their upstream repositories.
+atrex-kernel-agent-win/
+lab/knowledge_sources/*/
+!lab/knowledge_sources/import_manifest.json
+!lab/knowledge_sources/IMPORT_REPORT.md
+
+# Local exploratory scripts, backups, and generated evaluation trees.
+_*.py
+_*/
+*.bak-*
+continuous_runner.py
+continuous_runner_v7a.py
+env.ps1
+_test_output.txt
+_test_result.txt
+_test_eval_output/
+_v3_test/
+
+# Generated campaign evaluator outputs. Contracts, candidate source, concise
+# summaries, and phase reports remain publication candidates.
+campaigns/**/atrex_eval/
+campaigns/**/torch_ext/
+campaigns/rms_norm/episode_9/mechanical/decision.json
+campaigns/rms_norm/backward/episode_1/official_eval_retry1/20260910-175449/rms_norm/eval_result.json
+lab/runtime/events.jsonl
+lab/runtime/runs/
+lab/indexes/knowledge.jsonl
+lab/knowledge/external_references/
+lab/campaigns/rms_norm_train__rtx5060_sm120__cuda_cpp/
+
+# Historical malformed/raw JSON-like evaluator transcripts retained locally;
+# canonical contracts and compact summaries are published elsewhere.
+campaigns/rms_norm/episode_11/hypothesis.json
+campaigns/softmax_v100_cuda/episode_8/result.json
+campaigns/targets/megatron_5be9626/megatron_native_dot_product_attention/episode_A2/a2_profile_analysis.json
+campaigns/targets/megatron_5be9626/vocab_parallel_cross_entropy/episode_10/result.json
+campaigns/targets/megatron_5be9626/vocab_parallel_cross_entropy/episode_7/result.json
+campaigns/targets/megatron_5be9626/vocab_parallel_cross_entropy/episode_8/result.json
+campaigns/targets/megatron_5be9626/vocab_parallel_cross_entropy/episode_9/result.json
+lab/runtime/e2e_smoke_20260915/authoritative_abba.json
+targets/megatron_5be9626/swiglu/remote_nsys-original.json
+targets/megatron_5be9626/swiglu/remote_nsys-profile.json
+targets/megatron_5be9626/swiglu/remote_nsys-train.json
+targets/megatron_5be9626/vocab_parallel_cross_entropy/result.json

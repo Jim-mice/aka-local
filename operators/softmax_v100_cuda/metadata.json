@@ -1,0 +1,22 @@
+{
+  "operator": "softmax_v100_cuda",
+  "gpu": "Tesla V100-PCIE-16GB",
+  "arch": "sm_70",
+  "interface": "standalone_cuda",
+  "source_file": "candidate.cu",
+  "contract": "extern C void launch_kernel(float* x, float* y, int rows, int cols)",
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract_schema": {
+    "operator": "softmax_v100_cuda",
+    "entry": "launch_kernel",
+    "version": 1,
+    "arguments": [
+      {"name": "x",    "type": "float*", "role": "input",     "description": "input matrix [rows, cols]"},
+      {"name": "y",    "type": "float*", "role": "output",    "description": "output matrix [rows, cols]"},
+      {"name": "rows", "type": "int",    "role": "dimension", "description": "number of rows in input"},
+      {"name": "cols", "type": "int",    "role": "dimension", "description": "number of columns per row"}
+    ],
+    "semantics": "Stable row-wise Softmax. For each row i in [0, rows):\n  m = max_j(x[i][j])\n  s = sum_j(exp(x[i][j] - m))\n  y[i][j] = exp(x[i][j] - m) / s\n\nNumerical stability: always subtract row maximum before exponentiation.\nNever compute: exp(x) / sum(exp(x)) without subtracting max."
+  }
+}

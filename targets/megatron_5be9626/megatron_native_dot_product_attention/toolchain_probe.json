@@ -1,0 +1,10 @@
+{
+  "probe": "cuda118_sentinel_probe.cu",
+  "toolchain": "/usr/local/cuda-11.8/bin/nvcc",
+  "architecture": "sm_70",
+  "tested_constructs": ["finite -FLT_MAX-equivalent literal", "-INFINITY"],
+  "forbidden_construct": "CUDART_INF_F",
+  "status": "PASS",
+  "result_artifact": "toolchain_probe_result.json",
+  "connection_note": "v100-srv alias was unavailable in this Windows session; existing project remote adapter was used without exposing credentials"
+}

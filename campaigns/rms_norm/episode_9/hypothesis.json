@@ -1,0 +1,17 @@
+﻿{
+  "name": "warp_register_rmsnorm_sm120",
+  "hypothesis": "For row-wise RMSNorm on RTX 5060 Laptop (sm_120), keeping the sum-of-squares accumulator in registers and reducing first within warps via shuffle instructions, then across warps through a tiny shared-memory staging array, will reduce synchronization and shared-memory traffic versus a shared-memory-heavy reduction.",
+  "changes": [
+    "One 256-thread block processes one contiguous row.",
+    "Use float register accumulation with fmaf for fp16, bf16, and fp32 inputs.",
+    "Use warp shuffle reduction followed by one shared array of 32 warp sums.",
+    "Use rsqrtf(mean_square + eps) and a second coalesced pass for normalization.",
+    "Compile with CUDA 13.4-compatible nvcc flags: -O3, --use_fast_math, and explicit sm_120 code generation."
+  ],
+  "constraints": [
+    "No benchmark or CUDA execution was performed.",
+    "Windows-native flags only; no Linux-only compiler flags.",
+    "No affine weight or bias is applied; input shape is [rows, cols]."
+  ],
+  "expected_effect": "Lower reduction overhead and improved throughput for medium-to-large normalized dimensions, with the usual tradeoff that one block per row may underutilize the GPU for very short rows or very few rows."
+}

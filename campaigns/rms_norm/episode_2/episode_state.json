@@ -1,0 +1,8 @@
+﻿{
+    "episode":  2,
+    "state":  "EXPERIMENT_STARTED",
+    "hypothesis_ready":  true,
+    "candidate_ready":  true,
+    "mechanical_evaluation_started":  true,
+    "last_agent_attempt":  "COMPLETED"
+}

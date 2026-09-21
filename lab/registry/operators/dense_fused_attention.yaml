@@ -1,0 +1,14 @@
+operator_id: dense_fused_attention
+name: Dense Fused Attention
+domain: attention
+training_scope: forward+backward
+mathematical_contract: scaled dot-product attention with selected backend
+inputs: [hidden_states, masks, qkv]
+outputs: [attention_output]
+gradients: UNKNOWN
+dtype_domain: [fp16, bf16]
+layout_domain: UNKNOWN
+shape_parameters: [batch, sequence, heads, head_dim]
+parallel_semantics: TP/sequence/context dependent
+correctness_contract: UNKNOWN
+source_refs: [Megatron transformer/attention.py, Megatron transformer/dot_product_attention.py]

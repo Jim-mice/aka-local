@@ -1,0 +1,12 @@
+{
+  "test_only": false,
+  "framework_observation": true,
+  "experiment_records": [
+    "e0005-x001",
+    "e0005-x002",
+    "e0005-x003",
+    "e0005-x004",
+    "e0005-x005"
+  ],
+  "performance_conclusion": null
+}

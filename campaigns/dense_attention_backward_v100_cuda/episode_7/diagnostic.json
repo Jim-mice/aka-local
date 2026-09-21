@@ -1,0 +1,29 @@
+﻿{
+  "operator": "dense_attention_backward_v100_cuda",
+  "episode": 7,
+  "category": "KERNEL_LATENCY",
+  "confidence": 0.9,
+  "message": "NSYS-derived diagnosis for dense_attention_backward_v100_cuda episode 7 (shape 1,2,32,32)",
+  "evidence": {
+    "items": [
+      "geo_mean_speedup=0.009",
+      "dominant_kernel_pct=96.5",
+      "dominant_kernel_name=dense_dkv",
+      "dominant_kernel_avg_ns=5077579",
+      "kernel_count=2 (dense_dkv + dense_backward_rows)",
+      "sync_overhead_pct=93.4 (cudaDeviceSynchronize)",
+      "launch_count=435",
+      "dense_dkv_avg_ms=5.08",
+      "dense_backward_rows_avg_us=181.4",
+      "ep2_vs_ep7_dkv_ratio=34x_slower"
+    ]
+  },
+  "suggested_actions": [
+    "dense_dkv kernel at 5ms is the primary bottleneck — 34x slower than Ep2 single kernel",
+    "Two-kernel strategy with no-atomics backfired — fuse dK+dV computation back into single pass",
+    "Consider shared-memory staging for dK rather than per-element global writes",
+    "Reduction over seq*seq for dK+dV without atomics is too expensive — use warp-level atomic aggregation"
+  ],
+  "strategy_evolution": "Ep2 (1-kernel, atomics, 0.606x) -> Profile -> Ep7 (2-kernel, no-atomics, 0.009x). Profile feedback led Agent to eliminate atomics but introduced catastrophic dK+dV kernel latency.",
+  "timestamp": "2026-09-20T01:17:00+00:00"
+}

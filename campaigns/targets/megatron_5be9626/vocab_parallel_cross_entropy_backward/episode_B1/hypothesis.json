@@ -1,0 +1,20 @@
+{
+  "name": "single_direct_elementwise_kernel",
+  "target": "vocab_parallel_cross_entropy_backward",
+  "strategy": "One FP32 kernel computes softmax[row,col] * grad_output[row] and applies the owner-row one-hot subtraction in the same pass.",
+  "correctness": {
+    "owner_row": "subtract grad_output when col equals masked_target_1d[row]",
+    "non_owner_row": "leave softmax * grad_output unchanged",
+    "precision": "FP32 arithmetic and FP32 output",
+    "aliasing": "softmax is read-only; active ABI uses distinct buffers"
+  },
+  "performance_hypothesis": "The fused pass removes temporary softmax-update, arange, indexed-subtraction, and separate multiply traffic; each output element performs coalesced softmax/output accesses, with one repeated row grad read.",
+  "tradeoffs": "The target metadata is redundantly read by every thread in an owner row, and integer division/modulo are used to recover row and column.",
+  "constraints": [
+    "CUDA 11.8 compatible",
+    "SM70 compatible",
+    "uses only the supplied stream",
+    "no collective or device-wide synchronization",
+    "general positive rows and local_vocab"
+  ]
+}

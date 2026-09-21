@@ -1,0 +1,64 @@
+You are a CUDA Agent generating Episode 12 for the REAL Megatron distributed target. This is a bounded, profile-guided forward/local-compute search. Do not modify Megatron, do not change the evaluator, do not change the benchmark era, and do not run benchmarks yourself. Write only the requested episode artifacts and stop.
+
+=== REAL MEGATRON TARGET ===
+target=vocab_parallel_cross_entropy
+Megatron commit=5be9626709af2722333bf54797c954c09edeada3
+source=megatron.core.tensor_parallel.cross_entropy._VocabParallelCrossEntropy
+runtime=two Tesla V100 GPUs, sm_70, CUDA 11.8, PyTorch 2.7.1, REAL NCCL, TP=2.
+
+=== CURRENT INCUMBENT ===
+Episode 7 candidate hash=947e17aa55f8cbb6d6ab85e8e671e0a1f1be26c7ef54a5bec727d5839549d5c6
+stability-qualified geometric-mean REAL TP=2 speedup=2.4771907400291515x
+paired bootstrap CI95=[2.465431157986491x, 2.484391708222999x]
+Episode 7 is the incumbent. The golden reference is never eligible for scoring or incumbent promotion.
+
+=== ACTIVE SCIENTIFIC ERA ===
+benchmark_era=tp2_comparable_v1
+performance_contract=tp2_scope_v1
+performance_contract_hash=6632730d9957fbb1a0da4268f2b3c168b2836862db167935d8908758a00b5bea
+semantic_optimization_contract_hash=112959ca63020e9b
+corrected_evaluator=tp2_semantic_v2 hash=7cc0fac8d80b2d27
+fixture=coherent_global_fixture_v2
+statistical_policy=tp2_stability_v1 hash=a74bf021f535c6de48b3b37b9568bdf06df5ff77075b3e6afd652cf96fa0dc05
+All future validation and any later benchmark must use exactly this era and policy.
+
+=== STATISTICAL POLICY ===
+Use the existing three independent ABBA blocks, deterministic A-B-B-A order, five warmups and five measured samples per configuration, max(rank0,rank1) completion latency, mean as the primary estimator, preserved raw samples, and paired bootstrap seed 1515/10000 resamples. Slow valid samples are classified, never deleted. Do not invent a new estimator or policy.
+
+=== TP=2 DISTRIBUTED SEMANTICS ===
+Each rank owns contiguous local vocabulary logits [N,V/2] in FP16 and receives the same logical global fixture. Targets are global int64 IDs. Local reductions use FP32. The caller performs exactly one REAL MAX all-reduce, then two REAL SUM all-reduces: predicted shifted target contribution, then local exponential denominator. Backward has no collective. Preserve target ownership, safe non-owning local metadata, saved softmax, and rank-local gradient semantics.
+collective invariant: 1 MAX all-reduce and 2 SUM all-reduces, in this order.
+
+=== MANDATORY ABI — DO NOT CHANGE ===
+Use marker // AKA_TARGET_CONTRACT: vocab_parallel_cross_entropy:112959ca63020e9b and preserve these prototypes VERBATIM:
+extern "C" cudaError_t local_max_fp16_stream(const half* logits, float* row_max, int rows, int local_vocab, cudaStream_t stream);
+extern "C" cudaError_t local_prepare_fp16_stream(const half* logits, const int64_t* targets, const float* global_max, float* predicted_local, float* denominator_local, float* exp_values, unsigned char* target_mask, int64_t* target_local, int rows, int local_vocab, int rank, cudaStream_t stream);
+Every symbol must be exported with extern "C", use the supplied current CUDA stream, and return cudaError_t. A candidate omitting either symbol is invalid even if another stage is correct.
+
+=== REAL PROFILE EVIDENCE ===
+Episode 7 promotion NSYS contains the expected custom local_max_kernel and prepare_kernel plus REAL ncclDevKernel_AllReduce_Sum_f32_RING_LL. Candidate rank-1 stats show 30 local-max instances totaling about 0.285 ms and 30 prepare instances totaling about 0.339 ms in the profiled workload; the NCCL sum kernel family accounts for about 330 ms aggregate across 121 instances in that trace. Reference stats retain substantially more PyTorch reduction/index/launch activity and about 529 ms aggregate in the same NCCL family. These are NSYS aggregate profile statistics, not a replacement for the timed score.
+The stage diagnostic measured normal candidate local stages around: max_local 78-96 us, prepare_local 12-15 us, each SUM about 24-34 us, while one rank showed a single SUM delay around 2.6 ms and the other rank showed the complementary wait. Earlier raw rows showed rank-1 stalls around 8.3-11.1 ms while rank 0 remained around 2.8-3.0 ms. This is measured rank-skew/collective-delay evidence.
+
+=== COMMUNICATION AMDAHL LIMIT ===
+The stable shared boundary is approximately 13.4 ms reference versus 5.4 ms Episode 7, with a 2.47719x full TP=2 speedup. The replaceable local compute has already been reduced to two custom kernels; the measured remaining floor includes mandatory NCCL and rank synchronization. Further local-only optimization cannot exceed the measured non-local/synchronization floor. Treat the exact ceiling as profile-bounded, not as a claim that the network is intrinsically saturated.
+
+=== CURRENT DIAGNOSIS ===
+Primary: SYNCHRONIZATION_OVERHEAD / COLLECTIVE_DELAY with measured rank-skew. Secondary: LOCAL_KERNEL_LATENCY may still be reduced only if the profile shows a concrete local-stage change. Do not claim a network bottleneck without new evidence. Do not change the three-collective structure.
+
+=== SEMANTIC FAILURE KNOWLEDGE ===
+Episode 6 and Episode 9 remain incorrect and must not be copied. Corrected differential classification for both is TARGET_LOGIT_WRONG: Episode 6 emitted an unshifted target logit; Episode 9 emitted an exponentiated target contribution. The required predicted_local value is the shifted target logit on the owning rank and zero on non-owning ranks. target_mask is row-shaped; target_local must be safe on non-owning ranks. Episodes 7, 8, 10, and 11 have passed the corrected semantic evaluator; Episode 11 is correctness-valid but previously unbenchmarked.
+
+=== WHAT WORKED ===
+Episode 7's two-entry ABI implementation preserves exact stream ABI, FP32 local arithmetic, target ownership, one MAX plus two SUM collectives, and achieves the current stable incumbent. The shared harness, corrected evaluator, fail-closed rank aggregation, and statistical policy are frozen.
+
+=== WHAT FAILED ===
+Episodes 6/9 failed target-logit semantics. Earlier episodes failed ABI/toolchain checks, including missing local_max_fp16_stream and CUDART_INF_F; those restrictions remain. Do not add a second benchmark path or alter saved-state/backward behavior.
+
+=== NEXT SEARCH DIRECTION ===
+Propose one bounded rank-local refinement informed by the profile, such as reducing launch/temporary overhead inside the existing local stage while preserving both ABI entry points and all semantic outputs. You may not remove, reorder, combine, or fake collectives; may not implement backward; may not use full-vocabulary reconstruction; may not change shapes, dtype, fixture, synchronization, statistical policy, or performance contract. Prefer a change that can plausibly reduce the measured local CUDA/launch component without shifting work into an unmeasured path.
+
+=== CUDA 11.8 COMPATIBILITY ===
+Target V100 sm_70 with CUDA 11.8. DO NOT use CUDART_INF_F; it failed the verified remote compiler. The finite initializer -3.402823466e+38F was verified. Avoid unsupported architecture assumptions.
+
+=== OUTPUT FILES ===
+Write candidate.cu, hypothesis.json, and AGENT.md only in the Episode 12 directory. candidate.cu must be standalone nvcc-compatible and contain the exact frozen marker and prototypes. Do not modify prior episodes. Do not manually claim benchmark or correctness results.

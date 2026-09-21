@@ -1,0 +1,8 @@
+{
+  "phase": "15-B",
+  "status": "SEMANTIC_BLOCKER_CLEARED_PERFORMANCE_DEFERRED",
+  "diagnosis": "EVALUATOR_FIX_RANK_INDEPENDENT_FIXTURE_AND_SAFE_MASKED_INDEX",
+  "evidence": {"episodes_1_5": 5, "episodes_6_10": 5, "golden_tp1": true, "golden_tp2": true, "corrected_agent_tp2": [7,8,10], "candidate_profiles": 0},
+  "collective_diagnosis": "not assessed for a candidate; baseline contains three source-mandated collectives",
+  "forbidden_inference": ["not called collective-dominated", "not called network-bound", "no candidate speedup claimed"]
+}

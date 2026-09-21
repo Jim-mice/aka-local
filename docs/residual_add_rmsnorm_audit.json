@@ -1,0 +1,232 @@
+{
+  "RESIDUAL_ADD_RMSNORM_OPERATOR_LOCATION": {
+    "primary_file": "megatron/core/extensions/transformer_engine.py",
+    "commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "class": "TEFusedResidualRMSNorm",
+    "line_range": "L626-L790",
+    "inherits_from": "te.pytorch.RMSNorm",
+    "fused_pipeline": "MakeExtraOutput() + te.pytorch.ops.RMSNorm()",
+    "activation_gate": "TENorm.__new__() when config.fused_residual_rmsnorm=True AND has_residual=True",
+    "fallback": "te.pytorch.RMSNorm (non-fused) or torch.nn.RMSNorm (WrappedTorchNorm)",
+    "callers": [
+      "megatron/core/transformer/transformer_layer.py L617-L637 (input_layernorm)",
+      "megatron/core/transformer/transformer_layer.py L696-L708 (pre_cross_attn_layernorm)",
+      "megatron/core/transformer/transformer_layer.py L1321-L1329 (pre_mlp_layernorm)"
+    ]
+  },
+  "FORWARD_SEMANTICS": {
+    "input": {
+      "hidden_states": "Tensor [s, b, h] \u2014 already contains x + residual from previous bias_dropout_add",
+      "weight": "Parameter [h] \u2014 RMSNorm scale weight",
+      "eps": "float \u2014 epsilon for numerical stability"
+    },
+    "output": {
+      "normalized_output": "Tensor [s, b, h] \u2014 RMSNorm(hidden_states, weight, eps)",
+      "residual": "Tensor [s, b, h] \u2014 identical to input hidden_states (forked by MakeExtraOutput)"
+    },
+    "computation": {
+      "step1": "rms = sqrt(mean(x^2) + eps)",
+      "step2": "y = x / rms * weight",
+      "step3": "return (y, x)  # residual fork"
+    },
+    "critical_note": "The add (x + residual) is NOT fused into this kernel. It happens in the PREVIOUS layer output projection via bias_dropout_add. This kernel only does RMSNorm + residual pass-through.",
+    "mathematical_form": "y = (x + r) / rms(x + r) * w,  output=(y, x+r)  where r is residual from previous layer. The +r part is done by the previous bias_dropout_add."
+  },
+  "BACKWARD_SEMANTICS": {
+    "engine": "Transformer Engine autograd \u2014 te.pytorch.ops.RMSNorm backward",
+    "gradients": {
+      "dx": "Gradient through RMSNorm: dL/dx from dL/dy via RMSNorm backward. The residual fork also receives gradient from the bias_dropout_add path.",
+      "dweight": "Gradient w.r.t. RMSNorm weight: dL/dw = sum(dL/dy * x / rms)",
+      "dresidual": "The residual output gradient comes from the bias_dropout_add backward, NOT from the norm backward. The residual fork creates two gradient paths that sum."
+    },
+    "saved_activations": [
+      "x (input) or rstd (1/rms) \u2014 needed for backward to compute dx and dw",
+      "forward output y \u2014 needed if dropout follows"
+    ],
+    "recomputation": "input_layernorm can be recomputed (config.recompute_modules includes layernorm). When recomputed, saved activations from norm forward are discarded and re-derived during backward."
+  },
+  "DTYPES": {
+    "input_x": "BF16 (Megatron default) or FP16",
+    "weight": "FP32 (TE maintains weight in FP32, casts at kernel boundary)",
+    "output_y": "BF16 or FP16 (matches input)",
+    "output_residual": "BF16 or FP16 (matches input)",
+    "internal_accumulation": "FP32 (rms computation, rsqrt, normalization)",
+    "fp8_support": "TE supports FP8 for norm weight; Megatron v0.19.1 has FP8 integration via fp8_meta",
+    "config_source": "megatron/core/transformer/transformer_config.py L249: normalization, L194: layernorm_epsilon"
+  },
+  "REALISTIC_SHAPES": {
+    "source": "Megatron-LM transformer_config.py and community model configs",
+    "hidden_sizes": [
+      1024,
+      2048,
+      4096,
+      5120,
+      6144,
+      7168,
+      8192,
+      12288,
+      16384,
+      24576,
+      32768
+    ],
+    "sequence_x_batch": [
+      {
+        "model": "GPT-3 175B",
+        "seq_len": 2048,
+        "micro_batch": 1,
+        "global_batch": 1536
+      },
+      {
+        "model": "Llama-2 70B",
+        "seq_len": 4096,
+        "micro_batch": 1,
+        "global_batch": 1024
+      },
+      {
+        "model": "Llama-3 8B",
+        "seq_len": 8192,
+        "micro_batch": 1,
+        "global_batch": 256
+      }
+    ],
+    "tensor_parallel_effect": "hidden_size is divided by TP size. TP=1,2,4,8 common. RMSNorm operates on local hidden_size after TP split.",
+    "sequence_parallel_effect": "seq_len is divided by SP size. Each rank processes seq_len/SP tokens. RMSNorm is local to each rank.",
+    "representative_shapes": [
+      {
+        "desc": "small TP8",
+        "s": 2048,
+        "b": 1,
+        "h_local": 512
+      },
+      {
+        "desc": "medium TP4",
+        "s": 4096,
+        "b": 1,
+        "h_local": 2048
+      },
+      {
+        "desc": "large TP1",
+        "s": 8192,
+        "b": 1,
+        "h_local": 8192
+      }
+    ],
+    "note": "Standalone 56-shape suite can be retained as microbenchmark supplement, but campaign MUST include Megatron-realistic shapes."
+  },
+  "PARALLELISM_CONTEXT": {
+    "tensor_parallel": {
+      "effect_on_norm": "RMSNorm weight is a local [h/TP] parameter. No communication needed for norm itself.",
+      "effect_on_residual": "Residual tensor is local [s, b, h/TP]. No communication.",
+      "communication": "None within RMSNorm. Communication happens in adjacent linear layers (all-reduce for row-parallel, identity for column-parallel)."
+    },
+    "sequence_parallel": {
+      "effect_on_norm": "Each rank computes RMSNorm on its sequence shard [s/SP, b, h]. Local operation.",
+      "communication": "None within RMSNorm. all-gather / reduce-scatter happen in adjacent ops."
+    },
+    "pipeline_parallel": {
+      "effect": "None. RMSNorm is a per-layer operation."
+    },
+    "fusion_opportunity": "RMSNorm could be fused with residual-add from previous layer, but current Megatron architecture separates them (bias_dropout_add in output projection + RMSNorm in next layer input)."
+  },
+  "BASELINE_IMPLEMENTATION": {
+    "name": "Transformer Engine RMSNorm",
+    "class": "te.pytorch.RMSNorm (or TEFusedResidualRMSNorm for residual fork)",
+    "backend": "TE CUDA kernels (fused RMSNorm with optional MakeExtraOutput)",
+    "forward": "RMSNorm(x, weight, eps) \u2192 y  OR  (y, residual)",
+    "backward": "TE autograd: dx, dw gradients through fused CUDA kernels",
+    "benchmark_targets": [
+      "forward latency",
+      "backward latency",
+      "forward+backward combined"
+    ],
+    "dependency": "transformer-engine >= 0.11 (TE RMSNorm), >= 1.13 (TEFusedResidualRMSNorm)",
+    "installation": "pip install transformer-engine"
+  },
+  "CORRECTNESS_CONTRACT": {
+    "forward_outputs": {
+      "y": {
+        "shape": "[s, b, h]",
+        "tolerance": "rtol=1e-2, atol=2e-2 (bf16 scale)"
+      },
+      "residual": {
+        "shape": "[s, b, h]",
+        "tolerance": "rtol=1e-5, atol=1e-7 (should be bit-identical to input x+r)"
+      }
+    },
+    "backward_gradients": {
+      "dx": {
+        "shape": "[s, b, h]",
+        "tolerance": "rtol=1e-2, atol=2e-2"
+      },
+      "dweight": {
+        "shape": "[h]",
+        "tolerance": "rtol=1e-2, atol=1e-3"
+      }
+    },
+    "test_coverage": "All 56 standalone shapes + Megatron-realistic shapes. Per-shape max_abs, max_rel, pass/fail.",
+    "reference": "te.pytorch.RMSNorm at FP32 accumulation"
+  },
+  "PERFORMANCE_CONTRACT": {
+    "measurements": [
+      "forward (ms)",
+      "backward (ms)",
+      "forward+backward (ms)"
+    ],
+    "benchmark_method": "GPU warmup + ABBA same-process measurement",
+    "warmup_dev": 2,
+    "repeats_dev": 5,
+    "warmup_auth": 20,
+    "repeats_auth": 100,
+    "gpu": "RTX 5060 Laptop / sm_120",
+    "metric": "arithmetic_mean_speedup across shapes, total_time_ratio",
+    "note": "Training-op benchmark must include backward, not just forward"
+  },
+  "AKA_LOCAL_REUSABLE_COMPONENTS": {
+    "direct_reuse": [
+      "diagnostic pipeline (inspect_shape_metadata, repeated_per_shape_benchmark, compare_regimes)",
+      "profiler integration (NCU adapter, one-shape worker, ProcessRegistry)",
+      "hypothesis structured schema",
+      "candidate lineage (candidate_id, parent_candidate_id, hypothesis_id)",
+      "ABBA framework (development + authoritative)",
+      "Supervisor decision policy (KEEP/ROLLBACK/RETEST/REJECT/INCONCLUSIVE)",
+      "knowledge harvest schema",
+      "checkpoint/recovery framework",
+      "event sourcing (journal.jsonl)",
+      "campaign/episode directory convention"
+    ],
+    "needs_adapter": [
+      "Evaluator (new ResidualAddRMSNormLocalEvaluator)",
+      "Correctness worker (new residual_add_rmsnorm_correctness.py)",
+      "ABBA benchmark script (new residual_add_rmsnorm_abba.py)",
+      "Shape metadata (new Megatron-realistic shapes.json)",
+      "Build integration (JIT compile or prebuilt extension)",
+      "Campaign config (new campaign directory + episode scaffolding)"
+    ]
+  },
+  "MINIMUM_NEW_ADAPTER_FILES": [
+    "lab/runtime/evaluators/residual_add_rmsnorm_correctness.py",
+    "lab/runtime/evaluators/residual_add_rmsnorm_local.py",
+    "benchmarks/residual_add_rmsnorm_abba.py",
+    "lab/campaigns/residual_add_rmsnorm__rtx5060_sm120__cuda_cpp/ (new campaign)",
+    "data/residual_add_rmsnorm/shapes.json (Megatron-realistic)"
+  ],
+  "BLOCKERS": [
+    {
+      "blocker": "TE not installed locally",
+      "resolution": "pip install transformer-engine in .venv",
+      "severity": "HIGH \u2014 needed for baseline measurement"
+    },
+    {
+      "blocker": "No existing fused ResidualAdd+RMSNorm kernel in Megatron-LM",
+      "detail": "Current Megatron architecture separates residual-add (bias_dropout_add) from RMSNorm. A true fused kernel does not exist yet.",
+      "resolution": "Campaign must create a NEW candidate kernel implementing y=RMSNorm(x+residual, weight, eps)",
+      "severity": "MEDIUM \u2014 greenfield optimization opportunity"
+    },
+    {
+      "blocker": "Megatron-realistic shapes need to be extracted from configs",
+      "resolution": "Manually define shape set based on Megatron transformer_config.py and known model configs",
+      "severity": "LOW"
+    }
+  ],
+  "RESIDUAL_ADD_RMSNORM_CAMPAIGN_READY": "YES (with TE installation prerequisite)"
+}

@@ -1,0 +1,7 @@
+{
+  "hypothesis": "Fuse local target extraction, shifted exponentiation, and partial reductions into one rank-local kernel to reduce launch and intermediate overhead while preserving the external collective sequence.",
+  "collectives": {"max": 1, "sum": 2, "implemented_here": false},
+  "scope": "rank-local forward only; TP=2 contiguous vocabulary partition",
+  "outputs": {"predicted": "partial shifted target logit for SUM", "denominator": "partial exp sum for SUM", "aux": "reserved zero output"},
+  "constraints": ["no process-group initialization", "no synchronization", "no backward", "no full-vocabulary reconstruction"]
+}

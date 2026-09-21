@@ -1,0 +1,7 @@
+{
+  "source_sha256": "dacde96cc107ba11fcc4093bf7d8aeb76e73e9d74c3c84d2715e2e9360d9febb",
+  "command": "/usr/local/cuda-11.8/bin/nvcc -arch=sm_70 -O3 -c /tmp/aka_phase18b_m3/candidate.cu -o /tmp/aka_phase18b_m3/candidate.o",
+  "stdout": "",
+  "stderr": "",
+  "compile_pass": true
+}

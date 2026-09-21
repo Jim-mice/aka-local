@@ -1,0 +1,28 @@
+{
+  "version": "tp2_ce_backward_local_stability_v1",
+  "benchmark_era": "tp2_ce_backward_local_v1",
+  "backward_performance_contract_version": "tp2_ce_backward_local_scope_v1",
+  "backward_performance_contract_hash": "afbfcff56ee6891b888ca7c6fbf632b74ccfab71f849d7934c56dc1d4bd9e205",
+  "policy_hash": "7a750bc7f4f3c7b768bd5b35d695dab6762131d4c6681d6925100bf5557cf18f",
+  "sampling_design": "three independent invocations; three blocks per invocation; ten measurements per block/config/rank; five warmups per invocation/config",
+  "independent_invocations": 3,
+  "blocks_per_invocation": 3,
+  "samples_per_block": 10,
+  "warmup_per_invocation": 5,
+  "rank_aggregation": "rank-local mean/std/CV; max of rank means is a conservative training critical-path proxy",
+  "primary_estimator": "arithmetic mean latency per rank; no median substitution; future A/B comparison must use identical paired block IDs",
+  "diagnostic_statistics": ["N", "mean", "std", "CV", "median", "min", "max", "MAD", "physical GPU mapping", "rank skew"],
+  "outlier_policy": "classify slow valid samples and retain them; statistical outlier tests never delete a sample",
+  "invalid_sample_policy": ["missing rank row", "missing iteration", "CUDA error", "NCCL/process failure", "fixture/config mismatch", "explicit independent thermal/power/hardware fault with provenance"],
+  "slow_valid_sample_is_invalid": false,
+  "uncertainty_method": "future paired block bootstrap, deterministic seed 1515, 10000 resamples; current baseline reports raw distribution only",
+  "stability_qualification": {
+    "all_independent_invocations_complete": true,
+    "all_rank_rows_complete": true,
+    "minimum_samples_per_rank_config": 90,
+    "maximum_rank_cv": 0.20,
+    "rationale": "backward local microbenchmarks are exposed to per-device clock and unrelated-process jitter; this threshold is fixed for the backward era and is not tuned from any candidate score",
+    "no_unclassified_invalid_samples": true
+  },
+  "environment_note": "GPU0 had elevated temperature/clock variability and GPU1 had an unrelated CUDA process during collection; this is retained as provenance, not corrected by changing clocks or killing processes"
+}

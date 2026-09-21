@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "episode": 3,
+  "candidate": "V3",
+  "baseline": "V2b",
+  "model_calls": 0,
+  "candidate_status": "present",
+  "state": "ACCEPTED",
+  "compile": {
+    "m1024_d4096": {
+      "status": "passed",
+      "reason": null
+    },
+    "m256_d4096": {
+      "status": "passed",
+      "reason": null
+    },
+    "m4096_d4096": {
+      "status": "passed",
+      "reason": null
+    }
+  },
+  "correctness": {
+    "shapes": {
+      "m1024_d4096": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 409270981,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0078125,
+                "max_elementwise_rel_diff": 0.0009765625,
+                "relative_l2": 0.0003493758475248072,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "m256_d4096": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1966755487,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0078125,
+                "max_elementwise_rel_diff": 0.0009765625,
+                "relative_l2": 0.00035100311501560746,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "m4096_d4096": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1386558781,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0078125,
+                "max_elementwise_rel_diff": 0.0009765625,
+                "relative_l2": 0.0003493929699915856,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.gate",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.up",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      }
+    }
+  },
+  "benchmark": {
+    "protocol": "same_process_ABBA",
+    "status": "passed"
+  },
+  "abba": {
+    "schema_version": 1,
+    "protocol": "same_process_ABBA",
+    "order": "A1,B1,B2,A2",
+    "warmup": 20,
+    "repeats": 100,
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "capability": [
+      12,
+      0
+    ],
+    "torch": "2.14.0+cu130",
+    "torch_cuda": "13.0",
+    "shapes": {
+      "m256_d4096": {
+        "A1_us": 13.120319843292236,
+        "B1_us": 12.4726402759552,
+        "B2_us": 12.376960515975952,
+        "A2_us": 12.365119457244873,
+        "incumbent_mean_us": 12.742719650268555,
+        "candidate_mean_us": 12.424800395965576,
+        "candidate_over_incumbent_speedup": 1.0255874737759336,
+        "max_abs": 0.0078125,
+        "max_rel": 0.058837890625
+      },
+      "m1024_d4096": {
+        "A1_us": 22.480640411376953,
+        "B1_us": 22.42016077041626,
+        "B2_us": 22.732479572296143,
+        "A2_us": 22.379839420318604,
+        "incumbent_mean_us": 22.43023991584778,
+        "candidate_mean_us": 22.5763201713562,
+        "candidate_over_incumbent_speedup": 0.9935294922113231,
+        "max_abs": 0.0078125,
+        "max_rel": 0.058837890625
+      },
+      "m4096_d4096": {
+        "A1_us": 289.82656478881836,
+        "B1_us": 289.880313873291,
+        "B2_us": 289.80224609375,
+        "A2_us": 289.74592208862305,
+        "incumbent_mean_us": 289.7862434387207,
+        "candidate_mean_us": 289.8412799835205,
+        "candidate_over_incumbent_speedup": 0.9998101148849365,
+        "max_abs": 0.0078125,
+        "max_rel": 0.058837890625
+      }
+    },
+    "arithmetic_mean_speedup": 1.0063090269573978
+  },
+  "decision": "ACCEPT",
+  "failure_reason": null,
+  "decision_policy": {
+    "source": "long_horizon.verifier strict improvement",
+    "min_improvement_pct": 0.0,
+    "metric": "arithmetic_mean_speedup_vs_incumbent",
+    "strict": "> 1.0"
+  },
+  "evaluator_result": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\mechanical_retry2\\atrex_eval\\20260910-164735\\swiglu_forward_v2b\\eval_result.json"
+}

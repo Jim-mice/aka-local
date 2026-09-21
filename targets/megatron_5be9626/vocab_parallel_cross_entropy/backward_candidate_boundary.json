@@ -1,0 +1,26 @@
+{
+  "status": "RESEARCH_ONLY_NOT_ACTIVE",
+  "boundary_version": "ce_backward_local_candidate_v1",
+  "backward_replay_contract_hash": "4841f90840fee98eeff354e999fd25a1626c99e561cd5402b0dc68ec8f0d94da",
+  "boundary_hash": "2e8b7fa616fcd1c67cdd011458e8946fb983c7f566bd871743fac06080f61545",
+  "inputs": {
+    "softmax": "real saved FP32 [S,B,V/TP], contiguous",
+    "target_mask": "real saved bool [S,B], contiguous",
+    "masked_target_1d": "real saved int64 [N], contiguous, safe zero for non-owning rows",
+    "grad_output": "available FP32 [S,B], contiguous"
+  },
+  "output": {"grad_input": "FP32 [S,B,V/TP], may alias softmax and must preserve exact in-place semantics"},
+  "candidate_abi_design": {
+    "symbol": "ce_backward_local_fp32_stream",
+    "extern_c": true,
+    "prototype": "void ce_backward_local_fp32_stream(const float* softmax, const bool* target_mask, const int64_t* masked_target_1d, const float* grad_output, float* grad_input, int64_t rows, int64_t local_vocab, cudaStream_t stream);",
+    "argument_roles": ["saved normalized probabilities", "saved ownership mask", "saved safe local target index", "upstream loss gradient", "in-place-compatible output", "N", "V/TP", "current stream"],
+    "alias_rule": "grad_input == softmax is the reference path; an out-of-place candidate requires explicitly provided workspace and identical observable result"
+  },
+  "collectives": {"required_inside_boundary": 0, "candidate_must_not_launch_nccl": true},
+  "workspace": "none required by reference; any candidate workspace must be preallocated outside timing",
+  "stream": "current PyTorch CUDA stream only",
+  "excluded_operations": ["forward", "all-reduces", "target-mask construction", "masked-target construction", "autograd wrapper", "FP16 cast-back"],
+  "official_shapes": [[8,1,32], [32,2,64], [128,2,128]],
+  "open_questions": ["whether a candidate can replace indexed subtraction and broadcast multiply without changing FP32 rounding", "whether arange/softmax_update should be internal or explicit ABI inputs in a future contract", "whether in-place aliasing can be preserved without extra workspace"]
+}

@@ -1,0 +1,10 @@
+{
+  "target": "megatron.core.tensor_parallel.cross_entropy._VocabParallelCrossEntropy",
+  "contract": "vocab_parallel_cross_entropy:112959ca63020e9b",
+  "hypothesis": "Fuse the rank-local target extraction, shifted exponentiation, denominator accumulation, and local loss preparation into one row kernel to reduce PyTorch elementwise/indexing kernel launches while leaving the externally mandated MAX, SUM(predicted), and SUM(denominator) all-reduces unchanged.",
+  "scope": "rank-local forward preparation only",
+  "collectives": {"max": 1, "sum": 2, "implemented_here": 0},
+  "precision": "FP16 input, FP32 arithmetic",
+  "stream": "caller current CUDA stream; no synchronization",
+  "not_claimed": ["benchmark result", "network bottleneck improvement", "backward implementation", "physical validation"]
+}

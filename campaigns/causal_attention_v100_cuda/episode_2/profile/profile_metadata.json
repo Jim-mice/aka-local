@@ -1,0 +1,19 @@
+{
+  "operator": "causal_attention_v100_cuda",
+  "episode": 2,
+  "profiler": "nsys",
+  "profiler_version": "2026.2.1",
+  "candidate_hash": "90cd0fd3852589d4",
+  "shape": "1,4,64,64",
+  "gpu_kern_sum": {
+    "kernels": [
+      {
+        "name": "causal_attention_kernel(float *, float *, float *, float *, int, int, int, int, float)",
+        "time_pct": 99.9,
+        "total_ns": 47511488.0,
+        "instances": 50,
+        "avg_ns": 950229.8
+      }
+    ]
+  }
+}

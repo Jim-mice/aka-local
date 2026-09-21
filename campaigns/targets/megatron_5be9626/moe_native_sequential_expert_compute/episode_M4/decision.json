@@ -1,0 +1,10 @@
+{
+  "episode": "M4",
+  "source_sha256": "1fb2921a0e0706d2e71bc42073036ca3b048661edaa7c1e76ae22f2e61e9e549",
+  "delivery": "PASS",
+  "build": "PASS",
+  "correctness": "PASS",
+  "benchmark": "STABILITY_BLOCKED",
+  "decision": "NO_INCUMBENT",
+  "reason": "two-empty reference CV 0.373305 exceeds frozen CV <= 0.20; no score or promotion claim"
+}

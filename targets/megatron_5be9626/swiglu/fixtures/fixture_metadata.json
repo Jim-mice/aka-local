@@ -1,0 +1,11 @@
+{
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "seed": 14,
+  "device": "Tesla V100-PCIE-16GB / sm_70",
+  "dtype": "torch.float16",
+  "shape": {"micro_batch": 2, "sequence_length": 128, "hidden_size": 1024, "ffn_hidden_size": 4096, "tensor_parallel": 1},
+  "hidden_states": {"shape": [128, 2, 1024], "stride": [2048, 1024, 1], "layout": "contiguous row-major"},
+  "config": {"gated_linear_unit": true, "activation": "torch.nn.functional.silu", "add_bias_linear": false, "bias_activation_fusion": false, "use_te_activation_func": false, "glu_linear_offset": 0.0},
+  "generation": "torch.manual_seed(14); torch.randn(S,B,H,device=cuda,dtype=torch.float16)",
+  "note": "Compact metadata only; tensors are regenerated deterministically and are not stored as a large binary fixture."
+}

@@ -1,0 +1,14 @@
+{
+  "operator": "causal_attention_v100_cuda",
+  "episode": 3,
+  "profiler": "nsys",
+  "candidate_hash": "5db3d4b2f66fa45e",
+  "gpu_kern_sum": {
+    "kernels": [
+      {
+        "name": "causal_attention_kernel",
+        "avg_ns": 116496.7
+      }
+    ]
+  }
+}

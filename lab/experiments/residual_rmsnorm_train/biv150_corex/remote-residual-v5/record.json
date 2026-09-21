@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "id": "remote-residual-v5",
+  "title": "Residual RMSNorm flat row-batched",
+  "timestamp": "UNKNOWN",
+  "operator": "residual_rmsnorm_train",
+  "hardware": "biv150_corex",
+  "architecture": "BI-V150",
+  "backend": "corex_triton",
+  "framework": "corex_triton",
+  "dtype": [],
+  "mode": "training",
+  "scope": {},
+  "shape_regime": {},
+  "baseline": {},
+  "candidate": {},
+  "hypothesis": "",
+  "mechanisms": [
+    "row_batching",
+    "shape_dispatch"
+  ],
+  "changes": [],
+  "evidence": {
+    "summary": "5 hidden workloads pass; 5-seed all-pass; score 19.75/19.81 vs V3 12.72; ~56 percent"
+  },
+  "performance": {
+    "summary": "5 hidden workloads pass; 5-seed all-pass; score 19.75/19.81 vs V3 12.72; ~56 percent"
+  },
+  "decision": "ACCEPT",
+  "failure_class": null,
+  "observations": [
+    "5 hidden workloads pass; 5-seed all-pass; score 19.75/19.81 vs V3 12.72; ~56 percent"
+  ],
+  "failed_assumptions": [],
+  "unresolved_questions": [],
+  "next_directions": [],
+  "provenance": {
+    "source_type": "REMOTE_ATREX_CANONICAL",
+    "source_path": "/private/atrex-megatron/campaigns/kernel_opt_residual_rmsnorm_train_triton_bi_v150_production/memory/v5.json",
+    "source_commit": null,
+    "canonical": true,
+    "evidence_level": 3,
+    "location": "remote_biv150",
+    "read_only": true
+  },
+  "tags": [
+    "imported"
+  ]
+}

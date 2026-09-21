@@ -1,0 +1,10 @@
+{
+  "marker": true,
+  "symbol": true,
+  "extern_c": true,
+  "cudart_inf_forbidden": false,
+  "source_sha256": "1ce4b7739f402706a7bc10cdb674495266f5337365f8276e6b1d1a3ded2e4c66",
+  "compile_stdout": "",
+  "compile_stderr": "/tmp/aka_phase17b_a1/candidate.cu(21): error: identifier \"CUDART_INF_F\" is undefined\n\n1 error detected in the compilation of \"/tmp/aka_phase17b_a1/candidate.cu\".\n",
+  "compile_pass": false
+}

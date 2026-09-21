@@ -1,0 +1,16 @@
+{
+  "compile_pass": false,
+  "correctness_pass": false,
+  "shapes": [],
+  "aggregate_score": 0.0,
+  "geometric_mean_speedup": 1.0,
+  "speedup": null,
+  "latency_us": null,
+  "evidence": {
+    "compile": false,
+    "error": "no result.json from V100; stdout=Traceback (most recent call last):\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 329, in <module>\n    main()\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 307, in main\n    result[\"latency_us\"] = round(time_it(candidate_fn, *inputs), 2)\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 183, in time_it\n    torch.cuda.synchronize()\n  File \"<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/cu"
+  },
+  "error": "no result.json from V100; stdout=Traceback (most recent call last):\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 329, in <module>\n    main()\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 307, in main\n    result[\"latency_us\"] = round(time_it(candidate_fn, *inputs), 2)\n  File \"/home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py\", line 183, in time_it\n    torch.cuda.synchronize()\n  File \"<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/cu",
+  "profile_available": false,
+  "profile_summary": null
+}

@@ -1,0 +1,10 @@
+{
+  "target": "swiglu",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "phase": "14-B",
+  "kind": "source_and_runtime_mapping",
+  "optimization_started": false,
+  "runtime": {"backend": "Megatron MLP.forward", "dtype": "float16", "shape": [128, 2, 1024], "tp": 1},
+  "nsys_observation": "FC1/FC2 GEMMs plus separate SiLU, add, and multiply kernels; no TE fused activation kernel",
+  "scores": "none"
+}

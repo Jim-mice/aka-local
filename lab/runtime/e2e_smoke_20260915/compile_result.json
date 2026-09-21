@@ -1,0 +1,7 @@
+{
+  "pass": true,
+  "tests": 56,
+  "failures": [],
+  "max_abs": 0.015625,
+  "max_rel": 0.0078125
+}

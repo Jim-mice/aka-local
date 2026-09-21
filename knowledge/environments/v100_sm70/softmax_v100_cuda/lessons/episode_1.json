@@ -1,0 +1,11 @@
+{
+  "operator": "softmax_v100_cuda",
+  "episode": 1,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "compile",
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/9858fbedc3e4/candidate.cu(37): error: identifier \"CUDART_INF_F\" is undefined\n\n1 error detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/9858fbedc3e4/candidate.cu\".\n",
+  "compiler_error": "/home/<REMOTE_USER>/aka_remote_jobs/9858fbedc3e4/candidate.cu(37): error: identifier \"CUDART_INF_F\" is undefined\n\n1 error detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/9858fbedc3e4/candidate.cu\".\n",
+  "reusable_rule": "Avoid undefined symbols: ensure all device functions are defined in candidate.cu",
+  "timestamp": "2026-09-19T12:52:29.111419+00:00"
+}

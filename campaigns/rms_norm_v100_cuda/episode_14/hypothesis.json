@@ -1,0 +1,6 @@
+{
+  "claim": "Use one 256-thread block per row with float4 coalesced loads, warp-shuffle sum-of-squares reduction, a small shared-memory warp reduction, and fused normalization/output passes.",
+  "strategy_tags": ["warp_shuffle_reduction", "shared_memory_optimization", "coalesced_memory_access", "parallel_reduction", "fused_multiply_add", "reciprocal_sqrt", "register_optimization", "vectorized_loads"],
+  "expected_effects": ["reduce synchronization", "reduce shared memory traffic", "improve global-memory throughput", "fuse RMS scaling with weighted output"],
+  "risk": ["register pressure", "assumes naturally aligned float4 accesses for the main contiguous tensor path"]
+}

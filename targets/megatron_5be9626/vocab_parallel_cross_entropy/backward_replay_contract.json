@@ -1,0 +1,70 @@
+{
+  "contract_version": "ce_backward_replay_v1",
+  "contract_status": "ACTIVE_FROZEN",
+  "contract_hash": "4841f90840fee98eeff354e999fd25a1626c99e561cd5402b0dc68ec8f0d94da",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "forward_replay_contract_hash": "d8ea9db11871996c",
+  "semantic_evaluator": {"version": "tp2_semantic_v2", "hash": "7cc0fac8d80b2d27"},
+  "source": {
+    "module": "megatron.core.tensor_parallel.cross_entropy",
+    "public_entry": "vocab_parallel_cross_entropy",
+    "autograd_function": "_VocabParallelCrossEntropy.backward",
+    "source_file": "megatron/core/tensor_parallel/cross_entropy.py",
+    "source_lines": {"forward_save": "178-183", "backward": "185-210", "prepare": "81-98", "calculate": "100-116"},
+    "call_chain": "loss.backward -> _VocabParallelCrossEntropy.backward -> prepare_gradient_calculation_operands -> calculate_gradients"
+  },
+  "scope": {
+    "label_smoothing": 0.0,
+    "inputs_are_real_saved_forward_state": true,
+    "forward_and_saved_state_generation_outside_replay": true,
+    "collectives": 0,
+    "distributed_process_group_required_for_fixture_only": true
+  },
+  "inputs": {
+    "softmax": {"semantic_role": "Megatron saved exp_logits after in-place global-denominator normalization", "shape": "[S,B,V/TP]", "flattened": "[N,V/TP]", "dtype": "float32", "layout": "contiguous row-major", "mutability": "mutated in place as grad_input"},
+    "target_mask": {"semantic_role": "true when global target is outside this rank vocabulary range", "shape": "[S,B]", "dtype": "bool", "layout": "contiguous", "mutability": "read-only"},
+    "masked_target_1d": {"semantic_role": "global target minus vocab_start_index; non-owning rows replaced with zero", "shape": "[N]", "dtype": "int64", "layout": "contiguous", "mutability": "read-only"},
+    "grad_output": {"semantic_role": "upstream gradient of FP32 per-token loss", "shape": "[S,B]", "flattened": "[N]", "dtype": "float32", "layout": "contiguous", "mutability": "read-only"}
+  },
+  "output": {
+    "grad_input": {"semantic_role": "rank-local logits gradient before autograd cast-back to FP16 input", "shape": "[S,B,V/TP]", "dtype": "float32", "layout": "contiguous row-major", "alias": "same storage as softmax", "inplace": true}
+  },
+  "mathematics": {
+    "rows": "N=S*B",
+    "softmax_update": "1.0 - target_mask.reshape(N).float()",
+    "owned_target_update": "grad_2d[row, masked_target_1d[row]] -= softmax_update[row]",
+    "non_owned_target_update": "masked_target_1d is zero but softmax_update is zero, so no subtraction occurs",
+    "final": "grad_input[row,:] *= grad_output[row]",
+    "ownership": "rank owns global ids [rank*(V/TP),(rank+1)*(V/TP)); exactly one rank subtracts the target probability"
+  },
+  "saved_state_provenance": {
+    "softmax": "ctx.saved_tensors[0] from real Megatron forward",
+    "target_mask": "ctx.saved_tensors[1] from real Megatron forward",
+    "masked_target_1d": "ctx.saved_tensors[2] from real Megatron forward",
+    "fixture_version": "coherent_global_fixture_v2"
+  },
+  "official_configurations": [
+    {"S": 8, "B": 1, "global_vocab": 32, "tp_sizes": [1, 2]},
+    {"S": 32, "B": 2, "global_vocab": 64, "tp_sizes": [1, 2]},
+    {"S": 128, "B": 2, "global_vocab": 128, "tp_sizes": [1, 2]}
+  ],
+  "correctness_tolerances": {
+    "saved_softmax_vs_full_vocab_fp32_oracle": {"atol": 1e-6, "rtol": 1e-6},
+    "direct_fp32_gradient_vs_oracle": {"atol": 1e-5, "rtol": 1e-5},
+    "public_fp16_input_gradient_vs_oracle": {"atol": 0.03, "rtol": 0.03},
+    "finite_difference_fp64_sanity": {"atol": 1e-7, "rtol": 1e-7}
+  },
+  "official_dtype_behavior": {
+    "fixture_logits": "float16",
+    "forward_saved_softmax": "float32",
+    "target_mask": "bool",
+    "masked_target": "int64",
+    "grad_output": "float32",
+    "direct_boundary_gradient": "float32",
+    "autograd_gradient_on_float16_input": "float16"
+  },
+  "shape_formulas": {"N": "S*B", "local_vocab": "global_vocab/TP", "local_logits": "[S,B,local_vocab]"},
+  "stream_semantics": "all helper CUDA work executes on the current PyTorch CUDA stream; no default-stream handoff is permitted",
+  "excluded_operations": ["forward", "MAX/SUM all-reduces", "saved-state construction", "fixture generation", "process initialization", "autograd wrapper bookkeeping", "FP32-to-FP16 cast performed by autograd after this direct boundary"],
+  "future_campaign_rule": "No backward Agent candidate may change the zero-collective boundary or semantic saved-state roles"
+}

@@ -1,0 +1,26 @@
+{
+  "phase": "compile",
+  "pass": true,
+  "returncode": 0,
+  "stdout": "{\"pass\": true, \"tests\": 56, \"failures\": [], \"max_abs\": 0.015625, \"max_rel\": 0.0078125}\n",
+  "stderr": "C:\\Users\\38154\\projects\\aka-local\\.venv\\Lib\\site-packages\\setuptools\\_distutils\\_msvccompiler.py:12: UserWarning: _get_vc_env is private; find an alternative (pypa/distutils#340)\n  warnings.warn(\n",
+  "duration_s": 46.375,
+  "command": [
+    "C:\\Users\\38154\\projects\\aka-local\\.venv\\Scripts\\python.exe",
+    "-m",
+    "lab.runtime.evaluators.rmsnorm_correctness",
+    "--candidate",
+    "C:\\Users\\38154\\projects\\aka-local\\ops\\rms_norm_v2\\candidate.py",
+    "--reference",
+    "C:\\Users\\38154\\projects\\atrex-bench\\data\\rms_norm\\reference.py",
+    "--output",
+    "C:\\Users\\38154\\projects\\aka-local\\lab\\runtime\\e2e_smoke_20260915\\compile_result.json"
+  ],
+  "metrics": {
+    "pass": true,
+    "tests": 56,
+    "failures": [],
+    "max_abs": 0.015625,
+    "max_rel": 0.0078125
+  }
+}

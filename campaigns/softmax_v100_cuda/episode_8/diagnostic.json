@@ -1,0 +1,30 @@
+{
+  "id": "diag-feec121e4641",
+  "category": "UNKNOWN",
+  "severity": "INFO",
+  "confidence": 0.3,
+  "message": "NSYS-derived diagnosis for softmax_v100_cuda_episode_8",
+  "evidence": {
+    "items": [
+      "kernel_count=4",
+      "total_kernel_time_us=2568.84",
+      "geo_mean_speedup=1.226",
+      "sync_calls=2",
+      "dominant_kernel_pct=99.2",
+      "single_kernel_at_or_above_baseline=true"
+    ]
+  },
+  "possible_causes": [
+    "Launch overhead from multiple kernel invocations",
+    "Suboptimal kernel implementation",
+    "Synchronization overhead",
+    "Memory transfer overhead"
+  ],
+  "suggested_actions": [
+    "Kernel performs at or above baseline — no performance bottleneck identified from NSYS"
+  ],
+  "source": "nsys_profile",
+  "experiment_id": "softmax_v100_cuda_episode_8",
+  "timestamp": "2026-09-19T13:50:12.519832+00:00",
+  "generated_at": "2026-09-19T13:50:12.519832+00:00"
+}

@@ -1,0 +1,5 @@
+{
+  "graph": ["hidden_states -> input_layernorm (WrappedTorchNorm or TE fused residual-RMSNorm) -> attention/MLP branch", "branch output with optional bias -> BDA: residual + dropout(x + bias) -> residual merge", "merged hidden state -> next normalization"],
+  "separation": "BDA is called around branch outputs; it is not implicitly part of the non-TE RMSNorm call.",
+  "te_tuple_behavior": "When TE fused residual RMSNorm is active, TransformerLayer receives normalized output and a residual fork; non-TE WrappedTorchNorm returns normalization output only."
+}

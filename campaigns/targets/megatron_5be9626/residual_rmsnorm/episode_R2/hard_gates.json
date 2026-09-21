@@ -1,0 +1,251 @@
+{
+  "edge": [
+    {
+      "edge": [
+        {
+          "case": "zero",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "constant",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "positive",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "negative",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "small",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "large",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "edge": [
+        {
+          "case": "zero",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "constant",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "positive",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "negative",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "small",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "large",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        }
+      ]
+    },
+    {
+      "edge": [
+        {
+          "case": "zero",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "constant",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "positive",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "negative",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "small",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        },
+        {
+          "case": "large",
+          "max_abs": 0.0,
+          "max_rel": 0.0,
+          "finite": true
+        }
+      ]
+    }
+  ],
+  "backward": [
+    {
+      "x_grad_max_abs": 0.00390625,
+      "x_grad_max_rel": 0.1015625,
+      "weight_grad_max_abs": 0.0,
+      "weight_grad_max_rel": 0.0,
+      "architecture": "candidate forward plus trusted reference backward sidecar"
+    },
+    {
+      "x_grad_max_abs": 0.0078125,
+      "x_grad_max_rel": 0.65234375,
+      "weight_grad_max_abs": 0.0,
+      "weight_grad_max_rel": 0.0,
+      "architecture": "candidate forward plus trusted reference backward sidecar"
+    },
+    {
+      "x_grad_max_abs": 0.0078125,
+      "x_grad_max_rel": 9417534.0,
+      "weight_grad_max_abs": 0.0,
+      "weight_grad_max_rel": 0.0,
+      "architecture": "candidate forward plus trusted reference backward sidecar"
+    }
+  ],
+  "negative": [
+    {
+      "negative": [
+        {
+          "case": "wrong_x_dtype",
+          "rejected": true,
+          "reason": "wrong dtype",
+          "kernel_launched": false
+        },
+        {
+          "case": "wrong_w_dtype",
+          "rejected": true,
+          "reason": "wrong dtype",
+          "kernel_launched": false
+        },
+        {
+          "case": "noncontig_x",
+          "rejected": true,
+          "reason": "shape mismatch",
+          "kernel_launched": false
+        },
+        {
+          "case": "noncontig_w",
+          "rejected": false,
+          "kernel_launched": false
+        },
+        {
+          "case": "wrong_output",
+          "rejected": true,
+          "reason": "noncontiguous",
+          "kernel_launched": false
+        }
+      ]
+    },
+    {
+      "negative": [
+        {
+          "case": "wrong_x_dtype",
+          "rejected": true,
+          "reason": "wrong dtype",
+          "kernel_launched": false
+        },
+        {
+          "case": "wrong_w_dtype",
+          "rejected": true,
+          "reason": "wrong dtype",
+          "kernel_launched": false
+        },
+        {
+          "case": "noncontig_x",
+          "rejected": true,
+          "reason": "noncontiguous",
+          "kernel_launched": false
+        },
+        {
+          "case": "noncontig_w",
+          "rejected": false,
+          "kernel_launched": false
+        },
+        {
+          "case": "wrong_output",
+          "rejected": true,
+          "reason": "noncontiguous",
+          "kernel_launched": false
+        }
+      ]
+    },
+    {
+      "negative": [
+        {
+          "case": "wrong_x_dtype",
+          "rejected": true,
+          "reason": "wrong dtype",
+          "kernel_launched": false
+        },
+        {
+          "case": "wrong_w_dtype",
+          "rejected": true,
+          "reason": "wrong dtype",
+          "kernel_launched": false
+        },
+        {
+          "case": "noncontig_x",
+          "rejected": true,
+          "reason": "noncontiguous",
+          "kernel_launched": false
+        },
+        {
+          "case": "noncontig_w",
+          "rejected": false,
+          "kernel_launched": false
+        },
+        {
+          "case": "wrong_output",
+          "rejected": true,
+          "reason": "noncontiguous",
+          "kernel_launched": false
+        }
+      ]
+    }
+  ],
+  "edge_status": "PASS",
+  "backward_status": "REJECT_CORRECTNESS",
+  "negative_status": "REJECT_CONTRACT"
+}

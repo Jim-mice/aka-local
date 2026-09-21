@@ -1,0 +1,31 @@
+{
+  "claim": "Use one 256-thread block per row with warp-shuffle max and sum reductions, minimizing global synchronization and shared-memory traffic while keeping row accesses coalesced.",
+  "strategy_tags": [
+    "warp_shuffle_reduction",
+    "shared_memory_optimization",
+    "coalesced_memory_access",
+    "parallel_reduction"
+  ],
+  "expected_effects": [
+    "reduce synchronization",
+    "reduce shared memory traffic",
+    "coalesced row loads and stores",
+    "robust throughput across the evaluated row counts"
+  ],
+  "risk": [
+    "repeated exponential evaluation",
+    "fixed 256-thread block size"
+  ],
+  "operator": "softmax_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "a92f1cf9b49882c1",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "x",
+      "y",
+      "rows",
+      "cols"
+    ]
+  }
+}

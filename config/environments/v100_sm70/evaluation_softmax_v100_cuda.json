@@ -1,0 +1,19 @@
+{
+  "shapes": [
+    [1, 1024],
+    [4, 4096],
+    [32, 1024],
+    [128, 4096]
+  ],
+  "score": "geometric_mean_speedup",
+  "correctness_tolerance": 0.0001,
+  "correctness_relative_tolerance": 0.001,
+  "warmup": 50,
+  "iterations": 200,
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract": {
+    "function": "launch_kernel",
+    "signature": "void launch_kernel(float* x, float* y, int rows, int cols)"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "candidate": "candidate.cu",
+  "contract_marker": "// AKA_TARGET_CONTRACT: megatron_native_dot_product_attention_forward:90839e70b4edbfdc9cdfd903fe9c51230311a8fc7c13fb1b2a0673acd261916c",
+  "hypothesis": {
+    "equations": "scores=QK^T*scale; P=FP32 dense no-mask softmax(scores); O=PV",
+    "layout": "contiguous FP16 [S,B,16,64], output [S,B,16,64] equivalent to [S,B,1024]",
+    "precision": "FP32 dot products, score storage, max/sum reductions, exp, normalization, and PV accumulation; FP16 output",
+    "mask": "None only",
+    "dropout": "p=0 identity, no RNG",
+    "parallelism": "one 128-thread block per query sequence position, batch, and head",
+    "workspace": "dynamic shared memory only; no external workspace or allocation",
+    "stream": "all work is enqueued on the supplied stream",
+    "official_configs": [[16,1,16,64],[64,2,16,64],[128,2,16,64]],
+    "excluded": ["causal", "arbitrary masks", "dropout RNG", "projections", "backward", "NCCL", "TE", "flash-attn"]
+  }
+}

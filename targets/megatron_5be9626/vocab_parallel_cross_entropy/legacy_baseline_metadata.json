@@ -1,0 +1,7 @@
+{
+  "baseline_hash": "f11fd1fc6846d6f2",
+  "legacy_scope_mismatch": true,
+  "reason": "Phase 15-A baseline used timed clone/autograd backward while the candidate harness used preallocated workspaces and manual local backward.",
+  "active_for_scoring": false,
+  "superseded_by_benchmark_era": "tp2_comparable_v1"
+}

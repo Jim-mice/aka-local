@@ -1,0 +1,15 @@
+{
+  "target": "Megatron SwiGLU activation boundary",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "replaceable_inputs": ["intermediate_parallel [S,B,2I/TP]", "bias_parallel optional [2I/TP]"],
+  "replaceable_outputs": ["activated intermediate [S,B,I/TP]"],
+  "saved_tensors": "future backward candidate must preserve autograd-required gate/up or equivalent saved state",
+  "shape_constraints": ["last dimension even", "intermediate width = 2*ffn_hidden_size/tensor_parallel_size", "gate/up ordering must match torch.chunk used by Megatron"],
+  "dtype_constraints": ["FP16/BF16/FP32 depending selected Megatron path", "FP8 excluded from this Phase 14-B boundary"],
+  "stream_semantics": "execute on current PyTorch CUDA stream; no implicit synchronization",
+  "workspace": "none identified for the unfused PyTorch/Megatron activation path",
+  "forward": "optional bias add -> chunk gate/up -> SiLU(gate) * (up + glu_linear_offset)",
+  "backward": "must produce gradients for intermediate and bias if supplied; current replay is forward-only observation",
+  "outside_scope": ["FC1 GEMM", "FC2 GEMM", "TP collectives", "Transformer Engine", "FP8 scaling/fusion", "dropout and residual BDA"],
+  "status": "observation boundary only; no replacement implementation"
+}

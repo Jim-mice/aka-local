@@ -1,0 +1,39 @@
+{
+  "claim": "Implemented a numerically stable standalone CUDA scaled dot-product attention kernel using one 256-thread block per query row, warp-shuffle reductions, shared-memory staging of the query row, and fused multiply-add dot products.",
+  "strategy_tags": [
+    "warp_shuffle_reduction",
+    "shared_memory_optimization",
+    "coalesced_memory_access",
+    "parallel_reduction",
+    "fused_multiply_add",
+    "register_optimization"
+  ],
+  "expected_effects": [
+    "reduce synchronization",
+    "reduce shared memory traffic",
+    "improve reduction throughput",
+    "preserve numerically stable softmax"
+  ],
+  "risk": [
+    "register pressure",
+    "repeated QK dot products may limit throughput",
+    "large dynamic shared-memory allocation for high head_dim"
+  ],
+  "operator": "dense_attention_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "8e7bfd5ec5c4a17f",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "q",
+      "k",
+      "v",
+      "o",
+      "batch",
+      "heads",
+      "seq",
+      "head_dim",
+      "scale"
+    ]
+  }
+}

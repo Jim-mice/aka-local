@@ -1,0 +1,6 @@
+name: local_default
+weak_improvement_threshold_pct: 2.0
+weak_improvement_action: ROBUSTNESS_REQUIRED
+strict_positive_metric: true
+correctness_required: true
+agent_can_promote: false

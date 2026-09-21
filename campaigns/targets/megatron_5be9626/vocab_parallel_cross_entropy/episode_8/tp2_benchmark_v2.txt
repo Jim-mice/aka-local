@@ -1,0 +1,36 @@
+{'rank': 0, 'world': 2, 'rows': [{'rows': 8, 'V': 32, 'mean_us': 2616.934394836426, 'std_us': 14.761248490960382, 'cv': 0.005640664328493053, 'samples_us': [2594.815969467163, 2634.752035140991, 2616.3198947906494, 2614.272117614746, 2624.511957168579]}, {'rows': 64, 'V': 64, 'mean_us': 2627.5840282440186, 'std_us': 8.062971128589298, 'cv': 0.0030685873570245746, 'samples_us': [2613.248109817505, 2630.6560039520264, 2632.704019546509, 2630.6240558624268, 2630.687952041626]}, {'rows': 256, 'V': 128, 'mean_us': 2641.919994354248, 'std_us': 33.0173185627654, 'cv': 0.01249747101854826, 'samples_us': [2666.4960384368896, 2660.3519916534424, 2590.6879901885986, 2665.503978729248, 2626.5599727630615]}]}{'rank': 1, 'world': 2, 'rows': [{'rows': 8, 'V': 32, 'mean_us': 179.4048011302948, 'std_us': 8.790908976662559, 'cv': 0.04900041092143381, 'samples_us': [194.5600062608719, 174.0799993276596, 179.19999361038208, 176.12800002098083, 173.0560064315796]}, {'rows': 64, 'V': 64, 'mean_us': 177.76639759540558, 'std_us': 2.5702213621417096, 'cv': 0.014458420696534031, 'samples_us': [176.12800002098083, 182.27200210094452, 176.12800002098083, 177.15199291706085, 177.15199291706085]}, {'rows': 256, 'V': 128, 'mean_us': 202.34239995479584, 'std_us': 6.08396972964287, 'cv': 0.030067695801779832, 'samples_us': [203.77600193023682, 197.63199985027313, 206.84799551963806, 208.8959962129593, 194.5600062608719]}]}
+
+
+STDERR
+
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+[rank0]:[W920 16:10:33.540154066 ProcessGroupNCCL.cpp:4718] [PG ID 0 PG GUID 0 Rank 0]  using GPU 0 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can pecify device_id in init_process_group() to force use of a particular device.
+<REMOTE_HOME>/venvs/lerobot-act/lib/python3.10/site-packages/torch/distributed/distributed_c10d.py:4631: UserWarning: No device id is provided via `init_process_group` or `barrier `. Using the current device set by the user. 
+  warnings.warn(  # warn only once
+[rank1]:[W920 16:10:33.585555148 ProcessGroupNCCL.cpp:4718] [PG ID 0 PG GUID 0 Rank 1]  using GPU 1 as device used by this process is currently unknown. This can potentially cause a hang if this rank to GPU mapping is incorrect. You can pecify device_id in init_process_group() to force use of a particular device.
+
+EXIT 0

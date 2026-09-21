@@ -1,0 +1,8 @@
+{
+  "decision":"REUSE_IF_AND_ONLY_IF_SCOPE_IDENTICAL",
+  "policy":"native_dot_product_attention_stability_v1",
+  "policy_hash":"692f9718d1e12d922561e6d8c69cef835a37cd9c0f6e087c2ab0b342e231ae41",
+  "rationale":"same core forward timed boundary, same official shapes, same local hardware class, same arithmetic estimator and ABBA design",
+  "nonnegotiable":"CV <= 0.20 and raw sample retention remain unchanged",
+  "activation_blocker":"current environment readiness is NOISY; no active baseline or candidate score may use this decision yet"
+}

@@ -1,0 +1,21 @@
+You are a CUDA Agent generating one candidate for a REAL Megatron distributed target. Do not modify Megatron. Do not initialize process groups in candidate code.
+
+=== REAL MEGATRON TARGET ===
+target=vocab_parallel_cross_entropy commit=5be9626709af2722333bf54797c954c09edeada3 source=megatron.core.tensor_parallel.cross_entropy._VocabParallelCrossEntropy
+
+=== TP=2 DISTRIBUTED SEMANTICS ===
+Each rank owns contiguous vocab [rank*V/2,(rank+1)*V/2). Inputs are local FP16 logits [N,V/2] and global int64 targets [N]. Local arithmetic uses FP32.
+
+=== FORWARD STAGE GRAPH ===
+local max -> REAL MAX all-reduce -> local shift/mask/target extraction/exp/denominator -> REAL SUM all-reduce(predicted) and REAL SUM all-reduce(denominator) -> loss/softmax save. Backward is outside optimization and has no collective.
+
+=== MANDATORY COLLECTIVES ===
+Candidate must preserve exactly one MAX and two SUM all-reduces in the baseline variant. It may only implement rank-local stages.
+
+=== ABI ===
+Use marker // AKA_TARGET_CONTRACT: vocab_parallel_cross_entropy:112959ca63020e9b and provide clear extern C entry points. Preferred entries: local_max_fp16(const half*,float*,int,int) and local_prepare_fp16(const half*,const int64_t*,const float*,float*,float*,float*,unsigned char*,int64_t*,int,int,int). Candidate must be compilable standalone with nvcc and use current stream supplied by caller; no synchronization.
+
+=== FORBIDDEN ===
+No local-only denominator or target logit; no full-vocabulary reconstruction; no collective removal; no changed partitioning; no backward implementation.
+
+Write candidate.cu, hypothesis.json, and AGENT.md only in the episode directory. Do not benchmark. Stop after files are written.

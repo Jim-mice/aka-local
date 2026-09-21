@@ -1,0 +1,10 @@
+{
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "historical_shorthand": "Residual Add RMSNorm",
+  "resolved_boundaries": [
+    {"name": "BDA", "source": "megatron/core/fusions/fused_bias_dropout.py::_bias_dropout_add_func", "semantics": "residual + dropout(x + optional_bias)", "fusion": "TorchScript helper, not RMSNorm"},
+    {"name": "non_TE_Torch_RMSNorm", "source": "megatron/core/transformer/torch_norm.py::WrappedTorchNorm", "semantics": "torch.nn.RMSNorm", "availability": "real replay available"},
+    {"name": "TE_fused_residual_RMSNorm", "source": "megatron/core/extensions/transformer_engine.py::TEFusedResidualRMSNorm", "semantics": "TE RMSNorm plus residual fork/extra output", "availability": "dependency blocked"}
+  ],
+  "transformer_layer_sites": ["megatron/core/transformer/transformer_layer.py input_layernorm invocation and tuple residual handling", "attention/MLP BDA calls after branch outputs"]
+}

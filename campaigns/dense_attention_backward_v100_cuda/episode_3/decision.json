@@ -1,0 +1,26 @@
+{
+  "episode": 3,
+  "operator": "dense_attention_backward_v100_cuda",
+  "decision": "REJECT_COMPILE",
+  "compile_pass": false,
+  "correctness_pass": false,
+  "speedup": null,
+  "aggregate_score": 1.0,
+  "geometric_mean_speedup": 1.0,
+  "incumbent_score": 1.0,
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/54da9858dcaa/candidate.cu(80): error: expression must have pointer-to-object type but it has type \"int\"\n\n/home/<REMOTE_USER>/aka_remote_jobs/54da9858dcaa/candidate.cu(64): warning #177-D: function \"backward_dk_kernel\" was declared but never referenced\n\n1 error detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/54da9858dcaa/candidate.cu\".\n",
+  "evaluated_at": "2026-09-19T16:25:49.925568+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,2,32,32",
+    "1,4,64,64",
+    "1,8,128,64",
+    "2,4,128,64"
+  ],
+  "legacy_benchmark": true,
+  "legacy_benchmark_reason": "baseline included forward recomputation",
+  "benchmark_contract": {
+    "version": 1,
+    "mode": "forward_recompute_autograd"
+  }
+}

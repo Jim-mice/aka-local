@@ -1,0 +1,103 @@
+{
+  "candidate": {
+    "path": "C:\\Users\\38154\\projects\\aka-local\\ops\\swiglu_forward_v2b\\kernel.py",
+    "sha256": "bc4749b0e1059d2a9afede059ffc175c7dff3cae791b5f5473599a344e20a23d",
+    "bytes": 846
+  },
+  "reference_dir": "C:\\Users\\38154\\projects\\atrex-bench\\local_ops\\swiglu_forward_v2b",
+  "reference_files": {
+    "reference.py": {
+      "path": "C:\\Users\\38154\\projects\\atrex-bench\\local_ops\\swiglu_forward_v2b\\reference.py",
+      "sha256": "76fc82fa50421d86a8e54354ccafae74786c6c46e795e9b6459519fbd9339091",
+      "bytes": 320
+    },
+    "input.py": {
+      "path": "C:\\Users\\38154\\projects\\atrex-bench\\local_ops\\swiglu_forward_v2b\\input.py",
+      "sha256": "96aba9cee2d21105f63fe36f8bede0a424d96a9fd384b17fad164a44aec7e3f3",
+      "bytes": 263
+    },
+    "shapes.json": {
+      "path": "C:\\Users\\38154\\projects\\atrex-bench\\local_ops\\swiglu_forward_v2b\\shapes.json",
+      "sha256": "d03507001bc47b0d5c4cba0af7788c7b881a02681a99bb30022b1c1eb680582d",
+      "bytes": 450
+    },
+    "metadata.json": {
+      "path": "C:\\Users\\38154\\projects\\atrex-bench\\local_ops\\swiglu_forward_v2b\\metadata.json",
+      "sha256": "cb82d497eafd6fac761b389d7a61d199a2d81fa1dc9f7d1753e898aeaa502b86",
+      "bytes": 462
+    }
+  },
+  "runner_config": {
+    "config_version": "v1",
+    "mode": "candidate",
+    "validation_mode": "correctness_only",
+    "atol": 0.01,
+    "rtol": 0.05,
+    "correctness_max_rel_l2": null,
+    "num_correctness_cases": 1,
+    "warmup_iters": 10,
+    "bench_iters": 100,
+    "candidate_timeout_s": 120.0,
+    "benchmark_mode": "eager",
+    "cuda_graph_cache_flush_mb": 1024,
+    "graph_atol": 0.01,
+    "graph_rtol": 0.05,
+    "graph_min_cosine": null,
+    "graph_max_rel_l2": null,
+    "trust_mode": "trusted",
+    "require_clock_locked": false
+  },
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_arch": "sm_120",
+    "accelerator_backend": "cuda",
+    "driver_version": "610.88",
+    "runtime_version": "13.0",
+    "clock_locked": false,
+    "clock_lock_detected": false,
+    "clock_lock_source": null,
+    "PTL_STATE": null,
+    "torch_version": "2.14.0+cu130",
+    "python_version": "3.11.15"
+  },
+  "worker_command": [
+    "C:\\Users\\38154\\projects\\aka-local\\.venv\\Scripts\\python.exe",
+    "C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\cli\\run_eval.py",
+    "--input",
+    "C:\\Users\\38154\\projects\\aka-local\\ops\\swiglu_forward_v2b\\kernel.py",
+    "--reference-dir",
+    "C:\\Users\\38154\\projects\\atrex-bench\\local_ops\\swiglu_forward_v2b",
+    "--output",
+    "C:\\Users\\38154\\projects\\aka-local\\campaigns\\local_gateway_v0",
+    "--atol",
+    "0.01",
+    "--rtol",
+    "0.05",
+    "--num-correctness-cases",
+    "1",
+    "--warmup-iters",
+    "10",
+    "--bench-iters",
+    "100",
+    "--candidate-timeout-s",
+    "120.0",
+    "--perf-timeout-s",
+    "600.0",
+    "--benchmark-mode",
+    "eager",
+    "--cuda-graph-cache-flush-mb",
+    "1024",
+    "--graph-atol",
+    "0.01",
+    "--graph-rtol",
+    "0.05",
+    "--config-version",
+    "v1",
+    "--trust-mode",
+    "trusted",
+    "--worker",
+    "--artifact-dir",
+    "C:\\Users\\38154\\projects\\aka-local\\campaigns\\local_gateway_v0\\20260910-153142\\swiglu_forward_v2b",
+    "--correctness-only"
+  ]
+}

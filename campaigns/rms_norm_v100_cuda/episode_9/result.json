@@ -1,0 +1,19 @@
+{
+  "compile_pass": false,
+  "correctness_pass": false,
+  "shapes": [],
+  "aggregate_score": 0.0,
+  "geometric_mean_speedup": 1.0,
+  "speedup": null,
+  "latency_us": null,
+  "evidence": {
+    "compile": false,
+    "compile_error": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identifier \"this_will_fail_to_compile\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(7): error: expected a \";\"\n\n2 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu\".\n",
+    "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o  /home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu",
+    "correctness": false,
+    "max_error": null
+  },
+  "error": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identifier \"this_will_fail_to_compile\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(7): error: expected a \";\"\n\n2 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu\".\n",
+  "profile_available": false,
+  "profile_summary": null
+}

@@ -1,0 +1,5 @@
+import json,pathlib,paramiko
+root=pathlib.Path(__file__).resolve().parents[3]; out=root/'targets/megatron_5be9626/megatron_native_dot_product_attention'; secret=__import__('os').environ['AKA_V100_PASSWORD']; s=paramiko.SSHClient(); s.set_missing_host_key_policy(paramiko.AutoAddPolicy()); s.connect('<REMOTE_HOST>',username='<REMOTE_USER>',password=secret,timeout=20); d='/tmp/aka_phase20a_hybrid_nsys'; records=[]
+for mode in ('reference','hybrid'):
+ name=f's64_{mode}'; _,so,se=s.exec_command(f'/usr/local/cuda-11.3/bin/nsys stats --report gpukernsum,cudaapisum,nvtxppsum --format csv --output {d}/{name}_stats {d}/{name}.qdrep',timeout=300); _,fo,fe=s.exec_command(f'for f in {d}/{name}_stats*; do echo __FILE__$f; cat $f; done',timeout=300); records.append({'mode':mode,'stats_stderr':se.read().decode()[-1000:],'files':fo.read().decode()[-16000:]})
+(out/'phase20a_hybrid_nsys.json').write_text(json.dumps({'status':'DIAGNOSTIC_ONLY_NOT_PROMOTION','shape':[64,2,1024],'collectives':0,'records':records},indent=2)+'\n'); print('collected',len(records));s.close()

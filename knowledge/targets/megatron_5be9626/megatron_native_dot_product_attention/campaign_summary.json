@@ -1,0 +1,9 @@
+{
+  "phase": "17-B",
+  "status": "BUILD_BLOCKED",
+  "reference": "stability-qualified; all official config CV <= 0.20",
+  "a1": "CUDART_INF_F compile failure; source preserved unchanged",
+  "lesson": "CUDA 11.8 compatibility preflight must reject CUDART_INF_F before correctness or scoring.",
+  "no_candidate_performance_claim": true,
+  "no_incumbent": true
+}

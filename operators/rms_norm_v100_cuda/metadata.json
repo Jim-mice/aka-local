@@ -1,0 +1,24 @@
+{
+  "operator": "rms_norm_v100_cuda",
+  "gpu": "Tesla V100-PCIE-16GB",
+  "arch": "sm_70",
+  "interface": "standalone_cuda",
+  "source_file": "candidate.cu",
+  "contract": "extern C void launch_kernel(float* x, float* weight, float* y, int batch, int hidden, float eps)",
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract_schema": {
+    "operator": "rms_norm_v100_cuda",
+    "entry": "launch_kernel",
+    "version": 1,
+    "arguments": [
+      {"name": "x",      "type": "float*", "role": "input",       "description": "input tensor [batch, hidden]"},
+      {"name": "weight", "type": "float*", "role": "input_scale", "description": "per-hidden-element multiplicative scale [hidden]"},
+      {"name": "y",      "type": "float*", "role": "output",      "description": "output tensor [batch, hidden]"},
+      {"name": "batch",  "type": "int",    "role": "dimension",   "description": "number of rows in input"},
+      {"name": "hidden", "type": "int",    "role": "dimension",   "description": "features per row"},
+      {"name": "eps",    "type": "float",  "role": "epsilon",     "description": "numerical stability epsilon"}
+    ],
+    "semantics": "RMSNorm: For each row i in [0, batch):\n  mean_square = (1/hidden) * sum(x[i][j]^2 for j in [0, hidden))\n  y[i][j] = (x[i][j] / sqrt(mean_square + eps)) * weight[j]"
+  }
+}

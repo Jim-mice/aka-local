@@ -1,0 +1,104 @@
+{
+  "environment": "v100_sm70",
+  "operator": "layer_norm_v100_cuda",
+  "best_patterns": [
+    "Episode 7: geo_mean=1.126x across 4 shapes, score=1.126"
+  ],
+  "avoid_patterns": [
+    "Avoid regressions: ensure kernel is faster than incumbent across ALL shapes",
+    "Avoid compilation errors: ensure candidate.cu is valid standalone CUDA C++",
+    "Avoid correctness failures: verify RMSNorm formula y=(x/rms(x))*weight"
+  ],
+  "successful_strategies": [
+    {
+      "name": "Episode 7: geo_mean=1.126x across 4 shapes, score=1.126",
+      "episodes": [
+        7
+      ],
+      "average_gain": 1.122,
+      "confidence": "medium"
+    }
+  ],
+  "failed_strategies": [
+    {
+      "name": "aggregate_score=0.021 <= incumbent=1.126",
+      "episodes": [
+        0
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "no result.json from V100; stdout=Traceback (most recent call last):\n  File \"/hom",
+      "episodes": [
+        1
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "correctness failed; max_error=9.75206470489502",
+      "episodes": [
+        2
+      ],
+      "reason": "correctness"
+    },
+    {
+      "name": "correctness failed; max_error=8.749374389648438",
+      "episodes": [
+        3
+      ],
+      "reason": "correctness"
+    },
+    {
+      "name": "aggregate_score=0.021 <= incumbent=1.0",
+      "episodes": [
+        4
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "correctness failed; max_error=9.93441104888916",
+      "episodes": [
+        6
+      ],
+      "reason": "correctness"
+    },
+    {
+      "name": "aggregate_score=0.021 <= incumbent=1.126",
+      "episodes": [
+        8
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=0.021 <= incumbent=1.126",
+      "episodes": [
+        9
+      ],
+      "reason": "performance"
+    }
+  ],
+  "recommendations": [
+    "Use float4 vectorized loads for coalesced memory access on V100",
+    "Use warp-shuffle or shared-memory reduction for normalization statistics",
+    "Use one 256-thread block per row for row-wise normalization",
+    "Use shared-memory reduction for mean/variance or mean-of-squares",
+    "Guard all thread accesses with batch/row bounds checking",
+    "Test ALL evaluation shapes before claiming correctness"
+  ],
+  "confidence": "medium",
+  "apply_when": [
+    "Optimizing normalization kernels on V100 (sm_70)",
+    "Batch sizes 1-32 with hidden dim 4096",
+    "Standalone CUDA kernel with no PyTorch dependency"
+  ],
+  "avoid_when": [
+    "Single-shape-only testing (must validate all shapes)",
+    "Missing batch/row bounds checking in kernel",
+    "Compile failures from syntax errors",
+    "Regressions vs current incumbent on ANY shape"
+  ],
+  "best_score": 1.122,
+  "total_accepted": 1,
+  "total_rejected": 8,
+  "last_updated": "2026-09-19T16:39:12.727996+00:00"
+}

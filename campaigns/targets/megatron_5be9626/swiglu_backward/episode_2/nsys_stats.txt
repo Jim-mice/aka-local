@@ -1,0 +1,167 @@
+{
+  "compile_pass": true,
+  "compile_error": "",
+  "contract_hash": "a7437b0c42289669",
+  "shapes": [
+    {
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "max_abs_error": 0.0078125,
+      "max_rel_error": 0.09857177734375,
+      "correctness": true,
+      "baseline": {
+        "mean_us": 271.98387145996094,
+        "std_us": 8.587766562080635,
+        "cv": 0.03157454343150215,
+        "samples_us": [
+          271.37664794921875,
+          286.4460754394531,
+          269.8841667175293,
+          268.55295181274414,
+          263.6595153808594
+        ]
+      },
+      "candidate": {
+        "mean_us": 71.30265617370605,
+        "std_us": 3.94839151051383,
+        "cv": 0.05537509711973198,
+        "samples_us": [
+          77.15199947357178,
+          73.23264122009277,
+          70.09568214416504,
+          67.19039916992188,
+          68.84255886077881
+        ]
+      },
+      "baseline_latency_us": 271.98387145996094,
+      "candidate_latency_us": 71.30265617370605,
+      "speedup": 3.814498450062778
+    },
+    {
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "max_abs_error": 0.015625,
+      "max_rel_error": 0.2431640625,
+      "correctness": true,
+      "baseline": {
+        "mean_us": 267.7920608520508,
+        "std_us": 2.533372224590716,
+        "cv": 0.009460221548503444,
+        "samples_us": [
+          264.1676712036133,
+          269.79488372802734,
+          270.54304122924805,
+          266.8281555175781,
+          267.6265525817871
+        ]
+      },
+      "candidate": {
+        "mean_us": 69.3624963760376,
+        "std_us": 2.4695279331421345,
+        "cv": 0.035603215889952786,
+        "samples_us": [
+          70.447998046875,
+          72.5596809387207,
+          69.46720123291016,
+          68.46464157104492,
+          65.8729600906372
+        ]
+      },
+      "baseline_latency_us": 267.7920608520508,
+      "candidate_latency_us": 69.3624963760376,
+      "speedup": 3.860761576403757
+    },
+    {
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "max_abs_error": 0.01171875,
+      "max_rel_error": 0.25341796875,
+      "correctness": true,
+      "baseline": {
+        "mean_us": 272.6552314758301,
+        "std_us": 1.0110341053977754,
+        "cv": 0.0037081045535977547,
+        "samples_us": [
+          272.01311111450195,
+          272.40800857543945,
+          274.16351318359375,
+          271.5878486633301,
+          273.10367584228516
+        ]
+      },
+      "candidate": {
+        "mean_us": 66.08729553222656,
+        "std_us": 2.207410247940666,
+        "cv": 0.03340143109448703,
+        "samples_us": [
+          64.3075180053711,
+          65.21728038787842,
+          64.10624027252197,
+          69.08063888549805,
+          67.72480010986328
+        ]
+      },
+      "baseline_latency_us": 272.6552314758301,
+      "candidate_latency_us": 66.08729553222656,
+      "speedup": 4.125682996709609
+    }
+  ],
+  "correctness_pass": true,
+  "geometric_mean_speedup": 3.9312931240351734
+}
+Collecting data...
+Generating '/tmp/nsys-<REMOTE_USER>/nsys-report-caf3.qdstrm'
+[1/1] [0%                          ] phase14e_backward.nsys-rep[1/1] [0%                          ] phase14e_backward.nsys-rep[1/1] [9%                          ] phase14e_backward.nsys-rep[1/1] [11%                         ] phase14e_backward.nsys-rep[1/1] [14%                         ] phase14e_backward.nsys-rep[1/1] [=15%                        ] phase14e_backward.nsys-rep[1/1] [=16%                        ] phase14e_backward.nsys-rep[1/1] [=17%                        ] phase14e_backward.nsys-rep[1/1] [==18%                       ] phase14e_backward.nsys-rep[1/1] [==19%                       ] phase14e_backward.nsys-rep[1/1] [==20%                       ] phase14e_backward.nsys-rep[1/1] [==21%                       ] phase14e_backward.nsys-rep[1/1] [===22%                      ] phase14e_backward.nsys-rep[1/1] [===23%                      ] phase14e_backward.nsys-rep[1/1] [===24%                      ] phase14e_backward.nsys-rep[1/1] [====25%                     ] phase14e_backward.nsys-rep[1/1] [====26%                     ] phase14e_backward.nsys-rep[1/1] [========41%                 ] phase14e_backward.nsys-rep[1/1] [===========53%              ] phase14e_backward.nsys-rep[1/1] [==============64%           ] phase14e_backward.nsys-rep[1/1] [========================100%] phase14e_backward.nsys-rep[1/1] [========================100%] phase14e_backward.nsys-rep
+Generated:
+	/home/<REMOTE_USER>/aka_targets/phase14e_backward.nsys-rep
+Generating SQLite file /home/<REMOTE_USER>/aka_targets/phase14e_backward.sqlite from /home/<REMOTE_USER>/aka_targets/phase14e_backward.nsys-rep
+Processing [/home/<REMOTE_USER>/aka_targets/phase14e_backward.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+33.0,104798515,4599,22787.2,22113.0,12832,36449,8375.7,"void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+16.8,53526683,4599,11638.8,12257.0,6688,19072,3773.7,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+14.7,46845736,1533,30558.2,29761.0,9505,54690,17379.3,"<unnamed>::swiglu_backward_kernel(const __half *, const __half *, __half *, int, int, __half)"
+12.7,40200913,1533,26223.7,25569.0,14144,43905,10168.9,"void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::sigmoid_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 2)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(c10::Half) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+12.4,39303595,1533,25638.4,25665.0,11168,42818,11773.6,"void at::native::<unnamed>::CatArrayBatchedCopy_contig<at::native::<unnamed>::OpaqueType<(unsigned int)2>, unsigned int, (int)2, (int)128, (int)1>(T1 *, at::native::<unnamed>::CatArrInputTensorMetadata<T1, T2, T4, T5>, at::native::<unnamed>::TensorSizeStride<T2, (unsigned int)4>, int, T2)"
+5.0,15971734,1539,10378.0,10368.0,6528,24416,3209.2,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnSelf_add<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+4.9,15549764,1533,10143.4,10336.0,6432,15489,3015.5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnOther_add<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.1,304171,6,50695.2,47106.0,24129,89347,22425.9,"void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::native::templates::cuda::normal_and_transform<c10::Half, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::<unnamed>::distribution_nullary_kernel<c10::Half, float, float4, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_and_transform<c10::Half, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T4, const T5 &, T6)::[lambda(int, float) (instance 1)]>(long, at::PhiloxCudaState, T3, T4)"
+0.1,242762,6,40460.3,38961.5,31905,49602,7602.6,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::Half, at::native::func_wrapper_t<c10::Half, at::native::MaxNanFunctor<c10::Half>>, unsigned int, c10::Half, (int)4, (int)4>>(T3)"
+0.1,234408,15,15627.2,15520.0,6944,24577,7154.7,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AbsFunctor<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.0,129155,3,43051.7,45057.0,17408,66690,24702.1,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::DivFunctor<c10::Half>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,108195,6,18032.5,17472.5,8256,28417,8963.5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<c10::Half>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,107493,3,35831.0,33730.0,29281,44482,7815.3,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<bool, at::native::func_wrapper_t<bool, at::native::and_kernel_cuda(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(bool, bool) (instance 1)]>, unsigned int, bool, (int)4, (int)4>>(T3)"
+0.0,90498,6,15083.0,14704.5,7616,25473,6890.8,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, bool, at::native::<unnamed>::CompareEqFunctor<c10::Half>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,58305,3,19435.0,20160.0,8576,29569,10515.3,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::<unnamed>::CompareFunctor<c10::Half>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,47393,3,15797.7,16096.0,7456,23841,8196.6,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.0,44161,3,14720.3,14880.0,7488,21793,7153.8,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::binary_internal::MulFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,43330,3,14443.3,14945.0,7328,21057,6878.2,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::BitwiseAndFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,41473,3,13824.3,14048.0,7296,20129,6419.4,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::BitwiseOrFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,38369,3,12789.7,13216.0,7360,17793,5229.5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<c10::Half, c10::Half, bool, at::native::<unnamed>::CompareEqFunctor<c10::Half>>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+
+Processing [/home/<REMOTE_USER>/aka_targets/phase14e_backward.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_api_sum.py]... 
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+97.3,251744402,16932,14868.0,7202.0,4846,17929850,307787.5,cudaLaunchKernel
+0.9,2436150,33,73822.7,5971.0,5048,975211,207930.3,cudaDeviceSynchronize
+0.7,1709030,6,284838.3,303548.5,128145,483852,125719.2,cudaMalloc
+0.5,1182836,2,591418.0,591418.0,18581,1164255,810113.9,cudaHostAlloc
+0.2,409588,2,204794.0,204794.0,201940,207648,4036.2,cudaGetDeviceProperties
+0.1,329380,9,36597.8,17056.0,7341,148219,48306.1,cudaStreamSynchronize
+0.1,300686,60,5011.4,4844.5,4107,10080,974.2,cudaEventRecord
+0.1,212207,60,3536.8,2881.0,2065,25802,3629.8,cudaEventCreateWithFlags
+0.1,193563,60,3226.1,1770.0,576,27719,4634.1,cudaEventDestroy
+0.0,105720,9,11746.7,8989.0,5653,21000,5936.2,cudaMemcpyAsync
+0.0,101866,384,265.3,211.0,94,1128,162.5,cuGetProcAddress
+0.0,78081,9,8675.7,8270.0,5260,13334,3072.3,cudaMemsetAsync
+0.0,31181,18,1732.3,984.5,337,13262,2947.3,cudaStreamIsCapturing
+0.0,2742,1,2742.0,2742.0,2742,2742,0.0,cuInit
+0.0,1423,2,711.5,711.5,244,1179,661.1,cuModuleGetLoadingMode
+

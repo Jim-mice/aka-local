@@ -1,0 +1,13 @@
+{
+  "version":"moe_native_sequential_expert_compute_stability_v1",
+  "independent_invocations":3,
+  "blocks_per_invocation":3,
+  "samples_per_block_distribution":10,
+  "warmups":5,
+  "primary_estimator":"arithmetic mean per distribution",
+  "stability_gate":"CV <= 0.20 per distribution",
+  "raw_samples":"retain all valid rows; fail closed on missing rows",
+  "future_design":"paired ABBA reference/candidate",
+  "bootstrap":{"seed":1818,"resamples":10000},
+  "status":"frozen before Agent scoring"
+}

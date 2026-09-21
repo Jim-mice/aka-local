@@ -1,0 +1,9 @@
+{
+  "status": "INHERITED_EVIDENCE_MANIFEST",
+  "phase17_replay_contract":"65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+  "phase17_performance_contract":"5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+  "a2":"correct and stability-qualified; per-config mixed 5.928x/1.167x/0.347x; no incumbent",
+  "a3":"REJECT_CORRECTNESS at S=128 max_abs=0.3759765625",
+  "new_constraint":"preserve vendor QK and PV GEMMs; replace local scale/softmax/conversion graph only",
+  "prohibited":"A2 dispatch by shape, full-core row-serial, Agent candidate generation"
+}

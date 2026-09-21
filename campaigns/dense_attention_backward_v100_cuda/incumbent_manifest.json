@@ -1,0 +1,20 @@
+{
+  "operator": "dense_attention_backward_v100_cuda",
+  "benchmark_contract_version": 2,
+  "benchmark_contract": {
+    "version": 2,
+    "mode": "saved_p_backward_only",
+    "correctness_oracle": "pytorch_autograd",
+    "performance_baseline": "pytorch_saved_p_analytical"
+  },
+  "benchmark_contract_hash": "6ac27010f01f3d2f",
+  "episode": 2,
+  "candidate_hash": "26deaa148e8c2b3b",
+  "score": 0.152107,
+  "promotion_rule": "highest comparable v2 geometric_mean_speedup",
+  "legacy_incumbent_history": {
+    "score": 1.0,
+    "benchmark_contract_version": 1,
+    "reason": "legacy incumbent retained for audit only"
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "target_name": "vocab_parallel_cross_entropy",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_call_site": "megatron.core.tensor_parallel.cross_entropy.vocab_parallel_cross_entropy -> _VocabParallelCrossEntropy.forward/backward",
+  "source_files": [
+    "megatron/core/tensor_parallel/cross_entropy.py",
+    "megatron/core/fusions/fused_cross_entropy.py",
+    "megatron/core/models/common/language_module/language_module.py"
+  ],
+  "inputs": {
+    "logits_local": "[S,B,V/TP] or [N,V/TP], rank-local contiguous tensor",
+    "target": "[S,B] or [N] global token ids",
+    "tp_group": "Megatron tensor model parallel process group"
+  },
+  "outputs": {
+    "loss": "[S,B] or [N], per-token loss; backward returns local logits gradient"
+  },
+  "tp_semantics": {
+    "vocab_range": "rank*V/TP:(rank+1)*V/TP",
+    "partition_requirement": "global V divisible by TP",
+    "target_ownership": "mask targets outside local range; subtract target probability only on owning rank"
+  },
+  "forward_communication": [
+    {
+      "collective": "ALL_REDUCE",
+      "op": "MAX",
+      "value": "local logits max",
+      "shape": "[N]",
+      "dtype": "float32"
+    },
+    {
+      "collective": "ALL_REDUCE",
+      "op": "SUM",
+      "value": "predicted target logit",
+      "shape": "[N]",
+      "dtype": "float32"
+    },
+    {
+      "collective": "ALL_REDUCE",
+      "op": "SUM",
+      "value": "local exp denominator",
+      "shape": "[N]",
+      "dtype": "float32"
+    }
+  ],
+  "backward": {
+    "saved": [
+      "exp_logits/softmax",
+      "target_mask",
+      "masked_target_1d"
+    ],
+    "formula": "softmax_local; subtract 1 at owned target; multiply by grad_output",
+    "collectives": "none"
+  },
+  "dtype": {
+    "fixture_logits": "float16",
+    "max_and_reduction_accumulation": "float32",
+    "loss": "float32",
+    "local_gradient": "float16"
+  },
+  "shape_formulas": {
+    "N": "S*B",
+    "local_logits": "[N,V/TP]",
+    "targets": "[N]",
+    "collective_payload": "[N] float32"
+  },
+  "official_configurations": [
+    {
+      "S": 8,
+      "B": 1,
+      "V": 32
+    },
+    {
+      "S": 32,
+      "B": 2,
+      "V": 64
+    },
+    {
+      "S": 128,
+      "B": 2,
+      "V": 128
+    }
+  ],
+  "correctness_tolerances": {
+    "loss": {
+      "atol": 0.002,
+      "rtol": 0.002
+    },
+    "gradient": {
+      "atol": 0.03,
+      "rtol": 0.03
+    }
+  },
+  "timing_boundary": "CUDA-event interval around real Megatron vocab_parallel_cross_entropy forward plus backward, including mandatory TP collectives and excluding process startup, imports, fixture generation and setup",
+  "process_group_requirements": "NCCL initialized; Megatron model parallel state initialized with tensor_model_parallel_size=TP and pipeline_model_parallel_size=1",
+  "excluded_operations": [
+    "model construction",
+    "fixture generation",
+    "process initialization",
+    "optimizer",
+    "fake or replaced collectives"
+  ],
+  "contract_version": "1.0.0",
+  "contract_hash": "d8ea9db11871996c"
+}

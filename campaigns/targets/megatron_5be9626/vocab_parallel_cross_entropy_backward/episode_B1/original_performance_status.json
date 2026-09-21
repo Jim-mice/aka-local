@@ -1,0 +1,6 @@
+{
+  "status": "STABILITY_BLOCKED_ORIGINAL_RUN",
+  "candidate_hash": "008155d13eda72ab1feb267a06d360a13ad2730128a4aca4cfe8a3af70e374ab",
+  "raw_geomean_proxy_speedup": 2.5571710921067,
+  "reason": "paired reference rank0 CV exceeded frozen 0.20 for 8x1x32 and 32x2x64; historical raw data remains immutable"
+}

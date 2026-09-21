@@ -1,0 +1,38 @@
+{
+  "contract_version": "ce_backward_local_optimization_v1",
+  "contract_status": "ACTIVE_FROZEN",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "backward_replay_contract_hash": "4841f90840fee98eeff354e999fd25a1626c99e561cd5402b0dc68ec8f0d94da",
+  "backward_performance_contract_hash": "afbfcff56ee6891b888ca7c6fbf632b74ccfab71f849d7934c56dc1d4bd9e205",
+  "backward_statistical_policy_hash": "7a750bc7f4f3c7b768bd5b35d695dab6762131d4c6681d6925100bf5557cf18f",
+  "replacement_scope": "rank-local no-label-smoothing CE backward from real saved FP32 softmax/mask/masked target and FP32 grad_output to FP32 local logits gradient",
+  "candidate_abi_policy": "out_of_place_preallocated_output_v1",
+  "aliasing": {
+    "real_source": "Megatron aliases grad_input to saved-softmax and mutates it in place",
+    "active_harness": "grad_input is a separate preallocated contiguous FP32 buffer; reference copies softmax to it outside timing, then executes the exact Megatron helpers on grad_input. Candidate reads softmax and writes grad_input. softmax must remain read-only.",
+    "forbidden": "candidate must not rely on grad_input == softmax; passing overlapping input/output is rejected by the adapter"
+  },
+  "required_entry_point": {
+    "symbol": "ce_backward_local_fp32_stream",
+    "extern_c": true,
+    "return_type": "void",
+    "prototype": "extern \"C\" void ce_backward_local_fp32_stream(const float* softmax, const bool* target_mask, const int64_t* masked_target_1d, const float* grad_output, float* grad_input, int64_t rows, int64_t local_vocab, cudaStream_t stream);",
+    "argument_order": ["softmax", "target_mask", "masked_target_1d", "grad_output", "grad_input", "rows", "local_vocab", "stream"]
+  },
+  "inputs": {
+    "softmax": "FP32 contiguous [N,L], real normalized saved softmax, read-only",
+    "target_mask": "bool contiguous [N], true iff target is not owned by rank, read-only",
+    "masked_target_1d": "int64 contiguous [N], safe local index and zero when non-owning, read-only",
+    "grad_output": "FP32 contiguous [N], upstream per-token loss gradient, read-only"
+  },
+  "output": "FP32 contiguous [N,L] grad_input; owning row j=t: (softmax-1)*g; every other element and non-owning rows: softmax*g",
+  "dtype_layout": "row-major contiguous; N=S*B; L=V/TP; all pointer alignment assumptions must be checked or safely handled",
+  "stream": "launch only on supplied current PyTorch CUDA stream; no device-wide synchronization",
+  "workspace": "none required; any implementation workspace must be caller-preallocated outside timing and explicitly added in a future contract",
+  "zero_collective_invariant": "no NCCL, torch.distributed, process-group, or collective operation inside candidate boundary",
+  "official_configurations": [[8,1,32],[32,2,64],[128,2,128]],
+  "correctness_tolerances": {"direct_fp32_gradient": {"atol": 1e-5, "rtol": 1e-5}, "saved_softmax_readonly": {"exact": true}},
+  "excluded_operations": ["forward", "all forward collectives", "saved-state construction", "output allocation", "template copy", "autograd bookkeeping", "public FP32-to-FP16 cast-back", "label smoothing"],
+  "contract_marker": "// AKA_TARGET_CONTRACT: vocab_parallel_cross_entropy_backward:6121f49401f3ef4601549c8732a62870ff17a7a7d7047e9c55d55b79c9ff6e92",
+  "contract_hash": "6121f49401f3ef4601549c8732a62870ff17a7a7d7047e9c55d55b79c9ff6e92"
+}

@@ -1,0 +1,27 @@
+{
+  "namespace": "megatron_5be9626/vocab_parallel_cross_entropy/backward",
+  "phase": "15-C.1",
+  "status": "QUALIFIED_NO_AGENT_CAMPAIGN",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "replay_contract_hash": "4841f90840fee98eeff354e999fd25a1626c99e561cd5402b0dc68ec8f0d94da",
+  "performance_contract_hash": "afbfcff56ee6891b888ca7c6fbf632b74ccfab71f849d7934c56dc1d4bd9e205",
+  "statistical_policy_hash": "7a750bc7f4f3c7b768bd5b35d695dab6762131d4c6681d6925100bf5557cf18f",
+  "source_lessons": [
+    "Megatron backward is a custom autograd.Function with no collective at this commit.",
+    "The saved softmax is FP32 and is mutated in place as the gradient buffer.",
+    "Non-owning ranks use a safe zero local target index and a zero subtraction weight.",
+    "The exact backward boundary creates arange_1d and softmax_update inside the source helper."
+  ],
+  "runtime_lessons": [
+    "Real ctx.saved_tensors match an independent full-vocabulary FP32 oracle.",
+    "TP=2 rank-local direct gradients pass on both ranks; maximum direct-vs-oracle error was 2.98e-8.",
+    "Backward-only NVTX capture contains seven local CUDA kernel families and no NCCL kernel.",
+    "Latency asymmetry follows physical GPU mapping; GPU1 had an unrelated CUDA process and GPU0 showed higher temperature/clock variability."
+  ],
+  "performance_lessons": [
+    "The old 0.87 ms/5.32 ms measurements were rank-wait contaminated and are not the baseline.",
+    "The isolated baseline uses current-stream CUDA events and excludes barriers from the timed interval.",
+    "A future candidate must use the same saved-state, output aliasing, temporary allocation, stream, and timing policy."
+  ],
+  "optimization_status": "No backward Agent candidate, score, or incumbent was created in Phase 15-C.1."
+}

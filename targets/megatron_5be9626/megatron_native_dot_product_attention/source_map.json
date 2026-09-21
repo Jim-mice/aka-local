@@ -1,0 +1,25 @@
+{
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "chain": [
+    "megatron.core.transformer.transformer_layer.TransformerLayer.forward",
+    "megatron.core.transformer.attention.Attention.forward",
+    "Attention._run_core_attention",
+    "megatron.core.transformer.dot_product_attention.DotProductAttention.forward",
+    "FusedScaleMaskSoftmax.forward"
+  ],
+  "line_map": {
+    "Attention.core_attention_construction": "megatron/core/transformer/attention.py:382",
+    "Attention._run_core_attention": "megatron/core/transformer/attention.py:498-510",
+    "Attention.static_core_dispatch": "megatron/core/transformer/attention.py:1558",
+    "DotProductAttention.class": "megatron/core/transformer/dot_product_attention.py:26",
+    "DotProductAttention.forward": "megatron/core/transformer/dot_product_attention.py:142-237",
+    "TEDotProductAttention.class": "megatron/core/extensions/transformer_engine.py:1770"
+  },
+  "separation": {
+    "qkv_projection": "Attention.forward before _run_core_attention",
+    "core_attention": "DotProductAttention.forward",
+    "output_projection": "Attention.forward after _run_core_attention",
+    "te_alternative": "megatron.core.extensions.transformer_engine.TEDotProductAttention"
+  },
+  "dot_product_lines": {"score": "baddbmm", "softmax": "self.scale_mask_softmax", "dropout": "self.attention_dropout", "context": "torch.bmm"}
+}

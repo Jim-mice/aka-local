@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "replay_artifact": "final_replay_15b8_tp2.txt",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "performance_contract_hash": "6632730d9957fbb1a0da4268f2b3c168b2836862db167935d8908758a00b5bea",
+  "statistical_policy_hash": "a74bf021f535c6de48b3b37b9568bdf06df5ff77075b3e6afd652cf96fa0dc05",
+  "evaluator_hash": "7cc0fac8d80b2d27",
+  "fixture_version": "coherent_global_fixture_v2",
+  "candidate_hash": "947e17aa55f8cbb6d6ab85e8e671e0a1f1be26c7ef54a5bec727d5839549d5c6",
+  "episode": 7,
+  "tp": 2,
+  "dtype": "float16",
+  "shape_set": [[8,1,32],[32,2,64],[128,2,128]],
+  "collective_structure": ["MAX", "SUM predicted", "SUM denominator"],
+  "loss_max_abs_per_rank": 0.0019044876098632812,
+  "saved_softmax_max_abs_per_rank": 1.4901161193847656e-08,
+  "grad_max_abs_per_rank": 1.4901161193847656e-08
+}

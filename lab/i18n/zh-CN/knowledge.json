@@ -1,0 +1,7 @@
+{
+  "rmsnorm-v2-local-observation":{"title_zh_CN":"RMSNorm V2 的资源占用与重复 ABBA 结果","statement_zh_CN":"Standalone RMSNorm V2 将 shared memory 从 2048B 降到 1056B，并保持 30 registers/thread；重复 ABBA 记录约 1.074x arithmetic speedup。","notes_zh_CN":"结论限定在 RTX5060、CUDA C++ 和 standalone workload。"},
+  "biv150-swiglu-direct-loop":{"title_zh_CN":"中等 T 下扩大 direct row loop 导致性能回退","statement_zh_CN":"在 BI-V150 Bias SwiGLU campaign 中，把 single-launch direct serial row-loop 扩展到中等 T 后出现性能回退；该方向不应继续扩大。","notes_zh_CN":"这是 BI-V150/CoreX Triton/当前 shape regime 的 scoped anti-strategy。"},
+  "biv150-corex-masked-2d-tile":{"title_zh_CN":"BI-V150 CoreX/Triton 的 masked 2D row tile 编译异常","statement_zh_CN":"Residual RMSNorm campaign 中的特定 masked 2D row-tile implementation 在 BI-V150 CoreX/Triton 上出现 OOB corruption。","notes_zh_CN":"不要将该 backend-specific 问题泛化到 NVIDIA Triton。"},
+  "swiglu-v3-noise-reject":{"title_zh_CN":"SwiGLU V3 的弱正收益未通过稳定性验证","statement_zh_CN":"Standalone RTX5060 SwiGLU V3 的初始正收益未通过 repeated ABBA robustness；V2b 保持 incumbent。","notes_zh_CN":"不是对所有 V3-like kernel 的普遍结论。"},
+  "coverage-open-questions":{"title_zh_CN":"跨 GPU 证据覆盖情况","statement_zh_CN":"目前仍需在匹配的 contract 和 workload 下比较 V100、BI-V150 与 RTX5060 上 training-operator mechanism 的行为。","notes_zh_CN":"当前是 OPEN QUESTION，尚无 matched cross-GPU experiment。"}
+}

@@ -1,0 +1,11 @@
+{
+  "operator": "rms_norm",
+  "episode": 2,
+  "decision": "REJECT",
+  "reason": "performance regression: speedup=0.95",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 0.95,
+  "failure_stage": "REJECTED",
+  "timestamp": "2026-09-19T02:55:15.686376+00:00"
+}

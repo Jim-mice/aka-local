@@ -1,0 +1,29 @@
+{
+  "target": "swiglu",
+  "contract_version": 1,
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_call_site": "megatron.core.transformer.mlp.MLP.forward activation branch",
+  "replacement_scope": "activation_subgraph_only",
+  "inputs": [
+    {"name": "intermediate", "type": "const half*", "shape": "[rows, 2*ffn_hidden_size/tp]", "layout": "contiguous row-major", "stride": "[2I/tp, 1]"},
+    {"name": "bias", "type": "const half*", "shape": "[2*ffn_hidden_size/tp] or null", "layout": "contiguous row", "official_value": "null because add_bias_linear=false"},
+    {"name": "rows", "type": "int", "shape": "S*B", "layout": "scalar"},
+    {"name": "width", "type": "int", "shape": "2*I/tp", "layout": "scalar"},
+    {"name": "glu_linear_offset", "type": "float", "shape": "scalar", "official_value": 0.0}
+  ],
+  "outputs": [{"name": "activated", "type": "half*", "shape": "[rows, width/2]", "layout": "contiguous row-major", "stride": "[width/2, 1]"}],
+  "abi": "extern C void launch_swiglu(const half* intermediate, const half* bias, half* activated, int rows, int width, float glu_linear_offset)",
+  "contract_marker": "// AKA_TARGET_CONTRACT: swiglu_v1 intermediate,bias,activated,rows,width,glu_linear_offset half_fp16 contiguous activation_only",
+  "dtype": "FP16 input/output; float intermediate for sigmoid/SiLU arithmetic is permitted; FP8 excluded",
+  "shape_formulas": {"rows": "S*B", "input_width": "2*I/tensor_parallel_size", "output_width": "I/tensor_parallel_size"},
+  "official_replay_shapes": [[16, 1, 1024], [64, 2, 1024], [128, 2, 1024]],
+  "semantics": "If bias is non-null add bias[j] to intermediate[row,j]; gate=first half, up=second half; activated[row,j]=SiLU(gate)*(up+glu_linear_offset).",
+  "excluded_operations": ["FC1 GEMM", "FC2 GEMM", "tensor-parallel collectives", "Transformer Engine", "FP8 scaling", "dropout", "residual BDA"],
+  "stream_assumptions": "current CUDA stream; launch is asynchronous and must not synchronize internally",
+  "workspace_assumptions": "no workspace",
+  "timing_boundary": {"outside": ["imports", "module construction", "fixture generation", "FC1 GEMM", "warmup"], "inside": "one candidate or one trusted PyTorch activation subgraph from fixed intermediate input to activated output"},
+  "correctness_tolerance": {"atol": 0.002, "rtol": 0.002, "basis": "Phase 14-B FP16 V100 evidence"},
+  "benchmark_methodology": {"warmup": 10, "iterations": 100, "cuda_events": true, "synchronize_before_after": true, "per_shape": true, "aggregate": "geometric_mean(candidate_speedup)"},
+  "backend": "Megatron non-TE non-fused activation semantics; sidecar CUDA replacement",
+  "contract_hash": "2b05cc321bed0956"
+}

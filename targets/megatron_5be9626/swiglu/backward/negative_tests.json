@@ -1,0 +1,31 @@
+{
+  "tests": [
+    {
+      "name": "wrong_dtype",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: intermediate",
+      "candidate_launched": false
+    },
+    {
+      "name": "non_contiguous",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: intermediate",
+      "candidate_launched": false
+    },
+    {
+      "name": "unsupported_shape",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: unsupported shape",
+      "candidate_launched": false
+    },
+    {
+      "name": "cpu",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: intermediate",
+      "candidate_launched": false
+    }
+  ],
+  "candidate_not_launched": true
+}
+
+

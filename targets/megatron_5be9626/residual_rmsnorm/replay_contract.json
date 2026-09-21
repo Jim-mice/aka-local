@@ -1,0 +1,17 @@
+{
+  "contract_version": "torch_rmsnorm_replay_v1",
+  "contract_hash": "5588960649248c710c9ae57f0b613ee4e881564aa8bf6a4361b2f56276bcecb6",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "canonical_target": "Megatron non-TE Torch RMSNorm",
+  "source": {"wrapper": "megatron.core.transformer.torch_norm.WrappedTorchNorm", "implementation": "torch.nn.RMSNorm", "separate_bda_helper": "megatron.core.fusions.fused_bias_dropout.get_bias_dropout_add"},
+  "dependencies": {"pytorch": "2.7.1+cu118", "transformer_engine": "not importable; TEFusedResidualRMSNorm unavailable"},
+  "equation": "y = cast_to_input_dtype(x_fp32 * rsqrt(mean(x_fp32^2, last_dim) + eps) * weight_fp32)",
+  "inputs": {"x": {"dtype": "float16", "layout": "contiguous", "shape": "[S,B,H]"}, "weight": {"dtype": "float16", "layout": "contiguous", "shape": "[H]"}, "eps": "TransformerConfig.layernorm_epsilon"},
+  "output": {"dtype": "float16", "layout": "contiguous", "shape": "[S,B,H]"},
+  "backward": {"implementation": "PyTorch RMSNorm autograd", "required_gradients": ["x", "weight"], "accumulation": "float32 oracle"},
+  "training": {"dropout": "none", "rng": "none"},
+  "distributed": {"tensor_parallel": "not part of this local normalization boundary", "collectives": 0},
+  "official_configs": [[16,1,1024],[64,2,1024],[128,2,1024]],
+  "tolerances": {"forward_atol": 0.005, "forward_rtol": 0.005, "backward_atol": 0.005, "backward_rtol": 0.005},
+  "excluded_paths": ["BDA", "TEFusedResidualRMSNorm", "dropout", "collectives"]
+}

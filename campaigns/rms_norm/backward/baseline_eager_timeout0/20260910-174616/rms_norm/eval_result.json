@@ -1,0 +1,4876 @@
+{
+  "kernel": {
+    "name": "rms_norm",
+    "id": "atrex_027",
+    "dtype": "bf16"
+  },
+  "dsl": "unknown",
+  "eval_mode": "candidate",
+  "eval_id": "20260910T094618Z-8395c886",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_arch": "sm_120",
+    "accelerator_backend": "cuda",
+    "driver_version": "610.88",
+    "runtime_version": "13.0",
+    "clock_locked": false,
+    "clock_lock_detected": false,
+    "clock_lock_source": null,
+    "PTL_STATE": null,
+    "torch_version": "2.14.0+cu130",
+    "python_version": "3.11.15"
+  },
+  "runner_config": {
+    "config_version": "v1",
+    "mode": "candidate",
+    "validation_mode": "full",
+    "atol": 0.01,
+    "rtol": 0.05,
+    "correctness_max_rel_l2": null,
+    "num_correctness_cases": 1,
+    "warmup_iters": 20,
+    "bench_iters": 100,
+    "candidate_timeout_s": 0.0,
+    "benchmark_mode": "eager",
+    "cuda_graph_cache_flush_mb": 1024,
+    "graph_atol": 0.01,
+    "graph_rtol": 0.05,
+    "graph_min_cosine": null,
+    "graph_max_rel_l2": null,
+    "trust_mode": "trusted",
+    "require_clock_locked": false
+  },
+  "passed": {
+    "compile": {
+      "0": {
+        "status": "passed",
+        "reason": null
+      },
+      "1": {
+        "status": "passed",
+        "reason": null
+      },
+      "10": {
+        "status": "passed",
+        "reason": null
+      },
+      "11": {
+        "status": "passed",
+        "reason": null
+      },
+      "12": {
+        "status": "passed",
+        "reason": null
+      },
+      "13": {
+        "status": "passed",
+        "reason": null
+      },
+      "14": {
+        "status": "passed",
+        "reason": null
+      },
+      "15": {
+        "status": "passed",
+        "reason": null
+      },
+      "16": {
+        "status": "passed",
+        "reason": null
+      },
+      "17": {
+        "status": "passed",
+        "reason": null
+      },
+      "18": {
+        "status": "passed",
+        "reason": null
+      },
+      "19": {
+        "status": "passed",
+        "reason": null
+      },
+      "2": {
+        "status": "passed",
+        "reason": null
+      },
+      "20": {
+        "status": "passed",
+        "reason": null
+      },
+      "21": {
+        "status": "passed",
+        "reason": null
+      },
+      "22": {
+        "status": "passed",
+        "reason": null
+      },
+      "23": {
+        "status": "passed",
+        "reason": null
+      },
+      "24": {
+        "status": "passed",
+        "reason": null
+      },
+      "25": {
+        "status": "passed",
+        "reason": null
+      },
+      "26": {
+        "status": "passed",
+        "reason": null
+      },
+      "27": {
+        "status": "passed",
+        "reason": null
+      },
+      "28": {
+        "status": "passed",
+        "reason": null
+      },
+      "29": {
+        "status": "passed",
+        "reason": null
+      },
+      "3": {
+        "status": "passed",
+        "reason": null
+      },
+      "30": {
+        "status": "passed",
+        "reason": null
+      },
+      "31": {
+        "status": "passed",
+        "reason": null
+      },
+      "32": {
+        "status": "passed",
+        "reason": null
+      },
+      "33": {
+        "status": "passed",
+        "reason": null
+      },
+      "34": {
+        "status": "passed",
+        "reason": null
+      },
+      "35": {
+        "status": "passed",
+        "reason": null
+      },
+      "36": {
+        "status": "passed",
+        "reason": null
+      },
+      "37": {
+        "status": "passed",
+        "reason": null
+      },
+      "38": {
+        "status": "passed",
+        "reason": null
+      },
+      "39": {
+        "status": "passed",
+        "reason": null
+      },
+      "4": {
+        "status": "passed",
+        "reason": null
+      },
+      "40": {
+        "status": "passed",
+        "reason": null
+      },
+      "41": {
+        "status": "passed",
+        "reason": null
+      },
+      "42": {
+        "status": "passed",
+        "reason": null
+      },
+      "43": {
+        "status": "passed",
+        "reason": null
+      },
+      "44": {
+        "status": "passed",
+        "reason": null
+      },
+      "45": {
+        "status": "passed",
+        "reason": null
+      },
+      "46": {
+        "status": "passed",
+        "reason": null
+      },
+      "47": {
+        "status": "passed",
+        "reason": null
+      },
+      "48": {
+        "status": "passed",
+        "reason": null
+      },
+      "49": {
+        "status": "passed",
+        "reason": null
+      },
+      "5": {
+        "status": "passed",
+        "reason": null
+      },
+      "50": {
+        "status": "passed",
+        "reason": null
+      },
+      "51": {
+        "status": "passed",
+        "reason": null
+      },
+      "52": {
+        "status": "passed",
+        "reason": null
+      },
+      "53": {
+        "status": "passed",
+        "reason": null
+      },
+      "54": {
+        "status": "passed",
+        "reason": null
+      },
+      "55": {
+        "status": "passed",
+        "reason": null
+      },
+      "6": {
+        "status": "passed",
+        "reason": null
+      },
+      "7": {
+        "status": "passed",
+        "reason": null
+      },
+      "8": {
+        "status": "passed",
+        "reason": null
+      },
+      "9": {
+        "status": "passed",
+        "reason": null
+      }
+    },
+    "correctness": {
+      "0": {
+        "status": "passed",
+        "reason": null
+      },
+      "1": {
+        "status": "passed",
+        "reason": null
+      },
+      "10": {
+        "status": "passed",
+        "reason": null
+      },
+      "11": {
+        "status": "passed",
+        "reason": null
+      },
+      "12": {
+        "status": "passed",
+        "reason": null
+      },
+      "13": {
+        "status": "passed",
+        "reason": null
+      },
+      "14": {
+        "status": "passed",
+        "reason": null
+      },
+      "15": {
+        "status": "passed",
+        "reason": null
+      },
+      "16": {
+        "status": "passed",
+        "reason": null
+      },
+      "17": {
+        "status": "passed",
+        "reason": null
+      },
+      "18": {
+        "status": "passed",
+        "reason": null
+      },
+      "19": {
+        "status": "passed",
+        "reason": null
+      },
+      "2": {
+        "status": "passed",
+        "reason": null
+      },
+      "20": {
+        "status": "passed",
+        "reason": null
+      },
+      "21": {
+        "status": "passed",
+        "reason": null
+      },
+      "22": {
+        "status": "passed",
+        "reason": null
+      },
+      "23": {
+        "status": "passed",
+        "reason": null
+      },
+      "24": {
+        "status": "passed",
+        "reason": null
+      },
+      "25": {
+        "status": "passed",
+        "reason": null
+      },
+      "26": {
+        "status": "passed",
+        "reason": null
+      },
+      "27": {
+        "status": "passed",
+        "reason": null
+      },
+      "28": {
+        "status": "passed",
+        "reason": null
+      },
+      "29": {
+        "status": "passed",
+        "reason": null
+      },
+      "3": {
+        "status": "passed",
+        "reason": null
+      },
+      "30": {
+        "status": "passed",
+        "reason": null
+      },
+      "31": {
+        "status": "passed",
+        "reason": null
+      },
+      "32": {
+        "status": "passed",
+        "reason": null
+      },
+      "33": {
+        "status": "passed",
+        "reason": null
+      },
+      "34": {
+        "status": "passed",
+        "reason": null
+      },
+      "35": {
+        "status": "passed",
+        "reason": null
+      },
+      "36": {
+        "status": "passed",
+        "reason": null
+      },
+      "37": {
+        "status": "passed",
+        "reason": null
+      },
+      "38": {
+        "status": "passed",
+        "reason": null
+      },
+      "39": {
+        "status": "passed",
+        "reason": null
+      },
+      "4": {
+        "status": "passed",
+        "reason": null
+      },
+      "40": {
+        "status": "passed",
+        "reason": null
+      },
+      "41": {
+        "status": "passed",
+        "reason": null
+      },
+      "42": {
+        "status": "passed",
+        "reason": null
+      },
+      "43": {
+        "status": "passed",
+        "reason": null
+      },
+      "44": {
+        "status": "passed",
+        "reason": null
+      },
+      "45": {
+        "status": "passed",
+        "reason": null
+      },
+      "46": {
+        "status": "passed",
+        "reason": null
+      },
+      "47": {
+        "status": "passed",
+        "reason": null
+      },
+      "48": {
+        "status": "passed",
+        "reason": null
+      },
+      "49": {
+        "status": "passed",
+        "reason": null
+      },
+      "5": {
+        "status": "passed",
+        "reason": null
+      },
+      "50": {
+        "status": "passed",
+        "reason": null
+      },
+      "51": {
+        "status": "passed",
+        "reason": null
+      },
+      "52": {
+        "status": "passed",
+        "reason": null
+      },
+      "53": {
+        "status": "passed",
+        "reason": null
+      },
+      "54": {
+        "status": "passed",
+        "reason": null
+      },
+      "55": {
+        "status": "passed",
+        "reason": null
+      },
+      "6": {
+        "status": "passed",
+        "reason": null
+      },
+      "7": {
+        "status": "passed",
+        "reason": null
+      },
+      "8": {
+        "status": "passed",
+        "reason": null
+      },
+      "9": {
+        "status": "passed",
+        "reason": null
+      }
+    },
+    "performance": {
+      "0": {
+        "status": "passed",
+        "reason": null
+      },
+      "1": {
+        "status": "passed",
+        "reason": null
+      },
+      "10": {
+        "status": "passed",
+        "reason": null
+      },
+      "11": {
+        "status": "passed",
+        "reason": null
+      },
+      "12": {
+        "status": "passed",
+        "reason": null
+      },
+      "13": {
+        "status": "passed",
+        "reason": null
+      },
+      "14": {
+        "status": "passed",
+        "reason": null
+      },
+      "15": {
+        "status": "passed",
+        "reason": null
+      },
+      "16": {
+        "status": "passed",
+        "reason": null
+      },
+      "17": {
+        "status": "passed",
+        "reason": null
+      },
+      "18": {
+        "status": "passed",
+        "reason": null
+      },
+      "19": {
+        "status": "passed",
+        "reason": null
+      },
+      "2": {
+        "status": "passed",
+        "reason": null
+      },
+      "20": {
+        "status": "passed",
+        "reason": null
+      },
+      "21": {
+        "status": "passed",
+        "reason": null
+      },
+      "22": {
+        "status": "passed",
+        "reason": null
+      },
+      "23": {
+        "status": "passed",
+        "reason": null
+      },
+      "24": {
+        "status": "passed",
+        "reason": null
+      },
+      "25": {
+        "status": "passed",
+        "reason": null
+      },
+      "26": {
+        "status": "passed",
+        "reason": null
+      },
+      "27": {
+        "status": "passed",
+        "reason": null
+      },
+      "28": {
+        "status": "passed",
+        "reason": null
+      },
+      "29": {
+        "status": "passed",
+        "reason": null
+      },
+      "3": {
+        "status": "passed",
+        "reason": null
+      },
+      "30": {
+        "status": "passed",
+        "reason": null
+      },
+      "31": {
+        "status": "passed",
+        "reason": null
+      },
+      "32": {
+        "status": "passed",
+        "reason": null
+      },
+      "33": {
+        "status": "passed",
+        "reason": null
+      },
+      "34": {
+        "status": "passed",
+        "reason": null
+      },
+      "35": {
+        "status": "passed",
+        "reason": null
+      },
+      "36": {
+        "status": "passed",
+        "reason": null
+      },
+      "37": {
+        "status": "passed",
+        "reason": null
+      },
+      "38": {
+        "status": "passed",
+        "reason": null
+      },
+      "39": {
+        "status": "passed",
+        "reason": null
+      },
+      "4": {
+        "status": "passed",
+        "reason": null
+      },
+      "40": {
+        "status": "passed",
+        "reason": null
+      },
+      "41": {
+        "status": "passed",
+        "reason": null
+      },
+      "42": {
+        "status": "passed",
+        "reason": null
+      },
+      "43": {
+        "status": "passed",
+        "reason": null
+      },
+      "44": {
+        "status": "passed",
+        "reason": null
+      },
+      "45": {
+        "status": "passed",
+        "reason": null
+      },
+      "46": {
+        "status": "passed",
+        "reason": null
+      },
+      "47": {
+        "status": "passed",
+        "reason": null
+      },
+      "48": {
+        "status": "passed",
+        "reason": null
+      },
+      "49": {
+        "status": "passed",
+        "reason": null
+      },
+      "5": {
+        "status": "passed",
+        "reason": null
+      },
+      "50": {
+        "status": "passed",
+        "reason": null
+      },
+      "51": {
+        "status": "passed",
+        "reason": null
+      },
+      "52": {
+        "status": "passed",
+        "reason": null
+      },
+      "53": {
+        "status": "passed",
+        "reason": null
+      },
+      "54": {
+        "status": "passed",
+        "reason": null
+      },
+      "55": {
+        "status": "passed",
+        "reason": null
+      },
+      "6": {
+        "status": "passed",
+        "reason": null
+      },
+      "7": {
+        "status": "passed",
+        "reason": null
+      },
+      "8": {
+        "status": "passed",
+        "reason": null
+      },
+      "9": {
+        "status": "passed",
+        "reason": null
+      }
+    }
+  },
+  "correctness": {
+    "shapes": {
+      "0": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 151904033,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "1": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1299775250,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "10": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1349905868,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "11": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1813733499,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "12": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 962964498,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "13": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1396806843,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "14": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1991177785,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "15": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 853203807,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "16": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 2102016664,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "17": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 28967730,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "18": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1591283561,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "19": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 530032774,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "2": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1110808794,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "20": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1780929982,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "21": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1574311138,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "22": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 615635485,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "23": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 8467165,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "24": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 219176174,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "25": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 479001432,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "26": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1374490654,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "27": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1521199302,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "28": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1389112026,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "29": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 492676614,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "3": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1106965648,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "30": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 592624106,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "31": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1590241195,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "32": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 666345182,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "33": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1972030664,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "34": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1718313756,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "35": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 336546065,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "36": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 676619826,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "37": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 314597566,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "38": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 430134627,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "39": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 154470183,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "4": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1076506391,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "40": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1544073656,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "41": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1050425025,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "42": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 413359395,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "43": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 418297549,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "44": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 250886985,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "45": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 252200240,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "46": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1544056295,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "47": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 436610115,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "48": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1652600444,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "49": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1215670480,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "5": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 60826807,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "50": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1983118541,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "51": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1127258205,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "52": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 898288964,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "53": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 261766396,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "54": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1644462626,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "55": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 2109892971,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "6": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1337503873,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "7": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 591836883,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "8": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 361737924,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      },
+      "9": {
+        "cases": [
+          {
+            "input_artifact": {
+              "seed": 1374554996,
+              "format": "manual_seed"
+            },
+            "outputs": [
+              {
+                "name": "out",
+                "passed": true,
+                "max_elementwise_abs_diff": 0.0,
+                "max_elementwise_rel_diff": 0.0,
+                "relative_l2": 0.0,
+                "error": null
+              }
+            ],
+            "mutated_inputs": [],
+            "unexpected_mutations": [
+              {
+                "name": "reference.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.x",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "reference.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              },
+              {
+                "name": "candidate.input.weight",
+                "passed": true,
+                "max_elementwise_abs_diff": null,
+                "max_elementwise_rel_diff": null,
+                "relative_l2": null,
+                "error": null
+              }
+            ],
+            "error": null
+          }
+        ]
+      }
+    }
+  },
+  "performance": {
+    "shapes": {
+      "0": {
+        "input_artifact": {
+          "seed": 1885841993,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.14080600001761923
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "1": {
+        "input_artifact": {
+          "seed": 448917638,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.4584120000072289
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "10": {
+        "input_artifact": {
+          "seed": 230533995,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.0317079999731504
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "11": {
+        "input_artifact": {
+          "seed": 1334170826,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.9938620000175433
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "12": {
+        "input_artifact": {
+          "seed": 1188719710,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 3.2645319999937783
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "13": {
+        "input_artifact": {
+          "seed": 1967492075,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 6.617665000012494
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "14": {
+        "input_artifact": {
+          "seed": 1142561553,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 8.846410000005562
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "15": {
+        "input_artifact": {
+          "seed": 559542034,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.06414899999072077
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "16": {
+        "input_artifact": {
+          "seed": 1913819051,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.07011800000327639
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "17": {
+        "input_artifact": {
+          "seed": 266243893,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.0699460000032559
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "18": {
+        "input_artifact": {
+          "seed": 2082997599,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.07764500001940178
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "19": {
+        "input_artifact": {
+          "seed": 856294256,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.08733500002563233
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "2": {
+        "input_artifact": {
+          "seed": 1634737201,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.1399759999767412
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "20": {
+        "input_artifact": {
+          "seed": 1471672222,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.11028500000975328
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "21": {
+        "input_artifact": {
+          "seed": 130552801,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.1866340000196942
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "22": {
+        "input_artifact": {
+          "seed": 1447295603,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.6488699999681558
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "23": {
+        "input_artifact": {
+          "seed": 1931950676,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.9152510000058101
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "24": {
+        "input_artifact": {
+          "seed": 1801854016,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.4069430000017746
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "25": {
+        "input_artifact": {
+          "seed": 279661336,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.9484379999994417
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "26": {
+        "input_artifact": {
+          "seed": 1487662459,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 3.7034290000156034
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "27": {
+        "input_artifact": {
+          "seed": 1626185373,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 7.6112100000318605
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "28": {
+        "input_artifact": {
+          "seed": 657601124,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.07467100000212668
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "29": {
+        "input_artifact": {
+          "seed": 1960534829,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 3.6817079999673297
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "3": {
+        "input_artifact": {
+          "seed": 530110813,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.912679000015487
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "30": {
+        "input_artifact": {
+          "seed": 1092933244,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.14793599999393336
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "31": {
+        "input_artifact": {
+          "seed": 1921652273,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.8208679999734159
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "32": {
+        "input_artifact": {
+          "seed": 1056023431,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.07140500001696637
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "33": {
+        "input_artifact": {
+          "seed": 279950968,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.07415000000037253
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "34": {
+        "input_artifact": {
+          "seed": 2142877295,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.08984599997347686
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "35": {
+        "input_artifact": {
+          "seed": 101024493,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.1026110000020708
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "36": {
+        "input_artifact": {
+          "seed": 1533896422,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.2581309999732184
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "37": {
+        "input_artifact": {
+          "seed": 353272641,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.9238280000136001
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "38": {
+        "input_artifact": {
+          "seed": 80108297,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.9536579999839887
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "39": {
+        "input_artifact": {
+          "seed": 1312178993,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 3.936513000007835
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "4": {
+        "input_artifact": {
+          "seed": 1576947475,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 2.618531999978586
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "40": {
+        "input_artifact": {
+          "seed": 1829181896,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 4.905436000008194
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "41": {
+        "input_artifact": {
+          "seed": 387241616,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.0670430000172928
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "42": {
+        "input_artifact": {
+          "seed": 1148481867,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.2638870000009774
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "43": {
+        "input_artifact": {
+          "seed": 1405779568,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.08948900001996662
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "44": {
+        "input_artifact": {
+          "seed": 1866699460,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.09394400000019232
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "45": {
+        "input_artifact": {
+          "seed": 857174615,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.20425899998372188
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "46": {
+        "input_artifact": {
+          "seed": 1337335135,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.06771699998353142
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "47": {
+        "input_artifact": {
+          "seed": 1481664,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.06362899999658111
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "48": {
+        "input_artifact": {
+          "seed": 1426169961,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.07367800000793068
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "49": {
+        "input_artifact": {
+          "seed": 296879388,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.09352499997476116
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "5": {
+        "input_artifact": {
+          "seed": 1015920907,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.07544500000221888
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "50": {
+        "input_artifact": {
+          "seed": 680637692,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.37365500000305474
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "51": {
+        "input_artifact": {
+          "seed": 1010124982,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.6846969999969588
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "52": {
+        "input_artifact": {
+          "seed": 18640311,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 1.3748839999971096
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "53": {
+        "input_artifact": {
+          "seed": 1636476195,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 3.168918000010308
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "54": {
+        "input_artifact": {
+          "seed": 345434460,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.08616099999926519
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "55": {
+        "input_artifact": {
+          "seed": 1057632045,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.2386290000140434
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "6": {
+        "input_artifact": {
+          "seed": 1064718207,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.08184700000128942
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "7": {
+        "input_artifact": {
+          "seed": 1148882232,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.08424700001341989
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "8": {
+        "input_artifact": {
+          "seed": 1033008038,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.1274829999965732
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "9": {
+        "input_artifact": {
+          "seed": 1967529955,
+          "format": "manual_seed"
+        },
+        "samples": [
+          {
+            "end_to_end_time_ms": 0.33436300000175834
+          }
+        ],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      }
+    }
+  },
+  "error": null
+}

@@ -1,0 +1,11 @@
+{
+  "candidate": "A2",
+  "strategy": "FULL_CORE_CUSTOM_FP32_ROW_SOFTMAX",
+  "contract_marker": "// AKA_TARGET_CONTRACT: megatron_native_dot_product_attention_forward:90839e70b4edbfdc9cdfd903fe9c51230311a8fc7c13fb1b2a0673acd261916c",
+  "hypothesis": "One block per (batch, head, query) computes QK into dynamic shared memory, performs dense no-mask FP32 softmax, then FP32 PV accumulation.",
+  "semantics": {"inputs": "contiguous FP16 [S,B,16,64]", "scores": "FP32 dot products, d ascending, multiplied by passed scale", "softmax": "FP32 max, expf, sum, normalize; no mask/dropout", "output": "FP32 PV then round-to-nearest FP16 [S,B,1024]"},
+  "workspace": "dynamic shared memory only; no allocation and no workspace ABI argument",
+  "stream": "launch uses supplied cudaStream_t",
+  "risk": "Serial reduction and repeated V indexing may limit performance; arithmetic ordering may differ slightly from the reference.",
+  "forbidden_features": ["causal mask", "arbitrary mask", "dropout RNG", "TE", "flash-attn", "projection GEMMs", "backward", "NCCL", "framework edits"]
+}

@@ -1,0 +1,13 @@
+{
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "backward_contract_hash": "a7437b0c42289669",
+  "candidate_hash": "95f66fb9cbf5f4ef",
+  "integration_adapter_hash": "54a5fc0b67c3259a",
+  "forward_contract_hash": "2b05cc321bed0956",
+  "dtype": "FP16",
+  "official_shapes": [[16,1,1024],[64,2,1024],[128,2,1024]],
+  "activation_backward_speedup": 3.4578303034730578,
+  "mlp_forward_backward_speedup": 0.9070961770547546,
+  "backward_optimized": true,
+  "bias_gradient": "not in official boundary because add_bias_linear=false"
+}

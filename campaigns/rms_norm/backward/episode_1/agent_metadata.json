@@ -1,0 +1,10 @@
+{
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "model_calls": 1,
+  "reviewers": 0,
+  "fallback": "none",
+  "turn_id": "01a08ab9-cdc4-75b1-a7cc-39c2d4eb39ae",
+  "status": "TurnStatus.completed",
+  "usage": "last=TokenUsageBreakdown(cache_write_input_tokens=0, cached_input_tokens=24320, input_tokens=26651, output_tokens=247, reasoning_output_tokens=82, total_tokens=26898) model_context_window=258400 total=TokenUsageBreakdown(cache_write_input_tokens=0, cached_input_tokens=88064, input_tokens=117188, output_tokens=2256, reasoning_output_tokens=417, total_tokens=119444)"
+}

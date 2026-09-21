@@ -1,0 +1,9 @@
+{
+  "status":"READY_FOR_FUTURE_CANDIDATE_NOT_EXECUTED_ON_CANDIDATE",
+  "orchestration":"identical preallocated Q/K/V and scores; framework vendor QK alpha=0.125; reference or candidate local score-to-probability stage; framework vendor PV; output completion",
+  "references":["REAL Megatron DotProductAttention output","independent FP32 QK(alpha=0.125)/softmax/PV oracle","local FP16-score -> FP32-softmax -> FP16-probability oracle"],
+  "tolerance":{"final_attention_atol":0.005,"final_attention_rtol":0.005,"local_probability_atol":0.005,"local_probability_rtol":0.005},
+  "edge_fixtures":["uniform scores","large positive/negative spread","near-one-hot rows","small S","official S=16/64/128","finite inputs"],
+  "negative_tests":["wrong dtype","noncontiguous score","wrong sequence length","wrong batch-head flattening","invalid output","CPU input","device mismatch"],
+  "unsafe_launch_rule":"invalid adapter input must reject before candidate launch"
+}

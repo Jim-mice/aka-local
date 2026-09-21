@@ -1,0 +1,9 @@
+{
+  "operator": "rms_norm",
+  "task": "Implement exactly one CUDA candidate beyond the official PyTorch reference for RTX 5060 sm_120.",
+  "model_calls_allowed": 1,
+  "reviewers": 0,
+  "fallback": "none",
+  "reference_dir": "C:/Users/38154/projects/aka-local/ops/rms_norm",
+  "candidate_workspace": "C:/Users/38154/projects/aka-local/campaigns/rms_norm/backward/episode_1"
+}

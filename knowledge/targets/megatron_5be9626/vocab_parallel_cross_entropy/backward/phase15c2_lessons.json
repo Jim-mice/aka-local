@@ -1,0 +1,13 @@
+{
+  "phase": "15-C.2",
+  "candidate_lessons": [
+    "B1/B2/B3 each satisfied the explicit out-of-place FP32 ABI and TP=2 correctness oracle.",
+    "B1 directly fuses copy, ownership-aware onehot subtraction, and grad-output scaling into one CUDA kernel without NCCL.",
+    "B1 paired raw evidence is not promotion eligible because the frozen reference stability gate failed; do not treat its point speedup as an incumbent score."
+  ],
+  "framework_lessons": [
+    "Backward candidate compile harness must not use an unverified nvcc --std spelling; the audited remote accepts the command without a language-standard flag for this CUDA C++ source.",
+    "A valid candidate speedup requires both candidate and paired reference to meet the frozen stability gate; slow valid reference samples are retained.",
+    "Phase 15-C.3 v2 recovered reference stability but candidate rank0 CV=0.20803 for 32x2x64 still blocked promotion under the frozen 0.20 gate; neither historical nor new samples may be selectively combined."
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "tests": [
+    {
+      "name": "wrong_dtype",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: expected CUDA FP16 intermediate",
+      "candidate_launched": false
+    },
+    {
+      "name": "non_contiguous",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: intermediate must be contiguous",
+      "candidate_launched": false
+    },
+    {
+      "name": "unsupported_rows",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: unsupported official shape",
+      "candidate_launched": false
+    },
+    {
+      "name": "cpu_tensor",
+      "result": "PASS",
+      "error": "REJECT_INTEGRATION: expected CUDA FP16 intermediate",
+      "candidate_launched": false
+    },
+    {
+      "name": "contract_mismatch",
+      "result": "NOT_APPLICABLE",
+      "reason": "activation wrapper has no runtime metadata activation gate"
+    }
+  ],
+  "positive_candidate_not_executed_on_rejected_cases": true
+}

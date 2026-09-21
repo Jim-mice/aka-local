@@ -1,0 +1,11 @@
+{
+  "episode": "A1",
+  "status": "REJECT_TOOLCHAIN",
+  "candidate_sha256": "1ce4b7739f402706a7bc10cdb674495266f5337365f8276e6b1d1a3ded2e4c66",
+  "preflight": {"marker": true, "symbol": true, "extern_c": true, "forbidden_construct_present": "CUDART_INF_F"},
+  "compile": {"status": "FAIL", "toolchain": "CUDA 11.8 sm_70", "error": "identifier CUDART_INF_F is undefined"},
+  "correctness": "NOT_RUN",
+  "benchmark": "NOT_RUN",
+  "profile": "NOT_RUN",
+  "manual_source_repair": false
+}

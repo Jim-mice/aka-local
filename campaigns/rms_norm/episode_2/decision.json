@@ -1,0 +1,20 @@
+{
+  "episode": 2,
+  "operator": "rms_norm",
+  "model": "gpt-5.6-luna",
+  "reasoning_effort": "low",
+  "model_calls": 1,
+  "reviewers": 0,
+  "fallback": "none",
+  "candidate_produced": true,
+  "record_type": "OPTIMIZATION_DECISION",
+  "episode_state": "EPISODE_COMPLETE",
+  "decision": "ACCEPT",
+  "backend": "codex-appserver",
+  "runtime_version": "0.154.0",
+  "stop_reason": null,
+  "compile": {"passed": true, "shapes": 56},
+  "correctness": {"passed": true, "shapes": 56},
+  "performance": {"arithmetic_mean_speedup": 1.074214540359538, "geometric_mean_speedup": 1.071903817291241, "total_time_ratio": 1.0965217456010878, "wins": 50, "shapes": 56, "robustness_batches": 5},
+  "evidence": "robustness_abba.json"
+}

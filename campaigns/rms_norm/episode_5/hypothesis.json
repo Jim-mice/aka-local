@@ -1,0 +1,23 @@
+﻿{
+  "task": "cuda_rmsnorm",
+  "candidate": "candidate.py",
+  "hypothesis": "Dispatch the complete trailing-dimension RMSNorm operation through PyTorch's fused CUDA backend to keep reduction, reciprocal RMS, and affine scaling on the optimized path without materializing intermediates.",
+  "optimization": {
+    "kernel_strategy": "torch_fused_rms_norm",
+    "avoid_intermediate_tensors": true,
+    "accumulation_dtype": "backend_defined_fp32_for_low_precision_inputs",
+    "normalized_axes": "trailing_dimensions"
+  },
+  "correctness": {
+    "epsilon_default": 1e-6,
+    "weight_shape_must_match_normalized_shape": true,
+    "input_shape_validation": true,
+    "public_aliases": ["rms_norm", "forward", "apply", "RMSNorm"]
+  },
+  "validation_status": {
+    "benchmark_run": false,
+    "cuda_run": false,
+    "files_only": true
+  },
+  "created_date": "2026-09-19"
+}

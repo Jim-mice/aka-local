@@ -1,0 +1,14 @@
+{
+  "operator": "dense_attention_v100_cuda",
+  "episode": 7,
+  "environment": "v100_sm70",
+  "profiler": "nsys",
+  "profiler_version": "2026.2.1",
+  "contract_hash": "8e7bfd5ec5c4a17f",
+  "candidate_hash": "8b118129a361fc80",
+  "shape": "1,4,64,64",
+  "timestamp": "2026-09-19T15:25:00+00:00",
+  "gpu_kern_sum": {
+    "kernels": []
+  }
+}

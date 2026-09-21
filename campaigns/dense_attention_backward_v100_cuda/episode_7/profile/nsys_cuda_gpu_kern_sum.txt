@@ -1,0 +1,15 @@
+Generating SQLite file /home/<REMOTE_USER>/aka_remote_jobs/nsys_ep7/nsys_candidate.sqlite from /home/<REMOTE_USER>/aka_remote_jobs/nsys_ep7/nsys_candidate.nsys-rep
+Processing [/home/<REMOTE_USER>/aka_remote_jobs/nsys_ep7/nsys_candidate.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances   Avg (ns)     Med (ns)    Min (ns)   Max (ns)   StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  -----------  -----------  ---------  ---------  -----------  ----------------------------------------------------------------------------------------------------
+     96.5    1,066,291,608        210  5,077,579.1  4,886,438.0  4,881,014  7,574,882    691,512.1  dense_dkv(const float *, const float *, const float *, const float *, const float *, float *, float��
+      3.4       38,096,997        210    181,414.3     77,376.0     77,248  2,851,116    523,934.7  dense_backward_rows(const float *, const float *, const float *, const float *, const float *, floa��
+      0.0           35,296          4      8,824.0      8,992.0      7,264     10,048      1,155.7  void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::nat��
+      0.0           23,520          5      4,704.0      4,608.0      4,288      5,472        450.8  void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<float, float, floa��
+      0.0           19,296          1     19,296.0     19,296.0     19,296     19,296          0.0  volta_sgemm_128x32_tn                                                                               
+      0.0           17,952          4      4,488.0      4,480.0      4,096      4,896        418.4  void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnSelf_add<float>, st��
+      0.0            6,208          1      6,208.0      6,208.0      6,208      6,208          0.0  void <unnamed>::softmax_warp_forward<float, float, float, (int)5, (bool)0, (bool)0>(T2 *, const T1 ��
+

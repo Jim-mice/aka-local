@@ -1,0 +1,13 @@
+{
+  "type": "AGENT_BACKEND_EVENT",
+  "timestamp": "2026-09-10T18:34:00Z",
+  "episode_attempt": 2,
+  "backend": "codex-appserver",
+  "runtime_version": "0.154.0",
+  "model": "gpt-5.6-luna",
+  "reasoning": "low",
+  "event": "CODEX_REQUEST_TIMEOUT",
+  "candidate_produced": false,
+  "hypothesis_produced": false,
+  "retry": 0
+}

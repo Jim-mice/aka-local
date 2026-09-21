@@ -1,0 +1,17 @@
+platform_id: v100_sm70
+vendor: NVIDIA
+device_name: Tesla V100-PCIE-16GB
+architecture: Volta
+compute_capability: '7.0'
+memory_bytes: 17179869184
+host_type: remote_ssh
+os: Linux
+driver: UNKNOWN
+compiler: CUDA 11.8 (nvcc)
+runtime: standalone CUDA (no PyTorch)
+frameworks: [CUDA C++]
+profiler: [Nsight Systems]
+availability: remote_ssh
+execution_mode: remote_gateway
+notes: [SSH access via <REMOTE_HOST>, <REMOTE_USER>, standalone .cu evaluation]
+evidence_source: [aka-local Phase 8-A remote V100 evaluator]

@@ -1,0 +1,12 @@
+{
+  "phase": "15-B.6",
+  "lessons": [
+    "Performance scope must be versioned independently of the semantic contract.",
+    "A shared reference/candidate orchestrator is required before distributed speedup claims.",
+    "Complete rows and correctness do not imply repeatable distributed timing.",
+    "Intermittent rank-completion outliers must not be discarded without a contract-approved policy."
+  ],
+  "benchmark_era": "tp2_comparable_v1",
+  "incumbent_created": false,
+  "profile_guided_agent_created": false
+}

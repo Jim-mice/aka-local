@@ -1,0 +1,16 @@
+{
+  "status": "research_only_not_active",
+  "target": "megatron_swiglu_fc1_epilogue",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "inputs": {"hidden_states":"[S,B,H] FP16 contiguous","fc1_weight":"[2I/TP,H] FP16 row-major","bias":"null in official configuration"},
+  "outputs": {"activation":"[S,B,I/TP] FP16 contiguous"},
+  "semantics":"FC1 GEMM producing packed [gate,up], then SiLU(gate)*(up+offset); FC2 excluded",
+  "layouts":"FC1 output is [S,B,2I/TP] contiguous with gate first and up second",
+  "shape_formulas":{"rows":"S*B","input_hidden":"H","fc1_output":"2I/TP","activation_output":"I/TP"},
+  "stream":"current PyTorch CUDA stream",
+  "workspace":"unknown; depends on custom GEMM implementation",
+  "backward_implications":"must preserve or recompute values needed for SwiGLU derivative and FC1 weight gradient",
+  "v100_constraints":"FP16 Tensor Core GEMM is supported; fused SiLU-gated epilogue is not established in installed cuBLASLt API",
+  "external_dependencies":["cuBLAS/cuBLASLt or CUTLASS/custom WMMA"],
+  "open_questions":["whether CUTLASS epilogue can express gated SiLU without custom output operator","how to retain FC1 weight-gradient inputs without saving full preactivation","whether recomputation offsets traffic savings"]
+}

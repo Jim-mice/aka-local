@@ -1,0 +1,15 @@
+﻿{
+  "op": "RMSNorm",
+  "hypothesis": "A reduction over the normalized dimension with fp32 accumulation and one final cast should provide a stable baseline while avoiding mean-centering and unnecessary intermediates.",
+  "optimization_targets": [
+    "single RMS reduction",
+    "vectorized elementwise normalization",
+    "fp32 accumulation for fp16/bf16 inputs",
+    "no benchmark or CUDA execution during import"
+  ],
+  "risks": [
+    "The reference harness may require a different callable name or exact epsilon semantics.",
+    "PyTorch graph fusion and reduction performance depend on tensor shapes and runtime version."
+  ],
+  "status": "candidate-only"
+}

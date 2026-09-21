@@ -1,0 +1,97 @@
+{
+  "commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_call": "megatron.core.transformer.mlp.MLP.forward",
+  "shape": [
+    128,
+    2,
+    1024
+  ],
+  "dtype": "torch.float16",
+  "layout": {
+    "x_stride": [
+      2048,
+      1024,
+      1
+    ],
+    "output_stride": [
+      2048,
+      1024,
+      1
+    ]
+  },
+  "config": {
+    "micro_batch": 2,
+    "sequence_length": 128,
+    "hidden_size": 1024,
+    "ffn_hidden_size": 4096,
+    "tensor_parallel": 1,
+    "bias_activation_fusion": false,
+    "use_te_activation_func": false
+  },
+  "max_abs_error": 0.0,
+  "relative_error": NaN,
+  "replay_pass": true,
+  "reference_latency_us": 638.5420989990234
+}
+Collecting data...
+Generating '/tmp/nsys-<REMOTE_USER>/nsys-report-d70a.qdstrm'
+[1/1] [0%                          ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [0%                          ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [==21%                       ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [===24%                      ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [====27%                     ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [====28%                     ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=====29%                    ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=====30%                    ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=====31%                    ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=====32%                    ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [======33%                   ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [======34%                   ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [======35%                   ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=======36%                  ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=======37%                  ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=======38%                  ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=======39%                  ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [========40%                 ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [============56%             ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [============57%             ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=============58%            ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=============59%            ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=============60%            ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [==============61%           ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [==============62%           ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [==============63%           ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [==============64%           ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [===============65%          ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [===============66%          ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [===============67%          ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [================68%         ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [================69%         ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [================70%         ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [================71%         ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=================72%        ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [=================74%        ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [===================80%      ] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [========================100%] aka_phase14b_swiglu_nsys.nsys-rep[1/1] [========================100%] aka_phase14b_swiglu_nsys.nsys-rep
+Generated:
+	/tmp/aka_phase14b_swiglu_nsys.nsys-rep
+Generating SQLite file /tmp/aka_phase14b_swiglu_nsys.sqlite from /tmp/aka_phase14b_swiglu_nsys.nsys-rep
+Processing [/tmp/aka_phase14b_swiglu_nsys.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+79.5,56658375,224,252939.2,253901.0,182206,328667,69323.6,volta_fp16_s884gemm_fp16_128x256_ldg8_f2f_tn
+7.0,4981752,112,44479.9,44415.0,43616,47263,531.7,"void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::<unnamed>::silu_kernel(at::TensorIteratorBase &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 5)]::operator ()() const::[lambda(c10::Half) (instance 1)]>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+5.3,3794286,111,34182.8,34144.0,33536,35488,342.1,"void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::CUDAFunctorOnSelf_add<c10::Half>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+4.0,2885172,112,25760.5,25728.0,25504,26751,186.5,"void splitKreduce_kernel<(int)32, (int)16, int, __half, __half, float, __half, (bool)1, (bool)0, (bool)0>(cublasSplitKParams<T6>, const T4 *, const T5 *, T5 *, const T6 *, const T6 *, const T7 *, const T4 *, T7 *, void *, long, T6 *, int *)"
+2.7,1918852,111,17287.0,17216.0,16896,19008,297.3,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.9,608985,3,202995.0,197342.0,37376,374267,168516.6,"void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::native::templates::cuda::normal_and_transform<c10::Half, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::<unnamed>::distribution_nullary_kernel<c10::Half, float, float4, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_and_transform<c10::Half, float, at::CUDAGeneratorImpl *, void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T3, T4)::[lambda(curandStatePhilox4_32_10 *) (instance 2)], void at::native::templates::cuda::normal_kernel<at::CUDAGeneratorImpl *>(const at::TensorBase &, double, double, T1)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 3)]::operator ()() const::[lambda(float) (instance 1)]>(at::TensorIteratorBase &, T4, const T5 &, T6)::[lambda(int, float) (instance 1)]>(long, at::PhiloxCudaState, T3, T4)"
+0.2,146239,3,48746.3,46848.0,8672,90719,41056.4,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.1,67359,2,33679.5,33679.5,32735,34624,1335.7,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<c10::Half, at::native::func_wrapper_t<c10::Half, at::native::MaxNanFunctor<c10::Half>>, unsigned int, c10::Half, (int)4, (int)4>>(T3)"
+0.1,43968,5,8793.6,8672.0,8224,9728,557.7,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AbsFunctor<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.1,37183,1,37183.0,37183.0,37183,37183,0.0,"void at::native::elementwise_kernel<(int)128, (int)4, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+0.0,28575,1,28575.0,28575.0,28575,28575,0.0,"void at::native::reduce_kernel<(int)512, (int)1, at::native::ReduceOp<bool, at::native::func_wrapper_t<bool, at::native::and_kernel_cuda(at::TensorIterator &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 12)]::operator ()() const::[lambda(bool, bool) (instance 1)]>, unsigned int, bool, (int)4, (int)4>>(T3)"
+0.0,20224,2,10112.0,10112.0,9952,10272,226.3,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<c10::Half>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,20063,1,20063.0,20063.0,20063,20063,0.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, c10::Half, at::native::binary_internal::DivFunctor<c10::Half>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,18847,2,9423.5,9423.5,8576,10271,1198.5,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<c10::Half, c10::Half, bool, at::native::<unnamed>::CompareEqFunctor<c10::Half>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,17216,2,8608.0,8608.0,8576,8640,45.3,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnSelf_add<c10::Half>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+0.0,11392,1,11392.0,11392.0,11392,11392,0.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::<unnamed>::CompareFunctor<c10::Half>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,9024,1,9024.0,9024.0,9024,9024,0.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::BitwiseAndFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,8768,1,8768.0,8768.0,8768,8768,0.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::binary_internal::MulFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,8576,1,8576.0,8576.0,8576,8576,0.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::BinaryFunctor<bool, bool, bool, at::native::BitwiseOrFunctor<bool>>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+0.0,8416,1,8416.0,8416.0,8416,8416,0.0,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::AUnaryFunctor<c10::Half, c10::Half, bool, at::native::<unnamed>::CompareEqFunctor<c10::Half>>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+
+Processing [/tmp/aka_phase14b_swiglu_nsys.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_api_sum.py]... 
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+76.9,158076141,697,226795.0,12088.0,5414,24079109,1860982.7,cudaLaunchKernel
+<REMOTE_HOST>,21972266,2,10986133.0,10986133.0,1828770,20143496,12950467.0,cudaDeviceSynchronize
+<REMOTE_HOST>,20582985,2,10291492.5,10291492.5,2256313,18326672,11363459.8,cudaFree
+0.9,1912145,9,212460.6,219868.0,5109,415546,122273.1,cudaMalloc
+0.8,1606806,2,803403.0,803403.0,25442,1581364,1100203.0,cudaHostAlloc
+0.4,910545,4,227636.3,224483.5,152428,309150,83909.7,cudaGetDeviceProperties
+0.1,173881,768,226.4,169.0,94,5269,228.8,cuGetProcAddress
+0.0,73325,3,24441.7,23308.0,16240,33777,8823.3,cudaMemcpyAsync
+0.0,46543,3,15514.3,14459.0,14417,17667,1864.4,cudaMemsetAsync
+0.0,41675,3,13891.7,9369.0,7996,24310,9048.6,cudaStreamSynchronize
+0.0,37709,12,3142.4,2090.5,495,15290,3996.9,cudaStreamIsCapturing
+0.0,36356,20,1817.8,444.5,395,12408,3255.2,cudaEventCreateWithFlags
+0.0,23812,2,11906.0,11906.0,11480,12332,602.5,cudaEventRecord
+0.0,14199,2,7099.5,7099.5,1787,12412,7513.0,cudaEventDestroy
+0.0,4410,4,1102.5,640.0,146,2984,1300.3,cuModuleGetLoadingMode
+0.0,4193,2,2096.5,2096.5,1719,2474,533.9,cuInit
+
+
+STDERR
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(

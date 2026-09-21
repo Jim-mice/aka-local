@@ -1,0 +1,12 @@
+{
+  "episode": 6,
+  "preflight": "PASS_PREFLIGHT",
+  "compile_pass": true,
+  "tp1_sanity": "REJECT_CORRECTNESS",
+  "tp2_forward_correctness": "REJECT_CORRECTNESS",
+  "tp2_backward_correctness": "NOT_REACHED",
+  "loss_max_abs": 4.428786754608154,
+  "softmax_max_abs": 0.0,
+  "benchmark": "NOT_RUN",
+  "candidate_hash": "4a3c77a2af1f27d02b6e1655442109d467e243c5c6a35c16c2340c347d1d84e0"
+}

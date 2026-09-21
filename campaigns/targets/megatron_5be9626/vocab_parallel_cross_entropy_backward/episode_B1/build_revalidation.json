@@ -1,0 +1,9 @@
+{
+  "episode": "B1",
+  "candidate_hash": "008155d13eda72ab1feb267a06d360a13ad2730128a4aca4cfe8a3af70e374ab",
+  "preflight": "PASS",
+  "preflight_failures": [],
+  "compile": "REJECT_COMPILE",
+  "compile_stdout": "",
+  "compile_stderr": "nvcc fatal   : Value 'c++17' is not defined for option 'std'\n"
+}

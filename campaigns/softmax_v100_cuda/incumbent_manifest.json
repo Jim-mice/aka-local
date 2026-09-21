@@ -1,0 +1,15 @@
+{
+  "operator": "softmax_v100_cuda",
+  "incumbent": "v8",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ],
+  "score": 1.226,
+  "geometric_mean_speedup": 1.226,
+  "created_from_episode": 8,
+  "updated_at": "2026-09-19T13:48:55.680631+00:00"
+}

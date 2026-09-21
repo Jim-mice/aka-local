@@ -1,0 +1,65 @@
+{
+  "candidate": [
+    {
+      "rank": 0,
+      "kernel_rows": 36,
+      "total_kernel_ns": 337608794,
+      "local_candidate_kernels": {
+        "instances": 60,
+        "total_ns": 624209
+      },
+      "nccl_sum_kernels": {
+        "instances": 121,
+        "total_ns": 330125573
+      }
+    },
+    {
+      "rank": 1,
+      "kernel_rows": 36,
+      "total_kernel_ns": 9150513,
+      "local_candidate_kernels": {
+        "instances": 60,
+        "total_ns": 493897
+      },
+      "nccl_sum_kernels": {
+        "instances": 121,
+        "total_ns": 2927000
+      }
+    }
+  ],
+  "reference": [
+    {
+      "rank": 0,
+      "kernel_rows": 34,
+      "total_kernel_ns": 542112115,
+      "local_candidate_kernels": {
+        "instances": 0,
+        "total_ns": 0
+      },
+      "nccl_sum_kernels": {
+        "instances": 121,
+        "total_ns": 529254488
+      }
+    },
+    {
+      "rank": 1,
+      "kernel_rows": 34,
+      "total_kernel_ns": 16031631,
+      "local_candidate_kernels": {
+        "instances": 0,
+        "total_ns": 0
+      },
+      "nccl_sum_kernels": {
+        "instances": 121,
+        "total_ns": 4064239
+      }
+    }
+  ],
+  "source_files": [
+    "nsys_stats_candidate_rank0.txt",
+    "nsys_stats_candidate_rank1.txt",
+    "nsys_stats_reference_rank0.txt",
+    "nsys_stats_reference_rank1.txt"
+  ],
+  "interpretation": "NSYS aggregate kernel statistics; not a replacement for the CUDA-event score and not an NCU hardware diagnosis."
+}

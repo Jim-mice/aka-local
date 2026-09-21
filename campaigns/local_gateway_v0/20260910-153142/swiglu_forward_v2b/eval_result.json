@@ -1,0 +1,138 @@
+{
+  "kernel": {
+    "name": "swiglu_forward_v2b",
+    "id": "swiglu_forward_local",
+    "dtype": "fp16"
+  },
+  "dsl": "unknown",
+  "eval_mode": "candidate",
+  "eval_id": "20260910T073144Z-125df56a",
+  "environment": {
+    "gpu_name": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "gpu_arch": "sm_120",
+    "accelerator_backend": "cuda",
+    "driver_version": "610.88",
+    "runtime_version": "13.0",
+    "clock_locked": false,
+    "clock_lock_detected": false,
+    "clock_lock_source": null,
+    "PTL_STATE": null,
+    "torch_version": "2.14.0+cu130",
+    "python_version": "3.11.15"
+  },
+  "runner_config": {
+    "config_version": "v1",
+    "mode": "candidate",
+    "validation_mode": "correctness_only",
+    "atol": 0.01,
+    "rtol": 0.05,
+    "correctness_max_rel_l2": null,
+    "num_correctness_cases": 1,
+    "warmup_iters": 10,
+    "bench_iters": 100,
+    "candidate_timeout_s": 120.0,
+    "benchmark_mode": "eager",
+    "cuda_graph_cache_flush_mb": 1024,
+    "graph_atol": 0.01,
+    "graph_rtol": 0.05,
+    "graph_min_cosine": null,
+    "graph_max_rel_l2": null,
+    "trust_mode": "trusted",
+    "require_clock_locked": false
+  },
+  "passed": {
+    "compile": {
+      "m1024_d4096": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\correctness.py\", line 439, in check_correctness\n    loaded_models = instantiate_model_pair(\n                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 841, in instantiate_model_pair\n    with candidate_timeout(candidate_timeout_s):\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_timeout.py\", line 61, in candidate_timeout\n    previous_handler = signal.signal(signal.SIGALRM, _handler)\n                                     ^^^^^^^^^^^^^^\nAttributeError: module 'signal' has no attribute 'SIGALRM'\n"
+      },
+      "m256_d4096": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\correctness.py\", line 439, in check_correctness\n    loaded_models = instantiate_model_pair(\n                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 841, in instantiate_model_pair\n    with candidate_timeout(candidate_timeout_s):\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_timeout.py\", line 61, in candidate_timeout\n    previous_handler = signal.signal(signal.SIGALRM, _handler)\n                                     ^^^^^^^^^^^^^^\nAttributeError: module 'signal' has no attribute 'SIGALRM'\n"
+      },
+      "m4096_d4096": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\correctness.py\", line 439, in check_correctness\n    loaded_models = instantiate_model_pair(\n                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 841, in instantiate_model_pair\n    with candidate_timeout(candidate_timeout_s):\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_timeout.py\", line 61, in candidate_timeout\n    previous_handler = signal.signal(signal.SIGALRM, _handler)\n                                     ^^^^^^^^^^^^^^\nAttributeError: module 'signal' has no attribute 'SIGALRM'\n"
+      }
+    },
+    "correctness": {
+      "m1024_d4096": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\correctness.py\", line 439, in check_correctness\n    loaded_models = instantiate_model_pair(\n                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 841, in instantiate_model_pair\n    with candidate_timeout(candidate_timeout_s):\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_timeout.py\", line 61, in candidate_timeout\n    previous_handler = signal.signal(signal.SIGALRM, _handler)\n                                     ^^^^^^^^^^^^^^\nAttributeError: module 'signal' has no attribute 'SIGALRM'\n"
+      },
+      "m256_d4096": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\correctness.py\", line 439, in check_correctness\n    loaded_models = instantiate_model_pair(\n                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 841, in instantiate_model_pair\n    with candidate_timeout(candidate_timeout_s):\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_timeout.py\", line 61, in candidate_timeout\n    previous_handler = signal.signal(signal.SIGALRM, _handler)\n                                     ^^^^^^^^^^^^^^\nAttributeError: module 'signal' has no attribute 'SIGALRM'\n"
+      },
+      "m4096_d4096": {
+        "status": "failed",
+        "reason": "Traceback (most recent call last):\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\correctness.py\", line 439, in check_correctness\n    loaded_models = instantiate_model_pair(\n                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_runtime.py\", line 841, in instantiate_model_pair\n    with candidate_timeout(candidate_timeout_s):\n  File \"C:\\Users\\38154\\.conda\\envs\\codex-infmind\\Lib\\contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"C:\\Users\\38154\\projects\\atrex-bench\\src\\atrex_bench\\eval\\_timeout.py\", line 61, in candidate_timeout\n    previous_handler = signal.signal(signal.SIGALRM, _handler)\n                                     ^^^^^^^^^^^^^^\nAttributeError: module 'signal' has no attribute 'SIGALRM'\n"
+      }
+    },
+    "performance": {
+      "m1024_d4096": {
+        "status": "skipped",
+        "reason": "Skipped in correctness_only mode."
+      },
+      "m256_d4096": {
+        "status": "skipped",
+        "reason": "Skipped in correctness_only mode."
+      },
+      "m4096_d4096": {
+        "status": "skipped",
+        "reason": "Skipped in correctness_only mode."
+      }
+    }
+  },
+  "correctness": {
+    "shapes": {
+      "m1024_d4096": {
+        "cases": []
+      },
+      "m256_d4096": {
+        "cases": []
+      },
+      "m4096_d4096": {
+        "cases": []
+      }
+    }
+  },
+  "performance": {
+    "shapes": {
+      "m1024_d4096": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "m256_d4096": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      },
+      "m4096_d4096": {
+        "input_artifact": null,
+        "samples": [],
+        "kernel_events": [],
+        "benchmark_mode": "eager",
+        "capture_time_ms": null,
+        "cache_flush_mb": null,
+        "graph_correctness": null,
+        "observed_kernels": null,
+        "error": null
+      }
+    }
+  },
+  "error": null
+}

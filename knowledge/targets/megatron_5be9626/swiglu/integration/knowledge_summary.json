@@ -1,0 +1,13 @@
+{
+  "phase": "14-D",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "activation_boundary_speedup": 2.7994219276258265,
+  "mlp_forward_speedup_observed": 1.023230893,
+  "mlp_forward_backward_speedup_observed": 0.9184758799309284,
+  "lessons": [
+    "Episode 2 required a stream-aware adapter; original launcher used the default stream.",
+    "The integrated forward path executed real MLP FC1 and FC2 with the sidecar activation.",
+    "Backward remained trusted PyTorch analytical code and was not optimized.",
+    "Activation-only gains do not imply training-step gains."
+  ]
+}

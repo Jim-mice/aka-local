@@ -1,0 +1,15 @@
+{
+  "performance_contract_version": "native_dot_product_attention_scope_v1",
+  "contract_hash": "5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+  "benchmark_era": "megatron_native_dot_product_attention_v1",
+  "boundary": "core_attention_forward_only",
+  "timed": ["preallocated Q", "preallocated K", "preallocated V", "scaled QK^T", "dense softmax", "p=0 dropout path", "PV context", "output materialization"],
+  "excluded": ["QKV GEMM", "rotary/layout preparation before Q/K/V", "output projection GEMM", "fixture generation", "module construction", "output allocation", "backward", "process startup"],
+  "allocation_policy": "module/global score workspace and output are prepared before timed events; identical for reference and any future candidate",
+  "synchronization": "current CUDA stream; warmup; event start/end; synchronize after end event",
+  "dropout_policy": "primary boundary fixes p=0; nonzero dropout requires a separate RNG-versioned contract",
+  "rank_policy": "single-process local core qualification; no collectives inside boundary",
+  "dtype": "FP16 Q/K/V and output; attention_softmax_in_fp32=true",
+  "official_configurations": [[16,1,1024],[64,2,1024],[128,2,1024]],
+  "future_candidate_rule": "shared orchestration and exact semantic boundary; only local core implementation may differ"
+}

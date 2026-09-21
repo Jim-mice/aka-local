@@ -1,0 +1,1 @@
+{"type":"object","required":["campaign_id","operator_id","platform_id","backend_id","objective","workload_set"],"properties":{"campaign_id":{"type":"string"},"operator_id":{"type":"string"},"platform_id":{"type":"string"},"backend_id":{"type":"string"},"objective":{"type":"string"},"workload_set":{"type":"string"},"execution_target":{},"current_incumbent":{},"state":{}}}

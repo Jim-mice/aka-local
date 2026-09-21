@@ -1,0 +1,24 @@
+{
+  "operator": "rms_norm",
+  "architecture": "sm_120",
+  "current_incumbent": "rms_norm_v2",
+  "attempted_hypotheses": ["FUSED_ROW_REDUCTION_DESIGN", "warp_reduce_shared_finalize"],
+  "rejected_hypotheses": [],
+  "successful_hypotheses": ["FUSED_ROW_REDUCTION_DESIGN", "warp_reduce_shared_finalize"],
+  "open_questions": [
+    "Can a warp-level reduction replace the full shared-memory tree without losing performance?",
+    "How should multiple warp partial reductions be organized for current hidden sizes?",
+    "Is one block per row appropriate across all hidden sizes?",
+    "Is 256 threads per block robustly best across the official workload set?",
+    "Can vectorized BF16 access reduce memory instruction overhead?",
+    "Can the second full row traversal be improved without increasing register pressure?",
+    "Should different hidden sizes use different CUDA strategies?"
+  ],
+  "candidate_directions": [
+    {"id": "warp_reduce_shared_finalize", "question": "Can warp-level reduction reduce synchronization/shared work?", "motivation": "V1 uses a full 256-thread shared tree; no causal attribution exists.", "required_evidence": "correctness, per-shape ABBA, registers, shared bytes, targeted NCU if close", "status": "UNTRIED"},
+    {"id": "bf16_vector_load", "question": "Can vectorized BF16 loads improve memory-side cost?", "motivation": "V1 uses scalar BF16 accesses.", "required_evidence": "correctness, per-shape ABBA, SASS load width", "status": "UNTRIED"},
+    {"id": "block_geometry", "question": "Does 128 or 512 threads improve workload-wide performance?", "motivation": "V1 hard-codes 256 threads for every hidden size.", "required_evidence": "controlled geometry-only ABBA and resource evidence", "status": "UNTRIED"},
+    {"id": "row_strategy_by_hidden", "question": "Does hidden-size-aware CUDA dispatch improve weak shapes?", "motivation": "V1 has one launch geometry for heterogeneous shapes.", "required_evidence": "two CUDA branches, per-shape ABBA, no reference fallback", "status": "UNTRIED"},
+    {"id": "row_reuse", "question": "Can the second row traversal be reduced without harmful register pressure?", "motivation": "V1 rereads x after reduction.", "required_evidence": "register/spill evidence and ABBA", "status": "UNTRIED"}
+  ]
+}

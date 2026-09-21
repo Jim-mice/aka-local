@@ -1,0 +1,666 @@
+{
+  "schema_version": 1,
+  "experiments": [
+    {
+      "schema_version": 1,
+      "id": "remote-swiglu-v6",
+      "title": "Bias SwiGLU direct2 regime",
+      "timestamp": "UNKNOWN",
+      "operator": "bias_swiglu_train",
+      "hardware": "biv150_corex",
+      "architecture": "BI-V150",
+      "backend": "corex_triton",
+      "framework": "corex_triton",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [
+        "shape_dispatch",
+        "launch_reduction"
+      ],
+      "changes": [],
+      "evidence": {
+        "summary": "5-seed all-pass; score 2.940293; authoritative improvement 4.016 percent"
+      },
+      "performance": {
+        "summary": "5-seed all-pass; score 2.940293; authoritative improvement 4.016 percent"
+      },
+      "decision": "ACCEPT",
+      "failure_class": null,
+      "observations": [
+        "5-seed all-pass; score 2.940293; authoritative improvement 4.016 percent"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "REMOTE_ATREX_CANONICAL",
+        "source_path": "/private/atrex-megatron/campaigns/kernel_opt_bias_swiglu_train_triton_bi_v150_production/memory/v6.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 3,
+        "location": "remote_biv150",
+        "read_only": true
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\bias_swiglu_train\\biv150_corex\\remote-swiglu-v6\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "remote-moe-v0",
+      "title": "MoE Grouped MLP reference baseline",
+      "timestamp": "UNKNOWN",
+      "operator": "moe_grouped_mlp_train",
+      "hardware": "biv150_corex",
+      "architecture": "BI-V150",
+      "backend": "corex_triton",
+      "framework": "corex_triton",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [],
+      "changes": [],
+      "evidence": {
+        "summary": "11 shapes; correctness PASS"
+      },
+      "performance": {
+        "summary": "11 shapes; correctness PASS"
+      },
+      "decision": "BASELINE",
+      "failure_class": null,
+      "observations": [
+        "11 shapes; correctness PASS"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "REMOTE_ATREX_CANONICAL",
+        "source_path": "/private/atrex-megatron/campaigns/kernel_opt_moe_grouped_mlp_train_triton_bi_v150_production/memory/v0.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 2,
+        "location": "remote_biv150",
+        "read_only": true
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\moe_grouped_mlp_train\\biv150_corex\\remote-moe-v0\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "remote-moe-v1",
+      "title": "MoE Grouped MLP Triton attempt",
+      "timestamp": "UNKNOWN",
+      "operator": "moe_grouped_mlp_train",
+      "hardware": "biv150_corex",
+      "architecture": "BI-V150",
+      "backend": "corex_triton",
+      "framework": "corex_triton",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [
+        "triton"
+      ],
+      "changes": [],
+      "evidence": {
+        "summary": "correctness FAIL; campaign blocked"
+      },
+      "performance": {
+        "summary": "correctness FAIL; campaign blocked"
+      },
+      "decision": "REJECT",
+      "failure_class": null,
+      "observations": [
+        "correctness FAIL; campaign blocked"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "REMOTE_ATREX_CANONICAL",
+        "source_path": "/private/atrex-megatron/campaigns/kernel_opt_moe_grouped_mlp_train_triton_bi_v150_production/memory/v1.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 2,
+        "location": "remote_biv150",
+        "read_only": true
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\moe_grouped_mlp_train\\biv150_corex\\remote-moe-v1\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "remote-residual-v5",
+      "title": "Residual RMSNorm flat row-batched",
+      "timestamp": "UNKNOWN",
+      "operator": "residual_rmsnorm_train",
+      "hardware": "biv150_corex",
+      "architecture": "BI-V150",
+      "backend": "corex_triton",
+      "framework": "corex_triton",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [
+        "row_batching",
+        "shape_dispatch"
+      ],
+      "changes": [],
+      "evidence": {
+        "summary": "5 hidden workloads pass; 5-seed all-pass; score 19.75/19.81 vs V3 12.72; ~56 percent"
+      },
+      "performance": {
+        "summary": "5 hidden workloads pass; 5-seed all-pass; score 19.75/19.81 vs V3 12.72; ~56 percent"
+      },
+      "decision": "ACCEPT",
+      "failure_class": null,
+      "observations": [
+        "5 hidden workloads pass; 5-seed all-pass; score 19.75/19.81 vs V3 12.72; ~56 percent"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "REMOTE_ATREX_CANONICAL",
+        "source_path": "/private/atrex-megatron/campaigns/kernel_opt_residual_rmsnorm_train_triton_bi_v150_production/memory/v5.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 3,
+        "location": "remote_biv150",
+        "read_only": true
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\residual_rmsnorm_train\\biv150_corex\\remote-residual-v5\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "aka-rmsnorm-v0",
+      "title": "Standalone RMSNorm V0 eager reference",
+      "timestamp": "UNKNOWN",
+      "operator": "rms_norm_train",
+      "hardware": "rtx5060_laptop_sm120",
+      "architecture": "sm_120",
+      "backend": "pytorch_eager",
+      "framework": "pytorch_eager",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [],
+      "changes": [],
+      "evidence": {
+        "summary": "Official eager reference used as correctness oracle and initial performance baseline"
+      },
+      "performance": {
+        "summary": "Official eager reference used as correctness oracle and initial performance baseline"
+      },
+      "decision": "BASELINE",
+      "failure_class": null,
+      "observations": [
+        "Official eager reference used as correctness oracle and initial performance baseline"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "LEGACY_AKA_LOCAL",
+        "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\decision.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 2,
+        "location": "local",
+        "read_only": false
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\rms_norm_train\\rtx5060_laptop_sm120\\aka-rmsnorm-v0\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "aka-rmsnorm-v1",
+      "title": "Standalone RMSNorm V1 fused row reduction",
+      "timestamp": "UNKNOWN",
+      "operator": "rms_norm_train",
+      "hardware": "rtx5060_laptop_sm120",
+      "architecture": "sm_120",
+      "backend": "cuda_cpp",
+      "framework": "cuda_cpp",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [
+        "fused_row_reduction",
+        "shared_memory_reduction"
+      ],
+      "changes": [],
+      "evidence": {
+        "summary": "56/56 correctness PASS; arithmetic mean speedup 7.202740x vs eager; one block per row, shared-memory tree reduction"
+      },
+      "performance": {
+        "summary": "56/56 correctness PASS; arithmetic mean speedup 7.202740x vs eager; one block per row, shared-memory tree reduction"
+      },
+      "decision": "PROMOTE",
+      "failure_class": null,
+      "observations": [
+        "56/56 correctness PASS; arithmetic mean speedup 7.202740x vs eager; one block per row, shared-memory tree reduction"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "LEGACY_AKA_LOCAL",
+        "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\decision.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 3,
+        "location": "local",
+        "read_only": false
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\rms_norm_train\\rtx5060_laptop_sm120\\aka-rmsnorm-v1\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "aka-rmsnorm-v2",
+      "title": "Standalone RMSNorm V2 warp reduction",
+      "timestamp": "UNKNOWN",
+      "operator": "rms_norm_train",
+      "hardware": "rtx5060_laptop_sm120",
+      "architecture": "sm_120",
+      "backend": "cuda_cpp",
+      "framework": "cuda_cpp",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [
+        "warp_reduction"
+      ],
+      "changes": [],
+      "evidence": {
+        "summary": "56/56 correctness PASS; repeated ABBA arithmetic mean ~1.074x; 50/56 winning shape means; shared memory 2048B to 1056B"
+      },
+      "performance": {
+        "summary": "56/56 correctness PASS; repeated ABBA arithmetic mean ~1.074x; 50/56 winning shape means; shared memory 2048B to 1056B"
+      },
+      "decision": "ACCEPT",
+      "failure_class": null,
+      "observations": [
+        "56/56 correctness PASS; repeated ABBA arithmetic mean ~1.074x; 50/56 winning shape means; shared memory 2048B to 1056B"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "LEGACY_AKA_LOCAL",
+        "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\episode_2\\decision.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 3,
+        "location": "local",
+        "read_only": false
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\rms_norm_train\\rtx5060_laptop_sm120\\aka-rmsnorm-v2\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "aka-swiglu-v2b",
+      "title": "Standalone SwiGLU V2b",
+      "timestamp": "UNKNOWN",
+      "operator": "swiglu",
+      "hardware": "rtx5060_laptop_sm120",
+      "architecture": "sm_120",
+      "backend": "cuda_cpp",
+      "framework": "cuda_cpp",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [
+        "fusion",
+        "half2"
+      ],
+      "changes": [],
+      "evidence": {
+        "summary": "RTX5060 ABBA: M256 1.582x, M1024 1.506x, M4096 1.673x"
+      },
+      "performance": {
+        "summary": "RTX5060 ABBA: M256 1.582x, M1024 1.506x, M4096 1.673x"
+      },
+      "decision": "ACCEPT",
+      "failure_class": null,
+      "observations": [
+        "RTX5060 ABBA: M256 1.582x, M1024 1.506x, M4096 1.673x"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "LEGACY_AKA_LOCAL",
+        "source_path": "C:\\Users\\38154\\projects\\aka-local\\STATUS.md",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 3,
+        "location": "local",
+        "read_only": false
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\swiglu\\rtx5060_laptop_sm120\\aka-swiglu-v2b\\record.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "aka-swiglu-v3",
+      "title": "Standalone SwiGLU V3 robustness",
+      "timestamp": "UNKNOWN",
+      "operator": "swiglu",
+      "hardware": "rtx5060_laptop_sm120",
+      "architecture": "sm_120",
+      "backend": "cuda_cpp",
+      "framework": "cuda_cpp",
+      "dtype": [],
+      "mode": "training",
+      "scope": {},
+      "shape_regime": {},
+      "baseline": {},
+      "candidate": {},
+      "hypothesis": "",
+      "mechanisms": [
+        "candidate comparison"
+      ],
+      "changes": [],
+      "evidence": {
+        "summary": "robustness arithmetic aggregate 0.986540x; KEEP_V2B"
+      },
+      "performance": {
+        "summary": "robustness arithmetic aggregate 0.986540x; KEEP_V2B"
+      },
+      "decision": "REJECT",
+      "failure_class": null,
+      "observations": [
+        "robustness arithmetic aggregate 0.986540x; KEEP_V2B"
+      ],
+      "failed_assumptions": [],
+      "unresolved_questions": [],
+      "next_directions": [],
+      "provenance": {
+        "source_type": "LEGACY_AKA_LOCAL",
+        "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\luna\\episode_3\\robustness_abba.json",
+        "source_commit": null,
+        "canonical": true,
+        "evidence_level": 3,
+        "location": "local",
+        "read_only": false
+      },
+      "tags": [
+        "imported"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\experiments\\swiglu\\rtx5060_laptop_sm120\\aka-swiglu-v3\\record.json"
+    }
+  ],
+  "knowledge": [
+    {
+      "schema_version": 1,
+      "id": "biv150-swiglu-direct-loop",
+      "title": "Expanded direct row loop regressed medium T",
+      "type": "ANTI_STRATEGY",
+      "statement": "In the BI-V150 Bias SwiGLU campaign, expanding the single-launch direct serial row-loop regime to medium T regressed the medium-T shape and was reverted.",
+      "scope": {
+        "platforms": [
+          "biv150_corex"
+        ],
+        "architectures": [
+          "BI-V150"
+        ],
+        "backends": [
+          "corex_triton"
+        ],
+        "operators": [
+          "bias_swiglu_train"
+        ]
+      },
+      "mechanism": "serial_row_loop",
+      "evidence_for": [
+        "remote-swiglu-v6"
+      ],
+      "evidence_against": [],
+      "conditions": [
+        "the recorded public/campaign shape regime"
+      ],
+      "exceptions": [
+        "Not a universal prohibition on direct kernels"
+      ],
+      "confidence": "SINGLE_EXPERIMENT",
+      "status": "ACTIVE",
+      "related_knowledge": [],
+      "source_notes": [
+        "Imported from canonical campaign summary; no new run"
+      ],
+      "last_updated": "2026-09-15",
+      "evidence_level": 2,
+      "tags": [
+        "backend-specific",
+        "shape-specific"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\knowledge\\anti_strategies\\biv150-swiglu-direct-loop.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "swiglu-v3-noise-reject",
+      "title": "Weak SwiGLU V3 gain was not robust",
+      "type": "ANTI_STRATEGY",
+      "statement": "On the standalone RTX5060 SwiGLU workload, V3's initial positive arithmetic result did not survive repeated ABBA robustness; V2b remained incumbent.",
+      "scope": {
+        "platforms": [
+          "rtx5060_laptop_sm120"
+        ],
+        "architectures": [
+          "sm120"
+        ],
+        "backends": [
+          "cuda_cpp"
+        ],
+        "operators": [
+          "swiglu"
+        ]
+      },
+      "mechanism": "benchmark_robustness",
+      "evidence_for": [
+        "aka-swiglu-v3"
+      ],
+      "evidence_against": [],
+      "conditions": [
+        "the recorded three-shape standalone workload"
+      ],
+      "exceptions": [],
+      "confidence": "SINGLE_EXPERIMENT",
+      "status": "ACTIVE",
+      "related_knowledge": [],
+      "source_notes": [
+        "Not a universal statement about V3-like kernels"
+      ],
+      "last_updated": "2026-09-15",
+      "evidence_level": 3,
+      "tags": [
+        "noise",
+        "promotion-gate"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\knowledge\\anti_strategies\\swiglu-v3.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "biv150-corex-masked-2d-tile",
+      "title": "Masked 2D row tile miscompile",
+      "type": "BACKEND_QUIRK",
+      "statement": "A masked 2D row-tile implementation produced OOB corruption on the BI-V150 CoreX/Triton backend in the Residual RMSNorm campaign.",
+      "scope": {
+        "platforms": [
+          "biv150_corex"
+        ],
+        "architectures": [
+          "BI-V150"
+        ],
+        "backends": [
+          "corex_triton"
+        ],
+        "operators": [
+          "residual_rmsnorm_train"
+        ]
+      },
+      "mechanism": "masked_2d_tile",
+      "evidence_for": [
+        "remote-residual-v5"
+      ],
+      "evidence_against": [],
+      "conditions": [
+        "the specific campaign implementation and backend"
+      ],
+      "exceptions": [
+        "Do not generalize to NVIDIA Triton"
+      ],
+      "confidence": "SINGLE_EXPERIMENT",
+      "status": "ACTIVE",
+      "related_knowledge": [],
+      "source_notes": [
+        "Imported from remote Atrex canonical memory/experiment summaries"
+      ],
+      "last_updated": "2026-09-15",
+      "evidence_level": 2,
+      "tags": [
+        "backend-specific"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\knowledge\\backend_quirks\\biv150-corex-2d-tile.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "rmsnorm-v2-local-observation",
+      "title": "RMSNorm V2 resources and repeated result",
+      "type": "OBSERVATION",
+      "statement": "Standalone RMSNorm V2 reduced shared memory from 2048B to 1056B while retaining 30 registers/thread; repeated local ABBA recorded about 1.074 arithmetic speedup.",
+      "scope": {
+        "platforms": [
+          "rtx5060_laptop_sm120"
+        ],
+        "architectures": [
+          "sm120"
+        ],
+        "backends": [
+          "cuda_cpp"
+        ],
+        "operators": [
+          "rms_norm_train"
+        ],
+        "dtype": [
+          "bf16"
+        ]
+      },
+      "mechanism": "warp_reduction",
+      "evidence_for": [
+        "aka-rmsnorm-v2"
+      ],
+      "evidence_against": [],
+      "conditions": [
+        "standalone official workload"
+      ],
+      "exceptions": [],
+      "confidence": "SINGLE_EXPERIMENT",
+      "status": "ACTIVE",
+      "related_knowledge": [],
+      "source_notes": [
+        "Imported from aka-local; no new measurement"
+      ],
+      "last_updated": "2026-09-15",
+      "evidence_level": 3,
+      "tags": [
+        "local-only"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\knowledge\\observations\\rmsnorm-v2.json"
+    },
+    {
+      "schema_version": 1,
+      "id": "coverage-open-questions",
+      "title": "Cross-platform evidence coverage",
+      "type": "OPEN_QUESTION",
+      "statement": "How do the same training-operator mechanisms behave on V100, BI-V150, and RTX5060 under matched contracts and workloads?",
+      "scope": {
+        "platforms": [
+          "v100_sm70",
+          "biv150_corex",
+          "rtx5060_laptop_sm120"
+        ],
+        "architectures": [
+          "sm70",
+          "BI-V150",
+          "sm120"
+        ],
+        "backends": [
+          "cuda_cpp",
+          "corex_triton",
+          "triton"
+        ]
+      },
+      "mechanism": "cross_architecture_comparison",
+      "evidence_for": [],
+      "evidence_against": [],
+      "conditions": [],
+      "exceptions": [],
+      "confidence": "UNVERIFIED",
+      "status": "ACTIVE",
+      "related_knowledge": [],
+      "source_notes": [
+        "No matched cross-GPU experiment imported yet"
+      ],
+      "last_updated": "2026-09-15",
+      "evidence_level": 0,
+      "tags": [
+        "frontier"
+      ],
+      "_path": "C:\\Users\\38154\\projects\\aka-local\\lab\\knowledge\\open_questions\\coverage.json"
+    }
+  ]
+}

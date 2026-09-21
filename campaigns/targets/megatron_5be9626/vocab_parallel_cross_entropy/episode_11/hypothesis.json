@@ -1,0 +1,7 @@
+{
+  "hypothesis": "Fuse the local shifted-logit, target extraction, exponentiation, and denominator accumulation into one persistent per-row kernel while preserving the caller's MAX and two SUM collectives.",
+  "scope": "local_prepare_fp16_stream only; no Megatron, backward, partition, or collective changes",
+  "correctness": "Shift every local logit and the local target contribution by global_max; target_mask and target_local are row-shaped.",
+  "compatibility": "CUDA 11.8, V100 sm_70; finite float initializer avoids CUDART_INF_F.",
+  "expected_effect": "Reduce local temporary/kernel launch overhead; network and collective behavior remain unchanged."
+}

@@ -1,0 +1,14 @@
+{
+  "canonical_target": "Megatron Native DotProductAttention (unfused local core)",
+  "sequence": [
+    {"op": "Q/K/V", "kind": "input", "shape": "[S,B,16,64]", "dtype": "FP16"},
+    {"op": "reshape/view", "kind": "PyTorch", "shape": "[B*16,S,64]"},
+    {"op": "scaled QK^T", "kind": "torch.baddbmm/cuBLAS", "shape": "[B*16,S,S]"},
+    {"op": "dense softmax", "kind": "Megatron FusedScaleMaskSoftmax / CUDA kernel", "mask": "None", "accumulation": "FP32"},
+    {"op": "dropout", "kind": "torch.nn.Dropout", "probability": 0.0},
+    {"op": "PV", "kind": "torch.bmm/cuBLAS", "shape": "[B*16,S,64]"},
+    {"op": "permute/contiguous/view", "kind": "PyTorch", "output": "[S,B,1024] FP16 contiguous"}
+  ],
+  "collectives": 0,
+  "excluded": ["QKV GEMM", "rotary embedding", "output projection GEMM"]
+}

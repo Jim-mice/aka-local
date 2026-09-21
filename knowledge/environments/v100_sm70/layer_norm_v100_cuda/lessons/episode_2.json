@@ -1,0 +1,11 @@
+{
+  "operator": "layer_norm_v100_cuda",
+  "episode": 2,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "correctness",
+  "reason": "correctness failed; max_error=9.75206470489502",
+  "compiler_error": "",
+  "reusable_rule": "Avoid correctness failures: verify RMSNorm formula y=(x/rms(x))*weight",
+  "timestamp": "2026-09-19T09:40:13.072338+00:00"
+}

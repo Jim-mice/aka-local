@@ -1,0 +1,20 @@
+{
+  "status": "QUALIFICATION_EVIDENCE_NOT_AGENT_BASELINE",
+  "benchmark_script": "targets/megatron_5be9626/attention_phase17a_benchmark.py",
+  "warmup": 5,
+  "measurements_per_shape": 20,
+  "dtype": "FP16",
+  "dropout": 0.0,
+  "collectives": 0,
+  "forward_us": {
+    "16x1x1024": {"mean": 751.874, "std": 101.997, "cv": 0.136, "min": 692.224, "max": 1153.024},
+    "64x2x1024": {"mean": 711.581, "std": 46.882, "cv": 0.066, "min": 690.176, "max": 908.288},
+    "128x2x1024": {"mean": 712.602, "std": 26.518, "cv": 0.037, "min": 688.128, "max": 776.192}
+  },
+  "backward_us": {
+    "16x1x1024": {"mean": 1777.051, "std": 3263.757, "cv": 1.837, "min": 835.584, "max": 15634.432},
+    "64x2x1024": {"mean": 1754.112, "std": 2836.208, "cv": 1.617, "min": 920.576, "max": 13774.848},
+    "128x2x1024": {"mean": 1924.301, "std": 3382.397, "cv": 1.758, "min": 881.664, "max": 16282.624}
+  },
+  "interpretation": "Forward is measurable qualification evidence; backward is highly contaminated by first-use/autograd/environment effects and is not a stable campaign baseline. No score or Agent candidate is created in Phase 17-A."
+}

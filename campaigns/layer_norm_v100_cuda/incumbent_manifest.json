@@ -1,0 +1,15 @@
+{
+  "operator": "layer_norm_v100_cuda",
+  "incumbent": "v7",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ],
+  "score": 1.126,
+  "geometric_mean_speedup": 1.126,
+  "created_from_episode": 7,
+  "updated_at": "2026-09-19T12:32:59.051246+00:00"
+}

@@ -1,0 +1,14 @@
+{
+  "version":"attention_vendor_gemm_hybrid_v1_research_only",
+  "status":"RESEARCH_ONLY_NOT_AGENT_SCORING",
+  "megatron_commit":"5be9626709af2722333bf54797c954c09edeada3",
+  "replay_contract":"65058b45af7fb867a135d143b06e6600f75fbe7a13c523f351eef20d48741736",
+  "performance_contract":"5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+  "preserved_vendor_work":["QK torch.baddbmm alpha=0.125","PV torch.bmm"],
+  "replaceable_local_work":["FP16-to-FP32 score conversion","dense no-mask FP32 softmax","FP32-to-FP16 probabilities","unnecessary local copies/layout work"],
+  "workspace_policy":"preallocate equivalent score/output workspace before timing; FP32 softmax temporary and FP16 probabilities must be accounted consistently; persistent reuse is allowed only symmetrically or when semantic materialization is eliminated",
+  "stream_policy":"all vendor GEMM and custom local kernels use the current PyTorch CUDA stream; no hidden default stream or per-call device synchronization",
+  "excluded":["QKV/output projection","masks","nonzero dropout","TE","flash-attn","backward","NCCL"],
+  "official_configurations":[[16,1,1024],[64,2,1024],[128,2,1024]],
+  "future_orchestration":"framework-owned host adapter calls vendor GEMMs and an explicit local softmax stage; a raw softmax-kernel ABI is preferred over a host function that secretly owns a cuBLAS handle"
+}

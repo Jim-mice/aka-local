@@ -1,0 +1,39 @@
+{
+  "shapes": [
+    [
+      1,
+      4,
+      64,
+      64
+    ],
+    [
+      1,
+      8,
+      128,
+      64
+    ],
+    [
+      2,
+      8,
+      256,
+      64
+    ],
+    [
+      1,
+      16,
+      512,
+      64
+    ]
+  ],
+  "score": "geometric_mean_speedup",
+  "correctness_tolerance": 0.001,
+  "correctness_relative_tolerance": 0.001,
+  "warmup": 10,
+  "iterations": 50,
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract": {
+    "function": "launch_kernel",
+    "signature": "void launch_kernel(float* q, float* k, float* v, float* o, int batch, int heads, int seq, int head_dim, float scale)"
+  }
+}

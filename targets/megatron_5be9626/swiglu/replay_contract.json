@@ -1,0 +1,18 @@
+{
+  "target_name": "Megatron MLP SwiGLU activation boundary",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "exact_call_site": "TransformerLayer._forward_mlp -> MLP.forward (megatron/core/transformer/mlp.py:258) -> FC1 -> gated activation branch -> FC2",
+  "source_files": ["megatron/core/transformer/mlp.py", "megatron/core/fusions/fused_bias_swiglu.py", "megatron/core/extensions/transformer_engine.py"],
+  "backend": "Megatron core MLP.forward with bias_activation_fusion=false and use_te_activation_func=false; FC1/FC2 are adapter-provided TP=1 linear modules for the minimal replay, while the SwiGLU branch is the exact Megatron implementation",
+  "inputs": {"hidden_states": "[S,B,H]", "fc1_output": "[S,B,2I/TP]", "fc1_bias": "optional [2I/TP]", "fc2_weight": "part of surrounding MLP and excluded from activation-only replay"},
+  "outputs": {"activation_boundary": "[S,B,I/TP]", "full_mlp": "MLP.forward returns (output [S,B,H], output_bias or None)"},
+  "layout": "contiguous row-major tensors; gate/up are interleaved according to Megatron MLP stride=2 and split with torch.chunk along the last dimension",
+  "dtype": {"replay": "FP32 compatibility mode initially; V100 representative training mode should be FP16 after dependency validation", "source_support": ["FP32", "FP16", "BF16", "TE FP8 conditional"]},
+  "forward_semantics": "When the unfused branch is selected: x_glu, x_linear = torch.chunk(intermediate_parallel, 2, dim=-1); SiLU(x_glu) * (x_linear + glu_linear_offset). If bias_parallel exists it is added before chunking.",
+  "backward_semantics": "Autograd differentiates the real MLP path; fused Megatron bias_swiglu_impl has its own autograd Function, but is excluded from the initial compatibility replay unless its extension is available.",
+  "boundary_exclusions": ["model construction", "random input generation", "FC1/FC2 GEMM for activation-only measurement", "tensor-parallel collectives at TP=1", "Transformer Engine and FP8 paths"],
+  "distributed_assumptions": {"tensor_parallel": 1, "expert_parallel": 1, "process_group": "not required for the local adapter path"},
+  "v100_compatibility": "SUPPORTED_WITH_FALLBACK: exact Megatron MLP Python activation path in FP32; FP16 is the next validation mode; no TE/FP8 dependency is claimed",
+  "replay_oracle": "independent torch chunk + torch.nn.functional.silu + multiply implementation, compared against the output captured from Megatron MLP.forward activation path",
+  "open_questions": ["Whether the eventual production configuration enables bias_activation_fusion or TE activation", "Whether the V100 host has a compatible Transformer Engine build"]
+}

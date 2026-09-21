@@ -1,0 +1,11 @@
+{
+  "operator": "causal_attention_v100_cuda",
+  "episode": 1,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "correctness",
+  "reason": "correctness failed on one or more shapes",
+  "compiler_error": "",
+  "reusable_rule": "Avoid correctness failures: verify RMSNorm formula y=(x/rms(x))*weight",
+  "timestamp": "2026-09-19T15:36:58.876014+00:00"
+}

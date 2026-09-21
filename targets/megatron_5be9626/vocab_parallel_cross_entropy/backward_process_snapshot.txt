@@ -1,0 +1,78 @@
+--- nvidia-smi ---
+Sun Sep 20 18:57:16 2026       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 535.183.06             Driver Version: 535.183.06   CUDA Version: 12.2     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  Tesla V100-PCIE-16GB           On  | 00000000:08:00.0 Off |                    0 |
+|100%   76C    P0              95W / 250W |      5MiB / 16384MiB |      0%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+|   1  Tesla V100-PCIE-16GB           On  | 00000000:84:00.0 Off |                    0 |
+|100%   49C    P0              46W / 250W |    315MiB / 16384MiB |    100%      Default |
+|                                         |                      |                  N/A |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|    0   N/A  N/A      2283      G   /usr/lib/xorg/Xorg                            4MiB |
+|    1   N/A  N/A      2283      G   /usr/lib/xorg/Xorg                            4MiB |
+|    1   N/A  N/A    935564      C   ...aliang/venvs/lerobot-act/bin/python      308MiB |
++---------------------------------------------------------------------------------------+
+WARNING: infoROM is corrupted at gpu 0000:08:00.0
+
+--- nvidia-smi pmon -c 1 ---
+# gpu         pid  type    sm    mem    enc    dec    command
+# Idx           #   C/G     %      %      %      %    name
+    0       2283     G      -      -      -      -    Xorg           
+    1       2283     G      -      -      -      -    Xorg           
+    1     935564     C     99      0      -      -    python         
+
+--- ps -eo pid,ppid,stat,pcpu,pmem,cmd --sort=-pcpu | head -40 ---
+    PID    PPID STAT %CPU %MEM CMD
+ 935564  935563 Rl   99.9  0.3 <REMOTE_HOME>/venvs/lerobot-act/bin/python /home/<REMOTE_USER>/cuda_kernel_experiments/evaluator/evaluate.py /home/<REMOTE_USER>/aka_remote_jobs/5777fad4532d/candidate.cu --shape 1,4096 --op layer_norm_v100_cuda --no-profile -o /home/<REMOTE_USER>/aka_remote_jobs/5777fad4532d/result.json
+3762283       1 SLl   4.7  0.1 /titan/agent/titanagent -d -b /etc/titanagent
+1951290 1654687 Sl+   2.7  0.2 claude
+2601104 2600686 Sl+   2.6  0.2 claude
+   1327       2 S     2.4  0.0 [nv_queue]
+   1333       1 Ssl   2.2  0.0 /sangfor/edr/agent/bin/edr_monitor
+1713930 1967642 Sl+   2.0  0.3 claude
+3420006 3419667 Sl+   1.9  0.2 claude
+3495543  293480 Sl    1.5  0.1 /usr/lib/firefox/firefox
+   1130       2 S     1.4  0.0 [nv_queue]
+3495796 3495543 Sl    1.0  0.0 /usr/lib/firefox/firefox -contentproc -isForBrowser -prefsHandle 0 -prefsLen 37843 -prefMapHandle 1 -prefMapSize 264030 -jsInitHandle 2 -jsInitLen 247456 -parentBuildID 20250227124745 -sandboxReporter 3 -chrootClient 4 -ipcHandle 5 -initialChannelId {1a07ac03-a0a2-4690-bb6e-4a7ae00f0bd9} -parentPid 3495543 -crashReporter 6 -greomni /usr/lib/firefox/omni.ja -appomni /usr/lib/firefox/browser/omni.ja -appDir /usr/lib/firefox/browser 6 tab
+1500787    1333 Sl    0.8  0.0 /sangfor/edr/agent/bin/edr_agent
+ 475510  350679 Ssl   0.7  0.2 /home/xiaolin/.codex/packages/standalone/releases/0.155.1-x86_64-unknown-linux-musl/bin/codex app-server --remote-control --listen unix:// --managed-daemon
+1861554 1653584 Sl    0.7  0.5 /home/<REMOTE_USER>/.vscode-server/cli/servers/Stable-7debcd0e2acdea1c52de81bf9ee1620444407dda/server/node --dns-result-order=ipv4first /home/<REMOTE_USER>/.vscode-server/cli/servers/Stable-7debcd0e2acdea1c52de81bf9ee1620444407dda/server/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+2045151    1444 Ss    0.6  0.0 sshd: <REMOTE_USER> [priv]
+  93210   92736 Sl    0.5  0.5 /home/xiaolin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node --dns-result-order=ipv4first /home/xiaolin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+3225235 3881813 Sl+   0.5  0.2 claude --resume exp1
+   1076       1 Ssl   0.4  0.0 /usr/sbin/NetworkManager --no-daemon
+      1       0 Ss    0.3  0.0 /sbin/init splash
+    217       2 S     0.3  0.0 [kcompactd1]
+1732740   93210 Sl    0.2  0.5 /home/xiaolin/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node /home/xiaolin/.vscode-server/extensions/ms-python.vscode-pylance-2026.3.1/dist/server.bundle.js --cancellationReceive=file:03d38162982eeff785f3a7e5d6eaa4437bdb530bc7 --node-ipc --clientProcessId=93210
+    216       2 S     0.1  0.0 [kcompactd0]
+   1072       1 Ss    0.1  0.0 avahi-daemon: running [v100-srv.local]
+   1128       2 S     0.1  0.0 [irq/114-nvidia]
+   1325       2 S     0.1  0.0 [irq/115-nvidia]
+   3091    2922 Sl+   0.1  0.0 /usr/bin/gnome-shell
+ 294780       1 Ss    0.1  0.1 tmux new -s 205
+1018836    1333 Sl    0.1  0.0 /sangfor/edr/agent/bin/sfavsrv
+1342429 3762283 Tl    0.1  0.0 /titan/agent/scanmanager --server-addr=com.qingteng.agent.scanmanager --max-clients=2 --log-dir="/var/log/titanagent" --conf-dir="/etc/titanagent" --monitor-name=titan_monitor
+1653584 1653580 Sl    0.1  0.1 /home/<REMOTE_USER>/.vscode-server/cli/servers/Stable-7debcd0e2acdea1c52de81bf9ee1620444407dda/server/node /home/<REMOTE_USER>/.vscode-server/cli/servers/Stable-7debcd0e2acdea1c52de81bf9ee1620444407dda/server/out/server-main.js --connection-token=remotessh --accept-server-license-terms --agent-host-bridge-port=38407 --agent-host-bridge-host=127.0.0.1 --start-server --enable-remote-auto-shutdown --socket-path=/tmp/code-5a6d1a24-b968-40a4-9676-0676737361bd
+1653759 1653584 Sl    0.1  0.0 /home/<REMOTE_USER>/.vscode-server/cli/servers/Stable-7debcd0e2acdea1c52de81bf9ee1620444407dda/server/node /home/<REMOTE_USER>/.vscode-server/cli/servers/Stable-7debcd0e2acdea1c52de81bf9ee1620444407dda/server/out/bootstrap-fork --type=ptyHost --logsPath /home/<REMOTE_USER>/.vscode-server/data/logs/20260920T100604
+1862004 1861554 Sl    0.1  0.3 /home/<REMOTE_USER>/.vscode-server/cli/servers/Stable-7debcd0e2acdea1c52de81bf9ee1620444407dda/server/node /home/<REMOTE_USER>/.vscode-server/extensions/ms-python.vscode-pylance-2026.3.1/dist/server.bundle.js --cancellationReceive=file:e3e3e9f011fb2f0d73b4920538e9c5a07bdd646993 --node-ipc --clientProcessId=1861554
+3762289 3762283 S<l   0.1  0.0 titan_monitor -p 3762283 -l 50 -c 150 -g 0 -b /etc/titanagent
+      2       0 S     0.0  0.0 [kthreadd]
+      3       2 I<    0.0  0.0 [rcu_gp]
+      4       2 I<    0.0  0.0 [rcu_par_gp]
+      5       2 I<    0.0  0.0 [slub_flushwq]
+      6       2 I<    0.0  0.0 [netns]
+      8       2 I<    0.0  0.0 [kworker/0:0H-events_highpri]
+

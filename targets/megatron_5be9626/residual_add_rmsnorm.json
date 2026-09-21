@@ -1,0 +1,18 @@
+{
+  "target_name": "Residual Add RMSNorm",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "source_files": ["megatron/core/extensions/transformer_engine.py", "megatron/core/transformer/transformer_layer.py", "megatron/core/fusions/fused_bias_dropout.py", "megatron/core/transformer/transformer_config.py"],
+  "call_sites": ["TransformerLayer.forward post-attention/post-MLP BDA regions", "build_norm(..., has_residual=...) when fused_residual_rmsnorm is enabled"],
+  "implementation_backend": "not one universal operator: bias_dropout_add is Megatron fusion; residual-output RMSNorm fusion is TE-only when enabled",
+  "forward": {"confirmed_semantics": "bias_dropout_add computes residual + dropout(x + bias)", "TE_residual_norm": "TEFusedResidualRMSNorm forks residual and applies RMSNorm to main path; returns (normalized_output,residual)", "ambiguity_resolution": "Target A exists as TE residual-output fork/RMSNorm fusion; Target B is a separate BDA composition, not one universal fused operator"},
+  "backward": {"path": "autograd for BDA; TE fused residual RMSNorm backward when TE module is selected", "gradient_flow": "main normalized branch and residual fork both receive gradients"},
+  "inputs": ["main branch x", "residual", "optional bias", "dropout probability", "RMSNorm weight"],
+  "outputs": ["normalized output", "residual fork when TE fused module is used"],
+  "symbolic_shapes": {"stream": "[S,B,H]", "residual": "[S,B,H]", "norm": "last-dimension H"},
+  "dtypes": ["FP16", "BF16", "FP32 residual stream option", "FP8 only through compatible TE surrounding modules"],
+  "distributed_semantics": {"collectives": "may be adjacent to TP/sequence-parallel linear collectives; fusion path is config-dependent"},
+  "external_dependencies": ["Transformer Engine required for TEFusedResidualRMSNorm", "Megatron fused_bias_dropout otherwise"],
+  "v100_feasibility": "SUPPORTED_WITH_FALLBACK: unfused/Megatron BDA and local RMSNorm; TE fused residual behavior requires installed TE compatibility",
+  "candidate_optimization_boundary": "B/D: either BDA elementwise fusion or TE residual-RMSNorm module boundary; do not conflate them",
+  "open_questions": ["Final config values for fused_residual_rmsnorm, bias_dropout_fusion, and apply_residual_connection_post_layernorm"]
+}

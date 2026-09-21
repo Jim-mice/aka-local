@@ -1,0 +1,26 @@
+{
+  "episode": 6,
+  "operator": "dense_attention_backward_v100_cuda",
+  "decision": "REJECT_CORRECTNESS",
+  "compile_pass": true,
+  "correctness_pass": false,
+  "speedup": null,
+  "aggregate_score": 1.0,
+  "geometric_mean_speedup": 1.0,
+  "incumbent_score": 1.0,
+  "reason": "correctness failed; max_error=11.9888277053833",
+  "evaluated_at": "2026-09-19T17:06:10.860706+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,2,32,32",
+    "1,4,64,64",
+    "1,8,128,64",
+    "2,4,128,64"
+  ],
+  "legacy_benchmark": true,
+  "legacy_benchmark_reason": "baseline included forward recomputation",
+  "benchmark_contract": {
+    "version": 1,
+    "mode": "forward_recompute_autograd"
+  }
+}

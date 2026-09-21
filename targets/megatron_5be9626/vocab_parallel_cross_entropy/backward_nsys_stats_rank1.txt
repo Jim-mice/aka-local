@@ -1,0 +1,28 @@
+Generating SQLite file /home/<REMOTE_USER>/aka_ce_backward_rank1.sqlite from /home/<REMOTE_USER>/aka_ce_backward_rank1.nsys-rep
+Processing [/home/<REMOTE_USER>/aka_ce_backward_rank1.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+24.6,71006,5,14201.2,14239.0,14143,14240,52.7,"void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &)::[lambda(int) (instance 1)]>(long, T3)"
+23.9,68928,5,13785.6,13792.0,13728,13856,57.2,"void at::native::index_elementwise_kernel<(int)128, (int)4, void at::native::gpu_index_kernel<void at::native::index_put_kernel_impl<at::native::OpaqueType<(int)4>>(at::TensorIterator &, c10::ArrayRef<long>, c10::ArrayRef<long>)::[lambda(char *, const char *, long) (instance 1)]>(at::TensorIteratorBase &, c10::ArrayRef<long>, c10::ArrayRef<long>, const T1 &)::[lambda(int) (instance 1)]>(long, T3)"
+15.8,45567,5,9113.4,9120.0,9087,9152,27.0,"void at::native::unrolled_elementwise_kernel<at::native::direct_copy_kernel_cuda(at::TensorIteratorBase &)::[lambda() (instance 3)]::operator ()() const::[lambda() (instance 7)]::operator ()() const::[lambda(float) (instance 1)], std::array<char *, (unsigned long)2>, (int)4, TrivialOffsetCalculator<(int)1, unsigned int>, TrivialOffsetCalculator<(int)1, unsigned int>, at::native::memory::LoadWithCast<(int)1>, at::native::memory::StoreWithCast<(int)1>>(int, T1, T2, T4, T5, T6, T7)"
+13.1,37917,5,7583.4,7584.0,7551,7615,22.6,"void at::native::elementwise_kernel<(int)128, (int)2, void at::native::gpu_kernel_impl_nocast<at::native::BinaryFunctor<float, float, float, at::native::binary_internal::MulFunctor<float>>>(at::TensorIteratorBase &, const T1 &)::[lambda(int) (instance 1)]>(int, T3)"
+7.8,22432,5,4486.4,4480.0,4480,4512,14.3,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctor_add<float>, std::array<char *, (unsigned long)3>>(int, T2, T3)"
+7.7,22334,5,4466.8,4479.0,4447,4480,17.6,"void at::native::vectorized_elementwise_kernel<(int)4, at::native::CUDAFunctorOnOther_add<float>, std::array<char *, (unsigned long)2>>(int, T2, T3)"
+7.2,20672,5,4134.4,4128.0,4096,4192,41.7,"void <unnamed>::elementwise_kernel_with_index<int, at::native::arange_cuda_out(const c10::Scalar &, const c10::Scalar &, const c10::Scalar &, at::Tensor &)::[lambda() (instance 1)]::operator ()() const::[lambda() (instance 4)]::operator ()() const::[lambda(long) (instance 1)]>(T1, T2, function_traits<T2>::result_type *)"
+
+Processing [/home/<REMOTE_USER>/aka_ce_backward_rank1.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/nvtx_pushpop_sum.py]... 
+Time (%),Total Time (ns),Instances,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Range
+100.0,3766785,5,753357.0,695801.0,513765,1286798,316624.6,:AKA_CE_BACKWARD_BEGIN
+
+Processing [/home/<REMOTE_USER>/aka_ce_backward_rank1.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_api_sum.py]... 
+Time (%),Total Time (ns),Num Calls,Avg (ns),Med (ns),Min (ns),Max (ns),StdDev (ns),Name
+47.5,9170019,15,611334.6,14908.0,8494,2269895,1000450.0,cudaDeviceSynchronize
+47.3,9127810,5,1825562.0,1899936.0,1201921,2097257,367764.0,cudaEventSynchronize
+3.0,569245,35,16264.1,14270.0,7830,39286,7325.1,cudaLaunchKernel
+1.1,211911,5,42382.2,28728.0,22698,99911,32347.3,cudaMemcpyAsync
+0.5,104230,10,10423.0,8226.0,5815,33869,8421.1,cudaEventRecord
+0.3,56169,10,5616.9,4649.5,3300,15157,3565.5,cudaEventCreateWithFlags
+0.1,26650,1,26650.0,26650.0,26650,26650,0.0,cuProfilerStart
+0.1,16028,8,2003.5,1892.5,756,3644,1103.5,cudaEventDestroy
+0.0,8049,1,8049.0,8049.0,8049,8049,0.0,cudaEventQuery
+
+

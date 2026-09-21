@@ -1,0 +1,11 @@
+{
+  "operator": "causal_attention_v100_cuda",
+  "episode": 3,
+  "environment": "v100_sm70",
+  "decision": "REJECT",
+  "failure_stage": "performance",
+  "reason": "aggregate_score=0.238 <= incumbent=1.0",
+  "compiler_error": "",
+  "reusable_rule": "Avoid regressions: ensure kernel is faster than incumbent across ALL shapes",
+  "timestamp": "2026-09-19T15:44:33.853241+00:00"
+}

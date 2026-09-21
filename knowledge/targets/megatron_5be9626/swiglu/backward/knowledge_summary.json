@@ -1,0 +1,10 @@
+{
+  "contract_hash": "a7437b0c42289669",
+  "candidate_hash": "95f66fb9cbf5f4ef",
+  "activation_backward_speedup": 3.4578303034730578,
+  "lessons": [
+    "One stream-aware kernel replaces sigmoid, derivative, products, and packing for the official bias-free boundary.",
+    "Backward boundary gain does not guarantee whole-MLP training gain; integrated forward+backward remained below 1x in this harness.",
+    "Episode 1 and Episode 3 compile failures were preserved without manual repair."
+  ]
+}

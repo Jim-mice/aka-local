@@ -1,0 +1,19 @@
+{
+  "operator": "rms_norm",
+  "episode": 12,
+  "hypothesis": {
+    "direction_id": "",
+    "summary": "A one-block-per-row RMSNorm kernel with register accumulation and two-stage warp-shuffle reduction will reduce synchronization and shared-memory traffic while preserving numerical behavior. Each thread accumulates its strided row elements in registers, warp shuffles reduce within warps, and only one float per warp is stored in shared memory before the final reduction. The same inverse RMS is then reused for the output pass."
+  },
+  "result": {
+    "decision": "PROMOTE",
+    "speedup": 1.013831,
+    "geometric_speedup": 1.012634
+  },
+  "lesson": "Episode 12: 1.0138x speedup (geo 1.0126x) on sm_120 via .",
+  "reusable_pattern": [
+    "warp",
+    "reduction",
+    "register"
+  ]
+}

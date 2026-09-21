@@ -1,0 +1,20 @@
+{
+  "episode": 8,
+  "operator": "softmax_v100_cuda",
+  "decision": "ACCEPT",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 3.116,
+  "aggregate_score": 1.226,
+  "geometric_mean_speedup": 1.226,
+  "incumbent_score": 1.0,
+  "reason": "",
+  "evaluated_at": "2026-09-19T13:48:55.674931+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,1024",
+    "4,4096",
+    "32,1024",
+    "128,4096"
+  ]
+}

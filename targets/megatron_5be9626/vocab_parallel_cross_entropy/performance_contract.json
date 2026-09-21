@@ -1,0 +1,42 @@
+{
+  "performance_contract_version": "tp2_scope_v1",
+  "status": "ACTIVE_FROZEN",
+  "benchmark_era": "tp2_comparable_v1",
+  "semantic_boundary": "REAL TP=2 vocab-parallel cross entropy forward plus rank-local backward gradient generation",
+  "included_stages": [
+    "local maximum",
+    "MAX all-reduce",
+    "shifted logits",
+    "target ownership/extraction",
+    "SUM all-reduce predicted target logit",
+    "exp and local denominator",
+    "SUM all-reduce denominator",
+    "softmax materialization",
+    "rank-local gradient generation",
+    "loss finalization"
+  ],
+  "excluded_stages": [
+    "process startup",
+    "imports",
+    "fixture generation",
+    "model-parallel initialization",
+    "optimizer step"
+  ],
+  "allocation_policy": "preallocated operator outputs and workspaces outside the timed interval; identical policy for reference and candidate; implementation-internal temporary allocation is inside the common boundary",
+  "synchronization_policy": "distributed barrier and completed CUDA event interval on every rank",
+  "rank_aggregation_policy": "max rank completion latency per iteration",
+  "collective_structure": ["1 MAX all-reduce", "2 SUM all-reduces"],
+  "fixture_version": "coherent_global_fixture_v2",
+  "evaluator_hash": "7cc0fac8d80b2d27",
+  "tp": 2,
+  "dtype": "float16 logits; contract-defined reduction precision",
+  "official_configurations": [[8,1,32],[32,2,64],[128,2,128]],
+  "old_baseline_hash": "f11fd1fc6846d6f2",
+  "old_baseline_scope_verdict": "SCOPE_NOT_EQUIVALENT",
+  "backward_policy": "common manual analytical local gradient generation for reference and candidate",
+  "loss_finalization_policy": "common torch log/ subtraction finalization before common backward",
+  "warmup_policy": "5 iterations per configuration outside timing",
+  "measurement_policy": "5 CUDA-event samples per configuration; max rank completion per iteration",
+  "hash": "6632730d9957fbb1a0da4268f2b3c168b2836862db167935d8908758a00b5bea",
+  "hash_definition": "SHA256 of this serialization with hash value PENDING_ACTIVE_CONTRACT_HASH"
+}

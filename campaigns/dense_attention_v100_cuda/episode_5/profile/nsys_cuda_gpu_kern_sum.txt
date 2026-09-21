@@ -1,0 +1,14 @@
+
+NOTICE: Existing SQLite export found: /home/<REMOTE_USER>/aka_remote_jobs/nsys_attn_ep5/nsys_attn.sqlite
+        It is assumed file was previously exported from: /home/<REMOTE_USER>/aka_remote_jobs/nsys_attn_ep5/nsys_attn.nsys-rep
+        Consider using --force-export=true if needed.
+
+Processing [/home/<REMOTE_USER>/aka_remote_jobs/nsys_attn_ep5/nsys_attn.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)   Min (ns)  Max (ns)   StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  ---------  ---------  --------  ---------  -----------  ----------------------------------------------------------------------------------------------------
+     99.9       43,199,734         50  863,994.7  357,335.0   354,102  3,282,739  1,089,860.6  dense_attention_kernel                                                                              
+      0.1           24,738          3    8,246.0    7,904.0     7,777      9,057        705.2  void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::nat…
+

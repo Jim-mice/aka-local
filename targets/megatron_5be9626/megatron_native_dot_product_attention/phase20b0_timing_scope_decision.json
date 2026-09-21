@@ -1,0 +1,7 @@
+{
+  "decision":"PERFORMANCE_SCOPE_REUSED",
+  "source_contract":"native_dot_product_attention_scope_v1 / 5fc6c0031cd077ccc801ed1ae1397a7308e63c27760d7fc4ba3ddb6adf0d4f24",
+  "included":["preallocated Q/K/V","vendor QK alpha=0.125","FP32 softmax","FP16 probabilities","vendor PV","output completion"],
+  "excluded":["QKV","rotary","output projection","fixture/module/output allocation","backward","unrelated sync"],
+  "caveat":"historical event scope includes large stream scheduling/queue delay under current environment; this is measured provenance, not local-candidate-addressable work"
+}

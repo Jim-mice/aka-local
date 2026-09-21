@@ -1,0 +1,18 @@
+{
+  "phase": "15-C.1",
+  "status": "PASS",
+  "checks": [
+    {"name": "forward_campaign_frozen", "result": "PASS", "evidence": "campaign_state_15b8.json"},
+    {"name": "source_backward_has_zero_collectives", "result": "PASS", "evidence": "cross_entropy.py:185-210"},
+    {"name": "real_saved_softmax_observable", "result": "PASS", "evidence": "backward_correctness_raw.json"},
+    {"name": "rank0_and_rank1_gradient_oracle", "result": "PASS", "evidence": "backward_correctness_raw.json"},
+    {"name": "target_ownership_edge_fixtures", "result": "PASS", "evidence": "backward_correctness_raw.json"},
+    {"name": "finite_difference", "result": "PASS", "evidence": "backward_finite_difference.json"},
+    {"name": "timed_range_has_zero_nccl", "result": "PASS", "evidence": "backward_nsys_stats_rank0.txt; backward_nsys_stats_rank1.txt"},
+    {"name": "all_rank_rows_complete", "result": "PASS", "evidence": "backward_baseline_statistics.json"},
+    {"name": "no_silent_outlier_deletion", "result": "PASS", "evidence": "raw run files retain all samples"},
+    {"name": "no_backward_agent_episode", "result": "PASS", "evidence": "separate backward namespace has no campaign/episode"}
+  ],
+  "forward_history_untouched": true,
+  "megatron_upstream_untouched": true
+}

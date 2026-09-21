@@ -1,0 +1,455 @@
+[
+  {
+    "mode": "correctness",
+    "shape": [
+      16,
+      1,
+      1024
+    ],
+    "result": {
+      "rmsnorm": {
+        "forward": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "x_grad": {
+          "max_abs": 0.0013217926025390625,
+          "max_rel": 0.0004854279977735132
+        },
+        "weight_grad": {
+          "max_abs": 0.0038747787475585938,
+          "max_rel": 0.0004730315413326025
+        },
+        "x_grad_finite": true,
+        "weight_grad_finite": true,
+        "dtype": "torch.float16",
+        "finite_difference": {
+          "finite_difference_x_index": [
+            0,
+            2
+          ],
+          "analytic": -1.407054330186054,
+          "numerical": -1.4070543301603067,
+          "max_abs": 2.574740420868693e-11
+        }
+      },
+      "bda_train_unqualified_rng_comparison": {
+        "max_abs": 6.294921875,
+        "max_rel": 471679696896.0
+      },
+      "bda_eval": {
+        "max_abs": 0.00390625,
+        "max_rel": 244140624.0
+      },
+      "bda_dtypes": {
+        "x": "torch.float16",
+        "residual": "torch.float16",
+        "bias": "torch.float16"
+      },
+      "training_dropout_rng_note": "torch.rand_like does not reproduce F.dropout Philox mask consumption; this is not a training BDA correctness oracle",
+      "source_paths": [
+        "WrappedTorchNorm",
+        "get_bias_dropout_add"
+      ],
+      "te_available": false
+    },
+    "stderr": "home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.\n  warnings.warn(\n"
+  },
+  {
+    "mode": "correctness",
+    "shape": [
+      64,
+      2,
+      1024
+    ],
+    "result": {
+      "rmsnorm": {
+        "forward": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "x_grad": {
+          "max_abs": 0.0018630027770996094,
+          "max_rel": 0.002503691241145134
+        },
+        "weight_grad": {
+          "max_abs": 0.007793426513671875,
+          "max_rel": 0.0004621290718205273
+        },
+        "x_grad_finite": true,
+        "weight_grad_finite": true,
+        "dtype": "torch.float16",
+        "finite_difference": {
+          "finite_difference_x_index": [
+            0,
+            2
+          ],
+          "analytic": -1.407054330186054,
+          "numerical": -1.4070543301603067,
+          "max_abs": 2.574740420868693e-11
+        }
+      },
+      "bda_train_unqualified_rng_comparison": {
+        "max_abs": 6.533935546875,
+        "max_rel": 471679696896.0
+      },
+      "bda_eval": {
+        "max_abs": 0.00390625,
+        "max_rel": 976562496.0
+      },
+      "bda_dtypes": {
+        "x": "torch.float16",
+        "residual": "torch.float16",
+        "bias": "torch.float16"
+      },
+      "training_dropout_rng_note": "torch.rand_like does not reproduce F.dropout Philox mask consumption; this is not a training BDA correctness oracle",
+      "source_paths": [
+        "WrappedTorchNorm",
+        "get_bias_dropout_add"
+      ],
+      "te_available": false
+    },
+    "stderr": "home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.\n  warnings.warn(\n"
+  },
+  {
+    "mode": "correctness",
+    "shape": [
+      128,
+      2,
+      1024
+    ],
+    "result": {
+      "rmsnorm": {
+        "forward": {
+          "max_abs": 0.0,
+          "max_rel": 0.0
+        },
+        "x_grad": {
+          "max_abs": 0.0018630027770996094,
+          "max_rel": 0.002503691241145134
+        },
+        "weight_grad": {
+          "max_abs": 0.01551055908203125,
+          "max_rel": 0.0004720267897937447
+        },
+        "x_grad_finite": true,
+        "weight_grad_finite": true,
+        "dtype": "torch.float16",
+        "finite_difference": {
+          "finite_difference_x_index": [
+            0,
+            2
+          ],
+          "analytic": -1.407054330186054,
+          "numerical": -1.4070543301603067,
+          "max_abs": 2.574740420868693e-11
+        }
+      },
+      "bda_train_unqualified_rng_comparison": {
+        "max_abs": 6.533935546875,
+        "max_rel": 471679696896.0
+      },
+      "bda_eval": {
+        "max_abs": 0.00390625,
+        "max_rel": 976562496.0
+      },
+      "bda_dtypes": {
+        "x": "torch.float16",
+        "residual": "torch.float16",
+        "bias": "torch.float16"
+      },
+      "training_dropout_rng_note": "torch.rand_like does not reproduce F.dropout Philox mask consumption; this is not a training BDA correctness oracle",
+      "source_paths": [
+        "WrappedTorchNorm",
+        "get_bias_dropout_add"
+      ],
+      "te_available": false
+    },
+    "stderr": "home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.\n  warnings.warn(\n"
+  },
+  {
+    "mode": "benchmark",
+    "shape": [
+      16,
+      1,
+      1024
+    ],
+    "result": {
+      "benchmark": [
+        {
+          "boundary": "rmsnorm",
+          "N": 30,
+          "mean_us": 249.719467262427,
+          "std_us": 17.65392289007081,
+          "samples_us": [
+            249.85599517822266,
+            235.52000522613525,
+            232.44799673557281,
+            236.54399812221527,
+            270.33600211143494,
+            307.20001459121704,
+            231.4240038394928,
+            231.4240038394928,
+            229.37600314617157,
+            227.32800245285034,
+            244.73600089550018,
+            254.97600436210632,
+            247.80799448490143,
+            246.7840015888214,
+            242.68800020217896,
+            245.7599937915802,
+            243.71199309825897,
+            274.4320034980774,
+            253.9519965648651,
+            246.7840015888214,
+            245.7599937915802,
+            244.73600089550018,
+            244.73600089550018,
+            243.71199309825897,
+            243.71199309825897,
+            251.90401077270508,
+            264.19198513031006,
+            240.63999950885773,
+            275.4560112953186,
+            283.6480140686035
+          ]
+        },
+        {
+          "boundary": "bda_eval",
+          "N": 30,
+          "mean_us": 388.70933453241986,
+          "std_us": 16.48676784561929,
+          "samples_us": [
+            410.6239974498749,
+            393.21601390838623,
+            385.0240111351013,
+            380.92800974845886,
+            380.92800974845886,
+            435.2000057697296,
+            421.88799381256104,
+            379.90400195121765,
+            378.87999415397644,
+            388.09600472450256,
+            385.0240111351013,
+            379.90400195121765,
+            384.99200344085693,
+            379.90400195121765,
+            431.10400438308716,
+            382.9759955406189,
+            402.43199467658997,
+            381.9519877433777,
+            382.9759955406189,
+            379.90400195121765,
+            380.92800974845886,
+            377.85598635673523,
+            381.9519877433777,
+            409.59998965263367,
+            374.783992767334,
+            376.8320083618164,
+            378.87999415397644,
+            380.92800974845886,
+            373.76001477241516,
+            379.90400195121765
+          ]
+        }
+      ],
+      "shape": [
+        16,
+        1,
+        1024
+      ],
+      "dtype": "float16"
+    },
+    "stderr": "home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.\n  warnings.warn(\n"
+  },
+  {
+    "mode": "benchmark",
+    "shape": [
+      64,
+      2,
+      1024
+    ],
+    "result": {
+      "benchmark": [
+        {
+          "boundary": "rmsnorm",
+          "N": 30,
+          "mean_us": 236.98773384094238,
+          "std_us": 12.569273618572081,
+          "samples_us": [
+            289.792001247406,
+            239.6160066127777,
+            233.47200453281403,
+            235.52000522613525,
+            234.49599742889404,
+            233.47200453281403,
+            233.47200453281403,
+            230.3999960422516,
+            230.3999960422516,
+            232.44799673557281,
+            231.4240038394928,
+            229.37600314617157,
+            252.9279887676239,
+            238.5919988155365,
+            232.44799673557281,
+            231.4240038394928,
+            232.44799673557281,
+            231.4240038394928,
+            231.4240038394928,
+            231.4240038394928,
+            237.56800591945648,
+            230.3999960422516,
+            229.37600314617157,
+            231.4240038394928,
+            259.0720057487488,
+            257.02399015426636,
+            232.44799673557281,
+            234.49599742889404,
+            231.4240038394928,
+            230.3999960422516
+          ]
+        },
+        {
+          "boundary": "bda_eval",
+          "N": 30,
+          "mean_us": 398.9493320385615,
+          "std_us": 23.125752714682754,
+          "samples_us": [
+            429.05598878860474,
+            402.43199467658997,
+            396.2880074977875,
+            478.2080054283142,
+            398.3359932899475,
+            404.4800102710724,
+            387.07199692726135,
+            380.92800974845886,
+            382.9759955406189,
+            386.04798913002014,
+            387.07199692726135,
+            410.6239974498749,
+            406.5279960632324,
+            377.85598635673523,
+            380.92800974845886,
+            384.0000033378601,
+            389.1200125217438,
+            380.92800974845886,
+            386.04798913002014,
+            388.09600472450256,
+            441.3439929485321,
+            389.1200125217438,
+            382.9759955406189,
+            387.07199692726135,
+            381.9519877433777,
+            387.07199692726135,
+            390.1439905166626,
+            403.4560024738312,
+            439.2639994621277,
+            429.05598878860474
+          ]
+        }
+      ],
+      "shape": [
+        64,
+        2,
+        1024
+      ],
+      "dtype": "float16"
+    },
+    "stderr": "home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.\n  warnings.warn(\n"
+  },
+  {
+    "mode": "benchmark",
+    "shape": [
+      128,
+      2,
+      1024
+    ],
+    "result": {
+      "benchmark": [
+        {
+          "boundary": "rmsnorm",
+          "N": 30,
+          "mean_us": 230.3327977657318,
+          "std_us": 20.27528067424706,
+          "samples_us": [
+            252.9599964618683,
+            286.72000765800476,
+            224.2559939622879,
+            224.2559939622879,
+            223.23200106620789,
+            223.23200106620789,
+            223.23200106620789,
+            223.23200106620789,
+            228.35199534893036,
+            221.18400037288666,
+            220.15999257564545,
+            221.18400037288666,
+            222.20799326896667,
+            220.15999257564545,
+            303.1040132045746,
+            245.7599937915802,
+            219.13599967956543,
+            220.15999257564545,
+            220.15999257564545,
+            220.15999257564545,
+            221.18400037288666,
+            221.18400037288666,
+            224.2559939622879,
+            220.15999257564545,
+            220.15999257564545,
+            221.18400037288666,
+            219.13599967956543,
+            258.04799795150757,
+            239.6160066127777,
+            222.20799326896667
+          ]
+        },
+        {
+          "boundary": "bda_eval",
+          "N": 30,
+          "mean_us": 390.760534008344,
+          "std_us": 18.48085812893484,
+          "samples_us": [
+            412.7039909362793,
+            391.1359906196594,
+            389.1200125217438,
+            389.1200125217438,
+            379.90400195121765,
+            460.7999920845032,
+            382.9759955406189,
+            387.07199692726135,
+            384.0000033378601,
+            389.15199041366577,
+            385.0240111351013,
+            384.0000033378601,
+            382.9759955406189,
+            428.0320107936859,
+            414.7520065307617,
+            388.09600472450256,
+            381.9519877433777,
+            385.0240111351013,
+            379.90400195121765,
+            381.9519877433777,
+            382.9759955406189,
+            381.9519877433777,
+            418.8160002231598,
+            376.8320083618164,
+            389.1200125217438,
+            384.0000033378601,
+            378.87999415397644,
+            376.8320083618164,
+            374.783992767334,
+            380.92800974845886
+          ]
+        }
+      ],
+      "shape": [
+        128,
+        2,
+        1024
+      ],
+      "dtype": "float16"
+    },
+    "stderr": "home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.\n  warnings.warn(\n/home/<REMOTE_USER>/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.\n  warnings.warn(\n"
+  }
+]

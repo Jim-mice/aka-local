@@ -1,0 +1,9 @@
+﻿{
+  "operator": "rms_norm_v100_cuda",
+  "environment": "v100_sm70",
+  "type": "BASELINE",
+  "description": "Baseline RMSNorm reference kernel on V100 sm_70. Naive shared-memory reduction with 256 threads/block.",
+  "baseline_latency_us": null,
+  "source": "operators/rms_norm_v100_cuda/reference.cu",
+  "timestamp": "2026-09-19T00:00:00Z"
+}

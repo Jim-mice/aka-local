@@ -1,0 +1,12 @@
+{
+  "decision": "REJECT_CORRECTNESS",
+  "reason": "compiled candidate changed local predicted/softmax semantics beyond tolerance",
+  "candidate_hash": "3902a5f44202ab8ea7407901d4d12da960d0bf49bb4338ffeb2f9beca84ffe47",
+  "optimization_contract_hash": "112959ca63020e9b",
+  "baseline_hash": "f11fd1fc6846d6f2",
+  "collective_structure": [
+    "MAX",
+    "SUM predicted",
+    "SUM denominator"
+  ]
+}

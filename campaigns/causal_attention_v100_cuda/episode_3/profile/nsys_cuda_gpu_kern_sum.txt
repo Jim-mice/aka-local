@@ -1,0 +1,10 @@
+Generating SQLite file /home/<REMOTE_USER>/aka_remote_jobs/nsys_causal_ep3/nsys_causal.sqlite from /home/<REMOTE_USER>/aka_remote_jobs/nsys_causal_ep3/nsys_causal.nsys-rep
+Processing [/home/<REMOTE_USER>/aka_remote_jobs/nsys_causal_ep3/nsys_causal.sqlite] with [<REMOTE_HOME>/tools/nsys-2026.2.1/target-linux-x64/reports/cuda_gpu_kern_sum.py]... 
+
+ ** CUDA GPU Kernel Summary (cuda_gpu_kern_sum):
+
+ Time (%)  Total Time (ns)  Instances  Avg (ns)   Med (ns)  Min (ns)  Max (ns)   StdDev (ns)                                                  Name                                                
+ --------  ---------------  ---------  ---------  --------  --------  ---------  -----------  ----------------------------------------------------------------------------------------------------
+     99.6        5,824,836         50  116,496.7  61,529.0    60,377  2,815,391    389,471.1  causal_attention_kernel                                                                             
+      0.4           25,149          3    8,383.0   8,127.0     7,807      9,215        738.1  void at::native::<unnamed>::distribution_elementwise_grid_stride_kernel<float, (int)4, void at::nat…
+

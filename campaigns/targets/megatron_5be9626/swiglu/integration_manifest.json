@@ -1,0 +1,23 @@
+{
+  "phase": "14-D",
+  "target": "swiglu",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "episode": 2,
+  "original_candidate_hash": "21e7995911f9af2d",
+  "optimization_contract_hash": "2b05cc321bed0956",
+  "baseline_hash": "38c5aab3df4aed85",
+  "integration_adapter_hash": "281fa3160db58a73",
+  "integration_contract_hash": "00b8d9b26b2dc005",
+  "dtype": "FP16",
+  "official_shapes": [[16,1,1024],[64,2,1024],[128,2,1024]],
+  "activation_boundary_speedup": 2.7994219276258265,
+  "mlp_forward": {"shape": [128,2,1024], "original_mean_us": 631.3923873901367, "integrated_mean_us": 617.0583038330078, "speedup": 1.023230893},
+  "mlp_forward_backward": {"shape": [128,2,1024], "original_mean_us": 2157.363176345825, "integrated_mean_us": 2348.851203918457, "speedup": 0.9184758799309284, "backward": "trusted PyTorch analytical, not optimized"},
+  "forward_correctness": "PASS",
+  "gradient_correctness": "PASS",
+  "negative_tests": "targets/megatron_5be9626/swiglu/negative_tests.json",
+  "negative_test_policy": "controlled error before candidate launch",
+  "contract_mismatch_test": "NOT_APPLICABLE: no runtime metadata activation gate",
+  "nsys": {"original": "targets/megatron_5be9626/swiglu/remote_nsys-original.json", "integrated": "targets/megatron_5be9626/swiglu/remote_nsys-profile.json"},
+  "upstream_modified": false
+}

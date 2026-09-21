@@ -1,0 +1,240 @@
+{
+  "environment": "v100_sm70",
+  "operator": "rms_norm_v100_cuda",
+  "best_patterns": [
+    "Episode 17: geo_mean=3.871x across 4 shapes, score=3.871",
+    "Episode 3: 1.419x speedup on V100 sm_70",
+    "Episode 5: 1.188x speedup on V100 sm_70",
+    "Episode 6: 1.037x speedup on V100 sm_70",
+    "Episode 7: 3.285x speedup on V100 sm_70"
+  ],
+  "avoid_patterns": [
+    "Avoid regressions: ensure kernel is faster than incumbent across ALL shapes",
+    "Avoid undefined symbols: ensure all device functions are defined in candidate.cu",
+    "Verify the kernel function signature includes ALL required parameters (batch, hidden). Check that every row/block is processed, not just row 0.",
+    "Avoid regressions: ensure new kernel is faster than current best across all shapes",
+    "Fix syntax errors: check CUDA C syntax before submission"
+  ],
+  "successful_strategies": [
+    {
+      "name": "episode_0",
+      "episodes": [
+        0
+      ],
+      "average_gain": 1.0,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 23: geo_mean=4.077x across 4 shapes, score=4.077",
+      "episodes": [
+        23
+      ],
+      "average_gain": 3.02,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 10: geo_mean=1.188x across 3 shapes, score=1.188",
+      "episodes": [
+        10
+      ],
+      "average_gain": 1.409,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 11: geo_mean=2.652x across 4 shapes, score=2.652",
+      "episodes": [
+        11
+      ],
+      "average_gain": 2.191,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 12: geo_mean=2.892x across 4 shapes, score=2.892",
+      "episodes": [
+        12
+      ],
+      "average_gain": 3.245,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 15: geo_mean=3.047x across 4 shapes, score=3.047",
+      "episodes": [
+        15
+      ],
+      "average_gain": 2.88,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 16: geo_mean=3.65x across 4 shapes, score=3.65",
+      "episodes": [
+        16
+      ],
+      "average_gain": 3.789,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 17: geo_mean=3.871x across 4 shapes, score=3.871",
+      "episodes": [
+        17
+      ],
+      "average_gain": 3.775,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 3: 1.419x speedup on V100 sm_70",
+      "episodes": [
+        3
+      ],
+      "average_gain": 1.419,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 5: 1.188x speedup on V100 sm_70",
+      "episodes": [
+        5
+      ],
+      "average_gain": 1.188,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 6: 1.037x speedup on V100 sm_70",
+      "episodes": [
+        6
+      ],
+      "average_gain": 1.037,
+      "confidence": "medium"
+    },
+    {
+      "name": "Episode 7: 3.285x speedup on V100 sm_70",
+      "episodes": [
+        7
+      ],
+      "average_gain": 3.285,
+      "confidence": "medium"
+    }
+  ],
+  "failed_strategies": [
+    {
+      "name": "aggregate_score=0.04 <= incumbent=4.077",
+      "episodes": [
+        0
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=1.126 <= incumbent=3.871",
+      "episodes": [
+        21
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=0.038 <= incumbent=3.871",
+      "episodes": [
+        22
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/be5112ac74ec/candidate.cu(32): error: identifier ",
+      "episodes": [
+        24
+      ],
+      "reason": "compile"
+    },
+    {
+      "name": "aggregate_score=3.775 <= incumbent=4.077",
+      "episodes": [
+        25
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=0.038 <= incumbent=4.077",
+      "episodes": [
+        26
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=0.038 <= incumbent=4.077",
+      "episodes": [
+        27
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=2.878 <= incumbent=2.892",
+      "episodes": [
+        13
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "Multi-shape correctness failure: shapes 4,8,32 failed (max_error ~10). Kernel mi",
+      "episodes": [
+        14
+      ],
+      "reason": "correctness"
+    },
+    {
+      "name": "aggregate_score=1.159 <= incumbent=3.871",
+      "episodes": [
+        18
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=1.144 <= incumbent=2.892",
+      "episodes": [
+        5
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=1.202 <= incumbent=2.892",
+      "episodes": [
+        6
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "aggregate_score=2.488 <= incumbent=3.285",
+      "episodes": [
+        8
+      ],
+      "reason": "performance"
+    },
+    {
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identifier \"",
+      "episodes": [
+        9
+      ],
+      "reason": "compile"
+    }
+  ],
+  "recommendations": [
+    "Use float4 vectorized loads for coalesced memory access on V100",
+    "Use warp-shuffle or shared-memory reduction for normalization statistics",
+    "Use one 256-thread block per row for row-wise normalization",
+    "Use shared-memory reduction for mean/variance or mean-of-squares",
+    "Guard all thread accesses with batch/row bounds checking",
+    "Test ALL evaluation shapes before claiming correctness"
+  ],
+  "confidence": "high",
+  "apply_when": [
+    "Optimizing normalization kernels on V100 (sm_70)",
+    "Batch sizes 1-32 with hidden dim 4096",
+    "Standalone CUDA kernel with no PyTorch dependency"
+  ],
+  "avoid_when": [
+    "Single-shape-only testing (must validate all shapes)",
+    "Missing batch/row bounds checking in kernel",
+    "Compile failures from syntax errors",
+    "Regressions vs current incumbent on ANY shape"
+  ],
+  "best_score": 3.789,
+  "total_accepted": 12,
+  "total_rejected": 14,
+  "last_updated": "2026-09-19T16:39:10.265860+00:00"
+}

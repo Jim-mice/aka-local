@@ -1,0 +1,14 @@
+operator_id: bias_swiglu_train
+name: Bias SwiGLU training
+domain: activation
+training_scope: forward+VJP
+mathematical_contract: bias plus SwiGLU with required training gradients
+inputs: [activation, bias]
+outputs: [activation_output]
+gradients: [input_gradient, bias_gradient]
+dtype_domain: [bf16, fp16]
+layout_domain: [row-major]
+shape_parameters: [tokens, hidden_size]
+parallel_semantics: tensor-parallel MLP context
+correctness_contract: official campaign training contract
+source_refs: [remote Atrex campaign, Megatron fused_bias_swiglu.py]

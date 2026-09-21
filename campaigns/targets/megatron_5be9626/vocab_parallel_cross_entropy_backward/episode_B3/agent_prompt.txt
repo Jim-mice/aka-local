@@ -1,0 +1,34 @@
+You are producing one CUDA candidate for a REAL Megatron-LM target. Do not modify Megatron, do not run commands, and do not benchmark. Create only candidate.cu, hypothesis.json, and AGENT.md in the current directory.
+
+=== REAL MEGATRON TARGET ===
+Vocab-parallel cross entropy backward, Megatron 5be9626709af2722333bf54797c954c09edeada3; Tesla V100 sm_70, CUDA 11.8. This is no-label-smoothing rank-local backward only. Forward CE is frozen and outside scope.
+
+=== BACKWARD REPLACEMENT BOUNDARY ===
+Inputs are real saved state: softmax FP32 contiguous [N,L], target_mask bool [N] (true means non-owning), masked_target_1d int64 [N] (safe zero non-owning), grad_output FP32 [N]. Produce FP32 grad_input [N,L]. For each row j: grad=softmax*grad_output; if target_mask[row] is false, subtract grad_output[row] at j==masked_target_1d[row]. This is exactly equivalent to (softmax-onehot)*g on owner and softmax*g otherwise.
+
+=== MANDATORY ABI — DO NOT CHANGE ===
+Marker exactly: // AKA_TARGET_CONTRACT: vocab_parallel_cross_entropy_backward:6121f49401f3ef4601549c8732a62870ff17a7a7d7047e9c55d55b79c9ff6e92
+Prototype exactly:
+extern "C" void ce_backward_local_fp32_stream(const float* softmax, const bool* target_mask, const int64_t* masked_target_1d, const float* grad_output, float* grad_input, int64_t rows, int64_t local_vocab, cudaStream_t stream);
+Export it with extern "C". Arguments have the listed order. Use only the supplied cudaStream_t. A missing marker or changed signature is invalid.
+
+=== ALIAS / IN-PLACE RULE ===
+Active benchmark passes distinct, preallocated softmax and grad_input buffers. softmax is read-only and must remain byte-identical. Do not require grad_input==softmax; overlapping buffers are unsupported by this active ABI.
+
+=== OFFICIAL CONFIGURATIONS ===
+S,B,V = (8,1,32), (32,2,64), (128,2,128), TP=2, N=S*B, L=V/2. Handle general positive rows/local_vocab correctly; no hard-coded shapes.
+
+=== ZERO-COLLECTIVE INVARIANT ===
+Do not call NCCL, torch.distributed, process groups, or any collective. Do not include forward, output allocation, public FP16 cast-back, or label smoothing.
+
+=== CUDA 11.8 / SM70 ===
+Standalone nvcc-compatible CUDA C++. CUDART_INF_F is forbidden. Include cuda_runtime.h and stdint.h. No device-wide synchronization and no default-stream launch.
+
+=== BASELINE / SEARCH DIRECTION ===
+The real reference expands into arange, temporary softmax_update, indexed subtraction, and multiply kernels. A promising approach is one or a small number of direct FP32 kernels, but choose the correct strategy yourself. Correctness before speed.
+
+=== PROFILE FEEDBACK ===
+The reference trace contains about eight local CUDA kernel families: arange, gather/index, index_put, copy/fill, FP32 multiply, add, and another indexed update. It contains zero NCCL kernels. A valid prior candidate must be judged only by the same paired backward-local score; never infer memory/compute bounds from NSYS alone.
+=== PREVIOUS RESULTS ===
+B1 passed ABI preflight. The first B1 build report was REJECT_COMPILE because the framework used `-std=c++17`; this was corrected to CUDA 11.8 accepted `--std=c++17` before B2. This does not indicate a candidate-source flaw. Preserve exact FP32 arithmetic and read-only softmax policy.
+

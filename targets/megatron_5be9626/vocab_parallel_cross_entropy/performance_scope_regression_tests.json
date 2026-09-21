@@ -1,0 +1,15 @@
+{
+  "version": "tp2_scope_regression_v1",
+  "checks": [
+    "reference_and_candidate_share_remote_comparable_bench.py",
+    "same preallocated buffer set",
+    "same common loss/saved-softmax/backward",
+    "same 1 MAX + 2 SUM collective order",
+    "same barrier and completed CUDA event policy",
+    "same max-rank aggregation",
+    "coherent_global_fixture_v2",
+    "incomplete rows fail closed"
+  ],
+  "result": "PASS_STATIC_AND_SHARED_RUN",
+  "candidate_speed_score": "BLOCKED_UNTIL_REPEATABILITY"
+}

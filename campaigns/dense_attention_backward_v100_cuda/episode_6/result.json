@@ -1,0 +1,30 @@
+{
+  "compile_pass": true,
+  "correctness_pass": false,
+  "shapes": [
+    {
+      "shape": "1,2,32,32",
+      "correctness": false
+    }
+  ],
+  "aggregate_score": 0.0,
+  "geometric_mean_speedup": 1.0,
+  "speedup": null,
+  "latency_us": null,
+  "evidence": {
+    "compile": true,
+    "compile_error": "",
+    "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /home/<REMOTE_USER>/aka_remote_jobs/468fb11cee80/candidate.so /home/<REMOTE_USER>/aka_remote_jobs/468fb11cee80/candidate.cu",
+    "correctness": false,
+    "max_error": 11.9888277053833
+  },
+  "error": "correctness failed; max_error=11.9888277053833",
+  "profile_available": false,
+  "profile_summary": null,
+  "legacy_benchmark": true,
+  "legacy_benchmark_reason": "baseline included forward recomputation",
+  "benchmark_contract": {
+    "version": 1,
+    "mode": "forward_recompute_autograd"
+  }
+}

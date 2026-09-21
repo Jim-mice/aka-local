@@ -1,0 +1,14 @@
+operator_id: residual_rmsnorm_train
+name: Residual Add RMSNorm training
+domain: normalization
+training_scope: forward+VJP
+mathematical_contract: residual_sum = x + residual (+ bias where required); y = residual_sum * rsqrt(mean(residual_sum^2)+eps) * gamma
+inputs: [x, residual, bias, gamma, eps]
+outputs: [normalized_output, residual_sum]
+gradients: [dx, dresidual, dbias, dgamma]
+dtype_domain: [bf16, fp16]
+layout_domain: [row-major]
+shape_parameters: [tokens, hidden_size]
+parallel_semantics: Megatron residual block path; UNKNOWN exact runtime
+correctness_contract: campaign forward+VJP contract with specified rounding points
+source_refs: [remote Atrex campaign, Megatron transformer_engine.py]

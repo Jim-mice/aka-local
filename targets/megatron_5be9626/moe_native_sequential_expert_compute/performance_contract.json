@@ -1,0 +1,13 @@
+{
+  "contract_version":"moe_native_sequential_expert_compute_perf_v1",
+  "megatron_commit":"5be9626709af2722333bf54797c954c09edeada3",
+  "boundary":"preallocated permuted local expert tokens + tokens_per_expert + fixed expert weights -> local SequentialMLP expert output",
+  "included":["expert loop","FC1","SiLU-gated activation","FC2","concatenation"],
+  "excluded":["router","token permutation","EP/TP communication","token combine","allocation","initialization","backward"],
+  "dtype":"FP16 interface and parameters; FP32 oracle only",
+  "configs":[{"hidden":64,"moe_ffn_hidden":128,"experts":4,"tokens":16,"topk":1,"tp":1,"ep":1}],
+  "distributions":[[4,4,4,4],[1,3,5,7],[0,0,8,8]],
+  "stream":"current CUDA stream",
+  "collectives":0,
+  "status":"qualification boundary; not an Agent promotion baseline"
+}

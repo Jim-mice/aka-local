@@ -1,0 +1,20 @@
+{
+  "episode": 1,
+  "operator": "dense_attention_v100_cuda",
+  "decision": "REJECT_COMPILE",
+  "compile_pass": false,
+  "correctness_pass": false,
+  "speedup": null,
+  "aggregate_score": 1.0,
+  "geometric_mean_speedup": 1.0,
+  "incumbent_score": 1.0,
+  "reason": "/home/<REMOTE_USER>/aka_remote_jobs/a95d480e69df/candidate.cu(28): error: identifier \"CUDART_INF_F\" is undefined\n\n/home/<REMOTE_USER>/aka_remote_jobs/a95d480e69df/candidate.cu(69): error: identifier \"CUDART_INF_F\" is undefined\n\n2 errors detected in the compilation of \"/home/<REMOTE_USER>/aka_remote_jobs/a95d480e69df/candidate.cu\".\n",
+  "evaluated_at": "2026-09-19T14:27:49.442135+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4,64,64",
+    "1,8,128,64",
+    "2,8,256,64",
+    "1,16,512,64"
+  ]
+}

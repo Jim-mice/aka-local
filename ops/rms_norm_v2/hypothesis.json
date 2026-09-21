@@ -1,0 +1,17 @@
+{
+  "episode": 2,
+  "operator": "rms_norm",
+  "architecture": "sm_120",
+  "direction_id": "warp_reduce_shared_finalize",
+  "hypothesis": "Replacing V1's full 256-entry shared-memory reduction tree with warp shuffle reductions and eight warp partials will reduce synchronization and shared-memory traffic while preserving the one-block-per-row fused RMSNorm strategy.",
+  "controlled_change": "Only the row sum-of-squares reduction changes; block size, row mapping, two-pass x access, float32 accumulation, epsilon, BF16 output conversion, and fused output remain unchanged.",
+  "prediction": "Lower reduction overhead and no increase in shared storage; correctness should remain within the contract tolerance despite a different FP32 reduction order.",
+  "baseline": "ops/rms_norm_v1/candidate.py",
+  "constraints": [
+    "no fallback",
+    "no external dependencies",
+    "do not modify incumbent/reference/evaluator",
+    "no CUDA/evaluator/benchmark/profile run in this episode"
+  ],
+  "status": "CANDIDATE_PENDING_EVALUATION"
+}

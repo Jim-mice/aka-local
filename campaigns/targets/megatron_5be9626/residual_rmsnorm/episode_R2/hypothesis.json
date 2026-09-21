@@ -1,0 +1,19 @@
+{
+  "name": "one_block_per_row_warp_rmsnorm",
+  "target": "Megatron non-TE WrappedTorchNorm -> torch.nn.RMSNorm forward",
+  "architecture": "Tesla V100 sm_70",
+  "hypothesis": "A single 256-thread block per row removes the reference launch chain while retaining FP32 accumulation and fused normalization, scaling, and FP16 conversion.",
+  "kernel_strategy": {
+    "blocks": "one per row",
+    "threads": 256,
+    "reduction": "warp shuffle reduction with shared warp sums",
+    "accumulation": "float32",
+    "supported_hidden_size": "arbitrary positive hidden_size; official fast path is H=1024"
+  },
+  "official_shapes": [[16, 1, 1024], [64, 2, 1024], [128, 2, 1024]],
+  "constraints": [
+    "supplied CUDA stream only",
+    "no allocation, synchronization, collective, residual, dropout, TE, or BDA behavior",
+    "x and weight are read-only; output is distinct"
+  ]
+}

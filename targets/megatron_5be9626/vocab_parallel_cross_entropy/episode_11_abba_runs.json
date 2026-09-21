@@ -1,0 +1,54 @@
+{
+  "runs": [
+    {
+      "mode": "candidate",
+      "run_id": "B11_1b",
+      "returncode": 0
+    },
+    {
+      "mode": "reference",
+      "run_id": "A11_1b",
+      "returncode": 0
+    },
+    {
+      "mode": "reference",
+      "run_id": "A11_2",
+      "returncode": 0
+    },
+    {
+      "mode": "candidate",
+      "run_id": "B11_2",
+      "returncode": 0
+    },
+    {
+      "mode": "candidate",
+      "run_id": "B11_2b",
+      "returncode": 0
+    },
+    {
+      "mode": "reference",
+      "run_id": "A11_2b",
+      "returncode": 0
+    },
+    {
+      "mode": "reference",
+      "run_id": "A11_3",
+      "returncode": 0
+    },
+    {
+      "mode": "candidate",
+      "run_id": "B11_3",
+      "returncode": 0
+    },
+    {
+      "mode": "candidate",
+      "run_id": "B11_3b",
+      "returncode": 0
+    },
+    {
+      "mode": "reference",
+      "run_id": "A11_3b",
+      "returncode": 0
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "baseline_status": "QUALIFIED_WITH_ENVIRONMENT_CAVEAT",
+  "benchmark_era": "tp2_ce_backward_local_v1",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "backward_replay_contract_hash": "4841f90840fee98eeff354e999fd25a1626c99e561cd5402b0dc68ec8f0d94da",
+  "backward_performance_contract_hash": "afbfcff56ee6891b888ca7c6fbf632b74ccfab71f849d7934c56dc1d4bd9e205",
+  "statistical_policy_hash": "7a750bc7f4f3c7b768bd5b35d695dab6762131d4c6681d6925100bf5557cf18f",
+  "evaluator_hash": "7cc0fac8d80b2d27",
+  "fixture_version": "coherent_global_fixture_v2",
+  "tp": 2,
+  "dtype": "FP16 fixture / FP32 saved-state backward boundary",
+  "collectives_in_timed_boundary": 0,
+  "sampling": {"independent_runs": 3, "blocks_per_run": 3, "samples_per_block": 10, "warmup": 5, "samples_per_rank_config": 90},
+  "rank_mapping": {"normal": {"rank0": "GPU0 PCI 00000000:08:00.0", "rank1": "GPU1 PCI 00000000:84:00.0"}, "swap_diagnostic": "latency role followed physical GPU, not rank"},
+  "statistics": {
+    "8x1x32": {"rank0_mean_us": 289.75715504752264, "rank0_cv": 0.1608861334535358, "rank1_mean_us": 47.4680899331967, "rank1_cv": 0.026134347465198413, "critical_path_proxy_us": 289.75715504752264},
+    "32x2x64": {"rank0_mean_us": 284.6026665634579, "rank0_cv": 0.10129811246174128, "rank1_mean_us": 48.87893477247821, "rank1_cv": 0.01655848007535678, "critical_path_proxy_us": 284.6026665634579},
+    "128x2x128": {"rank0_mean_us": 299.4847983121872, "rank0_cv": 0.12833894550908118, "rank1_mean_us": 60.541157300273575, "rank1_cv": 0.0167858701517779, "critical_path_proxy_us": 299.4847983121872}
+  },
+  "qualification": {"all_rows_complete": true, "max_rank_cv": 0.1608861334535358, "policy_limit": 0.20, "result": "PASS_WITH_ENVIRONMENTAL_CAVEAT"},
+  "raw_evidence": ["backward_benchmark_raw_run1.json", "backward_benchmark_raw_run2.json", "backward_benchmark_raw_run3.json", "backward_baseline_statistics.json"],
+  "golden_or_agent_eligible": false,
+  "performance_claim": "This is a backward-local reference baseline only; no candidate speedup or incumbent exists in Phase 15-C.1."
+}

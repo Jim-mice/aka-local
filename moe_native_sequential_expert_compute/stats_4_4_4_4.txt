@@ -1,0 +1,90 @@
+__FILE__/tmp/aka_phase18a/manual_4_4_4_4_cudaapisum.json
+[
+  {
+    "Time(%)": 51.5,
+    "Total Time (ns)": 253175,
+    "Num Calls": 9,
+    "Average": 28130.6,
+    "Minimum": 19067,
+    "Maximum": 49800,
+    "Name": "cudaLaunchKernel"
+  },
+  {
+    "Time(%)": 26.6,
+    "Total Time (ns)": 130631,
+    "Num Calls": 3,
+    "Average": 43543.7,
+    "Minimum": 26115,
+    "Maximum": 61350,
+    "Name": "cudaMemcpyAsync"
+  },
+  {
+    "Time(%)": 18.0,
+    "Total Time (ns)": 88725,
+    "Num Calls": 4,
+    "Average": 22181.3,
+    "Minimum": 16173,
+    "Maximum": 30548,
+    "Name": "cuLaunchKernel"
+  },
+  {
+    "Time(%)": 2.1,
+    "Total Time (ns)": 10158,
+    "Num Calls": 1,
+    "Average": 10158.0,
+    "Minimum": 10158,
+    "Maximum": 10158,
+    "Name": "cudaDeviceSynchronize"
+  },
+  {
+    "Time(%)": 1.9,
+    "Total Time (ns)": 9194,
+    "Num Calls": 1,
+    "Average": 9194.0,
+    "Minimum": 9194,
+    "Maximum": 9194,
+    "Name": "cudaStreamSynchronize"
+  }
+]
+__FILE__/tmp/aka_phase18a/manual_4_4_4_4_gpukernsum.json
+[
+  {
+    "Time(%)": 70.3,
+    "Total Time (ns)": 97025,
+    "Instances": 8,
+    "Average": 12128.1,
+    "Minimum": 11616,
+    "Maximum": 12512,
+    "Name": "void gemmSN_TN_kernel<float, 128, 16, 2, 4, 4, 4, true, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half> >(cublasGemmSmallNParams<cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half const>, cublasGemvTensorStridedBatched<__half>, float>)"
+  },
+  {
+    "Time(%)": 21.2,
+    "Total Time (ns)": 29217,
+    "Instances": 4,
+    "Average": 7304.3,
+    "Minimum": 7233,
+    "Maximum": 7425,
+    "Name": "triton_poi_fused_mul_silu_0"
+  },
+  {
+    "Time(%)": 8.5,
+    "Total Time (ns)": 11712,
+    "Instances": 1,
+    "Average": 11712.0,
+    "Minimum": 11712,
+    "Maximum": 11712,
+    "Name": "void at::native::(anonymous namespace)::CatArrayBatchedCopy_contig<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 2, 128, 1>(at::native::(anonymous namespace)::OpaqueType<2u>*, at::native::(anonymous namespace)::CatArrInputTensorMetadata<at::native::(anonymous namespace)::OpaqueType<2u>, unsigned int, 128, 1>, at::native::(anonymous namespace)::TensorSizeStride<unsigned int, 4u>, int, unsigned int)"
+  }
+]
+__FILE__/tmp/aka_phase18a/manual_4_4_4_4_nvtxppsum.json
+[
+  {
+    "Time(%)": 100.0,
+    "Total Time (ns)": 8053424,
+    "Instances": 1,
+    "Average": 8053424.0,
+    "Minimum": 8053424,
+    "Maximum": 8053424,
+    "Range": "AKA_MOE_SEQUENTIAL_4,4,4,4"
+  }
+]

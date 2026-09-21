@@ -1,0 +1,31 @@
+﻿{
+  "operator": "dense_attention_backward_v100_cuda",
+  "gpu": "Tesla V100-PCIE-16GB",
+  "arch": "sm_70",
+  "interface": "standalone_cuda",
+  "source_file": "candidate.cu",
+  "contract": "extern C void launch_kernel(float* q, float* k, float* v, float* p, float* grad_o, float* grad_q, float* grad_k, float* grad_v, int batch, int heads, int seq, int head_dim, float scale)",
+  "compiler": "nvcc",
+  "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
+  "contract_schema": {
+    "operator": "dense_attention_backward_v100_cuda",
+    "entry": "launch_kernel",
+    "version": 1,
+    "arguments": [
+      {"name": "q", "type": "float*", "role": "input_query", "description": "query tensor [batch, heads, seq, head_dim]"},
+      {"name": "k", "type": "float*", "role": "input_key", "description": "key tensor [batch, heads, seq, head_dim]"},
+      {"name": "v", "type": "float*", "role": "input_value", "description": "value tensor [batch, heads, seq, head_dim]"},
+      {"name": "p", "type": "float*", "role": "saved_forward_tensor", "description": "softmax probabilities from forward [batch, heads, seq, seq]"},
+      {"name": "grad_o", "type": "float*", "role": "upstream_gradient", "description": "gradient of loss w.r.t. attention output [batch, heads, seq, head_dim]"},
+      {"name": "grad_q", "type": "float*", "role": "gradient_output", "description": "gradient w.r.t. query [batch, heads, seq, head_dim]"},
+      {"name": "grad_k", "type": "float*", "role": "gradient_output", "description": "gradient w.r.t. key [batch, heads, seq, head_dim]"},
+      {"name": "grad_v", "type": "float*", "role": "gradient_output", "description": "gradient w.r.t. value [batch, heads, seq, head_dim]"},
+      {"name": "batch", "type": "int", "role": "dimension", "description": "batch size"},
+      {"name": "heads", "type": "int", "role": "dimension", "description": "number of attention heads"},
+      {"name": "seq", "type": "int", "role": "dimension", "description": "sequence length"},
+      {"name": "head_dim", "type": "int", "role": "dimension", "description": "dimension per head"},
+      {"name": "scale", "type": "float", "role": "scaling_factor", "description": "scaling factor (1/sqrt(head_dim))"}
+    ],
+    "semantics": "FP32 backward pass for non-causal dense scaled dot-product attention.\n\nForward: S = Q @ K^T * scale, P = softmax(S, dim=-1), O = P @ V\n\nGiven upstream gradient dO:\n  dV = P^T @ dO\n  dP = dO @ V^T\n  For each row i: dot_i = sum_j(dP[i,j] * P[i,j]), dS[i,j] = P[i,j] * (dP[i,j] - dot_i)\n  dQ = dS @ K * scale\n  dK = dS^T @ Q * scale\n\nLayouts: Q/K/V/dO/dQ/dK/dV: [B,H,S,D] FP32; P: [B,H,S,S] FP32.\nP is provided from forward; kernel must NOT recompute softmax.\nAll three gradients (dQ, dK, dV) must be computed."
+  }
+}

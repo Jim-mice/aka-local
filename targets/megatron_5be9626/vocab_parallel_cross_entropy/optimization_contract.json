@@ -1,0 +1,111 @@
+{
+  "target": "vocab_parallel_cross_entropy",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "phase15a_replay_contract_hash": "d8ea9db11871996c",
+  "tp_size": 2,
+  "rank_local_vocab": "contiguous [rank*V/TP,(rank+1)*V/TP)",
+  "inputs": [
+    "logits_local FP16 [N,V/TP] contiguous",
+    "target int64 [N] global IDs",
+    "TP process group",
+    "global max float32 [N]"
+  ],
+  "outputs": [
+    "loss float32 [N]",
+    "saved softmax float32 [N,V/TP]",
+    "target_mask bool [N]",
+    "masked_target int64 [N]",
+    "rank-local gradient"
+  ],
+  "stage_graph": [
+    {
+      "stage": "local_max",
+      "input": "logits_local",
+      "output": "local_max float32 [N]",
+      "collective_after": "MAX all-reduce"
+    },
+    {
+      "stage": "local_prepare",
+      "input": "logits_local, global_max, target",
+      "output": "predicted_local float32 [N], exp_local float32 [N,V/TP], denominator_local float32 [N], mask, masked_target",
+      "collective_after": "SUM all-reduce predicted and denominator"
+    },
+    {
+      "stage": "loss_and_save",
+      "input": "global predicted, global denominator, exp_local",
+      "output": "loss and normalized saved softmax",
+      "collective_after": "none"
+    },
+    {
+      "stage": "backward_reference",
+      "input": "saved softmax, mask, masked target, grad_output",
+      "output": "rank-local gradient",
+      "collective_after": "none"
+    }
+  ],
+  "mandatory_collective_barriers": [
+    "MAX(local_max)",
+    "SUM(predicted_local)",
+    "SUM(denominator_local)"
+  ],
+  "collective_coalescing": {
+    "status": "VALID_RESEARCH_VARIANT_NOT_ACTIVE",
+    "reason": "predicted_local and denominator_local are both available before the two SUM calls and can algebraically be packed into [N,2] float32; numerical and saved-state equivalence must be verified separately"
+  },
+  "replaceable_local_compute": [
+    "local max reduction",
+    "shift/target mask/extraction",
+    "exp",
+    "denominator reduction",
+    "softmax normalization",
+    "loss arithmetic"
+  ],
+  "non_replaceable_orchestration": [
+    "NCCL process-group initialization",
+    "MAX all-reduce",
+    "two SUM all-reduces in baseline contract",
+    "rank partition semantics"
+  ],
+  "dtype": {
+    "input": "float16",
+    "local arithmetic": "float32",
+    "collective payload": "float32",
+    "loss": "float32",
+    "gradient": "source-compatible rank-local gradient"
+  },
+  "official_configurations": [
+    {
+      "S": 8,
+      "B": 1,
+      "V": 32
+    },
+    {
+      "S": 32,
+      "B": 2,
+      "V": 64
+    },
+    {
+      "S": 128,
+      "B": 2,
+      "V": 128
+    }
+  ],
+  "correctness_tolerances": {
+    "loss_atol": 0.002,
+    "loss_rtol": 0.002,
+    "gradient_atol": 0.03,
+    "gradient_rtol": 0.03
+  },
+  "timing_boundary": "TP=2 end-to-end forward plus backward CUDA-event interval, including all three real NCCL collectives; process setup and fixture generation excluded",
+  "stream_requirements": "current PyTorch CUDA stream; collectives retain source ordering",
+  "excluded_operations": [
+    "full-vocabulary reconstruction in production",
+    "process startup",
+    "imports",
+    "fixture generation",
+    "optimizer",
+    "backward optimization campaign"
+  ],
+  "contract_version": "1.0.0",
+  "contract_hash": "112959ca63020e9b"
+}

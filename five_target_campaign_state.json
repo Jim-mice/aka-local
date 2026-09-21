@@ -1,0 +1,7 @@
+{
+  "version": "phase19a_final_state_v1",
+  "registry": "real_target_campaign_index.json",
+  "states": {"swiglu":"COMPLETED_INTEGRATION_LIMITED","ce_forward":"FORWARD_CAMPAIGN_FROZEN","ce_backward":"ENVIRONMENT_STABILITY_BLOCKED","rmsnorm":"STABILITY_BLOCKED_R1_R2","attention":"AGGREGATE_WIN_PER_CONFIG_MIXED","moe":"STABILITY_BLOCKED"},
+  "promotion_terminology":{"ce_forward_episode7":"PROMOTED_SCORE","ce_backward_b1":"RAW_NON_PROMOTABLE","rmsnorm_r1_r2":"RAW_NON_PROMOTABLE","attention_a2":"STABILITY_QUALIFIED_PER_CONFIG_MIXED_NOT_PROMOTED","moe_m4":"RAW_STABILITY_BLOCKED_NOT_PROMOTED"},
+  "no_new_episodes":{"attention":"no A4","moe":"no M5","rmsnorm":"no R3"}
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": 1,
+  "id": "aka-rmsnorm-v0",
+  "title": "Standalone RMSNorm V0 eager reference",
+  "timestamp": "UNKNOWN",
+  "operator": "rms_norm_train",
+  "hardware": "rtx5060_laptop_sm120",
+  "architecture": "sm_120",
+  "backend": "pytorch_eager",
+  "framework": "pytorch_eager",
+  "dtype": [],
+  "mode": "training",
+  "scope": {},
+  "shape_regime": {},
+  "baseline": {},
+  "candidate": {},
+  "hypothesis": "",
+  "mechanisms": [],
+  "changes": [],
+  "evidence": {
+    "summary": "Official eager reference used as correctness oracle and initial performance baseline"
+  },
+  "performance": {
+    "summary": "Official eager reference used as correctness oracle and initial performance baseline"
+  },
+  "decision": "BASELINE",
+  "failure_class": null,
+  "observations": [
+    "Official eager reference used as correctness oracle and initial performance baseline"
+  ],
+  "failed_assumptions": [],
+  "unresolved_questions": [],
+  "next_directions": [],
+  "provenance": {
+    "source_type": "LEGACY_AKA_LOCAL",
+    "source_path": "C:\\Users\\38154\\projects\\aka-local\\campaigns\\rms_norm\\backward\\episode_1\\decision.json",
+    "source_commit": null,
+    "canonical": true,
+    "evidence_level": 2,
+    "location": "local",
+    "read_only": false
+  },
+  "tags": [
+    "imported"
+  ]
+}

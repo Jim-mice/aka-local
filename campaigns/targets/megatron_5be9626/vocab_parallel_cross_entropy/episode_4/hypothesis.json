@@ -1,0 +1,11 @@
+{
+  "name": "fuse_rank_local_prepare_stage",
+  "target": "vocab_parallel_cross_entropy._VocabParallelCrossEntropy",
+  "variant": "baseline_collective_preserving",
+  "hypothesis": "Fusing local target extraction, shifted exponentiation, and denominator accumulation into one row kernel reduces PyTorch reduction/index/elementwise launch overhead while retaining the required MAX, SUM(predicted), and SUM(denominator) ordering.",
+  "scope": ["local_max_fp16", "local_prepare_fp16"],
+  "collectives": {"max": 1, "sum": 2, "implemented_here": false},
+  "assumptions": ["global_max is the result of the real MAX all-reduce", "exp_logits is consumed after the real denominator SUM all-reduce", "caller supplies the current CUDA stream"],
+  "risks": ["one-thread-per-row loops may underutilize very large local vocabularies", "expf and serial accumulation can differ slightly from framework reduction order"],
+  "benchmark": "not_run"
+}

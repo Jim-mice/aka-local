@@ -1,0 +1,20 @@
+{
+  "phase": "15-B.8",
+  "framework_lessons": [
+    "Exact multi-entry ABI and toolchain preflight are prerequisites, not optimization evidence.",
+    "A golden evaluator-only implementation must validate distributed semantics before interpreting Agent failures.",
+    "Coherent logical fixtures and target-ownership-safe diagnostics are mandatory for TP correctness.",
+    "Distributed timing must fail closed on incomplete rank rows and must bind candidate, semantic evaluator, fixture, performance contract, baseline, and statistical policy.",
+    "Scope-equivalent benchmark eras and predeclared stability rules are required before promotion.",
+    "REAL profile evidence is required before generating another bounded Agent hypothesis."
+  ],
+  "candidate_lessons": [
+    "Episodes 6 and 9 failed TARGET_LOGIT_WRONG: unshifted versus exponentiated target contribution.",
+    "Episode 7 remains the best stable forward incumbent; Episodes 11 and 12 are stable but lower-scoring."
+  ],
+  "performance_lessons": [
+    "Episode 7 local kernels are no longer the dominant measured risk; single-rank collective delay and synchronization remain visible.",
+    "Slow valid samples are preserved and classified, not deleted."
+  ],
+  "phase_state": "FORWARD_CAMPAIGN_FROZEN"
+}

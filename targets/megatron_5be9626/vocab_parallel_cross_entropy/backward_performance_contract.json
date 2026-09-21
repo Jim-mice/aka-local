@@ -1,0 +1,33 @@
+{
+  "performance_contract_version": "tp2_ce_backward_local_scope_v1",
+  "performance_contract_status": "ACTIVE_FROZEN",
+  "performance_contract_hash": "afbfcff56ee6891b888ca7c6fbf632b74ccfab71f849d7934c56dc1d4bd9e205",
+  "benchmark_era": "tp2_ce_backward_local_v1",
+  "backward_replay_contract_hash": "4841f90840fee98eeff354e999fd25a1626c99e561cd5402b0dc68ec8f0d94da",
+  "semantic_boundary": "real Megatron rank-local backward from saved forward state and grad_output to local logits gradient",
+  "timer_sequence": [
+    "real forward and ctx.saved_tensors construction outside timing",
+    "clone saved-state templates and preallocate output outside timing",
+    "current-stream CUDA event start",
+    "VocabParallelCrossEntropy.prepare_gradient_calculation_operands",
+    "VocabParallelCrossEntropy.calculate_gradients",
+    "current-stream CUDA event end",
+    "event completion synchronization outside measured interval"
+  ],
+  "included_stages": ["creation of arange_1d by exact Megatron prepare helper", "creation of softmax_update by exact Megatron prepare helper", "indexed owned-target subtraction", "grad_output broadcast multiply", "local CUDA launches and implementation-internal temporaries"],
+  "excluded_stages": ["forward", "all forward NCCL collectives", "saved-state generation", "fixture generation", "process startup/imports", "output allocation", "template restore copy", "barriers", "post-event synchronization", "autograd wrapper and FP16 cast-back"],
+  "allocation_policy": "softmax/target_mask/masked_target/grad_output/output storage are allocated or cloned outside timing; exact helper-created arange_1d and softmax_update allocations remain inside timing",
+  "saved_state_policy": "templates are cloned from real ctx.saved_tensors; identical inputs are used by future reference and candidate implementations",
+  "backward_policy": "the exact no-label-smoothing Megatron helper path is the reference baseline; candidate must use one shared orchestration",
+  "collective_structure": {"inside_timed_range": 0, "outside_timed_range": "forward has 1 MAX + 2 SUM; no backward collective"},
+  "synchronization_policy": "barriers coordinate ranks only before/after the event interval; CUDA events are recorded and queried on the current stream; no barrier or NCCL call is inside the event interval",
+  "rank_aggregation_policy": "report rank-local distributions separately; per-config critical-path proxy for future training decisions is max(mean rank0, mean rank1), explicitly not a measured synchronization cost",
+  "fixture_version": "coherent_global_fixture_v2",
+  "dtype": {"saved_softmax": "float32", "target_mask": "bool", "masked_target": "int64", "grad_output": "float32", "direct_output": "float32"},
+  "tensor_parallel_size": 2,
+  "official_configurations": [[8,1,32], [32,2,64], [128,2,128]],
+  "warmup_policy": "5 per independent invocation/configuration outside timing",
+  "measurement_policy": "3 independent invocations; each has 3 blocks of 10 measurements per rank/config; raw rows preserved",
+  "nsys_provenance": {"range_begin": "AKA_CE_BACKWARD_BEGIN", "range_end": "AKA_CE_BACKWARD_END", "capture_gate": "cudaProfilerApi"},
+  "future_candidate_rule": "reference and candidate must use identical orchestration, allocation, saved-state, stream and timing policy; only local implementation may differ"
+}

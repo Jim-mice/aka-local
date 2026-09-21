@@ -1,0 +1,19 @@
+{
+  "contract_hash": "112959ca63020e9b",
+  "required_symbols": [
+    {
+      "name": "local_max_fp16_stream",
+      "prototype": "extern \"C\" cudaError_t local_max_fp16_stream(const half* logits, float* row_max, int rows, int local_vocab, cudaStream_t stream);",
+      "arguments": ["const half* logits", "float* row_max", "int rows", "int local_vocab", "cudaStream_t stream"],
+      "return": "cudaError_t",
+      "stream": true
+    },
+    {
+      "name": "local_prepare_fp16_stream",
+      "prototype": "extern \"C\" cudaError_t local_prepare_fp16_stream(const half* logits, const int64_t* targets, const float* global_max, float* predicted_local, float* denominator_local, float* exp_values, unsigned char* target_mask, int64_t* target_local, int rows, int local_vocab, int rank, cudaStream_t stream);",
+      "arguments": ["const half* logits", "const int64_t* targets", "const float* global_max", "float* predicted_local", "float* denominator_local", "float* exp_values", "unsigned char* target_mask", "int64_t* target_local", "int rows", "int local_vocab", "int rank", "cudaStream_t stream"],
+      "return": "cudaError_t",
+      "stream": true
+    }
+  ]
+}

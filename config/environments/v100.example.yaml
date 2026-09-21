@@ -1,0 +1,24 @@
+# Public example only. Copy to v100.yaml locally and replace placeholders.
+environment: v100
+gpu: Tesla V100-PCIE-16GB
+architecture: sm_70
+cuda_version: "11.8"
+
+remote:
+  host: <REMOTE_HOST>
+  user: <REMOTE_USER>
+  # Authenticate interactively, with SSH keys, or with a local ignored secret.
+
+paths:
+  evaluator_dir: <REMOTE_EVALUATOR_DIR>
+  eval_script: <REMOTE_EVALUATOR_DIR>/eval.sh
+  work_dir: <REMOTE_WORK_DIR>
+
+build:
+  compiler: nvcc
+  arch_flag: "-gencode arch=compute_70,code=sm_70"
+  optimization: "-O2"
+
+evaluation:
+  timeout_compile_s: 30
+  timeout_total_s: 300

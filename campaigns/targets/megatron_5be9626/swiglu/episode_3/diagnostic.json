@@ -1,0 +1,16 @@
+{
+  "episode": 3,
+  "target": "swiglu",
+  "contract_hash": "2b05cc321bed0956",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "decision": "REJECT_CORRECTNESS",
+  "evidence": {
+    "contract_marker": true,
+    "scope_marker": true,
+    "compile_pass": true,
+    "correctness_pass": false
+  },
+  "category": "UNKNOWN",
+  "message": "Candidate failed correctness; no performance/profile conclusion is accepted.",
+  "profile_available": false
+}

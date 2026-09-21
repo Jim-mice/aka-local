@@ -1,0 +1,20 @@
+{
+  "episode": 9,
+  "operator": "layer_norm_v100_cuda",
+  "decision": "REJECT_PERFORMANCE",
+  "compile_pass": true,
+  "correctness_pass": true,
+  "speedup": 0.021,
+  "aggregate_score": 0.021,
+  "geometric_mean_speedup": 0.021,
+  "incumbent_score": 1.126,
+  "reason": "aggregate_score=0.021 <= incumbent=1.126",
+  "evaluated_at": "2026-09-19T16:39:12.721879+00:00",
+  "score_type": "geometric_mean_speedup",
+  "shapes": [
+    "1,4096",
+    "4,4096",
+    "8,4096",
+    "32,4096"
+  ]
+}
