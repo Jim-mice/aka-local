@@ -29,4 +29,4 @@
 | `phase-19/` | 五个真实 target 的收尾状态。 |
 | `phase-20/` | Attention 的 vendor-GEMM-preserving 与 clean-window qualification。 |
 
-当前状态请优先从根目录的 `FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md`、`REAL_TARGET_CAMPAIGN_INDEX.md` 和 `five_target_campaign_state.json` 开始查看。
+上述 `FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md`、`REAL_TARGET_CAMPAIGN_INDEX.md` 和 `five_target_campaign_state.json` 是 Phase 19 历史 campaign 终态及其机器可读记录，不是当前总体项目状态的唯一权威入口。当前项目状态请以根目录 `README.md`、`docs/PERFORMANCE_OVERVIEW.md` 和 `docs/audits/public_snapshot_20260922.md` 为准。

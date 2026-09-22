@@ -6,7 +6,6 @@
 |---|---|---|---|---|
 | `README.md` | A：项目入口 | 是 | 是 | 重写为中文公开阶段入口，保留路径、状态枚举和技术名词。 |
 | `docs/README.md` | A：文档入口 | 是 | 是 | 增加当前阶段和最新审计入口。 |
-| `docs/reports/README.md` | A：报告入口 | 是 | 是 | 增加当前阶段入口，保留历史报告文件名。 |
 | `docs/reports/README.md` | A：报告入口 | 是 | 是 | 增加当前阶段入口，保留历史索引。 |
 | `lab/README.md` | A：实验层入口 | 是 | 是 | 将面向人的说明中文化。 |
 | `lab/runtime/agent/README.md` | A：Agent 边界说明 | 是 | 是 | 将边界和权限说明中文化。 |

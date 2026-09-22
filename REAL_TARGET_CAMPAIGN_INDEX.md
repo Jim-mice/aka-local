@@ -1,6 +1,8 @@
 # 真实 Megatron target campaign 索引
 
-这是项目级的规范索引；各条目的原始报告仍是权威实验依据。
+> **历史状态说明**：本文是 Phase 19 historical campaign closure snapshot，保留当时 operator campaign 的正式终态，不是 2026-09-22 项目总体最新状态。当前项目状态以 [README.md](README.md)、[docs/PERFORMANCE_OVERVIEW.md](docs/PERFORMANCE_OVERVIEW.md) 和 [公开阶段快照](docs/audits/public_snapshot_20260922.md) 为准。
+
+这是历史 campaign 的规范索引；各条目的原始报告仍是当时实验的权威依据。
 
 | 历史名称 | 真实研究目标 | 终态 | 下一步允许动作 |
 |---|---|---|---|

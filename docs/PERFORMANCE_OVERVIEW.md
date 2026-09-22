@@ -34,6 +34,10 @@ NSYS、microbenchmark、kernel latency、Amdahl upper bound 等定位数据。�
 
 在明确冻结的本地 workload 上，某条 causal story 已被证据拒绝。这个结论只约束该 workload，不外推到所有 shape 或所有硬件。
 
+## 历史 V100 campaign 性能证据
+
+本节保留历史 V100 campaign 的正式终态、raw ratio 和 diagnostic evidence；这些数字不代表当前 RTX 5060 本地诊断，也不代表九格性能。
+
 ## 顶部总览
 
 | 真实目标 | 当前最佳性能证据 | 证据等级 | 当前状态 | 主要数据位置 |
@@ -252,7 +256,7 @@ two-empty 的 reference CV 为 `0.3733`，超过冻结门限 `0.20`。故状态�
 - [真实 target campaign 索引](../REAL_TARGET_CAMPAIGN_INDEX.md)
 - [机器可读五目标状态](../five_target_campaign_state.json)
 
-## 本地真实 Megatron SwiGLU：集成、测量与证伪
+## RTX 5060 本地真实 Megatron 诊断
 
 本节记录 2026-09-22 的本地真实 Megatron 证据。它不是代表性九格性能结果。
 

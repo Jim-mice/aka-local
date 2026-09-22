@@ -20,6 +20,14 @@ V3 的 deterministic direct coverage 为 `NO`，接受的 measured-fact hallucin
 - 每次使用 fresh independent Codex session、blind public package、隔离的 evaluator-only 文件和 structured JSON schema。
 - 结果经过 `evidence_refs` validation 和 UNKNOWN discipline 检查；benchmark 期间不实现 optimization candidate。
 
+## 可复现性限制
+
+- blind runs 使用当时的 current default Codex。
+- 没有使用 `-m` 固定模型 override。
+- artifact 证实本批次 CLI 为 `codex-cli 0.153.0`；这不构成固定模型环境的完整锁定。
+- 因此这些结果不是固定模型排行榜，不能直接用于不同模型之间的排名比较。
+- `HIT` / `PARTIAL` / `MISS` 来自 rubric 冻结后的 non-blind semantic audit，不是自动数学证明。
+
 ## 这些结果能说明什么
 
 结果支持以下有限结论：当前 Codex 能进行 evidence-grounded mechanism planning，能使用反证约束，能在 held-out case 中提出算法状态重构方向。它不证明每次都能找到最优 kernel，不证明每个 hypothesis 都带来 speedup，也不替代真实 profiler、OJ 或 correctness gate。

@@ -4,13 +4,15 @@
 
 ## 当前研究目标
 
-当前固定研究五类目标：
+当前固定研究目标及其当前真实执行边界如下：
 
-1. Dense Fused Attention
-2. Vocab-parallel Cross Entropy
-3. SwiGLU
-4. Residual Add RMSNorm
-5. MoE Grouped GEMM
+| 项目目标名称 | 当前真实执行边界 |
+|---|---|
+| Dense Fused Attention | Native `DotProductAttention` dense/no-mask/p=0 forward core |
+| Vocab-parallel Cross Entropy | Megatron Vocab-Parallel Cross Entropy forward / rank-local backward |
+| SwiGLU | Megatron MLP `bias_swiglu_impl` activation boundary |
+| Residual Add RMSNorm | non-TE `torch.nn.RMSNorm` / `WrappedTorchNorm` |
+| MoE Grouped GEMM | Native `SequentialMLP` expert compute |
 
 历史名称不一定对应真实 runtime 中存在同名 fused kernel；真实边界以 pinned Megatron source 为准。
 
@@ -33,7 +35,7 @@ GPTModel → TransformerBlock → TransformerLayer → MLP
 → authentic bias_swiglu_impl → backward → optimizer-compatible step
 ```
 
-已完成 real MLP L1 integration、TransformerLayer L2、TransformerBlock L2 和 Minimal GPTModel L2。`Megatron local E2E infrastructure = READY`，但 `Nine-grid E2E = NOT EXECUTED`。
+已完成 real MLP L1 integration、TransformerLayer L2、TransformerBlock L2 和 Minimal GPTModel L2。`Megatron local E2E infrastructure = READY` 表示功能与集成链路已打通，不表示九格 representative performance 已完成；`Nine-grid E2E = NOT EXECUTED`。
 
 ### 当前真正 blocker
 

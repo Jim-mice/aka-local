@@ -1,5 +1,9 @@
 # 五个真实 Megatron target 的 campaign 汇总
 
+> **历史状态说明**：本文是 Phase 19 historical campaign closure snapshot，保留当时 operator campaign 的正式终态，不是 2026-09-22 项目总体最新状态。当前项目状态以 [README.md](README.md)、[docs/PERFORMANCE_OVERVIEW.md](docs/PERFORMANCE_OVERVIEW.md) 和 [公开阶段快照](docs/audits/public_snapshot_20260922.md) 为准。
+
+表格有六行是因为 Vocab-Parallel Cross Entropy 的 forward 和 backward 属于不同子 campaign，历史上分别记录；这不改变项目固定的五类研究目标计数。
+
 | 真实研究目标 | 后端 | 当前最可靠结果 | 晋升状态 | 当前阻塞项 |
 |---|---|---|---|---|
 | MLP SwiGLU activation | Megatron/PyTorch activation | 独立 forward 约 2.8x，backward 约 3.46x；已完成 current-stream integration | completed, integration-limited | 周边 GEMM/autograd 开销 |
