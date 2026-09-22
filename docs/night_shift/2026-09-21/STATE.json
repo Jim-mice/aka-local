@@ -1,0 +1,194 @@
+{
+  "night_shift_version": 1,
+  "project_root": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main",
+  "started_at": "2026-09-22T00:22:40+08:00",
+  "deadline": "2026-09-22T08:00:00+08:00",
+  "current_phase": "post_mandatory_result_identity_binding",
+  "last_completed_step": "closed E2E memory-delta override, PerformanceFacts/Mechanism Memory malformed-evidence, and Agent-context instruction/binding gaps; Night Shift 21/21, P0 11/11, P1 9/9, compileall, SOURCE_AUDIT_PASS, BUNDLE_PASS, and NIGHT_ARTIFACT_PASS",
+  "next_action": "bind the actual contract digest and one declared candidate hash across L0, L1 runner provenance, bundle manifest, and measurement provenance; update fixture/tests/docs/hashes and rerun full offline gates",
+  "mandatory": {
+    "phase0_baseline": true,
+    "phase1_five_operator_map": true,
+    "phase2_three_level_oj": true,
+    "phase3_e2e_promotion": true,
+    "phase4_performance_reasoner": true,
+    "phase5_mechanism_memory": true,
+    "phase6_hypothesis_ranking": true,
+    "phase7_agent_context": true,
+    "phase8_first_operator_blueprint": true
+  },
+  "stretch": {
+    "dense_attention_blueprint": true,
+    "amdahl_ceiling": true,
+    "ablation_planner": true,
+    "architecture_review": true
+  },
+  "blockers": [
+    "The authorized D-repository snapshot has no .git directory; git provenance and git diff are unavailable.",
+    "Real Megatron L1/L2 qualification requires external model, dataset, topology, dependencies, and approved GPU access.",
+    "Failed native tempfile runs left sandbox-owned tmp* directories that this session cannot read or safely remove."
+  ],
+  "modified_files": [
+    ".venv/pyvenv.cfg",
+    "lab/runtime/blueprints/operator_blueprint.py",
+    "lab/runtime/blueprints/__init__.py",
+    "lab/runtime/agent/codex_session.py",
+    "lab/runtime/evaluators/end_to_end_oj.py",
+    "lab/runtime/reasoning/performance_model.py",
+    "lab/runtime/reasoning/hypothesis_planner.py",
+    "lab/runtime/reasoning/agent_context.py",
+    "lab/tests/test_night_shift_architecture.py",
+    "scripts/run_lab.py",
+    "scripts/run_sandbox_offline_tests.py"
+  ],
+  "created_files": [
+    "docs/night_shift/2026-09-21/PLAN.md",
+    "docs/night_shift/2026-09-21/STATE.json",
+    "docs/night_shift/2026-09-21/JOURNAL.jsonl",
+    "docs/night_shift/2026-09-21/FINAL_REPORT.md",
+    "docs/design/five_operator_integration_map.md",
+    "docs/design/three_level_oj_and_promotion.md",
+    "docs/design/performance_reasoner_and_mechanism_memory.md",
+    "docs/design/swiglu_end_to_end_blueprint.md",
+    "docs/design/dense_attention_end_to_end_blueprint.md",
+    "targets/megatron_5be9626/integration_contracts/schema.json",
+    "targets/megatron_5be9626/integration_contracts/dense_fused_attention.json",
+    "targets/megatron_5be9626/integration_contracts/vocab_parallel_cross_entropy.json",
+    "targets/megatron_5be9626/integration_contracts/swiglu.json",
+    "targets/megatron_5be9626/integration_contracts/residual_add_rmsnorm.json",
+    "targets/megatron_5be9626/integration_contracts/moe_grouped_gemm.json",
+    "lab/runtime/evaluators/oj_models.py",
+    "lab/runtime/evaluators/operator_oj.py",
+    "lab/runtime/evaluators/integration_oj.py",
+    "lab/runtime/evaluators/end_to_end_oj.py",
+    "lab/runtime/reasoning/__init__.py",
+    "lab/runtime/reasoning/performance_model.py",
+    "lab/runtime/reasoning/mechanism_memory.py",
+    "lab/runtime/reasoning/hypothesis_planner.py",
+    "lab/runtime/reasoning/agent_context.py",
+    "lab/runtime/reasoning/ablation_planner.py",
+    "lab/runtime/blueprints/__init__.py",
+    "knowledge/mechanisms.jsonl",
+    "config/policies/end_to_end_promotion.json",
+    "lab/tests/test_night_shift_architecture.py",
+    "scripts/run_sandbox_offline_tests.py",
+    "docs/audits/night_shift_architecture_review.md",
+    "lab/tests/fixtures/night_shift_bundle/contract.json",
+    "lab/tests/fixtures/night_shift_bundle/shape_manifest.json",
+    "lab/tests/fixtures/night_shift_bundle/l0/result.json",
+    "lab/tests/fixtures/night_shift_bundle/l1/result.json",
+    "lab/tests/fixtures/night_shift_bundle/l2/result.json",
+    "lab/tests/fixtures/night_shift_bundle/l2/invalid_result.json",
+    "lab/tests/fixtures/night_shift_bundle/l2/raw_metrics.json",
+    "lab/tests/fixtures/night_shift_bundle/l2/inconsistent_provisional.json",
+    "lab/tests/fixtures/night_shift_bundle/l2/invalid_raw_metrics.json",
+    "lab/tests/fixtures/night_shift_bundle/provenance.json",
+    "lab/runtime/blueprints/integration_contract.py",
+    "targets/megatron_5be9626/source_audit.json",
+    "lab/tests/fixtures/night_shift_bundle/manifest.json",
+    "scripts/verify_megatron_source_audit.py",
+    "scripts/validate_operator_bundle.py",
+    "config/protocols/swiglu_end_to_end_template.json",
+    "config/protocols/dense_fused_attention_end_to_end_template.json",
+    "docs/night_shift/2026-09-21/ARTIFACT_SHA256.json",
+    "scripts/verify_night_shift_artifacts.py"
+  ],
+  "tests": [
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_p0_integrity lab.tests.test_p1_attempt_loop -v",
+      "result": "BLOCKED_ENVIRONMENT",
+      "details": "5 passed; 15 errors caused by PermissionError in Python-created temporary directories; no remote evaluator was reached"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v",
+      "result": "PASS",
+      "details": "12 tests passed covering five contracts, L0/L1/L2, promotion separation, facts, mechanisms, ranking, Agent context, blueprints, Amdahl, and ablation"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe .\\scripts\\run_sandbox_offline_tests.py lab.tests.test_p0_integrity lab.tests.test_p1_attempt_loop",
+      "result": "PASS_WITH_EQUIVALENT_P0_FIXTURE",
+      "details": "P1 original 9/9 passed; P0 original 10/11 passed; an equivalent injected foreign-module guard passed in the Night Shift suite"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v",
+      "result": "PASS",
+      "details": "14/14 passed after final policy and collective-trace hardening"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v",
+      "result": "PASS",
+      "details": "15/15 passed after fail-closed L2 metric and evidence-aware ranking hardening"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe .\\scripts\\run_sandbox_offline_tests.py lab.tests.test_p0_integrity lab.tests.test_p1_attempt_loop",
+      "result": "PASS",
+      "details": "P0 original 11/11 and P1 original 9/9; launcher now creates ACL-safe local fixtures without external environment setup"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v; .\\.venv\\Scripts\\python.exe .\\scripts\\run_sandbox_offline_tests.py lab.tests.test_p0_integrity lab.tests.test_p1_attempt_loop",
+      "result": "PASS",
+      "details": "Night Shift 16/16 and original P0/P1 20/20 after source-contract, convergence-proxy, OJ numeric, promotion invalidation, and Agent-context import hardening"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v; .\\.venv\\Scripts\\python.exe .\\scripts\\run_sandbox_offline_tests.py lab.tests.test_p0_integrity lab.tests.test_p1_attempt_loop",
+      "result": "PASS",
+      "details": "Night Shift 18/18 and original P0/P1 20/20 after on-disk digest, result-chain, promotion binding, path-containment, and qualified artifact-reference validation; compileall and JSON/JSONL parsing also passed"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v",
+      "result": "PASS",
+      "details": "18/18 after run-ID binding, verdict semantics, downstream promotion prerequisites, reusable integration-contract validation, reasoner/mechanism input validation, L0 hashes, and L1 provenance/fallback hardening"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v; .\\.venv\\Scripts\\python.exe .\\scripts\\run_sandbox_offline_tests.py lab.tests.test_p0_integrity lab.tests.test_p1_attempt_loop",
+      "result": "PASS",
+      "details": "Night Shift 18/18 plus P0/P1 20/20 before source-audit test; Night Shift 19/19 after source hashes, protocol binding, canonical authority validation, strict JSON, and mechanism-scoped profile evidence"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v; .\\.venv\\Scripts\\python.exe .\\scripts\\run_sandbox_offline_tests.py lab.tests.test_p0_integrity lab.tests.test_p1_attempt_loop",
+      "result": "PASS",
+      "details": "Night Shift 20/20 and original P0/P1 20/20; compileall, 238 JSON documents, JOURNAL JSONL, SOURCE_AUDIT_PASS, and BUNDLE_PASS also passed"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe .\\scripts\\verify_night_shift_artifacts.py",
+      "result": "NIGHT_ARTIFACT_PASS",
+      "details": "35 stable core code, contract, policy, protocol, test, and design artifacts matched their recorded SHA-256 values"
+    },
+    {
+      "command": "final offline safety gate",
+      "result": "PASS",
+      "details": "Night Shift 20/20, P0/P1 20/20, compileall, 247 JSON plus JOURNAL parse, SOURCE_AUDIT_PASS, BUNDLE_PASS, NIGHT_ARTIFACT_PASS, D-root lab import, Megatron HEAD 5be9626 with empty status"
+    },
+    {
+      "command": "resume offline safety gate",
+      "result": "PASS",
+      "details": "Night Shift 20/20, P0 11/11, P1 9/9, SOURCE_AUDIT_PASS, BUNDLE_PASS, NIGHT_ARTIFACT_PASS, D-root lab import, Megatron HEAD 5be9626 with empty status; two initially abbreviated CLI invocations were corrected with their required explicit arguments"
+    },
+    {
+      "command": ".\\.venv\\Scripts\\python.exe -m unittest lab.tests.test_night_shift_architecture -v; offline P0/P1 launcher; compileall; source, bundle, and artifact verifiers",
+      "result": "PASS",
+      "details": "Night Shift 21/21, P0 11/11, P1 9/9, compileall PASS, SOURCE_AUDIT_PASS, BUNDLE_PASS, NIGHT_ARTIFACT_PASS after strict bundle JSON decoding"
+    },
+    {
+      "command": "post-mandatory schema and authority full offline gate",
+      "result": "PASS",
+      "details": "Night Shift 21/21, P0 11/11, P1 9/9, compileall PASS, SOURCE_AUDIT_PASS, BUNDLE_PASS, NIGHT_ARTIFACT_PASS after memory-delta, reasoner/mechanism, and Agent-context hardening"
+    }
+  ],
+  "notes": [
+    "Megatron-LM read-only checkout exists at the expected commit 5be9626709af2722333bf54797c954c09edeada3.",
+    "No remote or GPU access was performed.",
+    "Legacy standalone supervisor and campaign paths still use PROMOTE/QUALIFIED_ACCEPT terminology; they were not rewired to SystemPromotion in this low-risk implementation.",
+    "Pinned-source audit corrected Residual Add RMSNorm to the BDA-to-pre-MLP-norm bridge and records config-specific CE collective traces.",
+    "Real L1/L2 evidence remains EXTERNAL_INTEGRATION_REQUIRED; local final consistency auditing continues until the window ends or no further safe work remains.",
+    "One additional sandbox-owned tmp directory was created by the first native TemporaryDirectory bundle test; the test now uses read-only committed fixtures and no longer creates such directories.",
+    "D_REPO_ONLY=PASS; C_AKA_MOTHER_MODIFIED=NO; MEGATRON_MODIFIED=NO; REMOTE_V100_USED=NO; BIV150_USED=NO; CUDA_BENCHMARK_USED=NO; HISTORICAL_CANDIDATES_MODIFIED=NO.",
+    "All safe local mandatory, stretch, review, coverage, documentation, and provenance work was exhausted at the prior checkpoint; resume review found a narrow strict-JSON bundle-decoding hardening opportunity.",
+    "Bundle manifests and artifacts now reject NaN, Infinity, duplicate object keys, invalid UTF-8, and non-object manifests.",
+    "L2 derives memory delta from baseline/candidate peak memory and rejects a conflicting caller-supplied value.",
+    "PerformanceFacts requires nonempty shapes and typed lifetime/mapping entries; Mechanism Memory nested evidence and JSONL are strict JSON.",
+    "Agent reasoner context now freezes the implementation instruction, rejects unknown fields, and binds every ranked opportunity to a supplied mechanism record.",
+    "Identity audit found that the current passing fixture's L0 contract/candidate hashes are not yet bound across actual contract, L1 provenance, and protocol provenance; repair is in progress.",
+    "Real L1/L2 remains external rather than fabricated."
+  ]
+}

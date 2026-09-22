@@ -1,0 +1,13 @@
+{
+  "case_id": "GDN_ALGEBRA_BLIND_001",
+  "facts": [
+    {"id": "f1", "field": "symbols", "value": "beta, v, old_v, old_state, k are tensors with compatible elementwise shapes"},
+    {"id": "f2", "field": "update_relation", "value": "new_v is defined by an elementwise expression depending on beta, v, and old_v"},
+    {"id": "f3", "field": "state_relation", "value": "new_state is defined by an elementwise expression depending on old_state, old_v, new_v, and k"},
+    {"id": "f4", "field": "operation_graph", "value": "the graph contains sequential elementwise multiply, add, subtract, and divide nodes"},
+    {"id": "f5", "field": "materialization", "value": "intermediate tensors are materialized between graph nodes"},
+    {"id": "f6", "field": "algebraic_constants", "value": "some coefficients are fixed across the invocation"},
+    {"id": "f7", "field": "numerical_constraints", "value": "the existing evaluation requires forward and backward numerical equivalence"},
+    {"id": "f8", "field": "profile", "value": null, "evidence": "UNKNOWN"}
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "case_id": "RMSNORM_BLIND_001",
+  "facts": [
+    {"id": "f1", "field": "dataflow", "value": "one input tensor participates in an elementwise path and a row-wise reduction path"},
+    {"id": "f2", "field": "use_sites", "value": "the same immutable tensor value is consumed at two separated points in the operation graph"},
+    {"id": "f3", "field": "reduction", "value": "a row-wise reduction occurs between the two use sites"},
+    {"id": "f4", "field": "immutability", "value": "the tensor has no writes between the two uses"},
+    {"id": "f5", "field": "working_set", "value": "the per-thread working set is small relative to the available execution context"},
+    {"id": "f6", "field": "mapping", "value": "one logical row is assigned to one thread block"},
+    {"id": "f7", "field": "register_pressure", "value": null, "evidence": "UNKNOWN"},
+    {"id": "f8", "field": "global_traffic", "value": null, "evidence": "UNKNOWN"}
+  ]
+}

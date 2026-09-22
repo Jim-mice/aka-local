@@ -1,0 +1,29 @@
+{
+  "episode": "REAL_OPT_LOOP_001",
+  "status": "INCONCLUSIVE_FOR_OPTIMIZATION",
+  "scope": "LOCAL_MINIMAL_GPTMODEL",
+  "authentic_source": "C:/Users/38154/projects/megatron-lm",
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "existing_measured_evidence": {
+    "authentic_boundary_median_ms": 0.09344,
+    "model_split_fraction": 0.015571342909175317,
+    "model_paired_fraction_instrumentation_affected": 0.041956971532107534,
+    "model_split_infinite_speedup_ceiling": 1.015817644881643
+  },
+  "source_derived": {
+    "bias_swiglu_activation_is_fused": true,
+    "activation_output_is_passed_to_linear_fc2": true,
+    "custom_backward_saves_input_and_bias": true
+  },
+  "unknown": [
+    "exact GPU kernel launch count",
+    "whether activation output incurs HBM round-trip",
+    "activation output bytes moved",
+    "registers per thread",
+    "shared memory bytes",
+    "occupancy",
+    "CUPTI kernel breakdown",
+    "backward kernel breakdown"
+  ],
+  "interpretation": "Existing evidence supports measuring the boundary but does not support implementing activation/linear_fc2 fusion. The measurement hypothesis is not a performance gain claim."
+}

@@ -1,0 +1,1 @@
+{"schema_version":1,"operator_id":"swiglu","captures":[{"shape_id":"offline-fixture-1","dtype":"BF16","dimensions":{"S":8,"B":2,"I":4096,"TP":1},"strides":[16384,8192,1],"config_hash":"dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"}]}

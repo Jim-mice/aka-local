@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "environment": {
+    "status": "PASS",
+    "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+    "torch": "2.11.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "ffn_hidden": 16,
+    "dtype": "torch.float32",
+    "tp": 1,
+    "sp": false,
+    "mode": "full",
+    "l2_cache_size_bytes": 33554432
+  },
+  "k": 512,
+  "window_target_ms": "20-50",
+  "warmup_batches": 20,
+  "measured_batches": 50,
+  "python_wall_us": {
+    "count": 120,
+    "median": 65.10000093840063,
+    "mean": 66.04750027084567,
+    "stdev": 4.114453733840662,
+    "cv": 0.06229537404092857,
+    "min": 63.100000261329114,
+    "max": 105.09999992791563,
+    "p10": 63.89999180100858,
+    "p90": 68.29999620094895
+  },
+  "cuda_event_us": {
+    "count": 120,
+    "median": 73.87199997901917,
+    "mean": 74.50666675964992,
+    "stdev": 2.6553517666990616,
+    "cv": 0.035639116366122325,
+    "min": 70.49600034952164,
+    "max": 90.91199934482574,
+    "p10": 72.03199714422226,
+    "p90": 77.44000107049942
+  },
+  "batched_outer_event_us_per_invocation": {
+    "count": 50,
+    "median": 53.74621972441673,
+    "mean": 53.68621125817299,
+    "stdev": 0.733801602577519,
+    "cv": 0.013668343982195387,
+    "min": 52.152812480926514,
+    "max": 56.533124297857285,
+    "p10": 52.34987661242485,
+    "p90": 54.36968803405762
+  },
+  "old_inner_event_us": {
+    "median": 72.51200079917908,
+    "source": "real_loop_002/boundary_timing.json",
+    "known_perturbation": "inner CUDA Event around authentic callable"
+  },
+  "measurement_method": "CUDA Event outer windows; no inner Event in batched estimate; perf_counter wall includes synchronization",
+  "known_perturbation": "single-call Event and Python wall are overhead-sensitive; batched estimate amortizes timing boundary but still includes authentic launch/API path"
+}

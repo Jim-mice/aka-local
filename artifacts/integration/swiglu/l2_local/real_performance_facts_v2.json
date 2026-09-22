@@ -1,0 +1,53 @@
+{
+  "operator": "swiglu",
+  "shape": {
+    "batch": 2,
+    "sequence": 3,
+    "hidden_fc1": 32
+  },
+  "dtype": "torch.float32",
+  "dataflow": [
+    "fc1",
+    "swiglu",
+    "fc2"
+  ],
+  "tensor_lifetimes": {
+    "fc1_output": "until_swiglu",
+    "swiglu_output": "until_fc2"
+  },
+  "global_memory_reads": [
+    "fc1_output"
+  ],
+  "global_memory_writes": [
+    "swiglu_output"
+  ],
+  "shared_residency": [],
+  "register_residency": [],
+  "estimated_bytes": null,
+  "estimated_flops": null,
+  "reductions": [],
+  "synchronizations": [],
+  "kernel_launches": null,
+  "producer_consumer_boundaries": [
+    "fc1->swiglu",
+    "swiglu->fc2"
+  ],
+  "known_reuse": [],
+  "fixed_dimensions": {},
+  "dynamic_dimensions": [],
+  "parallel_mapping": {},
+  "profile_evidence": {
+    "idle_resources": [],
+    "supports_mechanism_ids": [],
+    "contradicts_mechanism_ids": [],
+    "measured_invocations_per_step": 1
+  },
+  "unknown_fields": [
+    "authentic_fused_latency",
+    "registers_per_thread",
+    "kernel_launch_count"
+  ],
+  "e2e_profile": {
+    "operator_fraction_of_step": null
+  }
+}

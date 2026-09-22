@@ -31,7 +31,7 @@ def write_json(path, value):
     path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 # Task 1: Episode reproducibility bundle
-def build_episode_manifest(episode_num, operator, candidate_path, contract_shapes):
+def build_episode_manifest(episode_num, operator, candidate_path, contract_shapes, contract=None, evaluation_fingerprint_value=None):
     env_snap_path = ROOT / "knowledge" / "environments" / "v100_sm70" / "environment_snapshot.json"
     env_snap = read_json(env_snap_path, {})
     return {
@@ -49,7 +49,16 @@ def build_episode_manifest(episode_num, operator, candidate_path, contract_shape
             "interface": "standalone_cuda",
             "entry": "launch_kernel",
         },
+        # ``contract_hash`` is retained only for legacy readers.  It was a
+        # shape-list digest and must never be interpreted as a semantic ABI
+        # contract.  New artifacts carry the explicitly named fields below.
         "contract_hash": sha256_hex(json.dumps({"shapes": contract_shapes}, sort_keys=True)),
+        "legacy_contract_hash_kind": "evaluation_shapes_only",
+        "semantic_contract_sha256": contract.semantic_contract_sha256 if contract else None,
+        "evaluation_fingerprint": evaluation_fingerprint_value,
+        "interface_entry": contract.entry if contract else None,
+        "interface_arguments": contract.arguments if contract else None,
+        "result_schema_version": 2,
         "candidate_hash": file_sha256(Path(candidate_path)),
         "baseline_hash": file_sha256(ROOT / "operators" / operator / "reference.cu"),
         "agent": {

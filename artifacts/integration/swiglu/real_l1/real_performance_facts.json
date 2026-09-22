@@ -1,0 +1,44 @@
+{
+  "dataflow": [
+    "fc1",
+    "swiglu",
+    "fc2"
+  ],
+  "dtype": "torch.float32",
+  "dynamic_dimensions": [],
+  "e2e_profile": {},
+  "estimated_bytes": null,
+  "estimated_flops": null,
+  "fixed_dimensions": {},
+  "global_memory_reads": [
+    "fc1_output"
+  ],
+  "global_memory_writes": [
+    "swiglu_output"
+  ],
+  "kernel_launches": null,
+  "known_reuse": [],
+  "operator": "swiglu",
+  "parallel_mapping": {},
+  "producer_consumer_boundaries": [
+    "fc1->swiglu",
+    "swiglu->fc2"
+  ],
+  "profile_evidence": {},
+  "reductions": [],
+  "register_residency": [],
+  "shape": {
+    "dim_0": 2,
+    "dim_1": 3,
+    "dim_2": 32
+  },
+  "shared_residency": [],
+  "synchronizations": [],
+  "tensor_lifetimes": {
+    "fc1_output": "until_swiglu",
+    "swiglu_output": "until_fc2"
+  },
+  "unknown_fields": [
+    "profile_evidence"
+  ]
+}

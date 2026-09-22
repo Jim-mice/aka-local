@@ -1,0 +1,24 @@
+{
+  "command": [
+    "codex.exe",
+    "exec",
+    "--ephemeral",
+    "--sandbox",
+    "read-only",
+    "--json",
+    "--skip-git-repo-check",
+    "--cd",
+    "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main",
+    "-"
+  ],
+  "cwd": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main",
+  "prompt": "Return exactly:\n{\"status\":\"ok\"}\n",
+  "timeout_seconds": 45.0,
+  "state": "WAITING_FOR_FIRST_EVENT",
+  "stdout": "{\"type\":\"thread.started\",\"thread_id\":\"01a0c72a-fbca-70d0-9b8c-6308c8023374\"}\n{\"type\":\"turn.started\"}\n",
+  "stderr": "2026-09-22T03:31:18.112678Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-09-22T03:31:18.112702Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-09-22T03:31:18.118720Z  WARN codex_core::shell_snapshot: Failed to create shell snapshot for powershell: Shell snapshot not supported yet for PowerShell\n2026-09-22T03:31:20.944034Z  WARN codex_skills::interface: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/\n2026-09-22T03:31:20.944053Z  WARN codex_skills::interface: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/\n2026-09-22T03:31:23.099718Z ERROR codex_models_manager::manager: failed to refresh available models: timeout waiting for child process to exit\n2026-09-22T03:31:51.441450Z  WARN codex_core::responses_retry: stream disconnected - retrying sampling request (1/5 in 205ms)... turn_id=01a0c72a-fc37-75d2-9b7a-53e2619ae8d4 retries=1 max_retries=5 sampling_error=request timed out\n",
+  "returncode": null,
+  "timed_out": true,
+  "elapsed_seconds": 45.05135679244995,
+  "smoke_status": "BLOCKED"
+}

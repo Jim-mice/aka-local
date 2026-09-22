@@ -9,6 +9,7 @@ Phase 8-B additions:
 - Backward-compatible single-shape API preserved
 """
 
+import hashlib
 import json
 import os
 import re
@@ -22,6 +23,10 @@ from typing import Optional
 
 import paramiko
 from scp import SCPClient
+
+from lab.runtime.evaluators.contract_validation import load_contract_bundle, validate_candidate_source
+
+PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
 # -- config --
 # Read from config; fallback for backward compat
@@ -111,10 +116,17 @@ class RemoteV100Evaluator:
         self.shape = shape
         self.operator = operator
         self.job_id = uuid.uuid4().hex[:12]
+        self.run_id = uuid.uuid4().hex
         self.remote_job_dir = f"{V100_WORK_DIR}/{self.job_id}"
         self._result: Optional[dict] = None
         self._compile_ok: bool = False
         self._error: str = ""
+
+    @property
+    def candidate_hash(self) -> str:
+        if not self.candidate_path.is_file():
+            return "MISSING"
+        return hashlib.sha256(self.candidate_path.read_bytes()).hexdigest()
 
     def prepare(self) -> bool:
         try:
@@ -182,6 +194,11 @@ class RemoteV100Evaluator:
             "gpu": "Tesla V100-PCIE-16GB",
             "arch": "sm_70",
             "timestamp": utcnow(),
+            "run_id": self.run_id,
+            "job_id": self.job_id,
+            "candidate_hash": self.candidate_hash,
+            "shape": self.shape,
+            "operator": self.operator,
         }
 
     def profile(self) -> Optional[dict]:
@@ -192,13 +209,19 @@ class RemoteV100Evaluator:
 
     def static_evidence(self) -> dict:
         if not self._result:
-            return {"compile": False, "error": self._error}
+            return {"compile": False, "error": self._error, "run_id": self.run_id, "job_id": self.job_id,
+                    "candidate_hash": self.candidate_hash, "shape": self.shape, "operator": self.operator}
         return {
             "compile": self._result.get("compile", False),
             "compile_error": self._result.get("compile_error", ""),
             "nvcc_cmd": self._result.get("nvcc_cmd", ""),
             "correctness": self._result.get("correctness", False),
             "max_error": self._result.get("max_error"),
+            "run_id": self.run_id,
+            "job_id": self.job_id,
+            "candidate_hash": self.candidate_hash,
+            "shape": self.shape,
+            "operator": self.operator,
         }
 
     def cleanup(self) -> None:
@@ -219,8 +242,8 @@ class RemoteV100Evaluator:
 def evaluate_candidate(candidate_path: str, shape: str = "4,4096", operator: str = "rms_norm_v100_cuda") -> dict:
     """Evaluate a candidate.cu on V100 for one shape.
     Returns backward-compatible Evidence dict."""
-    ev = RemoteV100Evaluator(candidate_path, shape, operator)
     result = {
+        "result_schema_version": 2,
         "compile_pass": False,
         "correctness_pass": False,
         "speedup": None,
@@ -228,6 +251,23 @@ def evaluate_candidate(candidate_path: str, shape: str = "4,4096", operator: str
         "evidence": {},
         "error": "",
     }
+    try:
+        contract, _evaluation, evaluation_id = load_contract_bundle(PROJECT_ROOT, operator)
+        failures = validate_candidate_source(Path(candidate_path), contract)
+    except Exception as exc:
+        result["error"] = f"REJECT_CONTRACT: canonical contract unavailable: {exc}"
+        result["contract_validation"] = {"status": "REJECT_CONTRACT"}
+        return result
+    if failures:
+        result["error"] = "REJECT_CONTRACT: candidate source does not satisfy semantic contract"
+        result["semantic_contract_sha256"] = contract.semantic_contract_sha256
+        result["evaluation_fingerprint"] = evaluation_id
+        result["contract_validation"] = {"status": "REJECT_CONTRACT", "failures": failures}
+        return result
+    result["semantic_contract_sha256"] = contract.semantic_contract_sha256
+    result["evaluation_fingerprint"] = evaluation_id
+    result["contract_validation"] = {"status": "PASS", "failures": []}
+    ev = RemoteV100Evaluator(candidate_path, shape, operator)
 
     if not ev.prepare():
         result["error"] = ev.get_error()
@@ -264,7 +304,8 @@ def evaluate_candidate_multi_shape(
     candidate_path: str,
     shapes: list = None,
     operator: str = "rms_norm_v100_cuda",
-    with_profile: bool = False
+    with_profile: bool = False,
+    evaluator_factory=RemoteV100Evaluator,
 ) -> dict:
     """Evaluate candidate.cu across multiple shapes on V100.
 
@@ -287,6 +328,7 @@ def evaluate_candidate_multi_shape(
         shapes = DEFAULT_SHAPES
 
     result = {
+        "result_schema_version": 2,
         "compile_pass": False,
         "correctness_pass": False,
         "shapes": [],
@@ -298,96 +340,123 @@ def evaluate_candidate_multi_shape(
         "error": "",
         "profile_available": False,
         "profile_summary": None,
+        "runs": [],
+        "qualification": {"status": "NOT_RUN"},
     }
 
     candidate_path = str(candidate_path)
 
-    # Phase 1: Compile once (use first shape for compile check)
-    primary_shape = shapes[0]
-    ev = RemoteV100Evaluator(candidate_path, primary_shape, operator=operator)
-    if not ev.prepare():
-        result["error"] = ev.get_error()
-        return result
+    # The default factory is the real remote boundary.  Apply the same local
+    # source/contract gate used by the campaign runner so CLI and legacy
+    # direct callers cannot reach SSH unchecked.  Injected fake evaluators
+    # deliberately bypass this wrapper for offline tests.
+    if evaluator_factory is RemoteV100Evaluator:
+        try:
+            contract, _evaluation, evaluation_id = load_contract_bundle(PROJECT_ROOT, operator)
+            failures = validate_candidate_source(Path(candidate_path), contract)
+        except Exception as exc:
+            result["error"] = f"REJECT_CONTRACT: canonical contract unavailable: {exc}"
+            result["contract_validation"] = {"status": "REJECT_CONTRACT"}
+            return result
+        if failures:
+            result["error"] = "REJECT_CONTRACT: candidate source does not satisfy semantic contract"
+            result["semantic_contract_sha256"] = contract.semantic_contract_sha256
+            result["evaluation_fingerprint"] = evaluation_id
+            result["contract_validation"] = {"status": "REJECT_CONTRACT", "failures": failures}
+            return result
+        result["semantic_contract_sha256"] = contract.semantic_contract_sha256
+        result["evaluation_fingerprint"] = evaluation_id
+        result["contract_validation"] = {"status": "PASS", "failures": []}
 
-    if not ev.compile():
-        result["error"] = ev.get_error()
-        result["evidence"] = ev.static_evidence()
-        return result
-
-    result["compile_pass"] = True
-
-    # Phase 2: Correctness on primary shape
-    if not ev.check_correctness():
-        result["error"] = ev.get_error()
-        result["evidence"] = ev.static_evidence()
-        result["shapes"] = [{"shape": primary_shape, "correctness": False}]
-        return result
-
-    result["correctness_pass"] = True
-
-    # Phase 3: Benchmark across all shapes
+    # ``eval.sh`` currently performs compile, correctness and measurement in
+    # one remote invocation.  Do not create a separate primary-shape preflight:
+    # N requested shapes must create exactly N measured jobs.
     speedups = []
-    all_latencies = {}
-    all_correct = True  # Phase 9.5: track correctness across ALL shapes
+    all_compile = True
+    all_correct = True
+    primary_run = None
 
     for shape in shapes:
-        sev = RemoteV100Evaluator(candidate_path, shape, operator)
-        if not sev.prepare():
-            result["shapes"].append({"shape": shape, "error": "prepare failed"})
+        ev = evaluator_factory(candidate_path, shape, operator)
+        run = {
+            "run_id": ev.run_id,
+            "job_id": ev.job_id,
+            "candidate_hash": ev.candidate_hash,
+            "shape": shape,
+            "operator": operator,
+            "timestamp": utcnow(),
+        }
+        if not ev.prepare():
+            all_compile = False
+            run.update({"compile": ev.static_evidence(), "correctness": {"pass": False}, "benchmark": None, "error": ev.get_error()})
+            result["runs"].append(run)
+            result["shapes"].append({"shape": shape, "run_id": ev.run_id, "correctness": False, "error": ev.get_error()})
+            ev.cleanup()
             continue
-        if not sev.compile():
-            result["shapes"].append({"shape": shape, "error": sev.get_error()})
+        if not ev.compile():
+            all_compile = False
+            run.update({"compile": ev.static_evidence(), "correctness": {"pass": False}, "benchmark": None, "error": ev.get_error()})
+            result["runs"].append(run)
+            result["shapes"].append({"shape": shape, "run_id": ev.run_id, "correctness": False, "error": ev.get_error()})
+            ev.cleanup()
             continue
-        if not sev.check_correctness():
+        static = ev.static_evidence()
+        correct = ev.check_correctness()
+        run["compile"] = static
+        run["correctness"] = {"pass": correct, "max_error": static.get("max_error")}
+        if not correct:
             all_correct = False
-            result["shapes"].append({"shape": shape, "correctness": False, "error": sev.get_error()})
+            run.update({"benchmark": None, "error": ev.get_error()})
+            result["runs"].append(run)
+            result["shapes"].append({"shape": shape, "run_id": ev.run_id, "correctness": False, "error": ev.get_error()})
+            if primary_run is None:
+                primary_run = run
+            ev.cleanup()
             continue
-
-        bench = sev.benchmark()
+        bench = ev.benchmark()
+        run["benchmark"] = bench
         shape_result = {
             "shape": shape,
+            "run_id": ev.run_id,
             "latency_us": bench.get("latency_us") if bench else None,
             "speedup_vs_torch": bench.get("speedup_vs_torch") if bench else None,
             "speedup_vs_naive": bench.get("speedup_vs_naive") if bench else None,
             "correctness": True,
         }
         result["shapes"].append(shape_result)
+        result["runs"].append(run)
+        if primary_run is None:
+            primary_run = run
 
         if bench and bench.get("speedup_vs_torch"):
             speedups.append(float(bench["speedup_vs_torch"]))
-        if bench and bench.get("latency_us"):
-            all_latencies[shape] = bench["latency_us"]
+        ev.cleanup()
 
-        sev.cleanup()
-
-    # Phase 4: Compute aggregate score AND validate all-shape correctness
-    # Phase 9.5: If any shape failed correctness, mark overall as failed
+    result["compile_pass"] = bool(result["runs"]) and all_compile
     if not all_correct:
         result["correctness_pass"] = False
         result["error"] = "correctness failed on one or more shapes"
-    
+    else:
+        result["correctness_pass"] = result["compile_pass"]
     if speedups:
         result["geometric_mean_speedup"] = round(
             statistics.geometric_mean(speedups), 3
         )
         result["aggregate_score"] = result["geometric_mean_speedup"]
 
-    # Backward-compatible fields from primary shape
+    # Backward-compatible fields now point at the same primary run as evidence.
     primary = result["shapes"][0] if result["shapes"] else {}
     result["speedup"] = primary.get("speedup_vs_torch")
     result["latency_us"] = primary.get("latency_us")
 
-    # Compile evidence from primary
-    result["evidence"] = ev.static_evidence()
-    bench = ev.benchmark()
-    if bench:
-        result["evidence"].update(bench)
-
-    ev.cleanup()
+    if primary_run is not None:
+        result["evidence"] = {**(primary_run.get("compile") or {}), **(primary_run.get("benchmark") or {}),
+                              "run_id": primary_run["run_id"], "job_id": primary_run["job_id"]}
 
     # Phase 5: NSYS profile (if requested)
     if with_profile:
-        profile_ev = RemoteV100Evaluator(candidate_path, primary_shape)
+        primary_shape = shapes[0]
+        profile_ev = evaluator_factory(candidate_path, primary_shape, operator)
         if profile_ev.prepare():
             # Run without --no-profile to trigger NSYS
             remote_cu = f"{profile_ev.remote_job_dir}/candidate.cu"

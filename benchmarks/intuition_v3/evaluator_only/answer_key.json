@@ -1,0 +1,35 @@
+{
+  "case_id": "TARGETED_ALGORITHMIC_DECOMPOSITION_FINAL_001",
+  "EXPECTED_MECHANISM_FAMILY": "MATHEMATICALLY_EQUIVALENT_PARTIAL_REDUCTION_REPRESENTATION",
+  "ACCEPTABLE_EQUIVALENTS": [
+    "a compact per-partial representation containing the information needed to combine two disjoint row portions",
+    "a hierarchical reduction whose partial records preserve the output semantics without materializing all per-element weighted vectors",
+    "an equivalent work-ownership reformulation that changes the reduction state and combines partial contributions while respecting causal prefixes"
+  ],
+  "PARTIAL_PATTERNS": [
+    "phase fusion with numerical validation but no changed mathematical representation",
+    "generic tiled scheduling or shared-memory staging",
+    "measurement-first profiling plan",
+    "recomputation or launch reduction without explaining the equivalent partial computation"
+  ],
+  "MISS_PATTERNS": [
+    "unqualified fusion",
+    "lifetime extension or register retention as the primary mechanism",
+    "materialization removal without a replacement computation representation",
+    "generic vectorization, block-size, or warp tuning",
+    "claiming a new measured bottleneck from unknown fields"
+  ],
+  "HALLUCINATION_CRITERIA": [
+    "asserts kernel count, memory traffic, occupancy, or backward behavior not present in public facts",
+    "claims a numerical result or speedup as measured without evidence reference"
+  ],
+  "FULL_HIT_REQUIREMENTS": [
+    "observation cites the multi-stage graph and the mathematical output semantics",
+    "causal mechanism explains why the existing intermediate representation causes avoidable work or storage",
+    "concrete transformation changes the partial computation representation, reduction structure, or work ownership",
+    "semantic precondition explains why the transformed representation is mathematically equivalent, including causal-prefix handling",
+    "risk is grounded in FP16/FP32 error, register budget, scratch capacity, or backward correctness",
+    "evidence_refs point only to public facts"
+  ],
+  "public_sentinel": "V3_EVALUATOR_ONLY_FINAL_9C41"
+}

@@ -1,0 +1,62 @@
+{
+  "RMSNORM_EP28_BLIND": [
+    {
+      "run": 1,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    },
+    {
+      "run": 2,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    },
+    {
+      "run": 3,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    }
+  ],
+  "GDN_ALGEBRA_BLIND": [
+    {
+      "run": 1,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    },
+    {
+      "run": 2,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    },
+    {
+      "run": 3,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    }
+  ],
+  "SWIGLU_REAL_BLIND": [
+    {
+      "run": 1,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    },
+    {
+      "run": 2,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    },
+    {
+      "run": 3,
+      "returncode": 1,
+      "stdout": "",
+      "stderr": "Not inside a trusted directory and --skip-git-repo-check was not specified.\n"
+    }
+  ]
+}

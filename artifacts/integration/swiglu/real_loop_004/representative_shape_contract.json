@@ -1,0 +1,23 @@
+{
+  "schema": "representative_shape_contract.v1",
+  "scope": "standalone authentic SwiGLU operator replay, not full nine-grid E2E",
+  "fields": {
+    "hidden_size": "REQUIRED",
+    "ffn_hidden_size": "REQUIRED",
+    "sequence_length": "REQUIRED",
+    "micro_batch_size": "REQUIRED",
+    "dtype": "REQUIRED",
+    "tensor_parallel_size": "REQUIRED",
+    "sequence_parallel": "REQUIRED",
+    "gated_activation_type": "REQUIRED",
+    "bias_setting": "REQUIRED",
+    "layout": "REQUIRED",
+    "checkpoint": "IRRELEVANT",
+    "tokenizer": "IRRELEVANT",
+    "dataset": "IRRELEVANT",
+    "optimizer_state": "IRRELEVANT"
+  },
+  "replay_rule": "checkpoint/tokenizer/dataset/optimizer state do not affect isolated operator tensor shape once the required configuration fields are authoritative",
+  "partition_rule_source": "C:\\Users\\38154\\projects\\megatron-lm\\megatron\\core\\transformer\\mlp.py",
+  "partition_rule_note": "Megatron doubles ffn_hidden_size for gated linear unit and uses tensor-parallel local construction; the target configuration values are still required."
+}

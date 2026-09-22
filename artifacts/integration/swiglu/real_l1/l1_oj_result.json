@@ -1,0 +1,37 @@
+{
+  "l1_oj": {
+    "checks": {
+      "backward_correct": true,
+      "candidate_hash_matches": true,
+      "contract_hash_matches": true,
+      "distributed_invariants": true,
+      "fallback_count_zero": true,
+      "forward_correct": true,
+      "metric:module_ms": true,
+      "no_silent_fallback": true,
+      "replacement_invoked": true,
+      "replacement_marker_matches": true,
+      "runner_provenance": true,
+      "shape_compatible": true
+    },
+    "evidence": {
+      "collective_trace": null,
+      "collective_traces_by_rank": null,
+      "replacement_marker": "aka-local-swiglu-reference-v1",
+      "runner_provenance": {
+        "artifact_refs": [
+          "swiglu_integration_result.json"
+        ],
+        "candidate_hash": "eb68244293c3ede3e7e6f6799b6ebc698a152b079ad2b71dc861360365c965ee",
+        "contract_hash": "c06dde575abb3b071db4cd0d75d0678d14679c6ac0011e0736c436ec12cb3c46",
+        "runner_id": "aka-local-swiglu-l1-harness"
+      }
+    },
+    "level": "L1_INTEGRATION",
+    "raw_metrics": {
+      "module_ms": 0.30100000731181353
+    },
+    "reasons": [],
+    "verdict": "INTEGRATION_PASS"
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "schema": "MeasurementFacts.v3",
+  "episode": "REAL_OPT_LOOP_003",
+  "exact_workload": {
+    "status": "PASS",
+    "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+    "torch": "2.11.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "ffn_hidden": 16,
+    "dtype": "torch.float32",
+    "tp": 1,
+    "sp": false,
+    "mode": "full",
+    "l2_cache_size_bytes": 33554432
+  },
+  "activation_footprint": {
+    "shape": [
+      3,
+      2,
+      16
+    ],
+    "numel": 96,
+    "dtype": "torch.float32",
+    "element_size_bytes": 4,
+    "payload_bytes": 384,
+    "stride": [
+      32,
+      16,
+      1
+    ],
+    "is_contiguous": true,
+    "storage_bytes": 384,
+    "requires_grad": false
+  },
+  "timing_attribution": {
+    "status": "PASS",
+    "environment": {
+      "status": "PASS",
+      "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+      "torch": "2.11.0+cu128",
+      "cuda_runtime": "12.8",
+      "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+      "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+      "batch": 2,
+      "sequence": 3,
+      "hidden": 8,
+      "ffn_hidden": 16,
+      "dtype": "torch.float32",
+      "tp": 1,
+      "sp": false,
+      "mode": "full",
+      "l2_cache_size_bytes": 33554432
+    },
+    "k": 512,
+    "window_target_ms": "20-50",
+    "warmup_batches": 20,
+    "measured_batches": 50,
+    "python_wall_us": {
+      "count": 120,
+      "median": 65.10000093840063,
+      "mean": 66.04750027084567,
+      "stdev": 4.114453733840662,
+      "cv": 0.06229537404092857,
+      "min": 63.100000261329114,
+      "max": 105.09999992791563,
+      "p10": 63.89999180100858,
+      "p90": 68.29999620094895
+    },
+    "cuda_event_us": {
+      "count": 120,
+      "median": 73.87199997901917,
+      "mean": 74.50666675964992,
+      "stdev": 2.6553517666990616,
+      "cv": 0.035639116366122325,
+      "min": 70.49600034952164,
+      "max": 90.91199934482574,
+      "p10": 72.03199714422226,
+      "p90": 77.44000107049942
+    },
+    "batched_outer_event_us_per_invocation": {
+      "count": 50,
+      "median": 53.74621972441673,
+      "mean": 53.68621125817299,
+      "stdev": 0.733801602577519,
+      "cv": 0.013668343982195387,
+      "min": 52.152812480926514,
+      "max": 56.533124297857285,
+      "p10": 52.34987661242485,
+      "p90": 54.36968803405762
+    },
+    "old_inner_event_us": {
+      "median": 72.51200079917908,
+      "source": "real_loop_002/boundary_timing.json",
+      "known_perturbation": "inner CUDA Event around authentic callable"
+    },
+    "measurement_method": "CUDA Event outer windows; no inner Event in batched estimate; perf_counter wall includes synchronization",
+    "known_perturbation": "single-call Event and Python wall are overhead-sensitive; batched estimate amortizes timing boundary but still includes authentic launch/API path"
+  },
+  "launch_geometry": {
+    "swiglu_grid": [
+      1,
+      1,
+      1
+    ],
+    "swiglu_block": [
+      128,
+      1,
+      1
+    ],
+    "threads_per_block": 128,
+    "warps_per_block_derived": 4,
+    "number_of_blocks": 1,
+    "theoretical_occupancy": "100% according to NCU basic warning for this tiny kernel",
+    "achieved_occupancy": "7.25%",
+    "sm_count": 26,
+    "low_occupancy_cause": "GRID_UNDERSUBSCRIBED",
+    "basis": "one 128-thread block on a 26-SM GPU; 16 registers/thread and zero dynamic/static shared memory do not support a register/shared-memory resource-limit claim"
+  },
+  "cache_pressure": {
+    "status": "PASS",
+    "l2_cache_size_bytes": 33554432,
+    "pressure_buffer_bytes": 67108864,
+    "baseline": {
+      "fc2_duration_us": 6.368,
+      "fc2_dram_read_bytes_total": 25088.0,
+      "fc2_l2_request_bytes_total": 82912.0
+    },
+    "pressure": {
+      "fc2_duration_us": 6.304,
+      "fc2_dram_read_bytes_total": 24832.0,
+      "fc2_l2_request_bytes_total": 82912.0
+    },
+    "delta": {
+      "fc2_duration_us": -0.06400000000000006,
+      "fc2_dram_read_bytes_total": -256.0,
+      "fc2_l2_request_bytes_total": 0.0
+    },
+    "interpretation": "No stable increase in FC2 duration, total DRAM reads, or L2 requests under a 2x-L2 pressure buffer; this is indirect evidence only and does not measure activation-only cache hits.",
+    "evidence_class": "INFERRED"
+  },
+  "hierarchy": {
+    "GRAPH_VALUE_EXISTS": {
+      "value": true,
+      "evidence": "SOURCE_DERIVED"
+    },
+    "DEVICE_TENSOR_MATERIALIZED": {
+      "value": true,
+      "evidence": "SOURCE_DERIVED + separate kernel execution"
+    },
+    "SEPARATE_KERNELS": {
+      "value": true,
+      "evidence": "MEASURED by NVTX-filtered NCU"
+    },
+    "CACHE_RESIDENCY": {
+      "value": "INCONCLUSIVE",
+      "evidence": "pressure comparison is indirect; no cache-hit metric available"
+    },
+    "DRAM_ROUND_TRIP": {
+      "value": "UNKNOWN",
+      "evidence": "activation-only traffic is not isolated"
+    }
+  },
+  "local_shape_perf_generalization": "UNSAFE",
+  "reason": "one-block tiny workload, 384-byte activation, cache-pressure-insensitive FC2, and low model fraction are not representative evidence for large-model fusion decisions",
+  "timing_reconciliation": {
+    "authoritative_value_us": 53.74621972441673,
+    "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\artifacts\\integration\\swiglu\\real_loop_003\\batched_swiglu_timing.json"
+  }
+}

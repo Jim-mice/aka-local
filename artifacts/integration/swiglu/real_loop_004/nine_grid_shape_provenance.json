@@ -1,0 +1,120 @@
+{
+  "status": "PARTIAL",
+  "configuration_identity": null,
+  "target_scope": "requested nine-grid configuration",
+  "observed_traceable_fixture_identity": "swiglu-fixture-commit-5be9626-episode2-shape-128x2x1024",
+  "fixture_is_target_nine_grid": false,
+  "fields": [
+    {
+      "field": "hidden_size",
+      "value": 1024,
+      "status": "AMBIGUOUS",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Historical SwiGLU fixture; not identified as the requested nine-grid configuration."
+    },
+    {
+      "field": "ffn_hidden_size",
+      "value": null,
+      "status": "MISSING",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\replay_contract.json",
+      "source_hash": "deb328c15c26adda17af282878a0e7f952162a12421a5a6c9608afb68c906c7f",
+      "evidence_type": "TRACEABLE",
+      "notes": "Contract provides formulas but no target configuration value."
+    },
+    {
+      "field": "sequence_length",
+      "value": 128,
+      "status": "AMBIGUOUS",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Fixture metadata records sequence_length=128; target identity is unproven."
+    },
+    {
+      "field": "micro_batch_size",
+      "value": 2,
+      "status": "AMBIGUOUS",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Fixture metadata records micro_batch=2; target identity is unproven."
+    },
+    {
+      "field": "dtype",
+      "value": "torch.float16",
+      "status": "AMBIGUOUS",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Fixture is explicitly a historical V100 fixture."
+    },
+    {
+      "field": "tensor_parallel_size",
+      "value": 1,
+      "status": "AMBIGUOUS",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Fixture metadata records tensor_parallel=1; target identity is unproven."
+    },
+    {
+      "field": "sequence_parallel",
+      "value": null,
+      "status": "MISSING",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\replay_contract.json",
+      "source_hash": "deb328c15c26adda17af282878a0e7f952162a12421a5a6c9608afb68c906c7f",
+      "evidence_type": "TRACEABLE",
+      "notes": "Replay contract does not establish target SP setting for the fixture."
+    },
+    {
+      "field": "gated_activation_type",
+      "value": "SwiGLU / SiLU gate",
+      "status": "CONFIRMED",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Fixture config records gated_linear_unit and SiLU."
+    },
+    {
+      "field": "bias_setting",
+      "value": "add_bias_linear=false",
+      "status": "CONFIRMED",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Fixture config records add_bias_linear=false."
+    },
+    {
+      "field": "layout",
+      "value": "contiguous row-major",
+      "status": "CONFIRMED",
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\fixtures\\fixture_metadata.json",
+      "source_hash": "4b55259b2b1c2c06e9e3d59d5768ae9d3d2f13de8de3af713469ff788d5ede57",
+      "evidence_type": "TRACEABLE",
+      "notes": "Fixture records hidden-state stride/layout."
+    }
+  ],
+  "identity_failure_reason": "The available fixture is traceable but is not proven to be the requested nine-grid configuration; core FFN/SP target fields are absent under one configuration identity.",
+  "nine_grid_readiness_source": {
+    "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\artifacts\\integration\\swiglu\\e2e_scope\\nine_grid_readiness.json",
+    "source_hash": "d90076f5762550185dcb42b699b7642e0d44e9a706b279255fb370f24e9a242e",
+    "evidence_type": "TRACEABLE",
+    "notes": "Existing audit explicitly says authoritative nine-grid configuration is missing."
+  },
+  "contract_sources": [
+    {
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\integration_contract.json",
+      "source_hash": "6b7e2c3a7d2fbd189ad1623643abd1f02d5203be307038c42b8ae353be3ff728",
+      "evidence_type": "TRACEABLE",
+      "notes": "Pinned commit and operator contract."
+    },
+    {
+      "source": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\targets\\megatron_5be9626\\swiglu\\replay_contract.json",
+      "source_hash": "deb328c15c26adda17af282878a0e7f952162a12421a5a6c9608afb68c906c7f",
+      "evidence_type": "TRACEABLE",
+      "notes": "Pinned callsite and shape formulas."
+    }
+  ]
+}

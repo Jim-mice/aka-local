@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "target_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "audit_mode": "READ_ONLY",
+  "audited_at": "2026-09-22T04:15:00+08:00",
+  "source_files": {
+    "megatron/core/extensions/transformer_engine.py": "b234d49299db48656368273655aea7110ddddece8a9fb061214e8581b7474a15",
+    "megatron/core/extensions/transformer_engine_spec_provider.py": "94954b53acffacd2e7249d533763ea2d1c9243ddcec932f3c4af710118720f92",
+    "megatron/core/fusions/fused_bias_dropout.py": "1fc3be9bc11d3913ece71764ee9316269ef0b6986321341965b1790acc319aa0",
+    "megatron/core/fusions/fused_bias_swiglu.py": "84d22796f145d4e722acce158ac1356d70491467660cc4fdbd3c9d940a4b86ea",
+    "megatron/core/fusions/fused_cross_entropy.py": "95bcdeb7b0fbd903ac52ace49ebf5ed00c8702942d5d96dd6f81374ce07d3de0",
+    "megatron/core/fusions/fused_softmax.py": "d96910a27332cc0e2eda19ef92b1b10838861419e83950bf918119ddfd875c0d",
+    "megatron/core/models/common/language_module/language_module.py": "b66ea8c9738078c2dc1ac1bfc49684ec6da3ede375c26e4b020b837e1babf060",
+    "megatron/core/tensor_parallel/cross_entropy.py": "e46db441f468bac4509f45872164962ba99f199a568bff26c32c91840455bef9",
+    "megatron/core/transformer/attention.py": "6083713e660f1b1d6fc160314b350bb28ed4b828a704163fc2e72d3bb2e5bbe9",
+    "megatron/core/transformer/dot_product_attention.py": "8b6236e3f58a9f80778e334a8aee2b020624d14cb09bc7118dab550e88f60a34",
+    "megatron/core/transformer/mlp.py": "2221dc7fdf8bf06c280ad2c3c0cb64f71f36bae8422340655914834ac7137348",
+    "megatron/core/transformer/moe/experts.py": "c8fc3d1ec18ce513f342e1f99b53ae36342a1a5a42bb51b61bc1b4d2e33b725d",
+    "megatron/core/transformer/moe/moe_layer.py": "2784d8483e73f4d9b0583d44eb3f1e2cca64a9520bbf364245f0b7f0aff9080b",
+    "megatron/core/transformer/moe/token_dispatcher.py": "764ce5163d93adce5a1acda1b36df8d55787ca21a91b305411be21cd6d8073c8",
+    "megatron/core/transformer/transformer_layer.py": "08a8bc075553e813219bdb692b66cd594dadd84a5b6bd18af019610905681928"
+  },
+  "operator_anchors": {
+    "dense_fused_attention": [
+      "megatron/core/transformer/attention.py:498 Attention._run_core_attention",
+      "megatron/core/transformer/dot_product_attention.py:26 DotProductAttention"
+    ],
+    "vocab_parallel_cross_entropy": [
+      "megatron/core/models/common/language_module/language_module.py:155 LanguageModule.compute_language_model_loss",
+      "megatron/core/tensor_parallel/cross_entropy.py:119 _VocabParallelCrossEntropy",
+      "megatron/core/fusions/fused_cross_entropy.py:87 _VocabParallelCrossEntropy",
+      "megatron/core/fusions/fused_cross_entropy.py:136 fused_vocab_parallel_cross_entropy"
+    ],
+    "swiglu": [
+      "megatron/core/transformer/mlp.py:155 MLP",
+      "megatron/core/transformer/mlp.py:258 MLP.forward",
+      "megatron/core/fusions/fused_bias_swiglu.py:209 bias_swiglu_impl",
+      "megatron/core/fusions/fused_bias_swiglu.py:239 weighted_bias_swiglu_impl"
+    ],
+    "residual_add_rmsnorm": [
+      "megatron/core/fusions/fused_bias_dropout.py:11 _bias_dropout_add_func",
+      "megatron/core/fusions/fused_bias_dropout.py:83 get_bias_dropout_add",
+      "megatron/core/transformer/transformer_layer.py:749 TransformerLayer._forward_pre_mlp_layernorm",
+      "megatron/core/extensions/transformer_engine.py:626 TEFusedResidualRMSNorm"
+    ],
+    "moe_grouped_gemm": [
+      "megatron/core/transformer/moe/moe_layer.py:213 MoELayer",
+      "megatron/core/transformer/moe/experts.py:182 TEGroupedMLP",
+      "megatron/core/transformer/moe/experts.py:1260 SequentialMLP",
+      "megatron/core/transformer/moe/token_dispatcher.py:61 MoETokenDispatcher"
+    ]
+  },
+  "limitations": [
+    "Hashes and line anchors prove the inspected static source snapshot only.",
+    "They do not prove a runtime dispatch, physical environment, or end-to-end result."
+  ]
+}

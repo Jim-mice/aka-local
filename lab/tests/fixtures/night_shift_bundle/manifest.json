@@ -1,0 +1,21 @@
+{
+  "operator_id": "swiglu",
+  "target_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "candidate_hash": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "artifacts": {
+    "contract": {"path": "contract.json", "sha256": "008190cd8d687ce3e0afeb1092df5f08e9fbc554db6425fc525532b7f60907d8"},
+    "shapes": {"path": "shape_manifest.json", "sha256": "fa0ff43f1a1d0444f65722c0ec9c3cbbd4a9098a4631ad578f285f187f26c921"},
+    "l0": {"path": "l0/result.json", "sha256": "e8f3fa34890ffe28c8acb0cd160a2d302316ec9d6f3c548fe99bae17db3cae98"},
+    "l1": {"path": "l1/result.json", "sha256": "f73ac4661655ab442c889991e4b671305a751aebd78f5b386a2310516d52a67f"},
+    "l2": {"path": "l2/result.json", "sha256": "f1a00e1d25bd09674a51cbd39362656aa904f3e7a5abe4ae003e911e707f6eaf"},
+    "l2_raw": {"path": "l2/raw_metrics.json", "sha256": "3ecdadc6fc998159c28790c8e90873ea80c9ca2afc210d1fb40db0d01709c31a"},
+    "provenance": {"path": "provenance.json", "sha256": "93b183f682a2965e349ae40a13bbdf706824a8c5b5fdf85df2b60178af2720bc"}
+  },
+  "promotion_state": {
+    "KernelPromotion": "ACCEPTED",
+    "IntegrationPromotion": "ACCEPTED",
+    "SystemPromotion": "ACCEPTED"
+  },
+  "replacement_marker": "swiglu-v1",
+  "fallback_count": 0
+}

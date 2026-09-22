@@ -1,0 +1,99 @@
+{
+  "status": "PASS",
+  "environment": {
+    "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.11.0+cu128",
+    "torch_cuda_runtime": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "device_index": 0,
+    "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "tp": 1,
+    "sp": false,
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "ffn_hidden": 16,
+    "dtype": "float32",
+    "warmups": 1,
+    "repeats": 1,
+    "authentic_path": "Megatron MLP.forward -> bias_swiglu_impl -> BiasSwiGLUFunction -> linear_fc2",
+    "source_files": [
+      "megatron/core/transformer/mlp.py",
+      "megatron/core/fusions/fused_bias_swiglu.py"
+    ]
+  },
+  "compile_warmup_completed": true,
+  "event_instrumentation": "PERTURBING",
+  "measurement_kind": "authentic Megatron MLP forward; no algorithm replacement",
+  "raw_samples": [
+    {
+      "sample_id": 1,
+      "whole_mlp_ms": 2143.86328125,
+      "fc1_ms": 0.32095998525619507,
+      "swiglu_ms": 0.3500159978866577,
+      "fc2_ms": 2143.069091796875,
+      "output_shape": [
+        3,
+        2,
+        8
+      ]
+    }
+  ],
+  "whole_mlp_statistics_ms": {
+    "count": 1,
+    "median": 2143.86328125,
+    "mean": 2143.86328125,
+    "stdev": 0.0,
+    "cv": 0.0,
+    "min": 2143.86328125,
+    "max": 2143.86328125,
+    "p10": 2143.86328125,
+    "p90": 2143.86328125
+  },
+  "fc1_statistics_ms": {
+    "count": 1,
+    "median": 0.32095998525619507,
+    "mean": 0.32095998525619507,
+    "stdev": 0.0,
+    "cv": 0.0,
+    "min": 0.32095998525619507,
+    "max": 0.32095998525619507,
+    "p10": 0.32095998525619507,
+    "p90": 0.32095998525619507
+  },
+  "swiglu_statistics_ms": {
+    "count": 1,
+    "median": 0.3500159978866577,
+    "mean": 0.3500159978866577,
+    "stdev": 0.0,
+    "cv": 0.0,
+    "min": 0.3500159978866577,
+    "max": 0.3500159978866577,
+    "p10": 0.3500159978866577,
+    "p90": 0.3500159978866577
+  },
+  "fc2_statistics_ms": {
+    "count": 1,
+    "median": 2143.069091796875,
+    "mean": 2143.069091796875,
+    "stdev": 0.0,
+    "cv": 0.0,
+    "min": 2143.069091796875,
+    "max": 2143.069091796875,
+    "p10": 2143.069091796875,
+    "p90": 2143.069091796875
+  },
+  "swiglu_plus_fc2_statistics_ms": {
+    "count": 1,
+    "median": 2143.4191077947617,
+    "mean": 2143.4191077947617,
+    "stdev": 0.0,
+    "cv": 0.0,
+    "min": 2143.4191077947617,
+    "max": 2143.4191077947617,
+    "p10": 2143.4191077947617,
+    "p90": 2143.4191077947617
+  }
+}

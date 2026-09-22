@@ -1,0 +1,14 @@
+{
+  "case_id": "HELDOUT_E_EVIDENCE_GAP_001",
+  "facts": [
+    {"id":"e1","field":"tensor_size","value":64,"unit":"MiB","evidence":"MEASURED"},
+    {"id":"e2","field":"elementwise_ops","value":11,"evidence":"MEASURED"},
+    {"id":"e3","field":"boundary_latency","value":0.31,"unit":"ms","evidence":"MEASURED"},
+    {"id":"e4","field":"memory_transaction_bytes","value":null,"evidence":"UNKNOWN"},
+    {"id":"e5","field":"cache_hit_rate","value":null,"evidence":"UNKNOWN"},
+    {"id":"e6","field":"achieved_occupancy","value":null,"evidence":"UNKNOWN"},
+    {"id":"e7","field":"kernel_count","value":null,"evidence":"UNKNOWN"},
+    {"id":"e8","field":"arithmetic_intensity","value":null,"evidence":"UNKNOWN"},
+    {"id":"e9","field":"timing_scope","value":"The boundary timing includes an asynchronous producer and consumer."}
+  ]
+}

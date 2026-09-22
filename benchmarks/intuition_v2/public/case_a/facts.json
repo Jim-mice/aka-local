@@ -1,0 +1,13 @@
+{
+  "case_id": "HELDOUT_A_ALGORITHMIC_001",
+  "facts": [
+    {"id":"a1","field":"operation","value":"For each row, produce a normalized exponential transform with strict max-subtraction numerical semantics."},
+    {"id":"a2","field":"passes","value":3,"evidence":"MEASURED"},
+    {"id":"a3","field":"row_length","value":4096,"evidence":"MEASURED"},
+    {"id":"a4","field":"row_reuse","value":"No tensor value is consumed at two separated graph sites."},
+    {"id":"a5","field":"boundary","value":"The three reductions are separate phases of one row transform."},
+    {"id":"a6","field":"numerical_contract","value":"Forward max_abs_error <= 2e-6 and backward relative error <= 1e-5."},
+    {"id":"a7","field":"available_scratch","value":"One row-sized scratch tile is available; full-row retention is not guaranteed."},
+    {"id":"a8","field":"profile_detail","value":null,"evidence":"UNKNOWN"}
+  ]
+}

@@ -20,6 +20,7 @@ from ...core.evidence import Evidence, EvidenceType, Verdict
 from ...core.diagnostic import Diagnostic, DiagnosticCategory
 
 from .episode_artifacts import archive_episode, write_knowledge_candidates
+from .attempt_loop import HypothesisAttemptController, LineageStore, StructuredKnowledgeSink, load_attempt_budget
 
 def utc(): return datetime.now(timezone.utc).isoformat()
 def digest(root):
@@ -40,6 +41,20 @@ class LongHorizonRunner:
         self.episode_dir=self.candidate_root.parent;self.journal=self.episode_dir/"journal.jsonl";self.live=self.episode_dir/"live.json";self.pause_requested=False;self.stop_requested=False;self.run_store=run_store;self.recovery=RecoveryManager(self.run_store.dir,self.run_store.run_id) if run_store else None;self.workspace=CandidateWorkspace(self.episode_dir,self.incumbent,self.campaign_dir,(self.incumbent,self.campaign_dir/"memory",self.campaign_dir/"incumbent",self.lab_root/"knowledge",self.lab_root/"registry"))
         self.policy=CandidatePathPolicy(self.candidate_root,[self.incumbent,self.campaign_dir/"memory",self.campaign_dir/"incumbent",self.lab_root/"knowledge",self.lab_root/"registry"])
     def _emit(self,t,p=None): return self.events.append(t,p or {},workbench_id=self.workbench.get("workbench_id"))
+    def build_hypothesis_attempt_controller(self, evaluator, *, lineage_path=None, knowledge_path=None, budget_path=None):
+        """Create the P1 controller using this runner's persistent session.
+
+        Callers use this for a single hypothesis when compile/correctness
+        repairs must stay on the same Agent thread.  It intentionally does
+        not grant the Agent evaluator, qualification, or promotion control.
+        """
+        policy_path = Path(budget_path or self.lab_root / "config" / "policies" / "agent_attempts.json")
+        return HypothesisAttemptController(
+            session=self.session, evaluator=evaluator,
+            lineage=LineageStore(lineage_path or self.campaign_dir / "lineage.jsonl"),
+            knowledge=StructuredKnowledgeSink(knowledge_path or self.campaign_dir / "knowledge_attempts.jsonl"),
+            budget=load_attempt_budget(policy_path),
+        )
     @staticmethod
     def _logical_number(identifier):
         match=re.search(r"-x(\d+)",str(identifier))

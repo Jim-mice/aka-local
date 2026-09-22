@@ -1,0 +1,59 @@
+{
+  "authenticity": "REFERENCE_REPLACEMENT_ONLY",
+  "evidence": "MEASURED",
+  "profiler_event_count": 65,
+  "swiglu_related_events": [
+    {
+      "key": "aten::silu",
+      "count": 1,
+      "cpu_time_total_us": 17.799999999999727,
+      "cuda_time_total_us": 0
+    },
+    {
+      "key": "autograd::engine::evaluate_function: SiluBackward0",
+      "count": 1,
+      "cpu_time_total_us": 19.80000000000291,
+      "cuda_time_total_us": 0
+    },
+    {
+      "key": "SiluBackward0",
+      "count": 1,
+      "cpu_time_total_us": 16.19999999999709,
+      "cuda_time_total_us": 0
+    },
+    {
+      "key": "aten::silu_backward",
+      "count": 1,
+      "cpu_time_total_us": 13.599999999998545,
+      "cuda_time_total_us": 0
+    }
+  ],
+  "latency_us": {
+    "value": 641.5499956347048,
+    "evidence": "MEASURED",
+    "scope": "whole_local_training_step",
+    "authenticity": "REFERENCE_REPLACEMENT_ONLY"
+  },
+  "swiglu_boundary_latency_us": {
+    "value": null,
+    "evidence": "UNKNOWN",
+    "reason": "CUPTI profiler activities were unavailable and authentic fused baseline execution was blocked"
+  },
+  "estimated_bytes": {
+    "value": 384,
+    "evidence": "DERIVED",
+    "scope": "input_and_target_only"
+  },
+  "registers_per_thread": {
+    "value": null,
+    "evidence": "UNKNOWN"
+  },
+  "kernel_launch_count": {
+    "value": null,
+    "evidence": "UNKNOWN"
+  },
+  "invocations_per_step": {
+    "value": 1.0,
+    "evidence": "MEASURED"
+  }
+}

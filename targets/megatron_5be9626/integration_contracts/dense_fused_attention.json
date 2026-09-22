@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "operator_id": "dense_fused_attention",
+  "human_name": "Dense Fused Attention",
+  "megatron": {
+    "commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "source_files": ["megatron/core/transformer/attention.py", "megatron/core/transformer/dot_product_attention.py", "megatron/core/fusions/fused_softmax.py"],
+    "classes": ["Attention", "DotProductAttention", "FusedScaleMaskSoftmax"],
+    "functions": ["Attention._run_core_attention", "DotProductAttention.forward"],
+    "forward_callsite": "TransformerLayer.forward -> Attention.forward -> Attention._run_core_attention -> DotProductAttention.forward",
+    "backward_relevance": "Autograd/backend-specific backward must preserve Q/K/V gradients and saved softmax state.",
+    "module_path": "megatron.core.transformer.dot_product_attention",
+    "graph_pattern": "QK^T -> scale/mask -> softmax -> dropout(training) -> P@V"
+  },
+  "tensor_contract": {
+    "inputs": ["Q,K,V [S,B,heads_per_tp,head_dim]", "attention_mask or null"],
+    "outputs": ["context [S,B,heads_per_tp*head_dim]"],
+    "dtype": ["FP16", "BF16", "FP32"],
+    "layout": "Megatron sequence-major input; score view [B*heads_per_tp,Sq,Sk]",
+    "symbolic_shapes": {"q": "[Sq,B,N/TP,Hd]", "k_v": "[Sk,B,N/TP,Hd]", "scores": "[B*N/TP,Sq,Sk]"},
+    "training_inference_distinction": "Training includes dropout/RNG and saved backward state; inference may use p=0 and different backend dispatch."
+  },
+  "distributed_context": {"tensor_parallel": "head partition plus TP-aware projections", "sequence_parallel": "adjacent projection/activation ownership must remain intact", "expert_parallel": "none", "data_parallel": "replicated operator with DP gradient synchronization outside boundary", "context_parallel": "configuration-dependent and must be checked"},
+  "replacement_boundary": {"replace": "selected core-attention callable for one declared backend/configuration", "must_remain_untouched": ["QKV projection", "output projection", "rotary embedding", "mask semantics", "RNG tracker", "collectives"], "fallback_detection": "record expected backend identity and assert an execution marker/counter"},
+  "correctness": {"forward_checks": ["FP32 oracle", "mask/scale equivalence", "all declared shapes"], "backward_checks": ["dQ/dK/dV", "saved-state compatibility"], "gradient_checks": ["finite gradients", "sampled finite difference where stable"], "distributed_checks": ["TP head partition", "context-parallel invariants when enabled", "RNG equivalence"]},
+  "performance": {"operator_benchmark_metrics": ["latency_ms", "launches", "workspace_bytes"], "integration_metrics": ["core_attention_ms", "module_peak_memory", "fallback_count"], "e2e_metrics": ["iteration_ms", "tokens_per_sec", "peak_memory_bytes", "convergence_proxy_delta", "loss_delta", "gradient_check"]}
+}

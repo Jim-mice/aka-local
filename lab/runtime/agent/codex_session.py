@@ -5,7 +5,7 @@ model, never falls back, and cannot itself decide promotion/evaluation.
 """
 import json
 from pathlib import Path
-from agent_backends.codex_appserver import CODEX_BIN
+from lab.runtime.reasoning.agent_context import augment_authoritative_context, augment_planning_context
 
 
 class CodexAgentSession:
@@ -25,6 +25,7 @@ class CodexAgentSession:
     def start(self):
         if self.started and not self.stopped:
             return self.status()
+        from agent_backends.codex_appserver import CODEX_BIN
         from openai_codex import ApprovalMode, Codex, CodexConfig, Sandbox
         self._ApprovalMode, self._Sandbox = ApprovalMode, Sandbox
         self.client = Codex(CodexConfig(codex_bin=str(CODEX_BIN), cwd=str(self.workspace), client_name="aka_local_lab", client_title="aka-local GPU Operator Lab", client_version="1.0"))
@@ -36,11 +37,40 @@ class CodexAgentSession:
         self.started, self.stopped = True, False
         return self.status()
 
-    def send_context(self, context):
+    @staticmethod
+    def prepare_context(context, performance_context=None):
+        if performance_context is None:
+            return context
+        return augment_authoritative_context(context, performance_context)
+
+    def send_context(self, context, performance_context=None):
+        context = self.prepare_context(context, performance_context)
         if not isinstance(context,dict) or not context.get("context_hash"):
             raise RuntimeError("CONTEXT_NOT_READY: a hashed filesystem context snapshot is required")
         self.context = context
         return {"status": "CONTEXT_READY", "context_hash": context["context_hash"]}
+
+    def send_planning_context(self, context, planning_context):
+        """Attach generated hypotheses while keeping the Agent in planning-only mode."""
+        context = augment_planning_context(context, planning_context)
+        if not isinstance(context, dict) or not context.get("context_hash"):
+            raise RuntimeError("CONTEXT_NOT_READY: a hashed filesystem context snapshot is required")
+        self.context = context
+        return {"status": "PLANNING_CONTEXT_READY", "context_hash": context["context_hash"], "mode": "PLANNING_ONLY"}
+
+    def run_planning_turn(self, instruction: str, context_snapshot: dict, planning_context: dict):
+        """Let the existing session inspect hypotheses; it cannot edit candidates."""
+        context_snapshot = augment_planning_context(context_snapshot, planning_context)
+        self.send_planning_context(context_snapshot, planning_context)
+        if not self.started or self.stopped:
+            raise RuntimeError("AgentSession is not active")
+        prompt = (
+            "PLANNING_ONLY CONTEXT (authoritative; read-only):\n" + self._context_prompt(context_snapshot)
+            + "\n\nPLANNING INSTRUCTION:\n" + instruction
+            + "\nDo not edit files, create candidates, run benchmarks, or decide promotion."
+        )
+        self.last_result = self.thread.run(prompt, model=self.model, effort=self.effort, cwd=str(self.workspace), sandbox=self._Sandbox.read_only, approval_mode=self._ApprovalMode.deny_all)
+        return self.last_result
 
     @staticmethod
     def _context_prompt(context):
@@ -57,8 +87,9 @@ class CodexAgentSession:
         self.last_result=self.thread.run(prompt,model=self.model,effort=self.effort,cwd=str(self.workspace),sandbox=self._Sandbox.read_only,approval_mode=self._ApprovalMode.deny_all)
         return self.last_result
 
-    def run_experiment_turn(self, instruction: str, context_snapshot: dict):
+    def run_experiment_turn(self, instruction: str, context_snapshot: dict, performance_context=None):
         """Run a formal turn only when a fresh hashed snapshot is supplied."""
+        context_snapshot = self.prepare_context(context_snapshot, performance_context)
         self.send_context(context_snapshot)
         if not self.started or self.stopped:
             raise RuntimeError("AgentSession is not active")

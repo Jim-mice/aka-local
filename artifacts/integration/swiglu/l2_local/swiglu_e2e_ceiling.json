@@ -1,0 +1,10 @@
+{
+  "status": "BLOCKED",
+  "operator_fraction_of_step": {
+    "value": null,
+    "evidence": "UNKNOWN",
+    "reason": "Only whole local training-step timing was measured; no authentic SwiGLU boundary timing is available"
+  },
+  "max_possible_e2e_speedup": null,
+  "max_possible_e2e_speedup_unbounded": false
+}

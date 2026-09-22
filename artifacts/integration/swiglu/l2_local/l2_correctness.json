@@ -1,0 +1,18 @@
+{
+  "loss_abs_error": 0.0,
+  "loss_rel_error": 0.0,
+  "output": {
+    "shape_equal": true,
+    "max_abs_error": 0.0,
+    "max_rel_error": 0.0,
+    "finite": true
+  },
+  "gradient": {
+    "shape_equal": true,
+    "max_abs_error": 1.8189894035458565e-12,
+    "max_rel_error": 4.923731400604635e-07,
+    "finite": true
+  },
+  "finite": true,
+  "replacement_invocations": 1
+}

@@ -1,0 +1,16 @@
+{
+  "case_id": "TARGETED_ALGORITHMIC_DECOMPOSITION_FINAL_001",
+  "facts": [
+    {"id":"f1","field":"input_semantics","value":"For one query row, each score q_i is paired with a value vector v_i of width 128 for i in [0, 4096)."},
+    {"id":"f2","field":"output_semantics","value":"The output is o = (sum_i exp(q_i - M) * v_i) / D, where M = max_i(q_i) and D = sum_i exp(q_i - M)."},
+    {"id":"f3","field":"current_graph","value":"The implementation first finds M, then writes per-element exp(q_i - M), then reduces D, then writes weighted vectors, then reduces the weighted vectors, then divides."},
+    {"id":"f4","field":"data_scale","value":"There are 4096 elements per row, value width is 128, and a batch contains 2048 independent rows."},
+    {"id":"f5","field":"dtype_contract","value":"Inputs and outputs use FP16; accumulation may use FP32. Forward max_abs_error <= 3e-4 and backward relative error <= 2e-3 against the reference."},
+    {"id":"f6","field":"mask_semantics","value":"A causal mask may remove a suffix of each row; the valid prefix length can differ by row."},
+    {"id":"f7","field":"resource_fact","value":"A full per-row weighted-vector intermediate would exceed the intended on-chip budget. A 64-element key/value tile and two row-width scratch buffers are available."},
+    {"id":"f8","field":"resource_fact_2","value":"The target GPU has 128 registers per thread as the practical occupancy budget; the current implementation uses 96 registers per thread."},
+    {"id":"f9","field":"profile_detail","value":null,"evidence":"UNKNOWN"},
+    {"id":"f10","field":"backward_graph_detail","value":null,"evidence":"UNKNOWN"},
+    {"id":"f11","field":"launch_count","value":null,"evidence":"UNKNOWN"}
+  ]
+}

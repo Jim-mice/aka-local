@@ -1,0 +1,12 @@
+{
+  "episode": "REAL_OPT_LOOP_001",
+  "status": "INCONCLUSIVE",
+  "write_to_mechanism_memory": false,
+  "scope": "LOCAL_MINIMAL_GPTMODEL",
+  "hypothesis_id": "measurement-kernel-boundary-cost",
+  "baseline": "Megatron authentic fused bias_swiglu_impl",
+  "candidate": null,
+  "effect": null,
+  "failure_mode": "Precondition for eliminating an activation/linear_fc2 materialization is not established; exact kernel and memory evidence are unknown.",
+  "reason": "No optimization candidate was implemented, so no mechanism was confirmed or refuted."
+}

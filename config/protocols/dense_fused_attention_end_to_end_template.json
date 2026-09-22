@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "operator_id": "dense_fused_attention",
+  "target_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "status": "EXTERNAL_INTEGRATION_REQUIRED",
+  "training_command": null,
+  "model_config_ref": null,
+  "dataset_ref": null,
+  "topology": {
+    "world_size": null,
+    "tensor_parallel": null,
+    "pipeline_parallel": null,
+    "data_parallel": null,
+    "context_parallel": null
+  },
+  "shape_capture": {
+    "source_point": "megatron/core/transformer/attention.py::Attention._run_core_attention",
+    "required_fields": ["Sq", "Sk", "B", "heads_per_tp", "head_dim", "dtype", "strides", "mask_type", "dropout", "backend", "config_hash"],
+    "tensor_payloads_forbidden": true
+  },
+  "measurement": {
+    "warmup_steps": null,
+    "measured_steps": null,
+    "repeats": 2,
+    "baseline_run_ids": [],
+    "candidate_run_ids": [],
+    "required_metrics": [
+      "baseline_iteration_ms",
+      "candidate_iteration_ms",
+      "baseline_samples_per_sec",
+      "candidate_samples_per_sec",
+      "baseline_tokens_per_sec",
+      "candidate_tokens_per_sec",
+      "baseline_peak_memory_bytes",
+      "candidate_peak_memory_bytes",
+      "convergence_proxy_delta",
+      "loss_delta",
+      "gradient_check"
+    ]
+  },
+  "replacement_evidence": {
+    "expected_marker": null,
+    "contract_hash": null,
+    "candidate_hash": null,
+    "fallback_count_required": 0,
+    "per_rank_invocation_required": true
+  },
+  "qualification": {
+    "protocol_hash": null,
+    "stable": null,
+    "comparable": null,
+    "artifact_refs": []
+  },
+  "execution_constraints": {
+    "remote_access_performed": false,
+    "gpu_benchmark_performed": false,
+    "note": "Populate only during an explicitly approved external integration run. Null fields cannot qualify."
+  }
+}

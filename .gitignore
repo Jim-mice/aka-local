@@ -83,6 +83,14 @@ lab/indexes/knowledge.jsonl
 lab/knowledge/external_references/
 lab/campaigns/rms_norm_train__rtx5060_sm120__cuda_cpp/
 
+# Local session scratch copied during experiments; never publish.
+.codex-tmp/
+test-tmp/
+tmp*/
+
+# Raw authentic-debug compiler transcripts are local diagnostic output.
+artifacts/integration/swiglu/authentic_debug/
+
 # Historical malformed/raw JSON-like evaluator transcripts retained locally;
 # canonical contracts and compact summaries are published elsewhere.
 campaigns/rms_norm/episode_11/hypothesis.json

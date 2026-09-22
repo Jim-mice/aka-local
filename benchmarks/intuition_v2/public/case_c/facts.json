@@ -1,0 +1,14 @@
+{
+  "case_id": "HELDOUT_C_RESIDENCY_TRAP_001",
+  "facts": [
+    {"id":"c1","field":"use_sites","value":"The same immutable row input is consumed before and after a reduction."},
+    {"id":"c2","field":"row_mapping","value":"One row is assigned to one thread block."},
+    {"id":"c3","field":"current_register_live_set","value":116,"unit":"registers_per_thread","evidence":"MEASURED"},
+    {"id":"c4","field":"residency_budget","value":128,"unit":"registers_per_thread","evidence":"MEASURED"},
+    {"id":"c5","field":"extra_live_set","value":144,"unit":"registers_per_thread","evidence":"DERIVED"},
+    {"id":"c6","field":"spill_after_extension","value":22.0,"unit":"GB_per_s_local_spill","evidence":"MEASURED"},
+    {"id":"c7","field":"occupancy_before","value":0.50,"evidence":"MEASURED"},
+    {"id":"c8","field":"occupancy_after","value":0.0625,"evidence":"MEASURED"},
+    {"id":"c9","field":"numerical_contract","value":"The two use sites must remain bitwise-equivalent for the reference dtype."}
+  ]
+}

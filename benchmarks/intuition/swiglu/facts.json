@@ -1,0 +1,16 @@
+{
+  "case_id": "SWIGLU_REAL_BLIND_001",
+  "source_artifacts": ["artifacts/integration/swiglu/e2e_scope/fraction_audit.json", "artifacts/integration/swiglu/authentic_profile/real_performance_facts_v3.json"],
+  "facts": [
+    {"id": "f1", "field": "source_commit", "value": "5be9626709af2722333bf54797c954c09edeada3"},
+    {"id": "f2", "field": "authentic_path", "value": "Megatron MLP forward reaches the authentic fused activation boundary"},
+    {"id": "f3", "field": "scope_fraction_layer", "value": 0.017922390002669215, "evidence": "MEASURED_CAMPAIGN_MEDIAN_SPLIT"},
+    {"id": "f4", "field": "scope_fraction_block", "value": 0.017372186944844988, "evidence": "MEASURED_CAMPAIGN_MEDIAN_SPLIT"},
+    {"id": "f5", "field": "scope_fraction_model", "value": 0.015571342909175317, "evidence": "MEASURED_CAMPAIGN_MEDIAN_SPLIT"},
+    {"id": "f6", "field": "paired_fraction_model", "value": 0.041956971532107534, "evidence": "MEASURED_CAMPAIGN_MEDIAN_PAIRED"},
+    {"id": "f7", "field": "instrumentation_overhead_model_percent", "value": 3.45, "evidence": "MEASURED"},
+    {"id": "f8", "field": "boundary_kernel_breakdown", "value": null, "evidence": "UNKNOWN"},
+    {"id": "f9", "field": "register_pressure", "value": null, "evidence": "UNKNOWN"},
+    {"id": "f10", "field": "operator_fraction_scope", "value": "LOCAL_MINIMAL_GPTMODEL", "evidence": "DERIVED_SCOPE"}
+  ]
+}

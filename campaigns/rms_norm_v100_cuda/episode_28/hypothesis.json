@@ -1,0 +1,39 @@
+{
+  "claim": "Use one 256-thread block per RMSNorm row, cache all 4096 input elements in per-thread registers as four float4 values per thread, perform hierarchical warp-shuffle reduction with only eight shared floats for cross-warp communication, then reuse the cached inputs for vectorized output without reloading x from global memory.",
+  "strategy_tags": [
+    "warp_shuffle_reduction",
+    "shared_memory_optimization",
+    "coalesced_memory_access",
+    "parallel_reduction",
+    "reciprocal_sqrt",
+    "register_optimization",
+    "vectorized_loads"
+  ],
+  "expected_effects": [
+    "avoid a second global-memory read of x",
+    "reduce shared-memory traffic during reduction",
+    "reduce block-wide synchronization overhead",
+    "use naturally coalesced 16-byte vectorized memory accesses",
+    "keep the complete RMSNorm operation in one CUDA kernel launch"
+  ],
+  "risk": [
+    "register pressure from caching sixteen float values per thread",
+    "reduced occupancy if register allocation becomes too high",
+    "float4 access requires suitable pointer alignment",
+    "implementation is specialized for hidden size 4096"
+  ],
+  "operator": "rms_norm_v100_cuda",
+  "contract_version": 1,
+  "contract_hash": "0a3d176112c36cee",
+  "interface": {
+    "entry": "launch_kernel",
+    "arguments": [
+      "x",
+      "weight",
+      "y",
+      "batch",
+      "hidden",
+      "eps"
+    ]
+  }
+}

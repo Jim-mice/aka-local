@@ -1,3 +1,3 @@
 # SwiGLU
 
-Local V2b is the preserved RTX 5060 incumbent; V3 did not survive repeated robustness verification.
+本地 V2b 是保留的 RTX 5060 incumbent；V3 未通过重复 robustness verification。

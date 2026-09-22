@@ -1,0 +1,15 @@
+﻿{
+    "benchmark":  "intuition_v3",
+    "case":  "case_final",
+    "run":  1,
+    "attempt":  1,
+    "exit_code":  0,
+    "result_written":  true,
+    "started_at":  "2026-09-22T18:39:57.9861090+08:00",
+    "finished_at":  "2026-09-22T18:42:42.4268275+08:00",
+    "duration_seconds":  164.441,
+    "codex_cli":  "codex-cli 0.153.0",
+    "model_override":  null,
+    "ephemeral":  true,
+    "sandbox":  "read-only"
+}

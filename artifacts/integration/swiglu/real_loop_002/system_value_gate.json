@@ -1,0 +1,14 @@
+{
+  "scope": "LOCAL_MINIMAL_GPTMODEL",
+  "operator_fraction": 0.015571342909175317,
+  "speedup_scenarios": {
+    "1.25": 1.0031239975492525,
+    "1.5": 1.0052175289471834,
+    "2.0": 1.0078467637793556,
+    "4.0": 1.0118165063359912
+  },
+  "infinite_speedup": 1.015817644881643,
+  "system_value_gate": "SCIENTIFIC_ONLY",
+  "reason": "The structural evidence is useful for causal validation, but the current local model ceiling is only about 1.58%.",
+  "candidate_decision": "NOT_READY"
+}

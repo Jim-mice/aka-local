@@ -1,0 +1,63 @@
+{
+  "scope": "representative shape/config availability only; no operator optimization",
+  "operators": {
+    "Dense Fused Attention": {
+      "status": "NOT_AVAILABLE",
+      "evidence": "D-side protocol is an external-integration template with null model_config_ref/topology/shape values.",
+      "missing": [
+        "configuration identity",
+        "Sq",
+        "Sk",
+        "B",
+        "heads_per_tp",
+        "head_dim",
+        "dtype",
+        "strides",
+        "backend"
+      ]
+    },
+    "Vocab-parallel Cross Entropy": {
+      "status": "PARTIAL",
+      "evidence": "Traceable TP=2 shape_set and dtype exist in incumbent_manifest, but no target nine-grid configuration identity.",
+      "missing": [
+        "target configuration identity",
+        "global/local vocabulary contract",
+        "rows/sequence mapping under target config"
+      ]
+    },
+    "SwiGLU": {
+      "status": "PARTIAL",
+      "evidence": "Traceable historical fixture supplies hidden/sequence/micro-batch/dtype/TP and layout, but not proven target identity and lacks FFN/SP fields.",
+      "missing": [
+        "configuration_identity",
+        "hidden_size",
+        "ffn_hidden_size",
+        "sequence_length",
+        "micro_batch_size",
+        "dtype",
+        "tensor_parallel_size",
+        "sequence_parallel"
+      ]
+    },
+    "Residual Add RMSNorm": {
+      "status": "PARTIAL",
+      "evidence": "Traceable multi-shape RMSNorm suites exist, but they combine shape families and do not identify the requested nine-grid config.",
+      "missing": [
+        "target configuration identity",
+        "sequence/micro-batch decomposition",
+        "dtype/SP under target config"
+      ]
+    },
+    "MoE Grouped GEMM": {
+      "status": "PARTIAL",
+      "evidence": "Megatron/MoE test and campaign artifacts exist, but no same-identity target nine-grid expert/router shape contract was found.",
+      "missing": [
+        "target configuration identity",
+        "experts",
+        "tokens-per-expert distribution",
+        "hidden/intermediate dimensions",
+        "EP/TP"
+      ]
+    }
+  }
+}

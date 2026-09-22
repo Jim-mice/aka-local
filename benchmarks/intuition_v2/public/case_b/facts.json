@@ -1,0 +1,13 @@
+{
+  "case_id": "HELDOUT_B_BOUNDARY_TRAP_001",
+  "facts": [
+    {"id":"b1","field":"producer_consumer","value":"A producer writes a 16 MiB intermediate consumed once by the next phase."},
+    {"id":"b2","field":"launch_cost","value":0.003,"unit":"ms","evidence":"MEASURED"},
+    {"id":"b3","field":"separate_occupancy","value":0.62,"evidence":"MEASURED"},
+    {"id":"b4","field":"combined_registers","value":224,"unit":"registers_per_thread","evidence":"MEASURED"},
+    {"id":"b5","field":"combined_spill","value":18.0,"unit":"GB_per_s_local_spill","evidence":"MEASURED"},
+    {"id":"b6","field":"combined_occupancy","value":0.125,"evidence":"MEASURED"},
+    {"id":"b7","field":"consumer_reuse","value":"The consumer revisits its own tile four times; the producer output is not reused after the consumer."},
+    {"id":"b8","field":"correctness","value":"The intermediate uses independent accumulation order and requires tolerance validation."}
+  ]
+}

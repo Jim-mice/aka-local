@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "authoritative_value_us": 53.74621972441673,
+  "source_artifact": "D:\\Users\\38154\\Downloads\\aka-local-main\\aka-local-main\\artifacts\\integration\\swiglu\\real_loop_003\\batched_swiglu_timing.json",
+  "source_artifact_sha256": "04cd95df66cd0bf1d74178bd741b381ae2df6f03f454f362284090c6a605df24",
+  "sample_protocol": "outer CUDA Event around authentic bias_swiglu_impl; no per-call inner Event",
+  "K": 512,
+  "warmup_batches": 20,
+  "measured_batches": 50,
+  "measured_window_median_ms": 27.518064498901367,
+  "other_value_us": 55.63945323228836,
+  "other_value_origin": "Earlier K=8192 diagnostic batch preserved only in derived measurement_facts_003.json and the previous report final block; its raw batch artifact was overwritten by the final K=512 rerun.",
+  "selection_rule": "latest complete raw artifact using the final compliant 20-50 ms window protocol; no benchmark rerun in reconciliation"
+}

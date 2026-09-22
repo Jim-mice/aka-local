@@ -1,0 +1,7 @@
+{
+  "cli_version": "codex-cli 0.153.0",
+  "model_argument_supplied": false,
+  "sandbox": "read-only",
+  "ephemeral": true,
+  "runs_per_case": 3
+}

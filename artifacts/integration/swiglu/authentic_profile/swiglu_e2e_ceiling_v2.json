@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "scope": "LOCAL_MLP_TRAINING_STEP",
+  "operator_fraction_of_step": {
+    "value": 0.14340963818372665,
+    "evidence": "DERIVED",
+    "inputs": [
+      "boundary_timing.json",
+      "whole_step_timing.json",
+      "invocations_per_step"
+    ]
+  },
+  "max_possible_e2e_speedup": 1.1674191592345817
+}

@@ -1,0 +1,20 @@
+{
+  "swiglu_grid": [
+    1,
+    1,
+    1
+  ],
+  "swiglu_block": [
+    128,
+    1,
+    1
+  ],
+  "threads_per_block": 128,
+  "warps_per_block_derived": 4,
+  "number_of_blocks": 1,
+  "theoretical_occupancy": "100% according to NCU basic warning for this tiny kernel",
+  "achieved_occupancy": "7.25%",
+  "sm_count": 26,
+  "low_occupancy_cause": "GRID_UNDERSUBSCRIBED",
+  "basis": "one 128-thread block on a 26-SM GPU; 16 registers/thread and zero dynamic/static shared memory do not support a register/shared-memory resource-limit claim"
+}

@@ -1,0 +1,26 @@
+{
+  "algorithm": "sha256",
+  "status": "PASS",
+  "files": {
+    "BLIND_PROMPT.md": "91aed6d8f7f634c33bde9efd2e061b37f4255af1ff2c95851e640a90d9bab6f2",
+    "evaluator_only\\answer_key.json": "15c87b08c329d4454d45fcaad2aa7416eb2eaa8dff381b7a0589b48ce3e6c761",
+    "planning_result.schema.json": "aaf5cad4ba61ae24eacde7f7e8d72ffdca3ffac9c4c10ad9631b64df3c246282",
+    "public\\case_final\\case.json": "ea861974d222a79256df251fa1ef4d7dffcedbe08347ce0a660bd7f650620c72",
+    "public\\case_final\\contract.json": "f8cc36a9ca6b1c0242dfb57ccc828ba27eb47837a48704dabee883430afa7594",
+    "public\\case_final\\facts.json": "30e8a50c9775abc207c85ec5d56d14b64b8afb38f469a8f4ab4ab04fd5eeb19f",
+    "results\\case_final_run1\\events.jsonl": "e84cb707bd209860fda7155838bba891fd4e4d0444a6e4731f360c7a2db79646",
+    "results\\case_final_run1\\result.json": "2a0f0bbb2f9772e92f664a29b2881ae5df5ae8e1eca2ba1e086953ae03328a3f",
+    "results\\case_final_run1\\run_meta.json": "230b9922736cab34a306811d9c36547779877ca7e03f05cd0f9f19aca1560d2f",
+    "results\\case_final_run1\\stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results\\case_final_run2\\events.jsonl": "386b04ea5267b29ee8efff59958a31880b8017ec89f81c23c9098b855211888a",
+    "results\\case_final_run2\\result.json": "d600d00ba623c29c3c5dc75371b549dba0888d6827849028b24d9a5507f630d6",
+    "results\\case_final_run2\\run_meta.json": "04fded0269b09db0e834085658c9d8c8618e46be22f59c57c78f69b26585bd62",
+    "results\\case_final_run2\\stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "results\\case_final_run3\\events.jsonl": "ea0b6e32d7b1c1552d5c4132032d81413f382c2eea4a0e37545c1da90dfc9527",
+    "results\\case_final_run3\\result.json": "f7dc049cfcdeb19a7092402dd6643445f3f32c77ab0908dc225104cd6f5e27c9",
+    "results\\case_final_run3\\run_meta.json": "07e0b04f6d46dd751dbef266e8fbf6fc53f049673f294f08473ac891277d83bc",
+    "results\\case_final_run3\\stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "STOP_RULE.md": "0096a75eabf508c28c4b67631d2dc7b501d89c5e981e49726cf53dee4229c70b"
+  },
+  "errors": []
+}

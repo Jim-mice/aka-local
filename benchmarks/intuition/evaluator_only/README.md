@@ -1,0 +1,1 @@
+This directory is reserved for evaluator metadata that is never supplied to a generation session. This package intentionally contains no answer key. Human semantic review is required for the first external runs.

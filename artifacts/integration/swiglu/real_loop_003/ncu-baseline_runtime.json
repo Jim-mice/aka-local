@@ -1,0 +1,26 @@
+{
+  "environment": {
+    "status": "PASS",
+    "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+    "torch": "2.11.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "ffn_hidden": 16,
+    "dtype": "torch.float32",
+    "tp": 1,
+    "sp": false,
+    "mode": "ncu-baseline",
+    "l2_cache_size_bytes": 33554432
+  },
+  "pressure_buffer_bytes": null,
+  "fc2_output_shape": [
+    3,
+    2,
+    8
+  ],
+  "status": "PASS"
+}

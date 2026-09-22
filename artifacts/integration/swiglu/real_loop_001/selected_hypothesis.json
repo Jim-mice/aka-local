@@ -1,0 +1,22 @@
+{
+  "episode": "REAL_OPT_LOOP_001",
+  "hypothesis_id": "measurement-kernel-boundary-cost",
+  "origin": "EXPLORATORY",
+  "category": "measurement",
+  "selection_reason": "The structural producer-consumer hypothesis is not sufficiently supported by source alone: the activation tensor is a real graph value, but HBM round-trip, exact kernel boundary, and launch count remain UNKNOWN. The measurement hypothesis directly addresses those unknowns before implementation.",
+  "observation": "Kernel launch count and boundary-level profile evidence are unknown.",
+  "mechanism": "The dominant cost cannot be distinguished between launch, memory, and compute without boundary measurement.",
+  "transformation": "Measure kernel launches, boundary latency, and memory traffic before selecting an optimization.",
+  "preconditions": ["A repeatable local workload exists."],
+  "expected_effect": ["Reduce uncertainty in bottleneck classification."],
+  "risks": ["Measurement overhead."],
+  "required_evidence": ["CUDA Event timing", "kernel launch trace", "memory traffic evidence"],
+  "evidence_refs": ["performance_facts.unknown_fields", "performance_facts.profile_evidence"],
+  "unknowns": ["kernel launch count", "register pressure", "memory traffic"],
+  "ablation_plan": [
+    "authentic current fused path with no inner instrumentation",
+    "authentic boundary timing with paired CUDA Events",
+    "kernel/traffic attribution if a local profiler is available"
+  ],
+  "candidate_created": false
+}

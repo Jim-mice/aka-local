@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "required": ["operator_id", "human_name", "megatron", "tensor_contract", "distributed_context", "replacement_boundary", "correctness", "performance"],
+  "section_required": {
+    "megatron": ["commit", "source_files", "classes", "functions", "forward_callsite", "backward_relevance", "module_path", "graph_pattern"],
+    "tensor_contract": ["inputs", "outputs", "dtype", "layout", "symbolic_shapes", "training_inference_distinction"],
+    "distributed_context": ["tensor_parallel", "sequence_parallel", "expert_parallel", "data_parallel"],
+    "replacement_boundary": ["replace", "must_remain_untouched", "fallback_detection"],
+    "correctness": ["forward_checks", "backward_checks", "gradient_checks", "distributed_checks"],
+    "performance": ["operator_benchmark_metrics", "integration_metrics", "e2e_metrics"]
+  },
+  "promotion_levels": ["KernelPromotion", "IntegrationPromotion", "SystemPromotion"],
+  "evidence_rule": "Unknown or unavailable evidence remains null and cannot satisfy a gate."
+}

@@ -1,0 +1,13 @@
+{
+  "case_id": "HELDOUT_D_SYSTEM_VALUE_001",
+  "facts": [
+    {"id":"d1","field":"micro_operator_fraction","value":0.002,"evidence":"MEASURED"},
+    {"id":"d2","field":"micro_candidate_speedup","value":8.0,"evidence":"DERIVED_UPPER_BOUND"},
+    {"id":"d3","field":"micro_scope","value":"one small auxiliary kernel in the local step"},
+    {"id":"d4","field":"structural_operator_fraction","value":0.42,"evidence":"MEASURED"},
+    {"id":"d5","field":"structural_candidate_speedup","value":1.30,"evidence":"DERIVED_UPPER_BOUND"},
+    {"id":"d6","field":"structural_scope","value":"the dominant block-level data path"},
+    {"id":"d7","field":"workload_mix","value":"The recorded fraction applies to the target local workload; deployment mix is not measured."},
+    {"id":"d8","field":"candidate_interaction","value":"The two transformations touch disjoint execution regions."}
+  ]
+}

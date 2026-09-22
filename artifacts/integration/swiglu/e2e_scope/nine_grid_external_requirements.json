@@ -1,0 +1,21 @@
+{
+  "status": "COMPLETE",
+  "scope": "NINE_GRID_EXTERNAL_REQUIREMENTS",
+  "freeze": true,
+  "available_locally": [
+    "Megatron source at pinned commit",
+    "GPTModel, TransformerBlock, TransformerLayer and generic training support",
+    "generic examples containing tensor/pipeline parallel arguments"
+  ],
+  "required_from_external_owner": [
+    "authoritative nine-grid model configuration and dimensions",
+    "checkpoint reference and accessible checkpoint files",
+    "tokenizer artifact and vocabulary contract",
+    "dataset location, format, and deterministic data split",
+    "distributed topology: node/GPU count, TP, PP, CP, EP and sequence-parallel settings",
+    "exact training invocation and environment lockfile",
+    "approved measurement and acceptance window"
+  ],
+  "local_execution": "FROZEN_NOT_ATTEMPTED",
+  "note": "No local guess is substituted for an external nine-grid requirement."
+}

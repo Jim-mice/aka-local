@@ -2,6 +2,18 @@
 
 这些报告保存实验当时的边界、契约、结果和结论。文件名保持不变，目录按 Phase 分类；报告中的代码、命令、hash、状态枚举、原始日志和数值证据均保持原样。
 
+## 当前阶段 / 最新实验入口
+
+当前应先阅读：
+
+- [Real Optimization Loop 001](../audits/real_optimization_loop_001.md)
+- [Real Optimization Loop 002](../audits/real_optimization_loop_002_measurement.md)
+- [Real Optimization Loop 003](../audits/real_optimization_loop_003_cache_and_timing.md)
+- [Real Optimization Loop 004](../audits/real_optimization_loop_004_shape_acquisition.md)
+- [Intuition V1/V2/V3 最终审计](../audits/intuition_v3_final_3run_audit.md)
+- [V2 15-run 最终审计](../audits/intuition_v2_15run_final_audit.md)
+- [Agent 机制推理能力证据](../AGENT_REASONING_EVIDENCE.md)
+
 | 目录 | 内容 |
 |---|---|
 | `phase-09/` | 早期完整性审计与 hardening。 |

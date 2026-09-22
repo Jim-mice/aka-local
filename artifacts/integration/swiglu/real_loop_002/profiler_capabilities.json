@@ -1,0 +1,16 @@
+{
+  "nsys": {
+    "status": "UNAVAILABLE",
+    "evidence": "where.exe nsys returned no path"
+  },
+  "ncu": {
+    "status": "PASS",
+    "version": "2026.3.0.0",
+    "evidence": "version/query-metrics and NVTX-filtered profiles completed"
+  },
+  "torch_profiler": {
+    "status": "BLOCKED",
+    "evidence": "torch profiler context returned but Kineto reported CUPTI_ERROR_INVALID_DEVICE; CUDA activity evidence unavailable",
+    "raw_artifact": "torch_profiler_probe.txt"
+  }
+}

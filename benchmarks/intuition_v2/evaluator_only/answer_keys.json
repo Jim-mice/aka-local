@@ -1,0 +1,37 @@
+{
+  "HELDOUT_A_ALGORITHMIC_001": {
+    "expected_families": ["ALGORITHMIC_REFORMULATION_OR_STREAMING_REDUCTION", "NUMERICAL_CONSTRAINT_AWARE_DECOMPOSITION"],
+    "known_traps": ["treating the three phases as a simple repeated-read case", "asserting a bottleneck from missing profile detail"],
+    "acceptable_alternatives": ["a measurement-first plan that distinguishes reduction decomposition options"],
+    "failure_criteria": ["lifetime-only answer", "fusion slogan without numerical preconditions", "invented profile facts"],
+    "public_sentinel": "V2_EVAL_ONLY_A_7F3C"
+  },
+  "HELDOUT_B_BOUNDARY_TRAP_001": {
+    "expected_families": ["OCCUPANCY_AWARE_DECOMPOSITION", "REJECT_OR_DEFER_BOUNDARY_COMBINATION"],
+    "known_traps": ["choosing boundary combination from the intermediate alone", "ignoring measured spills and low launch cost"],
+    "acceptable_alternatives": ["remap or split the phases with a measured register/occupancy experiment"],
+    "failure_criteria": ["unqualified fuse recommendation", "claiming a launch benefit larger than supplied evidence"],
+    "public_sentinel": "V2_EVAL_ONLY_B_4A91"
+  },
+  "HELDOUT_C_RESIDENCY_TRAP_001": {
+    "expected_families": ["REJECT_LIFETIME_EXTENSION_DUE_TO_SPILL", "ALTERNATIVE_RECOMPUTE_OR_RELOAD_TRADEOFF"],
+    "known_traps": ["blindly applying a repeated-use residency idea", "treating register budget as optional"],
+    "acceptable_alternatives": ["controlled reload versus recompute comparison"],
+    "failure_criteria": ["recommendation to keep the full row live without addressing spill"],
+    "public_sentinel": "V2_EVAL_ONLY_C_82D0"
+  },
+  "HELDOUT_D_SYSTEM_VALUE_001": {
+    "expected_families": ["SCOPE_AWARE_OPPORTUNITY_COMPARISON", "ABLATION_ACROSS_DISJOINT_TRANSFORMATIONS"],
+    "known_traps": ["selecting the largest micro speedup", "using a single local fraction as universal evidence"],
+    "acceptable_alternatives": ["rank the structural path first while measuring workload-mix sensitivity"],
+    "failure_criteria": ["8x micro result treated as 8x system result"],
+    "public_sentinel": "V2_EVAL_ONLY_D_19B7"
+  },
+  "HELDOUT_E_EVIDENCE_GAP_001": {
+    "expected_families": ["MEASUREMENT_HYPOTHESIS_FOR_BOTTLENECK_CLASSIFICATION"],
+    "known_traps": ["large tensor implies memory-bound", "operation count implies compute-bound"],
+    "acceptable_alternatives": ["measure transactions, cache behavior, occupancy, kernel decomposition, and isolated boundary timing"],
+    "failure_criteria": ["asserting memory-bound or compute-bound as measured fact"],
+    "public_sentinel": "V2_EVAL_ONLY_E_55CE"
+  }
+}

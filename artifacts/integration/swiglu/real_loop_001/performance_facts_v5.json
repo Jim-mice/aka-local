@@ -1,0 +1,113 @@
+{
+  "operator": "swiglu",
+  "shape": {
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "fc1_output": 32,
+    "value_dtype": "torch.float32"
+  },
+  "dtype": "torch.float32",
+  "dataflow": [
+    "linear_fc1 -> intermediate_parallel,bias_parallel",
+    "bias_swiglu_impl -> BiasSwiGLUFunction",
+    "bias_swiglu -> swiglu",
+    "activation_output -> linear_fc2"
+  ],
+  "tensor_lifetimes": {
+    "linear_fc1_output": "bias_swiglu forward and custom backward",
+    "linear_fc1_bias": "bias_swiglu forward and custom backward",
+    "activation_output": "returned from fused activation and consumed by linear_fc2"
+  },
+  "global_memory_reads": [
+    "linear_fc1_output",
+    "linear_fc1_bias",
+    "activation_output_by_linear_fc2"
+  ],
+  "global_memory_writes": [
+    "activation_output"
+  ],
+  "shared_residency": [],
+  "register_residency": [],
+  "estimated_bytes": null,
+  "estimated_flops": null,
+  "reductions": [],
+  "synchronizations": [],
+  "kernel_launches": null,
+  "producer_consumer_boundaries": [
+    "authentic_bias_swiglu_output -> linear_fc2"
+  ],
+  "known_reuse": [
+    "saved linear_fc1 input and bias are reused by custom backward"
+  ],
+  "fixed_dimensions": {
+    "hidden": 8,
+    "fc1_output": 32,
+    "value_width": 16
+  },
+  "dynamic_dimensions": [
+    "batch",
+    "sequence"
+  ],
+  "parallel_mapping": {
+    "tensor_parallel": "1",
+    "sequence_parallel": "false",
+    "layout": "[sequence,batch,hidden] contiguous capture"
+  },
+  "profile_evidence": {
+    "evidence_status": "MEASURED_PLUS_SOURCE_DERIVED",
+    "shape_capture": "artifacts/integration/swiglu/real_l1/swiglu_integration_result.json",
+    "authentic_boundary_latency_ms": {
+      "value": 0.09344,
+      "evidence": "MEASURED historical authentic profile median"
+    },
+    "local_model_split_fraction": {
+      "value": 0.015571342909175317,
+      "evidence": "MEASURED_CAMPAIGN_MEDIAN_SPLIT"
+    },
+    "local_model_paired_fraction": {
+      "value": 0.041956971532107534,
+      "evidence": "MEASURED_CAMPAIGN_MEDIAN_PAIRED_INSTRUMENTED"
+    },
+    "register_pressure": {
+      "value": null,
+      "evidence": "UNKNOWN"
+    },
+    "shared_memory": {
+      "value": null,
+      "evidence": "UNKNOWN"
+    },
+    "occupancy": {
+      "value": null,
+      "evidence": "UNKNOWN"
+    },
+    "kernel_count": {
+      "value": null,
+      "evidence": "UNKNOWN"
+    },
+    "bytes": {
+      "value": null,
+      "evidence": "UNKNOWN"
+    },
+    "supports_mechanism_ids": [],
+    "contradicts_mechanism_ids": [],
+    "idle_resources": []
+  },
+  "unknown_fields": [
+    "global_memory_bytes",
+    "kernel_launch_count",
+    "registers_per_thread",
+    "shared_memory_bytes",
+    "occupancy",
+    "CUPTI_kernel_breakdown",
+    "backward_kernel_breakdown",
+    "activation_HBM_round_trip"
+  ],
+  "e2e_profile": {
+    "scope": "LOCAL_MINIMAL_GPTMODEL",
+    "operator_fraction_of_step": 0.015571342909175317,
+    "paired_fraction_instrumentation_affected": 0.041956971532107534,
+    "max_possible_e2e_speedup_split": 1.015817644881643,
+    "nine_grid": null
+  }
+}

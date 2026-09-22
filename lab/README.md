@@ -1,10 +1,8 @@
-# GPU Learning Lab
+# GPU 实验层
 
-本地 RTX5060 + RMSNorm 的真实执行流程、Workbench 批准、Supervisor、归档与安全边界见 [根目录中文用户手册](../USER_MANUAL_CN.md)。远程优化尚未启用。
+本目录提供本地 GPU 性能工程、实验记录、Workbench、Supervisor、归档和安全边界。当前本地 RTX5060 + RMSNorm 流程只在明确批准后使用；远程优化不会自动启用。
 
-Personal evidence-grounded GPU performance engineering library for humans and optimization agents. The `lab/` layer is additive: legacy `aka-local` experiments remain in place.
-
-## Quick start
+## 只读查看
 
 ```powershell
 python -m lab.cli status
@@ -13,11 +11,6 @@ python -m lab.tools.validate_lab
 python -m lab.tools.rebuild_index
 ```
 
-Source of truth is registry manifests, experiment records, frontier files, and knowledge cards. Generated indexes and views are navigation caches.
+registry manifest、experiment record、frontier 文件和 knowledge card 是事实来源；生成的 index 只是导航缓存。
 
-For the end-user workflow, safety boundaries, current execution status, and the
-Project → Operator → Campaign → Workbench process, read [USER_GUIDE.md](USER_GUIDE.md).
-
-## Workbench phase
-
-`python -m lab.ui_server` starts the current localhost-only control console. It is intentionally a read-only scaffold in this phase: GPU probes, Agent turns, evaluator execution, SSH, and remote optimization are not started automatically. `lab.ps1` provides the same status/validation entry points for PowerShell.
+日常流程和安全边界见 [使用指南](../docs/USER_GUIDE.md)。`python -m lab.ui_server` 当前只是 localhost-only 的只读 scaffold，不会自动启动 GPU probe、Agent turn、evaluator、SSH 或远程优化。

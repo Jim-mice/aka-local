@@ -1,0 +1,161 @@
+{
+  "backward_correctness": {
+    "finite": true,
+    "input": {
+      "finite": true,
+      "max_abs_error": 2.9103830456733704e-11,
+      "max_rel_error": 4.2187524389662537e-07,
+      "shape_equal": true
+    },
+    "max_abs_grad_error": 1.862645149230957e-09,
+    "max_rel_grad_error": 2.665921224312897e-06,
+    "parameters": {
+      "linear_fc1.bias": {
+        "finite": true,
+        "max_abs_error": 4.656612873077393e-10,
+        "max_rel_error": 2.3591334855524896e-07,
+        "shape_equal": true
+      },
+      "linear_fc1.weight": {
+        "finite": true,
+        "max_abs_error": 1.862645149230957e-09,
+        "max_rel_error": 2.665921224312897e-06,
+        "shape_equal": true
+      },
+      "linear_fc2.weight": {
+        "finite": true,
+        "max_abs_error": 0.0,
+        "max_rel_error": 0.0,
+        "shape_equal": true
+      }
+    },
+    "status": "CHECKED"
+  },
+  "baseline_target_invocations": 1,
+  "candidate_hash": "eb68244293c3ede3e7e6f6799b6ebc698a152b079ad2b71dc861360365c965ee",
+  "captured_shape": {
+    "input": {
+      "contiguous": true,
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "requires_grad": true,
+      "shape": [
+        2,
+        3,
+        32
+      ],
+      "stride": [
+        96,
+        32,
+        1
+      ]
+    },
+    "output": {
+      "contiguous": true,
+      "device": "cuda:0",
+      "dtype": "torch.float32",
+      "requires_grad": true,
+      "shape": [
+        2,
+        3,
+        16
+      ],
+      "stride": [
+        48,
+        16,
+        1
+      ]
+    },
+    "parameter_shapes": {
+      "linear_fc1.bias": [
+        32
+      ],
+      "linear_fc1.weight": [
+        32,
+        8
+      ],
+      "linear_fc2.bias": [
+        8
+      ],
+      "linear_fc2.weight": [
+        8,
+        16
+      ]
+    },
+    "replacement_id": "aka-local-swiglu-reference-v1",
+    "sequence_parallel": {
+      "enabled": false,
+      "leading_shape": [
+        2,
+        3
+      ]
+    },
+    "tensor_parallel": {
+      "group": "local-single-rank",
+      "rank": 0,
+      "size": 1
+    }
+  },
+  "evidence": {
+    "l1_oj": {
+      "checks": {
+        "backward_correct": true,
+        "candidate_hash_matches": true,
+        "contract_hash_matches": true,
+        "distributed_invariants": true,
+        "fallback_count_zero": true,
+        "forward_correct": true,
+        "metric:module_ms": true,
+        "no_silent_fallback": true,
+        "replacement_invoked": true,
+        "replacement_marker_matches": true,
+        "runner_provenance": true,
+        "shape_compatible": true
+      },
+      "evidence": {
+        "collective_trace": null,
+        "collective_traces_by_rank": null,
+        "replacement_marker": "aka-local-swiglu-reference-v1",
+        "runner_provenance": {
+          "artifact_refs": [
+            "swiglu_integration_result.json"
+          ],
+          "candidate_hash": "eb68244293c3ede3e7e6f6799b6ebc698a152b079ad2b71dc861360365c965ee",
+          "contract_hash": "c06dde575abb3b071db4cd0d75d0678d14679c6ac0011e0736c436ec12cb3c46",
+          "runner_id": "aka-local-swiglu-l1-harness"
+        }
+      },
+      "level": "L1_INTEGRATION",
+      "raw_metrics": {
+        "module_ms": 0.30100000731181353
+      },
+      "reasons": [],
+      "verdict": "INTEGRATION_PASS"
+    }
+  },
+  "fallback_detected": false,
+  "forward_correctness": {
+    "finite": true,
+    "max_abs_error": 0.0,
+    "max_rel_error": 0.0,
+    "shape_equal": true
+  },
+  "integration_contract_hash": "c06dde575abb3b071db4cd0d75d0678d14679c6ac0011e0736c436ec12cb3c46",
+  "replacement_invocations": 1,
+  "runtime_environment": {
+    "cuda_available": true,
+    "device": "cuda",
+    "distributed_invariants": true,
+    "megatron_mlp": "C:\\Users\\38154\\projects\\megatron-lm\\megatron\\core\\transformer\\mlp.py",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "sequence_parallel": false,
+    "tensor_parallel_size": 1,
+    "torch": "2.11.0+cu128",
+    "torch_cuda": "12.8"
+  },
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "status": "INTEGRATION_PASS",
+  "timing_if_available": {
+    "module_ms": 0.30100000731181353
+  }
+}

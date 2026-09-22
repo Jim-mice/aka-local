@@ -1,3 +1,3 @@
-# Human learning layer
+# 人类学习层
 
-Lessons are explanatory views for the owner, not Agent memory. They must link back to experiment IDs and state what is not proven.
+这里的 lessons 是面向维护者的解释视图，不是 Agent memory。每条内容都必须链接回 experiment ID，并说明哪些结论尚未被证明。

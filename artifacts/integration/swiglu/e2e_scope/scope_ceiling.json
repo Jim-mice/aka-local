@@ -1,0 +1,22 @@
+{
+  "LOCAL_MLP": {
+    "value": 0.14102929913640638,
+    "source": "authentic_profile/swiglu_e2e_ceiling_v2.json"
+  },
+  "TRANSFORMER_LAYER": {
+    "operator_fraction": 0.6656308690797283,
+    "max_possible_e2e_speedup": 2.9907066996517813,
+    "scope": "TRANSFORMER_LAYER"
+  },
+  "TRANSFORMER_BLOCK": {
+    "operator_fraction": 0.06795028533459732,
+    "max_possible_e2e_speedup": 1.072904142628262,
+    "scope": "TRANSFORMER_BLOCK"
+  },
+  "MINIMAL_MODEL": {
+    "operator_fraction": 0.018588748861094587,
+    "max_possible_e2e_speedup": 1.0189408352915486,
+    "scope": "MINIMAL_MODEL"
+  },
+  "NINE_GRID": null
+}

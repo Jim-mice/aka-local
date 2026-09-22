@@ -1,3 +1,3 @@
 # MoE Grouped MLP training
 
-Formal operator registry entry. Imported remote V0/V1 records document baseline and correctness-blocked attempt only.
+正式 operator registry 条目。导入的远程 V0/V1 record 只记录 baseline 和 correctness-blocked attempt。

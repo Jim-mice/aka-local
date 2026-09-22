@@ -1,0 +1,26 @@
+{
+  "status": "PARTIAL",
+  "scope": "NINE_GRID_LOCAL_READINESS",
+  "read_only_audit": true,
+  "found": {
+    "real_megatron_model_code": [
+      "C:/Users/38154/projects/megatron-lm/megatron/core/models/gpt/gpt_model.py",
+      "C:/Users/38154/projects/megatron-lm/megatron/core/transformer/transformer_block.py",
+      "C:/Users/38154/projects/megatron-lm/megatron/core/transformer/transformer_layer.py"
+    ],
+    "training_entrypoint_examples": [
+      "C:/Users/38154/projects/megatron-lm/examples/mixtral/train_mixtral_8x7b_distributed.sh",
+      "C:/Users/38154/projects/megatron-lm/examples/t5/train_t5_220m_distributed.sh"
+    ],
+    "parallel_argument_examples": ["tensor-model-parallel-size", "pipeline-model-parallel-size", "WORLD_SIZE"]
+  },
+  "missing_or_unverified": [
+    "authoritative nine-grid model configuration",
+    "nine-grid checkpoint reference and accessible checkpoint files",
+    "nine-grid tokenizer and dataset/data-path assets",
+    "authoritative nine-grid training invocation",
+    "validated nine-grid distributed topology and resource allocation"
+  ],
+  "executed": false,
+  "note": "Existing Megatron examples demonstrate generic training machinery only; they are not evidence of the requested nine-grid workload."
+}

@@ -1,6 +1,6 @@
 {
   "operator": "rms_norm_v100_cuda",
-  "incumbent": "v23",
+  "incumbent": "v28",
   "score_type": "geometric_mean_speedup",
   "shapes": [
     "1,4096",
@@ -8,8 +8,8 @@
     "8,4096",
     "32,4096"
   ],
-  "score": 4.077,
-  "geometric_mean_speedup": 4.077,
-  "created_from_episode": 23,
-  "updated_at": "2026-09-19T12:22:29.852377+00:00"
+  "score": 10.883,
+  "geometric_mean_speedup": 10.883,
+  "created_from_episode": 28,
+  "updated_at": "2026-09-21T09:53:52.564287+00:00"
 }

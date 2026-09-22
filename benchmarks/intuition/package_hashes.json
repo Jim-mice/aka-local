@@ -1,0 +1,19 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    "BLIND_PROMPT.md": "330725e3f67594f14434eef76c837d89d62e1e2eee68eed132629b6df4eda41c",
+    "gdn\\case.json": "0211ed65ad93b18099528d260887ce55c37ae8aeaa3d5a7a784fe951f32c14f5",
+    "gdn\\contract.json": "6b88d5d279c37c29149cc340c6b8d5847f38e3b0124c1ec5fe92ed16d811f560",
+    "gdn\\facts.json": "8341866f0c408f7c202d73f3998431a3c503bdd4d4d2a4960de9f264449c5038",
+    "planning_result.schema.json": "a7de5f4f8a9415e5a731387b959c288e07778c0ff72ed2c21c8d0d18c0de5802",
+    "rmsnorm\\case.json": "478e94f4a517ed3d02e5456041b32555354e9a60c016b004bf1150ca9f8a5ce5",
+    "rmsnorm\\contract.json": "841cf6709b3d5ca80c5bae4550d8f15041a32ff44b16f5f3941b813c5bfc24d0",
+    "rmsnorm\\facts.json": "e23ae051722453270951f76f15e996afb2f44bf48ba0967af16e2c3ea1b2cdec",
+    "RUN_FRESH_SESSION.md": "6b49d61d2bc1ec2b2be6b0a4c881c65aa6e1aa9fa4d74505dbd0d35c87fa902b",
+    "swiglu\\case.json": "54fbdf33ecb0f0172e7707fa147ea083249f03db095de02a94e63f00b2fe3043",
+    "swiglu\\contract.json": "f8eb82da6d0776abdd6c778abb544f4e055a4eef64ac69bcbe4ed0431c042126",
+    "swiglu\\facts.json": "ba07e7bc2a496439ffcecfb2bd5782798a370f268950ca6749878909b0722853"
+  },
+  "status": "PASS",
+  "errors": []
+}

@@ -1,0 +1,173 @@
+{
+  "TRANSFORMER_LAYER": {
+    "scope": "TRANSFORMER_LAYER",
+    "verdict": "SYSTEM_QUALIFIED_ACCEPT",
+    "checks": {
+      "input_json": true,
+      "iteration_inputs": true,
+      "iteration_speedup": true,
+      "throughput_inputs": true,
+      "throughput_gain": true,
+      "memory": true,
+      "loss": true,
+      "convergence_proxy": true,
+      "samples_per_sec": true,
+      "peak_memory": true,
+      "loss_finite": true,
+      "convergence_proxy_finite": true,
+      "gradient": true,
+      "operator_fraction_of_step": true,
+      "metric:baseline_iteration_ms": true,
+      "metric:candidate_iteration_ms": true,
+      "metric:baseline_samples_per_sec": true,
+      "metric:candidate_samples_per_sec": true,
+      "metric:baseline_tokens_per_sec": true,
+      "metric:candidate_tokens_per_sec": true,
+      "metric:baseline_peak_memory_bytes": true,
+      "metric:candidate_peak_memory_bytes": true,
+      "metric:convergence_proxy_delta": true,
+      "metric:loss_delta": true,
+      "metric:gradient_check": true
+    },
+    "raw_metrics": {
+      "input": {
+        "baseline_iteration_ms": 763.05908203125,
+        "candidate_iteration_ms": 7.310495853424072,
+        "baseline_samples_per_sec": 1.3105145113246244,
+        "candidate_samples_per_sec": 136.7896268666403,
+        "baseline_tokens_per_sec": 7.863087067947745,
+        "candidate_tokens_per_sec": 820.7377611998418,
+        "baseline_peak_memory_bytes": 0,
+        "candidate_peak_memory_bytes": 0,
+        "convergence_proxy_delta": 0.0,
+        "loss_delta": 0.0,
+        "gradient_check": true,
+        "operator_fraction_of_step": 0.6656308690797283
+      },
+      "derived": {
+        "iteration_speedup": 104.37856710825577,
+        "throughput_gain": 103.37856710825577,
+        "samples_per_sec_gain": 103.37856710825575,
+        "memory_delta_bytes": 0,
+        "max_possible_e2e_speedup": 2.9907066996517813,
+        "max_possible_e2e_speedup_unbounded": false
+      }
+    },
+    "reasons": [],
+    "note": "wiring/correctness evidence; reference replacement is not promoted as a performance candidate"
+  },
+  "TRANSFORMER_BLOCK": {
+    "scope": "TRANSFORMER_BLOCK",
+    "verdict": "SYSTEM_QUALIFIED_ACCEPT",
+    "checks": {
+      "input_json": true,
+      "iteration_inputs": true,
+      "iteration_speedup": true,
+      "throughput_inputs": true,
+      "throughput_gain": true,
+      "memory": true,
+      "loss": true,
+      "convergence_proxy": true,
+      "samples_per_sec": true,
+      "peak_memory": true,
+      "loss_finite": true,
+      "convergence_proxy_finite": true,
+      "gradient": true,
+      "operator_fraction_of_step": true,
+      "metric:baseline_iteration_ms": true,
+      "metric:candidate_iteration_ms": true,
+      "metric:baseline_samples_per_sec": true,
+      "metric:candidate_samples_per_sec": true,
+      "metric:baseline_tokens_per_sec": true,
+      "metric:candidate_tokens_per_sec": true,
+      "metric:baseline_peak_memory_bytes": true,
+      "metric:candidate_peak_memory_bytes": true,
+      "metric:convergence_proxy_delta": true,
+      "metric:loss_delta": true,
+      "metric:gradient_check": true
+    },
+    "raw_metrics": {
+      "input": {
+        "baseline_iteration_ms": 2.541152000427246,
+        "candidate_iteration_ms": 2.1491520404815674,
+        "baseline_samples_per_sec": 393.52230792643223,
+        "candidate_samples_per_sec": 465.299793203987,
+        "baseline_tokens_per_sec": 2361.1338475585935,
+        "candidate_tokens_per_sec": 2791.798759223922,
+        "baseline_peak_memory_bytes": 0,
+        "candidate_peak_memory_bytes": 0,
+        "convergence_proxy_delta": 0.0,
+        "loss_delta": 0.0,
+        "gradient_check": true,
+        "operator_fraction_of_step": 0.06795028533459732
+      },
+      "derived": {
+        "iteration_speedup": 1.1823975002986955,
+        "throughput_gain": 0.1823975002986955,
+        "samples_per_sec_gain": 0.1823975002986955,
+        "memory_delta_bytes": 0,
+        "max_possible_e2e_speedup": 1.072904142628262,
+        "max_possible_e2e_speedup_unbounded": false
+      }
+    },
+    "reasons": [],
+    "note": "wiring/correctness evidence; reference replacement is not promoted as a performance candidate"
+  },
+  "MINIMAL_MODEL": {
+    "scope": "MINIMAL_MODEL",
+    "verdict": "SYSTEM_QUALIFIED_ACCEPT",
+    "checks": {
+      "input_json": true,
+      "iteration_inputs": true,
+      "iteration_speedup": true,
+      "throughput_inputs": true,
+      "throughput_gain": true,
+      "memory": true,
+      "loss": true,
+      "convergence_proxy": true,
+      "samples_per_sec": true,
+      "peak_memory": true,
+      "loss_finite": true,
+      "convergence_proxy_finite": true,
+      "gradient": true,
+      "operator_fraction_of_step": true,
+      "metric:baseline_iteration_ms": true,
+      "metric:candidate_iteration_ms": true,
+      "metric:baseline_samples_per_sec": true,
+      "metric:candidate_samples_per_sec": true,
+      "metric:baseline_tokens_per_sec": true,
+      "metric:candidate_tokens_per_sec": true,
+      "metric:baseline_peak_memory_bytes": true,
+      "metric:candidate_peak_memory_bytes": true,
+      "metric:convergence_proxy_delta": true,
+      "metric:loss_delta": true,
+      "metric:gradient_check": true
+    },
+    "raw_metrics": {
+      "input": {
+        "baseline_iteration_ms": 6.598400115966797,
+        "candidate_iteration_ms": 2.411776065826416,
+        "baseline_samples_per_sec": 151.55188870408173,
+        "candidate_samples_per_sec": 414.63219333231973,
+        "baseline_tokens_per_sec": 909.3113322244903,
+        "candidate_tokens_per_sec": 2487.7931599939184,
+        "baseline_peak_memory_bytes": 0,
+        "candidate_peak_memory_bytes": 0,
+        "convergence_proxy_delta": 0.0,
+        "loss_delta": 0.0,
+        "gradient_check": true,
+        "operator_fraction_of_step": 0.018588748861094587
+      },
+      "derived": {
+        "iteration_speedup": 2.735909112567546,
+        "throughput_gain": 1.7359091125675459,
+        "samples_per_sec_gain": 1.7359091125675459,
+        "memory_delta_bytes": 0,
+        "max_possible_e2e_speedup": 1.0189408352915486,
+        "max_possible_e2e_speedup_unbounded": false
+      }
+    },
+    "reasons": [],
+    "note": "wiring/correctness evidence; reference replacement is not promoted as a performance candidate"
+  }
+}

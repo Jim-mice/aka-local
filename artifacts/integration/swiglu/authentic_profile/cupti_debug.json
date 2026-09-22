@@ -1,0 +1,30 @@
+{
+  "interpreter": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+  "torch": "2.11.0+cu128",
+  "torch_cuda": "12.8",
+  "cuda_available": true,
+  "device": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "device_capability": [
+    12,
+    0
+  ],
+  "torch_profiler_invocation": "torch.profiler.profile(activities=[CPU, CUDA], record_shapes=True, profile_memory=True)",
+  "cupti_find_library": {
+    "cupti": null,
+    "cupti64_2026.1": null,
+    "cupti64_12": null
+  },
+  "device_properties": "_CudaDeviceProperties(name='NVIDIA GeForce RTX 5060 Laptop GPU', major=12, minor=0, total_memory=8150MB, multi_processor_count=26, uuid=15840d68-8974-35a8-6886-d7a36fb0a04d, pci_bus_id=2, pci_device_id=0, pci_domain_id=0, L2_cache_size=32MB)",
+  "device_query_error": "AttributeError: module 'torch._C' has no attribute '_cuda_getDriverVersion'",
+  "runtime_query_error": "AttributeError: module 'torch._C._cudart' has no attribute 'cudaRuntimeGetVersion'",
+  "command:where.exe cupti64*.dll": {
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "INFO: Could not find files for the given pattern(s).\n"
+  },
+  "command:nvidia-smi --query-gpu=name,driver_version --format=csv,noheader": {
+    "returncode": 0,
+    "stdout": "NVIDIA GeForce RTX 5060 Laptop GPU, 610.88\n",
+    "stderr": ""
+  }
+}

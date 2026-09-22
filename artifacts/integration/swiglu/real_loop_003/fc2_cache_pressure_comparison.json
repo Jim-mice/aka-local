@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "l2_cache_size_bytes": 33554432,
+  "pressure_buffer_bytes": 67108864,
+  "baseline": {
+    "fc2_duration_us": 6.368,
+    "fc2_dram_read_bytes_total": 25088.0,
+    "fc2_l2_request_bytes_total": 82912.0
+  },
+  "pressure": {
+    "fc2_duration_us": 6.304,
+    "fc2_dram_read_bytes_total": 24832.0,
+    "fc2_l2_request_bytes_total": 82912.0
+  },
+  "delta": {
+    "fc2_duration_us": -0.06400000000000006,
+    "fc2_dram_read_bytes_total": -256.0,
+    "fc2_l2_request_bytes_total": 0.0
+  },
+  "interpretation": "No stable increase in FC2 duration, total DRAM reads, or L2 requests under a 2x-L2 pressure buffer; this is indirect evidence only and does not measure activation-only cache hits.",
+  "evidence_class": "INFERRED"
+}

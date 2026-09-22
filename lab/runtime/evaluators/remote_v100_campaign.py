@@ -19,6 +19,13 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 from lab.runtime.evaluators.phase8d import (replay_episode, build_episode_manifest, list_operators, load_operator_meta, collect_environment_snapshot, file_sha256, sha256_hex)
+from lab.runtime.evaluators.contract_validation import (
+    inspect_legacy_contract,
+    load_contract_bundle,
+    validate_episode_contract,
+)
+from lab.runtime.evaluators.qualification import ordered_shapes, qualification_config, qualify_runs
+from lab.runtime.agent.v100_attempt_adapter import V100AttemptEvaluatorAdapter
 
 ROOT = Path(__file__).resolve().parent.parent.parent.parent
 sys.path.insert(0, str(ROOT))
@@ -82,6 +89,19 @@ def read_json(path: Path, default=None):
 
 def debug(msg: str) -> None:
     print(f"[V100] {msg}", flush=True)
+
+
+def build_v100_attempt_adapter(operator: str, *, measure, qualify, profile) -> V100AttemptEvaluatorAdapter:
+    """Build the P1 adapter without giving an Agent remote-control authority.
+
+    ``measure``, ``qualify`` and ``profile`` are deterministic supervisor
+    callbacks.  The caller combines this adapter with
+    ``LongHorizonRunner.build_hypothesis_attempt_controller``; this legacy
+    campaign module no longer owns an ephemeral Agent lifecycle.
+    """
+    return V100AttemptEvaluatorAdapter(
+        project_root=ROOT, operator=operator, measure=measure, qualify=qualify, profile=profile,
+    )
 
 
 # ============================================================
@@ -370,13 +390,13 @@ def build_knowledge_context(operator: str, environment: str = "v100_sm70") -> st
 
     return "\n".join(parts)
 
-def _build_v100_prompt(operator, contract_obj, op_type="Normalization"):
+def _build_v100_prompt(operator, contract_obj, op_type="Normalization", evaluation_fingerprint_value=""):
     """Build operator-specific V100 agent prompt from structured contract."""
     sig = contract_obj.c_signature()
     roles = contract_obj.prompt_roles_section()
     semantics = contract_obj.prompt_semantics_section()
     marker = contract_obj.contract_marker()
-    contract_hash = contract_obj.contract_hash
+    semantic_contract_sha256 = contract_obj.semantic_contract_sha256
     contract_version = contract_obj.version
     arg_names_list = contract_obj.arg_names()
     arg_names_str = '", "'.join(arg_names_list)
@@ -389,7 +409,7 @@ def _build_v100_prompt(operator, contract_obj, op_type="Normalization"):
         "risk": ["register pressure"],
         "operator": operator,
         "contract_version": contract_version,
-        "contract_hash": contract_hash,
+        "semantic_contract_sha256": semantic_contract_sha256,
         "interface": {
             "entry": "launch_kernel",
             "arguments": arg_names_list,
@@ -403,7 +423,8 @@ def _build_v100_prompt(operator, contract_obj, op_type="Normalization"):
 - Name: {operator}
 - Type: {op_type} (standalone CUDA, no torch)
 - Contract Version: {contract_version}
-- Contract Hash: {contract_hash}
+- Semantic Contract SHA-256: {semantic_contract_sha256}
+- Evaluation Fingerprint: {evaluation_fingerprint_value}
 
 ## Environment
 - GPU: Tesla V100-PCIE-16GB (Volta, compute capability 7.0)
@@ -473,7 +494,7 @@ strategy_tags MUST use these exact names where applicable:
 - Stop after writing the three files
 - Use the EXACT extern "C" void launch_kernel signature shown in CONTRACT above
 - Do NOT create any Python files
-- hypothesis.json MUST include ALL fields shown: claim, strategy_tags, expected_effects, risk, operator, contract_version, contract_hash, interface
+- hypothesis.json MUST include ALL fields shown: claim, strategy_tags, expected_effects, risk, operator, contract_version, semantic_contract_sha256, interface
 - candidate.cu MUST contain the CONTRACT MARKER line exactly as shown above
 
 Reply only when finished.
@@ -481,27 +502,11 @@ Reply only when finished.
 
 def build_agent_prompt(operator: str, environment: str = "v100_sm70") -> str:
     """Build operator-specific agent prompt from structured contract."""
-    from lab.core.contract import OperatorContract, contract_from_legacy_metadata
-    meta_path = ROOT / "operators" / operator / "metadata.json"
-    if meta_path.is_file():
-        meta = read_json(meta_path, {})
-        # Prefer contract_schema, fall back to legacy
-        if "contract_schema" in meta:
-            contract_obj = OperatorContract.from_dict(meta["contract_schema"])
-        else:
-            contract_obj = contract_from_legacy_metadata(meta)
-            if contract_obj is None:
-                contract_obj = OperatorContract(
-                    operator=operator,
-                    entry="launch_kernel",
-                    arguments=[],
-                )
-    else:
-        contract_obj = OperatorContract(operator=operator, entry="launch_kernel", arguments=[])
+    contract_obj, _, eval_fingerprint = load_contract_bundle(ROOT, operator)
     
     op_type = operator.replace("_v100_cuda", "").replace("_", " ").title().replace("Rms Norm", "RMSNorm").replace("Layer Norm", "LayerNorm")
     knowledge = build_knowledge_context(operator, environment)
-    return _build_v100_prompt(operator, contract_obj, op_type) + "\n" + knowledge
+    return _build_v100_prompt(operator, contract_obj, op_type, eval_fingerprint) + "\n" + knowledge
 
 
 # ============================================================
@@ -557,30 +562,94 @@ def run_evaluation_for_episode(
         debug(f"No candidate.cu in {ep_dir}, skipping evaluation")
         return
 
-    # Phase 8-D: Rich reproducibility bundle
-    manifest = build_episode_manifest(episode_num, operator, candidate_cu, shapes)
+    # Historical episodes are immutable scientific evidence.  A legacy
+    # manifest has only the former shape-list ``contract_hash`` and cannot be
+    # upgraded in place: doing so would overwrite the artifact that we need
+    # to audit.  A separate migration/export command may create new-format
+    # evidence later, but this evaluator must fail closed here without any
+    # local or remote side effect.
+    existing_manifest_path = ep_dir / "episode_manifest.json"
+    if existing_manifest_path.is_file():
+        legacy_status = inspect_legacy_contract(read_json(existing_manifest_path))
+        if legacy_status == "LEGACY_UNVERIFIED_CONTRACT":
+            debug(
+                f"Refusing to re-evaluate legacy episode {episode_num}: "
+                "semantic contract is unverified; historical artifacts left unchanged"
+            )
+            return
+
+    # Contract validation is deliberately local and happens before any
+    # evaluator import/SSH/SCP/nvcc action.  New artifacts never reuse the
+    # legacy shape-only ``contract_hash`` as semantic identity.
+    try:
+        contract, evaluation_contract, eval_fingerprint = load_contract_bundle(ROOT, operator)
+    except Exception as exc:
+        decision_data = {"episode": episode_num, "operator": operator, "decision": "REJECT_CONTRACT",
+                         "reason": f"canonical contract unavailable: {exc}", "contract_validation": {"status": "REJECT_CONTRACT"}}
+        write_json(ep_dir / "decision.json", decision_data)
+        return
+    manifest = build_episode_manifest(episode_num, operator, candidate_cu, shapes, contract, eval_fingerprint)
     write_json(ep_dir / "episode_manifest.json", manifest)
+    contract_validation = validate_episode_contract(ep_dir, contract, manifest)
+    if contract_validation["status"] != "PASS":
+        result = {"result_schema_version": 2, "compile_pass": False, "correctness_pass": False,
+                  "runs": [], "qualification": {"status": "NOT_RUN"}, "contract_validation": contract_validation,
+                  "error": "contract validation failed"}
+        decision_data = {"episode": episode_num, "operator": operator, "decision": "REJECT_CONTRACT",
+                         "compile_pass": False, "correctness_pass": False, "aggregate_score": None,
+                         "reason": "contract validation failed", "contract_validation": contract_validation,
+                         "evaluated_at": utcnow(), "shapes": shapes}
+        write_json(ep_dir / "result.json", result)
+        write_json(ep_dir / "decision.json", decision_data)
+        return
 
     # Phase 2: Multi-shape evaluation
     debug(f"Phase 2: EVALUATION (shapes={shapes})")
     eval_result = evaluate_v100(candidate_cu, shapes, operator=operator, with_profile=with_profile)
+    eval_result["semantic_contract_sha256"] = contract.semantic_contract_sha256
+    eval_result["evaluation_fingerprint"] = eval_fingerprint
+    eval_result["contract_validation"] = contract_validation
 
     gm = eval_result.get("geometric_mean_speedup", 1.0)
     debug(f"  compile={eval_result['compile_pass']}, correct={eval_result['correctness_pass']}, geo_mean={gm}")
-
-    write_json(ep_dir / "result.json", eval_result)
 
     # Phase 8-C Decision: multi-shape score vs incumbent manifest
     incumbent_score = get_incumbent_score(operator)
     aggregate_score = eval_result.get("aggregate_score", 1.0) or 1.0
 
-    accepted = (
+    provisional = (
         eval_result["compile_pass"]
         and eval_result["correctness_pass"]
         and float(aggregate_score) > incumbent_score
     )
+    qualification = {"status": "NOT_ELIGIBLE", "configuration": qualification_config(evaluation_contract)}
+    qualified_score = None
+    if provisional:
+        repeated = [eval_result]
+        qualification_policy = qualification_config(evaluation_contract)
+        repeats = int(qualification_policy["repeats"])
+        # The first complete evaluation is retained as repeat 1.  Subsequent
+        # calls have profile disabled so profile-only work is never counted as
+        # a benchmark sample.
+        for repeat_index in range(1, repeats):
+            repeat_shapes = ordered_shapes(shapes, repeat_index, qualification_policy)
+            repeat = evaluate_v100(candidate_cu, repeat_shapes, operator=operator, with_profile=False)
+            repeat["semantic_contract_sha256"] = contract.semantic_contract_sha256
+            repeat["evaluation_fingerprint"] = eval_fingerprint
+            repeated.append(repeat)
+        qualification = qualify_runs(repeated, qualification_policy)
+        qualified_score = qualification.get("aggregate", {}).get("median")
+        if qualification["status"] == "QUALIFIED_ACCEPT" and qualified_score is not None and float(qualified_score) > incumbent_score:
+            qualification["status"] = "QUALIFIED_ACCEPT"
+        else:
+            qualification["status"] = "PROVISIONAL_UNSTABLE"
+    eval_result["qualification"] = qualification
+    eval_result["provisional_status"] = "PROVISIONAL" if provisional else "NOT_PROVISIONAL"
+    accepted = qualification.get("status") == "QUALIFIED_ACCEPT"
 
-    decision = "ACCEPT" if accepted else "REJECT"
+    write_json(ep_dir / "result.json", eval_result)
+
+    decision = "QUALIFIED_ACCEPT" if accepted else "PROVISIONAL" if provisional else "REJECT"
     reason = ""
     compiler_error = ""
 
@@ -591,6 +660,8 @@ def run_evaluation_for_episode(
     elif not eval_result["correctness_pass"]:
         reason = eval_result.get("error", "correctness failed")
         decision = "REJECT_CORRECTNESS"
+    elif provisional and not accepted:
+        reason = "initial score exceeded incumbent but qualification did not pass"
     elif float(aggregate_score) <= incumbent_score:
         reason = f"aggregate_score={aggregate_score} <= incumbent={incumbent_score}"
         decision = "REJECT_PERFORMANCE"
@@ -602,11 +673,15 @@ def run_evaluation_for_episode(
         "correctness_pass": eval_result["correctness_pass"],
         "speedup": eval_result.get("speedup"),
         "aggregate_score": aggregate_score,
+        "qualified_score": qualified_score,
         "geometric_mean_speedup": eval_result.get("geometric_mean_speedup"),
         "incumbent_score": incumbent_score,
         "reason": reason,
         "evaluated_at": utcnow(),
         "score_type": "geometric_mean_speedup",
+        "semantic_contract_sha256": contract.semantic_contract_sha256,
+        "evaluation_fingerprint": eval_fingerprint,
+        "qualification": qualification,
         "shapes": shapes,
     }
     write_json(ep_dir / "decision.json", decision_data)
@@ -663,14 +738,14 @@ def run_evaluation_for_episode(
     env_knowledge = ROOT / "knowledge" / "environments" / "v100_sm70"
     if accepted:
         # Update incumbent manifest
-        save_incumbent_manifest(operator, episode_num, aggregate_score, gm)
+        save_incumbent_manifest(operator, episode_num, float(qualified_score), float(qualified_score))
 
         card = {
             "operator": operator, "episode": episode_num,
-            "result": {"decision": "ACCEPT", "speedup": eval_result.get("speedup"),
-                       "aggregate_score": aggregate_score,
+            "result": {"decision": "QUALIFIED_ACCEPT", "speedup": eval_result.get("speedup"),
+                       "aggregate_score": aggregate_score, "qualified_score": qualified_score,
                        "geometric_mean_speedup": gm},
-            "lesson": f"Episode {episode_num}: geo_mean={gm}x across {len(shapes)} shapes, score={aggregate_score}",
+            "lesson": f"Episode {episode_num}: qualified median={qualified_score} across {len(shapes)} shapes",
             "timestamp": utcnow(),
         }
         write_json(env_knowledge / operator / "experience" / f"episode_{episode_num}.json", card)
@@ -894,50 +969,17 @@ def main():
         debug("=== Evaluation complete ===")
         return
 
-    # Agent-driven loop
-    for ep_idx in range(args.episodes):
-        episode_num = find_next_episode_v100(operator)
-        ep_dir = campaign_dir / f"episode_{episode_num}"
-        ep_dir.mkdir(parents=True, exist_ok=True)
-
-        debug(f"=== Episode {episode_num}/{args.episodes} ===")
-        debug(f"  Incumbent: {load_incumbent_manifest(operator).get('incumbent','none')} score={get_incumbent_score(operator)}")
-
-        candidate_cu = ep_dir / "candidate.cu"
-
-        if not candidate_cu.is_file():
-            debug("Phase 1: AGENT (knowledge-injected)")
-            import os as _os
-            _os.environ.setdefault("CODEX_HOME", r"<LOCAL_USER_HOME>\.codex")
-
-            prompt = build_agent_prompt(operator, "v100_sm70")
-            debug(f"  Prompt: {len(prompt)} chars")
-
-            try:
-                from openai_codex import ApprovalMode, Codex, CodexConfig, Sandbox
-                BIN = Path(r"<PROJECT_ROOT>\runtimes\codex-0.154.0\node_modules\@openai\codex-win32-x64\vendor\x86_64-pc-windows-msvc\bin\codex.exe")
-                config = CodexConfig(codex_bin=str(BIN), cwd=str(ep_dir), client_name="aka_v100", client_title="aka-v100", client_version="0.5", config_overrides=("model_provider=openai",))
-                cx = Codex(config)
-                try:
-                    t = cx.thread_start(model="gpt-5.6-luna", model_provider="openai", cwd=str(ep_dir), sandbox=Sandbox.workspace_write, approval_mode=ApprovalMode.deny_all, ephemeral=True)
-                    t.run(prompt, model="gpt-5.6-luna", effort="low", cwd=str(ep_dir), sandbox=Sandbox.workspace_write, approval_mode=ApprovalMode.deny_all)
-                    debug("Agent complete")
-                finally:
-                    cx.close()
-            except Exception as e:
-                debug(f"Agent failed: {e}")
-                write_json(ep_dir / "agent_error.json", {"timestamp": utcnow(), "error": str(e)})
-                if not candidate_cu.is_file():
-                    continue
-
-        if not candidate_cu.is_file():
-            debug("No candidate.cu, skipping")
-            continue
-
-        debug("Phase 2: EVALUATION")
-        run_evaluation_for_episode(ep_dir, episode_num, operator, shapes, with_profile)
-
-    debug(f"=== Campaign complete: {args.episodes} episodes ===")
+    # The old code created one ephemeral Codex thread per episode and closed it
+    # before compiler/correctness evidence existed.  P1 deliberately removes
+    # that unsafe path.  A caller must construct a CodexAgentSession and the
+    # controller-owned V100AttemptEvaluatorAdapter, then run a bounded
+    # hypothesis through LongHorizonRunner's attempt controller.  This module
+    # still supports deterministic --skip-agent evaluation for audit/replay.
+    raise RuntimeError(
+        "P1_SESSION_CONTROLLER_REQUIRED: agent-driven V100 campaigns must use "
+        "LongHorizonRunner.build_hypothesis_attempt_controller with "
+        "build_v100_attempt_adapter; the one-turn ephemeral path is disabled"
+    )
 
 
 if __name__ == "__main__":

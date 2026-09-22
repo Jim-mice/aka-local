@@ -1,0 +1,106 @@
+{
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "cuda_available": true,
+  "device": "cuda",
+  "model_config": {
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "ffn_hidden": 16,
+    "dtype": "float32"
+  },
+  "tensor_parallel_size": 1,
+  "sequence_parallel": false,
+  "seed": 20260922,
+  "warmups": 5,
+  "repeats": 10,
+  "authentic_baseline_status": "BLOCKED",
+  "authenticity_note": "eager-compatible baseline only; not an authentic fused performance baseline",
+  "run_kind": "D_REFERENCE_REPLACEMENT",
+  "per_repeat": [
+    {
+      "forward_ms": 0.1644000003580004,
+      "backward_ms": 0.29660000291187316,
+      "step_ms": 0.603299995418638,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.17290000687353313,
+      "backward_ms": 0.2868000010494143,
+      "step_ms": 0.5927000020164996,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.16799999866634607,
+      "backward_ms": 0.335300006554462,
+      "step_ms": 0.6607999966945499,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.16750000941101462,
+      "backward_ms": 0.33850000181701034,
+      "step_ms": 0.6759000098099932,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.17940001271199435,
+      "backward_ms": 0.33969999640248716,
+      "step_ms": 0.6894000107422471,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.1644000003580004,
+      "backward_ms": 0.33370000892318785,
+      "step_ms": 0.6369999900925905,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.1967999996850267,
+      "backward_ms": 0.5232000112300739,
+      "step_ms": 0.8782000077189878,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.16790001245681196,
+      "backward_ms": 0.3456999984337017,
+      "step_ms": 0.6461000011768192,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.1508999994257465,
+      "backward_ms": 0.2982000005431473,
+      "step_ms": 0.6138000026112422,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    },
+    {
+      "forward_ms": 0.17099999240599573,
+      "backward_ms": 0.2565999893704429,
+      "step_ms": 0.5671999970218167,
+      "peak_memory_bytes": 17055744,
+      "loss": 1.2218340635299683
+    }
+  ],
+  "aggregate": {
+    "step_ms": {
+      "median": 0.6415499956347048,
+      "mean": 0.6564400013303384,
+      "stdev": 0.08680437097558501,
+      "cv": 0.13223504173978987,
+      "stability": false
+    }
+  },
+  "replacement_invocations": 15,
+  "no_silent_fallback": true
+}

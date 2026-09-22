@@ -1,0 +1,13 @@
+{
+  "baseline_iteration_ms": 0.69525000435533,
+  "candidate_iteration_ms": 0.6415499956347048,
+  "baseline_samples_per_sec": 1438.3315264086177,
+  "candidate_samples_per_sec": 1558.724973586306,
+  "baseline_tokens_per_sec": 8629.989158451706,
+  "candidate_tokens_per_sec": 9352.349841517836,
+  "baseline_peak_memory_bytes": 17058304,
+  "candidate_peak_memory_bytes": 17055744,
+  "convergence_proxy_delta": 0.0,
+  "loss_delta": 0.0,
+  "gradient_check": true
+}

@@ -1,0 +1,6 @@
+{
+  "case_id": "SWIGLU_REAL_BLIND_001",
+  "output_schema": "../planning_result.schema.json",
+  "max_hypotheses": 3,
+  "mode": "PLANNING_ONLY"
+}

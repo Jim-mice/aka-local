@@ -1,0 +1,258 @@
+{
+  "schema": "PerformanceFacts.v6",
+  "episode": "REAL_OPT_LOOP_002",
+  "evidence_status": "MEASUREMENT_COMPLETE",
+  "environment": {
+    "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+    "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "torch": "2.11.0+cu128",
+    "torch_cuda_runtime": "12.8",
+    "cuda_available": true,
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "device_index": 0,
+    "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "tp": 1,
+    "sp": false,
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "ffn_hidden": 16,
+    "dtype": "float32",
+    "warmups": 1,
+    "repeats": 1,
+    "authentic_path": "Megatron MLP.forward -> bias_swiglu_impl -> BiasSwiGLUFunction -> linear_fc2",
+    "source_files": [
+      "megatron/core/transformer/mlp.py",
+      "megatron/core/fusions/fused_bias_swiglu.py"
+    ]
+  },
+  "shape": {
+    "value": [
+      3,
+      2,
+      8
+    ],
+    "evidence": "MEASURED",
+    "source": "real workload input"
+  },
+  "dtype": {
+    "value": "float32",
+    "evidence": "MEASURED"
+  },
+  "layout": {
+    "value": "contiguous input from torch.randn; module path preserves tensor contract",
+    "evidence": "MEASURED/SOURCE_DERIVED"
+  },
+  "known_kernel_boundaries": {
+    "value": [
+      "FC1",
+      "SWIGLU",
+      "FC2"
+    ],
+    "evidence": "MEASURED via NVTX-filtered Nsight Compute"
+  },
+  "swiglu_kernel_count": {
+    "value": 1,
+    "evidence": "MEASURED"
+  },
+  "fc2_kernel_count": {
+    "value": 1,
+    "evidence": "MEASURED"
+  },
+  "separate_cuda_kernel_boundary": {
+    "value": true,
+    "evidence": "MEASURED"
+  },
+  "device_tensor_materialized": {
+    "value": true,
+    "evidence": "SOURCE_DERIVED + MEASURED boundary attribution"
+  },
+  "activation_dram_write": {
+    "value": null,
+    "evidence": "UNKNOWN",
+    "reason": "not separable from kernel total traffic"
+  },
+  "activation_dram_read": {
+    "value": null,
+    "evidence": "UNKNOWN",
+    "reason": "not separable from FC2 weight/other reads"
+  },
+  "dram_round_trip": {
+    "value": null,
+    "evidence": "UNKNOWN"
+  },
+  "l2_activity": {
+    "value": {
+      "L2 Cache Throughput": {
+        "value": "0.34",
+        "unit": "%"
+      },
+      "Total L2 Elapsed Cycles": {
+        "value": "88,608",
+        "unit": "cycle"
+      }
+    },
+    "evidence": "MEASURED per SWIGLU kernel, not activation-only"
+  },
+  "registers_per_thread": {
+    "value": {
+      "value": "16",
+      "unit": "register/thread"
+    },
+    "evidence": "MEASURED"
+  },
+  "shared_memory": {
+    "value": {
+      "configuration_bytes": {
+        "value": "32,768",
+        "unit": "byte"
+      },
+      "dynamic_bytes_per_block": {
+        "value": "0",
+        "unit": "byte/block"
+      },
+      "static_bytes_per_block": {
+        "value": "0",
+        "unit": "byte/block"
+      }
+    },
+    "evidence": "MEASURED"
+  },
+  "occupancy": {
+    "value": {
+      "value": "7.25",
+      "unit": "%"
+    },
+    "evidence": "MEASURED per SWIGLU kernel if present"
+  },
+  "kernel_count": {
+    "value": {
+      "FC1": 1,
+      "SWIGLU": 1,
+      "FC2": 1
+    },
+    "evidence": "MEASURED"
+  },
+  "launch_cost": {
+    "value": {
+      "value": "3,680",
+      "unit": "ns"
+    },
+    "evidence": "MEASURED kernel duration, not launch API overhead"
+  },
+  "swiglu_duration": {
+    "value": {
+      "count": 1,
+      "median": 0.3500159978866577,
+      "mean": 0.3500159978866577,
+      "stdev": 0.0,
+      "cv": 0.0,
+      "min": 0.3500159978866577,
+      "max": 0.3500159978866577,
+      "p10": 0.3500159978866577,
+      "p90": 0.3500159978866577
+    },
+    "evidence": "MEASURED CUDA Event with inner instrumentation"
+  },
+  "fc2_duration": {
+    "value": {
+      "count": 1,
+      "median": 2143.069091796875,
+      "mean": 2143.069091796875,
+      "stdev": 0.0,
+      "cv": 0.0,
+      "min": 2143.069091796875,
+      "max": 2143.069091796875,
+      "p10": 2143.069091796875,
+      "p90": 2143.069091796875
+    },
+    "evidence": "MEASURED CUDA Event with inner instrumentation"
+  },
+  "combined_boundary_duration": {
+    "value": {
+      "count": 1,
+      "median": 2143.4191077947617,
+      "mean": 2143.4191077947617,
+      "stdev": 0.0,
+      "cv": 0.0,
+      "min": 2143.4191077947617,
+      "max": 2143.4191077947617,
+      "p10": 2143.4191077947617,
+      "p90": 2143.4191077947617
+    },
+    "evidence": "DERIVED sum of measured per-region Event durations"
+  },
+  "model_fraction": {
+    "value": 0.015571342909175317,
+    "evidence": "MEASURED prior split-run authentic local minimal GPTModel profile"
+  },
+  "system_ceiling": {
+    "value": 1.015817644881643,
+    "evidence": "DERIVED prior split-run local minimal GPTModel Amdahl ceiling"
+  },
+  "reuse": {
+    "value": null,
+    "evidence": "UNKNOWN"
+  },
+  "lifetime": {
+    "value": "activation output consumed by subsequent FC2 call; exact storage lifetime policy UNKNOWN",
+    "evidence": "SOURCE_DERIVED"
+  },
+  "reduction": {
+    "value": "none in forward SwiGLU boundary",
+    "evidence": "SOURCE_DERIVED"
+  },
+  "synchronization": {
+    "value": "CUDA event synchronization used for measurement; internal kernel synchronization UNKNOWN",
+    "evidence": "MEASURED/UNKNOWN"
+  },
+  "resource_limits": {
+    "register_pressure": {
+      "value": "16",
+      "unit": "register/thread"
+    },
+    "shared_memory": {
+      "value": "32,768",
+      "unit": "byte"
+    },
+    "occupancy": {
+      "value": "7.25",
+      "unit": "%"
+    },
+    "evidence": "MEASURED"
+  },
+  "swiglu_kernel_total_dram_bytes": {
+    "value": 8448.0,
+    "evidence": "MEASURED",
+    "caveat": "total traffic for the filtered SwiGLU kernel, not activation-only traffic"
+  },
+  "swiglu_kernel_dram_read_bytes": {
+    "value": 8448.0,
+    "evidence": "MEASURED",
+    "caveat": "kernel total; cannot be assigned solely to activation"
+  },
+  "swiglu_kernel_dram_write_bytes": {
+    "value": 0.0,
+    "evidence": "MEASURED",
+    "caveat": "kernel total; cannot be assigned solely to activation"
+  },
+  "swiglu_kernel_duration_ns": {
+    "value": 3648.0,
+    "evidence": "MEASURED"
+  },
+  "unknown_fields": [
+    "activation_dram_write",
+    "activation_dram_read",
+    "dram_round_trip",
+    "exact launch API cost",
+    "backward kernel attribution",
+    "activation-vs-weight traffic"
+  ],
+  "measurement_perturbation": "PERTURBING",
+  "instrumentation_overhead": {
+    "uninstrumented_whole_median_ms": 0.19195199757814407,
+    "instrumented_whole_median_ms": 2143.86328125,
+    "overhead_percent": 1116774.6917453823,
+    "evidence": "MEASURED"
+  }
+}

@@ -11,12 +11,27 @@ param(
     [string]$Candidate = "",
     [string]$EnvAlias = "",
     [int]$EpisodeNum = 0,
-    [switch]$NoAgent = $false
+    [switch]$NoAgent = $false,
+    [string]$Interpreter = ""
 )
 
 $ROOT = "$PSScriptRoot"
-$PYTHON = "$ROOT\.venv\Scripts\python.exe"
-$ENV:PATH = "$ROOT\.venv\Scripts;$ENV:PATH"
+$LAUNCHER = "$ROOT\scripts\run_lab.py"
+if ($Interpreter) {
+    $PYTHON = $Interpreter
+} else {
+    $PYTHON = "$ROOT\.venv\Scripts\python.exe"
+    if (-not (Test-Path $PYTHON)) {
+        throw "D-repo virtual environment is missing: $PYTHON. Pass -Interpreter <path-to-python>; no global editable-install fallback is allowed."
+    }
+}
+if (-not (Test-Path $PYTHON)) {
+    throw "Python interpreter not found: $PYTHON"
+}
+if (-not (Test-Path $LAUNCHER)) {
+    throw "D-repo launcher missing: $LAUNCHER"
+}
+$ENV:PATH = "$(Split-Path $PYTHON -Parent);$ENV:PATH"
 
 # Resolve parameter aliases
 if ($OpAlias) { $Operator = $OpAlias }
@@ -30,17 +45,17 @@ function header { Write-Host "`n=== AKA-Lab: $args ===" -ForegroundColor Cyan }
 
 switch ($Command) {
     "status" {
-        & $PYTHON lab/cli.py status
+        & $PYTHON $LAUNCHER --module lab.cli status
     }
 
     "campaigns" {
-        & $PYTHON lab/cli.py campaigns
+        & $PYTHON $LAUNCHER --module lab.cli campaigns
     }
 
     "run" {
         $noAgentFlag = if ($NoAgent) { "--no-agent" } else { "" }
         header "Run Campaign: env=$Environment op=$Operator episodes=$Episodes no_agent=$NoAgent"
-        & $PYTHON lab/cli.py run --env $Environment --op $Operator --episodes $Episodes $noAgentFlag
+        & $PYTHON $LAUNCHER --module lab.cli run --env $Environment --op $Operator --episodes $Episodes $noAgentFlag
     }
 
     "evaluate" {
@@ -49,19 +64,19 @@ switch ($Command) {
             return
         }
         header "Evaluate: candidate=$Candidate op=$Operator"
-        & $PYTHON lab/cli.py evaluate --candidate $Candidate --env $Environment --op $Operator
+        & $PYTHON $LAUNCHER --module lab.cli evaluate --candidate $Candidate --env $Environment --op $Operator
     }
 
     "knowledge" {
-        & $PYTHON lab/cli.py knowledge
+        & $PYTHON $LAUNCHER --module lab.cli knowledge
     }
 
     "recover" {
-        & $PYTHON lab/cli.py recover
+        & $PYTHON $LAUNCHER --module lab.cli recover
     }
 
     "doctor" {
-        & $PYTHON lab/cli.py doctor --env $Environment
+        & $PYTHON $LAUNCHER --module lab.cli doctor --env $Environment
     }
 
     "replay" {
@@ -71,15 +86,15 @@ switch ($Command) {
             return
         }
         header "Replay Episode $epNum"
-        & $PYTHON lab/cli.py replay --env $Environment --op $Operator --ep $epNum
+        & $PYTHON $LAUNCHER --module lab.cli replay --env $Environment --op $Operator --ep $epNum
     }
 
     "list-ops" {
-        & $PYTHON lab/cli.py list-ops
+        & $PYTHON $LAUNCHER --module lab.cli list-ops
     }
 
     "validate" {
-        & $PYTHON lab/cli.py validate
+        & $PYTHON $LAUNCHER --module lab.cli validate
     }
 
     default {

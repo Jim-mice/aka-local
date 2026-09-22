@@ -1,0 +1,24 @@
+{
+  "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+  "python_version": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.11.0+cu128",
+  "torch_cuda_runtime": "12.8",
+  "cuda_available": true,
+  "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+  "device_index": 0,
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "tp": 1,
+  "sp": false,
+  "batch": 2,
+  "sequence": 3,
+  "hidden": 8,
+  "ffn_hidden": 16,
+  "dtype": "float32",
+  "warmups": 1,
+  "repeats": 1,
+  "authentic_path": "Megatron MLP.forward -> bias_swiglu_impl -> BiasSwiGLUFunction -> linear_fc2",
+  "source_files": [
+    "megatron/core/transformer/mlp.py",
+    "megatron/core/fusions/fused_bias_swiglu.py"
+  ]
+}

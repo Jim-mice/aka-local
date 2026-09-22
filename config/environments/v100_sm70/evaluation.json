@@ -9,6 +9,16 @@
   "correctness_tolerance": 0.001,
   "warmup": 50,
   "iterations": 200,
+  "qualification": {
+    "repeats": 5,
+    "statistic": "median",
+    "max_cv": 0.1,
+    "bimodality_policy": {
+      "min_cluster_size": 2,
+      "min_normalized_gap": 0.5
+    },
+    "order_policy": "shape_round_robin"
+  },
   "compiler": "nvcc",
   "compiler_flags": "-gencode arch=compute_70,code=sm_70 -O2",
   "contract": {

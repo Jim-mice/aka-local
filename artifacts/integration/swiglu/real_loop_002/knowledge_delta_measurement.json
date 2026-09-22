@@ -1,0 +1,17 @@
+{
+  "episode": "REAL_OPT_LOOP_002",
+  "status": "INCONCLUSIVE",
+  "write_to_mechanism_memory": false,
+  "confirmed": [
+    "graph adjacency is not sufficient evidence of physical fusion",
+    "NVTX-filtered NCU observed distinct authentic SWIGLU and FC2 kernel executions",
+    "device tensor materialization is supported by source plus separate kernel execution"
+  ],
+  "inconclusive": [
+    "activation DRAM round trip",
+    "activation-only bytes",
+    "whether eliminating the boundary is feasible without changing GEMM/gradient semantics"
+  ],
+  "scope": "local authentic Megatron MLP forward, shape [3,2,8], RTX 5060 Laptop GPU",
+  "proposed_next_measurement": "larger representative shape and a profiler method that separates activation traffic from FC2 weight traffic"
+}

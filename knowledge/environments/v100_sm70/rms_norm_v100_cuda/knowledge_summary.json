@@ -33,6 +33,14 @@
       "confidence": "medium"
     },
     {
+      "name": "Episode 28: geo_mean=10.883x across 4 shapes, score=10.883",
+      "episodes": [
+        28
+      ],
+      "average_gain": 8.302,
+      "confidence": "medium"
+    },
+    {
       "name": "Episode 10: geo_mean=1.188x across 3 shapes, score=1.188",
       "episodes": [
         10
@@ -136,7 +144,7 @@
       "reason": "performance"
     },
     {
-      "name": "/home/<REMOTE_USER>/aka_remote_jobs/be5112ac74ec/candidate.cu(32): error: identifier ",
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/be5112ac74ec/candidate.cu(32): error: identi",
       "episodes": [
         24
       ],
@@ -206,7 +214,7 @@
       "reason": "performance"
     },
     {
-      "name": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identifier \"",
+      "name": "/home/<REMOTE_USER>/aka_remote_jobs/d78ee86e5f87/candidate.cu(6): error: identif",
       "episodes": [
         9
       ],
@@ -233,8 +241,8 @@
     "Compile failures from syntax errors",
     "Regressions vs current incumbent on ANY shape"
   ],
-  "best_score": 3.789,
-  "total_accepted": 12,
+  "best_score": 8.302,
+  "total_accepted": 13,
   "total_rejected": 14,
-  "last_updated": "2026-09-19T16:39:10.265860+00:00"
+  "last_updated": "2026-09-21T09:53:52.564287+00:00"
 }

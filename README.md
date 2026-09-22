@@ -1,133 +1,87 @@
 # aka-local
 
-`aka-local` 是一个用于研究 CUDA 算子优化的实验框架。
+`aka-local` 是一个研究 GPU/CUDA 算子自动优化、真实 Megatron 集成和证据驱动评价闭环的实验框架。它不是 Megatron-LM 的生产替代品，不是通用 fused-kernel 库，也不是已经完成的九格训练系统。
 
-它会把候选 CUDA / 算子实现放到真实的 Megatron-LM 执行边界中进行验证，并保存完整的实验依据。
+## 当前研究目标
 
-这个项目主要用于研究和实验，不是 Megatron-LM 的生产替代品，也不是可以直接拿来替换所有算子的 fused-kernel 库。
+当前固定研究五类目标：
 
-## 范围与当前状态
+1. Dense Fused Attention
+2. Vocab-parallel Cross Entropy
+3. SwiGLU
+4. Residual Add RMSNorm
+5. MoE Grouped GEMM
 
-仓库保存了实验所需的契约、候选代码、验证规则、campaign 记录、关键结果和阶段报告。
+历史名称不一定对应真实 runtime 中存在同名 fused kernel；真实边界以 pinned Megatron source 为准。
 
-目前主要研究了 5 个真实的 Megatron-LM 目标：
+## 当前完成到哪里
 
-1. Megatron MLP 中的 SwiGLU 激活计算；
-2. Vocab-Parallel Cross Entropy，包括前向和 rank-local backward；
-3. 非 Transformer Engine 路径下的 `torch.nn.RMSNorm` / `WrappedTorchNorm`；
-4. 原生 `DotProductAttention` 的 dense / no-mask / p=0 前向核心；
-5. 原生 `SequentialMLP` 的 expert compute。
+### Agent 机制推理能力
 
-项目当前的汇总状态见：
+- V1：`REPEATABLE_MECHANISM_REASONING`
+- V2：`CONSTRAINT_AWARE_MECHANISM_REASONING`
+- V3：`HELD_OUT_MECHANISM_REASONING`
 
-- [五个真实 Megatron target 的实验汇总](FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md)
+Planner benchmark 已关闭：`PLANNER_RESEARCH_STATUS = SUFFICIENT_FOR_OPTIMIZATION_LOOP`。这只是 mechanism-planning benchmark 结论，不是“Agent 已自动发现所有最优 kernel”的结论。详见 [Agent 机制推理能力证据](docs/AGENT_REASONING_EVIDENCE.md)。
+
+### Megatron 本地端到端基础设施
+
+真实路径已经打通：
+
+```text
+GPTModel → TransformerBlock → TransformerLayer → MLP
+→ authentic bias_swiglu_impl → backward → optimizer-compatible step
+```
+
+已完成 real MLP L1 integration、TransformerLayer L2、TransformerBlock L2 和 Minimal GPTModel L2。`Megatron local E2E infrastructure = READY`，但 `Nine-grid E2E = NOT EXECUTED`。
+
+### 当前真正 blocker
+
+`REPRESENTATIVE_SHAPE_STATUS = PARTIAL`，`CONFIGURATION_IDENTITY = null`。当前缺少能够属于同一 authoritative configuration identity 的：
+
+- `hidden_size`
+- `ffn_hidden_size`
+- `sequence_length`
+- `micro_batch_size`
+- `dtype`
+- `TP`
+- `SP`
+
+这些字段足够决定 isolated SwiGLU shape replay；checkpoint、tokenizer、dataset 不阻塞单独 shape replay，但完整九格训练仍需要更完整资产。因此当前分支为 `NEXT_PROJECT_BRANCH = WAIT_FOR_AUTHORITATIVE_SHAPE`。
+
+## 最新真实 optimization loop
+
+- Loop 001：结构假设前提不足，先选择 measurement。
+- Loop 002：证明 separate kernels 和 device intermediate 存在，但 HBM round-trip 仍未知。
+- Loop 003：在 tiny local workload 上进一步测量，拒绝了 HBM-elimination causal story。
+- Loop 004：寻找 representative shape，结果仍为 `PARTIAL`，停止继续优化 toy workload。
+
+这表明 Agent 可以在证据不足时停止，也可以用测量证伪自己的 hypothesis；它不代表 tiny workload 的结果可以外推到九格。
+
+## 性能结果
+
+正式 promoted、stability-qualified、raw 和 diagnostic 结果严格分开。性能数字、实验口径和源 artifact 见 [性能结果概览](docs/PERFORMANCE_OVERVIEW.md)。特别注意：micro speedup 不等于 model speedup，graph boundary 不等于 HBM round-trip，toy shape 不等于 representative performance。
+
+## 实验原则
+
+- 固定 baseline identity、scope identity 和 source provenance。
+- 优先使用 paired/same-process 测量，并先过 correctness gate。
+- 记录 warmup、重复次数、统计摘要和 stability gate。
+- 明确 instrumentation perturbation；raw ratio 不能冒充 promoted score。
+- 不把 local、历史 V100 fixture 和九格配置混为一谈。
+
+## 仓库入口
+
+- [性能结果概览](docs/PERFORMANCE_OVERVIEW.md)
+- [Agent 机制推理能力证据](docs/AGENT_REASONING_EVIDENCE.md)
+- [文档索引](docs/README.md)
+- [历史报告索引](docs/reports/README.md)
+- [V3 最终审计](docs/audits/intuition_v3_final_3run_audit.md)
+- [Real Optimization Loop 001](docs/audits/real_optimization_loop_001.md)
+- [Real Optimization Loop 002](docs/audits/real_optimization_loop_002_measurement.md)
+- [Real Optimization Loop 003](docs/audits/real_optimization_loop_003_cache_and_timing.md)
+- [Real Optimization Loop 004](docs/audits/real_optimization_loop_004_shape_acquisition.md)
+- [五个真实 Megatron target 汇总](FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md)
 - [真实 target campaign 索引](REAL_TARGET_CAMPAIGN_INDEX.md)
-- [Phase 19-A 五目标收尾报告](docs/reports/phase-19/PHASE19A_FIVE_TARGET_CAMPAIGN_CLOSURE.md)
 
-这些报告会明确区分：
-
-- 原始测量结果；
-- 通过稳定性验证的结果；
-- 正式晋升的性能结果。
-
-因此，仓库中出现的 raw speedup 并不自动代表最终性能结论。
-
-早期使用过的一些名称，例如：
-
-- “Residual Add RMSNorm”
-- “Dense Fused Attention”
-- “MoE Grouped GEMM”
-
-只是最初的研究目标名称，并不代表实际运行时一定存在一个同名的 fused operator。
-
-后续阶段已经根据真实 Megatron 源码和运行路径重新确定了对应的研究边界。
-
-## 性能结果概览
-
-以下 Megatron 性能结果主要来自 V100 `sm_70` / CUDA 11.8 环境。结果具有不同证据等级，raw ratio 不能直接理解为正式 speedup。
-
-| 目标 | 当前最可靠结果 | 状态 |
-|---|---|---|
-| SwiGLU | activation-only forward / backward 有明显局部加速；完整 training rerun 为 `0.90710x` | `COMPLETED_INTEGRATION_LIMITED` |
-| Vocab-Parallel CE forward | Episode 7：`2.477191x`，CI95 `[2.465431x, 2.484392x]` | `PROMOTED_SCORE` |
-| CE backward | B1 raw `2.557171x` | `ENVIRONMENT_STABILITY_BLOCKED` |
-| Torch RMSNorm | R1/R2 raw `1.64629x` / `1.64134x` | `STABILITY_BLOCKED_R1_R2` |
-| DotProductAttention | A2：`5.928x` / `1.167x` / `0.347x` | `AGGREGATE_WIN_PER_CONFIG_MIXED` |
-| SequentialMLP MoE | M4 raw `1.2793x` / `1.4816x` / `0.9573x` | `STABILITY_BLOCKED` |
-
-[查看完整性能报告](docs/PERFORMANCE_OVERVIEW.md)，其中逐项标出证据等级、benchmark scope 和机器可读 evidence 链接。
-
-### 数据在哪里
-
-- `campaigns/`：每个 Agent episode 的 candidate、result、decision 和 benchmark evidence；
-- `targets/megatron_5be9626/`：真实 target 的 contract、baseline、replay 和 qualification evidence；
-- `docs/reports/`：各 Phase 的完整实验报告；
-- `knowledge/`：面向后续 Agent 的结构化经验总结。
-
-## 架构
-
-`lab/` 包含实验调度、运行时检查、evaluator 接口以及实验完整性规则。
-
-`targets/megatron_5be9626/` 保存与真实 Megatron target 相关的契约、候选实现、诊断信息和精简后的实验结果。
-
-`operators/`、`ops/` 和 `benchmarks/` 保存可复用的算子实现、辅助代码和 benchmark 组件。
-
-历史阶段报告统一保存在 `docs/reports/`；审计和维护记录保存在 `docs/audits/`、`docs/maintenance/` 以及 `docs/archive/`。
-
-整个实验流程大致为：
-
-```text
-确定真实执行边界
-        ↓
-冻结接口和实验契约
-        ↓
-Agent 生成候选实现
-        ↓
-接口 / ABI / 工具链检查
-        ↓
-编译
-        ↓
-正确性验证
-        ↓
-统计性能测试
-        ↓
-NSYS 性能分析
-        ↓
-接受 / 拒绝
-        ↓
-将经验反馈给下一轮 Agent
-```
-
-Agent/evaluator/promotion 流程有明确门槛：交付前检查源身份和 ABI 契约，随后检查正确性和基准范围，再进行环境和稳定性资格确认，最后才可能晋升分数。不要随意启动 campaign：它们可能触发 CUDA 构建或已配置的远程 evaluator。
-
-## 安装与查看
-
-请先阅读 [docs/SETUP.md](docs/SETUP.md)。以下命令只查看已有状态：
-
-```powershell
-py -3 -m json.tool .\five_target_campaign_state.json
-py -3 -m json.tool .\real_target_campaign_index.json
-.\lab.ps1 status
-.\lab.ps1 list-ops
-```
-
-这里刻意不把 `run`、`evaluate` 和 Agent 命令作为示例，因为它们可能使用 CUDA 或远程基础设施。
-
-## 远程执行
-
-远程 V100 评估是可选项。将 `config/environments/v100.example.yaml` 复制为被 Git 忽略的 `v100.yaml`，再替换 `<REMOTE_HOST>`、`<REMOTE_USER>` 和路径占位符。请使用 SSH key 或本地交互式认证；不要提交密码、token、私有端点或本地配置。
-
-## 仓库结构
-
-```text
-config/                    公开示例和 target 评估配置
-lab/                       实验框架运行时、规则与 CLI
-targets/megatron_5be9626/  真实 target 的契约、源码与精简证据
-operators/, ops/           可复用算子与辅助源码
-campaigns/                 保留的 campaign 溯源信息（不含生成物）
-docs/reports/              历史阶段报告
-docs/audits/               审计与完整性记录
-docs/archive/              长时间运行和发布维护归档
-```
-
-大型原始 profiler 报告、虚拟环境、runtime bundle、外部源码 checkout、机器本地配置和编译产物均被有意排除在 Git 外。外部源码引用记录在 `lab/knowledge_sources/import_manifest.json`（如适用）。
+安装、只读查看命令和安全边界见 [docs/SETUP.md](docs/SETUP.md)。历史报告中的代码、命令、hash、原始日志和状态枚举保持原样，不应脱离其证据范围重新解释。

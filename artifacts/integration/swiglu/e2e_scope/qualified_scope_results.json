@@ -1,0 +1,4130 @@
+{
+  "scopes": {
+    "TRANSFORMER_LAYER": {
+      "status": "PASS",
+      "scope": "TRANSFORMER_LAYER",
+      "compile_warmup_completed": true,
+      "warmups": 20,
+      "requested_repeats": 120,
+      "raw_samples": [
+        {
+          "sample_id": 1,
+          "whole_step_ms": 2.6768319606781006,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09507200121879578,
+          "swiglu_boundary_ms": [
+            0.09507200121879578
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 2,
+          "whole_step_ms": 1.643712043762207,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09571199864149094,
+          "swiglu_boundary_ms": [
+            0.09571199864149094
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 3,
+          "whole_step_ms": 2.0360000133514404,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09750399738550186,
+          "swiglu_boundary_ms": [
+            0.09750399738550186
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 4,
+          "whole_step_ms": 1.8306560516357422,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09683199971914291,
+          "swiglu_boundary_ms": [
+            0.09683199971914291
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 5,
+          "whole_step_ms": 2.828000068664551,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.20742399990558624,
+          "swiglu_boundary_ms": [
+            0.20742399990558624
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 6,
+          "whole_step_ms": 2.0952959060668945,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10047999769449234,
+          "swiglu_boundary_ms": [
+            0.10047999769449234
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 7,
+          "whole_step_ms": 2.534912109375,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09545599669218063,
+          "swiglu_boundary_ms": [
+            0.09545599669218063
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 8,
+          "whole_step_ms": 1.629088044166565,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09043200314044952,
+          "swiglu_boundary_ms": [
+            0.09043200314044952
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 9,
+          "whole_step_ms": 1.9759360551834106,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09583999961614609,
+          "swiglu_boundary_ms": [
+            0.09583999961614609
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 10,
+          "whole_step_ms": 3.581023931503296,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.35836800932884216,
+          "swiglu_boundary_ms": [
+            0.35836800932884216
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 11,
+          "whole_step_ms": 1.932800054550171,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09219200164079666,
+          "swiglu_boundary_ms": [
+            0.09219200164079666
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 12,
+          "whole_step_ms": 1.7570559978485107,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08991999924182892,
+          "swiglu_boundary_ms": [
+            0.08991999924182892
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 13,
+          "whole_step_ms": 2.22873592376709,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.005727999843657017,
+          "swiglu_boundary_ms": [
+            0.005727999843657017
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 14,
+          "whole_step_ms": 1.9163199663162231,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09548799693584442,
+          "swiglu_boundary_ms": [
+            0.09548799693584442
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 15,
+          "whole_step_ms": 2.281856060028076,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09481599926948547,
+          "swiglu_boundary_ms": [
+            0.09481599926948547
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 16,
+          "whole_step_ms": 1.9706560373306274,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09382399916648865,
+          "swiglu_boundary_ms": [
+            0.09382399916648865
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 17,
+          "whole_step_ms": 1.8572479486465454,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09139200299978256,
+          "swiglu_boundary_ms": [
+            0.09139200299978256
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 18,
+          "whole_step_ms": 1.8270080089569092,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08972799777984619,
+          "swiglu_boundary_ms": [
+            0.08972799777984619
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 19,
+          "whole_step_ms": 2.4544639587402344,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.355648010969162,
+          "swiglu_boundary_ms": [
+            0.355648010969162
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 20,
+          "whole_step_ms": 2.2948479652404785,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1265600025653839,
+          "swiglu_boundary_ms": [
+            0.1265600025653839
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 21,
+          "whole_step_ms": 2.035264015197754,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09798400104045868,
+          "swiglu_boundary_ms": [
+            0.09798400104045868
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 22,
+          "whole_step_ms": 2.879456043243408,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09366399794816971,
+          "swiglu_boundary_ms": [
+            0.09366399794816971
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 23,
+          "whole_step_ms": 1.88099205493927,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08937600255012512,
+          "swiglu_boundary_ms": [
+            0.08937600255012512
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 24,
+          "whole_step_ms": 1.877568006515503,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09321600198745728,
+          "swiglu_boundary_ms": [
+            0.09321600198745728
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 25,
+          "whole_step_ms": 3.046880006790161,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10371199995279312,
+          "swiglu_boundary_ms": [
+            0.10371199995279312
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 26,
+          "whole_step_ms": 1.900607943534851,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09302400052547455,
+          "swiglu_boundary_ms": [
+            0.09302400052547455
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 27,
+          "whole_step_ms": 1.8270399570465088,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0926079973578453,
+          "swiglu_boundary_ms": [
+            0.0926079973578453
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 28,
+          "whole_step_ms": 1.8589119911193848,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.091839998960495,
+          "swiglu_boundary_ms": [
+            0.091839998960495
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 29,
+          "whole_step_ms": 1.9543360471725464,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09673599898815155,
+          "swiglu_boundary_ms": [
+            0.09673599898815155
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 30,
+          "whole_step_ms": 1.9777599573135376,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09216000139713287,
+          "swiglu_boundary_ms": [
+            0.09216000139713287
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 31,
+          "whole_step_ms": 2.0089919567108154,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09571199864149094,
+          "swiglu_boundary_ms": [
+            0.09571199864149094
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 32,
+          "whole_step_ms": 1.8241920471191406,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09385599941015244,
+          "swiglu_boundary_ms": [
+            0.09385599941015244
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 33,
+          "whole_step_ms": 1.774623990058899,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09232000261545181,
+          "swiglu_boundary_ms": [
+            0.09232000261545181
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 34,
+          "whole_step_ms": 1.862720012664795,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09094399958848953,
+          "swiglu_boundary_ms": [
+            0.09094399958848953
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 35,
+          "whole_step_ms": 2.2295360565185547,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10198400169610977,
+          "swiglu_boundary_ms": [
+            0.10198400169610977
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 36,
+          "whole_step_ms": 2.1437759399414062,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10659199953079224,
+          "swiglu_boundary_ms": [
+            0.10659199953079224
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 37,
+          "whole_step_ms": 1.8565759658813477,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09548799693584442,
+          "swiglu_boundary_ms": [
+            0.09548799693584442
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 38,
+          "whole_step_ms": 1.8409919738769531,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09068799763917923,
+          "swiglu_boundary_ms": [
+            0.09068799763917923
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 39,
+          "whole_step_ms": 1.9002560377120972,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09030400216579437,
+          "swiglu_boundary_ms": [
+            0.09030400216579437
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 40,
+          "whole_step_ms": 1.9459199905395508,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09644799679517746,
+          "swiglu_boundary_ms": [
+            0.09644799679517746
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 41,
+          "whole_step_ms": 2.019007921218872,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09619200229644775,
+          "swiglu_boundary_ms": [
+            0.09619200229644775
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 42,
+          "whole_step_ms": 1.8705919981002808,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09459199756383896,
+          "swiglu_boundary_ms": [
+            0.09459199756383896
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 43,
+          "whole_step_ms": 2.5561599731445312,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.14470399916172028,
+          "swiglu_boundary_ms": [
+            0.14470399916172028
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 44,
+          "whole_step_ms": 1.9309439659118652,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09270399808883667,
+          "swiglu_boundary_ms": [
+            0.09270399808883667
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 45,
+          "whole_step_ms": 1.9270399808883667,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09167999774217606,
+          "swiglu_boundary_ms": [
+            0.09167999774217606
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 46,
+          "whole_step_ms": 3.323359966278076,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09644799679517746,
+          "swiglu_boundary_ms": [
+            0.09644799679517746
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 47,
+          "whole_step_ms": 2.0510079860687256,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09561599791049957,
+          "swiglu_boundary_ms": [
+            0.09561599791049957
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 48,
+          "whole_step_ms": 1.853376030921936,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0907839983701706,
+          "swiglu_boundary_ms": [
+            0.0907839983701706
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 49,
+          "whole_step_ms": 2.0280001163482666,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0928959995508194,
+          "swiglu_boundary_ms": [
+            0.0928959995508194
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 50,
+          "whole_step_ms": 2.143104076385498,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09267199784517288,
+          "swiglu_boundary_ms": [
+            0.09267199784517288
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 51,
+          "whole_step_ms": 2.385983943939209,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1218239963054657,
+          "swiglu_boundary_ms": [
+            0.1218239963054657
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 52,
+          "whole_step_ms": 1.9043840169906616,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09571199864149094,
+          "swiglu_boundary_ms": [
+            0.09571199864149094
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 53,
+          "whole_step_ms": 1.8328319787979126,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08739200234413147,
+          "swiglu_boundary_ms": [
+            0.08739200234413147
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 54,
+          "whole_step_ms": 1.8819199800491333,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08796799927949905,
+          "swiglu_boundary_ms": [
+            0.08796799927949905
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 55,
+          "whole_step_ms": 1.8071039915084839,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08771199733018875,
+          "swiglu_boundary_ms": [
+            0.08771199733018875
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 56,
+          "whole_step_ms": 2.007200002670288,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08710400015115738,
+          "swiglu_boundary_ms": [
+            0.08710400015115738
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 57,
+          "whole_step_ms": 2.0090560913085938,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09408000111579895,
+          "swiglu_boundary_ms": [
+            0.09408000111579895
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 58,
+          "whole_step_ms": 1.990015983581543,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0939520001411438,
+          "swiglu_boundary_ms": [
+            0.0939520001411438
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 59,
+          "whole_step_ms": 1.8248000144958496,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09014400094747543,
+          "swiglu_boundary_ms": [
+            0.09014400094747543
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 60,
+          "whole_step_ms": 1.8053439855575562,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08956799656152725,
+          "swiglu_boundary_ms": [
+            0.08956799656152725
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 61,
+          "whole_step_ms": 2.0688319206237793,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09852799773216248,
+          "swiglu_boundary_ms": [
+            0.09852799773216248
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 62,
+          "whole_step_ms": 1.9895999431610107,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09222400188446045,
+          "swiglu_boundary_ms": [
+            0.09222400188446045
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 63,
+          "whole_step_ms": 1.8746559619903564,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08767999708652496,
+          "swiglu_boundary_ms": [
+            0.08767999708652496
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 64,
+          "whole_step_ms": 1.7807999849319458,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08860799670219421,
+          "swiglu_boundary_ms": [
+            0.08860799670219421
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 65,
+          "whole_step_ms": 1.812000036239624,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0880960002541542,
+          "swiglu_boundary_ms": [
+            0.0880960002541542
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 66,
+          "whole_step_ms": 1.7400000095367432,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08720000088214874,
+          "swiglu_boundary_ms": [
+            0.08720000088214874
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 67,
+          "whole_step_ms": 1.8743679523468018,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08972799777984619,
+          "swiglu_boundary_ms": [
+            0.08972799777984619
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 68,
+          "whole_step_ms": 1.8124159574508667,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08972799777984619,
+          "swiglu_boundary_ms": [
+            0.08972799777984619
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 69,
+          "whole_step_ms": 1.921504020690918,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08892799913883209,
+          "swiglu_boundary_ms": [
+            0.08892799913883209
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 70,
+          "whole_step_ms": 1.828320026397705,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0894400030374527,
+          "swiglu_boundary_ms": [
+            0.0894400030374527
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 71,
+          "whole_step_ms": 1.9563839435577393,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09164799749851227,
+          "swiglu_boundary_ms": [
+            0.09164799749851227
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 72,
+          "whole_step_ms": 1.8834559917449951,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09529600292444229,
+          "swiglu_boundary_ms": [
+            0.09529600292444229
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 73,
+          "whole_step_ms": 1.8379520177841187,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0878399983048439,
+          "swiglu_boundary_ms": [
+            0.0878399983048439
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 74,
+          "whole_step_ms": 1.99452805519104,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09120000153779984,
+          "swiglu_boundary_ms": [
+            0.09120000153779984
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 75,
+          "whole_step_ms": 1.8723200559616089,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09536000341176987,
+          "swiglu_boundary_ms": [
+            0.09536000341176987
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 76,
+          "whole_step_ms": 1.8468799591064453,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09273599833250046,
+          "swiglu_boundary_ms": [
+            0.09273599833250046
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 77,
+          "whole_step_ms": 1.9649280309677124,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09273599833250046,
+          "swiglu_boundary_ms": [
+            0.09273599833250046
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 78,
+          "whole_step_ms": 2.473504066467285,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09145600348711014,
+          "swiglu_boundary_ms": [
+            0.09145600348711014
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 79,
+          "whole_step_ms": 2.060703992843628,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09824000298976898,
+          "swiglu_boundary_ms": [
+            0.09824000298976898
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 80,
+          "whole_step_ms": 1.969472050666809,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09206400066614151,
+          "swiglu_boundary_ms": [
+            0.09206400066614151
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 81,
+          "whole_step_ms": 1.8557440042495728,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09177599847316742,
+          "swiglu_boundary_ms": [
+            0.09177599847316742
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 82,
+          "whole_step_ms": 1.8555840253829956,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08908800035715103,
+          "swiglu_boundary_ms": [
+            0.08908800035715103
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 83,
+          "whole_step_ms": 1.7652479410171509,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08928000181913376,
+          "swiglu_boundary_ms": [
+            0.08928000181913376
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 84,
+          "whole_step_ms": 1.8078720569610596,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0883840024471283,
+          "swiglu_boundary_ms": [
+            0.0883840024471283
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 85,
+          "whole_step_ms": 1.9321279525756836,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09052799642086029,
+          "swiglu_boundary_ms": [
+            0.09052799642086029
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 86,
+          "whole_step_ms": 1.9045439958572388,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09238400310277939,
+          "swiglu_boundary_ms": [
+            0.09238400310277939
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 87,
+          "whole_step_ms": 1.888543963432312,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09148799628019333,
+          "swiglu_boundary_ms": [
+            0.09148799628019333
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 88,
+          "whole_step_ms": 1.8872319459915161,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08755200356245041,
+          "swiglu_boundary_ms": [
+            0.08755200356245041
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 89,
+          "whole_step_ms": 1.9217280149459839,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08988799899816513,
+          "swiglu_boundary_ms": [
+            0.08988799899816513
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 90,
+          "whole_step_ms": 1.827232003211975,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08828800171613693,
+          "swiglu_boundary_ms": [
+            0.08828800171613693
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 91,
+          "whole_step_ms": 1.8659839630126953,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08828800171613693,
+          "swiglu_boundary_ms": [
+            0.08828800171613693
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 92,
+          "whole_step_ms": 2.459455966949463,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08851200342178345,
+          "swiglu_boundary_ms": [
+            0.08851200342178345
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 93,
+          "whole_step_ms": 1.8867520093917847,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08892799913883209,
+          "swiglu_boundary_ms": [
+            0.08892799913883209
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 94,
+          "whole_step_ms": 1.8022079467773438,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08835200220346451,
+          "swiglu_boundary_ms": [
+            0.08835200220346451
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 95,
+          "whole_step_ms": 1.8354560136795044,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08835200220346451,
+          "swiglu_boundary_ms": [
+            0.08835200220346451
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 96,
+          "whole_step_ms": 1.7990399599075317,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08787199854850769,
+          "swiglu_boundary_ms": [
+            0.08787199854850769
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 97,
+          "whole_step_ms": 1.8214720487594604,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08457600325345993,
+          "swiglu_boundary_ms": [
+            0.08457600325345993
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 98,
+          "whole_step_ms": 1.7344000339508057,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0875839963555336,
+          "swiglu_boundary_ms": [
+            0.0875839963555336
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 99,
+          "whole_step_ms": 1.7934080362319946,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08617600053548813,
+          "swiglu_boundary_ms": [
+            0.08617600053548813
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 100,
+          "whole_step_ms": 1.9464000463485718,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08899199962615967,
+          "swiglu_boundary_ms": [
+            0.08899199962615967
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 101,
+          "whole_step_ms": 2.487776041030884,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10851199924945831,
+          "swiglu_boundary_ms": [
+            0.10851199924945831
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 102,
+          "whole_step_ms": 2.507807970046997,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09734400361776352,
+          "swiglu_boundary_ms": [
+            0.09734400361776352
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 103,
+          "whole_step_ms": 1.999616026878357,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09324800223112106,
+          "swiglu_boundary_ms": [
+            0.09324800223112106
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 104,
+          "whole_step_ms": 1.9864000082015991,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09094399958848953,
+          "swiglu_boundary_ms": [
+            0.09094399958848953
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 105,
+          "whole_step_ms": 1.9866559505462646,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09196799993515015,
+          "swiglu_boundary_ms": [
+            0.09196799993515015
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 106,
+          "whole_step_ms": 1.8875839710235596,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09641599655151367,
+          "swiglu_boundary_ms": [
+            0.09641599655151367
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 107,
+          "whole_step_ms": 2.07590389251709,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09228800237178802,
+          "swiglu_boundary_ms": [
+            0.09228800237178802
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 108,
+          "whole_step_ms": 2.0938560962677,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10659199953079224,
+          "swiglu_boundary_ms": [
+            0.10659199953079224
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 109,
+          "whole_step_ms": 1.8769279718399048,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09443199634552002,
+          "swiglu_boundary_ms": [
+            0.09443199634552002
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 110,
+          "whole_step_ms": 1.8030400276184082,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09142400324344635,
+          "swiglu_boundary_ms": [
+            0.09142400324344635
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 111,
+          "whole_step_ms": 1.7843519449234009,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09136000275611877,
+          "swiglu_boundary_ms": [
+            0.09136000275611877
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 112,
+          "whole_step_ms": 1.9506880044937134,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09055999666452408,
+          "swiglu_boundary_ms": [
+            0.09055999666452408
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 113,
+          "whole_step_ms": 2.023008108139038,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0926399976015091,
+          "swiglu_boundary_ms": [
+            0.0926399976015091
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 114,
+          "whole_step_ms": 2.057471990585327,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09398400038480759,
+          "swiglu_boundary_ms": [
+            0.09398400038480759
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 115,
+          "whole_step_ms": 2.065216064453125,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09267199784517288,
+          "swiglu_boundary_ms": [
+            0.09267199784517288
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 116,
+          "whole_step_ms": 1.8711680173873901,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08848000317811966,
+          "swiglu_boundary_ms": [
+            0.08848000317811966
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 117,
+          "whole_step_ms": 1.830880045890808,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08905600011348724,
+          "swiglu_boundary_ms": [
+            0.08905600011348724
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 118,
+          "whole_step_ms": 2.780224084854126,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.088128000497818,
+          "swiglu_boundary_ms": [
+            0.088128000497818
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 119,
+          "whole_step_ms": 1.8326719999313354,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08940800279378891,
+          "swiglu_boundary_ms": [
+            0.08940800279378891
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 120,
+          "whole_step_ms": 1.8731199502944946,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0888959988951683,
+          "swiglu_boundary_ms": [
+            0.0888959988951683
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        }
+      ],
+      "whole_step_statistics_ms": {
+        "count": 120,
+        "median": 1.910431981086731,
+        "mean": 2.0171458681424457,
+        "stdev": 0.317372614377961,
+        "cv": 0.15733746348756814,
+        "min": 1.629088044166565,
+        "max": 3.581023931503296,
+        "p10": 1.8022079467773438,
+        "p90": 2.473504066467285
+      },
+      "swiglu_total_statistics_ms": {
+        "count": 120,
+        "median": 0.09211200103163719,
+        "mean": 0.09803493334135661,
+        "stdev": 0.03709672119220862,
+        "cv": 0.3784030847763034,
+        "min": 0.005727999843657017,
+        "max": 0.35836800932884216,
+        "p10": 0.08787199854850769,
+        "p90": 0.10047999769449234
+      },
+      "fraction_statistics": {
+        "count": 120,
+        "median": 0.0480102192969665,
+        "mean": 0.04849743129792098,
+        "stdev": 0.012007551948882667,
+        "cv": 0.24759150386996712,
+        "min": 0.0025700666384805898,
+        "max": 0.14489844501595373,
+        "p10": 0.04324194931375941,
+        "p90": 0.05120066308445709,
+        "ratio_of_medians": 0.048215273793333464,
+        "median_per_step_fraction": 0.0480102192969665,
+        "sample_count": 120
+      },
+      "measurement_status": "MEASUREMENT_COMPLETE",
+      "qualification_status": "QUALIFICATION_UNSTABLE",
+      "outlier_count": 0,
+      "bimodality_heuristic": {
+        "whole": "NOT_DETECTED",
+        "swiglu": "NOT_DETECTED"
+      },
+      "source_commit": "5be9626709af2722333bf54797c954c09edeada3"
+    },
+    "TRANSFORMER_BLOCK": {
+      "status": "PASS",
+      "scope": "TRANSFORMER_BLOCK",
+      "compile_warmup_completed": true,
+      "warmups": 20,
+      "requested_repeats": 120,
+      "raw_samples": [
+        {
+          "sample_id": 1,
+          "whole_step_ms": 2.8967039585113525,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0910400003194809,
+          "swiglu_boundary_ms": [
+            0.0910400003194809
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 2,
+          "whole_step_ms": 1.9335999488830566,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08848000317811966,
+          "swiglu_boundary_ms": [
+            0.08848000317811966
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 3,
+          "whole_step_ms": 1.813599944114685,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0936959981918335,
+          "swiglu_boundary_ms": [
+            0.0936959981918335
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 4,
+          "whole_step_ms": 1.9986560344696045,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08700799942016602,
+          "swiglu_boundary_ms": [
+            0.08700799942016602
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 5,
+          "whole_step_ms": 1.9312959909439087,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09372799843549728,
+          "swiglu_boundary_ms": [
+            0.09372799843549728
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 6,
+          "whole_step_ms": 1.9377599954605103,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08748800307512283,
+          "swiglu_boundary_ms": [
+            0.08748800307512283
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 7,
+          "whole_step_ms": 2.0590078830718994,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09513600170612335,
+          "swiglu_boundary_ms": [
+            0.09513600170612335
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 8,
+          "whole_step_ms": 3.105247974395752,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09961599856615067,
+          "swiglu_boundary_ms": [
+            0.09961599856615067
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 9,
+          "whole_step_ms": 2.1511359214782715,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09532800316810608,
+          "swiglu_boundary_ms": [
+            0.09532800316810608
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 10,
+          "whole_step_ms": 2.0549440383911133,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09244800359010696,
+          "swiglu_boundary_ms": [
+            0.09244800359010696
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 11,
+          "whole_step_ms": 2.2424960136413574,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09283199906349182,
+          "swiglu_boundary_ms": [
+            0.09283199906349182
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 12,
+          "whole_step_ms": 2.241215944290161,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.11548800021409988,
+          "swiglu_boundary_ms": [
+            0.11548800021409988
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 13,
+          "whole_step_ms": 2.0764479637145996,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0960640013217926,
+          "swiglu_boundary_ms": [
+            0.0960640013217926
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 14,
+          "whole_step_ms": 2.979680061340332,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09904000163078308,
+          "swiglu_boundary_ms": [
+            0.09904000163078308
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 15,
+          "whole_step_ms": 2.0340800285339355,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09523200243711472,
+          "swiglu_boundary_ms": [
+            0.09523200243711472
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 16,
+          "whole_step_ms": 1.9739840030670166,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09212800115346909,
+          "swiglu_boundary_ms": [
+            0.09212800115346909
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 17,
+          "whole_step_ms": 2.1490559577941895,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10076799988746643,
+          "swiglu_boundary_ms": [
+            0.10076799988746643
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 18,
+          "whole_step_ms": 2.0156800746917725,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09126400202512741,
+          "swiglu_boundary_ms": [
+            0.09126400202512741
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 19,
+          "whole_step_ms": 2.0320000648498535,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09366399794816971,
+          "swiglu_boundary_ms": [
+            0.09366399794816971
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 20,
+          "whole_step_ms": 1.849984049797058,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08799999952316284,
+          "swiglu_boundary_ms": [
+            0.08799999952316284
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 21,
+          "whole_step_ms": 1.9661120176315308,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0910400003194809,
+          "swiglu_boundary_ms": [
+            0.0910400003194809
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 22,
+          "whole_step_ms": 2.05295991897583,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09465599805116653,
+          "swiglu_boundary_ms": [
+            0.09465599805116653
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 23,
+          "whole_step_ms": 2.296544075012207,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1459520012140274,
+          "swiglu_boundary_ms": [
+            0.1459520012140274
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 24,
+          "whole_step_ms": 1.9749120473861694,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09785600006580353,
+          "swiglu_boundary_ms": [
+            0.09785600006580353
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 25,
+          "whole_step_ms": 2.032831907272339,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.091839998960495,
+          "swiglu_boundary_ms": [
+            0.091839998960495
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 26,
+          "whole_step_ms": 2.072256088256836,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09241600334644318,
+          "swiglu_boundary_ms": [
+            0.09241600334644318
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 27,
+          "whole_step_ms": 1.998304009437561,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09241600334644318,
+          "swiglu_boundary_ms": [
+            0.09241600334644318
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 28,
+          "whole_step_ms": 2.15395188331604,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09254399687051773,
+          "swiglu_boundary_ms": [
+            0.09254399687051773
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 29,
+          "whole_step_ms": 2.266848087310791,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10380800068378448,
+          "swiglu_boundary_ms": [
+            0.10380800068378448
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 30,
+          "whole_step_ms": 1.9859520196914673,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08937600255012512,
+          "swiglu_boundary_ms": [
+            0.08937600255012512
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 31,
+          "whole_step_ms": 2.0407040119171143,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09196799993515015,
+          "swiglu_boundary_ms": [
+            0.09196799993515015
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 32,
+          "whole_step_ms": 2.782815933227539,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.15600000321865082,
+          "swiglu_boundary_ms": [
+            0.15600000321865082
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 33,
+          "whole_step_ms": 2.169055938720703,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10230399668216705,
+          "swiglu_boundary_ms": [
+            0.10230399668216705
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 34,
+          "whole_step_ms": 1.9486720561981201,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09567999839782715,
+          "swiglu_boundary_ms": [
+            0.09567999839782715
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 35,
+          "whole_step_ms": 1.934559941291809,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09017600119113922,
+          "swiglu_boundary_ms": [
+            0.09017600119113922
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 36,
+          "whole_step_ms": 2.8372480869293213,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.20576000213623047,
+          "swiglu_boundary_ms": [
+            0.20576000213623047
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 37,
+          "whole_step_ms": 2.273344039916992,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10739199817180634,
+          "swiglu_boundary_ms": [
+            0.10739199817180634
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 38,
+          "whole_step_ms": 1.907871961593628,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09312000125646591,
+          "swiglu_boundary_ms": [
+            0.09312000125646591
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 39,
+          "whole_step_ms": 2.907104015350342,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09123200178146362,
+          "swiglu_boundary_ms": [
+            0.09123200178146362
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 40,
+          "whole_step_ms": 2.151711940765381,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09980800002813339,
+          "swiglu_boundary_ms": [
+            0.09980800002813339
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 41,
+          "whole_step_ms": 3.0154240131378174,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09497600048780441,
+          "swiglu_boundary_ms": [
+            0.09497600048780441
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 42,
+          "whole_step_ms": 2.231264114379883,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09587199985980988,
+          "swiglu_boundary_ms": [
+            0.09587199985980988
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 43,
+          "whole_step_ms": 1.9748799800872803,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09891200065612793,
+          "swiglu_boundary_ms": [
+            0.09891200065612793
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 44,
+          "whole_step_ms": 2.11628794670105,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09737599641084671,
+          "swiglu_boundary_ms": [
+            0.09737599641084671
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 45,
+          "whole_step_ms": 2.0598080158233643,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0958079993724823,
+          "swiglu_boundary_ms": [
+            0.0958079993724823
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 46,
+          "whole_step_ms": 1.9950720071792603,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09126400202512741,
+          "swiglu_boundary_ms": [
+            0.09126400202512741
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 47,
+          "whole_step_ms": 1.9208320379257202,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09171199798583984,
+          "swiglu_boundary_ms": [
+            0.09171199798583984
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 48,
+          "whole_step_ms": 2.2436161041259766,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09545599669218063,
+          "swiglu_boundary_ms": [
+            0.09545599669218063
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 49,
+          "whole_step_ms": 2.199615955352783,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10543999820947647,
+          "swiglu_boundary_ms": [
+            0.10543999820947647
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 50,
+          "whole_step_ms": 2.0479040145874023,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09296000003814697,
+          "swiglu_boundary_ms": [
+            0.09296000003814697
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 51,
+          "whole_step_ms": 1.8431999683380127,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08975999802350998,
+          "swiglu_boundary_ms": [
+            0.08975999802350998
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 52,
+          "whole_step_ms": 2.2404160499572754,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08876799792051315,
+          "swiglu_boundary_ms": [
+            0.08876799792051315
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 53,
+          "whole_step_ms": 3.0988481044769287,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.18083199858665466,
+          "swiglu_boundary_ms": [
+            0.18083199858665466
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 54,
+          "whole_step_ms": 2.196160078048706,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09782399982213974,
+          "swiglu_boundary_ms": [
+            0.09782399982213974
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 55,
+          "whole_step_ms": 2.016416072845459,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09487999975681305,
+          "swiglu_boundary_ms": [
+            0.09487999975681305
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 56,
+          "whole_step_ms": 2.0722880363464355,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09574399888515472,
+          "swiglu_boundary_ms": [
+            0.09574399888515472
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 57,
+          "whole_step_ms": 2.243680000305176,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1021760031580925,
+          "swiglu_boundary_ms": [
+            0.1021760031580925
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 58,
+          "whole_step_ms": 2.1055679321289062,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0942080020904541,
+          "swiglu_boundary_ms": [
+            0.0942080020904541
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 59,
+          "whole_step_ms": 1.8662079572677612,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09142400324344635,
+          "swiglu_boundary_ms": [
+            0.09142400324344635
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 60,
+          "whole_step_ms": 2.2824320793151855,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08963199704885483,
+          "swiglu_boundary_ms": [
+            0.08963199704885483
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 61,
+          "whole_step_ms": 2.1967039108276367,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.11939200013875961,
+          "swiglu_boundary_ms": [
+            0.11939200013875961
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 62,
+          "whole_step_ms": 2.044127941131592,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09536000341176987,
+          "swiglu_boundary_ms": [
+            0.09536000341176987
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 63,
+          "whole_step_ms": 1.8995519876480103,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08991999924182892,
+          "swiglu_boundary_ms": [
+            0.08991999924182892
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 64,
+          "whole_step_ms": 1.882591962814331,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09036800265312195,
+          "swiglu_boundary_ms": [
+            0.09036800265312195
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 65,
+          "whole_step_ms": 2.421567916870117,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.11795199662446976,
+          "swiglu_boundary_ms": [
+            0.11795199662446976
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 66,
+          "whole_step_ms": 2.044032096862793,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.095551997423172,
+          "swiglu_boundary_ms": [
+            0.095551997423172
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 67,
+          "whole_step_ms": 1.936735987663269,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09257599711418152,
+          "swiglu_boundary_ms": [
+            0.09257599711418152
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 68,
+          "whole_step_ms": 1.9703680276870728,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0891840010881424,
+          "swiglu_boundary_ms": [
+            0.0891840010881424
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 69,
+          "whole_step_ms": 2.4824960231781006,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10595200210809708,
+          "swiglu_boundary_ms": [
+            0.10595200210809708
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 70,
+          "whole_step_ms": 2.0776000022888184,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09910400211811066,
+          "swiglu_boundary_ms": [
+            0.09910400211811066
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 71,
+          "whole_step_ms": 1.8940800428390503,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09161599725484848,
+          "swiglu_boundary_ms": [
+            0.09161599725484848
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 72,
+          "whole_step_ms": 1.8805439472198486,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08931200206279755,
+          "swiglu_boundary_ms": [
+            0.08931200206279755
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 73,
+          "whole_step_ms": 2.3812479972839355,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.11670400202274323,
+          "swiglu_boundary_ms": [
+            0.11670400202274323
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 74,
+          "whole_step_ms": 2.144416093826294,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10012800246477127,
+          "swiglu_boundary_ms": [
+            0.10012800246477127
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 75,
+          "whole_step_ms": 1.9638400077819824,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09116800129413605,
+          "swiglu_boundary_ms": [
+            0.09116800129413605
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 76,
+          "whole_step_ms": 1.9667199850082397,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08883199840784073,
+          "swiglu_boundary_ms": [
+            0.08883199840784073
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 77,
+          "whole_step_ms": 2.2407360076904297,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08860799670219421,
+          "swiglu_boundary_ms": [
+            0.08860799670219421
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 78,
+          "whole_step_ms": 2.4580159187316895,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.13625599443912506,
+          "swiglu_boundary_ms": [
+            0.13625599443912506
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 79,
+          "whole_step_ms": 2.099168062210083,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09785600006580353,
+          "swiglu_boundary_ms": [
+            0.09785600006580353
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 80,
+          "whole_step_ms": 1.930016040802002,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09158399701118469,
+          "swiglu_boundary_ms": [
+            0.09158399701118469
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 81,
+          "whole_step_ms": 1.9529279470443726,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09187199920415878,
+          "swiglu_boundary_ms": [
+            0.09187199920415878
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 82,
+          "whole_step_ms": 2.157151937484741,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.16713599860668182,
+          "swiglu_boundary_ms": [
+            0.16713599860668182
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 83,
+          "whole_step_ms": 2.06166410446167,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09577599912881851,
+          "swiglu_boundary_ms": [
+            0.09577599912881851
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 84,
+          "whole_step_ms": 1.9101760387420654,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08796799927949905,
+          "swiglu_boundary_ms": [
+            0.08796799927949905
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 85,
+          "whole_step_ms": 1.8573440313339233,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08687999844551086,
+          "swiglu_boundary_ms": [
+            0.08687999844551086
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 86,
+          "whole_step_ms": 2.6727681159973145,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.19571200013160706,
+          "swiglu_boundary_ms": [
+            0.19571200013160706
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 87,
+          "whole_step_ms": 2.112895965576172,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0990080013871193,
+          "swiglu_boundary_ms": [
+            0.0990080013871193
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 88,
+          "whole_step_ms": 1.8388160467147827,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09071999788284302,
+          "swiglu_boundary_ms": [
+            0.09071999788284302
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 89,
+          "whole_step_ms": 1.817247986793518,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08915200084447861,
+          "swiglu_boundary_ms": [
+            0.08915200084447861
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 90,
+          "whole_step_ms": 2.4280319213867188,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0944959968328476,
+          "swiglu_boundary_ms": [
+            0.0944959968328476
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 91,
+          "whole_step_ms": 2.2171199321746826,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10505600273609161,
+          "swiglu_boundary_ms": [
+            0.10505600273609161
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 92,
+          "whole_step_ms": 1.912608027458191,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09065599739551544,
+          "swiglu_boundary_ms": [
+            0.09065599739551544
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 93,
+          "whole_step_ms": 1.8473600149154663,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08822400122880936,
+          "swiglu_boundary_ms": [
+            0.08822400122880936
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 94,
+          "whole_step_ms": 2.356735944747925,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0894400030374527,
+          "swiglu_boundary_ms": [
+            0.0894400030374527
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 95,
+          "whole_step_ms": 2.304640054702759,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.12009599804878235,
+          "swiglu_boundary_ms": [
+            0.12009599804878235
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 96,
+          "whole_step_ms": 1.985376000404358,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09551999717950821,
+          "swiglu_boundary_ms": [
+            0.09551999717950821
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 97,
+          "whole_step_ms": 1.8414720296859741,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09244800359010696,
+          "swiglu_boundary_ms": [
+            0.09244800359010696
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 98,
+          "whole_step_ms": 2.096287965774536,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09001599997282028,
+          "swiglu_boundary_ms": [
+            0.09001599997282028
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 99,
+          "whole_step_ms": 2.897536039352417,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.18547199666500092,
+          "swiglu_boundary_ms": [
+            0.18547199666500092
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 100,
+          "whole_step_ms": 2.03654408454895,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09398400038480759,
+          "swiglu_boundary_ms": [
+            0.09398400038480759
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 101,
+          "whole_step_ms": 1.8909759521484375,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09113600105047226,
+          "swiglu_boundary_ms": [
+            0.09113600105047226
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 102,
+          "whole_step_ms": 2.191551923751831,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0907519981265068,
+          "swiglu_boundary_ms": [
+            0.0907519981265068
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 103,
+          "whole_step_ms": 2.1613121032714844,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1125119999051094,
+          "swiglu_boundary_ms": [
+            0.1125119999051094
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 104,
+          "whole_step_ms": 1.9410239458084106,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09055999666452408,
+          "swiglu_boundary_ms": [
+            0.09055999666452408
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 105,
+          "whole_step_ms": 1.9214719533920288,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09216000139713287,
+          "swiglu_boundary_ms": [
+            0.09216000139713287
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 106,
+          "whole_step_ms": 1.9831680059432983,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08979199826717377,
+          "swiglu_boundary_ms": [
+            0.08979199826717377
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 107,
+          "whole_step_ms": 2.7149760723114014,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10675200074911118,
+          "swiglu_boundary_ms": [
+            0.10675200074911118
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 108,
+          "whole_step_ms": 2.129024028778076,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10646399855613708,
+          "swiglu_boundary_ms": [
+            0.10646399855613708
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 109,
+          "whole_step_ms": 1.8801599740982056,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09190399944782257,
+          "swiglu_boundary_ms": [
+            0.09190399944782257
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 110,
+          "whole_step_ms": 1.8764480352401733,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09046400338411331,
+          "swiglu_boundary_ms": [
+            0.09046400338411331
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 111,
+          "whole_step_ms": 2.6013760566711426,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1281599998474121,
+          "swiglu_boundary_ms": [
+            0.1281599998474121
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 112,
+          "whole_step_ms": 2.0723841190338135,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09775999933481216,
+          "swiglu_boundary_ms": [
+            0.09775999933481216
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 113,
+          "whole_step_ms": 1.8078720569610596,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09353599697351456,
+          "swiglu_boundary_ms": [
+            0.09353599697351456
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 114,
+          "whole_step_ms": 1.8484159708023071,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09564799815416336,
+          "swiglu_boundary_ms": [
+            0.09564799815416336
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 115,
+          "whole_step_ms": 2.1022720336914062,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09136000275611877,
+          "swiglu_boundary_ms": [
+            0.09136000275611877
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 116,
+          "whole_step_ms": 2.21395206451416,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10844799876213074,
+          "swiglu_boundary_ms": [
+            0.10844799876213074
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 117,
+          "whole_step_ms": 1.9611200094223022,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09404800087213516,
+          "swiglu_boundary_ms": [
+            0.09404800087213516
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 118,
+          "whole_step_ms": 1.941472053527832,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08835200220346451,
+          "swiglu_boundary_ms": [
+            0.08835200220346451
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 119,
+          "whole_step_ms": 2.082655906677246,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09212800115346909,
+          "swiglu_boundary_ms": [
+            0.09212800115346909
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 120,
+          "whole_step_ms": 2.1244800090789795,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09894400089979172,
+          "swiglu_boundary_ms": [
+            0.09894400089979172
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        }
+      ],
+      "whole_step_statistics_ms": {
+        "count": 120,
+        "median": 2.059407949447632,
+        "mean": 2.13888027270635,
+        "stdev": 0.29173721626224675,
+        "cv": 0.13639717004501065,
+        "min": 1.8078720569610596,
+        "max": 3.105247974395752,
+        "p10": 1.8764480352401733,
+        "p90": 2.6013760566711426
+      },
+      "swiglu_total_statistics_ms": {
+        "count": 120,
+        "median": 0.09385599941015244,
+        "mean": 0.10072293331225714,
+        "stdev": 0.021283841858754936,
+        "cv": 0.21131078254811778,
+        "min": 0.08687999844551086,
+        "max": 0.20576000213623047,
+        "p10": 0.08915200084447861,
+        "p90": 0.11795199662446976
+      },
+      "fraction_statistics": {
+        "count": 120,
+        "median": 0.04668176503393112,
+        "mean": 0.047148063502337606,
+        "stdev": 0.006592277588588168,
+        "cv": 0.13982074975913533,
+        "min": 0.031382434649648766,
+        "max": 0.07747993810837632,
+        "p10": 0.04139672868927492,
+        "p90": 0.05174592714249663,
+        "ratio_of_medians": 0.0455742629503427,
+        "median_per_step_fraction": 0.04668176503393112,
+        "sample_count": 120
+      },
+      "measurement_status": "MEASUREMENT_COMPLETE",
+      "qualification_status": "QUALIFICATION_UNSTABLE",
+      "outlier_count": 0,
+      "bimodality_heuristic": {
+        "whole": "NOT_DETECTED",
+        "swiglu": "NOT_DETECTED"
+      },
+      "source_commit": "5be9626709af2722333bf54797c954c09edeada3"
+    },
+    "MINIMAL_MODEL": {
+      "status": "PASS",
+      "scope": "MINIMAL_MODEL",
+      "compile_warmup_completed": true,
+      "warmups": 20,
+      "requested_repeats": 120,
+      "raw_samples": [
+        {
+          "sample_id": 1,
+          "whole_step_ms": 4.087488174438477,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.2199680060148239,
+          "swiglu_boundary_ms": [
+            0.2199680060148239
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 2,
+          "whole_step_ms": 4.730559825897217,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.2518079876899719,
+          "swiglu_boundary_ms": [
+            0.2518079876899719
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 3,
+          "whole_step_ms": 3.384255886077881,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1544959992170334,
+          "swiglu_boundary_ms": [
+            0.1544959992170334
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 4,
+          "whole_step_ms": 4.16326379776001,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1791680008172989,
+          "swiglu_boundary_ms": [
+            0.1791680008172989
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 5,
+          "whole_step_ms": 4.740096092224121,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.21324799954891205,
+          "swiglu_boundary_ms": [
+            0.21324799954891205
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 6,
+          "whole_step_ms": 4.2325439453125,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1738560050725937,
+          "swiglu_boundary_ms": [
+            0.1738560050725937
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 7,
+          "whole_step_ms": 2.977504014968872,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.14947199821472168,
+          "swiglu_boundary_ms": [
+            0.14947199821472168
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 8,
+          "whole_step_ms": 2.6051199436187744,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10665600001811981,
+          "swiglu_boundary_ms": [
+            0.10665600001811981
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 9,
+          "whole_step_ms": 2.570175886154175,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10063999891281128,
+          "swiglu_boundary_ms": [
+            0.10063999891281128
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 10,
+          "whole_step_ms": 2.7514240741729736,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.12624000012874603,
+          "swiglu_boundary_ms": [
+            0.12624000012874603
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 11,
+          "whole_step_ms": 2.9078400135040283,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.14822399616241455,
+          "swiglu_boundary_ms": [
+            0.14822399616241455
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 12,
+          "whole_step_ms": 2.699712038040161,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.11721599847078323,
+          "swiglu_boundary_ms": [
+            0.11721599847078323
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 13,
+          "whole_step_ms": 2.5269761085510254,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09539200365543365,
+          "swiglu_boundary_ms": [
+            0.09539200365543365
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 14,
+          "whole_step_ms": 2.4647040367126465,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10688000172376633,
+          "swiglu_boundary_ms": [
+            0.10688000172376633
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 15,
+          "whole_step_ms": 2.302720069885254,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0958079993724823,
+          "swiglu_boundary_ms": [
+            0.0958079993724823
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 16,
+          "whole_step_ms": 2.1754560470581055,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09273599833250046,
+          "swiglu_boundary_ms": [
+            0.09273599833250046
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 17,
+          "whole_step_ms": 2.4397120475769043,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09164799749851227,
+          "swiglu_boundary_ms": [
+            0.09164799749851227
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 18,
+          "whole_step_ms": 2.62390398979187,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.11203200370073318,
+          "swiglu_boundary_ms": [
+            0.11203200370073318
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 19,
+          "whole_step_ms": 3.094912052154541,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.13743999600410461,
+          "swiglu_boundary_ms": [
+            0.13743999600410461
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 20,
+          "whole_step_ms": 3.3235199451446533,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1404159963130951,
+          "swiglu_boundary_ms": [
+            0.1404159963130951
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 21,
+          "whole_step_ms": 3.3859519958496094,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.15878400206565857,
+          "swiglu_boundary_ms": [
+            0.15878400206565857
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 22,
+          "whole_step_ms": 3.1700479984283447,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.14524799585342407,
+          "swiglu_boundary_ms": [
+            0.14524799585342407
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 23,
+          "whole_step_ms": 3.1128640174865723,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1777919977903366,
+          "swiglu_boundary_ms": [
+            0.1777919977903366
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 24,
+          "whole_step_ms": 2.9345600605010986,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.13836799561977386,
+          "swiglu_boundary_ms": [
+            0.13836799561977386
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 25,
+          "whole_step_ms": 2.6789441108703613,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10547199845314026,
+          "swiglu_boundary_ms": [
+            0.10547199845314026
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 26,
+          "whole_step_ms": 2.4356799125671387,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.12179200351238251,
+          "swiglu_boundary_ms": [
+            0.12179200351238251
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 27,
+          "whole_step_ms": 2.735935926437378,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09244800359010696,
+          "swiglu_boundary_ms": [
+            0.09244800359010696
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 28,
+          "whole_step_ms": 2.56166410446167,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1380160003900528,
+          "swiglu_boundary_ms": [
+            0.1380160003900528
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 29,
+          "whole_step_ms": 2.2455999851226807,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09657599776983261,
+          "swiglu_boundary_ms": [
+            0.09657599776983261
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 30,
+          "whole_step_ms": 2.1352319717407227,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09126400202512741,
+          "swiglu_boundary_ms": [
+            0.09126400202512741
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 31,
+          "whole_step_ms": 2.703552007675171,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09491200000047684,
+          "swiglu_boundary_ms": [
+            0.09491200000047684
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 32,
+          "whole_step_ms": 2.477695941925049,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.11392000317573547,
+          "swiglu_boundary_ms": [
+            0.11392000317573547
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 33,
+          "whole_step_ms": 2.2620480060577393,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09516800194978714,
+          "swiglu_boundary_ms": [
+            0.09516800194978714
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 34,
+          "whole_step_ms": 2.1640000343322754,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09084799885749817,
+          "swiglu_boundary_ms": [
+            0.09084799885749817
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 35,
+          "whole_step_ms": 2.3143680095672607,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09667199850082397,
+          "swiglu_boundary_ms": [
+            0.09667199850082397
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 36,
+          "whole_step_ms": 2.354111909866333,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0926399976015091,
+          "swiglu_boundary_ms": [
+            0.0926399976015091
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 37,
+          "whole_step_ms": 2.4373440742492676,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09628800302743912,
+          "swiglu_boundary_ms": [
+            0.09628800302743912
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 38,
+          "whole_step_ms": 2.1783039569854736,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0915519967675209,
+          "swiglu_boundary_ms": [
+            0.0915519967675209
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 39,
+          "whole_step_ms": 2.3420801162719727,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09139200299978256,
+          "swiglu_boundary_ms": [
+            0.09139200299978256
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 40,
+          "whole_step_ms": 2.4564480781555176,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0990080013871193,
+          "swiglu_boundary_ms": [
+            0.0990080013871193
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 41,
+          "whole_step_ms": 2.477663993835449,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10646399855613708,
+          "swiglu_boundary_ms": [
+            0.10646399855613708
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 42,
+          "whole_step_ms": 2.3315839767456055,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09446399658918381,
+          "swiglu_boundary_ms": [
+            0.09446399658918381
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 43,
+          "whole_step_ms": 2.1798720359802246,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08835200220346451,
+          "swiglu_boundary_ms": [
+            0.08835200220346451
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 44,
+          "whole_step_ms": 2.3243839740753174,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09619200229644775,
+          "swiglu_boundary_ms": [
+            0.09619200229644775
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 45,
+          "whole_step_ms": 2.284575939178467,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09008000046014786,
+          "swiglu_boundary_ms": [
+            0.09008000046014786
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 46,
+          "whole_step_ms": 2.3152639865875244,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09545599669218063,
+          "swiglu_boundary_ms": [
+            0.09545599669218063
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 47,
+          "whole_step_ms": 2.2628159523010254,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09145600348711014,
+          "swiglu_boundary_ms": [
+            0.09145600348711014
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 48,
+          "whole_step_ms": 2.5037119388580322,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10867200046777725,
+          "swiglu_boundary_ms": [
+            0.10867200046777725
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 49,
+          "whole_step_ms": 2.2959039211273193,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09411200135946274,
+          "swiglu_boundary_ms": [
+            0.09411200135946274
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 50,
+          "whole_step_ms": 2.3932480812072754,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09286399930715561,
+          "swiglu_boundary_ms": [
+            0.09286399930715561
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 51,
+          "whole_step_ms": 2.2877440452575684,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09302400052547455,
+          "swiglu_boundary_ms": [
+            0.09302400052547455
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 52,
+          "whole_step_ms": 2.1291840076446533,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09363199770450592,
+          "swiglu_boundary_ms": [
+            0.09363199770450592
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 53,
+          "whole_step_ms": 2.1231040954589844,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09107200056314468,
+          "swiglu_boundary_ms": [
+            0.09107200056314468
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 54,
+          "whole_step_ms": 2.304192066192627,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09164799749851227,
+          "swiglu_boundary_ms": [
+            0.09164799749851227
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 55,
+          "whole_step_ms": 2.489824056625366,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10790400207042694,
+          "swiglu_boundary_ms": [
+            0.10790400207042694
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 56,
+          "whole_step_ms": 2.2056000232696533,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09443199634552002,
+          "swiglu_boundary_ms": [
+            0.09443199634552002
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 57,
+          "whole_step_ms": 2.1119039058685303,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09200000017881393,
+          "swiglu_boundary_ms": [
+            0.09200000017881393
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 58,
+          "whole_step_ms": 2.1123199462890625,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09267199784517288,
+          "swiglu_boundary_ms": [
+            0.09267199784517288
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 59,
+          "whole_step_ms": 2.284320116043091,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09068799763917923,
+          "swiglu_boundary_ms": [
+            0.09068799763917923
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 60,
+          "whole_step_ms": 2.2768959999084473,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09151999652385712,
+          "swiglu_boundary_ms": [
+            0.09151999652385712
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 61,
+          "whole_step_ms": 2.381056070327759,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1019200012087822,
+          "swiglu_boundary_ms": [
+            0.1019200012087822
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 62,
+          "whole_step_ms": 2.214911937713623,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09424000233411789,
+          "swiglu_boundary_ms": [
+            0.09424000233411789
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 63,
+          "whole_step_ms": 2.315232038497925,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09603200107812881,
+          "swiglu_boundary_ms": [
+            0.09603200107812881
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 64,
+          "whole_step_ms": 2.246079921722412,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0931520015001297,
+          "swiglu_boundary_ms": [
+            0.0931520015001297
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 65,
+          "whole_step_ms": 2.3867199420928955,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09312000125646591,
+          "swiglu_boundary_ms": [
+            0.09312000125646591
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 66,
+          "whole_step_ms": 2.3921918869018555,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10515200346708298,
+          "swiglu_boundary_ms": [
+            0.10515200346708298
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 67,
+          "whole_step_ms": 2.1407039165496826,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0907839983701706,
+          "swiglu_boundary_ms": [
+            0.0907839983701706
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 68,
+          "whole_step_ms": 2.198431968688965,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09145600348711014,
+          "swiglu_boundary_ms": [
+            0.09145600348711014
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 69,
+          "whole_step_ms": 2.3095359802246094,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09286399930715561,
+          "swiglu_boundary_ms": [
+            0.09286399930715561
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 70,
+          "whole_step_ms": 2.4004480838775635,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09587199985980988,
+          "swiglu_boundary_ms": [
+            0.09587199985980988
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 71,
+          "whole_step_ms": 2.2504639625549316,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09033600240945816,
+          "swiglu_boundary_ms": [
+            0.09033600240945816
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 72,
+          "whole_step_ms": 2.089440107345581,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08767999708652496,
+          "swiglu_boundary_ms": [
+            0.08767999708652496
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 73,
+          "whole_step_ms": 2.5636799335479736,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09120000153779984,
+          "swiglu_boundary_ms": [
+            0.09120000153779984
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 74,
+          "whole_step_ms": 2.334559917449951,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.1037760004401207,
+          "swiglu_boundary_ms": [
+            0.1037760004401207
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 75,
+          "whole_step_ms": 2.2507200241088867,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09200000017881393,
+          "swiglu_boundary_ms": [
+            0.09200000017881393
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 76,
+          "whole_step_ms": 2.306175947189331,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09257599711418152,
+          "swiglu_boundary_ms": [
+            0.09257599711418152
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 77,
+          "whole_step_ms": 2.208415985107422,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09391999989748001,
+          "swiglu_boundary_ms": [
+            0.09391999989748001
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 78,
+          "whole_step_ms": 2.1108479499816895,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08988799899816513,
+          "swiglu_boundary_ms": [
+            0.08988799899816513
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 79,
+          "whole_step_ms": 2.3155839443206787,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08767999708652496,
+          "swiglu_boundary_ms": [
+            0.08767999708652496
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 80,
+          "whole_step_ms": 2.4503679275512695,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0894400030374527,
+          "swiglu_boundary_ms": [
+            0.0894400030374527
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 81,
+          "whole_step_ms": 2.3262081146240234,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09372799843549728,
+          "swiglu_boundary_ms": [
+            0.09372799843549728
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 82,
+          "whole_step_ms": 2.186527967453003,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08755200356245041,
+          "swiglu_boundary_ms": [
+            0.08755200356245041
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 83,
+          "whole_step_ms": 2.1722559928894043,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08883199840784073,
+          "swiglu_boundary_ms": [
+            0.08883199840784073
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 84,
+          "whole_step_ms": 2.313375949859619,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09625600278377533,
+          "swiglu_boundary_ms": [
+            0.09625600278377533
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 85,
+          "whole_step_ms": 2.0757439136505127,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09036800265312195,
+          "swiglu_boundary_ms": [
+            0.09036800265312195
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 86,
+          "whole_step_ms": 2.199199914932251,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09040000289678574,
+          "swiglu_boundary_ms": [
+            0.09040000289678574
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 87,
+          "whole_step_ms": 2.324512004852295,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09551999717950821,
+          "swiglu_boundary_ms": [
+            0.09551999717950821
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 88,
+          "whole_step_ms": 2.2915520668029785,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09161599725484848,
+          "swiglu_boundary_ms": [
+            0.09161599725484848
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 89,
+          "whole_step_ms": 2.1197121143341064,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08806400001049042,
+          "swiglu_boundary_ms": [
+            0.08806400001049042
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 90,
+          "whole_step_ms": 2.1800639629364014,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08963199704885483,
+          "swiglu_boundary_ms": [
+            0.08963199704885483
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 91,
+          "whole_step_ms": 2.3499839305877686,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09270399808883667,
+          "swiglu_boundary_ms": [
+            0.09270399808883667
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 92,
+          "whole_step_ms": 2.1858880519866943,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0896959975361824,
+          "swiglu_boundary_ms": [
+            0.0896959975361824
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 93,
+          "whole_step_ms": 2.1903998851776123,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09292799979448318,
+          "swiglu_boundary_ms": [
+            0.09292799979448318
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 94,
+          "whole_step_ms": 2.339263916015625,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09379199892282486,
+          "swiglu_boundary_ms": [
+            0.09379199892282486
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 95,
+          "whole_step_ms": 2.385983943939209,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09334400296211243,
+          "swiglu_boundary_ms": [
+            0.09334400296211243
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 96,
+          "whole_step_ms": 2.229759931564331,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0915519967675209,
+          "swiglu_boundary_ms": [
+            0.0915519967675209
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 97,
+          "whole_step_ms": 2.4367361068725586,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08662399649620056,
+          "swiglu_boundary_ms": [
+            0.08662399649620056
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 98,
+          "whole_step_ms": 2.3679358959198,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09728000313043594,
+          "swiglu_boundary_ms": [
+            0.09728000313043594
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 99,
+          "whole_step_ms": 2.147520065307617,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08966399729251862,
+          "swiglu_boundary_ms": [
+            0.08966399729251862
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 100,
+          "whole_step_ms": 2.1329920291900635,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08899199962615967,
+          "swiglu_boundary_ms": [
+            0.08899199962615967
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 101,
+          "whole_step_ms": 2.228192090988159,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0926079973578453,
+          "swiglu_boundary_ms": [
+            0.0926079973578453
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 102,
+          "whole_step_ms": 2.325632095336914,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09523200243711472,
+          "swiglu_boundary_ms": [
+            0.09523200243711472
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 103,
+          "whole_step_ms": 2.2879679203033447,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09375999867916107,
+          "swiglu_boundary_ms": [
+            0.09375999867916107
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 104,
+          "whole_step_ms": 2.1950719356536865,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09014400094747543,
+          "swiglu_boundary_ms": [
+            0.09014400094747543
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 105,
+          "whole_step_ms": 2.1721279621124268,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08745600283145905,
+          "swiglu_boundary_ms": [
+            0.08745600283145905
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 106,
+          "whole_step_ms": 2.2280640602111816,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08956799656152725,
+          "swiglu_boundary_ms": [
+            0.08956799656152725
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 107,
+          "whole_step_ms": 2.203295946121216,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0923520028591156,
+          "swiglu_boundary_ms": [
+            0.0923520028591156
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 108,
+          "whole_step_ms": 2.223968029022217,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08963199704885483,
+          "swiglu_boundary_ms": [
+            0.08963199704885483
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 109,
+          "whole_step_ms": 2.1506879329681396,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08844800293445587,
+          "swiglu_boundary_ms": [
+            0.08844800293445587
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 110,
+          "whole_step_ms": 2.2316479682922363,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08959999680519104,
+          "swiglu_boundary_ms": [
+            0.08959999680519104
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 111,
+          "whole_step_ms": 2.2914879322052,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.08671999722719193,
+          "swiglu_boundary_ms": [
+            0.08671999722719193
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 112,
+          "whole_step_ms": 2.2575039863586426,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09446399658918381,
+          "swiglu_boundary_ms": [
+            0.09446399658918381
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 113,
+          "whole_step_ms": 2.174783945083618,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09232000261545181,
+          "swiglu_boundary_ms": [
+            0.09232000261545181
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 114,
+          "whole_step_ms": 2.1260480880737305,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09120000153779984,
+          "swiglu_boundary_ms": [
+            0.09120000153779984
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 115,
+          "whole_step_ms": 2.115072011947632,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09222400188446045,
+          "swiglu_boundary_ms": [
+            0.09222400188446045
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 116,
+          "whole_step_ms": 2.2582719326019287,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09046400338411331,
+          "swiglu_boundary_ms": [
+            0.09046400338411331
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 117,
+          "whole_step_ms": 2.5126399993896484,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.10159999877214432,
+          "swiglu_boundary_ms": [
+            0.10159999877214432
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 118,
+          "whole_step_ms": 2.407007932662964,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.0950080007314682,
+          "swiglu_boundary_ms": [
+            0.0950080007314682
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 119,
+          "whole_step_ms": 2.3273279666900635,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09497600048780441,
+          "swiglu_boundary_ms": [
+            0.09497600048780441
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        },
+        {
+          "sample_id": 120,
+          "whole_step_ms": 2.2334721088409424,
+          "swiglu_calls": 1,
+          "swiglu_total_ms": 0.09353599697351456,
+          "swiglu_boundary_ms": [
+            0.09353599697351456
+          ],
+          "used_for_statistics": true,
+          "discard_reason": null
+        }
+      ],
+      "whole_step_statistics_ms": {
+        "count": 120,
+        "median": 2.31387197971344,
+        "mean": 2.461282394329707,
+        "stdev": 0.4878693190900784,
+        "cv": 0.19821753091560315,
+        "min": 2.0757439136505127,
+        "max": 4.740096092224121,
+        "p10": 2.1352319717407227,
+        "p90": 2.977504014968872
+      },
+      "swiglu_total_statistics_ms": {
+        "count": 120,
+        "median": 0.09343999996781349,
+        "mean": 0.10400959979742766,
+        "stdev": 0.028022470368675813,
+        "cv": 0.2694219612733176,
+        "min": 0.08662399649620056,
+        "max": 0.2518079876899719,
+        "p10": 0.0894400030374527,
+        "p90": 0.1404159963130951
+      },
+      "fraction_statistics": {
+        "count": 120,
+        "median": 0.041428507805588224,
+        "mean": 0.04195296235814891,
+        "stdev": 0.003535203539894636,
+        "cv": 0.08426588591563335,
+        "min": 0.033790266320486866,
+        "max": 0.057115247178028565,
+        "p10": 0.03902172362286932,
+        "p90": 0.04581886328706554,
+        "ratio_of_medians": 0.040382527982116584,
+        "median_per_step_fraction": 0.041428507805588224,
+        "sample_count": 120
+      },
+      "measurement_status": "MEASUREMENT_COMPLETE",
+      "qualification_status": "QUALIFICATION_UNSTABLE",
+      "outlier_count": 0,
+      "bimodality_heuristic": {
+        "whole": "NOT_DETECTED",
+        "swiglu": "NOT_DETECTED"
+      },
+      "source_commit": "5be9626709af2722333bf54797c954c09edeada3"
+    }
+  },
+  "protocol": {
+    "warmups": 20,
+    "repeats": 120,
+    "cuda_event": true,
+    "paired_samples": true
+  },
+  "NINE_GRID": null
+}

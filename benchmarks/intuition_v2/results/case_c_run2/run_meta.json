@@ -1,0 +1,14 @@
+﻿{
+    "case":  "case_c",
+    "run":  2,
+    "attempt":  1,
+    "exit_code":  0,
+    "result_written":  true,
+    "started_at":  "2026-09-22T16:49:09.4038722+08:00",
+    "finished_at":  "2026-09-22T16:52:46.1087867+08:00",
+    "duration_seconds":  216.705,
+    "codex_cli":  "codex-cli 0.153.0",
+    "model_override":  null,
+    "ephemeral":  true,
+    "sandbox":  "read-only"
+}

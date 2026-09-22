@@ -1,0 +1,20 @@
+{
+  "episode": "REAL_OPT_LOOP_001",
+  "evaluated_hypotheses": [
+    {
+      "hypothesis_id": "fp-producer-consumer-boundary",
+      "status": "REJECTED",
+      "reason": "The graph-level activation output is real and is passed to linear_fc2, but the specific claim that it is an artificial kernel-boundary materialization with an eliminable HBM round-trip is not established by source or current evidence. kernel_launch_count, activation_HBM_round_trip, bytes, and register/occupancy detail are UNKNOWN.",
+      "source_evidence": ["MLP.forward", "bias_swiglu_impl", "BiasSwiGLUFunction.forward", "BiasSwiGLUFunction.backward"],
+      "implementation_started": false
+    },
+    {
+      "hypothesis_id": "measurement-kernel-boundary-cost",
+      "status": "SUPPORTED",
+      "reason": "The selected hypothesis explicitly targets fields marked UNKNOWN in PerformanceFacts v5 and has a repeatable authentic local workload and prior CUDA Event evidence.",
+      "implementation_started": false
+    }
+  ],
+  "selected_hypothesis_id": "measurement-kernel-boundary-cost",
+  "selected_status": "SUPPORTED"
+}

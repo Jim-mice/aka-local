@@ -1,0 +1,16 @@
+{
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "torch": "2.11.0+cu128",
+  "cuda": "12.8",
+  "cuda_available": true,
+  "device": "cuda",
+  "call_chain": "GPTModel.forward -> TransformerBlock.forward -> TransformerLayer.forward -> TransformerLayer._forward_mlp -> MLP.forward -> bias_swiglu_impl",
+  "source_locations": {
+    "gpt_model": "megatron/core/models/gpt/gpt_model.py::GPTModel.forward",
+    "transformer_block": "megatron/core/transformer/transformer_block.py::TransformerBlock.forward",
+    "transformer_layer": "megatron/core/transformer/transformer_layer.py::TransformerLayer.forward",
+    "mlp": "megatron/core/transformer/mlp.py::MLP.forward",
+    "swiglu": "megatron/core/fusions/fused_bias_swiglu.py::bias_swiglu_impl"
+  }
+}

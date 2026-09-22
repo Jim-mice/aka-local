@@ -1,0 +1,15 @@
+{
+  "hypothesis_id": "fp-producer-consumer-boundary",
+  "status": "PARTIAL",
+  "supported_facts": [
+    "physical SWIGLU and FC2 kernel executions are distinct",
+    "SwiGLU returns a device tensor consumed by FC2",
+    "SwiGLU kernel duration and total kernel DRAM read are measured"
+  ],
+  "missing_preconditions": [
+    "activation-only DRAM traffic",
+    "proof that the boundary is avoidable without changing GEMM/gradient semantics",
+    "representative-shape resource/cost evidence"
+  ],
+  "reason": "Separate kernels and a device intermediate are established, but they do not by themselves prove an avoidable HBM round trip or a beneficial fusion opportunity."
+}

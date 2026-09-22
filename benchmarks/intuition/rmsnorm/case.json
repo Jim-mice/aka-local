@@ -1,0 +1,6 @@
+{
+  "case_id": "RMSNORM_BLIND_001",
+  "facts_file": "facts.json",
+  "contract_file": "contract.json",
+  "answer_key": null
+}

@@ -1,0 +1,21 @@
+{
+  "status": "INCOMPLETE",
+  "scope": "minimum external fields needed to identify a target representative SwiGLU replay",
+  "required": [
+    "configuration_identity",
+    "hidden_size",
+    "ffn_hidden_size",
+    "sequence_length",
+    "micro_batch_size",
+    "dtype",
+    "tensor_parallel_size",
+    "sequence_parallel"
+  ],
+  "not_required_for_operator_replay": [
+    "checkpoint",
+    "tokenizer",
+    "dataset",
+    "optimizer_state"
+  ],
+  "reason": "Those artifacts affect full training/E2E, not isolated SwiGLU tensor shape, once the required configuration fields are supplied from one authoritative identity."
+}

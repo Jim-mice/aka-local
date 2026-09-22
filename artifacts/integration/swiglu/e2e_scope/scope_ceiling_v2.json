@@ -1,0 +1,30 @@
+{
+  "LOCAL_MLP": {
+    "operator_fraction": 0.14102929913640638,
+    "max_possible_e2e_speedup": 1.1641840623837554,
+    "evidence_scope": "LOCAL_MLP",
+    "source": "authentic_profile"
+  },
+  "TRANSFORMER_LAYER": {
+    "operator_fraction": 0.048215273793333464,
+    "max_possible_e2e_speedup": 1.0506577511340145,
+    "sample_count": 120,
+    "stability": "QUALIFICATION_UNSTABLE",
+    "evidence_scope": "TRANSFORMER_LAYER"
+  },
+  "TRANSFORMER_BLOCK": {
+    "operator_fraction": 0.0455742629503427,
+    "max_possible_e2e_speedup": 1.047750454730216,
+    "sample_count": 120,
+    "stability": "QUALIFICATION_UNSTABLE",
+    "evidence_scope": "TRANSFORMER_BLOCK"
+  },
+  "MINIMAL_MODEL": {
+    "operator_fraction": 0.040382527982116584,
+    "max_possible_e2e_speedup": 1.0420819015489582,
+    "sample_count": 120,
+    "stability": "QUALIFICATION_UNSTABLE",
+    "evidence_scope": "MINIMAL_MODEL"
+  },
+  "NINE_GRID": null
+}

@@ -1,0 +1,20 @@
+{
+  "episode": "REAL_OPT_LOOP_003",
+  "status": "REFUTED",
+  "write_to_mechanism_memory": false,
+  "confirmed": [
+    "activation payload is 384 bytes for the frozen local workload",
+    "per-call CUDA Event timing is much larger than active NCU kernel duration",
+    "outer batched Event amortizes the single-call boundary but remains above active kernel time",
+    "low achieved occupancy is consistent with one-block grid undersubscription, not proven register pressure",
+    "separate CUDA kernels do not establish an HBM round trip"
+  ],
+  "refuted_for_local_workload": [
+    "eliminate-HBM-round-trip is not supported as the local SwiGLU-to-FC2 causal story"
+  ],
+  "inconclusive": [
+    "activation-only cache hit rate",
+    "activation-only DRAM bytes",
+    "generalization to real nine-grid shapes"
+  ]
+}

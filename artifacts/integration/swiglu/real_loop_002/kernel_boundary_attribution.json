@@ -1,0 +1,2748 @@
+{
+  "status": "PASS",
+  "tool": "Nsight Compute CLI 2026.3.0",
+  "scope": "single authentic Megatron MLP forward iteration",
+  "nvtx_ranges": {
+    "FC1": "AKA_FC1",
+    "SWIGLU": "AKA_SWIGLU",
+    "FC2": "AKA_FC2"
+  },
+  "sections": {
+    "FC1": {
+      "csv": "ncu_fc1_basic.csv",
+      "kernel_count": 1,
+      "kernel_names": [
+        "void gemmSN_TN_kernel<float, 128, 16, 2, 4, 6, 7, 0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)"
+      ],
+      "metrics": {
+        "DRAM Frequency": [
+          {
+            "value": "11,822,222,222.22",
+            "unit": "hz"
+          },
+          {
+            "value": "11,930,635,838.15",
+            "unit": "hz"
+          },
+          {
+            "value": "11,928,994,082.84",
+            "unit": "hz"
+          }
+        ],
+        "SM Frequency": [
+          {
+            "value": "1,542,418,981.48",
+            "unit": "hz"
+          },
+          {
+            "value": "1,507,526,493.26",
+            "unit": "hz"
+          },
+          {
+            "value": "1,575,998,520.71",
+            "unit": "hz"
+          }
+        ],
+        "Elapsed Cycles": [
+          {
+            "value": "8,898",
+            "unit": "cycle"
+          },
+          {
+            "value": "8,352",
+            "unit": "cycle"
+          },
+          {
+            "value": "8,529",
+            "unit": "cycle"
+          }
+        ],
+        "Memory Throughput": [
+          {
+            "value": "1.20",
+            "unit": "%"
+          },
+          {
+            "value": "1.27",
+            "unit": "%"
+          },
+          {
+            "value": "1.25",
+            "unit": "%"
+          }
+        ],
+        "DRAM Throughput": [
+          {
+            "value": "1.15",
+            "unit": "%"
+          },
+          {
+            "value": "1.20",
+            "unit": "%"
+          },
+          {
+            "value": "1.23",
+            "unit": "%"
+          }
+        ],
+        "Duration": [
+          {
+            "value": "5,760",
+            "unit": "ns"
+          },
+          {
+            "value": "5,536",
+            "unit": "ns"
+          },
+          {
+            "value": "5,408",
+            "unit": "ns"
+          }
+        ],
+        "L1/TEX Cache Throughput": [
+          {
+            "value": "12.48",
+            "unit": "%"
+          },
+          {
+            "value": "12.36",
+            "unit": "%"
+          },
+          {
+            "value": "12.55",
+            "unit": "%"
+          }
+        ],
+        "L2 Cache Throughput": [
+          {
+            "value": "0.90",
+            "unit": "%"
+          },
+          {
+            "value": "0.92",
+            "unit": "%"
+          },
+          {
+            "value": "0.90",
+            "unit": "%"
+          }
+        ],
+        "SM Active Cycles": [
+          {
+            "value": "641.08",
+            "unit": "cycle"
+          },
+          {
+            "value": "647.31",
+            "unit": "cycle"
+          },
+          {
+            "value": "637.23",
+            "unit": "cycle"
+          }
+        ],
+        "Compute (SM) Throughput": [
+          {
+            "value": "0.90",
+            "unit": "%"
+          },
+          {
+            "value": "0.96",
+            "unit": "%"
+          },
+          {
+            "value": "0.94",
+            "unit": "%"
+          }
+        ],
+        "Block Size": [
+          {
+            "value": "128",
+            "unit": ""
+          },
+          {
+            "value": "128",
+            "unit": ""
+          },
+          {
+            "value": "128",
+            "unit": ""
+          }
+        ],
+        "Cluster Scheduling Policy": [
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          },
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          },
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          }
+        ],
+        "Cluster Size": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Function Cache Configuration": [
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          },
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          },
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          }
+        ],
+        "Grid Size": [
+          {
+            "value": "4",
+            "unit": ""
+          },
+          {
+            "value": "4",
+            "unit": ""
+          },
+          {
+            "value": "4",
+            "unit": ""
+          }
+        ],
+        "Preferred Cluster Size": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Registers Per Thread": [
+          {
+            "value": "44",
+            "unit": "register/thread"
+          },
+          {
+            "value": "44",
+            "unit": "register/thread"
+          },
+          {
+            "value": "44",
+            "unit": "register/thread"
+          }
+        ],
+        "Shared Memory Configuration Size": [
+          {
+            "value": "102,400",
+            "unit": "byte"
+          },
+          {
+            "value": "102,400",
+            "unit": "byte"
+          },
+          {
+            "value": "102,400",
+            "unit": "byte"
+          }
+        ],
+        "Driver Shared Memory Per Block": [
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          },
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          },
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          }
+        ],
+        "Dynamic Shared Memory Per Block": [
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          }
+        ],
+        "Static Shared Memory Per Block": [
+          {
+            "value": "10,752",
+            "unit": "byte/block"
+          },
+          {
+            "value": "10,752",
+            "unit": "byte/block"
+          },
+          {
+            "value": "10,752",
+            "unit": "byte/block"
+          }
+        ],
+        "# SMs": [
+          {
+            "value": "26",
+            "unit": "SM"
+          },
+          {
+            "value": "26",
+            "unit": "SM"
+          },
+          {
+            "value": "26",
+            "unit": "SM"
+          }
+        ],
+        "Stack Size": [
+          {
+            "value": "1,024",
+            "unit": ""
+          },
+          {
+            "value": "1,024",
+            "unit": ""
+          },
+          {
+            "value": "1,024",
+            "unit": ""
+          }
+        ],
+        "Threads": [
+          {
+            "value": "512",
+            "unit": "thread"
+          },
+          {
+            "value": "512",
+            "unit": "thread"
+          },
+          {
+            "value": "512",
+            "unit": "thread"
+          }
+        ],
+        "# TPCs": [
+          {
+            "value": "13",
+            "unit": ""
+          },
+          {
+            "value": "13",
+            "unit": ""
+          },
+          {
+            "value": "13",
+            "unit": ""
+          }
+        ],
+        "Enabled TPC IDs": [
+          {
+            "value": "all",
+            "unit": ""
+          },
+          {
+            "value": "all",
+            "unit": ""
+          },
+          {
+            "value": "all",
+            "unit": ""
+          }
+        ],
+        "Uses Green Context": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Waves Per SM": [
+          {
+            "value": "0.02",
+            "unit": ""
+          },
+          {
+            "value": "0.02",
+            "unit": ""
+          },
+          {
+            "value": "0.02",
+            "unit": ""
+          }
+        ],
+        "Max Active Clusters": [
+          {
+            "value": "0",
+            "unit": "cluster"
+          },
+          {
+            "value": "0",
+            "unit": "cluster"
+          },
+          {
+            "value": "0",
+            "unit": "cluster"
+          }
+        ],
+        "Max Cluster Size": [
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          }
+        ],
+        "Overall GPU Occupancy": [
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          }
+        ],
+        "Cluster Occupancy": [
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          }
+        ],
+        "Block Limit Barriers": [
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          }
+        ],
+        "Block Limit SM": [
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Registers": [
+          {
+            "value": "10",
+            "unit": "block"
+          },
+          {
+            "value": "10",
+            "unit": "block"
+          },
+          {
+            "value": "10",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Shared Mem": [
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Warps": [
+          {
+            "value": "12",
+            "unit": "block"
+          },
+          {
+            "value": "12",
+            "unit": "block"
+          },
+          {
+            "value": "12",
+            "unit": "block"
+          }
+        ],
+        "Theoretical Active Warps per SM": [
+          {
+            "value": "32",
+            "unit": "warp"
+          },
+          {
+            "value": "32",
+            "unit": "warp"
+          },
+          {
+            "value": "32",
+            "unit": "warp"
+          }
+        ],
+        "Theoretical Occupancy": [
+          {
+            "value": "66.67",
+            "unit": "%"
+          },
+          {
+            "value": "66.67",
+            "unit": "%"
+          },
+          {
+            "value": "66.67",
+            "unit": "%"
+          }
+        ],
+        "Achieved Occupancy": [
+          {
+            "value": "8.32",
+            "unit": "%"
+          },
+          {
+            "value": "8.32",
+            "unit": "%"
+          },
+          {
+            "value": "8.32",
+            "unit": "%"
+          }
+        ],
+        "Achieved Active Warps Per SM": [
+          {
+            "value": "3.99",
+            "unit": "warp"
+          },
+          {
+            "value": "3.99",
+            "unit": "warp"
+          },
+          {
+            "value": "3.99",
+            "unit": "warp"
+          }
+        ],
+        "Average DRAM Active Cycles": [
+          {
+            "value": "784",
+            "unit": "cycle"
+          },
+          {
+            "value": "784",
+            "unit": "cycle"
+          },
+          {
+            "value": "792",
+            "unit": "cycle"
+          }
+        ],
+        "Total DRAM Elapsed Cycles": [
+          {
+            "value": "272,384",
+            "unit": "cycle"
+          },
+          {
+            "value": "264,192",
+            "unit": "cycle"
+          },
+          {
+            "value": "258,048",
+            "unit": "cycle"
+          }
+        ],
+        "Average L1 Active Cycles": [
+          {
+            "value": "641.08",
+            "unit": "cycle"
+          },
+          {
+            "value": "647.31",
+            "unit": "cycle"
+          },
+          {
+            "value": "637.23",
+            "unit": "cycle"
+          }
+        ],
+        "Total L1 Elapsed Cycles": [
+          {
+            "value": "231,020",
+            "unit": "cycle"
+          },
+          {
+            "value": "216,982",
+            "unit": "cycle"
+          },
+          {
+            "value": "221,610",
+            "unit": "cycle"
+          }
+        ],
+        "Average L2 Active Cycles": [
+          {
+            "value": "1,205.69",
+            "unit": "cycle"
+          },
+          {
+            "value": "1,429.81",
+            "unit": "cycle"
+          },
+          {
+            "value": "1,220.56",
+            "unit": "cycle"
+          }
+        ],
+        "Total L2 Elapsed Cycles": [
+          {
+            "value": "139,184",
+            "unit": "cycle"
+          },
+          {
+            "value": "130,928",
+            "unit": "cycle"
+          },
+          {
+            "value": "133,504",
+            "unit": "cycle"
+          }
+        ],
+        "Average SM Active Cycles": [
+          {
+            "value": "641.08",
+            "unit": "cycle"
+          },
+          {
+            "value": "647.31",
+            "unit": "cycle"
+          },
+          {
+            "value": "637.23",
+            "unit": "cycle"
+          }
+        ],
+        "Total SM Elapsed Cycles": [
+          {
+            "value": "231,020",
+            "unit": "cycle"
+          },
+          {
+            "value": "216,982",
+            "unit": "cycle"
+          },
+          {
+            "value": "221,610",
+            "unit": "cycle"
+          }
+        ],
+        "Average SMSP Active Cycles": [
+          {
+            "value": "637.07",
+            "unit": "cycle"
+          },
+          {
+            "value": "643.29",
+            "unit": "cycle"
+          },
+          {
+            "value": "633.23",
+            "unit": "cycle"
+          }
+        ],
+        "Total SMSP Elapsed Cycles": [
+          {
+            "value": "924,080",
+            "unit": "cycle"
+          },
+          {
+            "value": "867,928",
+            "unit": "cycle"
+          },
+          {
+            "value": "886,440",
+            "unit": "cycle"
+          }
+        ]
+      }
+    },
+    "SWIGLU": {
+      "csv": "ncu_swiglu_basic.csv",
+      "kernel_count": 1,
+      "kernel_names": [
+        "triton_poi_fused_add_mul_silu_split_0"
+      ],
+      "metrics": {
+        "DRAM Frequency": [
+          {
+            "value": "11,686,956,521.74",
+            "unit": "hz"
+          },
+          {
+            "value": "11,747,747,747.75",
+            "unit": "hz"
+          },
+          {
+            "value": "11,772,357,723.58",
+            "unit": "hz"
+          }
+        ],
+        "SM Frequency": [
+          {
+            "value": "1,537,500,000",
+            "unit": "hz"
+          },
+          {
+            "value": "1,486,674,174.17",
+            "unit": "hz"
+          },
+          {
+            "value": "1,548,611,111.11",
+            "unit": "hz"
+          }
+        ],
+        "Elapsed Cycles": [
+          {
+            "value": "5,663",
+            "unit": "cycle"
+          },
+          {
+            "value": "5,284",
+            "unit": "cycle"
+          },
+          {
+            "value": "6,099",
+            "unit": "cycle"
+          }
+        ],
+        "Memory Throughput": [
+          {
+            "value": "1.87",
+            "unit": "%"
+          },
+          {
+            "value": "2.00",
+            "unit": "%"
+          },
+          {
+            "value": "1.74",
+            "unit": "%"
+          }
+        ],
+        "DRAM Throughput": [
+          {
+            "value": "0.32",
+            "unit": "%"
+          },
+          {
+            "value": "0.33",
+            "unit": "%"
+          },
+          {
+            "value": "0.29",
+            "unit": "%"
+          }
+        ],
+        "Duration": [
+          {
+            "value": "3,680",
+            "unit": "ns"
+          },
+          {
+            "value": "3,552",
+            "unit": "ns"
+          },
+          {
+            "value": "3,936",
+            "unit": "ns"
+          }
+        ],
+        "L1/TEX Cache Throughput": [
+          {
+            "value": "19.90",
+            "unit": "%"
+          },
+          {
+            "value": "20.24",
+            "unit": "%"
+          },
+          {
+            "value": "20.28",
+            "unit": "%"
+          }
+        ],
+        "L2 Cache Throughput": [
+          {
+            "value": "0.34",
+            "unit": "%"
+          },
+          {
+            "value": "0.40",
+            "unit": "%"
+          },
+          {
+            "value": "0.34",
+            "unit": "%"
+          }
+        ],
+        "SM Active Cycles": [
+          {
+            "value": "45.23",
+            "unit": "cycle"
+          },
+          {
+            "value": "44.46",
+            "unit": "cycle"
+          },
+          {
+            "value": "44.38",
+            "unit": "cycle"
+          }
+        ],
+        "Compute (SM) Throughput": [
+          {
+            "value": "0.05",
+            "unit": "%"
+          },
+          {
+            "value": "0.05",
+            "unit": "%"
+          },
+          {
+            "value": "0.05",
+            "unit": "%"
+          }
+        ],
+        "Block Size": [
+          {
+            "value": "128",
+            "unit": ""
+          },
+          {
+            "value": "128",
+            "unit": ""
+          },
+          {
+            "value": "128",
+            "unit": ""
+          }
+        ],
+        "Cluster Scheduling Policy": [
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          },
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          },
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          }
+        ],
+        "Cluster Size": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Function Cache Configuration": [
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          },
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          },
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          }
+        ],
+        "Grid Size": [
+          {
+            "value": "1",
+            "unit": ""
+          },
+          {
+            "value": "1",
+            "unit": ""
+          },
+          {
+            "value": "1",
+            "unit": ""
+          }
+        ],
+        "Preferred Cluster Size": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Registers Per Thread": [
+          {
+            "value": "16",
+            "unit": "register/thread"
+          },
+          {
+            "value": "16",
+            "unit": "register/thread"
+          },
+          {
+            "value": "16",
+            "unit": "register/thread"
+          }
+        ],
+        "Shared Memory Configuration Size": [
+          {
+            "value": "32,768",
+            "unit": "byte"
+          },
+          {
+            "value": "32,768",
+            "unit": "byte"
+          },
+          {
+            "value": "32,768",
+            "unit": "byte"
+          }
+        ],
+        "Driver Shared Memory Per Block": [
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          },
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          },
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          }
+        ],
+        "Dynamic Shared Memory Per Block": [
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          }
+        ],
+        "Static Shared Memory Per Block": [
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          }
+        ],
+        "# SMs": [
+          {
+            "value": "26",
+            "unit": "SM"
+          },
+          {
+            "value": "26",
+            "unit": "SM"
+          },
+          {
+            "value": "26",
+            "unit": "SM"
+          }
+        ],
+        "Stack Size": [
+          {
+            "value": "1,024",
+            "unit": ""
+          },
+          {
+            "value": "1,024",
+            "unit": ""
+          },
+          {
+            "value": "1,024",
+            "unit": ""
+          }
+        ],
+        "Threads": [
+          {
+            "value": "128",
+            "unit": "thread"
+          },
+          {
+            "value": "128",
+            "unit": "thread"
+          },
+          {
+            "value": "128",
+            "unit": "thread"
+          }
+        ],
+        "# TPCs": [
+          {
+            "value": "13",
+            "unit": ""
+          },
+          {
+            "value": "13",
+            "unit": ""
+          },
+          {
+            "value": "13",
+            "unit": ""
+          }
+        ],
+        "Enabled TPC IDs": [
+          {
+            "value": "all",
+            "unit": ""
+          },
+          {
+            "value": "all",
+            "unit": ""
+          },
+          {
+            "value": "all",
+            "unit": ""
+          }
+        ],
+        "Uses Green Context": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Waves Per SM": [
+          {
+            "value": "0.00",
+            "unit": ""
+          },
+          {
+            "value": "0.00",
+            "unit": ""
+          },
+          {
+            "value": "0.00",
+            "unit": ""
+          }
+        ],
+        "Max Active Clusters": [
+          {
+            "value": "0",
+            "unit": "cluster"
+          },
+          {
+            "value": "0",
+            "unit": "cluster"
+          },
+          {
+            "value": "0",
+            "unit": "cluster"
+          }
+        ],
+        "Max Cluster Size": [
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          }
+        ],
+        "Overall GPU Occupancy": [
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          }
+        ],
+        "Cluster Occupancy": [
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          }
+        ],
+        "Block Limit Barriers": [
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          }
+        ],
+        "Block Limit SM": [
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Registers": [
+          {
+            "value": "32",
+            "unit": "block"
+          },
+          {
+            "value": "32",
+            "unit": "block"
+          },
+          {
+            "value": "32",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Shared Mem": [
+          {
+            "value": "32",
+            "unit": "block"
+          },
+          {
+            "value": "32",
+            "unit": "block"
+          },
+          {
+            "value": "32",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Warps": [
+          {
+            "value": "12",
+            "unit": "block"
+          },
+          {
+            "value": "12",
+            "unit": "block"
+          },
+          {
+            "value": "12",
+            "unit": "block"
+          }
+        ],
+        "Theoretical Active Warps per SM": [
+          {
+            "value": "48",
+            "unit": "warp"
+          },
+          {
+            "value": "48",
+            "unit": "warp"
+          },
+          {
+            "value": "48",
+            "unit": "warp"
+          }
+        ],
+        "Theoretical Occupancy": [
+          {
+            "value": "100",
+            "unit": "%"
+          },
+          {
+            "value": "100",
+            "unit": "%"
+          },
+          {
+            "value": "100",
+            "unit": "%"
+          }
+        ],
+        "Achieved Occupancy": [
+          {
+            "value": "7.25",
+            "unit": "%"
+          },
+          {
+            "value": "7.28",
+            "unit": "%"
+          },
+          {
+            "value": "7.30",
+            "unit": "%"
+          }
+        ],
+        "Achieved Active Warps Per SM": [
+          {
+            "value": "3.48",
+            "unit": "warp"
+          },
+          {
+            "value": "3.49",
+            "unit": "warp"
+          },
+          {
+            "value": "3.50",
+            "unit": "warp"
+          }
+        ],
+        "Average DRAM Active Cycles": [
+          {
+            "value": "136",
+            "unit": "cycle"
+          },
+          {
+            "value": "136",
+            "unit": "cycle"
+          },
+          {
+            "value": "136",
+            "unit": "cycle"
+          }
+        ],
+        "Total DRAM Elapsed Cycles": [
+          {
+            "value": "172,032",
+            "unit": "cycle"
+          },
+          {
+            "value": "166,912",
+            "unit": "cycle"
+          },
+          {
+            "value": "185,344",
+            "unit": "cycle"
+          }
+        ],
+        "Average L1 Active Cycles": [
+          {
+            "value": "45.23",
+            "unit": "cycle"
+          },
+          {
+            "value": "44.46",
+            "unit": "cycle"
+          },
+          {
+            "value": "44.38",
+            "unit": "cycle"
+          }
+        ],
+        "Total L1 Elapsed Cycles": [
+          {
+            "value": "147,110",
+            "unit": "cycle"
+          },
+          {
+            "value": "137,292",
+            "unit": "cycle"
+          },
+          {
+            "value": "158,474",
+            "unit": "cycle"
+          }
+        ],
+        "Average L2 Active Cycles": [
+          {
+            "value": "500.38",
+            "unit": "cycle"
+          },
+          {
+            "value": "445.94",
+            "unit": "cycle"
+          },
+          {
+            "value": "426.31",
+            "unit": "cycle"
+          }
+        ],
+        "Total L2 Elapsed Cycles": [
+          {
+            "value": "88,608",
+            "unit": "cycle"
+          },
+          {
+            "value": "82,864",
+            "unit": "cycle"
+          },
+          {
+            "value": "95,600",
+            "unit": "cycle"
+          }
+        ],
+        "Average SM Active Cycles": [
+          {
+            "value": "45.23",
+            "unit": "cycle"
+          },
+          {
+            "value": "44.46",
+            "unit": "cycle"
+          },
+          {
+            "value": "44.38",
+            "unit": "cycle"
+          }
+        ],
+        "Total SM Elapsed Cycles": [
+          {
+            "value": "147,110",
+            "unit": "cycle"
+          },
+          {
+            "value": "137,292",
+            "unit": "cycle"
+          },
+          {
+            "value": "158,474",
+            "unit": "cycle"
+          }
+        ],
+        "Average SMSP Active Cycles": [
+          {
+            "value": "38.62",
+            "unit": "cycle"
+          },
+          {
+            "value": "38.12",
+            "unit": "cycle"
+          },
+          {
+            "value": "38.16",
+            "unit": "cycle"
+          }
+        ],
+        "Total SMSP Elapsed Cycles": [
+          {
+            "value": "588,440",
+            "unit": "cycle"
+          },
+          {
+            "value": "549,168",
+            "unit": "cycle"
+          },
+          {
+            "value": "633,896",
+            "unit": "cycle"
+          }
+        ]
+      }
+    },
+    "FC2": {
+      "csv": "ncu_fc2_basic.csv",
+      "kernel_count": 1,
+      "kernel_names": [
+        "void gemmSN_TN_kernel<float, 128, 16, 2, 4, 6, 7, 0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)"
+      ],
+      "metrics": {
+        "DRAM Frequency": [
+          {
+            "value": "11,884,393,063.58",
+            "unit": "hz"
+          },
+          {
+            "value": "11,841,807,909.60",
+            "unit": "hz"
+          },
+          {
+            "value": "11,850,267,379.68",
+            "unit": "hz"
+          }
+        ],
+        "SM Frequency": [
+          {
+            "value": "1,541,546,242.77",
+            "unit": "hz"
+          },
+          {
+            "value": "1,481,697,269.30",
+            "unit": "hz"
+          },
+          {
+            "value": "1,538,045,900.18",
+            "unit": "hz"
+          }
+        ],
+        "Elapsed Cycles": [
+          {
+            "value": "8,544",
+            "unit": "cycle"
+          },
+          {
+            "value": "8,397",
+            "unit": "cycle"
+          },
+          {
+            "value": "9,208",
+            "unit": "cycle"
+          }
+        ],
+        "Memory Throughput": [
+          {
+            "value": "1.25",
+            "unit": "%"
+          },
+          {
+            "value": "1.27",
+            "unit": "%"
+          },
+          {
+            "value": "1.16",
+            "unit": "%"
+          }
+        ],
+        "DRAM Throughput": [
+          {
+            "value": "1.17",
+            "unit": "%"
+          },
+          {
+            "value": "1.17",
+            "unit": "%"
+          },
+          {
+            "value": "1.09",
+            "unit": "%"
+          }
+        ],
+        "Duration": [
+          {
+            "value": "5,536",
+            "unit": "ns"
+          },
+          {
+            "value": "5,664",
+            "unit": "ns"
+          },
+          {
+            "value": "5,984",
+            "unit": "ns"
+          }
+        ],
+        "L1/TEX Cache Throughput": [
+          {
+            "value": "11.91",
+            "unit": "%"
+          },
+          {
+            "value": "12.28",
+            "unit": "%"
+          },
+          {
+            "value": "12.30",
+            "unit": "%"
+          }
+        ],
+        "L2 Cache Throughput": [
+          {
+            "value": "0.92",
+            "unit": "%"
+          },
+          {
+            "value": "0.90",
+            "unit": "%"
+          },
+          {
+            "value": "0.82",
+            "unit": "%"
+          }
+        ],
+        "SM Active Cycles": [
+          {
+            "value": "167.96",
+            "unit": "cycle"
+          },
+          {
+            "value": "162.81",
+            "unit": "cycle"
+          },
+          {
+            "value": "162.58",
+            "unit": "cycle"
+          }
+        ],
+        "Compute (SM) Throughput": [
+          {
+            "value": "0.23",
+            "unit": "%"
+          },
+          {
+            "value": "0.24",
+            "unit": "%"
+          },
+          {
+            "value": "0.22",
+            "unit": "%"
+          }
+        ],
+        "Block Size": [
+          {
+            "value": "128",
+            "unit": ""
+          },
+          {
+            "value": "128",
+            "unit": ""
+          },
+          {
+            "value": "128",
+            "unit": ""
+          }
+        ],
+        "Cluster Scheduling Policy": [
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          },
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          },
+          {
+            "value": "PolicySpread",
+            "unit": ""
+          }
+        ],
+        "Cluster Size": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Function Cache Configuration": [
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          },
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          },
+          {
+            "value": "CachePreferNone",
+            "unit": ""
+          }
+        ],
+        "Grid Size": [
+          {
+            "value": "1",
+            "unit": ""
+          },
+          {
+            "value": "1",
+            "unit": ""
+          },
+          {
+            "value": "1",
+            "unit": ""
+          }
+        ],
+        "Preferred Cluster Size": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Registers Per Thread": [
+          {
+            "value": "44",
+            "unit": "register/thread"
+          },
+          {
+            "value": "44",
+            "unit": "register/thread"
+          },
+          {
+            "value": "44",
+            "unit": "register/thread"
+          }
+        ],
+        "Shared Memory Configuration Size": [
+          {
+            "value": "102,400",
+            "unit": "byte"
+          },
+          {
+            "value": "102,400",
+            "unit": "byte"
+          },
+          {
+            "value": "102,400",
+            "unit": "byte"
+          }
+        ],
+        "Driver Shared Memory Per Block": [
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          },
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          },
+          {
+            "value": "1,024",
+            "unit": "byte/block"
+          }
+        ],
+        "Dynamic Shared Memory Per Block": [
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          },
+          {
+            "value": "0",
+            "unit": "byte/block"
+          }
+        ],
+        "Static Shared Memory Per Block": [
+          {
+            "value": "10,752",
+            "unit": "byte/block"
+          },
+          {
+            "value": "10,752",
+            "unit": "byte/block"
+          },
+          {
+            "value": "10,752",
+            "unit": "byte/block"
+          }
+        ],
+        "# SMs": [
+          {
+            "value": "26",
+            "unit": "SM"
+          },
+          {
+            "value": "26",
+            "unit": "SM"
+          },
+          {
+            "value": "26",
+            "unit": "SM"
+          }
+        ],
+        "Stack Size": [
+          {
+            "value": "1,024",
+            "unit": ""
+          },
+          {
+            "value": "1,024",
+            "unit": ""
+          },
+          {
+            "value": "1,024",
+            "unit": ""
+          }
+        ],
+        "Threads": [
+          {
+            "value": "128",
+            "unit": "thread"
+          },
+          {
+            "value": "128",
+            "unit": "thread"
+          },
+          {
+            "value": "128",
+            "unit": "thread"
+          }
+        ],
+        "# TPCs": [
+          {
+            "value": "13",
+            "unit": ""
+          },
+          {
+            "value": "13",
+            "unit": ""
+          },
+          {
+            "value": "13",
+            "unit": ""
+          }
+        ],
+        "Enabled TPC IDs": [
+          {
+            "value": "all",
+            "unit": ""
+          },
+          {
+            "value": "all",
+            "unit": ""
+          },
+          {
+            "value": "all",
+            "unit": ""
+          }
+        ],
+        "Uses Green Context": [
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          },
+          {
+            "value": "0",
+            "unit": ""
+          }
+        ],
+        "Waves Per SM": [
+          {
+            "value": "0.00",
+            "unit": ""
+          },
+          {
+            "value": "0.00",
+            "unit": ""
+          },
+          {
+            "value": "0.00",
+            "unit": ""
+          }
+        ],
+        "Max Active Clusters": [
+          {
+            "value": "0",
+            "unit": "cluster"
+          },
+          {
+            "value": "0",
+            "unit": "cluster"
+          },
+          {
+            "value": "0",
+            "unit": "cluster"
+          }
+        ],
+        "Max Cluster Size": [
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          }
+        ],
+        "Overall GPU Occupancy": [
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          }
+        ],
+        "Cluster Occupancy": [
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          },
+          {
+            "value": "0",
+            "unit": "%"
+          }
+        ],
+        "Block Limit Barriers": [
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          }
+        ],
+        "Block Limit SM": [
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          },
+          {
+            "value": "24",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Registers": [
+          {
+            "value": "10",
+            "unit": "block"
+          },
+          {
+            "value": "10",
+            "unit": "block"
+          },
+          {
+            "value": "10",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Shared Mem": [
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          },
+          {
+            "value": "8",
+            "unit": "block"
+          }
+        ],
+        "Block Limit Warps": [
+          {
+            "value": "12",
+            "unit": "block"
+          },
+          {
+            "value": "12",
+            "unit": "block"
+          },
+          {
+            "value": "12",
+            "unit": "block"
+          }
+        ],
+        "Theoretical Active Warps per SM": [
+          {
+            "value": "32",
+            "unit": "warp"
+          },
+          {
+            "value": "32",
+            "unit": "warp"
+          },
+          {
+            "value": "32",
+            "unit": "warp"
+          }
+        ],
+        "Theoretical Occupancy": [
+          {
+            "value": "66.67",
+            "unit": "%"
+          },
+          {
+            "value": "66.67",
+            "unit": "%"
+          },
+          {
+            "value": "66.67",
+            "unit": "%"
+          }
+        ],
+        "Achieved Occupancy": [
+          {
+            "value": "8.32",
+            "unit": "%"
+          },
+          {
+            "value": "8.32",
+            "unit": "%"
+          },
+          {
+            "value": "8.32",
+            "unit": "%"
+          }
+        ],
+        "Achieved Active Warps Per SM": [
+          {
+            "value": "3.99",
+            "unit": "warp"
+          },
+          {
+            "value": "3.99",
+            "unit": "warp"
+          },
+          {
+            "value": "3.99",
+            "unit": "warp"
+          }
+        ],
+        "Average DRAM Active Cycles": [
+          {
+            "value": "768",
+            "unit": "cycle"
+          },
+          {
+            "value": "768",
+            "unit": "cycle"
+          },
+          {
+            "value": "776",
+            "unit": "cycle"
+          }
+        ],
+        "Total DRAM Elapsed Cycles": [
+          {
+            "value": "263,168",
+            "unit": "cycle"
+          },
+          {
+            "value": "268,288",
+            "unit": "cycle"
+          },
+          {
+            "value": "283,648",
+            "unit": "cycle"
+          }
+        ],
+        "Average L1 Active Cycles": [
+          {
+            "value": "167.96",
+            "unit": "cycle"
+          },
+          {
+            "value": "162.81",
+            "unit": "cycle"
+          },
+          {
+            "value": "162.58",
+            "unit": "cycle"
+          }
+        ],
+        "Total L1 Elapsed Cycles": [
+          {
+            "value": "221,904",
+            "unit": "cycle"
+          },
+          {
+            "value": "218,206",
+            "unit": "cycle"
+          },
+          {
+            "value": "239,290",
+            "unit": "cycle"
+          }
+        ],
+        "Average L2 Active Cycles": [
+          {
+            "value": "1,132.38",
+            "unit": "cycle"
+          },
+          {
+            "value": "1,164",
+            "unit": "cycle"
+          },
+          {
+            "value": "1,135.50",
+            "unit": "cycle"
+          }
+        ],
+        "Total L2 Elapsed Cycles": [
+          {
+            "value": "133,856",
+            "unit": "cycle"
+          },
+          {
+            "value": "131,440",
+            "unit": "cycle"
+          },
+          {
+            "value": "144,448",
+            "unit": "cycle"
+          }
+        ],
+        "Average SM Active Cycles": [
+          {
+            "value": "167.96",
+            "unit": "cycle"
+          },
+          {
+            "value": "162.81",
+            "unit": "cycle"
+          },
+          {
+            "value": "162.58",
+            "unit": "cycle"
+          }
+        ],
+        "Total SM Elapsed Cycles": [
+          {
+            "value": "221,904",
+            "unit": "cycle"
+          },
+          {
+            "value": "218,206",
+            "unit": "cycle"
+          },
+          {
+            "value": "239,290",
+            "unit": "cycle"
+          }
+        ],
+        "Average SMSP Active Cycles": [
+          {
+            "value": "166.96",
+            "unit": "cycle"
+          },
+          {
+            "value": "161.81",
+            "unit": "cycle"
+          },
+          {
+            "value": "161.58",
+            "unit": "cycle"
+          }
+        ],
+        "Total SMSP Elapsed Cycles": [
+          {
+            "value": "887,616",
+            "unit": "cycle"
+          },
+          {
+            "value": "872,824",
+            "unit": "cycle"
+          },
+          {
+            "value": "957,160",
+            "unit": "cycle"
+          }
+        ]
+      }
+    }
+  },
+  "custom_metric_sections": {
+    "SWIGLU": {
+      "csv": "ncu_swiglu_memory.csv",
+      "kernel_count": 1,
+      "kernel_names": [
+        "triton_poi_fused_add_mul_silu_split_0"
+      ],
+      "metrics": {
+        "dram__bytes_op_read.avg": [
+          {
+            "value": "2,112",
+            "unit": "byte"
+          },
+          {
+            "value": "1,088",
+            "unit": "byte"
+          },
+          {
+            "value": "1,664",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_read.max": [
+          {
+            "value": "3,584",
+            "unit": "byte"
+          },
+          {
+            "value": "1,536",
+            "unit": "byte"
+          },
+          {
+            "value": "2,304",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_read.min": [
+          {
+            "value": "1,024",
+            "unit": "byte"
+          },
+          {
+            "value": "512",
+            "unit": "byte"
+          },
+          {
+            "value": "1,280",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_read.sum": [
+          {
+            "value": "8,448",
+            "unit": "byte"
+          },
+          {
+            "value": "4,352",
+            "unit": "byte"
+          },
+          {
+            "value": "6,656",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.avg": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.max": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.min": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.sum": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "gpu__time_duration.avg": [
+          {
+            "value": "3,648",
+            "unit": "ns"
+          },
+          {
+            "value": "3,744",
+            "unit": "ns"
+          },
+          {
+            "value": "4,160",
+            "unit": "ns"
+          }
+        ],
+        "gpu__time_duration.max": [
+          {
+            "value": "3,648",
+            "unit": "ns"
+          },
+          {
+            "value": "3,744",
+            "unit": "ns"
+          },
+          {
+            "value": "4,160",
+            "unit": "ns"
+          }
+        ],
+        "gpu__time_duration.min": [
+          {
+            "value": "3,648",
+            "unit": "ns"
+          },
+          {
+            "value": "3,744",
+            "unit": "ns"
+          },
+          {
+            "value": "4,160",
+            "unit": "ns"
+          }
+        ],
+        "gpu__time_duration.sum": [
+          {
+            "value": "3,648",
+            "unit": "ns"
+          },
+          {
+            "value": "3,744",
+            "unit": "ns"
+          },
+          {
+            "value": "4,160",
+            "unit": "ns"
+          }
+        ],
+        "lts__t_bytes.avg": [
+          {
+            "value": "1,618",
+            "unit": "byte"
+          },
+          {
+            "value": "1,362",
+            "unit": "byte"
+          },
+          {
+            "value": "1,618",
+            "unit": "byte"
+          }
+        ],
+        "lts__t_bytes.max": [
+          {
+            "value": "2,816",
+            "unit": "byte"
+          },
+          {
+            "value": "2,304",
+            "unit": "byte"
+          },
+          {
+            "value": "3,328",
+            "unit": "byte"
+          }
+        ],
+        "lts__t_bytes.min": [
+          {
+            "value": "512",
+            "unit": "byte"
+          },
+          {
+            "value": "512",
+            "unit": "byte"
+          },
+          {
+            "value": "512",
+            "unit": "byte"
+          }
+        ],
+        "lts__t_bytes.sum": [
+          {
+            "value": "25,888",
+            "unit": "byte"
+          },
+          {
+            "value": "21,792",
+            "unit": "byte"
+          },
+          {
+            "value": "25,888",
+            "unit": "byte"
+          }
+        ],
+        "tpc__average_registers_per_thread.max_rate": [
+          {
+            "value": "256",
+            "unit": "register/thread"
+          },
+          {
+            "value": "256",
+            "unit": "register/thread"
+          },
+          {
+            "value": "256",
+            "unit": "register/thread"
+          }
+        ],
+        "tpc__average_registers_per_thread.pct": [
+          {
+            "value": "6.11",
+            "unit": "%"
+          },
+          {
+            "value": "6.36",
+            "unit": "%"
+          },
+          {
+            "value": "6.38",
+            "unit": "%"
+          }
+        ],
+        "tpc__average_registers_per_thread.ratio": [
+          {
+            "value": "15.63",
+            "unit": "register/thread"
+          },
+          {
+            "value": "16.29",
+            "unit": "register/thread"
+          },
+          {
+            "value": "16.33",
+            "unit": "register/thread"
+          }
+        ]
+      }
+    },
+    "FC2": {
+      "csv": "ncu_fc2_memory.csv",
+      "kernel_count": 1,
+      "kernel_names": [
+        "void gemmSN_TN_kernel<float, 128, 16, 2, 4, 6, 7, 0, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<const float>, cublasGemvTensorStridedBatched<float>>(cublasGemmSmallNParams<T9, T10, T11, T1>)"
+      ],
+      "metrics": {
+        "dram__bytes_op_read.avg": [
+          {
+            "value": "6,208",
+            "unit": "byte"
+          },
+          {
+            "value": "6,144",
+            "unit": "byte"
+          },
+          {
+            "value": "6,144",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_read.max": [
+          {
+            "value": "6,912",
+            "unit": "byte"
+          },
+          {
+            "value": "6,912",
+            "unit": "byte"
+          },
+          {
+            "value": "6,912",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_read.min": [
+          {
+            "value": "5,120",
+            "unit": "byte"
+          },
+          {
+            "value": "5,120",
+            "unit": "byte"
+          },
+          {
+            "value": "5,120",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_read.sum": [
+          {
+            "value": "24,832",
+            "unit": "byte"
+          },
+          {
+            "value": "24,576",
+            "unit": "byte"
+          },
+          {
+            "value": "24,576",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.avg": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.max": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.min": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "dram__bytes_op_write.sum": [
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          },
+          {
+            "value": "0",
+            "unit": "byte"
+          }
+        ],
+        "gpu__time_duration.avg": [
+          {
+            "value": "5,632",
+            "unit": "ns"
+          },
+          {
+            "value": "5,696",
+            "unit": "ns"
+          },
+          {
+            "value": "5,984",
+            "unit": "ns"
+          }
+        ],
+        "gpu__time_duration.max": [
+          {
+            "value": "5,632",
+            "unit": "ns"
+          },
+          {
+            "value": "5,696",
+            "unit": "ns"
+          },
+          {
+            "value": "5,984",
+            "unit": "ns"
+          }
+        ],
+        "gpu__time_duration.min": [
+          {
+            "value": "5,632",
+            "unit": "ns"
+          },
+          {
+            "value": "5,696",
+            "unit": "ns"
+          },
+          {
+            "value": "5,984",
+            "unit": "ns"
+          }
+        ],
+        "gpu__time_duration.sum": [
+          {
+            "value": "5,632",
+            "unit": "ns"
+          },
+          {
+            "value": "5,696",
+            "unit": "ns"
+          },
+          {
+            "value": "5,984",
+            "unit": "ns"
+          }
+        ],
+        "lts__t_bytes.avg": [
+          {
+            "value": "5,166",
+            "unit": "byte"
+          },
+          {
+            "value": "5,166",
+            "unit": "byte"
+          },
+          {
+            "value": "5,166",
+            "unit": "byte"
+          }
+        ],
+        "lts__t_bytes.max": [
+          {
+            "value": "6,016",
+            "unit": "byte"
+          },
+          {
+            "value": "6,144",
+            "unit": "byte"
+          },
+          {
+            "value": "6,272",
+            "unit": "byte"
+          }
+        ],
+        "lts__t_bytes.min": [
+          {
+            "value": "3,584",
+            "unit": "byte"
+          },
+          {
+            "value": "3,584",
+            "unit": "byte"
+          },
+          {
+            "value": "3,584",
+            "unit": "byte"
+          }
+        ],
+        "lts__t_bytes.sum": [
+          {
+            "value": "82,656",
+            "unit": "byte"
+          },
+          {
+            "value": "82,656",
+            "unit": "byte"
+          },
+          {
+            "value": "82,656",
+            "unit": "byte"
+          }
+        ],
+        "tpc__average_registers_per_thread.max_rate": [
+          {
+            "value": "256",
+            "unit": "register/thread"
+          },
+          {
+            "value": "256",
+            "unit": "register/thread"
+          },
+          {
+            "value": "256",
+            "unit": "register/thread"
+          }
+        ],
+        "tpc__average_registers_per_thread.pct": [
+          {
+            "value": "18.82",
+            "unit": "%"
+          },
+          {
+            "value": "18.83",
+            "unit": "%"
+          },
+          {
+            "value": "18.82",
+            "unit": "%"
+          }
+        ],
+        "tpc__average_registers_per_thread.ratio": [
+          {
+            "value": "48.19",
+            "unit": "register/thread"
+          },
+          {
+            "value": "48.21",
+            "unit": "register/thread"
+          },
+          {
+            "value": "48.18",
+            "unit": "register/thread"
+          }
+        ]
+      }
+    }
+  },
+  "fc1_kernel_count": 1,
+  "swiglu_kernel_count": 1,
+  "fc2_kernel_count": 1,
+  "separate_swiglu_fc2_kernel_executions": true,
+  "device_tensor_materialized": "SUPPORTED",
+  "device_tensor_materialization_basis": "Megatron returns SwiGLU output tensor to a separate linear_fc2 invocation; NVTX-filtered NCU shows distinct executions.",
+  "dram_round_trip": "UNKNOWN",
+  "dram_round_trip_reason": "Per-kernel DRAM counters include all traffic attributable to that kernel and cannot isolate activation from weights/other traffic in this workload.",
+  "raw_artifacts": [
+    "ncu_fc1_basic.csv",
+    "ncu_swiglu_basic.csv",
+    "ncu_fc2_basic.csv",
+    "ncu_swiglu_memory.csv",
+    "ncu_fc2_memory.csv"
+  ]
+}

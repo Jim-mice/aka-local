@@ -1,0 +1,61 @@
+{
+  "operator": "swiglu",
+  "shape": {
+    "batch": 2,
+    "sequence": 3,
+    "hidden_fc1": 32
+  },
+  "dtype": "torch.float32",
+  "dataflow": [
+    "fc1",
+    "bias_add",
+    "swiglu",
+    "fc2"
+  ],
+  "tensor_lifetimes": {
+    "fc1_output": "until_swiglu",
+    "swiglu_output": "until_fc2"
+  },
+  "global_memory_reads": [
+    "fc1_output"
+  ],
+  "global_memory_writes": [
+    "swiglu_output"
+  ],
+  "shared_residency": [],
+  "register_residency": [],
+  "estimated_bytes": null,
+  "estimated_flops": null,
+  "reductions": [],
+  "synchronizations": [],
+  "kernel_launches": null,
+  "producer_consumer_boundaries": [
+    "fc1->bias_add_swiglu",
+    "bias_add_swiglu->fc2"
+  ],
+  "known_reuse": [],
+  "fixed_dimensions": {},
+  "dynamic_dimensions": [],
+  "parallel_mapping": {},
+  "profile_evidence": {
+    "idle_resources": [],
+    "supports_mechanism_ids": [],
+    "contradicts_mechanism_ids": [],
+    "measured_invocations_per_step": 1.0,
+    "boundary_latency_ms": 0.09492800012230873,
+    "whole_step_latency_ms": 0.6619359850883484,
+    "evidence_status": "MEASURED",
+    "authentic": true
+  },
+  "unknown_fields": [
+    "registers_per_thread",
+    "kernel_launch_count",
+    "CUPTI_kernel_breakdown"
+  ],
+  "e2e_profile": {
+    "scope": "LOCAL_MLP_TRAINING_STEP",
+    "operator_fraction_of_step": 0.14340963818372665,
+    "operator_fraction_evidence": "DERIVED",
+    "max_possible_e2e_speedup": 1.1674191592345817
+  }
+}

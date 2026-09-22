@@ -1,3 +1,3 @@
 # Residual Add RMSNorm training
 
-Formal operator registry entry. Remote BI-V150 evidence is external and read-only; it is not a local incumbent.
+正式 operator registry 条目。远程 BI-V150 evidence 属于外部只读证据，不是本地 incumbent。

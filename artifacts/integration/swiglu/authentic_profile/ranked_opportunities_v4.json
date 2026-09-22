@@ -1,0 +1,238 @@
+{
+  "raw_generation": [
+    {
+      "hypothesis_id": "fp-producer-consumer-boundary",
+      "origin": "FIRST_PRINCIPLES",
+      "category": "exploratory",
+      "observation": "A producer-consumer boundary is recorded around an intermediate tensor",
+      "mechanism": "the intermediate may be materialized only to cross an artificial kernel boundary",
+      "transformation": "fuse the compatible producer and consumer or remove the intermediate materialization",
+      "preconditions": [
+        "producer and consumer have compatible layouts",
+        "fusion does not exceed working-set limits"
+      ],
+      "expected_effect": [
+        "remove an intermediate write/read round trip",
+        "reduce launch overhead if a boundary disappears"
+      ],
+      "estimated_magnitude": "UNKNOWN",
+      "risks": [
+        "register/shared pressure",
+        "reduced scheduling flexibility",
+        "numerical drift"
+      ],
+      "required_evidence": [
+        "L0 correctness",
+        "CUDA Event boundary timing",
+        "kernel launch or memory traffic measurement"
+      ],
+      "evidence_refs": [
+        "performance_facts.producer_consumer_boundaries",
+        "performance_facts.global_memory_writes"
+      ],
+      "unknowns": [
+        "actual kernel count",
+        "actual intermediate traffic",
+        "layout compatibility"
+      ],
+      "novelty": 1.0,
+      "score": 0.0,
+      "asserted_facts": [],
+      "mechanism_ids": []
+    },
+    {
+      "hypothesis_id": "measurement-kernel-boundary-cost",
+      "origin": "EXPLORATORY",
+      "category": "measurement",
+      "observation": "Kernel launch count and boundary-level profile evidence are unknown",
+      "mechanism": "the dominant cost cannot be distinguished between launch, memory, and compute without a boundary measurement",
+      "transformation": "measure kernel launches, boundary latency, and memory traffic before selecting an optimization",
+      "preconditions": [
+        "a repeatable local workload exists"
+      ],
+      "expected_effect": [
+        "reduce uncertainty in bottleneck classification"
+      ],
+      "estimated_magnitude": "UNKNOWN",
+      "risks": [
+        "measurement overhead"
+      ],
+      "required_evidence": [
+        "CUDA Event timing",
+        "kernel launch trace",
+        "memory traffic evidence"
+      ],
+      "evidence_refs": [
+        "performance_facts.unknown_fields",
+        "performance_facts.profile_evidence"
+      ],
+      "unknowns": [
+        "kernel launch count",
+        "register pressure",
+        "memory traffic"
+      ],
+      "novelty": 1.0,
+      "score": 0.0,
+      "asserted_facts": [],
+      "mechanism_ids": []
+    }
+  ],
+  "validated": [
+    {
+      "hypothesis_id": "fp-producer-consumer-boundary",
+      "origin": "FIRST_PRINCIPLES",
+      "category": "exploratory",
+      "observation": "A producer-consumer boundary is recorded around an intermediate tensor",
+      "mechanism": "the intermediate may be materialized only to cross an artificial kernel boundary",
+      "transformation": "fuse the compatible producer and consumer or remove the intermediate materialization",
+      "preconditions": [
+        "producer and consumer have compatible layouts",
+        "fusion does not exceed working-set limits"
+      ],
+      "expected_effect": [
+        "remove an intermediate write/read round trip",
+        "reduce launch overhead if a boundary disappears"
+      ],
+      "estimated_magnitude": "UNKNOWN",
+      "risks": [
+        "register/shared pressure",
+        "reduced scheduling flexibility",
+        "numerical drift"
+      ],
+      "required_evidence": [
+        "L0 correctness",
+        "CUDA Event boundary timing",
+        "kernel launch or memory traffic measurement"
+      ],
+      "evidence_refs": [
+        "performance_facts.producer_consumer_boundaries",
+        "performance_facts.global_memory_writes"
+      ],
+      "unknowns": [
+        "actual kernel count",
+        "actual intermediate traffic",
+        "layout compatibility"
+      ],
+      "novelty": 1.0,
+      "score": 0.0,
+      "asserted_facts": [],
+      "mechanism_ids": []
+    },
+    {
+      "hypothesis_id": "measurement-kernel-boundary-cost",
+      "origin": "EXPLORATORY",
+      "category": "measurement",
+      "observation": "Kernel launch count and boundary-level profile evidence are unknown",
+      "mechanism": "the dominant cost cannot be distinguished between launch, memory, and compute without a boundary measurement",
+      "transformation": "measure kernel launches, boundary latency, and memory traffic before selecting an optimization",
+      "preconditions": [
+        "a repeatable local workload exists"
+      ],
+      "expected_effect": [
+        "reduce uncertainty in bottleneck classification"
+      ],
+      "estimated_magnitude": "UNKNOWN",
+      "risks": [
+        "measurement overhead"
+      ],
+      "required_evidence": [
+        "CUDA Event timing",
+        "kernel launch trace",
+        "memory traffic evidence"
+      ],
+      "evidence_refs": [
+        "performance_facts.unknown_fields",
+        "performance_facts.profile_evidence"
+      ],
+      "unknowns": [
+        "kernel launch count",
+        "register pressure",
+        "memory traffic"
+      ],
+      "novelty": 1.0,
+      "score": 0.0,
+      "asserted_facts": [],
+      "mechanism_ids": []
+    }
+  ],
+  "rejected": [],
+  "ranked": [
+    {
+      "hypothesis_id": "measurement-kernel-boundary-cost",
+      "origin": "EXPLORATORY",
+      "category": "measurement",
+      "observation": "Kernel launch count and boundary-level profile evidence are unknown",
+      "mechanism": "the dominant cost cannot be distinguished between launch, memory, and compute without a boundary measurement",
+      "transformation": "measure kernel launches, boundary latency, and memory traffic before selecting an optimization",
+      "preconditions": [
+        "a repeatable local workload exists"
+      ],
+      "expected_effect": [
+        "reduce uncertainty in bottleneck classification"
+      ],
+      "estimated_magnitude": "UNKNOWN",
+      "risks": [
+        "measurement overhead"
+      ],
+      "required_evidence": [
+        "CUDA Event timing",
+        "kernel launch trace",
+        "memory traffic evidence"
+      ],
+      "evidence_refs": [
+        "performance_facts.unknown_fields",
+        "performance_facts.profile_evidence"
+      ],
+      "unknowns": [
+        "kernel launch count",
+        "register pressure",
+        "memory traffic"
+      ],
+      "novelty": 1.0,
+      "score": 1.25,
+      "asserted_facts": [],
+      "mechanism_ids": []
+    },
+    {
+      "hypothesis_id": "fp-producer-consumer-boundary",
+      "origin": "FIRST_PRINCIPLES",
+      "category": "exploratory",
+      "observation": "A producer-consumer boundary is recorded around an intermediate tensor",
+      "mechanism": "the intermediate may be materialized only to cross an artificial kernel boundary",
+      "transformation": "fuse the compatible producer and consumer or remove the intermediate materialization",
+      "preconditions": [
+        "producer and consumer have compatible layouts",
+        "fusion does not exceed working-set limits"
+      ],
+      "expected_effect": [
+        "remove an intermediate write/read round trip",
+        "reduce launch overhead if a boundary disappears"
+      ],
+      "estimated_magnitude": "UNKNOWN",
+      "risks": [
+        "register/shared pressure",
+        "reduced scheduling flexibility",
+        "numerical drift"
+      ],
+      "required_evidence": [
+        "L0 correctness",
+        "CUDA Event boundary timing",
+        "kernel launch or memory traffic measurement"
+      ],
+      "evidence_refs": [
+        "performance_facts.producer_consumer_boundaries",
+        "performance_facts.global_memory_writes"
+      ],
+      "unknowns": [
+        "actual kernel count",
+        "actual intermediate traffic",
+        "layout compatibility"
+      ],
+      "novelty": 1.0,
+      "score": 0.25,
+      "asserted_facts": [],
+      "mechanism_ids": []
+    }
+  ],
+  "ablation_plans": []
+}

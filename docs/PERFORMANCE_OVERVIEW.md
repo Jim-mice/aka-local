@@ -22,6 +22,18 @@
 
 NSYS、microbenchmark、kernel latency、Amdahl upper bound 等定位数据。它们用于解释瓶颈，不能当作 end-to-end speedup。
 
+### `LOCAL_NON_REPRESENTATIVE`
+
+真实本地 runtime 上已经执行，但 shape、硬件或 scope 不能代表目标九格 workload。此等级可用于 correctness、integration 和诊断，不能外推为生产性能。
+
+### `MEASUREMENT_INCONCLUSIVE`
+
+测量已经执行，但关键归因证据不足，不能支持结构性优化结论。
+
+### `REFUTED_FOR_LOCAL_WORKLOAD`
+
+在明确冻结的本地 workload 上，某条 causal story 已被证据拒绝。这个结论只约束该 workload，不外推到所有 shape 或所有硬件。
+
 ## 顶部总览
 
 | 真实目标 | 当前最佳性能证据 | 证据等级 | 当前状态 | 主要数据位置 |
@@ -90,7 +102,7 @@ Episode 7 是正式 incumbent，稳定 TP=2 geometric-mean speedup 为 `2.477190
 
 #### 原始 benchmark
 
-- [Episode 7 result](../campaigns/targets/megatron_5be9626/vocab_parallel_cross_entropy/episode_7/result.json)
+- [Episode 7 incumbent manifest](../campaigns/targets/megatron_5be9626/vocab_parallel_cross_entropy/incumbent_manifest.json)
 - [final replay](../targets/megatron_5be9626/vocab_parallel_cross_entropy/final_replay_15b8.json)
 - [Episode 7 stability analysis](../targets/megatron_5be9626/vocab_parallel_cross_entropy/stability_analysis_15b7_ep7.json)
 
@@ -186,7 +198,7 @@ Phase 20-A/20-B.0 没有 candidate score。保留的 non-GEMM local GPU graph �
 
 #### 汇总结果
 
-- [A2 profile analysis](../campaigns/targets/megatron_5be9626/megatron_native_dot_product_attention/episode_A2/a2_profile_analysis.json)
+- [A2 paired summary](../campaigns/targets/megatron_5be9626/megatron_native_dot_product_attention/episode_A2/paired_summary.json)
 - [Phase 20-A kernel decomposition](../targets/megatron_5be9626/megatron_native_dot_product_attention/phase20a_kernel_decomposition.json)
 - [Phase 20-B.0 timing diagnostic](../targets/megatron_5be9626/megatron_native_dot_product_attention/phase20b0_timing_diagnostic.json)
 
@@ -239,3 +251,68 @@ two-empty 的 reference CV 为 `0.3733`，超过冻结门限 `0.20`。故状态�
 - [五个真实 Megatron target 的实验汇总](../FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md)
 - [真实 target campaign 索引](../REAL_TARGET_CAMPAIGN_INDEX.md)
 - [机器可读五目标状态](../five_target_campaign_state.json)
+
+## 本地真实 Megatron SwiGLU：集成、测量与证伪
+
+本节记录 2026-09-22 的本地真实 Megatron 证据。它不是代表性九格性能结果。
+
+### 环境与冻结 workload
+
+环境来自 [timing attribution](../artifacts/integration/swiglu/real_loop_003/timing_attribution.json) 和 [shape provenance](../artifacts/integration/swiglu/real_loop_004/nine_grid_shape_provenance.json)：
+
+| 项目 | 值 |
+|---|---|
+| Python | `C:\Users\38154\.venvs\urban6-stgcn\Scripts\python.exe` |
+| PyTorch | `2.11.0+cu128` |
+| CUDA runtime | `12.8` |
+| GPU | `NVIDIA GeForce RTX 5060 Laptop GPU` |
+| Megatron commit | `5be9626709af2722333bf54797c954c09edeada3` |
+| batch / sequence / hidden | `2 / 3 / 8` |
+| FFN hidden | `16` |
+| dtype | `float32` |
+| TP / SP | `1 / false` |
+
+真实路径为 `MLP.forward → linear_fc1 → bias_swiglu_impl → BiasSwiGLUFunction → linear_fc2`。该 workload 用于 correctness、integration 和物理测量，不是 production representative shape。
+
+### 权威 timing reconciliation
+
+权威原始 artifact 为 [batched_swiglu_timing.json](../artifacts/integration/swiglu/real_loop_003/batched_swiglu_timing.json)，reconciliation 记录在 [timing_evidence_reconciliation.json](../artifacts/integration/swiglu/real_loop_004/timing_evidence_reconciliation.json)。协议是外层 CUDA Event、`K=512`、20 个 warmup batches、50 个 measured batches；中位 batch window 为 `27.518064498901367 ms`，权威 amortized authentic callable 为 `53.74621972441673 us`。
+
+历史 `55.63945323228836 us` 来自早期 `K=8192` diagnostic batch，不是当前权威值；它只保留在 reconciliation 的历史来源说明中。
+
+三种 timing 不是同一测量对象：
+
+| 对象 | 值 | 证据等级 |
+|---|---:|---|
+| NCU active SwiGLU kernel duration | `3.648 us` | `DIAGNOSTIC_ONLY` |
+| batched authentic callable | `53.74621972441673 us` | `LOCAL_NON_REPRESENTATIVE` |
+| old inner CUDA Event region | `72.512 us` | `DIAGNOSTIC_ONLY`，已知受扰动 |
+| synchronized Python wall | `65.10000093840063 us` median | `DIAGNOSTIC_ONLY` |
+
+NCU active kernel duration、authentic callable GPU timeline、inner Event region 和 host wall time 测量的是不同层级。结论不是“CUDA Event 不准”，而是微秒级 kernel 上 inner Event instrumentation 会改变路径。
+
+### instrumentation perturbation
+
+Loop 002 artifact 显示 uninstrumented whole MLP median 为 `0.19195199757814407 ms`，instrumented median 为 `0.2633120119571686 ms`，扰动约 `+37.18%`。因此 `EVENT_INSTRUMENTATION = PERTURBING`；受 inner Event 影响的 paired fraction 不能作为无扰动模型占比。
+
+### local model fraction 与 Amdahl 上界
+
+robust fraction audit 的 split estimator 为 `0.015571`，95% CI `[0.014957, 0.015796]`；paired estimator 为 `0.041957`，95% CI `[0.041793, 0.042108]`，后者受 instrumentation 影响。公开主口径采用 split estimator：`LOCAL_MINIMAL_GPTMODEL` 中 SwiGLU 约占 `1.56%`。
+
+对应的无限加速上界约为 `1.015818x`；若 SwiGLU 加速为 `2x`，理论 local-model 上界约为 `1.007847x`。这不是九格模型结论。
+
+### 物理 profiler 数据
+
+NCU 记录的 authentic SwiGLU kernel 为：`16 registers/thread`、动态/静态 shared memory 均为 `0 B`、grid 为 `1 block`、block 为 `128 threads`、设备为 `26 SM`、achieved occupancy 为 `7.25%`、kernel-total DRAM read 为 `8448 B`、DRAM write 为 `0 B`。`8448 B` 是 kernel-total read，不是 activation-only bytes。单 block 在 26-SM GPU 上支持 `GRID_UNDERSUBSCRIBED`，不能把低 achieved occupancy 解释成 register pressure。
+
+### activation、cache-pressure 与因果结论
+
+真实 activation shape 为 `[3, 2, 16]`，`96` 个 float32 元素，payload 为 `384 B`；详见 [measurement_facts_003.json](../artifacts/integration/swiglu/real_loop_003/measurement_facts_003.json)。FC2 baseline 的 total DRAM read 为 `25088 B`、L2 request 为 `82912 B`；64 MiB pressure buffer（设备 L2 为 32 MiB）后分别为 `24832 B` 和 `82912 B`，FC2 duration 为 `6.368 us` / `6.304 us`。这些是 FC2 total traffic，不能直接当 activation-only traffic。
+
+因此层级结论必须分开保存：`GRAPH_VALUE_EXISTS = YES`、`DEVICE_TENSOR_MATERIALIZED = YES`、`SEPARATE_KERNELS = YES`、`CACHE_RESIDENCY = INCONCLUSIVE`、`DRAM_ROUND_TRIP = UNKNOWN`。当前 tiny local workload 上，“存在值得消除的 SwiGLU→FC2 activation HBM round-trip”被标为 `REFUTED_FOR_LOCAL_WORKLOAD`，不是“所有 SwiGLU fusion 都无效”。
+
+### 为什么停止继续优化 toy workload
+
+Loop 004 的 `REPRESENTATIVE_SHAPE_STATUS = PARTIAL`，`CONFIGURATION_IDENTITY = null`。现有 historical fixture 的 `S=128, B=2, H=1024, FP16, TP=1` 只能作为 historical V100 fixture；同一 identity 下缺 `FFN hidden` 和 `SP`，不能标为九格 representative。因此 `REPRESENTATIVE_REPLAY_SPEC = NOT_CREATED`，下一阶段为 `WAIT_FOR_AUTHORITATIVE_SHAPE`。
+
+来源： [Loop 003 audit](audits/real_optimization_loop_003_cache_and_timing.md)、[Loop 004 audit](audits/real_optimization_loop_004_shape_acquisition.md)、[Loop 004 provenance](../artifacts/integration/swiglu/real_loop_004/nine_grid_shape_provenance.json)。

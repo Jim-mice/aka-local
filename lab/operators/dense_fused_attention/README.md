@@ -1,3 +1,3 @@
 # Dense Fused Attention
 
-Formal registry entry; no local experiment is imported yet.
+正式 registry 条目；当前尚未导入本地实验。

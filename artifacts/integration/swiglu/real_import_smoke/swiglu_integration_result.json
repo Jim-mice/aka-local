@@ -1,0 +1,28 @@
+{
+  "backward_correctness": {
+    "status": "BACKWARD_RUNTIME_BLOCKED"
+  },
+  "baseline_target_invocations": 0,
+  "candidate_hash": "a3d1887013bd05c38319ff32e31ed627479994426666498db0db20143feedea4",
+  "captured_shape": null,
+  "evidence": {
+    "blocker": "ModuleNotFoundError: No module named 'torch'",
+    "classification": "HARNESS_IMPLEMENTED",
+    "runtime": "RUNTIME_BLOCKED"
+  },
+  "fallback_detected": null,
+  "forward_correctness": {
+    "status": "RUNTIME_BLOCKED"
+  },
+  "integration_contract_hash": "c06dde575abb3b071db4cd0d75d0678d14679c6ac0011e0736c436ec12cb3c46",
+  "replacement_invocations": 0,
+  "runtime_environment": {
+    "blocker": "ModuleNotFoundError: No module named 'torch'",
+    "distributed_invariants": false,
+    "python": "3.11.15 | packaged by Anaconda, Inc. | (main, Jun 11 2026, 15:12:53) [MSC v.1942 64 bit (AMD64)]",
+    "torch": "missing"
+  },
+  "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "status": "INTEGRATION_BLOCKED",
+  "timing_if_available": null
+}

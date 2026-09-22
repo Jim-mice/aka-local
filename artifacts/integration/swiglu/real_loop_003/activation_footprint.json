@@ -1,0 +1,67 @@
+{
+  "environment": {
+    "status": "PASS",
+    "python": "C:\\Users\\38154\\.venvs\\urban6-stgcn\\Scripts\\python.exe",
+    "torch": "2.11.0+cu128",
+    "cuda_runtime": "12.8",
+    "gpu": "NVIDIA GeForce RTX 5060 Laptop GPU",
+    "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "batch": 2,
+    "sequence": 3,
+    "hidden": 8,
+    "ffn_hidden": 16,
+    "dtype": "torch.float32",
+    "tp": 1,
+    "sp": false,
+    "mode": "full",
+    "l2_cache_size_bytes": 33554432
+  },
+  "fc1_value": {
+    "shape": [
+      3,
+      2,
+      32
+    ],
+    "numel": 192,
+    "dtype": "torch.float32",
+    "element_size_bytes": 4,
+    "payload_bytes": 768,
+    "stride": [
+      64,
+      32,
+      1
+    ],
+    "storage_bytes": 768
+  },
+  "bias": {
+    "shape": [
+      32
+    ],
+    "numel": 32,
+    "dtype": "torch.float32",
+    "payload_bytes": 128,
+    "stride": [
+      1
+    ],
+    "storage_bytes": 128
+  },
+  "activation": {
+    "shape": [
+      3,
+      2,
+      16
+    ],
+    "numel": 96,
+    "dtype": "torch.float32",
+    "element_size_bytes": 4,
+    "payload_bytes": 384,
+    "stride": [
+      32,
+      16,
+      1
+    ],
+    "is_contiguous": true,
+    "storage_bytes": 384,
+    "requires_grad": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "max_attempts_per_hypothesis": 5,
+  "max_compile_repairs": 2,
+  "max_correctness_repairs": 2,
+  "max_performance_refinements": 2,
+  "profile_after_correctness": true
+}

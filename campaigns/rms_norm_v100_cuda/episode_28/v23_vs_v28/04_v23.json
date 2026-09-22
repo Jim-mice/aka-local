@@ -1,0 +1,57 @@
+{
+  "compile_pass": true,
+  "correctness_pass": true,
+  "shapes": [
+    {
+      "shape": "1,4096",
+      "latency_us": 24.21,
+      "speedup_vs_torch": 3.075,
+      "speedup_vs_naive": 3.096,
+      "correctness": true
+    },
+    {
+      "shape": "4,4096",
+      "latency_us": 24.34,
+      "speedup_vs_torch": 3.868,
+      "speedup_vs_naive": 3.933,
+      "correctness": true
+    },
+    {
+      "shape": "8,4096",
+      "latency_us": 24.39,
+      "speedup_vs_torch": 4.132,
+      "speedup_vs_naive": 5.225,
+      "correctness": true
+    },
+    {
+      "shape": "32,4096",
+      "latency_us": 24.53,
+      "speedup_vs_torch": 5.781,
+      "speedup_vs_naive": 5.834,
+      "correctness": true
+    }
+  ],
+  "aggregate_score": 4.106,
+  "geometric_mean_speedup": 4.106,
+  "speedup": 3.075,
+  "latency_us": 24.21,
+  "evidence": {
+    "compile": true,
+    "compile_error": "",
+    "nvcc_cmd": "/usr/local/cuda-11.8/bin/nvcc -Xcompiler -fPIC -shared -O2 -gencode arch=compute_70,code=sm_70 -o /home/bencheng/aka_remote_jobs/1dabce24d88e/candidate.so /home/bencheng/aka_remote_jobs/1dabce24d88e/candidate.cu",
+    "correctness": true,
+    "max_error": 4.76837158203125e-07,
+    "latency_us": 24.22,
+    "torch_naive_latency_us": 87.9,
+    "torch_optimized_latency_us": 74.68,
+    "speedup_vs_naive": 3.629,
+    "speedup_vs_torch": 3.083,
+    "source": "remote-v100-ssh",
+    "gpu": "Tesla V100-PCIE-16GB",
+    "arch": "sm_70",
+    "timestamp": "2026-09-21T10:06:09.956895+00:00"
+  },
+  "error": "",
+  "profile_available": false,
+  "profile_summary": null
+}

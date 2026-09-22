@@ -1,0 +1,119 @@
+{
+  "scopes": {
+    "TRANSFORMER_LAYER": {
+      "status": "PASS",
+      "scope": "TRANSFORMER_LAYER",
+      "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.11.0+cu128",
+      "cuda": "12.8",
+      "cuda_available": true,
+      "device": "cuda",
+      "call_chain": "GPTModel.forward -> TransformerBlock.forward -> TransformerLayer.forward -> TransformerLayer._forward_mlp -> MLP.forward -> bias_swiglu_impl",
+      "source_locations": {
+        "gpt_model": "megatron/core/models/gpt/gpt_model.py::GPTModel.forward",
+        "transformer_block": "megatron/core/transformer/transformer_block.py::TransformerBlock.forward",
+        "transformer_layer": "megatron/core/transformer/transformer_layer.py::TransformerLayer.forward",
+        "mlp": "megatron/core/transformer/mlp.py::MLP.forward",
+        "swiglu": "megatron/core/fusions/fused_bias_swiglu.py::bias_swiglu_impl"
+      },
+      "shape": [
+        3,
+        2,
+        8
+      ],
+      "replacement_invocations": 1,
+      "forward_max_abs_error": 0.0,
+      "forward_max_rel_error": 0.0,
+      "loss_abs_error": 0.0,
+      "gradient_kind": "input",
+      "input_grad_max_abs_error": 0.0,
+      "finite": true,
+      "no_silent_fallback": true,
+      "authentic_boundary_ms": [
+        507.9156799316406
+      ],
+      "authentic_boundary_median_ms": 507.9156799316406,
+      "whole_scope_ms": 763.05908203125,
+      "replacement_whole_scope_ms": 7.310495853424072,
+      "operator_fraction": 0.6656308690797283
+    },
+    "TRANSFORMER_BLOCK": {
+      "status": "PASS",
+      "scope": "TRANSFORMER_BLOCK",
+      "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.11.0+cu128",
+      "cuda": "12.8",
+      "cuda_available": true,
+      "device": "cuda",
+      "call_chain": "GPTModel.forward -> TransformerBlock.forward -> TransformerLayer.forward -> TransformerLayer._forward_mlp -> MLP.forward -> bias_swiglu_impl",
+      "source_locations": {
+        "gpt_model": "megatron/core/models/gpt/gpt_model.py::GPTModel.forward",
+        "transformer_block": "megatron/core/transformer/transformer_block.py::TransformerBlock.forward",
+        "transformer_layer": "megatron/core/transformer/transformer_layer.py::TransformerLayer.forward",
+        "mlp": "megatron/core/transformer/mlp.py::MLP.forward",
+        "swiglu": "megatron/core/fusions/fused_bias_swiglu.py::bias_swiglu_impl"
+      },
+      "shape": [
+        3,
+        2,
+        8
+      ],
+      "replacement_invocations": 1,
+      "forward_max_abs_error": 0.0,
+      "forward_max_rel_error": 0.0,
+      "loss_abs_error": 0.0,
+      "gradient_kind": "input",
+      "input_grad_max_abs_error": 0.0,
+      "finite": true,
+      "no_silent_fallback": true,
+      "authentic_boundary_ms": [
+        0.17267200350761414
+      ],
+      "authentic_boundary_median_ms": 0.17267200350761414,
+      "whole_scope_ms": 2.541152000427246,
+      "replacement_whole_scope_ms": 2.1491520404815674,
+      "operator_fraction": 0.06795028533459732
+    },
+    "MINIMAL_MODEL": {
+      "status": "PASS",
+      "scope": "MINIMAL_MODEL",
+      "source_commit": "5be9626709af2722333bf54797c954c09edeada3",
+      "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+      "torch": "2.11.0+cu128",
+      "cuda": "12.8",
+      "cuda_available": true,
+      "device": "cuda",
+      "call_chain": "GPTModel.forward -> TransformerBlock.forward -> TransformerLayer.forward -> TransformerLayer._forward_mlp -> MLP.forward -> bias_swiglu_impl",
+      "source_locations": {
+        "gpt_model": "megatron/core/models/gpt/gpt_model.py::GPTModel.forward",
+        "transformer_block": "megatron/core/transformer/transformer_block.py::TransformerBlock.forward",
+        "transformer_layer": "megatron/core/transformer/transformer_layer.py::TransformerLayer.forward",
+        "mlp": "megatron/core/transformer/mlp.py::MLP.forward",
+        "swiglu": "megatron/core/fusions/fused_bias_swiglu.py::bias_swiglu_impl"
+      },
+      "shape": [
+        3,
+        2,
+        8
+      ],
+      "replacement_invocations": 1,
+      "forward_max_abs_error": 0.0,
+      "forward_max_rel_error": 0.0,
+      "loss_abs_error": 0.0,
+      "gradient_kind": "first_parameter",
+      "input_grad_max_abs_error": 0.0,
+      "finite": true,
+      "no_silent_fallback": true,
+      "authentic_boundary_ms": [
+        0.12265600264072418
+      ],
+      "authentic_boundary_median_ms": 0.12265600264072418,
+      "whole_scope_ms": 6.598400115966797,
+      "replacement_whole_scope_ms": 2.411776065826416,
+      "operator_fraction": 0.018588748861094587
+    }
+  },
+  "NINE_GRID_E2E": null
+}
