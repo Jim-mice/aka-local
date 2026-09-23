@@ -1,0 +1,63 @@
+{
+  "PROFILE_STATUS": "PASS",
+  "BACKWARD_KERNEL_COUNT": 3,
+  "MAX_SHAPE_BACKWARD_BREAKDOWN": {
+    "rms_backward_kernel": {
+      "duration_us": 19.2,
+      "percent": 57.31
+    },
+    "float16_copy_kernel_(FP32_to_FP16_cast)": {
+      "duration_us": 7.65,
+      "percent": 22.83
+    },
+    "FillFunctor_(zero_memset)": {
+      "duration_us": 6.66,
+      "percent": 19.86
+    }
+  },
+  "MAIN_KERNEL_DURATION": "21.44 us (NCU)",
+  "REGISTERS_PER_THREAD": 28,
+  "ACHIEVED_OCCUPANCY": "39.74%",
+  "DRAM_READ": "L1 hit=22.07%, L2 hit=61.87%, DRAM=5.67% of peak",
+  "DRAM_WRITE": "Memory Throughput=49.25 GB/s (21.94% of peak)",
+  "L2_METRICS": "L2 hit rate=61.87%, L2 throughput=6.42%, suboptimal sector utilization (2.0/4 per cache line)",
+  "ATOMIC_DW_BOTTLENECK": "LIKELY",
+  "ATOMIC_EVIDENCE": [
+    "262,144 atomicAdd operations per backward (256 rows x 1024 weight dims)",
+    "No Eligible warps: 77.15% (warps stalled most of the time)",
+    "Eligible warps per scheduler: 0.46 out of 16",
+    "Grid too small: 0.48 waves per SM, cannot fill V100's 80 SMs",
+    "Memory throughput low: 49.25 GB/s (21.94% peak)",
+    "Atomic contention on 1024 dweight elements with 256 simultaneous row-blocks"
+  ],
+  "DW_ZERO_OVERHEAD": "SIGNIFICANT",
+  "DW_ZERO_EVIDENCE": [
+    "torch::zeros({1024}, float32) triggers FillFunctor kernel every backward",
+    "FillFunctor takes 6.66 us = 19.86% of total backward GPU time",
+    "This is a fixed overhead regardless of row count"
+  ],
+  "DW_CAST_OVERHEAD": "SIGNIFICANT",
+  "DW_CAST_EVIDENCE": [
+    "grad_weight_fp32.to(float16) triggers float16_copy_kernel every backward",
+    "float16_copy_kernel takes 7.65 us = 22.83% of total backward GPU time",
+    "This is a fixed overhead regardless of row count"
+  ],
+  "CANDIDATE_VARIABILITY_SOURCE": "MAIN_KERNEL",
+  "VARIABILITY_EVIDENCE": [
+    "Diagnostic 120-iteration CV: 0.079 (7.9%) for single backward",
+    "Bimodal distribution: tight cluster 0.176-0.203ms + outlier tail to 0.285ms",
+    "L0 CV: 0.025-0.098 (in-window), low",
+    "L2 CV: 0.218 (K=8 outer windows), exceeds 0.20 threshold",
+    "Root cause: small kernel (0.48 waves) sensitive to GPU clock/power state transitions",
+    "Secondary: atomic contention contributes to main kernel time variance"
+  ],
+  "V2_OPTIMIZATION_PRIORITY": {
+    "1": "A. REDUCE_ATOMIC_DW - reduce 262K atomics (e.g., block-level reduction before atomic)",
+    "2": "B. REMOVE_TEMP_ZERO_ALLOC - fuse zero into main kernel or reuse persistent buffer",
+    "3": "C. REMOVE_DW_CAST - write dweight directly in FP16 or fuse cast into main kernel"
+  },
+  "CANDIDATE_MODIFIED": "NO",
+  "OFFICIAL_OJ_MODIFIED": "NO",
+  "NEW_CANDIDATE_CREATED": "NO",
+  "AGENT_SOURCE_READ": "NO"
+}
