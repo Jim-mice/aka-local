@@ -1,0 +1,18 @@
+﻿GPU_STATE_AFTER.txt
+===================
+Timestamp (remote): 2026-09-23 (Asia/Shanghai) - after L2 Run 2
+Host: 10.130.147.227 (Linux v100-srv 5.15.0-139-generic)
+Driver: 535.183.06
+
+nvidia-smi --query-gpu=index,name,uuid,utilization.gpu,memory.used,memory.total --format=csv
+index, name, uuid, utilization.gpu [%], memory.used [MiB], memory.total [MiB]
+0, Tesla V100-PCIE-16GB, GPU-4d45ba1b-fdf9-54c5-d26f-e6e529c2b8ec, 1 %, 357 MiB, 16384 MiB
+1, Tesla V100-PCIE-16GB, GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d, 0 %, 5 MiB, 16384 MiB
+
+nvidia-smi --query-compute-apps=pid,process_name,gpu_uuid,used_memory --format=csv
+206882, python, GPU-4d45ba1b-fdf9-54c5-d26f-e6e529c2b8ec, 370 MiB
+
+Target GPU (index 1, GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d): 0% util, 5 MiB used, no compute processes owned by this evaluation.
+Index 0 (NOT TARGET): another user process exists but is on a different GPU and does not interfere.
+
+GPU_CLEAN_AFTER: YES

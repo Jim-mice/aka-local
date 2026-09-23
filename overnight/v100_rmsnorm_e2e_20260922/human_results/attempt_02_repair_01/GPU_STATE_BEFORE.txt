@@ -1,0 +1,20 @@
+﻿GPU_STATE_BEFORE.txt
+====================
+Timestamp (remote): 2026-09-23 (Asia/Shanghai) - pre-evaluation
+Host: 10.130.147.227 (Linux v100-srv 5.15.0-139-generic)
+Driver: 535.183.06
+
+nvidia-smi --query-gpu=index,name,uuid,utilization.gpu,memory.used,memory.total --format=csv
+index, name, uuid, utilization.gpu [%], memory.used [MiB], memory.total [MiB]
+0, Tesla V100-PCIE-16GB, GPU-4d45ba1b-fdf9-54c5-d26f-e6e529c2b8ec, 0 %, 5 MiB, 16384 MiB
+1, Tesla V100-PCIE-16GB, GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d, 0 %, 5 MiB, 16384 MiB
+
+nvidia-smi --query-compute-apps=pid,process_name,gpu_uuid,used_memory --format=csv
+(empty - no compute processes)
+
+Target GPU: index 1, GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d
+Other GPU: index 0, GPU-4d45ba1b-fdf9-54c5-d26f-e6e529c2b8ec (NOT TARGET)
+
+Evaluation will use CUDA_VISIBLE_DEVICES=1 to lock to target GPU.
+
+GPU_CLEAN: YES

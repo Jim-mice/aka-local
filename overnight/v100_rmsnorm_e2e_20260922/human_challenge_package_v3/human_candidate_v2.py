@@ -764,8 +764,7 @@ class _HumanRMSNormFunction(torch.autograd.Function):
     @staticmethod
     def backward(ctx, grad_y):
 
-        x, weight, inv_rms =
-            ctx.saved_tensors
+        x, weight, inv_rms = ctx.saved_tensors
 
         g_c = (
             grad_y
@@ -773,8 +772,7 @@ class _HumanRMSNormFunction(torch.autograd.Function):
             else grad_y.contiguous()
         )
 
-        grad_x, grad_weight =
-            _ext.backward(
+        grad_x, grad_weight = _ext.backward(
                 g_c,
                 x,
                 weight,
@@ -819,17 +817,13 @@ class TritonRMSNorm(torch.nn.Module):
                 + str(hidden_size)
             )
 
-        self.hidden_size =
-            int(hidden_size)
+        self.hidden_size = int(hidden_size)
 
-        self.eps =
-            float(eps)
+        self.eps = float(eps)
 
-        self.num_warps =
-            int(num_warps)
+        self.num_warps = int(num_warps)
 
-        self.weight =
-            torch.nn.Parameter(
+        self.weight = torch.nn.Parameter(
                 torch.ones(
                     self.hidden_size
                 )

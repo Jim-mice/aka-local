@@ -1,0 +1,60 @@
+﻿{
+  "HUMAN_HYPOTHESIS": "V2",
+  "IMPLEMENTATION_ATTEMPT": "02",
+  "COMPILE_REPAIR": "01",
+  "REPAIR_SCOPE": "PASS_WITH_NOTE",
+  "REPAIR_SCOPE_NOTE": "git diff shows 6 pure-syntax newline-after-equals removals (same syntactic pattern as the user's claimed single fix). Zero semantic changes. Per the user's criteria of 'other semantic changes' this is PASS, but the diff actually contains 6 fixes, not 1 as originally claimed. All fixes are required for the candidate to compile.",
+  "ORIGINAL_ATTEMPT_02_SHA256": "4c0da5ae5e1964d0d626fffd785e8120e0df6a110fc0d46183b4516b51f84416",
+  "CANDIDATE_SHA256": "eee09b4fd9eec5796f8079b4ed7492c3470c08ffb2f056ca9f4aafee66e5e29e",
+  "REMOTE_V100_HOST": "10.130.147.227",
+  "TARGET_GPU_UUID": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+  "TARGET_GPU_INDEX": 1,
+  "COMPILE": "PASS",
+  "QUICK_L0": "PASS",
+  "OFFICIAL_L0_CORRECTNESS": "PASS",
+  "L0_FORWARD_RESULTS": {
+    "16_1_1024": {"speedup_mean": 2.7280, "ref_cv": 0.0139, "cand_cv": 0.0190, "n": 50},
+    "64_2_1024": {"speedup_mean": 2.7273, "ref_cv": 0.0125, "cand_cv": 0.0146, "n": 50},
+    "128_2_1024": {"speedup_mean": 2.9805, "ref_cv": 0.0105, "cand_cv": 0.0117, "n": 50}
+  },
+  "L0_BACKWARD_RESULTS": {
+    "16_1_1024": {"speedup_mean": 4.0535, "ref_cv": 0.0966, "cand_cv": 0.0991, "n": 50},
+    "64_2_1024": {"speedup_mean": 3.7930, "ref_cv": 0.0349, "cand_cv": 0.0678, "n": 50},
+    "128_2_1024": {"speedup_mean": 4.0020, "ref_cv": 0.0706, "cand_cv": 0.1407, "n": 50}
+  },
+  "L0_OFFICIAL_SCORE": null,
+  "FORWARD_CAUSAL_CONTROL": "MIXED",
+  "FORWARD_CAUSAL_CONTROL_NOTE": "Shape [16,1,1024] 2.728x vs v1 2.818x (slower -0.090x). Shape [64,2,1024] 2.727x vs v1 2.823x (slower -0.096x). Shape [128,2,1024] 2.981x vs v1 2.856x (faster +0.125x). Two shapes regress slightly, one shape improves; overall forward speedup is similar to v1.",
+  "BACKWARD_IMPROVEMENT_VS_V1": "YES",
+  "BACKWARD_IMPROVEMENT_VS_V1_NOTE": "Shape [16,1,1024] 4.054x vs v1 3.409x (+0.645x). Shape [64,2,1024] 3.793x vs v1 3.439x (+0.354x). Shape [128,2,1024] 4.002x vs v1 3.580x (+0.422x). All three backward shapes improved vs v1.",
+  "L1": "PASS",
+  "L2_RUN1": 1.1735233719404263,
+  "L2_RUN1_REF_CV": 0.10495652461934925,
+  "L2_RUN1_CAND_CV": 0.14047557753578835,
+  "L2_RUN2": 1.199004413926487,
+  "L2_RUN2_REF_CV": 0.043263024233819884,
+  "L2_RUN2_CAND_CV": 0.12298464968041885,
+  "HUMAN_L2_STATUS": "PASS",
+  "AGENT_L2_RUN1": "1.1967401230x",
+  "AGENT_L2_RUN2": "1.1815262131x",
+  "HUMAN_V1_L2_OBSERVED": "1.212x",
+  "HUMAN_V1_STATUS": "STABILITY_BLOCKED",
+  "SOURCE_MODIFIED_DURING_EVAL": "NO",
+  "AGENT_SOURCE_READ": "NO",
+  "NINE_GRID_E2E": "NO",
+  "ENVIRONMENT": {
+    "remote_python": "Python 3.12.14",
+    "torch": "2.7.1+cu118",
+    "cuda_runtime": "11.8",
+    "device": "Tesla V100-PCIE-16GB",
+    "megatron_path": "/home/bencheng/aka_targets/megatron-lm-5be9626"
+  },
+  "COMPARISON_TABLE": [
+    {"entity": "Human v2 (Run1)", "speedup": "1.1735x", "ref_cv": 0.1050, "cand_cv": 0.1405, "status": "PASS"},
+    {"entity": "Human v2 (Run2)", "speedup": "1.1990x", "ref_cv": 0.0433, "cand_cv": 0.1230, "status": "PASS"},
+    {"entity": "Agent (Run1)", "speedup": "1.1967x", "ref_cv": null, "cand_cv": null, "status": "frozen"},
+    {"entity": "Agent (Run2)", "speedup": "1.1815x", "ref_cv": null, "cand_cv": null, "status": "frozen"},
+    {"entity": "Human v1", "speedup": "1.212x", "ref_cv": null, "cand_cv": null, "status": "STABILITY_BLOCKED"}
+  ],
+  "NEXT_ACTION": "KEEP"
+}
