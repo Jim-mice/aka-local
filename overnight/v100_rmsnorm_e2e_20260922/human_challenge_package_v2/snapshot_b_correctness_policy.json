@@ -1,0 +1,10 @@
+{
+  "snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "oj_gate_gap_found_in_snapshot_a": true,
+  "gap": "Snapshot A recorded model loss and RMSNorm gradient errors but did not make them fail-closed L1 gates.",
+  "threshold_source": "The existing Snapshot A frozen operator correctness tolerances in contract_v2_snapshot.json; the same 0.005 absolute tolerance is applied to model loss error and RMSNorm-related gradient max error. No H003-specific calibration was used.",
+  "thresholds": {"loss_abs_error_max": 0.005, "norm_grad_max_abs_error": 0.005},
+  "l1_required_checks": ["replacement_count", "no_remaining_torch_rmsnorm", "replacement_invocations", "forward_completed", "backward_completed", "candidate_gradients_finite", "loss_correctness", "norm_gradient_correctness"],
+  "l2_required_checks": ["l1_pass", "reference_n_at_least_50", "candidate_n_at_least_50", "reference_cv_at_most_0.20", "candidate_cv_at_most_0.20", "timings_finite", "correctness_gate_pass", "candidate_invoked", "no_reference_rmsnorm_remaining"],
+  "agent_human_identical": true
+}

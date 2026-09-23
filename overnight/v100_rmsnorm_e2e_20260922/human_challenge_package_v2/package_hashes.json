@@ -1,0 +1,33 @@
+{
+  "snapshot_b": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "parent_snapshot": "V100_RMSNORM_E2E_SNAPSHOT_A",
+  "snapshot_a_package_hashes": {
+    "authentic_torch_norm_excerpt.py": "797763346c509067b17e672f27424c08ed762d6f4930fbcd26c7bd8a54ea655f",
+    "excluded_sources.json": "c5e8c6ec2f3fa6f9895b8f81072a43a2ec22fb98804b0051694f1e49575084cd",
+    "frozen_shapes.json": "d445e2116693ee15686b20695db0bc741cdfa7b88ffdf97b6f6e5ee559593b39",
+    "PerformanceFacts.json": "2e256798dc31e5ab2a9c4fe31a5e736f721032202516591ff0eb7bcd571df400",
+    "reference_runner.py": "d399854d9d93d86d634b8f54604a0ab5d6e674b2c9db175bee1e299fc172a50b",
+    "candidate_runner.py": "1aafb8b9a4128bf47745a9af93de4b9c8635cdda4239d90edcb29f4565ad32f5",
+    "run_reference_job.sh": "83107a5ce219e5b81f15cc967dd0af40fea83f8922055d96afd9a0fc528ea892",
+    "run_candidate_job.sh": "a644deddaa8659bc4203743cfab34672f05c90fcbfe24e37a24f1f22316d9a4a"
+  },
+  "snapshot_b_package_hashes": {
+    "snapshot_b_correctness_policy.json": "a002911047855143b892dac37a6bc865beb3d173b615152cf4c0784865091cea",
+    "run_reference_job.sh": "7a7a8d03a591f160ea6a97a81e4fd4a771d403b04f19ce7ca5b22bf99ed9e4e8",
+    "reference_runner.py": "d399854d9d93d86d634b8f54604a0ab5d6e674b2c9db175bee1e299fc172a50b",
+    "README.md": "3b74d31c074dd0f08fe00dab5df4afab12124c1711d54eea2e5b508992712e88",
+    "benchmark_protocol.json": "40dd525b439263718744b9c59bd1e5c4e781b38a29bcb715742c624d9b1236b4",
+    "SNAPSHOT_B_MANIFEST.json": "e2ce9b109c28a9f39db6e9cd967b7f53650b612648233c38bca1ff3ec5ee90bb",
+    "HUMAN_CHALLENGE_INSTRUCTIONS_CN.md": "237edfec49b5ac8e46d78186858454a7705b4e2fa4e204782696ea56f0062655",
+    "l1_l2_runner.py": "ff64ebb85affe2051f7144d53ada20beb12b87546cb355441907d2052a29ca09",
+    "candidate_runner.py": "feaebf2b4297df46cc90f30c9e7839e7707ad05efee686c613bd4b17e4a7b2ac",
+    "contract_v2_snapshot.json": "364ea07708d38b3b4a6d3b8e6552e185512596757b85a279b939041cced0fbd6",
+    "run_l1_l2_job.sh": "5e45b5125577d282004bfa04cec09ba815d4292f4f1bd794709f6c835cc5d707",
+    "target_boundary.json": "9e719bdcd2956a8dc1e009acf8a8755bbb200dfa73006bf6088085a660431919",
+    "frozen_shapes.json": "d445e2116693ee15686b20695db0bc741cdfa7b88ffdf97b6f6e5ee559593b39",
+    "run_candidate_job.sh": "8ceff907d05ef74abaa118794142576efc9837c23f20bba190dc26af92d28258",
+    "environment_snapshot.json": "421f5d2e48c3daf4cbf15ca7568204de0d3b29be61d4480b62c05e3217803207"
+  },
+  "canonical_contract": "contract_v2_snapshot.json",
+  "oj_protocol_version": "v100_rmsnorm_e2e_v2"
+}

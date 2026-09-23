@@ -1,0 +1,11 @@
+{
+  "snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "parent_snapshot": "V100_RMSNORM_E2E_SNAPSHOT_A",
+  "candidate_hash": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+  "l0": {"status":"PASS","official_rows":3,"candidate_windows_per_shape":[50,50,50],"correctness_pass":true},
+  "l1": {"status":"PASS","replacements":5,"remaining_reference_rmsnorm":0,"replacement_invocations":5,"loss_abs_error":0.0000300407409667969,"norm_grad_max_abs_error":0.000011444091796875},
+  "l2": {"status":"REFERENCE_STABILITY_FAILURE","reference_windows":50,"candidate_windows":50,"reference_cv":0.257882616473316,"candidate_cv":0.273367654795072,"speedup_observed":1.14228393415353},
+  "h003_source_modified": false,
+  "human_challenge_package_v2": "PAUSED",
+  "reason": "Snapshot B fail-closed stability gate rejected both reference and candidate CV above 0.20. No policy relaxation or H003 modification permitted."
+}

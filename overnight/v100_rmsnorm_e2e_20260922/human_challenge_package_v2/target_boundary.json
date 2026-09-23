@@ -1,0 +1,6 @@
+{
+  "target_source": "megatron.core.transformer.torch_norm.WrappedTorchNorm",
+  "reference": "torch.nn.RMSNorm",
+  "track": "REAL_MEGATRON_E2E_TRACK",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3"
+}
