@@ -1,0 +1,19 @@
+{
+  "snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_C",
+  "parent_snapshot": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "operator_contract_unchanged": true,
+  "l2_measurement_protocol_version": "v3-reference-calibrated-k8",
+  "selected_window_target_ms": 100,
+  "selected_k": 8,
+  "warmup_windows": 20,
+  "measured_windows_per_side": 50,
+  "cv_gate": 0.20,
+  "reference_calibration": [
+    {"file": "reference_calibration_k8_1.json", "cv": 0.050140547628385976},
+    {"file": "reference_calibration_k8_2.json", "cv": 0.0166824822289387}
+  ],
+  "changes_from_snapshot_b": [
+    "l1_l2_runner.py uses frozen K=8 outer whole-step windows",
+    "L0/L1/correctness/contract/GPU/shape/dtype/epsilon unchanged"
+  ]
+}
