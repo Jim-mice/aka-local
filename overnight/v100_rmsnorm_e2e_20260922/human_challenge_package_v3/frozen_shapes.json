@@ -1,0 +1,8 @@
+{
+  "track": "REAL_MEGATRON_E2E_TRACK",
+  "official_shapes_s_b_h": [[16, 1, 1024], [64, 2, 1024], [128, 2, 1024]],
+  "dtype": "float16",
+  "epsilon": 0.00001,
+  "source": "existing official Megatron residual RMSNorm target contract",
+  "historical_candidate_information_included": false
+}

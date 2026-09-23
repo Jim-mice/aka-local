@@ -1,0 +1,16 @@
+{
+  "snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "parent_snapshot": "V100_RMSNORM_E2E_SNAPSHOT_A",
+  "operator_contract_unchanged": true,
+  "changes_relative_to_a": [
+    "candidate_runner.py official cycles 14 to 25 with fail-closed n>=50 assertion",
+    "l1_l2_runner.py fail-closed L1 correctness checks",
+    "l1_l2_runner.py fail-closed L2 protocol/stability/correctness status",
+    "all shell scripts use canonical contract_v2_snapshot.json",
+    "new Snapshot B package contract identity and v2 OJ protocol",
+    "human-facing instructions and ABI documentation"
+  ],
+  "unchanged": ["target", "shapes", "dtype", "epsilon", "Megatron commit", "candidate ABI", "GPU", "mathematical semantics"],
+  "h003_source_modified": false,
+  "historical_sources_opened": false
+}

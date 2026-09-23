@@ -1,0 +1,9 @@
+{
+  "snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_C",
+  "parent_snapshot": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "package_hashes_generated_at_audit": true,
+  "operator_contract_identity": "contract_v2_snapshot.json",
+  "protocol_change": "L2 outer whole-step fixed K=8; 20 warmup windows; 25 ABBA/BAAB cycles; 50 windows per side",
+  "h003_sha256": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+  "reference_calibration_cv": [0.050140547628385976, 0.0166824822289387]
+}

@@ -1,0 +1,18 @@
+{
+  "snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "parent_snapshot": "V100_RMSNORM_E2E_SNAPSHOT_A",
+  "contract_version": "v2",
+  "contract_sha256": "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "target": "non-TE megatron.core.transformer.torch_norm.WrappedTorchNorm -> torch.nn.RMSNorm",
+  "dtype": "float16",
+  "epsilon": 0.00001,
+  "official_shapes": [[16,1,1024],[64,2,1024],[128,2,1024]],
+  "correctness_tolerances": {"forward_atol":0.005,"forward_rtol":0.005,"backward_input_atol":0.005,"backward_input_rtol":0.005,"backward_weight_atol":0.005,"backward_weight_rtol":0.005},
+  "l2": "CONTROLLED_MEGATRON_E2E outer whole-step CUDA event timing",
+  "warmup_windows_min": 20,
+  "measured_windows_min": 50,
+  "reference_and_candidate_cv_max": 0.20,
+  "oj_protocol_version": "v100_rmsnorm_e2e_v2",
+  "oj_changes": ["official L0 measured windows 28 to at least 50", "fail-closed L1/L2 correctness and stability gates", "canonical package contract path"]
+}

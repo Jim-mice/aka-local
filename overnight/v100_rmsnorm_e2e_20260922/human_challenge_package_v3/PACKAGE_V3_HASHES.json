@@ -1,0 +1,12 @@
+{
+  "snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_C",
+  "parent_package": "human_challenge_package_v2",
+  "files": {
+    "l1_l2_runner.py": "9634035b7914ecda98afe2be8fda91682098726d73bf91e325d239b8e2978294",
+    "candidate_runner.py": "feaebf2b4297df46cc90f30c9e7839e7707ad05efee686c613bd4b17e4a7b2ac",
+    "contract_v2_snapshot.json": "364ea07708d38b3b4a6d3b8e6552e185512596757b85a279b939041cced0fbd6",
+    "SNAPSHOT_C_MANIFEST.json": "efa0e857e85c7c29054e9f701540cb1b50cae6b97374180c24d08c14d1cc09d1",
+    "reference_calibration_k8_1.json": "ca7f48c9467503cbccdc6f5f128839d2e21c9918d3b3286597e07d43aac3f7f2",
+    "reference_calibration_k8_2.json": "9484bbafff2d9cc6e35281fc2068898377a20da0984403128ca1ae6fe9b48eb3"
+  }
+}

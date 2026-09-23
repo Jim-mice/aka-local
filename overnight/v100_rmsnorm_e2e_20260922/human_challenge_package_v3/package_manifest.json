@@ -1,0 +1,29 @@
+{
+  "benchmark_snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_B",
+  "parent_snapshot": "V100_RMSNORM_E2E_SNAPSHOT_A",
+  "human_blind": false,
+  "comparison_contract_identical": true,
+  "operator_contract_identity_unchanged": true,
+  "oj_protocol_version": "v100_rmsnorm_e2e_v2",
+  "h003_snapshot_b_requalification": "FAIL_REFERENCE_STABILITY_FAILURE",
+  "human_challenge_package_v2_status": "PAUSED_NOT_RELEASED",
+  "included": [
+    "baseline",
+    "target_boundary",
+    "contract_v2",
+    "OJ_and_runners",
+    "benchmark_protocol",
+    "correctness_tolerance",
+    "stability_rules",
+    "environment",
+    "shape_config"
+  ],
+  "excluded": [
+    "H001/H002/H003 candidate source",
+    "Agent mechanism descriptions",
+    "Agent candidate timings",
+    "Agent decision artifacts",
+    "historical v23/v28 source"
+  ],
+  "historical_sources_opened": false
+}
