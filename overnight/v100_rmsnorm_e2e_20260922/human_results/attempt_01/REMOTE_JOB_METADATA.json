@@ -1,0 +1,13 @@
+{
+  "attempt": "01",
+  "snapshot": "V100_RMSNORM_E2E_SNAPSHOT_C",
+  "remote_workspace": "/home/bencheng/aka_v100_challenges/human_rmsnorm_snapshot_c_attempt_01_20260923_114219",
+  "gpu_uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+  "gpu_name": "Tesla V100-PCIE-16GB",
+  "candidate_sha256": "cf404cc23b3ea4b0be6ea0e8ea18d1d27d952864bb7a9cfcdf26e81fbd18b477",
+  "package": "human_challenge_package_v3",
+  "timestamp": "2026-09-23T11:42:19+08:00",
+  "ssh_host": "10.130.147.227",
+  "ssh_user": "bencheng",
+  "ssh_credential": "provided interactively"
+}

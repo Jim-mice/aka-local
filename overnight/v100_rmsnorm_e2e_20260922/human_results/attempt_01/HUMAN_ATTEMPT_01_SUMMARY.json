@@ -1,0 +1,45 @@
+{
+  "HUMAN_ATTEMPT": "01",
+  "CANDIDATE_SHA256": "cf404cc23b3ea4b0be6ea0e8ea18d1d27d952864bb7a9cfcdf26e81fbd18b477",
+  "COMPILE": "PASS",
+  "QUICK_L0": "PASS",
+  "OFFICIAL_L0_CORRECTNESS": "PASS",
+  "L0_FORWARD": {
+    "[16,1,1024]": {
+      "speedup": 2.818,
+      "ref_cv": 0.076,
+      "cand_cv": 0.0979
+    },
+    "[64,2,1024]": {
+      "speedup": 2.823,
+      "ref_cv": 0.0533,
+      "cand_cv": 0.0614
+    },
+    "[128,2,1024]": {
+      "speedup": 2.856,
+      "ref_cv": 0.0158,
+      "cand_cv": 0.0253
+    }
+  },
+  "L0_BACKWARD": {
+    "[16,1,1024]": 3.409,
+    "[64,2,1024]": 3.439,
+    "[128,2,1024]": 3.58
+  },
+  "L0_OFFICIAL_SCORE": null,
+  "L1": "PASS",
+  "L2_RUN1": 1.2120129033294296,
+  "L2_RUN1_REF_CV": 0.14125831829754926,
+  "L2_RUN1_CAND_CV": 0.21795285002433962,
+  "L2_RUN2": null,
+  "L2_RUN2_REF_CV": null,
+  "L2_RUN2_CAND_CV": null,
+  "HUMAN_L2_STATUS": "STABILITY_BLOCKED",
+  "AGENT_L0_TARGET": 3.6734935121,
+  "AGENT_L2_RUN1_TARGET": 1.196740123,
+  "AGENT_L2_RUN2_TARGET": 1.1815262131,
+  "GPU_CLEAN": "YES",
+  "CANDIDATE_MODIFIED_DURING_EVAL": "NO",
+  "AGENT_SOURCE_READ": "NO",
+  "NINE_GRID_E2E": "NO"
+}
