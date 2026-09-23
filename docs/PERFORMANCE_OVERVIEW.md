@@ -239,3 +239,56 @@ two-empty 的 reference CV 为 `0.3733`，超过冻结门限 `0.20`。故状态�
 - [五个真实 Megatron target 的实验汇总](../FIVE_TARGET_REAL_MEGATRON_CAMPAIGN_SUMMARY.md)
 - [真实 target campaign 索引](../REAL_TARGET_CAMPAIGN_INDEX.md)
 - [机器可读五目标状态](../five_target_campaign_state.json)
+
+
+## V100 RMSNorm Controlled Megatron E2E — 2026-09-23
+
+2026-09-22 夜间至 2026-09-23 完成的 V100 RMSNorm Current-Agent vs Human Controlled Megatron E2E 对照。**NINE_GRID_E2E = NO**，**no official aggregate winner is defined**（frozen OJ 未定义跨两个 independent runs 的 aggregate winner）。
+
+硬件与协议：Tesla V100-PCIE-16GB · Megatron commit `5be9626` · Snapshot C measurement protocol · K=8 outer whole-step window · CV ≤ 0.20。
+
+### Agent H003
+
+- Candidate SHA256：`028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb`
+- L0：`3.6734935121x`
+- L1：PASS
+- Snapshot C L2：
+  - Run 1：`1.1967401230x`（ref CV `0.0630`，cand CV `0.1613`）
+  - Run 2：`1.1815262131x`（ref CV `0.1406`，cand CV `0.1586`）
+
+### Human v2
+
+- Repaired Candidate SHA256：`eee09b4fd9eec5796f8079b4ed7492c3470c08ffb2f056ca9f4aafee66e5e29e`
+- L1：PASS
+- Backward L0：
+  - `[16,1,1024]` `4.0535x`
+  - `[64,2,1024]` `3.7930x`
+  - `[128,2,1024]` `4.0020x`
+- Snapshot C L2：
+  - Run 1：`1.1735x`（ref CV `0.1050`，cand CV `0.1405`）
+  - Run 2：`1.1990x`（ref CV `0.0433`，cand CV `0.1230`）
+
+### 对照
+
+| System | Run 1 | Run 2 | Status |
+|--------|-------|-------|--------|
+| Agent H003 | `1.1967401230x` | `1.1815262131x` | PASS |
+| Human v2 | `1.1735x` | `1.1990x` | PASS |
+
+Run1 Agent 数值较高；Run2 Human 数值较高；两者处于同一性能量级。Descriptive-only mean: H003 `1.1891x`，Human v2 `1.1863x`（`DESCRIPTIVE_ONLY` / `NOT_AN_OFFICIAL_SCORE`）。
+
+### 注意事项
+
+- Human v1 L2 `1.212x` 标记 `STABILITY_BLOCKED`（cand CV `0.2180`），不作为 Human 正式成绩。
+- Snapshot B H003 L2 `1.142x` 标记 `STABILITY_FAILURE`（ref CV `0.2579`，cand CV `0.2734`）。
+- Snapshot A H003 L2 `1.1643x` 系旧 measurement protocol，仅作 lineage 保留。
+- Snapshot B 50/50 raw samples 仍完整保留（`snapshot_b_l2_raw_diagnosis.json`），未做任何 trimming。
+- Snapshot C 唯一 measurement change 是冻结 K=8 outer whole-step window，CV threshold 未放宽。
+
+### 报告
+
+- 最终报告：[`docs/audits/V100_RMSNORM_AGENT_VS_HUMAN_FINAL_20260923.md`](../audits/V100_RMSNORM_AGENT_VS_HUMAN_FINAL_20260923.md)
+- 机器可读总表：[`overnight/v100_rmsnorm_e2e_20260922/FINAL_AGENT_VS_HUMAN_SUMMARY.json`](../../overnight/v100_rmsnorm_e2e_20260922/FINAL_AGENT_VS_HUMAN_SUMMARY.json)
+- Artifact index：[`docs/audits/V100_RMSNORM_ARTIFACT_INDEX_20260923.md`](../audits/V100_RMSNORM_ARTIFACT_INDEX_20260923.md)
+- Human v2 compile repair：[`docs/audits/V100_RMSNORM_HUMAN_ATTEMPT_02_REPAIR_01.md`](../audits/V100_RMSNORM_HUMAN_ATTEMPT_02_REPAIR_01.md)
+- Stability repair：[`docs/audits/V100_RMSNORM_L2_STABILITY_REPAIR.md`](../audits/V100_RMSNORM_L2_STABILITY_REPAIR.md)

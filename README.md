@@ -131,3 +131,10 @@ docs/archive/              长时间运行和发布维护归档
 ```
 
 大型原始 profiler 报告、虚拟环境、runtime bundle、外部源码 checkout、机器本地配置和编译产物均被有意排除在 Git 外。外部源码引用记录在 `lab/knowledge_sources/import_manifest.json`（如适用）。
+
+
+## 最新状态（2026-09-23）
+
+完成 V100 RMSNorm Current-Agent vs Human Controlled Megatron E2E 对照：两者在冻结 Snapshot C measurement protocol 下达到相同性能量级。
+
+详细实验报告：[`docs/audits/V100_RMSNORM_AGENT_VS_HUMAN_FINAL_20260923.md`](docs/audits/V100_RMSNORM_AGENT_VS_HUMAN_FINAL_20260923.md)

@@ -1,0 +1,141 @@
+{
+  "schema_version": "1.0",
+  "campaign": "V100_RMSNORM_AGENT_VS_HUMAN",
+  "snapshot": "V100_RMSNORM_E2E_SNAPSHOT_C",
+  "hardware": {
+    "device": "Tesla V100-PCIE-16GB",
+    "gpu_uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+    "driver": "535.183.06",
+    "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+    "megatron_path": "megatron-lm-5be9626"
+  },
+  "agent": {
+    "hypothesis_count": 3,
+    "implementation_attempt_count": 4,
+    "hypotheses": [
+      {"id": "H001", "origin": "SOURCE_DERIVED_CURRENT_AGENT", "attempts": 2},
+      {"id": "H002", "origin": "DERIVED_FROM_CURRENT_AGENT_H001_PROFILE_FREE_DATAFLOW_REVIEW", "attempts": 1},
+      {"id": "H003", "origin": "CURRENT_AGENT_MAPPING_REFORMULATION", "attempts": 1}
+    ],
+    "best_candidate_sha256": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+    "final_candidate_sha256": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+    "l0": 3.6734935121,
+    "l1": "PASS",
+    "snapshot_a_l2": 1.1643486648,
+    "snapshot_a_l2_note": "historical measurement protocol; not used for Human comparison",
+    "snapshot_b_l2": 1.1422839342,
+    "snapshot_b_ref_cv": 0.2578826165,
+    "snapshot_b_cand_cv": 0.2733676548,
+    "snapshot_b_status": "STABILITY_FAILURE",
+    "snapshot_c_l2_run1": 1.1967401230,
+    "snapshot_c_l2_run1_ref_cv": 0.0630404816,
+    "snapshot_c_l2_run1_cand_cv": 0.1613387697,
+    "snapshot_c_l2_run2": 1.1815262131,
+    "snapshot_c_l2_run2_ref_cv": 0.1405883001,
+    "snapshot_c_l2_run2_cand_cv": 0.1586078379,
+    "snapshot_c_status": "PASS",
+    "status": "PASS",
+    "h003_requalification": "PASS"
+  },
+  "human": {
+    "v1_sha256": "cf404cc23b3ea4b0be6ea0e8ea18d1d27d952864bb7a9cfcdf26e81fbd18b477",
+    "v1_l0_forward": {
+      "[16,1,1024]": 2.818,
+      "[64,2,1024]": 2.823,
+      "[128,2,1024]": 2.856
+    },
+    "v1_l0_backward": {
+      "[16,1,1024]": 3.409,
+      "[64,2,1024]": 3.439,
+      "[128,2,1024]": 3.580
+    },
+    "v1_l1": "PASS",
+    "v1_l2_observed": 1.212,
+    "v1_l2_ref_cv": 0.1413,
+    "v1_l2_cand_cv": 0.2180,
+    "v1_status": "STABILITY_BLOCKED",
+    "v1_profile": {
+      "max_shape_backward_breakdown": {
+        "rms_backward_kernel": {"duration_us": 19.20, "percent": 57.31},
+        "float16_copy_kernel_(FP32_to_FP16_cast)": {"duration_us": 7.65, "percent": 22.83},
+        "FillFunctor_(zero_memset)": {"duration_us": 6.66, "percent": 19.86}
+      },
+      "main_kernel_duration": "21.44 us (NCU)",
+      "registers_per_thread": 28,
+      "achieved_occupancy": "39.74%",
+      "l1_hit": "22.07%",
+      "l2_hit": "61.87%",
+      "dram_read_pct_of_peak": "5.67%",
+      "dram_write_gb_s": 49.25,
+      "dram_write_pct_of_peak": "21.94%",
+      "l2_sector_utilization": "2.0/4",
+      "atomic_dw_bottleneck": "LIKELY",
+      "atomic_count_max_shape": 262144,
+      "dw_zero_overhead": "SIGNIFICANT",
+      "dw_cast_overhead": "SIGNIFICANT",
+      "candidate_variability_source": "MAIN_KERNEL",
+      "v2_priority": [
+        "REDUCE_ATOMIC_DW",
+        "REMOVE_TEMP_ZERO_ALLOC",
+        "REMOVE_DW_CAST"
+      ]
+    },
+    "v2_initial_status": "COMPILE_FAILURE",
+    "v2_initial_failure": "Python SyntaxError: x, weight, inv_rms = followed by line break (and 5 other pure-syntax newline-after-equals fixes; no semantic changes)",
+    "v2_repaired_sha256": "eee09b4fd9eec5796f8079b4ed7492c3470c08ffb2f056ca9f4aafee66e5e29e",
+    "v2_l0_forward": {
+      "[16,1,1024]": {"speedup": 2.7280, "ref_cv": 0.0139, "cand_cv": 0.0190},
+      "[64,2,1024]": {"speedup": 2.7273, "ref_cv": 0.0125, "cand_cv": 0.0146},
+      "[128,2,1024]": {"speedup": 2.9805, "ref_cv": 0.0105, "cand_cv": 0.0117}
+    },
+    "v2_l0_backward": {
+      "[16,1,1024]": {"speedup": 4.0535, "ref_cv": 0.0966, "cand_cv": 0.0991},
+      "[64,2,1024]": {"speedup": 3.7930, "ref_cv": 0.0349, "cand_cv": 0.0678},
+      "[128,2,1024]": {"speedup": 4.0020, "ref_cv": 0.0706, "cand_cv": 0.1407}
+    },
+    "v2_forward_causal_control": "MIXED",
+    "v2_backward_improvement_vs_v1": "YES",
+    "v2_l1": "PASS",
+    "v2_l2_run1": 1.1735,
+    "v2_l2_run1_ref_cv": 0.1050,
+    "v2_l2_run1_cand_cv": 0.1405,
+    "v2_l2_run2": 1.1990,
+    "v2_l2_run2_ref_cv": 0.0433,
+    "v2_l2_run2_cand_cv": 0.1230,
+    "v2_status": "PASS"
+  },
+  "measurement": {
+    "snapshot_b_issue": "MIXED (BIMODAL + DRIFT + COMMON_MODE)",
+    "common_mode_correlation": 0.9680155499,
+    "snapshot_b_raw_samples_preserved": true,
+    "selected_k": 8,
+    "target_window_ms": 100,
+    "cv_threshold": 0.20,
+    "calibration_cv_1": 0.0501405476,
+    "calibration_cv_2": 0.0166824822,
+    "cv_threshold_relaxed": false,
+    "snapshot_c_measurement_change": "outer whole-step window using frozen K=8 (target ~100 ms); H003 source / megatron / shape / dtype / CV gate unchanged"
+  },
+  "comparison": {
+    "official_aggregate_defined": false,
+    "conclusion": "same_performance_regime",
+    "agent_run1_vs_human_run1": "Agent higher (1.1967 vs 1.1735)",
+    "agent_run2_vs_human_run2": "Human higher (1.1990 vs 1.1815)",
+    "descriptive_only_mean": {
+      "agent": 1.18913,
+      "human_v2": 1.18625,
+      "label": "DESCRIPTIVE_ONLY_NOT_AN_OFFICIAL_SCORE"
+    }
+  },
+  "knowledge_isolation": {
+    "current_agent_historical_sources_opened": false,
+    "human_current_agent_solution_read": false,
+    "human_knew_historical_v28_lifetime_idea": true,
+    "human_blind": false,
+    "strict_double_blind": false
+  },
+  "nine_grid_e2e": false,
+  "official_aggregate_winner_defined": false,
+  "no_modification_during_publish": true,
+  "git_commit_at_publish": "aa702d4"
+}

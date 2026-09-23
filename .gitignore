@@ -97,3 +97,11 @@ targets/megatron_5be9626/swiglu/remote_nsys-original.json
 targets/megatron_5be9626/swiglu/remote_nsys-profile.json
 targets/megatron_5be9626/swiglu/remote_nsys-train.json
 targets/megatron_5be9626/vocab_parallel_cross_entropy/result.json
+
+
+# Codex CLI scratch (audit / ssh helper / probe scratch)
+.codex-tmp/
+
+# Local executor scratch
+artifacts/
+test-tmp/
