@@ -1,0 +1,12 @@
+{
+  "id": "H003",
+  "origin": "CURRENT_AGENT_MAPPING_REFORMULATION",
+  "mechanism": "Use native CUDA block reductions with coalesced row-major half2-friendly access for forward/dx and a coalesced column-tile dweight kernel.",
+  "normalized_fingerprint": "native_cuda|block_reduction|coalesced_column_tile_dweight|three_kernel_autograd",
+  "evidence_refs": ["H001 and H002 current-agent lineage", "V100 sm70 environment"],
+  "preconditions": ["nvcc 11.8 matches isolated torch cu118", "H=1024", "contiguous fp16"],
+  "expected_effect": "Lower compiler overhead/register pressure and improve dweight coalescing relative to Triton one-program-per-column mapping.",
+  "risk": ["extension compile failure", "manual reduction numerical drift", "more source complexity"],
+  "resource_tradeoff": "One fp32 inverse-RMS per row; no full-size workspace.",
+  "ablation_plan": ["QUICK compile/correctness", "reject before official if regression exceeds 10 percent"]
+}

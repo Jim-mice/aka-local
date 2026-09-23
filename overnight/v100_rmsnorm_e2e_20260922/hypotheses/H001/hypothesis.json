@@ -1,0 +1,12 @@
+{
+  "id": "H001",
+  "origin": "SOURCE_DERIVED_CURRENT_AGENT",
+  "mechanism": "Fuse RMSNorm forward into one row-wise reduction kernel and implement analytic backward as one row-wise input-gradient kernel plus one column-wise weight-gradient reduction kernel.",
+  "normalized_fingerprint": "fusion|row_reduction|analytic_backward|column_weight_reduction",
+  "evidence_refs": ["agent_blind_package/PerformanceFacts.json:target_dataflow", "controlled_v100_rmsnorm_e2e_contract.json"],
+  "preconditions": ["H=1024 official contract", "contiguous fp16 tensors", "V100 sm70", "Triton supports sm70"],
+  "expected_effect": "Reduce launch count and intermediate global-memory traffic while preserving FP32 reduction semantics.",
+  "risk": ["Triton compiler or sm70 support failure", "weight-gradient reduction occupancy", "numerical drift from reduction order"],
+  "resource_tradeoff": "Stores one fp32 inverse-RMS value per row for backward; no full-size workspace.",
+  "ablation_plan": ["num_warps 4 versus 8", "quick L0 subset before official L0", "profile only if promising"]
+}

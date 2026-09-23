@@ -1,0 +1,10 @@
+{
+  "contract_version": 2,
+  "contract_path": "overnight/v100_rmsnorm_e2e_20260922/controlled_v100_rmsnorm_e2e_contract.json",
+  "contract_sha256": "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97",
+  "oj_paths": ["overnight/v100_rmsnorm_e2e_20260922/agent_blind_package/reference_runner.py", "overnight/v100_rmsnorm_e2e_20260922/agent_blind_package/candidate_runner.py"],
+  "oj_component_sha256": ["d399854d9d93d86d634b8f54604a0ab5d6e674b2c9db175bee1e299fc172a50b", "1aafb8b9a4128bf47745a9af93de4b9c8635cdda4239d90edcb29f4565ad32f5"],
+  "oj_sha256": "2aed35d4e2f144c12b14d114475daf237cebf89716c3cbe6a7d4c07239a8e948",
+  "locked_at_utc": "2026-09-22T17:31:00Z",
+  "historical_sources_allowed": false
+}

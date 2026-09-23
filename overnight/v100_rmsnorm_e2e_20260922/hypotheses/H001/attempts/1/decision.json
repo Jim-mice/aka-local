@@ -1,0 +1,6 @@
+{
+  "status": "PROMOTED_TO_OFFICIAL_L0",
+  "failure_taxonomy": null,
+  "promote": true,
+  "notes": "QUICK correctness passed and both forward/backward improved. Official evaluator remains fixed at 4 warps for attempt 1; short-window instability must be resolved by official windows."
+}

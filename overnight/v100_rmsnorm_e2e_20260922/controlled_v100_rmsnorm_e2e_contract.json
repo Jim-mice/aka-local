@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "contract_version": 2,
+  "version_2_change": "Added the same-process interleaved candidate evaluator before any candidate performance run; reference must be rerun under v2 before official promotion.",
+  "campaign_id": "v100_rmsnorm_e2e_20260922",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "canonical_target": "non-TE megatron.core.transformer.torch_norm.WrappedTorchNorm -> torch.nn.RMSNorm",
+  "equation": "y = cast_fp16(x_fp32 * rsqrt(mean(x_fp32^2, dim=-1, keepdim=true) + epsilon) * weight_fp32)",
+  "dtype": "float16",
+  "epsilon": 0.00001,
+  "weight_semantics": "learned multiplicative weight of shape [H], initialized to ones by torch.nn.RMSNorm",
+  "input_layout": "contiguous row-major [S,B,H]",
+  "output_layout": "contiguous row-major [S,B,H]",
+  "autograd": {
+    "forward_required": true,
+    "input_gradient_required": true,
+    "weight_gradient_required": true,
+    "optimizer_compatible_weight_parameter_required": true
+  },
+  "tracks": {
+    "REAL_MEGATRON_E2E_TRACK": {
+      "decides_current_agent_result": true,
+      "official_shapes": [[16, 1, 1024], [64, 2, 1024], [128, 2, 1024]],
+      "l0": "authentic torch.nn.RMSNorm forward and backward",
+      "l1": "actual WrappedTorchNorm construction and invocation with replacement identity checks",
+      "l2": "CONTROLLED_MEGATRON_E2E whole training step through GPTModel, TransformerBlock, TransformerLayer, RMSNorm, loss, backward, optimizer-compatible step"
+    },
+    "HISTORICAL_OPERATOR_TRACK": {
+      "decides_current_agent_result": false,
+      "shapes": "LOCKED_AFTER_CURRENT_AGENT_FREEZE",
+      "historical_sources_access": "EVALUATOR_ONLY_AFTER_CURRENT_AGENT_FROZEN"
+    }
+  },
+  "correctness": {
+    "oracle": "float32 explicit RMSNorm equation and PyTorch autograd",
+    "forward_atol": 0.005,
+    "forward_rtol": 0.005,
+    "backward_input_atol": 0.005,
+    "backward_input_rtol": 0.005,
+    "backward_weight_atol": 0.005,
+    "backward_weight_rtol": 0.005,
+    "finite_required": true,
+    "tolerances_may_not_be_relaxed": true
+  },
+  "benchmark": {
+    "protocol_version": "v100_rmsnorm_e2e_v1",
+    "same_process_reference_candidate": true,
+    "interleaving": ["A", "B", "B", "A", "B", "A", "A", "B"],
+    "l2_primary_timing": "outer CUDA event whole-step window",
+    "l2_secondary_timing": "synchronized host wall time kept separate",
+    "calibrated_window_target_ms": [20, 100],
+    "warmup_windows_min": 20,
+    "measured_windows_min": 50,
+    "preferred_campaigns": 5,
+    "preferred_windows_per_campaign": 30,
+    "statistics": ["median", "mean", "stdev", "cv", "p10", "p90", "min", "max", "paired_delta", "bootstrap_ci95"],
+    "official_run_gpu_gate_required": true,
+    "old_baseline_reuse_forbidden": true
+  },
+  "stability": {
+    "reference_and_candidate_cv_max": 0.20,
+    "bimodality_check_required": true,
+    "bimodal_runs_require_repeated_windows": true,
+    "contaminated_runs_score_eligible": false
+  },
+  "promotion": {
+    "l1_requires": ["official_l0_correctness_pass", "no_obvious_global_regression"],
+    "l2_requires": ["l1_pass"],
+    "winner_preference": "BEST_L2_SYSTEM",
+    "no_l2_candidate_status": "NO_L2_PROMOTABLE_CANDIDATE"
+  },
+  "claims": {
+    "name": "CONTROLLED_MEGATRON_E2E",
+    "nine_grid_e2e": false,
+    "bi_v150_used": false,
+    "megatron_source_modified": false
+  }
+}

@@ -1,0 +1,1 @@
+{"status":"PERFORMANCE_REJECT","failure_taxonomy":"PERFORMANCE_REJECT","promote":false,"notes":"Correct and stable, but combined OFFICIAL L0 1.60408x regressed versus incumbent 1.66393x. Atomic/memset/cast costs outweighed reuse benefit."}

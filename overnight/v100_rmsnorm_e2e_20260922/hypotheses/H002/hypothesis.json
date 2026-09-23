@@ -1,0 +1,12 @@
+{
+  "id": "H002",
+  "origin": "DERIVED_FROM_CURRENT_AGENT_H001_PROFILE_FREE_DATAFLOW_REVIEW",
+  "mechanism": "Fuse input-gradient production with weight-gradient accumulation using coalesced row-major loads and FP32 atomics, replacing the separate strided column reduction.",
+  "normalized_fingerprint": "backward_producer_consumer_fusion|row_major_atomic_weight_gradient",
+  "evidence_refs": ["H001 analytic backward source", "official frozen row counts <= 256"],
+  "preconditions": ["H=1024", "rows <= 256", "FP32 atomicAdd supported on V100"],
+  "expected_effect": "Reuse x, grad_output, and inverse-RMS values already loaded for dx and eliminate the strided dweight read kernel.",
+  "risk": ["atomic contention", "extra memset and cast kernel", "non-deterministic reduction order", "weight-gradient numerical drift"],
+  "resource_tradeoff": "Adds a 4 KiB FP32 dweight accumulator per invocation.",
+  "ablation_plan": ["QUICK correctness and performance versus H001/reference", "reject if >10% regression or tolerance failure"]
+}

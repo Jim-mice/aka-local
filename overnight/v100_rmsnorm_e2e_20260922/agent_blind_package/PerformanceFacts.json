@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "allowed_provenance": ["SOURCE_DERIVED", "MEASURED", "DERIVED", "UNKNOWN"],
+  "facts": [
+    {"name": "target_dataflow", "value": "square -> last-dimension mean -> epsilon add -> reciprocal square root -> input scale -> weight scale", "provenance": "SOURCE_DERIVED"},
+    {"name": "shape", "value": [[16,1,1024],[64,2,1024],[128,2,1024]], "provenance": "SOURCE_DERIVED"},
+    {"name": "dtype", "value": "float16 inputs/output with float32-equivalent reduction oracle", "provenance": "SOURCE_DERIVED"},
+    {"name": "gpu", "value": {"name":"Tesla V100-PCIE-16GB","sm_count":66,"compute_capability":[7,0]}, "provenance": "MEASURED"},
+    {"name": "reference_launch_structure", "value": "UNKNOWN", "provenance": "UNKNOWN"},
+    {"name": "reference_dram_traffic", "value": "UNKNOWN", "provenance": "UNKNOWN"},
+    {"name": "reference_l2_traffic", "value": "UNKNOWN", "provenance": "UNKNOWN"},
+    {"name": "reference_registers", "value": "UNKNOWN", "provenance": "UNKNOWN"},
+    {"name": "reference_occupancy", "value": "UNKNOWN", "provenance": "UNKNOWN"},
+    {"name": "l2_system_fraction", "value": "UNKNOWN", "provenance": "UNKNOWN"}
+  ]
+}

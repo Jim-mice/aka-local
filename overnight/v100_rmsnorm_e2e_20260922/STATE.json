@@ -1,0 +1,106 @@
+{
+  "active_attempt_id": 1,
+  "active_hypothesis_id": "H003",
+  "active_remote_job": null,
+  "blind_isolation_status": "ACTIVE",
+  "campaign_id": "v100_rmsnorm_e2e_20260922",
+  "completed_runs": 16,
+  "contract_hash": "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97",
+  "current_phase": "PHASE_E_L1_L2",
+  "current_substep": "recovery_repair_complete_h003_ingested",
+  "deadline_utc": "2026-09-23T01:48:25.4538221Z",
+  "failed_runs": 5,
+  "finalization_started": false,
+  "git_checkpoint_status": "CHECKPOINTED_ON_CAMPAIGN_BRANCH_PENDING_COMPATIBILITY_REVIEW",
+  "git_status_snapshot": "## overnight/v100-rmsnorm-e2e-20260922",
+  "historical_sources_opened": false,
+  "incumbent_candidate_hash": "e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15",
+  "incumbent_l0_score": 1.6639332616,
+  "incumbent_l2_score": 1.0770773234,
+  "invalidated_runs": 1,
+  "last_checkpoint_time": "2026-09-22T18:48:06.643562Z",
+  "last_remote_resume_check": [
+    {
+      "exists": true,
+      "stderr": "",
+      "workspace": "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922"
+    },
+    {
+      "upload": {
+        "remote_hashes": {
+          "CONTRACT_LOCK.json": "595f0f247ad3f155b1850bc85ca4226655f21b92e53e6d943e690f3ebb408623",
+          "PerformanceFacts.json": "2e256798dc31e5ab2a9c4fe31a5e736f721032202516591ff0eb7bcd571df400",
+          "authentic_torch_norm_excerpt.py": "797763346c509067b17e672f27424c08ed762d6f4930fbcd26c7bd8a54ea655f",
+          "blind_package_manifest.json": "e4df476844c0f1207c9ac951e1cb0db9734d36d12553214df3293d4e0c97e251",
+          "candidate.py": "ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb",
+          "candidate_H002_attempt1.py": "dba00d1e8cf28e400a48607bbe114339d4558d0cb3ec9c3cc0a000773a61a9a4",
+          "candidate_H003_attempt1.py": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+          "candidate_attempt2.py": "e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15",
+          "candidate_base.py": "ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb",
+          "candidate_runner.py": "1aafb8b9a4128bf47745a9af93de4b9c8635cdda4239d90edcb29f4565ad32f5",
+          "controlled_v100_rmsnorm_e2e_contract.json": "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97",
+          "excluded_sources.json": "c5e8c6ec2f3fa6f9895b8f81072a43a2ec22fb98804b0051694f1e49575084cd",
+          "frozen_shapes.json": "d445e2116693ee15686b20695db0bc741cdfa7b88ffdf97b6f6e5ee559593b39",
+          "l1_l2_runner.py": "568faf4f53305e83c087a2b715eabaeab71e7124729df8c0b9c82935c94fb858",
+          "package_hashes.json": "53aacb9570f9555c7c053bdcfbb4d9e2356fc669c439145b9c8ada60172e45d8",
+          "reference_runner.py": "d399854d9d93d86d634b8f54604a0ab5d6e674b2c9db175bee1e299fc172a50b",
+          "run_candidate_job.sh": "039259934873468d313bcb5cddf4b7a52eb57f2e17cac4c170a6b35878bfbcf2",
+          "run_l1_l2_job.sh": "55f6358ab9ff07ce5f03fd15ce4ba7ea654e334ff26d9b7775bcb5be6c9a59d2",
+          "run_reference_job.sh": "83107a5ce219e5b81f15cc967dd0af40fea83f8922055d96afd9a0fc528ea892"
+        },
+        "uploaded": {
+          "CONTRACT_LOCK.json": "595f0f247ad3f155b1850bc85ca4226655f21b92e53e6d943e690f3ebb408623",
+          "PerformanceFacts.json": "2e256798dc31e5ab2a9c4fe31a5e736f721032202516591ff0eb7bcd571df400",
+          "authentic_torch_norm_excerpt.py": "797763346c509067b17e672f27424c08ed762d6f4930fbcd26c7bd8a54ea655f",
+          "blind_package_manifest.json": "e4df476844c0f1207c9ac951e1cb0db9734d36d12553214df3293d4e0c97e251",
+          "candidate.py": "ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb",
+          "candidate_H002_attempt1.py": "dba00d1e8cf28e400a48607bbe114339d4558d0cb3ec9c3cc0a000773a61a9a4",
+          "candidate_H003_attempt1.py": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+          "candidate_attempt2.py": "e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15",
+          "candidate_base.py": "ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb",
+          "candidate_runner.py": "1aafb8b9a4128bf47745a9af93de4b9c8635cdda4239d90edcb29f4565ad32f5",
+          "controlled_v100_rmsnorm_e2e_contract.json": "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97",
+          "excluded_sources.json": "c5e8c6ec2f3fa6f9895b8f81072a43a2ec22fb98804b0051694f1e49575084cd",
+          "frozen_shapes.json": "d445e2116693ee15686b20695db0bc741cdfa7b88ffdf97b6f6e5ee559593b39",
+          "l1_l2_runner.py": "568faf4f53305e83c087a2b715eabaeab71e7124729df8c0b9c82935c94fb858",
+          "package_hashes.json": "53aacb9570f9555c7c053bdcfbb4d9e2356fc669c439145b9c8ada60172e45d8",
+          "reference_runner.py": "d399854d9d93d86d634b8f54604a0ab5d6e674b2c9db175bee1e299fc172a50b",
+          "run_candidate_job.sh": "039259934873468d313bcb5cddf4b7a52eb57f2e17cac4c170a6b35878bfbcf2",
+          "run_l1_l2_job.sh": "55f6358ab9ff07ce5f03fd15ce4ba7ea654e334ff26d9b7775bcb5be6c9a59d2",
+          "run_reference_job.sh": "83107a5ce219e5b81f15cc967dd0af40fea83f8922055d96afd9a0fc528ea892"
+        }
+      }
+    },
+    {
+      "launched": {
+        "attempt_id": 1,
+        "candidate_hash": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+        "contract_hash": "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97",
+        "created_at": "2026-09-22T18:48:06.627821Z",
+        "gpu_uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+        "hypothesis_id": "H003",
+        "job_id": "official_H003_a1_20260922T184806Z",
+        "kind": "L2_CONTROLLED_MEGATRON_E2E",
+        "pid": 4027990,
+        "remote_job_dir": "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/remote_jobs/official_H003_a1_20260922T184806Z",
+        "remote_result_path": "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/remote_jobs/official_H003_a1_20260922T184806Z/result.json",
+        "remote_status_path": "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/remote_jobs/official_H003_a1_20260922T184806Z/status.json",
+        "status": "RUNNING"
+      }
+    }
+  ],
+  "local_git_head_at_start": "12501192d152db79bfcc0fba6ffa40cd80b0a5ad",
+  "next_action": "poll official_H003_a1_20260922T184806Z; ingest and validate real Megatron replacement before promotion",
+  "oj_hash": "2aed35d4e2f144c12b14d114475daf237cebf89716c3cbe6a7d4c07239a8e948",
+  "remote_workspace": "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922",
+  "requested_branch": "overnight/v100-rmsnorm-e2e-20260922",
+  "resume_findings": [
+    "CHALLENGE_BRANCH_NOT_ACTIVE"
+  ],
+  "schema_version": 1,
+  "selected_gpu_pci_bus_id": "00000000:84:00.0",
+  "selected_gpu_physical_index": 1,
+  "selected_gpu_uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+  "start_time_local": "2026-09-23T00:48:25.4538221+08:00",
+  "start_time_utc": "2026-09-22T16:48:25.4538221Z"
+}

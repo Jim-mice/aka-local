@@ -1,0 +1,91 @@
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/__init__.py:25: UserWarning: Transformer Engine and Apex are not installed. Falling back to Torch optimizers.
+  warnings.warn(
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/distributed/fsdp/src/megatron_fsdp/mixed_precision.py:115: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/optimizer.py:29: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier and multi_tensor_scale
+  warnings.warn(
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/optimizer/clip_grads.py:32: UserWarning: Transformer Engine and Apex are not installed. Falling back to local implementations of multi_tensor_applier, multi_tensor_l2norm, and multi_tensor_scale
+  warnings.warn(
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/hyper_comm_grid.py:20: UserWarning: absl.logging is not installed. Using logging.getLogger(__name__) instead. Please install absl.logging with `pip install absl-py` to use absl.logging.
+  warnings.warn(
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/models/backends.py:34: UserWarning: Apex is not installed. Falling back to Torch Norm
+  warnings.warn("Apex is not installed. Falling back to Torch Norm")
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/models/gpt/gpt_layer_specs.py:74: UserWarning: Apex is not installed. Falling back to Torch Norm
+  warnings.warn("Apex is not installed. Falling back to Torch Norm")
+/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_config.py:2415: UserWarning: full scope is deprecated. Use empty cuda_graph_modules to capture the whole layer.
+  warnings.warn(
+GPTModel IS DEPRECATED. GPTModel is only accepting critical bug fixes, no new features. Please reference the migration guide `docs/user-guide/hybrid-model-migration.md` for details on how to use `HybridModel`
+GPTModel IS DEPRECATED. GPTModel is only accepting critical bug fixes, no new features. Please reference the migration guide `docs/user-guide/hybrid-model-migration.md` for details on how to use `HybridModel`
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/package/l1_l2_runner.py", line 195, in <module>
+[rank0]:     main()
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/package/l1_l2_runner.py", line 143, in main
+[rank0]:     ref_loss = ref_step().detach()
+[rank0]:                ^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/package/l1_l2_runner.py", line 131, in ref_step
+[rank0]:     loss = reference(input_ids=tokens, position_ids=positions, attention_mask=attention_mask, labels=labels).float().mean()
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/models/gpt/gpt_model.py", line 583, in forward
+[rank0]:     hidden_states = self.decoder(
+[rank0]:                     ^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_block.py", line 484, in __call__
+[rank0]:     return super().__call__(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/module.py", line 376, in __call__
+[rank0]:     return super().__call__(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_block.py", line 664, in forward
+[rank0]:     hidden_states, context = layer(
+[rank0]:                              ^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/module.py", line 376, in __call__
+[rank0]:     return super().__call__(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_layer.py", line 740, in forward
+[rank0]:     hidden_states, context = self._forward_attention(*args, **kwargs)
+[rank0]:                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/transformer_layer.py", line 653, in _forward_attention
+[rank0]:     attention_output_with_bias = self.self_attention(
+[rank0]:                                  ^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/attention.py", line 1558, in forward
+[rank0]:     core_attn_out = apply_module(self.core_attention)(
+[rank0]:                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1751, in _wrapped_call_impl
+[rank0]:     return self._call_impl(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_v100_challenges/v100_rmsnorm_e2e_20260922/venv-torch271/lib/python3.12/site-packages/torch/nn/modules/module.py", line 1762, in _call_impl
+[rank0]:     return forward_call(*args, **kwargs)
+[rank0]:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/transformer/dot_product_attention.py", line 217, in forward
+[rank0]:     with tensor_parallel.get_cuda_rng_tracker().fork():
+[rank0]:          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/.local/share/uv/python/cpython-3.12-linux-x86_64-gnu/lib/python3.12/contextlib.py", line 137, in __enter__
+[rank0]:     return next(self.gen)
+[rank0]:            ^^^^^^^^^^^^^^
+[rank0]:   File "/home/bencheng/aka_targets/megatron-lm-5be9626/megatron/core/tensor_parallel/random.py", line 316, in fork
+[rank0]:     raise Exception('cuda rng state {} is not added'.format(name))
+[rank0]: Exception: cuda rng state model-parallel-rng is not added
+[rank0]:[W923 01:47:53.191491566 ProcessGroupNCCL.cpp:1479] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())

@@ -1,0 +1,20 @@
+{
+  "timestamp_utc": "2026-09-22T16:53:00Z",
+  "hostname": "v100-srv",
+  "os": "Ubuntu 20.04.4 LTS",
+  "gpu_exact_name": "Tesla V100-PCIE-16GB",
+  "gpu_uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+  "gpu_memory_bytes": 16936665088,
+  "gpu_memory_mib": 16384,
+  "sm_count": 66,
+  "compute_capability": [7, 0],
+  "driver": "PENDING_CAPTURE",
+  "cuda_runtime": "12.1",
+  "nvcc": "11.8.89",
+  "python": "3.12.14",
+  "pytorch": "2.4.1+cu121",
+  "triton": "INSTALLED_VERSION_PENDING_CAPTURE",
+  "ncu": "2022.3.0.0",
+  "nsys": "2022.4.2.1",
+  "megatron_pinned_commit": "5be9626709af2722333bf54797c954c09edeada3"
+}

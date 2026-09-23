@@ -1,0 +1,14 @@
+{
+  "timestamp_utc": "2026-09-22T16:51:30Z",
+  "query": "index,uuid,name,memory.total,memory.used,utilization.gpu,temperature.gpu,power.draw,power.limit,clocks.sm,clocks.mem,pstate,pci.bus_id",
+  "gpus": [
+    {"index": 0, "uuid": "GPU-4d45ba1b-fdf9-54c5-d26f-e6e529c2b8ec", "name": "Tesla V100-PCIE-16GB", "memory_total_mib": 16384, "memory_used_mib": 5, "utilization_gpu_pct": 0, "temperature_c": 77, "power_draw_w": 99.18, "power_limit_w": 250.0, "clocks_sm_mhz": 258, "clocks_mem_mhz": 877, "pstate": "P0", "pci_bus_id": "00000000:08:00.0"},
+    {"index": 1, "uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d", "name": "Tesla V100-PCIE-16GB", "memory_total_mib": 16384, "memory_used_mib": 5, "utilization_gpu_pct": 0, "temperature_c": 38, "power_draw_w": 29.40, "power_limit_w": 250.0, "clocks_sm_mhz": 37, "clocks_mem_mhz": 877, "pstate": "P0", "pci_bus_id": "00000000:84:00.0"}
+  ],
+  "compute_apps": [],
+  "pmon": [{"gpu": 0, "pid": 3533393, "type": "G", "command": "Xorg"}, {"gpu": 1, "pid": 3533393, "type": "G", "command": "Xorg"}],
+  "selected_gpu_physical_index": 1,
+  "selected_gpu_uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+  "selected_gpu_pci_bus_id": "00000000:84:00.0",
+  "gate": "PASS"
+}

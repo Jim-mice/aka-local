@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "purpose": "CURRENT_AGENT planning and implementation only",
+  "historical_candidate_content_present": false,
+  "files": [
+    "authentic_torch_norm_excerpt.py",
+    "frozen_shapes.json",
+    "PerformanceFacts.json",
+    "excluded_sources.json",
+    "reference_runner.py",
+    "candidate_runner.py",
+    "run_reference_job.sh",
+    "run_candidate_job.sh"
+  ]
+}

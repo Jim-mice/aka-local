@@ -1,0 +1,10 @@
+{
+  "compile_diagnostic": "PASS on Triton 3.3.1, V100 sm70",
+  "correctness": "PASS for forward, input gradient, and weight gradient on QUICK shapes",
+  "quick_l0": {"status":"PASS","candidate_sha256":"ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb","warps4_forward_speedup_range":[1.1160,1.2456],"warps4_backward_speedup_range":[2.0732,2.1454],"warps8_forward_speedup_range":[1.1275,1.1651],"warps8_backward_speedup_range":[2.5429,2.5467],"stability_note":"warps4 largest-shape short-window backward CV 0.3266; requires OFFICIAL long-window evaluation"},
+  "official_l0": {"status":"PASS","forward_geomean_speedup":1.1903389513,"backward_geomean_speedup":2.3090055952,"combined_geomean_speedup":1.6578598549,"all_shape_correctness":true,"all_cv_below_0_20":true,"artifact":"overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H001_a1_20260922T174123Z/result.json"},
+  "l1": {"status":"PASS","reference_rmsnorm_modules":5,"candidate_replacements":5,"remaining_reference_modules":0,"loss_abs_error":0.000006198883056640625},
+  "l2": {"status":"PASS","name":"CONTROLLED_MEGATRON_E2E","reference_gpu_mean_ms":21.6732668304,"candidate_gpu_mean_ms":20.7064982224,"speedup":1.0466891407,"paired_delta_mean_ms":-0.9667686081,"reference_cv":0.0824309289,"candidate_cv":0.0616343281,"windows_per_side":50,"artifact":"overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H001_a1_20260922T175210Z/result.json"},
+  "profiler": "PENDING_IF_OFFICIAL_PROMISING",
+  "allowed_feedback_only": true
+}

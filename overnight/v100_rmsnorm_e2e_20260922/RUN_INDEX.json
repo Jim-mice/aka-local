@@ -1,0 +1,103 @@
+{
+  "benchmark_protocol_version": "v100_rmsnorm_e2e_v1",
+  "runs": {
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb|L1_SMOKE|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "smoke_H003_a1_20260922T184546Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/smoke_H003_a1_20260922T184546Z/result.json",
+      "sha256": "fc050a02c54934ab642dcad5e7c49d2082c870676fc68ec635ea17590fa7d222",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb|OFFICIAL_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "official_H003_a1_20260922T184321Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H003_a1_20260922T184321Z/result.json",
+      "sha256": "e51baf02bf158624ad6d65f087939f22a21e4cd28250492071c2ffde51dbddfe",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb|QUICK_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "quick_H003_a1_20260922T183956Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/quick_H003_a1_20260922T183956Z/result.json",
+      "sha256": "376b6096f50a03f9e8b44c32a3b985b8f4f8ce039cb18ba2a92c64501ea34e59",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|AUTHENTIC_TORCH_REFERENCE|REFERENCE_L0_L1|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "reference_20260922T173328Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/reference_20260922T173328Z/result.json",
+      "sha256": "dda917e5beffc08c1f98672c8c72d4318c1b28e7ab1944e1cf088c9136a05ff5",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb|L1_SMOKE|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "smoke_H001_a1_20260922T174950Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/smoke_H001_a1_20260922T174950Z/result.json",
+      "sha256": "58d2196b67c3430c47e3dad060c2df2c1444f8528e638ec9b5970c76cdc9fc50",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb|L2_CONTROLLED_MEGATRON_E2E|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "official_H001_a1_20260922T175210Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H001_a1_20260922T175210Z/result.json",
+      "sha256": "8e31e987467ef59d5de70b7ccf982f2b61f1c20c001a6e0b9d2e4a84e2663a8e",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb|OFFICIAL_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "official_H001_a1_20260922T174123Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H001_a1_20260922T174123Z/result.json",
+      "sha256": "211ea7976d968dd891eb8d580aff339b223062af8c2b2f17d6c35bb7ce85b4a7",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb|QUICK_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "quick_H001_a1_20260922T173724Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/quick_H001_a1_20260922T173724Z/result.json",
+      "sha256": "f50d9238f7a8e6ab34140bf94985dca0a4402bf82905f1113968089abbd0e96b",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|dba00d1e8cf28e400a48607bbe114339d4558d0cb3ec9c3cc0a000773a61a9a4|OFFICIAL_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "official_H002_a1_20260922T182258Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H002_a1_20260922T182258Z/result.json",
+      "sha256": "d8b6bf0313f73aff7df2c4ea140aa86cc6596f1f12481ec391b68c635eae2f82",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|dba00d1e8cf28e400a48607bbe114339d4558d0cb3ec9c3cc0a000773a61a9a4|QUICK_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "quick_H002_a1_20260922T182022Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/quick_H002_a1_20260922T182022Z/result.json",
+      "sha256": "bae369c339ff44b81dd51ea31ea36c003ff53eca45aadb9cae3d380f47244bb5",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15|L1_SMOKE|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "smoke_H001_a2_20260922T181246Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/smoke_H001_a2_20260922T181246Z/result.json",
+      "sha256": "ac04e132c18a58a7957a2203057facd6383047fb011ce68b4a36f1f23a961e50",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15|L2_CONTROLLED_MEGATRON_E2E|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "official_H001_a2_20260922T181525Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H001_a2_20260922T181525Z/result.json",
+      "sha256": "618450cbc7a00ab73ed1d2bf23624c07cb1a5435b2605f40785e4a6242f14889",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15|OFFICIAL_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "official_H001_a2_20260922T180953Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/official_H001_a2_20260922T180953Z/result.json",
+      "sha256": "31bbb5e721c0b57af16b81dbc2e528a08e9630d1838711b3e00d1f081f1252d9",
+      "status": "DONE"
+    },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15|QUICK_L0|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "quick_H001_a2_20260922T180747Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/quick_H001_a2_20260922T180747Z/result.json",
+      "sha256": "55e57734e2528a10bf4ea18a5403e92cfb3e2e98e9b44f6c7b6a7ffe91828307",
+      "status": "DONE"
+    },
+    "e95bd110154a1cb164d096f998f1b370cc39d181e5923b47fdcd279645ec54e5|AUTHENTIC_TORCH_REFERENCE|REFERENCE_L0_L1|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "reference_20260922T172751Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/remote_artifacts/reference_20260922T172751Z/result.json",
+      "sha256": "94ea72e1a5510aadf8b61870fe5bf0335586ffa384cbe34e93c7d57ef32049d6",
+      "status": "INVALIDATED_BY_CONTRACT_CHANGE"
+    }
+  },
+    "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97|028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb|L2_CONTROLLED_MEGATRON_E2E|ALL_OFFICIAL_SHAPES|v100_rmsnorm_e2e_v1": {
+      "job_id": "official_H003_a1_20260922T184806Z",
+      "result": "overnight/v100_rmsnorm_e2e_20260922/recovery_ingest/official_H003_a1_20260922T184806Z/result.json",
+      "sha256": "36e604766658bde70ab739585f568ab516ed012981cf148eeba6d13249073ee",
+      "status": "DONE",
+      "ingest_status": "VALIDATED"
+    },
+  "schema_version": 1
+}

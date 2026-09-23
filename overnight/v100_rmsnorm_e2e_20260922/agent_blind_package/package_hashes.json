@@ -1,0 +1,10 @@
+{
+  "authentic_torch_norm_excerpt.py": "797763346c509067b17e672f27424c08ed762d6f4930fbcd26c7bd8a54ea655f",
+  "excluded_sources.json": "c5e8c6ec2f3fa6f9895b8f81072a43a2ec22fb98804b0051694f1e49575084cd",
+  "frozen_shapes.json": "d445e2116693ee15686b20695db0bc741cdfa7b88ffdf97b6f6e5ee559593b39",
+  "PerformanceFacts.json": "2e256798dc31e5ab2a9c4fe31a5e736f721032202516591ff0eb7bcd571df400",
+  "reference_runner.py": "d399854d9d93d86d634b8f54604a0ab5d6e674b2c9db175bee1e299fc172a50b",
+  "candidate_runner.py": "1aafb8b9a4128bf47745a9af93de4b9c8635cdda4239d90edcb29f4565ad32f5",
+  "run_reference_job.sh": "83107a5ce219e5b81f15cc967dd0af40fea83f8922055d96afd9a0fc528ea892",
+  "run_candidate_job.sh": "a644deddaa8659bc4203743cfab34672f05c90fcbfe24e37a24f1f22316d9a4a"
+}

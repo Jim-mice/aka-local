@@ -1,0 +1,11 @@
+{
+  "excluded_until_current_agent_frozen": [
+    "campaigns/rms_norm_v100_cuda/**",
+    "**/episode_23/**",
+    "**/episode_28/**",
+    "docs/audits/human_agent_episode28_audit.md",
+    "all historical RMSNorm candidate source",
+    "all v23/v28 RMSNorm knowledge cards",
+    "all human v28 mechanism material"
+  ]
+}

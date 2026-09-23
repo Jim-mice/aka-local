@@ -1,0 +1,29 @@
+{
+  "candidate_sha256": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+  "cuda_runtime": "11.8",
+  "l1": {
+    "backward": true,
+    "candidate_replacements": 5,
+    "forward": true,
+    "input_and_parameter_gradients_finite": true,
+    "loss_abs_error": 3.0040740966796875e-05,
+    "norm_grad_max_abs_errors": [
+      1.1444091796875e-05,
+      5.7220458984375e-06,
+      3.5762786865234375e-06,
+      5.7220458984375e-06,
+      3.814697265625e-06
+    ],
+    "reference_rmsnorm_modules": 5,
+    "remaining_torch_rmsnorm_in_candidate": 0,
+    "replacement_invocations": 5,
+    "status": "PASS"
+  },
+  "l2": {
+    "candidate_loss": 7.868955612182617,
+    "reference_loss": 7.86892557144165,
+    "status": "SMOKE_PASS"
+  },
+  "status": "PASS",
+  "torch": "2.7.1+cu118"
+}

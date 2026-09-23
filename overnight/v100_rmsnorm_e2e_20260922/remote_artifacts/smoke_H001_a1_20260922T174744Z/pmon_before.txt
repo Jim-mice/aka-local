@@ -1,0 +1,4 @@
+# gpu         pid  type    sm    mem    enc    dec    command
+# Idx           #   C/G     %      %      %      %    name
+    0    3533393     G      -      -      -      -    Xorg           
+    1    3533393     G      -      -      -      -    Xorg           
