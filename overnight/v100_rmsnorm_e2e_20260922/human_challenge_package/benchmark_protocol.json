@@ -1,0 +1,10 @@
+{
+  "protocol_version": "v100_rmsnorm_e2e_v1",
+  "same_process_reference_candidate": true,
+  "interleaving": ["A","B","B","A","B","A","A","B"],
+  "l2_primary_timing": "outer CUDA event whole-step window",
+  "warmup_windows_min": 20,
+  "measured_windows_min": 50,
+  "gpu_gate_required": true,
+  "old_baseline_reuse_forbidden": true
+}

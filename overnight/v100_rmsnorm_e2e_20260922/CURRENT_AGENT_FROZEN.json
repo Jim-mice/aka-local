@@ -1,0 +1,27 @@
+{
+  "benchmark_snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_A",
+  "campaign_base_commit": "6d8d3549b3f37d0be8d87126ac6b5581bfdfd829",
+  "campaign_branch": "overnight/v100-rmsnorm-e2e-20260922",
+  "contract_version": "v2",
+  "contract_sha256": "1042caf509cb37c2defe2c230cd6e0b38ef8e784268ba0cf1de29c9893505f97",
+  "megatron_commit": "5be9626709af2722333bf54797c954c09edeada3",
+  "gpu_uuid": "GPU-88be8e63-dd61-3d8f-2f44-e1f93204654d",
+  "current_agent_frozen": true,
+  "historical_sources_opened": false,
+  "new_benchmark_run": false,
+  "new_candidate_created": false,
+  "candidates": [
+    {"hypothesis":"H001","attempt":1,"candidate_hash":"ba79fe6cf6c138234d2e762dfb7871e5571cc7dd1f5cbd0f9e02bd7073ea7cdb","l0":1.6578598549,"l2":1.0466891407,"decision":"VALID"},
+    {"hypothesis":"H001","attempt":2,"candidate_hash":"e58b359d1e37990597b44f39cdff37759e3375ac21edec9ae608768422107e15","l0":1.6639332616,"l2":1.0770773234,"decision":"VALID"},
+    {"hypothesis":"H002","attempt":1,"candidate_hash":"dba00d1e8cf28e400a48607bbe114339d4558d0cb3ec9c3cc0a000773a61a9a4","l0":1.6040842845,"status":"PERFORMANCE_REJECT"},
+    {"hypothesis":"H003","attempt":1,"candidate_hash":"028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb","l0":3.6734935121,"l1":"PASS","l2":1.1643486648,"decision":"PROMOTION_ELIGIBLE"}
+  ],
+  "best_l0_candidate": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+  "best_l0_speedup": 3.6734935121,
+  "best_l2_candidate": "028a576d2220922e76a80bd6f1cbaff7b6054c87b7d45bd50d0ad6acc6cbaedb",
+  "best_l2_speedup": 1.1643486648,
+  "h003_promotion_eligible": true,
+  "promotion_basis": "Snapshot A frozen v2 policy: official L0 correctness, no obvious regression, L1 PASS, controlled L2 PASS, paired outer timing, CV below 0.20, GPU gate PASS.",
+  "reference_only_l2_artifact": "NOT_RUN",
+  "candidate_official_l2_contains_paired_reference": true
+}

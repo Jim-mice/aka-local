@@ -1,0 +1,9 @@
+{
+  "benchmark_snapshot_id": "V100_RMSNORM_E2E_SNAPSHOT_A",
+  "human_blind": false,
+  "comparison_contract_identical": true,
+  "purpose": "Human-vs-Agent fair comparison under the identical Snapshot A contract",
+  "included": ["baseline", "target_boundary", "contract_v2", "OJ_and_runners", "benchmark_protocol", "correctness_tolerance", "stability_rules", "environment", "shape_config"],
+  "excluded": ["H001/H002/H003 candidate source", "Agent mechanism descriptions", "Agent candidate timings", "Agent decision artifacts", "historical v23/v28 source"],
+  "historical_sources_opened": false
+}

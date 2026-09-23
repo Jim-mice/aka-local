@@ -18,6 +18,6 @@ STATE、RUN_INDEX、REMOTE_JOBS、CANDIDATE_REGISTRY 已追加 H003 DONE/validat
 
 ## 最终状态
 
-H003 已合法 ingest，但 campaign 因 base compatibility FAIL 被阻断；没有创建新 hypothesis/candidate，也没有运行 NCU、benchmark 或 historical v23/v28。尚未创建 checkpoint commit，因为当前执行语义不兼容，提交 checkpoint 会掩盖 provenance 风险。
+H003 已合法 ingest，但 campaign 因 base compatibility FAIL 被阻断；没有创建新 hypothesis/candidate，也没有运行 NCU、benchmark 或 historical v23/v28。checkpoint commit `1bbca47badbbe3c2954479426a32c2c5b44213d0` 已真实存在，并属于 `overnight/v100-rmsnorm-e2e-20260922` 分支；此前“尚未创建 checkpoint commit”的表述已纠正。
 
 下一步唯一动作：先由用户决定如何处理 `db8c2ea` 引入的 execution-relevant provenance 分叉；在此之前不得恢复新 candidate 或 benchmark。
